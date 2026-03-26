@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Körper im 3D-KK – Klasse 10</title>
+<style>
+/* ── Base ──────────────────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f2f1ee;color:#1a1a1a;min-height:100vh;padding-bottom:80px}
+
+/* ── Header ────────────────────────────────────────────────────── */
+.header{background:#fff;border-bottom:1px solid #e0deda;padding:14px 16px 0;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.header-top{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.header-top h1{font-size:16px;font-weight:700;line-height:1.3;flex:1}
+.badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px}
+.b-blue{background:#e6f0fb;color:#1a6fbf}
+.b-green{background:#edf7ed;color:#1a7a3c}
+.b-amber{background:#fff8e1;color:#b45309}
+
+/* ── Bottom tab bar (mobile nav) ───────────────────────────────── */
+.tabnav{position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;border-top:1px solid #e0deda;display:flex;box-shadow:0 -2px 8px rgba(0,0,0,.08)}
+.tnb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px 10px;font-size:10px;font-weight:600;color:#aaa;background:none;border:none;cursor:pointer;font-family:inherit;transition:color .15s;gap:3px;min-height:56px}
+.tnb .icon{font-size:20px;line-height:1}
+.tnb.on{color:#1a6fbf}
+.tnb:active{background:#f4f3f0}
+
+/* ── Progress bar ──────────────────────────────────────────────── */
+.progress-wrap{background:#fff;border-bottom:1px solid #e0deda;padding:10px 16px;display:flex;align-items:center;gap:10px}
+.progress-label{font-size:12px;color:#888;white-space:nowrap;flex-shrink:0}
+.progress-bar-outer{flex:1;height:8px;background:#eee;border-radius:4px;overflow:hidden}
+.progress-bar-inner{height:100%;background:#1a7a3c;border-radius:4px;transition:width .4s}
+.progress-pct{font-size:13px;font-weight:700;color:#1a7a3c;min-width:36px;text-align:right;flex-shrink:0}
+.reset-btn{font-size:12px;color:#bbb;background:none;border:none;cursor:pointer;font-family:inherit;padding:4px 8px;border-radius:6px;flex-shrink:0;min-height:36px}
+.reset-btn:active{color:#c04828;background:#fce8e8}
+
+/* ── Main ──────────────────────────────────────────────────────── */
+.main{padding:14px 12px;max-width:600px;margin:0 auto}
+.panel{display:none}.panel.on{display:block}
+
+/* ── Cards ─────────────────────────────────────────────────────── */
+.card{background:#fff;border:1px solid #e0deda;border-radius:14px;margin-bottom:12px;overflow:hidden}
+.card-head{padding:14px 16px;border-bottom:1px solid #e0deda;display:flex;align-items:center;gap:10px}
+.ci{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ci-t{background:#fff8e1;color:#b45309}
+.ci-g{background:#edf7ed;color:#1a7a3c}
+.ci-i{background:#e6f0fb;color:#1a6fbf}
+.ci-a{background:#f0eaff;color:#6b3fa0}
+.card-title{font-size:15px;font-weight:700;line-height:1.3}
+.card-body{padding:14px 16px}
+
+/* ── Time cards ─────────────────────────────────────────────────── */
+.trow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.trow::-webkit-scrollbar{display:none}
+.tc{flex-shrink:0;background:#f4f3f0;border-radius:10px;padding:10px 14px;min-width:110px}
+.tl{font-size:11px;color:#888;margin-bottom:3px}
+.tv{font-size:20px;font-weight:700}
+
+/* ── Goal list ──────────────────────────────────────────────────── */
+.gl{list-style:none;display:flex;flex-direction:column;gap:2px}
+.gi{display:flex;align-items:flex-start;gap:0;border-radius:10px;overflow:hidden;transition:background .15s}
+.gi:active{background:#f4f3f0}
+.gcheck-wrap{padding:14px 12px 14px 16px;flex-shrink:0}
+.gcheck{width:24px;height:24px;border-radius:50%;border:2px solid #ccc;display:flex;align-items:center;justify-content:center;transition:all .2s;background:#fff;flex-shrink:0}
+.gcheck.done{background:#1a7a3c;border-color:#1a7a3c}
+.gcheck.done::after{content:'✓';font-size:13px;color:#fff;font-weight:700}
+.gi-text{flex:1;font-size:14px;line-height:1.5;padding:14px 16px 14px 0;cursor:pointer;transition:color .2s}
+.gi-text.done{color:#aaa;text-decoration:line-through}
+
+/* ── Info ───────────────────────────────────────────────────────── */
+.ip{font-size:14px;line-height:1.65;margin-bottom:10px}
+.ip:last-child{margin-bottom:0}
+.ip strong{font-weight:700}
+.it{font-size:11px;font-weight:700;color:#888;letter-spacing:.05em;text-transform:uppercase;margin:14px 0 6px}
+.it:first-child{margin-top:0}
+.hint{background:#f0f6ff;border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.6;margin:10px 0;color:#444;border-left:3px solid #1a6fbf}
+.hint strong{color:#1a1a1a;font-weight:700}
+
+/* ── SVG diagrams ───────────────────────────────────────────────── */
+.dw{background:#f4f3f0;border-radius:12px;padding:8px;margin:10px 0;overflow:hidden}
+.dw svg{width:100%;height:auto;display:block}
+.dw-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 0}
+.dw-scroll::-webkit-scrollbar{display:none}
+.dw-scroll .dw{flex-shrink:0;width:220px}
+
+/* ── Task cards ─────────────────────────────────────────────────── */
+.tg{display:flex;flex-direction:column;gap:8px}
+.tk{border:1px solid #e0deda;border-radius:12px;overflow:hidden}
+.tk-top{padding:14px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;transition:background .15s}
+.tk-top:active{background:#f4f3f0}
+.tkt{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.tn{font-size:11px;font-weight:700;color:#888;font-family:monospace}
+.td{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:600}
+.de{background:#edf7ed;color:#2e7d32}
+.dm{background:#fff8e1;color:#b45309}
+.dh{background:#fce8e8;color:#b91c1c}
+.tq{font-size:14px;line-height:1.5;color:#1a1a1a}
+.tk-toggle{flex-shrink:0;margin-top:2px;font-size:18px;color:#bbb;transition:transform .2s}
+.tk-toggle.open{transform:rotate(180deg)}
+.ta{display:none;padding:12px 16px 14px;border-top:1px solid #e0deda;font-size:13px;line-height:1.65;color:#555;background:#fafaf8}
+.ta.on{display:block}
+
+/* ── Overview cards ─────────────────────────────────────────────── */
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ov-card{background:#f4f3f0;border-radius:12px;padding:14px;cursor:pointer;border:1px solid #e0deda;transition:all .15s;min-height:80px;display:flex;flex-direction:column;justify-content:space-between}
+.ov-card:active{border-color:#1a6fbf;background:#e6f0fb}
+.ov-num{font-size:10px;font-weight:700;color:#aaa;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.ov-title{font-size:14px;font-weight:700;margin-bottom:2px}
+.ov-sub{font-size:12px;color:#888;margin-top:4px}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────────────────────── -->
+<div class="header">
+  <div class="header-top">
+    <h1>Körper im 3D-Koordinatensystem</h1>
+  </div>
+  <div class="badges">
+    <span class="badge b-blue">Klasse 10 · MV</span>
+    <span class="badge b-green">2 × 90 min</span>
+    <span class="badge b-amber">Vorbereitung Q-Phase</span>
+  </div>
+</div>
+
+<!-- ── PROGRESS ──────────────────────────────────────────────────── -->
+<div class="progress-wrap">
+  <span class="progress-label">Lernziele:</span>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" id="pbar" style="width:0%"></div></div>
+  <span class="progress-pct" id="ppct">0 %</span>
+  <button class="reset-btn" onclick="resetProgress()">↺</button>
+</div>
+
+<!-- ── CONTENT ───────────────────────────────────────────────────── -->
+<div class="main">
+
+<!-- ÜBERSICHT -->
+<div class="panel on" id="p0">
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+    <div class="card-body">
+      <div class="ip">Ihr lernt, geometrische Körper im <strong>3D-Koordinatensystem</strong> zu beschreiben und Maße direkt abzulesen – als Vorbereitung auf die analytische Geometrie.</div>
+      <div class="hint"><strong>Kein Einstieg in Vektorrechnung.</strong> Ihr lest Kantenlängen, Höhen und Radien direkt aus Koordinaten ab und berechnet damit Volumen und Oberfläche.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-t">⏱</div><span class="card-title">Zeitplan</span></div>
+    <div class="card-body">
+      <div class="trow">
+        <div class="tc"><div class="tl">Stunde 1</div><div class="tv">90'</div><div class="tl" style="margin-top:2px">KK & Quader</div></div>
+        <div class="tc"><div class="tl">Stunde 2</div><div class="tv">90'</div><div class="tl" style="margin-top:2px">Körper & Rechnen</div></div>
+        <div class="tc"><div class="tl">Lernziele</div><div class="tv" id="goal-total">–</div><div class="tl" style="margin-top:2px">abhakbar</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Einheiten</span></div>
+    <div class="card-body">
+      <div class="ov-grid">
+        <div class="ov-card" onclick="show(1)"><div class="ov-num">Stunde 1 · Phase 1–2</div><div class="ov-title">KK zeichnen</div><div class="ov-sub">Achsen · Punkte · Ablesen</div></div>
+        <div class="ov-card" onclick="show(1)"><div class="ov-num">Stunde 1 · Phase 3</div><div class="ov-title">Würfel & Quader</div><div class="ov-sub">Kanten · Volumen</div></div>
+        <div class="ov-card" onclick="show(2)"><div class="ov-num">Stunde 2 · Phase 4</div><div class="ov-title">Pyramide & Stumpf</div><div class="ov-sub">Grundfläche · Höhe</div></div>
+        <div class="ov-card" onclick="show(2)"><div class="ov-num">Stunde 2 · Phase 5</div><div class="ov-title">Prisma · Kegel</div><div class="ov-sub">Radius · Zusammenges.</div></div>
+        <div class="ov-card" onclick="show(3)"><div class="ov-num">Aufgabenpool</div><div class="ov-title">Weitere Aufgaben</div><div class="ov-sub">Differenzierung · HA</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STUNDE 1 -->
+<div class="panel" id="p1">
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-t">⏱</div><span class="card-title">Stunde 1 · 90 Minuten</span></div>
+    <div class="card-body">
+      <div class="trow">
+        <div class="tc"><div class="tl">Phase 1</div><div class="tv">30'</div><div class="tl" style="margin-top:2px">Einführung KK</div></div>
+        <div class="tc"><div class="tl">Phase 2</div><div class="tv">35'</div><div class="tl" style="margin-top:2px">Zeichnen & Ablesen</div></div>
+        <div class="tc"><div class="tl">Phase 3</div><div class="tv">25'</div><div class="tl" style="margin-top:2px">Quader</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele Stunde 1</span></div>
+    <div class="card-body">
+      <ul class="gl">
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kenne x-, y- und z-Achse und ihre Richtungen.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann ein 3D-KK als Schrägbild selbst zeichnen und beschriften.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann Punkte P(x|y|z) einzeichnen und Koordinaten ablesen.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese achsenparallele Abstände direkt aus Koordinaten ab.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne Quader-Eckpunkte und lese Kantenlängen direkt ab.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das kartesische 3D-KK</span></div>
+    <div class="card-body">
+      <div class="ip">Drei senkrechte Achsen schneiden sich im <strong>Ursprung O(0|0|0)</strong>. Jeden Punkt beschreibt das Tripel <strong>P(x | y | z)</strong>.</div>
+      <div class="dw">
+        <svg viewBox="0 0 340 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <line x1="150" y1="210" x2="150" y2="30" stroke="#c04828" stroke-width="2" marker-end="url(#a0)"/>
+          <text x="158" y="38" font-size="15" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">z</text>
+          <line x1="50" y1="170" x2="270" y2="74" stroke="#1a6fbf" stroke-width="2" marker-end="url(#a0)"/>
+          <text x="276" y="76" font-size="15" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">x</text>
+          <line x1="244" y1="134" x2="40" y2="134" stroke="#1a7a3c" stroke-width="2" marker-end="url(#a0)"/>
+          <text x="26" y="138" font-size="15" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">y</text>
+          <circle cx="150" cy="134" r="4" fill="#888"/>
+          <text x="156" y="150" font-size="11" fill="#888" font-family="system-ui,sans-serif">O(0|0|0)</text>
+          <!-- Ticks -->
+          <line x1="194" y1="115" x2="194" y2="119" stroke="#1a6fbf" stroke-width="1.2" opacity="0.7"/>
+          <text x="198" y="120" font-size="10" fill="#1a6fbf" opacity="0.8" font-family="system-ui,sans-serif">1</text>
+          <line x1="202" y1="134" x2="202" y2="138" stroke="#1a7a3c" stroke-width="1.2" opacity="0.7"/>
+          <text x="198" y="150" font-size="10" fill="#1a7a3c" opacity="0.8" font-family="system-ui,sans-serif">1</text>
+          <line x1="146" y1="94" x2="154" y2="94" stroke="#c04828" stroke-width="1.2" opacity="0.7"/>
+          <text x="158" y="98" font-size="10" fill="#c04828" opacity="0.8" font-family="system-ui,sans-serif">1</text>
+          <!-- Point P(2|1|2) -->
+          <line x1="238" y1="96" x2="210" y2="96" stroke="#c04828" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
+          <line x1="210" y1="96" x2="210" y2="134" stroke="#c04828" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
+          <line x1="210" y1="96" x2="210" y2="56" stroke="#c04828" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
+          <circle cx="210" cy="56" r="5.5" fill="#c04828"/>
+          <text x="218" y="54" font-size="12" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">P(2|1|2)</text>
+          <text x="20" y="216" font-size="11" fill="#1a6fbf" font-family="system-ui,sans-serif">x = Breite</text>
+          <text x="110" y="216" font-size="11" fill="#1a7a3c" font-family="system-ui,sans-serif">y = Tiefe</text>
+          <text x="210" y="216" font-size="11" fill="#c04828" font-family="system-ui,sans-serif">z = Höhe</text>
+        </svg>
+      </div>
+      <div class="it">Schrägbild zeichnen</div>
+      <div class="ip"><strong>①</strong> z-Achse senkrecht nach oben &nbsp;<strong>②</strong> x-Achse schräg rechts-unten (ca. 45°, ~70% Länge) &nbsp;<strong>③</strong> y-Achse waagerecht links &nbsp;<strong>④</strong> Einheitslängen eintragen</div>
+      <div class="it">Achsenparallele Abstände ablesen</div>
+      <div class="ip">Unterscheiden sich zwei Punkte nur in <em>einer</em> Koordinate → Abstand = Differenz direkt ablesbar.<br>Beispiel: P(1|4|0) und Q(7|4|0) → |PQ| = 7−1 = <strong>6</strong></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Würfel & Quader im KK</span></div>
+    <div class="card-body">
+      <div class="ip">Eine Ecke im Ursprung. Die <strong>Gegenecke G(a|b|c)</strong> liefert direkt alle drei Kantenlängen.</div>
+      <div class="dw-scroll">
+        <div class="dw">
+          <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="aq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <line x1="38" y1="170" x2="38" y2="30" stroke="#c04828" stroke-width="1.2" marker-end="url(#aq)" opacity="0.4"/>
+            <text x="42" y="37" font-size="11" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">z</text>
+            <line x1="22" y1="155" x2="150" y2="93" stroke="#1a6fbf" stroke-width="1.2" marker-end="url(#aq)" opacity="0.4"/>
+            <text x="154" y="95" font-size="11" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">x</text>
+            <line x1="118" y1="134" x2="10" y2="134" stroke="#1a7a3c" stroke-width="1.2" marker-end="url(#aq)" opacity="0.4"/>
+            <text x="2" y="138" font-size="11" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">y</text>
+            <circle cx="38" cy="134" r="2.5" fill="#888"/>
+            <!-- Quader a=5,b=4,c=4 -->
+            <line x1="38" y1="134" x2="2" y2="134" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="38" y1="134" x2="118" y2="96" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="38" y1="134" x2="38" y2="54" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="118" y1="96" x2="78" y2="96" stroke="#333" stroke-width="1.5"/>
+            <line x1="2" y1="134" x2="78" y2="96" stroke="#333" stroke-width="1.5"/>
+            <line x1="118" y1="96" x2="118" y2="16" stroke="#333" stroke-width="1.5"/>
+            <line x1="78" y1="96" x2="78" y2="16" stroke="#333" stroke-width="1.5"/>
+            <line x1="2" y1="134" x2="2" y2="54" stroke="#333" stroke-width="1.5"/>
+            <line x1="38" y1="54" x2="118" y2="16" stroke="#333" stroke-width="1.5"/>
+            <line x1="118" y1="16" x2="78" y2="16" stroke="#333" stroke-width="1.5"/>
+            <line x1="78" y1="16" x2="2" y2="54" stroke="#333" stroke-width="1.5"/>
+            <line x1="2" y1="54" x2="38" y2="54" stroke="#333" stroke-width="1.5"/>
+            <text x="22" y="134" font-size="9" fill="#888" font-family="system-ui,sans-serif">O</text>
+            <text x="120" y="14" font-size="9" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">G(5|4|4)</text>
+            <line x1="38" y1="148" x2="118" y2="110" stroke="#1a6fbf" stroke-width="1" marker-end="url(#aq)" marker-start="url(#aq)" opacity="0.8"/>
+            <text x="84" y="144" font-size="10" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">a=5</text>
+            <line x1="122" y1="96" x2="82" y2="96" stroke="#1a7a3c" stroke-width="1" marker-end="url(#aq)" marker-start="url(#aq)" opacity="0.8"/>
+            <text x="94" y="91" font-size="10" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">b=4</text>
+            <line x1="126" y1="96" x2="126" y2="16" stroke="#c04828" stroke-width="1" marker-end="url(#aq)" marker-start="url(#aq)" opacity="0.8"/>
+            <text x="130" y="60" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">c=4</text>
+            <text x="76" y="190" font-size="12" font-weight="700" fill="#666" text-anchor="middle" font-family="system-ui,sans-serif">Quader</text>
+          </svg>
+        </div>
+        <div class="dw">
+          <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <!-- Würfel a=5 -->
+            <line x1="50" y1="160" x2="2" y2="160" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="50" y1="160" x2="130" y2="120" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="50" y1="160" x2="50" y2="50" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="130" y1="120" x2="70" y2="120" stroke="#333" stroke-width="1.5"/>
+            <line x1="2" y1="160" x2="70" y2="120" stroke="#333" stroke-width="1.5"/>
+            <line x1="130" y1="120" x2="130" y2="10" stroke="#333" stroke-width="1.5"/>
+            <line x1="70" y1="120" x2="70" y2="10" stroke="#333" stroke-width="1.5"/>
+            <line x1="2" y1="160" x2="2" y2="50" stroke="#333" stroke-width="1.5"/>
+            <line x1="50" y1="50" x2="130" y2="10" stroke="#333" stroke-width="1.5"/>
+            <line x1="130" y1="10" x2="70" y2="10" stroke="#333" stroke-width="1.5"/>
+            <line x1="70" y1="10" x2="2" y2="50" stroke="#333" stroke-width="1.5"/>
+            <line x1="2" y1="50" x2="50" y2="50" stroke="#333" stroke-width="1.5"/>
+            <text x="34" y="160" font-size="9" fill="#888" font-family="system-ui,sans-serif">O</text>
+            <text x="132" y="9" font-size="9" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">G(5|5|5)</text>
+            <text x="110" y="155" font-size="11" font-weight="700" fill="#333" font-family="system-ui,sans-serif">a</text>
+            <text x="90" y="190" font-size="12" font-weight="700" fill="#666" text-anchor="middle" font-family="system-ui,sans-serif">Würfel · a=b=c</text>
+          </svg>
+        </div>
+      </div>
+      <div class="hint"><strong>Tipp:</strong> Ist G(5|5|5) → alle Kanten gleich → Würfel. Sind die Koordinaten verschieden → Quader.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-a">✏</div><span class="card-title">Aufgaben Stunde 1</span></div>
+    <div class="card-body">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.1</span><span class="td de">Einfach</span></div><div class="tq">Zeichne ein 3D-KK und trage A(3|0|0), B(0|2|0), C(0|0|4) ein. Auf welchen Achsen liegen sie?</div></div><div class="tk-toggle">⌄</div></div><div class="ta">A → x-Achse, B → y-Achse, C → z-Achse. Alle haben zwei Koordinaten = 0.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.2</span><span class="td de">Einfach</span></div><div class="tq">Zeichne P(2|3|4) ins KK. Beschreibe deinen Weg Schritt für Schritt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">① 2 Einheiten in x-Richtung (schräg) → ② 3 Einheiten in y-Richtung (links) → ③ 4 Einheiten senkrecht nach oben (z).</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.3</span><span class="td dm">Mittel</span></div><div class="tq">P(1|4|0) und Q(7|4|0). Lies |PQ| direkt ab und begründe warum das möglich ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">|PQ| = 7−1 = 6. Nur x unterscheidet sich (y=4 und z=0 gleich) → achsenparallel → Abstand = Differenz der x-Werte.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.4</span><span class="td dm">Mittel</span></div><div class="tq">Quader mit O(0|0|0) und G(6|3|4). Lies Kantenlängen ab und berechne V und O.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a=6, b=3, c=4. V = 6·3·4 = 72. O = 2·(18+24+12) = 108.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.5</span><span class="td dh">Schwer</span></div><div class="tq">Quader mit A(2|1|0) und G(8|5|4). Lies Kantenlängen durch Differenzbildung ab. Berechne V.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a=8−2=6, b=5−1=4, c=4−0=4. V = 6·4·4 = 96.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end p1 -->
+
+<!-- STUNDE 2 -->
+<div class="panel" id="p2">
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-t">⏱</div><span class="card-title">Stunde 2 · 90 Minuten</span></div>
+    <div class="card-body">
+      <div class="trow">
+        <div class="tc"><div class="tl">Phase 4</div><div class="tv">35'</div><div class="tl" style="margin-top:2px">Pyramide & Stumpf</div></div>
+        <div class="tc"><div class="tl">Phase 5</div><div class="tv">30'</div><div class="tl" style="margin-top:2px">Prisma · Kegel</div></div>
+        <div class="tc"><div class="tl">Phase 6</div><div class="tv">25'</div><div class="tl" style="margin-top:2px">Sicherung</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele Stunde 2</span></div>
+    <div class="card-body">
+      <ul class="gl">
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese Grundfläche und Höhe einer Pyramide direkt aus Koordinaten ab.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese beim Stumpf Grundfläche, Deckfläche und Höhe ab und berechne V.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese bei Prisma die Grundfläche und Höhe ab.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese bei Zylinder und Kegel Mittelpunkt, Radius und Höhe ab.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich beschreibe zusammengesetzte Körper und berechne ihr Gesamtvolumen.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Pyramide & Pyramidenstumpf</span></div>
+    <div class="card-body">
+      <div class="ip">Grundfläche liegt bei z=0. <strong>Höhe h</strong> = z-Koordinate des Spitzes S. <strong>Seite a</strong> = direkt ablesbar wenn achsenparallel.</div>
+      <div class="dw-scroll">
+        <div class="dw">
+          <svg viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="apy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <line x1="28" y1="185" x2="28" y2="35" stroke="#c04828" stroke-width="1.1" marker-end="url(#apy)" opacity="0.4"/>
+            <text x="32" y="42" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">z</text>
+            <line x1="14" y1="172" x2="148" y2="108" stroke="#1a6fbf" stroke-width="1.1" marker-end="url(#apy)" opacity="0.4"/>
+            <text x="152" y="110" font-size="10" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">x</text>
+            <line x1="118" y1="148" x2="6" y2="148" stroke="#1a7a3c" stroke-width="1.1" marker-end="url(#apy)" opacity="0.4"/>
+            <text x="0" y="152" font-size="10" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">y</text>
+            <!-- Pyramide -->
+            <line x1="68" y1="172" x2="6" y2="172" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="68" y1="172" x2="154" y2="134" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="6" y1="172" x2="92" y2="134" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4 3"/>
+            <line x1="154" y1="134" x2="92" y2="134" stroke="#333" stroke-width="1.5"/>
+            <line x1="154" y1="134" x2="80" y2="30" stroke="#333" stroke-width="1.5"/>
+            <line x1="92" y1="134" x2="80" y2="30" stroke="#333" stroke-width="1.5"/>
+            <line x1="6" y1="172" x2="80" y2="30" stroke="#333" stroke-width="1.5"/>
+            <line x1="68" y1="172" x2="80" y2="30" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <circle cx="80" cy="30" r="4" fill="#c04828"/>
+            <text x="85" y="28" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">S(3|3|7)</text>
+            <text x="50" y="184" font-size="9" fill="#888" font-family="system-ui,sans-serif">A(0|0|0)</text>
+            <text x="156" y="132" font-size="9" fill="#888" font-family="system-ui,sans-serif">B(6|0|0)</text>
+            <line x1="170" y1="134" x2="170" y2="30" stroke="#c04828" stroke-width="1" marker-end="url(#apy)" marker-start="url(#apy)" opacity="0.8"/>
+            <text x="174" y="86" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">h=7</text>
+            <line x1="68" y1="188" x2="154" y2="150" stroke="#1a7a3c" stroke-width="1" marker-end="url(#apy)" marker-start="url(#apy)" opacity="0.7"/>
+            <text x="116" y="184" font-size="10" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">a=6</text>
+            <text x="80" y="202" font-size="11" font-weight="700" fill="#666" text-anchor="middle" font-family="system-ui,sans-serif">Quadr. Pyramide</text>
+          </svg>
+        </div>
+        <div class="dw">
+          <svg viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="aps" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <!-- Stumpf -->
+            <line x1="68" y1="178" x2="6" y2="178" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="68" y1="178" x2="158" y2="140" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="6" y1="178" x2="96" y2="140" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4 3"/>
+            <line x1="158" y1="140" x2="96" y2="140" stroke="#333" stroke-width="1.5"/>
+            <line x1="158" y1="140" x2="130" y2="82" stroke="#333" stroke-width="1.5"/>
+            <line x1="96" y1="140" x2="96" y2="82" stroke="#333" stroke-width="1.5"/>
+            <line x1="6" y1="178" x2="42" y2="82" stroke="#333" stroke-width="1.5"/>
+            <line x1="68" y1="178" x2="76" y2="82" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="76" y1="82" x2="130" y2="82" stroke="#1a6fbf" stroke-width="1.5"/>
+            <line x1="130" y1="82" x2="96" y2="82" stroke="#1a6fbf" stroke-width="1.5"/>
+            <line x1="96" y1="82" x2="42" y2="82" stroke="#1a6fbf" stroke-width="1.5"/>
+            <line x1="42" y1="82" x2="76" y2="82" stroke="#1a6fbf" stroke-width="1.5"/>
+            <text x="50" y="190" font-size="9" fill="#888" font-family="system-ui,sans-serif">A(0|0|0)</text>
+            <text x="78" y="79" font-size="9" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">E(1,5|1,5|5)</text>
+            <text x="132" y="79" font-size="9" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">F(4,5|…|5)</text>
+            <line x1="68" y1="194" x2="158" y2="156" stroke="#1a7a3c" stroke-width="1" marker-end="url(#aps)" marker-start="url(#aps)" opacity="0.7"/>
+            <text x="118" y="190" font-size="10" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">a=6</text>
+            <line x1="76" y1="68" x2="130" y2="68" stroke="#1a6fbf" stroke-width="1" marker-end="url(#aps)" marker-start="url(#aps)" opacity="0.7"/>
+            <text x="95" y="64" font-size="10" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">b=3</text>
+            <line x1="170" y1="140" x2="170" y2="82" stroke="#c04828" stroke-width="1" marker-end="url(#aps)" marker-start="url(#aps)" opacity="0.8"/>
+            <text x="174" y="115" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">h=5</text>
+            <text x="100" y="202" font-size="11" font-weight="700" fill="#666" text-anchor="middle" font-family="system-ui,sans-serif">Pyramidenstumpf</text>
+          </svg>
+        </div>
+      </div>
+      <div class="hint"><strong>Stumpf ablesen:</strong> a aus B, b = x(F)−x(E) = 4,5−1,5 = 3, h = z der Deckfläche = 5.<br>V = h/3 · (A₁ + A₂ + √(A₁·A₂))</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Prisma · Zylinder & Kegel · Zusammengesetzt</span></div>
+    <div class="card-body">
+      <div class="it">Gerades Prisma</div>
+      <div class="ip">Grundfläche bei z=0, Deckfläche bei z=h. <strong>Höhe h</strong> direkt als z-Differenz ablesbar.</div>
+      <div class="dw-scroll">
+        <div class="dw">
+          <svg viewBox="0 0 190 200" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="apr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <!-- Prisma -->
+            <line x1="48" y1="162" x2="4" y2="162" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="48" y1="162" x2="136" y2="122" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="4" y1="162" x2="136" y2="122" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4 3"/>
+            <line x1="136" y1="122" x2="136" y2="36" stroke="#333" stroke-width="1.5"/>
+            <line x1="4" y1="162" x2="4" y2="76" stroke="#333" stroke-width="1.5"/>
+            <line x1="48" y1="162" x2="48" y2="76" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+            <line x1="48" y1="76" x2="136" y2="36" stroke="#1a7a3c" stroke-width="1.5"/>
+            <line x1="136" y1="36" x2="4" y2="76" stroke="#1a7a3c" stroke-width="1.5"/>
+            <line x1="4" y1="76" x2="48" y2="76" stroke="#1a7a3c" stroke-width="1.5"/>
+            <text x="30" y="174" font-size="9" fill="#888" font-family="system-ui,sans-serif">A(0|0|0)</text>
+            <text x="138" y="120" font-size="9" fill="#888" font-family="system-ui,sans-serif">B(6|0|0)</text>
+            <text x="30" y="74" font-size="9" font-weight="700" fill="#1a7a3c" font-family="system-ui,sans-serif">D(0|0|5)</text>
+            <line x1="150" y1="122" x2="150" y2="36" stroke="#c04828" stroke-width="1" marker-end="url(#apr)" marker-start="url(#apr)" opacity="0.8"/>
+            <text x="154" y="83" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">h=5</text>
+            <text x="70" y="192" font-size="11" font-weight="700" fill="#666" text-anchor="middle" font-family="system-ui,sans-serif">Dreiecksprisma</text>
+          </svg>
+        </div>
+        <div class="dw">
+          <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="azk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <ellipse cx="90" cy="148" rx="36" ry="12" fill="none" stroke="#333" stroke-width="1.4"/>
+            <line x1="54" y1="148" x2="54" y2="88" stroke="#333" stroke-width="1.4"/>
+            <line x1="126" y1="148" x2="126" y2="88" stroke="#333" stroke-width="1.4"/>
+            <ellipse cx="90" cy="88" rx="36" ry="12" fill="none" stroke="#1a7a3c" stroke-width="1.4"/>
+            <line x1="54" y1="88" x2="90" y2="28" stroke="#c04828" stroke-width="1.4"/>
+            <line x1="126" y1="88" x2="90" y2="28" stroke="#c04828" stroke-width="1.4"/>
+            <circle cx="90" cy="28" r="3.5" fill="#c04828"/>
+            <circle cx="90" cy="148" r="2.5" fill="#888"/>
+            <text x="94" y="160" font-size="9" fill="#888" font-family="system-ui,sans-serif">M</text>
+            <text x="94" y="26" font-size="9" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">S</text>
+            <line x1="90" y1="148" x2="126" y2="148" stroke="#1a6fbf" stroke-width="1" marker-end="url(#azk)" opacity="0.8"/>
+            <text x="100" y="143" font-size="10" font-weight="700" fill="#1a6fbf" font-family="system-ui,sans-serif">r</text>
+            <line x1="140" y1="148" x2="140" y2="88" stroke="#888" stroke-width="1" marker-end="url(#azk)" marker-start="url(#azk)" opacity="0.7"/>
+            <text x="144" y="122" font-size="10" font-weight="700" fill="#555" font-family="system-ui,sans-serif">h₁</text>
+            <line x1="140" y1="88" x2="140" y2="28" stroke="#c04828" stroke-width="1" marker-end="url(#azk)" marker-start="url(#azk)" opacity="0.8"/>
+            <text x="144" y="62" font-size="10" font-weight="700" fill="#c04828" font-family="system-ui,sans-serif">h₂</text>
+            <text x="90" y="192" font-size="11" font-weight="700" fill="#666" text-anchor="middle" font-family="system-ui,sans-serif">Zylinder + Kegel</text>
+          </svg>
+        </div>
+      </div>
+      <div class="it">Zylinder, Kegel & Kegelstumpf</div>
+      <div class="ip">Beschreibung durch <strong>Mittelpunkt M</strong>, <strong>Radius r</strong> und <strong>Höhe h</strong>. Radius = Differenz zwischen M und Randpunkt (achsenparallel → direkt ablesbar).</div>
+      <div class="it">Zusammengesetzte Körper</div>
+      <div class="ip"><strong>① Zerlegen</strong> – Trennfläche an z-Koordinate ablesen. <strong>② Maße ablesen</strong> für jeden Teilkörper. <strong>③ Volumina addieren</strong> (oder subtrahieren bei Aushöhlungen).</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-a">✏</div><span class="card-title">Aufgaben Stunde 2</span></div>
+    <div class="card-body">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.1</span><span class="td de">Einfach</span></div><div class="tq">Pyramide: A(0|0|0), B(8|0|0), C(8|8|0), D(0|8|0), S(4|4|9). Lies a und h ab. Ist die Grundfläche ein Quadrat? Berechne V.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a=8, h=9. Quadrat: ja. V = ⅓·64·9 = 192.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.2</span><span class="td dm">Mittel</span></div><div class="tq">Pyramidenstumpf a=10 (z=0), b=6 (z=5), zentriert. Gib alle 8 Eckpunkte an. Berechne V.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Grundfläche: A(0|0|0), B(10|0|0), C(10|10|0), D(0|10|0). Deckfläche: E(2|2|5), F(8|2|5), G(8|8|5), H(2|8|5). A₁=100, A₂=36. V = 5/3·196 ≈ 326,7.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.3</span><span class="td dm">Mittel</span></div><div class="tq">Dreiecksprisma: A(0|0|0), B(6|0|0), C(0|4|0), h=5. Lies ab was möglich ist. Berechne V.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">h=5, AB=6, AC=4 (beide achsenparallel → direkt ablesbar). Grundfläche = ½·24=12. V=60.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.4</span><span class="td dh">Schwer</span></div><div class="tq">Zusammengesetzt: Prisma (a=6, h₁=4, z: 0–4) + Pyramide oben (gleiche Basis, Spitz z=9). Koordinaten & V gesamt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">S(3|3|9), h₂=5. V_Prisma=144, V_Pyr=60. V_ges=204.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.5</span><span class="td dh">Schwer</span></div><div class="tq">Kegelstumpf: M(0|0|0), R₁(5|0|0), M'(0|0|8), R₂(3|0|8). Lies r, r' und h ab. Berechne V.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">r=5, r'=3, h=8. V = 8π/3·(25+15+9) ≈ 410,5.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end p2 -->
+
+<!-- AUFGABENPOOL -->
+<div class="panel" id="p3">
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Aufgabenpool</span></div>
+    <div class="card-body">
+      <div class="ip">Weitere Aufgaben zur Differenzierung, als Hausaufgaben oder für eine dritte Stunde.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-a">✏</div><span class="card-title">Kugel & Kegel</span></div>
+    <div class="card-body"><div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.1</span><span class="td de">Einfach</span></div><div class="tq">Kugel: M(0|0|0), P(4|0|0) auf der Oberfläche. Lies r ab. Berechne V und O.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">r=4. V=4/3·π·64≈268,1. O=4π·16≈201,1.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.2</span><span class="td dm">Mittel</span></div><div class="tq">Kegel: M(2|2|0), R(6|2|0), S(2|2|10). Lies r und h ab. Berechne V und Mantelfläche.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">r=4, h=10. V≈167,6. s=√116≈10,77. Mantel≈135,3.</div></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-a">✏</div><span class="card-title">Zusammengesetzte Körper</span></div>
+    <div class="card-body"><div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.1</span><span class="td dm">Mittel</span></div><div class="tq">Quader O–G(4|4|3) + Zylinder oben: M'(2|2|3), r=1,5, h=4. Berechne V gesamt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">V_Quader=48. V_Zylinder=π·2,25·4≈28,3. V_ges≈76,3.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.2</span><span class="td dh">Schwer</span></div><div class="tq">Silo: Zylinder M(0|0|0), r=3, h₁=8. Darauf Kegelstumpf r=3, r'=1, h₂=3. Berechne V gesamt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">V_Zyl≈226,2. V_Stumpf=13π≈40,8. V_ges≈267,0.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.3</span><span class="td dh">Schwer</span></div><div class="tq">Aus Quader O–G(8|6|5) wird Pyramide (Grundfläche z=0, S(4|3|5)) herausgeschnitten. Berechne V Rest.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">V_Quader=240. V_Pyr=80. V_Rest=160.</div></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-a">✏</div><span class="card-title">KK zeichnen & Ablesen</span></div>
+    <div class="card-body"><div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P3.1</span><span class="td de">Einfach</span></div><div class="tq">Zeichne A(4|2|0), B(4|2|5), C(0|2|5) ins KK. Welche Abstände lassen sich direkt ablesen?</div></div><div class="tk-toggle">⌄</div></div><div class="ta">|AB|=5 (nur z unterscheidet sich), |BC|=4 (nur x) → beide direkt ablesbar.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P3.2</span><span class="td dm">Mittel</span></div><div class="tq">Zeichne Dreiecksprisma: A(0|0|0), B(5|0|0), C(0|3|0), h=6. Gib alle 6 Eckpunkte an.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">D(0|0|6), E(5|0|6), F(0|3|6).</div></div>
+    </div></div>
+  </div>
+
+</div><!-- end p3 -->
+
+</div><!-- end main -->
+
+<!-- ── BOTTOM TAB BAR ──────────────────────────────────────────── -->
+<nav class="tabnav">
+  <button class="tnb on" onclick="show(0)"><span class="icon">🏠</span>Übersicht</button>
+  <button class="tnb" onclick="show(1)"><span class="icon">1️⃣</span>Stunde 1</button>
+  <button class="tnb" onclick="show(2)"><span class="icon">2️⃣</span>Stunde 2</button>
+  <button class="tnb" onclick="show(3)"><span class="icon">📋</span>Aufgaben</button>
+</nav>
+
+<script>
+// ── Navigation ──────────────────────────────────────────────────
+const panels=document.querySelectorAll('.panel');
+const tabs=document.querySelectorAll('.tnb');
+function show(i){
+  panels.forEach((p,j)=>p.classList.toggle('on',j===i));
+  tabs.forEach((b,j)=>b.classList.toggle('on',j===i));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Task toggle ─────────────────────────────────────────────────
+function togTask(top){
+  const ans=top.nextElementSibling;
+  const tog=top.querySelector('.tk-toggle');
+  const open=ans.classList.toggle('on');
+  tog.classList.toggle('open',open);
+}
+
+// ── Progress ────────────────────────────────────────────────────
+function getAllChecks(){return document.querySelectorAll('.gcheck');}
+
+function updateProgress(){
+  const all=getAllChecks();
+  const done=[...all].filter(c=>c.classList.contains('done')).length;
+  const pct=all.length?Math.round(done/all.length*100):0;
+  document.getElementById('pbar').style.width=pct+'%';
+  document.getElementById('ppct').textContent=pct+' %';
+  document.getElementById('goal-total').textContent=all.length;
+  try{localStorage.setItem('lp_prog',JSON.stringify([...all].map(c=>c.classList.contains('done')?1:0)));}catch(e){}
+}
+
+function toggleGoal(check){
+  check.classList.toggle('done');
+  const wrap=check.parentElement;
+  const txt=wrap.nextElementSibling;
+  if(txt)txt.classList.toggle('done',check.classList.contains('done'));
+  updateProgress();
+}
+
+function resetProgress(){
+  if(!confirm('Alle Lernziele zurücksetzen?'))return;
+  getAllChecks().forEach(c=>{
+    c.classList.remove('done');
+    const txt=c.parentElement.nextElementSibling;
+    if(txt)txt.classList.remove('done');
+  });
+  try{localStorage.removeItem('lp_prog');}catch(e){}
+  updateProgress();
+}
+
+window.addEventListener('load',()=>{
+  try{
+    const s=localStorage.getItem('lp_prog');
+    if(s){const st=JSON.parse(s);const all=getAllChecks();st.forEach((v,i)=>{if(all[i]&&v){all[i].classList.add('done');const txt=all[i].parentElement.nextElementSibling;if(txt)txt.classList.add('done');}});}
+  }catch(e){}
+  updateProgress();
+});
+</script>
+</body>
+</html>
