@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="        de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lernportal Mathematik – Oberstufe</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    tags: 'none'
+  },
+  options: {
+    skipHtmlTags: ['script','noscript','style','textarea'],
+    skipHiddenElements: true
+  },
+  startup: { typeset: false }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+/* ── MathJax ──────────────────────────────────────────────── */
+mjx-container{overflow-x:auto;max-width:100%}
+mjx-container[display="true"]{margin:10px 0;padding:4px 0}
+.MathJax{font-size:1.05em!important}
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f0efec;color:#1a1a1a;min-height:100vh}
+
+/* ── Header ──────────────────────────────────────────────── */
+.header{background:#fff;border-bottom:1px solid #e0deda;padding:16px 24px 0;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.header-inner{max-width:1100px;margin:0 auto}
+.header-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.header-top h1{font-size:18px;font-weight:700;flex:1;min-width:200px}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
+.b-blue{background:#e6f0fb;color:#1a6fbf}
+.b-green{background:#edf7ed;color:#1a7a3c}
+.b-amber{background:#fff8e1;color:#b45309}
+
+/* ── Tab navigation ───────────────────────────────────────── */
+.app-wrap{display:flex;min-height:100vh}
+.sidebar{width:230px;flex-shrink:0;background:#fff;border-right:1px solid #e0deda;padding:20px 0;overflow-y:auto;scrollbar-width:thin}
+.sidebar-section{padding:8px 16px 4px;font-size:10px;font-weight:700;color:#aaa;letter-spacing:.07em;text-transform:uppercase}
+.snb{display:block;width:100%;text-align:left;padding:9px 18px;font-size:14px;font-weight:500;color:#666;background:none;border:none;border-left:3px solid transparent;cursor:pointer;font-family:inherit;transition:all .15s;line-height:1.35}
+.snb.on{color:#1a6fbf;font-weight:700;border-left-color:#1a6fbf;background:#f0f6ff}
+.snb:hover:not(.on){color:#1a1a1a;background:#f4f3f0}
+.snb .snb-sub{display:block;font-size:12px;font-weight:400;color:#aaa;margin-top:1px}
+.snb.on .snb-sub{color:#6aa6e0}
+.snb-parent{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.snb-parent .snb-sub{flex:0 0 100%}
+.snb-arrow{font-size:14px;color:#bbb;transition:transform .2s;margin-left:4px;flex-shrink:0;line-height:1.6}
+.snb-arrow.open{transform:rotate(90deg)}
+.snb-children{display:none;background:#f7f7f5;border-left:3px solid #e0deda}
+.snb-children.open{display:block}
+.snb-child{padding:7px 18px 7px 24px;font-size:13px;color:#666;width:100%}
+.snb-child.on{color:#1a6fbf;font-weight:600;border-left-color:#1a6fbf;background:#edf4ff}
+.content-wrap{flex:1;min-width:0;overflow-x:hidden}
+@media(max-width:700px){
+  .sidebar{display:none}
+  .mob-tabnav{display:flex!important}
+}
+.mob-tabnav{display:none;overflow-x:auto;scrollbar-width:none;background:#fff;border-bottom:1px solid #e0deda;padding:0}
+.mob-tabnav::-webkit-scrollbar{display:none}
+.mtnb{flex-shrink:0;padding:10px 14px;font-size:12px;font-weight:500;color:#888;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;font-family:inherit;white-space:nowrap}
+.mtnb.on{color:#1a6fbf;font-weight:700;border-bottom-color:#1a6fbf}
+/* Neue Hauptpanel-Struktur */
+.main-panel{display:none}.main-panel.on{display:block}
+.snb-divider{height:1px;background:#e0deda;margin:8px 16px}
+/* Panel-Tab-Band oben */
+.tab-band{background:#fff;border-bottom:2px solid #e0deda;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none;box-shadow:0 1px 4px rgba(0,0,0,.05);width:100%;box-sizing:border-box}
+.tab-band::-webkit-scrollbar{display:none}
+.ptb{flex-shrink:0;padding:11px 18px;font-size:14px;font-weight:500;color:#888;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;font-family:inherit;transition:all .18s;white-space:nowrap;margin-bottom:-2px}
+.ptb.on{color:#1a6fbf;font-weight:700;border-bottom-color:#1a6fbf}
+.ptb:hover:not(.on){color:#1a1a1a;background:#f4f3f0}
+.subpanel{display:none}.subpanel.on{display:block}
+
+/* ── Progress ─────────────────────────────────────────────── */
+.progress-wrap{background:#fff;border-bottom:1px solid #e0deda;padding:10px 24px}
+.progress-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.progress-label{font-size:13px;color:#888;white-space:nowrap;flex-shrink:0}
+.progress-bar-outer{flex:1;height:8px;background:#eee;border-radius:4px;overflow:hidden}
+.progress-bar-inner{height:100%;background:#1a7a3c;border-radius:4px;transition:width .4s}
+.progress-pct{font-size:13px;font-weight:700;color:#1a7a3c;min-width:40px;text-align:right;flex-shrink:0}
+.reset-btn{font-size:12px;color:#bbb;background:none;border:1px solid #e0deda;cursor:pointer;font-family:inherit;padding:4px 10px;border-radius:6px;flex-shrink:0;transition:all .15s}
+.reset-btn:hover{color:#c04828;border-color:#c04828}
+
+/* ── Main layout ──────────────────────────────────────────── */
+.main{padding:20px 24px}
+.panel{display:none}.panel.on{display:block}
+
+/* ── Two-column layout for tablet/desktop ─────────────────── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.two-col-3-2{display:grid;grid-template-columns:3fr 2fr;gap:16px;align-items:start}
+@media(max-width:700px){
+  .two-col,.two-col-3-2{grid-template-columns:1fr}
+}
+
+/* ── Cards ────────────────────────────────────────────────── */
+.card{background:#fff;border:1px solid #e0deda;border-radius:14px;margin-bottom:16px;overflow:hidden}
+.card-head{padding:14px 18px;border-bottom:1px solid #e0deda;display:flex;align-items:center;gap:10px}
+.ci{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ci-t{background:#fff8e1;color:#b45309}
+.ci-g{background:#edf7ed;color:#1a7a3c}
+.ci-i{background:#e6f0fb;color:#1a6fbf}
+.ci-a{background:#f0eaff;color:#6b3fa0}
+.card-title{font-size:19px;font-weight:700}
+.card-body{padding:16px 18px}
+
+/* ── Time cards ───────────────────────────────────────────── */
+.trow{display:flex;gap:10px;flex-wrap:wrap}
+.tc{flex:1;min-width:110px;background:#f4f3f0;border-radius:10px;padding:12px 16px}
+.tl{font-size:11px;color:#888;margin-bottom:3px}
+.tv{font-size:22px;font-weight:700}
+
+/* ── Goal list ────────────────────────────────────────────── */
+.gl{list-style:none;display:flex;flex-direction:column;gap:4px}
+.gi{display:flex;align-items:flex-start;gap:0;border-radius:8px;overflow:hidden;transition:background .15s;cursor:pointer}
+.gi:hover{background:#f4f3f0}
+.gcheck-wrap{padding:12px 10px 12px 14px;flex-shrink:0}
+.gcheck{width:22px;height:22px;border-radius:50%;border:2px solid #ccc;display:flex;align-items:center;justify-content:center;transition:all .2s;background:#fff}
+.gcheck.done{background:#1a7a3c;border-color:#1a7a3c}
+.gcheck.done::after{content:'✓';font-size:12px;color:#fff;font-weight:700}
+.gi-text{flex:1;font-size:16px;line-height:1.65;padding:12px 14px 12px 0;transition:color .2s}
+.gi-text.done{color:#aaa;text-decoration:line-through}
+
+/* ── Info text ────────────────────────────────────────────── */
+.ip{font-size:16px;line-height:1.75;margin-bottom:10px}
+.ip:last-child{margin-bottom:0}
+.ip strong{font-weight:700}
+.it{font-size:11px;font-weight:700;color:#888;letter-spacing:.05em;text-transform:uppercase;margin:14px 0 6px}
+.it:first-child{margin-top:0}
+.hint{background:#f0f6ff;border-radius:10px;padding:12px 16px;font-size:15px;line-height:1.7;margin:10px 0;color:#444;border-left:3px solid #1a6fbf}
+.hint strong{color:#1a1a1a;font-weight:700}
+
+/* ── GeoGebra embed ───────────────────────────────────────── */
+.ggb-wrap{border-radius:12px;overflow:hidden;margin:10px 0;background:#f4f3f0;aspect-ratio:4/3;position:relative}
+.ggb-wrap iframe{width:100%;height:100%;border:none;display:block}
+.ggb-wrap.tall{aspect-ratio:3/4}
+.ggb-label{font-size:11px;color:#888;text-align:center;padding:5px 0 4px;font-weight:600;letter-spacing:.02em}
+
+/* ── Task cards ───────────────────────────────────────────── */
+.tg{display:flex;flex-direction:column;gap:8px}
+.tk{border:1px solid #e0deda;border-radius:12px;overflow:hidden;transition:box-shadow .15s}
+.tk:hover{box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.tk-top{padding:14px 18px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;transition:background .15s}
+.tk-top:hover{background:#f9f8f6}
+.tkt{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.tn{font-size:11px;font-weight:700;color:#888;font-family:monospace}
+.td{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:600}
+.de{background:#edf7ed;color:#2e7d32}
+.dm{background:#fff8e1;color:#b45309}
+.dh{background:#fce8e8;color:#b91c1c}
+.tq{font-size:16px;line-height:1.65;color:#1a1a1a}
+.tk-toggle{flex-shrink:0;margin-top:2px;font-size:18px;color:#bbb;transition:transform .2s;user-select:none}
+.tk-toggle.open{transform:rotate(180deg)}
+.ta{display:none;padding:14px 18px 16px;border-top:1px solid #e0deda;font-size:15px;line-height:1.75;color:#555;background:#fafaf8}
+.ta.on{display:block}
+
+/* ── Overview grid ────────────────────────────────────────── */
+.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.ov-card{background:#f4f3f0;border-radius:12px;padding:16px;cursor:pointer;border:1px solid #e0deda;transition:all .18s;display:flex;flex-direction:column;gap:4px}
+.ov-card:hover{border-color:#1a6fbf;background:#e6f0fb;transform:translateY(-1px);box-shadow:0 4px 12px rgba(26,111,191,.12)}
+.ov-num{font-size:10px;font-weight:700;color:#aaa;letter-spacing:.04em;text-transform:uppercase}
+.ov-title{font-size:15px;font-weight:700}
+.ov-sub{font-size:11px;color:#888}
+
+/* ── Section divider ──────────────────────────────────────── */
+.section-label{font-size:11px;font-weight:700;color:#aaa;letter-spacing:.06em;text-transform:uppercase;margin:20px 0 10px;padding-left:2px}
+.section-label:first-child{margin-top:0}
+
+/* Kompetenz-Badges */
+.komp-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 4px}
+.kb{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;border:1.5px solid;cursor:default}
+.kb-k1{background:#fef3e2;color:#92400e;border-color:#fcd34d}
+.kb-k2{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd}
+.kb-k3{background:#dcfce7;color:#166534;border-color:#86efac}
+.kb-k4{background:#dbeafe;color:#1e40af;border-color:#93c5fd}
+.kb-k5{background:#fce7f3;color:#9d174d;border-color:#f9a8d4}
+.kb-k6{background:#e0f2fe;color:#075985;border-color:#7dd3fc}
+.komp-desc{font-size:11px;color:#888;margin-top:5px;line-height:1.55}
+/* Beispielaufgabe */
+.bsp{background:#f9f8f6;border:1px solid #e0deda;border-radius:10px;padding:12px 14px;margin:10px 0}
+.bsp-label{font-size:10px;font-weight:700;color:#1a6fbf;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.bsp-q{font-size:15px;line-height:1.7;color:#1a1a1a;margin-bottom:8px}
+.bsp-toggle{font-size:12px;color:#1a6fbf;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;font-weight:600}
+.bsp-a{display:none;margin-top:8px;padding-top:8px;border-top:1px solid #e0deda;font-size:16px;line-height:1.7;color:#555}
+.bsp-a.on{display:block}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────────────────── -->
+<div class="header">
+  <div class="header-inner" style="display:flex;align-items:center;padding-bottom:12px">
+    <div>
+      <h1 style="font-size:17px;font-weight:700;margin-bottom:5px">Lernportal Mathematik – Oberstufe</h1>
+      <div class="badges">
+        <span class="badge b-blue">Kompetenzorientiert</span>
+        <span class="badge b-green">Aufgaben mit Lösungen</span>
+        <span class="badge b-amber">Differenziert</span>
+      </div>
+    </div>
+  </div>
+  <nav class="mob-tabnav">
+    <button class="mtnb on" onclick="show(0)">🏠 Start</button>
+    <button class="mtnb" onclick="show(1)">Koordinatensystem</button>
+    <button class="mtnb" onclick="show(4)">∫ Integral</button>
+  </nav>
+</div>
+
+<div class="app-wrap">
+<nav class="sidebar">
+  <button class="snb on" onclick="show(0)">🏠 Startseite</button>
+  <div class="snb-divider"></div>
+  <button class="snb" onclick="show(1)" id="snb-geo">Körper im kartesischen<br>Koordinatensystem<span class="snb-sub">Klasse 10 · Geometrie</span></button>
+  <div class="snb-divider"></div>
+  <button class="snb" onclick="show(4)" id="snb-int">∫ Integralrechnung<span class="snb-sub">Klasse 11 · Analysis · Q-Phase</span></button>
+  <div class="snb-divider" style="margin-top:auto"></div>
+  <button class="snb" onclick="showImpressum()" id="snb-imp" style="color:#aaa;font-size:13px;padding:8px 20px">Impressum</button>
+</nav>
+<div class="content-wrap">
+
+
+<!-- ══ STARTSEITE ═════════════════════════════════════════════════ -->
+<div class="main" style="padding:20px 24px;max-width:960px">
+<div class="panel on" id="p0">
+<div class="subpanel on" id="geo-start">
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(135deg,#1a6fbf 0%,#0d4a8a 100%);border-radius:14px;padding:32px 32px 28px;margin-bottom:20px;color:#fff">
+    <div style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:8px">Mathematik · Oberstufe</div>
+    <div style="font-size:26px;font-weight:800;line-height:1.25;margin-bottom:12px">Lernportal Mathematik</div>
+    <div style="font-size:15px;opacity:.88;line-height:1.6;max-width:600px">Diese Seite begleitet meinen Mathematikunterricht in der Einführungs- und Qualifikationsphase und orientiert sich am Rahmenplan des Bundeslandes Mecklenburg-Vorpommern. Die Inhalte werden kontinuierlich weiterentwickelt und ergänzt.</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
+      <span style="background:rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600">Kompetenzorientiert</span>
+      <span style="background:rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600">Aufgaben mit Lösungen</span>
+      <span style="background:rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600">Differenziert</span>
+      <span style="background:rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600">Seite in Entwicklung</span>
+    </div>
+  </div>
+
+  <!-- Inhaltsübersicht -->
+  <div class="two-col" style="margin-bottom:20px">
+    <div style="background:#fff8f0;border-radius:12px;padding:20px;border-left:4px solid #b45309">
+      <div style="font-size:11px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px">Klasse 10 · Geometrie</div>
+      <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Körper im kartesischen Koordinatensystem</div>
+      <div style="font-size:14px;color:#555;line-height:1.6">Punkte ablesen, Quader, Pyramide, Prisma, Kegel und Zylinder darstellen und berechnen – mit interaktiven GeoGebra-Visualisierungen und Aufgaben zu Pythagoras und Trigonometrie.</div>
+      <button onclick="show(1)" style="margin-top:14px;background:#b45309;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">Zur Geometrie →</button>
+    </div>
+    <div style="background:#f0f6ff;border-radius:12px;padding:20px;border-left:4px solid #1a6fbf">
+      <div style="font-size:11px;font-weight:700;color:#1a6fbf;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px">Klasse 11 · Analysis · Q-Phase</div>
+      <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Integralrechnung</div>
+      <div style="font-size:14px;color:#555;line-height:1.6">Stammfunktionen, Bestände, Hauptsatz, Flächen unter Kurven und Flächen zwischen zwei Kurven – didaktisch aufgebaut vom Bestand bis zu Flächen zwischen Graphen von Funktionen.</div>
+      <button onclick="show(4)" style="margin-top:14px;background:#1a6fbf;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">Zur Integralrechnung →</button>
+    </div>
+  </div>
+
+  <!-- Bedienung als Icon-Leiste + Hinweise -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-g">↗</div><span class="card-title">So nutzt du diese Seite</span></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="font-size:22px;flex-shrink:0">☰</div>
+            <div><div style="font-weight:700;font-size:13px;margin-bottom:2px">Seitenleiste</div><div style="font-size:13px;color:#666">Thema wählen, Tab-Band zeigt Unterthemen</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="font-size:22px;flex-shrink:0">✏️</div>
+            <div><div style="font-weight:700;font-size:13px;margin-bottom:2px">Aufgaben</div><div style="font-size:13px;color:#666">Aufklappen, lösen, dann Lösung prüfen</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="font-size:22px;flex-shrink:0">☑️</div>
+            <div><div style="font-weight:700;font-size:13px;margin-bottom:2px">Lernziele</div><div style="font-size:13px;color:#666">Abhaken und Fortschritt im Balken verfolgen</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="font-size:22px;flex-shrink:0">🔢</div>
+            <div><div style="font-weight:700;font-size:13px;margin-bottom:2px">GeoGebra</div><div style="font-size:13px;color:#666">3D-Darstellungen drehen und zoomen</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">!</div><span class="card-title">Hinweise zur Seite</span></div>
+      <div class="card-body">
+        <div class="hint" style="margin-bottom:10px">
+          <strong>Seite in Entwicklung.</strong> Diese Lernseite wird parallel zum Unterricht in mehreren Kursen eingesetzt und kontinuierlich überarbeitet. Inhalte können sich ändern oder erweitert werden.
+        </div>
+        <div class="hint" style="background:#f0f6ff;border-left-color:#1a6fbf;margin-bottom:10px">
+          <strong>Grundkurs MV.</strong> Die Inhalte orientieren sich am Anforderungsniveau des Grundkurses (Rahmenplan 2019).
+        </div>
+        <div class="hint" style="background:#edf7ed;border-left-color:#1a7a3c">
+          <strong>Feedback willkommen.</strong> Fehler oder Verbesserungsvorschläge gern direkt im Unterricht melden.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ STUNDE 1 ════════════════════════════════════════════════ -->
+</div><!-- end p0 -->
+</div>
+
+<!-- ══ GEOMETRIE ══════════════════════════════════════════════════ -->
+<div>
+<div class="tab-band" id="geo-tabs" style="display:none">
+  <button class="ptb on" onclick="show(1);syncGeoTab(0)">Teil 1 · Koordinatensystem</button>
+  <button class="ptb" onclick="show(2);syncGeoTab(1)">Teil 2 · Körper im Raum</button>
+</div>
+<div class="panel" id="p1">
+<div style="background:#fff8f0;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%" id="pbar-wrap-geo">
+  <span style="font-size:12px;font-weight:600;color:#b45309;white-space:nowrap">Geometrie · Lernziele:</span>
+  <div style="flex:1;height:7px;background:#eee;border-radius:4px;overflow:hidden">
+    <div style="height:100%;background:#b45309;border-radius:4px;transition:width .4s" id="pbar-geo"></div>
+  </div>
+  <span style="font-size:12px;font-weight:700;color:#b45309;white-space:nowrap;min-width:36px;text-align:right" id="ppct-geo">0 %</span>
+  <button onclick="resetGroupProgress('geo')" style="background:none;border:1px solid #ddd;border-radius:5px;padding:3px 8px;font-size:11px;color:#aaa;cursor:pointer;font-family:inherit">↺</button>
+</div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-t">⏱</div><span class="card-title">Teil 1: Koordinatensystem · 90 Minuten</span></div>
+    <div class="card-body">
+      <div class="trow">
+        <div class="tc"><div class="tl">Phase 1</div><div class="tv">30'</div><div class="tl" style="margin-top:3px">Einführung Koordinatensystem</div></div>
+        <div class="tc"><div class="tl">Phase 2</div><div class="tv">35'</div><div class="tl" style="margin-top:3px">Zeichnen &amp; Ablesen üben</div></div>
+        <div class="tc"><div class="tl">Phase 3</div><div class="tv">25'</div><div class="tl" style="margin-top:3px">Würfel &amp; Quader</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele Teil 1</span></div>
+    <div class="card-body">
+      <div class="two-col">
+        <ul class="gl">
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kenne x-, y- und z-Achse und ihre Richtungen im Raum.</span></li>
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann ein kartesisches Koordinatensystem als Schrägbild selbst zeichnen und beschriften.</span></li>
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann Punkte P(x|y|z) einzeichnen und Koordinaten ablesen.</span></li>
+        </ul>
+        <ul class="gl">
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese achsenparallele Abstände direkt aus Koordinaten ab.</span></li>
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne Quader-Eckpunkte und lese Kantenlängen direkt ab.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 1 -->
+  <div class="section-label" id="phase1">Phase 1 · Das kartesische Koordinatensystem</div>
+  <div class="two-col-3-2">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Punkt im Koordinatensystem</span></div>
+      <div class="card-body">
+        <div class="ggb-wrap">
+          <iframe data-src="https://www.geogebra.org/material/iframe/id/mvvnfmvh/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="ggb-label">Punkt A(2|3|4) – drehen mit Finger oder Maus</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe</div>
+          <div class="bsp-q">Der Punkt P(3|2|5) soll in ein kartesisches Koordinatensystem eingezeichnet werden. Beschreibe den Weg zu P Schritt für Schritt und benenne die Koordinaten.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">① 3 Einheiten in x-Richtung (diagonal nach vorne) → ② 2 Einheiten in y-Richtung (waagerecht) → ③ 5 Einheiten in z-Richtung (senkrecht nach oben). x=3 gibt die Breite, y=2 die Tiefe, z=5 die Höhe an.</div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k4">K4 – Darstellen</span>
+          <span class="kb kb-k6">K6 – Kommunizieren</span>
+        </div>
+        <div class="komp-desc">K4: Koordinaten und Schrägbild als mathematische Darstellungsformen verwenden · K6: Lage von Punkten im Raum fachsprachlich beschreiben</div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Grundlagen</span></div>
+        <div class="card-body">
+          <div class="ip">Drei senkrechte Achsen schneiden sich im <strong>Ursprung O(0|0|0)</strong>. Jeden Punkt beschreibt das Tripel <strong>P(x | y | z)</strong> – x für Breite, y für Tiefe, z für Höhe.</div>
+          <div class="it">Punkt einzeichnen</div>
+          <div class="ip"><strong>①</strong> x-Schritte diagonal → <strong>②</strong> y-Schritte waagerecht → <strong>③</strong> z-Schritte nach oben</div>
+          <div class="it">Schrägbild auf Karopapier</div>
+          <div class="ip">
+            <strong>①</strong> y-Achse waagerecht nach rechts<br>
+            <strong>②</strong> z-Achse senkrecht nach oben<br>
+            <strong>③</strong> x-Achse diagonal nach unten links<br>
+            <strong>④</strong> Alle 2 Kästchen = 1 Längeneinheit (LE)
+          </div>
+          <div class="it">Abstände ablesen</div>
+          <div class="ip">Unterscheiden sich zwei Punkte nur in <em>einer</em> Koordinate → Abstand = Differenz direkt ablesbar.<br><strong>Beispiel:</strong> P(1|4|0) und Q(7|4|0) → |PQ| = 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="section-label" id="phase3">Phase 3 · Würfel &amp; Quader</div>
+  <div class="two-col-3-2">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Quader im Koordinatensystem</span></div>
+      <div class="card-body">
+        <div class="ggb-wrap">
+          <iframe data-src="https://www.geogebra.org/material/iframe/id/dgs2xrnd/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="ggb-label">Quader – Kantenlängen direkt aus Gegenecke G(a|b|c) ablesen</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe</div>
+          <div class="bsp-q">Ein Quader hat die Eckpunkte O(0|0|0) und G(5|3|4). Entnehme die Kantenlängen direkt aus den Koordinaten. Entscheide, ob es sich um einen Würfel handelt, und berechne das Volumen.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">a=5, b=3, c=4 (direkt aus G abgelesen). Kein Würfel, da a≠b≠c. V = 5·3·4 = 60.</div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k4">K4 – Darstellen</span>
+          <span class="kb kb-k5">K5 – Formeln anwenden</span>
+          <span class="kb kb-k1">K1 – Argumentieren</span>
+        </div>
+        <div class="komp-desc">K4: Körper im Koordinatensystem darstellen und ablesen · K5: Volumen- und Oberflächenformeln anwenden · K1: Begründen, ob Würfel oder Quader vorliegt</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Ablesen</span></div>
+      <div class="card-body">
+        <div class="ip">Eine Ecke liegt im Ursprung. Die <strong>Gegenecke G(a|b|c)</strong> liefert direkt alle drei Kantenlängen.</div>
+        <div class="hint"><strong>Würfel oder Quader?</strong><br>G(5|5|5) → alle Kanten gleich → Würfel.<br>G(6|3|4) → Koordinaten verschieden → Quader.</div>
+        <div class="it">Formeln</div>
+        <div class="ip">V = a · b · c<br>O = 2 · (a·b + a·c + b·c)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aufgaben S1 -->
+  <div class="section-label">Aufgaben Teil 1</div>
+  <div class="two-col">
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.1</span><span class="td de">Einfach</span></div><div class="tq">Zeichne die Punkte A(3|0|0), B(0|2|0) und C(0|0|4) in ein kartesisches Koordinatensystem ein. Benenne jeweils die Achse, auf der der Punkt liegt, und begründe deine Antwort anhand der Koordinaten.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">A liegt auf der x-Achse (y=0, z=0), B auf der y-Achse (x=0, z=0), C auf der z-Achse (x=0, y=0). Jeweils zwei Koordinaten sind 0.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.2</span><span class="td de">Einfach</span></div><div class="tq">Zeichne den Punkt P(2|3|4) in ein kartesisches Koordinatensystem ein. Beschreibe den Weg zum Punkt Schritt für Schritt anhand der drei Koordinaten.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">① 2 Einheiten in x-Richtung (diagonal) → ② 3 Einheiten in y-Richtung (waagerecht) → ③ 4 Einheiten in z-Richtung (senkrecht nach oben).</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.3</span><span class="td dm">Mittel</span></div><div class="tq">Gegeben sind die Punkte P(1|4|0) und Q(7|4|0). Entnehme den Abstand |PQ| direkt aus den Koordinaten und begründe, warum dies ohne Rechnung möglich ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">|PQ| = 7−1 = 6. P und Q unterscheiden sich nur in der x-Koordinate (y=4 und z=0 sind gleich) → die Strecke verläuft achsenparallel zur x-Achse → der Abstand entspricht der Differenz der x-Werte.</div></div>
+    </div>
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.4</span><span class="td dm">Mittel</span></div><div class="tq">Ein Quader hat die Eckpunkte O(0|0|0) und G(6|3|4). Entnehme die Kantenlängen direkt aus den Koordinaten und berechne das Volumen sowie die Oberfläche.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a=6, b=3, c=4. V = 6·3·4 = 72. O = 2·(18+24+12) = 108.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S1.5</span><span class="td dh">Schwer</span></div><div class="tq">Ein Quader hat die Eckpunkte A(2|1|0) und G(8|5|4). Entnehme die Kantenlängen durch Differenzbildung aus den Koordinaten und berechne das Volumen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a=8−2=6, b=5−1=4, c=4−0=4. V = 6·4·4 = 96.</div></div>
+    </div>
+  </div>
+
+</div><!-- end p1 -->
+
+<!-- ══ STUNDE 2 ════════════════════════════════════════════════ -->
+<div class="panel" id="p2">
+<div style="background:#fff8f0;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%" id="pbar-wrap-geo2">
+  <span style="font-size:12px;font-weight:600;color:#b45309;white-space:nowrap">Geometrie · Lernziele:</span>
+  <div style="flex:1;height:7px;background:#eee;border-radius:4px;overflow:hidden">
+    <div style="height:100%;background:#b45309;border-radius:4px;transition:width .4s" id="pbar-geo2"></div>
+  </div>
+  <span style="font-size:12px;font-weight:700;color:#b45309;white-space:nowrap;min-width:36px;text-align:right" id="ppct-geo2">0 %</span>
+  <button onclick="resetGroupProgress('geo')" style="background:none;border:1px solid #ddd;border-radius:5px;padding:3px 8px;font-size:11px;color:#aaa;cursor:pointer;font-family:inherit">↺</button>
+</div>
+<div style="padding:20px 24px;max-width:960px">
+  <div class="card">
+    <div class="card-head"><div class="ci ci-t">⏱</div><span class="card-title">Teil 2: Körper im Raum · 90 Minuten</span></div>
+    <div class="card-body">
+      <div class="trow">
+        <div class="tc"><div class="tl">Phase 4</div><div class="tv">35'</div><div class="tl" style="margin-top:3px">Pyramide &amp; Stumpf</div></div>
+        <div class="tc"><div class="tl">Phase 5</div><div class="tv">30'</div><div class="tl" style="margin-top:3px">Prisma · Kegel · Zylinder</div></div>
+        <div class="tc"><div class="tl">Phase 6</div><div class="tv">25'</div><div class="tl" style="margin-top:3px">Sicherung &amp; Übung</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele Teil 2</span></div>
+    <div class="card-body">
+      <div class="two-col">
+        <ul class="gl">
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese Grundfläche und Höhe einer Pyramide direkt aus Koordinaten ab.</span></li>
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese beim Stumpf Grundfläche, Deckfläche und Höhe ab und berechne das Volumen.</span></li>
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese bei Prisma die Grundfläche und Höhe ab.</span></li>
+        </ul>
+        <ul class="gl">
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese bei Zylinder und Kegel Mittelpunkt, Radius und Höhe ab.</span></li>
+          <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="geo" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich beschreibe zusammengesetzte Körper und berechne ihr Gesamtvolumen.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 4: Pyramide -->
+  <div class="section-label" id="phase4">Phase 4 · Pyramide &amp; Pyramidenstumpf</div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Quadratische Pyramide</span></div>
+      <div class="card-body">
+        <div class="ggb-wrap">
+          <iframe data-src="https://www.geogebra.org/material/iframe/id/wgwgttvp/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="ggb-label">Grundfläche A(0|0|0)–D(6|6|0), Spitze S(3|3|7)</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe</div>
+          <div class="bsp-q">Entnehme aus der Darstellung die Grundflächenseite a und die Höhe h. Weise nach, dass die Grundfläche ein Quadrat ist, und berechne das Volumen der Pyramide.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">a = 6 (x-Koordinate von B), h = 7 (z-Koordinate von S). Quadrat: alle vier Seiten = 6 ✓. V = ⅓ · 36 · 7 = 84.</div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k4">K4 – Darstellen</span>
+          <span class="kb kb-k2">K2 – Problemlösen</span>
+          <span class="kb kb-k1">K1 – Argumentieren</span>
+        </div>
+        <div class="komp-desc">K4: Körper im Koordinatensystem ablesen · K2: Maße entnehmen und zur Berechnung nutzen · K1: Nachweis der Quadrateigenschaft durch Vergleich der Kantenlängen</div>
+        <div class="hint" style="margin-top:10px"><strong>Ablesen:</strong> a = x-Koordinate von B = 6, h = z-Koordinate von S = 7.<br>V = ⅓ · a² · h = ⅓ · 36 · 7 = 84</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Pyramidenstumpf</span></div>
+      <div class="card-body">
+        <div class="ggb-wrap">
+          <iframe data-src="https://www.geogebra.org/material/iframe/id/evegftya/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="ggb-label">a=6 (z=0), b=3 (z=5), h=5</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe – Volumen, Mantellinie &amp; Neigungswinkel</div>
+          <div class="bsp-q">Der Pyramidenstumpf hat die Grundfläche mit a=6 (z=0) und die Deckfläche mit b=3 (z=5). Das rechtwinklige Dreieck im GeoGebra-Fenster zeigt die Mantellinie einer Seitenfläche.<br><br>
+          <strong>a)</strong> Entnehme a, b und h direkt aus den Koordinaten und berechne das Volumen.<br>
+          <strong>b)</strong> Berechne mithilfe des Satzes des Pythagoras die Länge der Apotheme ap (Höhe einer Trapezseitenfläche). Die waagerechte Kathete beträgt (a−b)/2, die senkrechte Kathete ist h.<br>
+          <strong>c)</strong> Berechne den Neigungswinkel α der Mantellinie gegenüber der Grundfläche.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            <strong>a)</strong> a=6, b=3, h=5. A₁=36, A₂=9. V = 5/3·(36+9+18) = 105.<br><br>
+            <strong>b)</strong> Waagerechte Kathete = (6−3)/2 = 1,5. Senkrechte Kathete = h = 5.<br>
+            ap = √(1,5² + 5²) = √(2,25 + 25) = √27,25 ≈ 5,22.<br><br>
+            <strong>c)</strong> tan(α) = h / ((a−b)/2) = 5/1,5 ≈ 3,33 → α = arctan(3,33) ≈ 73,3°.
+          </div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k4">K4 – Darstellen</span>
+          <span class="kb kb-k5">K5 – Formeln anwenden</span>
+          <span class="kb kb-k2">K2 – Problemlösen</span>
+          <span class="kb kb-k1">K1 – Argumentieren</span>
+        </div>
+        <div class="komp-desc">K4: Maße direkt aus dem Koordinatensystem entnehmen · K5: Pythagoras und Trigonometrie anwenden · K2: Mehrstufige Berechnung strukturieren · K1: Das rechtwinklige Dreieck im Schrägbild identifizieren und begründen</div>
+        <div class="hint" style="margin-top:10px"><strong>Ablesen:</strong> a aus B, b = x(F)−x(E), h = z der Deckfläche.<br>V = h/3 · (A₁ + A₂ + √(A₁·A₂))</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 5: Prisma, Zylinder, Kegel -->
+  <div class="section-label" id="phase5">Phase 5 · Prisma · Zylinder &amp; Kegel</div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Dreiecksprisma</span></div>
+      <div class="card-body">
+        <div class="ggb-wrap">
+          <iframe data-src="https://www.geogebra.org/material/iframe/id/hdwv4fgm/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="ggb-label">A(0|0|0), B(6|0|0), C(0|4|0), h=5</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe</div>
+          <div class="bsp-q">Entnehme die achsenparallelen Seiten des Grunddreiecks und die Höhe des Prismas direkt aus den Koordinaten. Berechne das Volumen. Begründe, welche Seite des Grunddreiecks sich nicht direkt ablesen lässt.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">AB = 6 (achsenparallel zur x-Achse), AC = 4 (achsenparallel zur y-Achse), h = 5 (z-Differenz) → direkt ablesbar. Die Seite BC ist nicht achsenparallel und lässt sich daher nicht direkt ablesen. Grundfläche = ½·6·4 = 12. V = 12·5 = 60.</div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k4">K4 – Darstellen</span>
+          <span class="kb kb-k1">K1 – Argumentieren</span>
+          <span class="kb kb-k5">K5 – Formeln anwenden</span>
+        </div>
+        <div class="komp-desc">K4: Prisma im Koordinatensystem ablesen · K1: Begründen, welche Strecken achsenparallel und damit direkt ablesbar sind · K5: Prismenvolumen berechnen</div>
+        <div class="hint" style="margin-top:10px"><strong>Ablesen:</strong> AB=6, AC=4 (achsenparallel), h=5 (z-Differenz).<br>V = ½ · 6 · 4 · 5 = 60</div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zylinder</span></div>
+        <div class="card-body">
+          <div class="ggb-wrap">
+            <iframe data-src="https://www.geogebra.org/material/iframe/id/gmqn5nmw/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="ggb-label">M(0|0|0), r=3, h=6</div>
+          <div class="bsp">
+            <div class="bsp-label">Beispielaufgabe</div>
+            <div class="bsp-q">Ein Zylinder hat den Grundflächen-Mittelpunkt M(0|0|0) und den Randpunkt R(3|0|0). Die Deckfläche liegt bei z=6. Entnehme r und h direkt aus den Koordinaten und berechne Volumen und Mantelfläche.</div>
+            <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+            <div class="bsp-a">r = 3 (x-Differenz R−M), h = 6 (z der Deckfläche). V = π·9·6 ≈ 169,6. Mantelfläche = 2π·3·6 ≈ 113,1.</div>
+          </div>
+          <div class="komp-wrap">
+            <span class="kb kb-k4">K4 – Darstellen</span>
+            <span class="kb kb-k3">K3 – Modellieren</span>
+            <span class="kb kb-k5">K5 – Formeln anwenden</span>
+          </div>
+          <div class="komp-desc">K4: Zylinder im Koordinatensystem beschreiben · K3: Reale Objekte als Zylinder modellieren · K5: Volumen und Mantelfläche berechnen</div>
+          <div class="hint" style="margin-top:10px"><strong>Ablesen:</strong> r aus Randpunkt R(3|0|0), h = z der Deckfläche.<br>V = π · r² · h ≈ 170</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Kegel</span></div>
+        <div class="card-body">
+          <div class="ggb-wrap">
+            <iframe data-src="https://www.geogebra.org/material/iframe/id/vwa3dnxx/width/800/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false/av/false/p3/true" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="ggb-label">M(0|0|0), r=4, Spitze S(0|0|7)</div>
+          <div class="bsp">
+            <div class="bsp-label">Beispielaufgabe – Mantellinie &amp; Neigungswinkel</div>
+            <div class="bsp-q">Der Kegel hat den Grundflächen-Mittelpunkt M(0|0|0), den Randpunkt R(4|0|0) und die Spitze S(0|0|7). Das rechtwinklige Dreieck im GeoGebra-Fenster zeigt die Mantellinie s des Kegels.<br><br>
+            <strong>a)</strong> Entnehme r und h direkt aus den Koordinaten und berechne Volumen und Mantelfläche.<br>
+            <strong>b)</strong> Berechne mithilfe des Satzes des Pythagoras die Länge der Mantellinie s.<br>
+            <strong>c)</strong> Berechne den Neigungswinkel α der Mantellinie gegenüber der Grundfläche und den Neigungswinkel β gegenüber der Achse (Spitzenwinkel).</div>
+            <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+            <div class="bsp-a">
+              <strong>a)</strong> r = 4 (x-Differenz R−M), h = 7 (z von S).<br>
+              V = ⅓·π·16·7 ≈ 117,3. s = √(r²+h²) = √65 ≈ 8,06. Mantelfläche = π·4·8,06 ≈ 101,3.<br><br>
+              <strong>b)</strong> s = √(4² + 7²) = √(16 + 49) = √65 ≈ 8,06.<br><br>
+              <strong>c)</strong> Neigung gegenüber Grundfläche: tan(α) = h/r = 7/4 = 1,75 → α = arctan(1,75) ≈ 60,3°.<br>
+              Spitzenwinkel (gegenüber Achse): tan(β) = r/h = 4/7 ≈ 0,571 → β = arctan(0,571) ≈ 29,7°.<br>
+              Probe: α + β = 60,3° + 29,7° = 90° ✓
+            </div>
+          </div>
+          <div class="komp-wrap">
+            <span class="kb kb-k4">K4 – Darstellen</span>
+            <span class="kb kb-k5">K5 – Formeln anwenden</span>
+            <span class="kb kb-k2">K2 – Problemlösen</span>
+            <span class="kb kb-k1">K1 – Argumentieren</span>
+          </div>
+          <div class="komp-desc">K4: Kegel im Koordinatensystem ablesen · K5: Pythagoras und Trigonometrie anwenden · K2: Mantellinie und Winkel aus Koordinaten ableiten · K1: Probe durch Komplementwinkel begründen</div>
+          <div class="hint" style="margin-top:10px"><strong>Ablesen:</strong> r aus Randpunkt, h = z der Spitze.<br>V = ⅓ · π · r² · h ≈ 117</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zusammengesetzte Körper</span></div>
+    <div class="card-body">
+      <div class="ip"><strong>① Zerlegen</strong> – Trennfläche an z-Koordinate ablesen &nbsp;·&nbsp; <strong>② Maße ablesen</strong> für jeden Teilkörper &nbsp;·&nbsp; <strong>③ Volumina addieren</strong> (oder subtrahieren bei Aushöhlungen)</div>
+    </div>
+  </div>
+
+  <!-- Aufgaben S2 -->
+  <div class="section-label">Aufgaben Teil 2</div>
+  <div class="two-col">
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.1</span><span class="td de">Einfach</span></div><div class="tq">Eine quadratische Pyramide hat die Eckpunkte A(0|0|0), B(8|0|0), C(8|8|0), D(0|8|0) und die Spitze S(4|4|9). Entnehme die Grundflächenseite a und die Höhe h direkt aus den Koordinaten. Weise nach, dass die Grundfläche ein Quadrat ist, und berechne das Volumen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a=8 (alle Seiten gleich), h=9 (z von S). Quadrat: alle Seiten = 8 ✓. V = ⅓·64·9 = 192.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.2</span><span class="td dm">Mittel</span></div><div class="tq">Ein quadratischer Pyramidenstumpf hat die Grundflächenseite a=10 (bei z=0) und die Deckflächenseite b=6 (bei z=5), zentriert angeordnet. Gib die Koordinaten aller 8 Eckpunkte an und berechne das Volumen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Grundfläche: A(0|0|0), B(10|0|0), C(10|10|0), D(0|10|0). Deckfläche: E(2|2|5), F(8|2|5), G(8|8|5), H(2|8|5). A₁=100, A₂=36. V = 5/3·196 ≈ 326,7.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.3</span><span class="td dm">Mittel</span></div><div class="tq">Ein gerades Dreiecksprisma hat die Grundfläche A(0|0|0), B(6|0|0), C(0|4|0) und die Höhe h=5. Entnehme alle achsenparallelen Maße direkt aus den Koordinaten und berechne das Volumen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">h=5, AB=6 und AC=4 (achsenparallel → direkt ablesbar). Grundfläche = ½·6·4 = 12. V = 12·5 = 60.</div></div>
+    </div>
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.4</span><span class="td dh">Schwer</span></div><div class="tq">Ein zusammengesetzter Körper besteht aus einem quadratischen Prisma mit a=6 und h₁=4 (z: 0 bis 4) sowie einer aufgesetzten quadratischen Pyramide mit gleicher Grundfläche und der Spitze bei z=9. Gib die Koordinaten aller charakteristischen Punkte an und berechne das Gesamtvolumen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Prisma: O(0|0|0) bis G(6|6|4). Pyramide: Spitze S(3|3|9), h₂=5. V_Prisma = 144. V_Pyramide = 60. V_gesamt = 204.</div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.5</span><span class="td dh">Schwer</span></div><div class="tq">Ein Kegelstumpf hat den Grundflächen-Mittelpunkt M(0|0|0) mit Randpunkt R₁(5|0|0) sowie den Deckflächen-Mittelpunkt M'(0|0|8) mit Randpunkt R₂(3|0|8). Entnehme r, r' und h direkt aus den Koordinaten und berechne das Volumen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">r=5, r'=3, h=8. V = 8π/3·(25+15+9) ≈ 410,5.</div></div>
+    </div>
+  </div>
+
+</div><!-- end p2 -->
+
+<!-- ══ AUFGABENPOOL ════════════════════════════════════════════ -->
+
+</div>
+</div><!-- end geometrie wrapper -->
+
+<!-- ══ INTEGRALRECHNUNG ═══════════════════════════════════════════ -->
+<div>
+<div class="panel" id="p4">
+  <!-- Tab-Band für Integralrechnung -->
+  <div class="tab-band" id="int-tabs">
+    <button class="ptb on" onclick="showIntTab('int-stamm',this)">Stammfunktion</button>
+    <button class="ptb" onclick="showIntTab('int-bestand',this)">Bestände</button>
+    <button class="ptb" onclick="showIntTab('int-grafisch',this)">Grafisches Integrieren</button>
+    <button class="ptb" onclick="showIntTab('int-hauptsatz',this)">Hauptsatz &amp; Flächen</button>
+  </div>
+<div style="background:#fff;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%" id="pbar-wrap-int">
+  <span style="font-size:12px;font-weight:600;color:#666;white-space:nowrap">Integralrechnung · Lernziele:</span>
+  <div style="flex:1;height:7px;background:#eee;border-radius:4px;overflow:hidden">
+    <div style="height:100%;background:#1a6fbf;border-radius:4px;transition:width .4s;width:0%" id="pbar-int"></div>
+  </div>
+  <span style="font-size:12px;font-weight:700;color:#1a6fbf;white-space:nowrap;min-width:36px;text-align:right" id="ppct-int">0 %</span>
+  <button onclick="resetGroupProgress('int')" style="background:none;border:1px solid #ddd;border-radius:5px;padding:3px 8px;font-size:11px;color:#aaa;cursor:pointer;font-family:inherit">↺</button>
+</div>
+  <div class="main" style="padding:12px 24px 20px;max-width:960px">
+
+  <!-- ── STAMMFUNKTION ─────────────────────────────────────────── -->
+  <div class="subpanel on" id="int-stamm">
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Integralrechnung · Klasse 11 · Q-Phase · MV</span></div>
+      <div class="card-body">
+        <div class="ip">Die Integralrechnung verbindet den Begriff der Fläche mit dem der Stammfunktion. Sie baut auf der Differentialrechnung auf – Integrieren ist Differenzieren rückwärts.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Ableitungsregeln für Polynome (Potenz-, Summen-, Faktorregel) sicher beherrschen.</div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Integralrechnung</span></div>
+      <div class="card-body">
+        <div class="two-col">
+          <ul class="gl">
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich bestimme Stammfunktionen ganzrationaler Funktionen mithilfe der Potenz-, Summen- und Faktorregel.</span></li>
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich begründe, dass F eine Stammfunktion von f ist, indem ich F ableite und mit f vergleiche.</span></li>
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich löse Anfangswertprobleme und bestimme die Integrationskonstante C aus einer Bedingung F(a) = b.</span></li>
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich berechne den Bestand einer Größe aus Anfangswert und Flächenbilanz unter dem Graphen der Änderungsrate.</span></li>
+          </ul>
+          <ul class="gl">
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkläre den Zusammenhang zwischen Ableitung und Integral (Hauptsatz) und wende ihn zur Berechnung von Flächenbilanzen an.</span></li>
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich berechne den tatsächlichen Flächeninhalt zwischen einem Graphen und der x-Achse, auch bei Vorzeichenwechsel.</span></li>
+            <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="int" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich berechne Flächen zwischen zwei Graphen und bestimme Schnittpunkte als Integrationsgrenzen.</span></li>
+          </ul>
+        </div>
+        <button onclick="resetGroupProgress('int')" style="margin-top:10px;background:none;border:1px solid #ccc;border-radius:6px;padding:5px 12px;font-size:12px;color:#888;cursor:pointer;font-family:inherit">Fortschritt zurücksetzen</button>
+      </div>
+    </div>
+
+    <div class="section-label">Hinführung – Differenzieren rückwärts</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vom Ableiten zum Integrieren</span></div>
+      <div class="card-body">
+        <div class="ip">Bisher haben wir Funktionen <strong>abgeleitet</strong>. Jetzt stellen wir die Frage umgekehrt: <strong>Welche Funktion F hat die Ableitung f?</strong></div>
+        <div class="two-col">
+          <div>
+            <div class="it">Bekannte Richtung: Differenzieren</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 16px;">
+              \(F(x) = 5x^2 \rightarrow F'(x) = 10x\)<br>
+              \(F(x) = \tfrac{2}{3}x^3 + x \rightarrow F'(x) = 2x^2 + 1\)
+            </div>
+          </div>
+          <div>
+            <div class="it">Neue Richtung: Integrieren</div>
+            <div class="ip" style="background:#f0f6ff;border-radius:10px;padding:12px 16px;border-left:3px solid #1a6fbf;">
+              \(f(x) = 10x \rightarrow F(x) = {?}\)<br>
+              \(f(x) = 2x^2 + 1 \rightarrow F(x) = {?}\)
+            </div>
+          </div>
+        </div>
+        <div class="it">Warum gibt es unendlich viele Stammfunktionen?</div>
+        <div class="ip">Beim Ableiten fällt jede addierte Konstante weg. Deshalb schreibt man alle Stammfunktionen als <strong>unbestimmtes Integral</strong> mit der <strong>Integrationskonstante C</strong>:</div>
+        <div class="ip" style="background:#f0f6ff;border-radius:10px;padding:12px 16px;text-align:center;font-size:18px;border-left:3px solid #1a6fbf;">
+          \[\int (2x^2 + 1)\,dx = \tfrac{2}{3}x^3 + x + C\]
+        </div>
+        <div class="it">Das Zusammenspiel</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 16px;text-align:center;">
+          <span style="color:#1a6fbf;font-weight:700">← integrieren</span><br>
+          \(F(x) \;\longleftrightarrow\; f(x)\)<br>
+          <span style="color:#c04828;font-weight:700">differenzieren →</span>
+        </div>
+        <div class="hint"><strong>Merke:</strong> Die Probe für jede Stammfunktion: Ableiten und prüfen, ob f(x) herauskommt.</div>
+      </div>
+    </div>
+
+    <div class="section-label">Grundregeln der Integration</div>
+    <div class="two-col-3-2">
+      <div class="card">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Stammfunktion – Grundregeln</span></div>
+        <div class="card-body">
+          <div class="it">Potenzregel der Integration</div>
+          <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 16px;text-align:center">
+            \[\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)\]
+          </div>
+          <div class="it">Summen- und Faktorregel</div>
+          <div class="ip">\[\int [f(x)+g(x)]\,dx = \int f(x)\,dx + \int g(x)\,dx\]\[\int k \cdot f(x)\,dx = k \cdot \int f(x)\,dx\]</div>
+          <div class="bsp">
+            <div class="bsp-label">Beispielaufgabe</div>
+            <div class="bsp-q">Bestimme die Stammfunktion F von \(f(x) = 3x^2 - 4x + 5\).</div>
+            <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+            <div class="bsp-a">\(F(x) = x^3 - 2x^2 + 5x + C\)<br>Probe: \(F'(x) = 3x^2 - 4x + 5 = f(x)\) ✓</div>
+          </div>
+          <div class="komp-wrap">
+            <span class="kb kb-k5">K5 – Formeln anwenden</span>
+            <span class="kb kb-k1">K1 – Argumentieren</span>
+          </div>
+          <div class="komp-desc">K5: Integrationsregeln anwenden · K1: Probe durch Ableitung</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Anfangswertproblem</span></div>
+        <div class="card-body">
+          <div class="ip">Oft sucht man nicht alle Stammfunktionen, sondern <strong>eine bestimmte</strong>. Dafür benötigt man einen Punkt \(F(a) = b\).</div>
+          <div class="it">Vorgehen</div>
+          <div class="ip"><strong>①</strong> Integrieren → alle Stammfunktionen bestimmen<br><strong>②</strong> Punkt einsetzen<br><strong>③</strong> C berechnen</div>
+          <div class="bsp">
+            <div class="bsp-label">Beispielaufgabe</div>
+            <div class="bsp-q">Gegeben \(f(x) = 2x - 3\) und \(F(1) = 0\). Bestimme F(x).</div>
+            <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+            <div class="bsp-a">\(F(x) = x^2 - 3x + C\)<br>\(F(1) = 1 - 3 + C = 0 \Rightarrow C = 2\)<br>\(F(x) = x^2 - 3x + 2\)</div>
+          </div>
+          <div class="komp-wrap">
+            <span class="kb kb-k2">K2 – Problemlösen</span>
+            <span class="kb kb-k5">K5 – Formeln anwenden</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Besondere Stammfunktionen – sin, cos und e<sup>x</sup></span></div>
+      <div class="card-body">
+        <div class="ip">Neben Polynomen gibt es drei weitere Funktionen, deren Stammfunktionen du kennen musst:</div>
+        <div class="two-col" style="margin:12px 0">
+          <div>
+            <div class="it">Sinus und Kosinus</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 16px">
+              \[\int \sin(x)\,dx = -\cos(x) + C\]
+              \[\int \cos(x)\,dx = \phantom{-}\sin(x) + C\]
+            </div>
+            <div class="ip" style="font-size:14px;margin-top:8px"><strong>Merkhilfe:</strong> Beim Ableiten wandert sin → cos → −sin → −cos → sin. Integration läuft <em>rückwärts</em> durch diesen Kreis – also sin kommt von −cos.</div>
+          </div>
+          <div>
+            <div class="it">Exponentialfunktion</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 16px">
+              \[\int e^x\,dx = e^x + C\]
+            </div>
+            <div class="ip" style="font-size:14px;margin-top:8px"><strong>Besonderheit:</strong> \(e^x\) ist seine eigene Stammfunktion – Ableitung und Integral ergeben jeweils \(e^x\). Die Konstante C ist der einzige Unterschied.</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 16px;margin-top:8px">
+              \[\int e^{ax}\,dx = \frac{1}{a}\,e^{ax} + C\]
+            </div>
+            <div class="ip" style="font-size:14px;margin-top:6px">Bei \(e^{ax}\) kommt beim Ableiten der Faktor \(a\) dazu – beim Integrieren wird daher durch \(a\) dividiert.</div>
+          </div>
+        </div>
+        <div class="hint"><strong>Überblick aller Grundformen:</strong>
+          \[\int x^n\,dx = \frac{x^{n+1}}{n+1}+C \qquad \int e^x\,dx = e^x+C \qquad \int \sin x\,dx = -\cos x+C \qquad \int \cos x\,dx = \sin x+C\]
+        </div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe</div>
+          <div class="bsp-q">Bestimme die Stammfunktion von \(f(x) = 3\sin(x) - 2e^x + x^2\).</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">\(F(x) = -3\cos(x) - 2e^x + \tfrac{1}{3}x^3 + C\)<br>Probe: \(F'(x) = 3\sin(x) - 2e^x + x^2 = f(x)\) ✓</div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k5">K5 – Formeln anwenden</span>
+          <span class="kb kb-k1">K1 – Argumentieren</span>
+        </div>
+        <div class="komp-desc">K5: Integrationsregeln auf transzendente Funktionen anwenden · K1: Probe durch Ableiten</div>
+      </div>
+    </div>
+
+    <div class="section-label">Aufgaben · Stammfunktion</div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I1.1</span><span class="td de">Turmaufgabe</span></div><div class="tq">Bestimme jeweils die Menge aller Stammfunktionen.<br><br>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;margin-top:8px">
+            <div>a) \(\displaystyle\int 10x^4\,dx =\)</div>
+            <div>b) \(\displaystyle\int (x^2 - 6x + 4)\,dx =\)</div>
+            <div>c) \(\displaystyle\int \left(x + \sqrt{x}\right)dx =\)</div>
+            <div>d) \(\displaystyle\int \frac{4}{x^2}\,dx =\)</div>
+            <div>e) \(\displaystyle\int \left(2 + \frac{3}{x^2}\right)dx =\)</div>
+            <div>f) \(\displaystyle\int (12x^3 + 4x^2)\,dx =\)</div>
+            <div>g) \(\displaystyle\int \left(2x^2 - \frac{5}{x^2}\right)dx =\)</div>
+            <div>h) \(\displaystyle\int (2x^3 - 4x^{-0{,}5})\,dx =\)</div>
+            <div>i) \(\displaystyle\int e^x\,dx =\)</div>
+            <div>j) \(\displaystyle\int 3e^x\,dx =\)</div>
+            <div>k) \(\displaystyle\int \sin(x)\,dx =\)</div>
+            <div>l) \(\displaystyle\int \cos(x)\,dx =\)</div>
+            <div>m) \(\displaystyle\int (2\cos(x) + e^x)\,dx =\)</div>
+            <div>n) \(\displaystyle\int (3\sin(x) - 4e^x + x^2)\,dx =\)</div>
+          </div>
+        </div></div><div class="tk-toggle">⌄</div></div>
+        <div class="ta">
+          a) \(2x^5 + C\)<br>
+          b) \(\tfrac{1}{3}x^3 - 3x^2 + 4x + C\)<br>
+          c) \(\tfrac{1}{2}x^2 + \tfrac{2}{3}x^{3/2} + C\) &nbsp;(Hinweis: \(\sqrt{x} = x^{1/2} \rightarrow \tfrac{2}{3}x^{3/2}\))<br>
+          d) \(-\tfrac{4}{x} + C\) &nbsp;(\(4x^{-2} \rightarrow -4x^{-1}\))<br>
+          e) \(2x - \tfrac{3}{x} + C\)<br>
+          f) \(3x^4 + \tfrac{4}{3}x^3 + C\)<br>
+          g) \(\tfrac{2}{3}x^3 + \tfrac{5}{x} + C\)<br>
+          h) \(\tfrac{1}{2}x^4 - 8\sqrt{x} + C\)<br>
+          i) \(e^x + C\)<br>
+          j) \(3e^x + C\)<br>
+          k) \(-\cos(x) + C\)<br>
+          l) \(\sin(x) + C\)<br>
+          m) \(2\sin(x) + e^x + C\)<br>
+          n) \(-3\cos(x) - 4e^x + \tfrac{1}{3}x^3 + C\)
+        </div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I1.2</span><span class="td de">Einfach</span></div><div class="tq">Begründe, dass \(F(x) = \tfrac{1}{3}x^3 - 2x^2 + 5x + C\) eine Stammfunktion von \(f(x) = x^2 - 4x + 5\) ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(F'(x) = x^2 - 4x + 5 = f(x)\) ✓. Da \(F'(x) = f(x)\) gilt, ist F nach Definition eine Stammfunktion von f.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I1.3</span><span class="td dm">Mittel</span></div><div class="tq">Argumentiere mithilfe des Grades: Kann \(F(x) = 2x^3 + x + C\) eine Stammfunktion von \(f(x) = 6x^3 - 1\) sein?</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nein. F hat Grad 3, also F' hat Grad 2. f hat Grad 3. Eine Stammfunktion von f muss Grad \(n+1 = 4\) haben.</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I1.4</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Wahr oder falsch?</strong> Entscheide und begründe kurz.<br><br>a) \(F(x) = \tfrac{x^3}{3} + 1\) ist eine Stammfunktion von \(f(x) = x^2\).<br>b) \(G(x) = 2x^3 - x^2 + 5\) ist eine Stammfunktion von \(g(x) = 6x^2 - 2x\).<br>c) Jede Stammfunktion von \(f(x) = 4x\) hat die Form \(F(x) = 2x^2 + C\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) <strong>Wahr.</strong> \(F'(x) = x^2 = f(x)\) ✓ – die Konstante +1 entspricht C=1.<br>b) <strong>Wahr.</strong> \(G'(x) = 6x^2 - 2x = g(x)\) ✓<br>c) <strong>Wahr.</strong> \(\int 4x\,dx = 2x^2 + C\) – Potenzregel: Exponent +1, dann durch neuen Exponent dividieren.</div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K1.1</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Anfangswertproblem.</strong> Gegeben ist \(f(x) = x^2 - 4x + 3\). Bestimme diejenige Stammfunktion F für die \(F(1) = 2\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(F(x) = \tfrac{1}{3}x^3 - 2x^2 + 3x + C\). \(F(1) = \tfrac{1}{3}-2+3+C = \tfrac{4}{3}+C = 2 \Rightarrow C = \tfrac{2}{3}\). Also \(F(x) = \tfrac{1}{3}x^3-2x^2+3x+\tfrac{2}{3}\).</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K1.2</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Anfangswertproblem.</strong> Gegeben ist \(f(x) = 3x^2 - 2x + 1\). Bestimme diejenige Stammfunktion F, für die \(F(0) = 4\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(F(x) = x^3 - x^2 + x + C\). Bedingung: \(F(0) = C = 4\). Also \(F(x) = x^3 - x^2 + x + 4\). Probe: \(F'(x) = 3x^2 - 2x + 1 = f(x)\) ✓</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K1.3</span><span class="td dh">Schwer</span></div><div class="tq">Die Funktion \(F(x) = ax^4 + bx^2 + C\) ist Stammfunktion von \(f(x) = 8x^3 - 6x\). Bestimme \(a\) und \(b\) durch Koeffizientenvergleich und begründe dein Vorgehen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(F'(x) = 4ax^3 + 2bx\). Koeffizientenvergleich mit \(f(x) = 8x^3 - 6x\):<br>\(4a = 8 \Rightarrow a = 2\) und \(2b = -6 \Rightarrow b = -3\).<br>Also \(F(x) = 2x^4 - 3x^2 + C\). Probe: \(F'(x) = 8x^3 - 6x = f(x)\) ✓</div></div>
+      </div>
+    </div>
+  </div><!-- end int-stamm -->
+
+  <!-- ── BESTÄNDE ──────────────────────────────────────────────── -->
+  <div class="subpanel" id="int-bestand">
+    <div class="section-label" id="zwischenschritt-bestaende">Zwischenschritt · Bestände – vom Graphen zum Integral</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Von der Fläche zum Bestand</span></div>
+      <div class="card-body">
+        <div class="ip">Kennt man den <strong>Anfangswert</strong> und die <strong>Änderungsrate über die Zeit</strong> (als Graph), lässt sich der Bestand ermitteln:</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center;font-size:18px;font-weight:700">
+          Bestand = Anfangswert + Flächenbilanz
+        </div>
+        <div class="two-col" style="margin-top:12px">
+          <div>
+            <div class="it">Was ist die Flächenbilanz?</div>
+            <div class="ip">Flächen <strong>oberhalb</strong> der x-Achse zählen <strong>positiv</strong> (Zufluss, Zunahme).<br>Flächen <strong>unterhalb</strong> der x-Achse zählen <strong>negativ</strong> (Abfluss, Abnahme).</div>
+            <div class="hint"><strong>Erkenntnis:</strong> Die Flächenbilanz ist genau das, was wir als bestimmtes Integral berechnen!</div>
+          </div>
+          <div>
+            <div class="it">Mathematischer Zusammenhang</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:12px 14px;">
+              \(f(x)\) = Änderungsrate<br><br>
+              \(\displaystyle\int_a^b f(x)\,dx\) = Flächenbilanz<br><br>
+              Bestand bei b = Anfangswert + \(\displaystyle\int_a^b f(x)\,dx\)
+            </div>
+          </div>
+        </div>
+
+        <!-- Beispielaufgabe mit Graph -->
+        <div class="it" style="margin-top:16px">Beispiel: Die Badewanne</div>
+        <div class="two-col" style="align-items:start">
+          <div>
+            <div class="ip">Der kleine Max lässt Wasser in seine anfangs <strong>leere</strong> Badewanne einlaufen. Der Graph zeigt die Zuflussrate \(f\) in Litern pro Minute.<br><br>
+            <strong>Wie viele Liter sind nach 9 Minuten eingeflossen?</strong></div>
+            <div class="ip" style="margin-top:10px">
+              <strong>Vorgehen:</strong> Bestand = 0 + Flächenbilanz<br><br>
+              Die Fläche unter dem Graphen wird in geometrische Formen aufgeteilt:<br><br>
+              \(A_1 = 17 \cdot 4 = 68\) L &nbsp;<span style="color:#888;font-size:13px">(Rechteck, 0'–4')</span><br>
+              \(A_2 = 8{,}5 \cdot 2 = 17\) L &nbsp;<span style="color:#888;font-size:13px">(Rechteck, 4'–6')</span><br>
+              \(A_3 = 12 \cdot 1 = 12\) L &nbsp;<span style="color:#888;font-size:13px">(Rechteck, 6'–7')</span><br>
+              \(A_4 = \tfrac{1}{2} \cdot 12 \cdot 2 = 12\) L &nbsp;<span style="color:#888;font-size:13px">(Dreieck, 7'–9')</span><br><br>
+              <strong>Bestand</strong> \(= 0 + 68 + 17 + 12 + 12 = \mathbf{109}\) <strong>Liter</strong>
+            </div>
+          </div>
+          <div>
+            <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+              <!-- Hintergrund-Raster -->
+              <defs>
+                <pattern id="grid-b" width="28" height="22" patternUnits="userSpaceOnUse">
+                  <path d="M 28 0 L 0 0 0 22" fill="none" stroke="#e8e8e8" stroke-width="0.8"/>
+                </pattern>
+              </defs>
+              <rect x="36" y="10" width="252" height="176" fill="url(#grid-b)"/>
+              <!-- Achsen -->
+              <line x1="36" y1="186" x2="294" y2="186" stroke="#666" stroke-width="1.5"/>
+              <line x1="36" y1="10" x2="36" y2="190" stroke="#666" stroke-width="1.5"/>
+              <!-- Pfeilspitzen -->
+              <polygon points="294,183 294,189 300,186" fill="#666"/>
+              <polygon points="33,10 39,10 36,4" fill="#666"/>
+              <!-- Achsenbeschriftungen -->
+              <text x="302" y="190" font-size="12" fill="#555" font-style="italic">t</text>
+              <text x="40" y="8" font-size="11" fill="#555">f [l/min]</text>
+              <!-- x-Achse Ticks und Beschriftung (jede Minute = 28px) -->
+              <text x="36" y="200" font-size="11" fill="#555" text-anchor="middle">0</text>
+              <text x="64" y="200" font-size="11" fill="#555" text-anchor="middle">1</text>
+              <text x="92" y="200" font-size="11" fill="#555" text-anchor="middle">2</text>
+              <text x="120" y="200" font-size="11" fill="#555" text-anchor="middle">3</text>
+              <text x="148" y="200" font-size="11" fill="#555" text-anchor="middle">4</text>
+              <text x="176" y="200" font-size="11" fill="#555" text-anchor="middle">5</text>
+              <text x="204" y="200" font-size="11" fill="#555" text-anchor="middle">6</text>
+              <text x="232" y="200" font-size="11" fill="#555" text-anchor="middle">7</text>
+              <text x="260" y="200" font-size="11" fill="#555" text-anchor="middle">8</text>
+              <text x="288" y="200" font-size="11" fill="#555" text-anchor="middle">9</text>
+              <text x="310" y="200" font-size="11" fill="#888" text-anchor="middle">[min]</text>
+              <!-- y-Achse Beschriftung (f=17 bei y=10+22=32... skalierung: 0→186, 17→186-17*8=50) -->
+              <!-- scale: 1 l/min = 8px, origin y=186 -->
+              <!-- f=17 → y=186-136=50 -->
+              <text x="30" y="54" font-size="11" fill="#555" text-anchor="end">17</text>
+              <line x1="34" y1="50" x2="38" y2="50" stroke="#666" stroke-width="1"/>
+              <text x="30" y="120" font-size="11" fill="#555" text-anchor="end">8,5</text>
+              <line x1="34" y1="118" x2="38" y2="118" stroke="#666" stroke-width="1"/>
+              <text x="30" y="90" font-size="11" fill="#555" text-anchor="end">12</text>
+              <line x1="34" y1="90" x2="38" y2="90" stroke="#666" stroke-width="1"/>
+
+              <!-- A1: Rechteck 0'–4', f=17, y=50 -->
+              <polygon points="36,186 36,50 148,50 148,186" fill="#1a6fbf" fill-opacity="0.18"/>
+              <line x1="36" y1="50" x2="148" y2="50" stroke="#1a6fbf" stroke-width="2.5"/>
+              <text x="92" y="125" font-size="13" fill="#1a6fbf" text-anchor="middle" font-weight="700">A₁</text>
+              <text x="92" y="140" font-size="11" fill="#1a6fbf" text-anchor="middle">68 L</text>
+
+              <!-- A2: Rechteck 4'–6', f=8.5, y=118 -->
+              <polygon points="148,186 148,118 204,118 204,186" fill="#2e7d32" fill-opacity="0.18"/>
+              <line x1="148" y1="50" x2="148" y2="118" stroke="#1a6fbf" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <line x1="148" y1="118" x2="204" y2="118" stroke="#2e7d32" stroke-width="2.5"/>
+              <text x="176" y="158" font-size="12" fill="#2e7d32" text-anchor="middle" font-weight="700">A₂</text>
+              <text x="176" y="171" font-size="10" fill="#2e7d32" text-anchor="middle">17 L</text>
+
+              <!-- A3: Rechteck 6'–7', f=12, y=90 -->
+              <polygon points="204,186 204,90 232,90 232,186" fill="#e65100" fill-opacity="0.18"/>
+              <line x1="204" y1="118" x2="204" y2="90" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <line x1="204" y1="90" x2="232" y2="90" stroke="#e65100" stroke-width="2.5"/>
+              <text x="218" y="148" font-size="12" fill="#e65100" text-anchor="middle" font-weight="700">A₃</text>
+              <text x="218" y="162" font-size="10" fill="#e65100" text-anchor="middle">12 L</text>
+
+              <!-- A4: Dreieck 7'–9', von f=12 auf f=0 -->
+              <polygon points="232,186 232,90 288,186" fill="#7b1fa2" fill-opacity="0.18"/>
+              <line x1="232" y1="90" x2="288" y2="186" stroke="#7b1fa2" stroke-width="2.5"/>
+              <text x="258" y="170" font-size="12" fill="#7b1fa2" text-anchor="middle" font-weight="700">A₄</text>
+              <text x="258" y="182" font-size="10" fill="#7b1fa2" text-anchor="middle">12 L</text>
+
+              <!-- Vertikale Trennlinien -->
+              <line x1="148" y1="186" x2="148" y2="192" stroke="#666" stroke-width="1"/>
+              <line x1="204" y1="186" x2="204" y2="192" stroke="#666" stroke-width="1"/>
+              <line x1="232" y1="186" x2="232" y2="192" stroke="#666" stroke-width="1"/>
+              <line x1="288" y1="186" x2="288" y2="192" stroke="#666" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">B1</span><span class="td de">Einfach</span></div><div class="tq"><strong>Das Schwimmbecken.</strong> Ein öffentliches Freibad füllt sein Becken zu Saisonbeginn mit Wasser. Die Funktion \(f\) beschreibt die Füllrate in Kubikmetern pro Stunde, abhängig von der Zeit \(t\) in Stunden. Das Becken ist zu Beginn leer.<br><br>
+          In den ersten 3 Stunden läuft das Wasser mit maximaler Rate von 20 m³/h ein. Dann wird eine zweite Pumpe abgeschaltet – für 2 Stunden fließen noch 12 m³/h. In der fünften Stunde wird die Zuleitung gedrosselt, sodass die Rate gleichmäßig von 12 auf 0 m³/h sinkt.<br><br>
+          <strong>Berechne</strong> die Flächenbilanz unter dem Graphen von \(f\) für jedes Zeitintervall einzeln und addiere die Teilflächen. <strong>Gib</strong> den Füllstand des Beckens nach 6 Stunden im Sachkontext an.</div></div><div class="tk-toggle">⌄</div></div>
+        <div class="ta">Anfangswert = 0 m³ (leeres Becken).<br><br>
+          \(A_1 = 20 \cdot 3 = 60\) m³ &nbsp;(Rechteck, 0–3 h)<br>
+          \(A_2 = 12 \cdot 2 = 24\) m³ &nbsp;(Rechteck, 3–5 h)<br>
+          \(A_3 = \tfrac{1}{2} \cdot 12 \cdot 1 = 6\) m³ &nbsp;(Dreieck, 5–6 h)<br><br>
+          Bestand \(= 0 + 60 + 24 + 6 = \mathbf{90}\) m³.<br>
+          <em>Nach 6 Stunden befinden sich 90 Kubikmeter Wasser im Becken.</em>
+        </div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">B2</span><span class="td de">Einfach</span></div><div class="tq"><strong>Die Straßenbahn.</strong> Eine Straßenbahn verlässt die Haltestelle und fährt zur nächsten Station. Die Funktion \(f\) beschreibt die Geschwindigkeit in Metern pro Sekunde, abhängig von der Zeit \(t\) in Sekunden. Zu Beginn steht die Bahn still.<br><br>
+          In den ersten 8 Sekunden beschleunigt die Bahn gleichmäßig von 0 auf 12 m/s. Dann fährt sie 15 Sekunden lang mit dieser konstanten Geschwindigkeit. Schließlich bremst sie gleichmäßig ab – innerhalb von 6 Sekunden sinkt die Geschwindigkeit von 12 auf 4 m/s.<br><br>
+          <strong>Berechne</strong> die zurückgelegte Strecke der Straßenbahn in den beschriebenen 29 Sekunden, indem du die Flächenbilanz unter dem Graphen von \(f\) mithilfe geeigneter geometrischer Formen (Dreieck, Rechteck, Trapez) bestimmst. <strong>Gib</strong> das Ergebnis im Sachkontext an.</div></div><div class="tk-toggle">⌄</div></div>
+        <div class="ta">Anfangswert = 0 m (Haltestelle).<br><br>
+          \(A_1 = \tfrac{1}{2} \cdot 12 \cdot 8 = 48\) m &nbsp;(Dreieck, 0–8 s)<br>
+          \(A_2 = 12 \cdot 15 = 180\) m &nbsp;(Rechteck, 8–23 s)<br>
+          \(A_3 = \tfrac{12+4}{2} \cdot 6 = 48\) m &nbsp;(Trapez, 23–29 s)<br><br>
+          Bestand \(= 0 + 48 + 180 + 48 = \mathbf{276}\) Meter.<br>
+          <em>Die Straßenbahn hat in 29 Sekunden eine Strecke von 276 Metern zurückgelegt.</em>
+        </div></div>
+
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">B3</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Der Regenrückhaltebecken.</strong> Ein Regenrückhaltebecken einer Stadt wird bei einem Starkregen gefüllt und anschließend kontrolliert entleert. Die Funktion \(f\) gibt die Zu- bzw. Abflussrate in 10.000 Litern pro Stunde an. Negative Werte bedeuten Abfluss. Das Becken ist zu Beginn leer.<br><br>
+          Von 0 bis 3 h fließen konstant 30.000 l/h zu (\(f = 3\)). Von 3 bis 5 h nimmt der Zufluss gleichmäßig von 3 auf 0 ab, da der Regen nachlässt. Von 5 bis 7 h wird das Becken mit gleichmäßig steigendem Abfluss entleert – die Rate steigt von 0 auf −2. Von 7 bis 10 h wird konstant mit 20.000 l/h abgepumpt (\(f = -2\)).<br><br>
+          a) <strong>Berechne</strong> den Wasserstand im Becken nach 5 Stunden. <strong>Gib</strong> das Ergebnis in Litern im Sachkontext an.<br>
+          b) <strong>Berechne</strong> den Wasserstand nach 10 Stunden. <strong>Erkläre</strong> anhand der Flächenbilanz, was das Ergebnis über den Zustand des Beckens aussagt.</div></div><div class="tk-toggle">⌄</div></div>
+        <div class="ta">Anfangswert = 0 (leeres Becken).<br><br>
+          \(A_1 = 3 \cdot 3 = 9\) &nbsp;(Rechteck, 0–3 h, positiv)<br>
+          \(A_2 = \tfrac{1}{2} \cdot 3 \cdot 2 = 3\) &nbsp;(Dreieck, 3–5 h, positiv)<br>
+          \(A_3 = -\tfrac{1}{2} \cdot 2 \cdot 2 = -2\) &nbsp;(Dreieck, 5–7 h, negativ)<br>
+          \(A_4 = -2 \cdot 3 = -6\) &nbsp;(Rechteck, 7–10 h, negativ)<br><br>
+          a) Bestand nach 5 h \(= 0 + 9 + 3 = \mathbf{12}\) (= 120.000 Liter).<br>
+          b) Bestand nach 10 h \(= 0 + 9 + 3 - 2 - 6 = \mathbf{4}\) (= 40.000 Liter).<br>
+          <em>Nach 10 Stunden befinden sich noch 40.000 Liter im Becken – es ist nicht vollständig leer gepumpt.</em>
+        </div></div>
+
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-g">→</div><span class="card-title">Brücke zum bestimmten Integral</span></div>
+      <div class="card-body">
+        <div class="ip">Bei Bestandsaufgaben haben wir Flächen als Rechtecke und Dreiecke berechnet – das geht nur bei stückweise linearen Graphen. Für <strong>beliebige Polynome</strong> brauchen wir das <strong>bestimmte Integral</strong>.</div>
+        <div class="hint">\(\displaystyle\int_a^b f(x)\,dx\) verallgemeinert die Flächenbilanz auf beliebige Funktionen – das ist das präzise Werkzeug für alle Bestandsprobleme.</div>
+      </div>
+    </div>
+  </div><!-- end int-bestand inner -->
+  </div><!-- end int-bestand -->
+
+  <div class="subpanel" id="int-grafisch">
+
+    <div class="section-label">Vom Graphen von f zum Graphen von F</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Grafisches Integrieren – Grundidee</span></div>
+      <div class="card-body">
+        <div class="ip">Ist der Graph von \(f\) gegeben, lässt sich der qualitative Verlauf der Stammfunktion \(F\) skizzieren – ohne zu rechnen. Die Idee: \(F\) ist der „aufgesammelte Bestand" von \(f\).</div>
+        <div class="two-col" style="margin:12px 0">
+          <div>
+            <div class="it">Die vier Grundregeln</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 16px;line-height:2.2">
+              <strong>①</strong> \(f(x) > 0\) &nbsp;→&nbsp; \(F\) ist <strong>steigend</strong><br>
+              <strong>②</strong> \(f(x) < 0\) &nbsp;→&nbsp; \(F\) ist <strong>fallend</strong><br>
+              <strong>③</strong> \(f(x) = 0\) &nbsp;→&nbsp; \(F\) hat einen <strong>Extrempunkt</strong><br>
+              <strong>④</strong> \(f\) hat ein Extremum &nbsp;→&nbsp; \(F\) hat einen <strong>Wendepunkt</strong>
+            </div>
+          </div>
+          <div>
+            <div class="it">Zusammenhang auf einen Blick</div>
+            <div class="ip" style="background:#f0f6ff;border-radius:10px;padding:14px 16px;border-left:3px solid #1a6fbf;line-height:1.9">
+              \(f\) ist die <strong>Ableitung</strong> von \(F\)<br>
+              \(F\) ist die <strong>Stammfunktion</strong> von \(f\)<br><br>
+              Alles, was du über den Zusammenhang von \(F\) und \(F'\) weißt, gilt hier – nur in umgekehrter Leserichtung.
+            </div>
+            <div class="hint" style="margin-top:10px"><strong>Merke:</strong> Der Anfangswert \(F(a)\) ist frei wählbar (entspricht der Konstante \(C\)) – er verschiebt den Graphen von \(F\) vertikal.</div>
+          </div>
+        </div>
+
+        <!-- SVG-Illustration -->
+        <div class="it">Beispiel: Von f zu F</div>
+        <div style="margin-top:8px">
+          <canvas id="graf-canvas" style="width:100%;border-radius:10px"></canvas>
+          <script>
+          window.addEventListener('load', function(){
+          (function(){
+            var canvas = document.getElementById('graf-canvas');
+            var W = canvas.offsetWidth || 600;
+            var H = Math.round(W * 0.75);
+            var dpr = window.devicePixelRatio || 1;
+            canvas.width = W * dpr; canvas.height = H * dpr;
+            canvas.style.width = W + 'px';
+            canvas.style.height = H + 'px';
+            var ctx = canvas.getContext('2d');
+            ctx.scale(dpr, dpr);
+
+            var pad = {l:52, r:24, t:24, b:16};
+            var mid = Math.round(H / 2);
+            var hTop = mid - 8;
+            var hBot = H - mid - 8;
+
+            // f(x) = (x-1)²-4, Nullstellen bei x=-1 und x=3, Min bei x=1 mit f(1)=-4
+            // F(x) = (x-1)³/3 - 4(x-1), lokMax bei x=-1, WP bei x=1, lokMin bei x=3
+            var xMin = -3.8, xMax = 5.0;
+            var fMin = -5.5, fMax = 12;
+            var FMin = -7.5, FMax = 7.5;
+
+            function toX(x){ return pad.l + (x-xMin)/(xMax-xMin)*(W-pad.l-pad.r); }
+            function toYf(y){ return pad.t + (1-(y-fMin)/(fMax-fMin))*(hTop-pad.t-4); }
+            function toYF(y){ return mid+pad.t + (1-(y-FMin)/(FMax-FMin))*(hBot-pad.t-pad.b); }
+
+            function f(x){ var u=x-1; return u*u-4; }
+            function F(x){ var u=x-1; return u*u*u/3 - 4*u; }
+
+            var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var axisCol  = isDark ? '#aaa'  : '#555';
+            var textCol  = isDark ? '#ccc'  : '#333';
+            var gridCol  = isDark ? '#444'  : '#e0deda';
+            var bgCol    = isDark ? '#1a1a1a' : '#f9f8f6';
+            var bodyBg   = window.getComputedStyle(document.body).backgroundColor;
+            if(bodyBg && bodyBg !== 'rgba(0, 0, 0, 0)' && bodyBg !== 'transparent') bgCol = bodyBg;
+            var font     = '13px system-ui,-apple-system,sans-serif';
+            var fontSm   = '11px system-ui,-apple-system,sans-serif';
+
+            canvas.style.background = bgCol;
+            ctx.fillStyle = bgCol;
+            ctx.fillRect(0,0,W,H);
+
+            // Trennlinie
+            ctx.strokeStyle = gridCol; ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(0,mid); ctx.lineTo(W,mid); ctx.stroke();
+
+            // Labels oben/unten
+            ctx.font = font; ctx.fillStyle = textCol;
+            ctx.fillText('f(x) = (x−1)² − 4', pad.l, 18);
+            ctx.fillText('F(x) = ⅓(x−1)³ − 4(x−1)', pad.l, mid+18);
+
+            function arrow(x1,y1,x2,y2){
+              var dx=x2-x1, dy=y2-y1, len=Math.sqrt(dx*dx+dy*dy);
+              var ux=dx/len, uy=dy/len;
+              ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+              ctx.beginPath();
+              ctx.moveTo(x2,y2);
+              ctx.lineTo(x2-8*ux+4*uy, y2-8*uy-4*ux);
+              ctx.lineTo(x2-8*ux-4*uy, y2-8*uy+4*ux);
+              ctx.closePath(); ctx.fill();
+            }
+
+            function drawAxes(toY, yZero, offsetY, label){
+              var x0 = toX(0);
+              ctx.strokeStyle=axisCol; ctx.fillStyle=axisCol; ctx.lineWidth=1.2;
+              arrow(pad.l-4, yZero, W-pad.r+10, yZero);
+              arrow(x0, offsetY+hTop-4, x0, offsetY+4);
+              ctx.font=font; ctx.fillStyle=textCol;
+              ctx.fillText('x', W-pad.r+12, yZero+5);
+              ctx.fillText(label, x0+5, offsetY+18);
+              // Skalenstriche
+              for(var n=-3; n<=4; n++){
+                if(n===0) continue;
+                var px=toX(n);
+                ctx.strokeStyle=axisCol; ctx.lineWidth=0.8;
+                ctx.beginPath(); ctx.moveTo(px,yZero-4); ctx.lineTo(px,yZero+4); ctx.stroke();
+                ctx.font=fontSm; ctx.fillStyle=textCol; ctx.textAlign='center';
+                ctx.fillText(n, px, yZero+15);
+              }
+              ctx.textAlign='left';
+            }
+
+            var yZf = toYf(0);
+            var yZF = toYF(0);
+            drawAxes(toYf, yZf, 0, 'f');
+            drawAxes(toYF, yZF, mid, 'F');
+
+            // Flächen f
+            // f < 0 zwischen x=-1 und x=3
+            ctx.beginPath();
+            ctx.moveTo(toX(-1), toYf(0));
+            for(var x=-1; x<=3; x+=0.01) ctx.lineTo(toX(x), toYf(f(x)));
+            ctx.lineTo(toX(3), toYf(0)); ctx.closePath();
+            ctx.fillStyle='rgba(185,28,28,0.13)'; ctx.fill();
+
+            // f > 0 links
+            ctx.beginPath();
+            ctx.moveTo(toX(xMin), toYf(0));
+            for(var x=xMin; x<=-1; x+=0.01) ctx.lineTo(toX(x), toYf(f(x)));
+            ctx.lineTo(toX(-1), toYf(0)); ctx.closePath();
+            ctx.fillStyle='rgba(26,122,60,0.12)'; ctx.fill();
+
+            // f > 0 rechts
+            ctx.beginPath();
+            ctx.moveTo(toX(3), toYf(0));
+            for(var x=3; x<=xMax; x+=0.01) ctx.lineTo(toX(x), toYf(f(x)));
+            ctx.lineTo(toX(xMax), toYf(0)); ctx.closePath();
+            ctx.fillStyle='rgba(26,122,60,0.12)'; ctx.fill();
+
+            // Graph f
+            ctx.strokeStyle='#1a6fbf'; ctx.lineWidth=2.2;
+            ctx.beginPath();
+            for(var x=xMin; x<=xMax; x+=0.01){
+              var py=toYf(f(x));
+              if(x===xMin) ctx.moveTo(toX(x),py); else ctx.lineTo(toX(x),py);
+            }
+            ctx.stroke();
+
+            // Graph F
+            ctx.strokeStyle='#1a6fbf'; ctx.lineWidth=2.2;
+            ctx.beginPath();
+            for(var x=xMin; x<=xMax; x+=0.01){
+              var py=toYF(F(x));
+              if(x===xMin) ctx.moveTo(toX(x),py); else ctx.lineTo(toX(x),py);
+            }
+            ctx.stroke();
+
+            // Gestrichelte Linien bei x=-1, x=1, x=3
+            ctx.setLineDash([5,4]); ctx.lineWidth=0.9; ctx.strokeStyle='#888';
+            [-1,1,3].forEach(function(xv){
+              var px=toX(xv);
+              ctx.beginPath(); ctx.moveTo(px, toYf(f(xv))); ctx.lineTo(px, toYF(F(xv))); ctx.stroke();
+            });
+            ctx.setLineDash([]);
+
+            // Punkte & Labels
+            function dot(px,py,col){ ctx.beginPath(); ctx.arc(px,py,5,0,2*Math.PI); ctx.fillStyle=col; ctx.fill(); }
+
+            // f: Minimum bei (1, -4)
+            dot(toX(1), toYf(-4), '#1a6fbf');
+            ctx.font=fontSm; ctx.fillStyle=textCol; ctx.textAlign='left';
+            ctx.fillText('Min. von f', toX(1)+8, toYf(-4)+4);
+
+            // f-Vorzeichen Labels
+            ctx.fillStyle='#1a7a3c'; ctx.font=font; ctx.textAlign='center';
+            ctx.fillText('f > 0', toX(-2.5), toYf(3));
+            ctx.fillText('f > 0', toX(4.2), toYf(3));
+            ctx.fillStyle='#b91c1c';
+            ctx.fillText('f < 0', toX(1), toYf(-2.2));
+
+            // F: lokales Max bei (-1, F(-1))
+            dot(toX(-1), toYF(F(-1)), '#1a7a3c');
+            ctx.fillStyle='#1a7a3c'; ctx.font=fontSm; ctx.textAlign='right';
+            ctx.fillText('lok. Max.', toX(-1)-8, toYF(F(-1))+4);
+
+            // F: Wendepunkt bei (1, F(1))
+            dot(toX(1), toYF(F(1)), '#888');
+            ctx.fillStyle='#666'; ctx.textAlign='left';
+            ctx.fillText('Wendepunkt', toX(1)+8, toYF(F(1))-7);
+
+            // F: lokales Min bei (3, F(3))
+            dot(toX(3), toYF(F(3)), '#b91c1c');
+            ctx.fillStyle='#b91c1c'; ctx.textAlign='left';
+            ctx.fillText('lok. Min.', toX(3)+8, toYF(F(3))+4);
+
+            ctx.textAlign='left';
+          })();
+          }); // end load
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Aufgaben · Grafisches Integrieren</div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">GI1</span><span class="td de">Einfach</span></div><div class="tq">Der Graph von \(f\) verläuft auf \((-\infty, 2)\) oberhalb und auf \((2, \infty)\) unterhalb der x-Achse. \(f\) hat bei \(x = 0\) ein Maximum.<br><br>
+          <strong>Beschreibe</strong> den qualitativen Verlauf einer Stammfunktion \(F\):<br>
+          a) <strong>Gib an</strong>, auf welchen Intervallen \(F\) steigt und auf welchen sie fällt.<br>
+          b) <strong>Bestimme</strong> die Lage und Art des Extrempunkts von \(F\).<br>
+          c) <strong>Bestimme</strong> die Lage des Wendepunkts von \(F\) und <strong>begründe</strong> deine Antwort.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(F\) ist steigend auf \((-\infty, 2)\), da \(f > 0\). \(F\) ist fallend auf \((2, \infty)\), da \(f < 0\).<br><br>b) Bei \(x = 2\) wechselt \(f\) das Vorzeichen von + nach − → \(F\) hat bei \(x = 2\) ein <strong>Maximum</strong>.<br><br>c) Bei \(x = 0\) hat \(f\) ein Maximum, also \(f' = 0\) mit Vorzeichenwechsel → \(F'' = f' = 0\) → \(F\) hat bei \(x = 0\) einen <strong>Wendepunkt</strong>.</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">GI2</span><span class="td dm">Mittel</span></div><div class="tq">Gegeben ist \(f(x) = x^2 - 4\).<br><br>
+          a) <strong>Bestimme</strong> die Nullstellen von \(f\) und <strong>gib an</strong>, ob \(f\) in den Teilintervallen positiv oder negativ ist.<br>
+          b) <strong>Leite daraus ab</strong>, auf welchen Intervallen eine Stammfunktion \(F\) steigt und fällt, und <strong>gib</strong> Lage und Art der Extrempunkte von \(F\) <strong>an</strong>.<br>
+          c) \(f\) hat bei \(x = 0\) einen Scheitelpunkt. <strong>Erkläre</strong>, was das für den Graphen von \(F\) bedeutet.<br>
+          d) <strong>Skizziere</strong> den Graphen von \(F\) mit \(F(0) = 0\) und <strong>überprüfe</strong> anschließend mit \(F(x) = \frac{x^3}{3} - 4x\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Nullstellen: \(x = \pm 2\). Auf \((-\infty,-2)\): \(f > 0\); auf \((-2,2)\): \(f < 0\); auf \((2,\infty)\): \(f > 0\).<br><br>b) \(F\) steigt auf \((-\infty,-2)\) und \((2,\infty)\), fällt auf \((-2,2)\).<br>Bei \(x = -2\): Maximum von \(F\). Bei \(x = 2\): Minimum von \(F\).<br><br>c) Der Scheitelpunkt von \(f\) bei \(x=0\) ist ein Minimum von \(f\) – dort wechselt \(f'\) das Vorzeichen. Da \(F'' = f'\), gilt \(F''(0) = 0\) mit Vorzeichenwechsel → \(F\) hat bei \(x = 0\) einen Wendepunkt.<br><br>d) Probe: \(F'(x) = x^2 - 4 = f(x)\) ✓</div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">GI3</span><span class="td dm">Mittel</span></div><div class="tq">Gegeben ist \(f(x) = \sin(x)\) auf \([0, 2\pi]\).<br><br>
+          a) <strong>Gib an</strong>, auf welchen Teilintervallen \(f\) positiv bzw. negativ ist, und <strong>leite daraus ab</strong>, auf welchen Intervallen \(F\) steigt und fällt.<br>
+          b) <strong>Bestimme</strong> Lage und Art der Extrempunkte von \(F\) auf \([0, 2\pi]\).<br>
+          c) <strong>Skizziere</strong> qualitativ den Graphen von \(F\) und <strong>überprüfe</strong> deine Skizze mit \(F(x) = -\cos(x)\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(\sin(x) > 0\) auf \((0,\pi)\) → \(F\) steigt. \(\sin(x) < 0\) auf \((\pi,2\pi)\) → \(F\) fällt.<br><br>b) Bei \(x = \pi\): \(f\) wechselt von + nach − → \(F\) hat ein <strong>Maximum</strong>. Am rechten Rand \(x = 2\pi\) liegt kein Extremum im Inneren des Intervalls.<br><br>c) \(F(x) = -\cos(x)\): \(F(0) = -1\), \(F(\pi) = 1\) (Maximum ✓), \(F(2\pi) = -1\). Der Graph zeigt eine umgekehrte Kosinuskurve.</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">GI4</span><span class="td dh">Schwer</span></div><div class="tq">Der Graph einer Änderungsrate \(f\) hat Nullstellen bei \(x = 1\) und \(x = 4\), ein Maximum bei \(x = 2{,}5\) mit \(f(2{,}5) = 6\), und ist außerhalb von \([1,4]\) negativ.<br><br>
+          a) <strong>Skizziere</strong> qualitativ den Graphen von \(F\) mit \(F(0) = 10\) und <strong>gib</strong> Lage und Art aller Extrempunkte sowie des Wendepunkts <strong>an</strong>.<br>
+          b) <strong>Bestimme</strong> das globale Maximum von \(F\) auf \([0,6]\) und <strong>begründe</strong> deine Antwort.<br>
+          c) <strong>Entscheide</strong> ohne Rechnung, ob \(F(6) > F(0)\) oder \(F(6) < F(0)\) gilt, und <strong>begründe</strong> deine Entscheidung.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(F\) fällt auf \([0,1]\) (f < 0), steigt auf \([1,4]\) (f > 0), fällt auf \([4,6]\) (f < 0).<br>Lokales Minimum bei \(x=1\), lokales Maximum bei \(x=4\), Wendepunkt bei \(x=2{,}5\) (Extremum von f).<br><br>b) Das globale Maximum liegt bei \(x = 4\): Dort wechselt \(F\) von Steigen zu Fallen, und auf \([1,4]\) nimmt \(F\) am stärksten zu.<br><br>c) \(F(6) < F(0)\): Die negativen Flächen auf \([0,1]\) und \([4,6]\) (zusammen 3 Einheiten) überwiegen gegenüber der positiven Fläche auf \([1,4]\) – eine genaue Entscheidung erfordert die Berechnung der Flächen, die Vermutung ist aber plausibel.</div></div>
+      </div>
+    </div>
+
+  </div><!-- end int-grafisch -->
+
+  <div class="subpanel" id="int-hauptsatz">
+
+    <div class="section-label">Hauptsatz der Differential- und Integralrechnung</div>
+
+    <!-- Karte 1: Hauptsatz-Formel -->
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Der Hauptsatz</span></div>
+      <div class="card-body">
+        <div class="ip">Der Hauptsatz verbindet Differenzieren und Integrieren: Das bestimmte Integral lässt sich mithilfe einer Stammfunktion berechnen.</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+          \[\int_a^b f(x)\,dx = F(b) - F(a) = \Big[F(x)\Big]_a^b\]
+        </div>
+        <div class="ip">Dabei ist \(F\) eine beliebige Stammfunktion von \(f\). Die Integrationskonstante \(C\) subtrahiert sich heraus – es spielt keine Rolle welche Stammfunktion man wählt.</div>
+        <div class="hint"><strong>Vorgehen:</strong> Stammfunktion \(F\) bestimmen &rarr; \(F(b)\) berechnen &rarr; \(F(a)\) berechnen &rarr; Differenz bilden.</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispiel</div>
+          <div class="bsp-q">Berechne \(\displaystyle\int_2^5 \left(-\frac{1}{3}x^2 + 2x\right)dx\).</div>
+          <div class="ggb-wrap" style="margin:10px 0">
+            <iframe data-src="https://www.geogebra.org/material/iframe/id/zz9pvs2b/width/800/height/450/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false/av/false/p3/false" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="ggb-label">f(x) = −⅓x² + 2x auf [2, 5]</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            Stammfunktion: \(F(x) = -\frac{x^3}{9} + x^2\)<br><br>
+            \(\Big[F(x)\Big]_2^5 = F(5) - F(2) = \left(-\frac{125}{9} + 25\right) - \left(-\frac{8}{9} + 4\right) = \frac{100}{9} - \frac{28}{9} = \frac{72}{9} = 8\)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Weitere Beispiele an f(x) = −⅓x² + 2x</div>
+    <div class="two-col">
+
+      <!-- Beispiel: negative Fläche -->
+      <div class="card">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Beispiel: negative Fläche</span></div>
+        <div class="card-body">
+          <div class="bsp">
+            <div class="bsp-label">Beispielaufgabe</div>
+            <div class="bsp-q">Berechne \(\displaystyle\int_6^9 \left(-\frac{1}{3}x^2 + 2x\right)dx\) und erkläre, warum das Ergebnis negativ ist.</div>
+            <div class="ggb-wrap" style="margin:10px 0">
+              <iframe data-src="https://www.geogebra.org/material/iframe/id/jtqyu4a5/width/800/height/450/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false/av/false/p3/false" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="ggb-label">f(x) = −⅓x² + 2x auf [6, 9] – negative Fläche</div>
+            <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+            <div class="bsp-a">
+              Stammfunktion: \(F(x) = -\frac{x^3}{9} + x^2\)<br><br>
+              \(\Big[F(x)\Big]_6^9 = F(9) - F(6) = \left(-\frac{729}{9} + 81\right) - \left(-\frac{216}{9} + 36\right)\)<br>
+              \(= (-81 + 81) - (-24 + 36) = 0 - 12 = -12\)<br><br>
+              Das Ergebnis ist negativ, weil f(x) auf dem Intervall [6, 9] <strong>unterhalb der x-Achse</strong> liegt (die Nullstelle liegt bei x = 6). Das Integral liefert die Flächenbilanz: −12 FE.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beispiel: Bilanz -->
+      <div class="card">
+        <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Beispiel: Flächenbilanz</span></div>
+        <div class="card-body">
+          <div class="bsp">
+            <div class="bsp-label">Beispielaufgabe</div>
+            <div class="bsp-q">Berechne \(\displaystyle\int_2^8 \left(-\frac{1}{3}x^2 + 2x\right)dx\). Erkläre, warum die Bilanz kleiner ist als der tatsächliche Flächeninhalt.</div>
+            <div class="ggb-wrap" style="margin:10px 0">
+              <iframe data-src="https://www.geogebra.org/material/iframe/id/dhx3qj75/width/800/height/450/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false/av/false/p3/false" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="ggb-label">f(x) = −⅓x² + 2x auf [2, 8] – Flächenbilanz</div>
+            <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+            <div class="bsp-a">
+              Stammfunktion: \(F(x) = -\frac{x^3}{9} + x^2\)<br><br>
+              \(\Big[F(x)\Big]_2^8 = F(8) - F(2) = \left(-\frac{512}{9} + 64\right) - \left(-\frac{8}{9} + 4\right) = \frac{64}{9} - \frac{28}{9} = \frac{36}{9} = 4\)<br><br>
+              Die Nullstelle liegt bei x = 6. Auf [2, 6] liegt f oberhalb, auf [6, 8] unterhalb der x-Achse. Der negative Anteil hebt einen Teil des positiven auf – die Bilanz beträgt daher nur <strong>4 FE</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Karte 2: Flächenbilanz vs. tatsächlicher Flächeninhalt -->
+    <div class="section-label">Flächenbilanz und tatsächlicher Flächeninhalt</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Flächenbilanz vs. tatsächlicher Flächeninhalt</span></div>
+      <div class="card-body">
+        <div class="two-col" style="align-items:start">
+          <div>
+            <div class="it">Was ist die Flächenbilanz?</div>
+            <div class="ip">Das bestimmte Integral \(\int_a^b f(x)\,dx\) liefert die <strong>Flächenbilanz</strong>: Flächen oberhalb der x-Achse zählen positiv, Flächen darunter negativ. Sie können sich gegenseitig aufheben.</div>
+            <div class="ip" style="background:#edf7ed;border-radius:10px;padding:12px 14px;border-left:3px solid #1a7a3c">
+              <strong style="color:#1a7a3c">Flächenbilanz</strong><br>
+              \(\displaystyle\int_a^b f(x)\,dx\) – mit Vorzeichen, kann 0 oder negativ sein
+            </div>
+            <div class="ip" style="background:#fce8e8;border-radius:10px;padding:12px 14px;border-left:3px solid #b91c1c;margin-top:10px">
+              <strong style="color:#b91c1c">Tatsächlicher Flächeninhalt</strong><br>
+              Summe der Beträge aller Teilflächen – immer positiv
+            </div>
+          </div>
+          <div>
+            <svg viewBox="0 0 280 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+              <!-- Formeln oben -->
+              <text x="175" y="22" font-size="10" fill="#555" text-anchor="middle">Bilanz: A₁ − A₂</text>
+              <text x="175" y="36" font-size="10" fill="#555" text-anchor="middle">tats. Fläche: A₁ + A₂</text>
+              <!-- Achsen -->
+              <line x1="20" y1="105" x2="265" y2="105" stroke="#666" stroke-width="1.5"/>
+              <line x1="20" y1="15" x2="20" y2="190" stroke="#666" stroke-width="1.5"/>
+              <polygon points="265,102 265,108 272,105" fill="#666"/>
+              <polygon points="17,15 23,15 20,8" fill="#666"/>
+              <text x="276" y="109" font-size="11" fill="#555">x</text>
+              <text x="24" y="13" font-size="11" fill="#555">f</text>
+              <!-- Positive Fläche links (a=45, x0=130) -->
+              <path d="M45,105 Q87,22 130,105" fill="#1a7a3c" fill-opacity="0.18" stroke="none"/>
+              <path d="M45,105 Q87,22 130,105" fill="none" stroke="#1a7a3c" stroke-width="2.2"/>
+              <!-- Label +A₁ mittig in der Fläche -->
+              <text x="87" y="88" font-size="13" fill="#1a7a3c" font-weight="700" text-anchor="middle">+A₁</text>
+              <!-- Negative Fläche rechts (x0=130, b=215) -->
+              <path d="M130,105 Q172,188 215,105" fill="#b91c1c" fill-opacity="0.18" stroke="none"/>
+              <path d="M130,105 Q172,188 215,105" fill="none" stroke="#b91c1c" stroke-width="2.2"/>
+              <!-- Label −A₂ mittig in der Fläche -->
+              <text x="172" y="122" font-size="13" fill="#b91c1c" font-weight="700" text-anchor="middle">−A₂</text>
+              <!-- Gestrichelte vertikale Linien -->
+              <line x1="45" y1="45" x2="45" y2="190" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="130" y1="45" x2="130" y2="190" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="215" y1="45" x2="215" y2="190" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- Achsenbeschriftung -->
+              <text x="45" y="204" font-size="11" fill="#555" text-anchor="middle">a</text>
+              <text x="130" y="204" font-size="11" fill="#555" text-anchor="middle">x₀</text>
+              <text x="215" y="204" font-size="11" fill="#555" text-anchor="middle">b</text>
+            </svg>
+          </div>
+        </div>
+        <div class="bsp">
+          <div class="bsp-label">Beispiel</div>
+          <div class="bsp-q">Gegeben \(f(x) = x^2 - 4\) auf \([-2, 3]\). Berechne a) die Flächenbilanz und b) den tatsächlichen Flächeninhalt.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            \(F(x) = \frac{x^3}{3} - 4x\)<br><br>
+            a) Flächenbilanz: \(\Big[F\Big]_{-2}^3 = \left(9 - 12\right) - \left(-\frac{8}{3} + 8\right) = -3 - \frac{16}{3} = -\frac{25}{3}\)<br><br>
+            b) Nullstelle bei \(x = 2\). Auf \([-2,2]\): \(f \leq 0\), auf \([2,3]\): \(f \geq 0\).<br>
+            \(|[F]_{-2}^2| = \left|\left(\frac{8}{3}-8\right)-\left(-\frac{8}{3}+8\right)\right| = \frac{32}{3}\)<br>
+            \([F]_2^3 = -3 - \left(\frac{8}{3}-8\right) = \frac{7}{3}\)<br>
+            Tatsächlicher Flächeninhalt: \(\frac{32}{3} + \frac{7}{3} = \frac{39}{3} = 13\)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Karte 3: Vorgehen bei Vorzeichenwechsel -->
+    <div class="section-label">Tatsächlicher Flächeninhalt bei Vorzeichenwechsel</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vorgehen bei Vorzeichenwechsel</span></div>
+      <div class="card-body">
+        <div class="ip">Wechselt \(f\) im Intervall das Vorzeichen, liefert das Integral nicht den tatsächlichen Flächeninhalt. Dann muss das Intervall aufgeteilt werden:</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px">
+          <strong>&#9312;</strong> Nullstellen von \(f\) im Intervall \([a,b]\) bestimmen<br>
+          <strong>&#9313;</strong> Vorzeichen von \(f\) in jedem Teilintervall prüfen<br>
+          <strong>&#9314;</strong> Teilintegrale einzeln berechnen<br>
+          <strong>&#9315;</strong> Beträge der Teilintegrale addieren: \(A = |A_1| + |A_2| + \ldots\)
+        </div>
+        <div class="hint"><strong>Tipp:</strong> Zeichne zunächst einen groben Graphen von f – so siehst du auf einen Blick, in welchen Intervallen f positiv oder negativ ist, und wo du das Integral aufteilen musst.</div>
+        <div class="hint"><strong>Merke:</strong> Die Flächenbilanz kann 0 sein, obwohl tatsächlich Flächen eingeschlossen werden – etwa bei symmetrischen Funktionen über symmetrischen Intervallen.</div>
+        <div class="bsp">
+          <div class="bsp-label">Beispiel</div>
+          <div class="bsp-q">Berechne den tatsächlichen Flächeninhalt zwischen \(f(x) = x^2 - 4\) und der x-Achse auf \([0, 3]\).</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            Nullstelle bei \(x = 2\). Auf \([0,2]\): \(f \leq 0\). Auf \([2,3]\): \(f \geq 0\).<br><br>
+            \(A_1 = \left|[F]_0^2\right| = \left|\left(\frac{8}{3}-8\right) - 0\right| = \frac{16}{3}\)<br>
+            \(A_2 = [F]_2^3 = \left(9-12\right) - \left(\frac{8}{3}-8\right) = \frac{7}{3}\)<br><br>
+            Tatsächlicher Flächeninhalt: \(A = \frac{16}{3} + \frac{7}{3} = \frac{23}{3} \approx 7{,}67\)
+          </div>
+        </div>
+        <div class="komp-wrap">
+          <span class="kb kb-k5">K5 – Formeln anwenden</span>
+          <span class="kb kb-k1">K1 – Argumentieren</span>
+          <span class="kb kb-k4">K4 – Darstellen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Karte 4: Begründen ohne Rechnung -->
+    <div class="section-label">Integralwerte begründen – ohne Rechnung</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Integralwerte begründen</span></div>
+      <div class="card-body">
+        <div class="ip">Manchmal kann man den Wert eines Integrals oder sein Vorzeichen <strong>begründen, ohne es auszurechnen</strong> – zum Beispiel durch einen Blick auf den Graphen oder die Symmetrie der Funktion.</div>
+
+        <div class="two-col" style="margin:12px 0">
+          <div>
+            <div class="it">Vorzeichen-Argument</div>
+            <div class="ip" style="background:#edf7ed;border-radius:10px;padding:12px 14px;border-left:3px solid #1a7a3c">
+              Liegt f auf \([a,b]\) <strong>vollständig oberhalb</strong> der x-Achse, so gilt:<br>
+              \(\displaystyle\int_a^b f(x)\,dx > 0\)<br><br>
+              Liegt f <strong>vollständig unterhalb</strong> der x-Achse, so gilt:<br>
+              \(\displaystyle\int_a^b f(x)\,dx < 0\)
+            </div>
+            <div class="bsp" style="margin-top:10px">
+              <div class="bsp-label">Beispiel – Vorzeichen</div>
+              <div class="bsp-q">Begründe ohne Rechnung: \(\displaystyle\int_1^4 (x^2+1)\,dx > 0\)</div>
+              <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+              <div class="bsp-a">
+                \(f(x) = x^2 + 1 \geq 1 > 0\) für alle \(x\) – die Funktion liegt auf \([1,4]\) vollständig oberhalb der x-Achse. Das Integral ist deshalb positiv.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="it">Symmetrie-Argument</div>
+            <div class="ip" style="background:#f0f6ff;border-radius:10px;padding:12px 14px;border-left:3px solid #1a6fbf">
+              Ist f eine <strong>ungerade Funktion</strong> (d.h. \(f(-x) = -f(x)\)) und das Intervall <strong>symmetrisch um 0</strong>, so heben sich positive und negative Flächen exakt auf:<br><br>
+              \(\displaystyle\int_{-a}^{a} f(x)\,dx = 0\)
+            </div>
+            <div class="bsp" style="margin-top:10px">
+              <div class="bsp-label">Beispiel – Symmetrie</div>
+              <div class="bsp-q">Begründe ohne Rechnung: \(\displaystyle\int_{-2}^{2} x^3\,dx = 0\)</div>
+              <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+              <div class="bsp-a">
+                \(f(x) = x^3\) ist eine ungerade Funktion, denn \(f(-x) = (-x)^3 = -x^3 = -f(x)\). Das Intervall \([-2, 2]\) ist symmetrisch um 0. Die Fläche links der y-Achse ist gleich groß wie die rechts, aber mit umgekehrtem Vorzeichen – sie heben sich auf. Daher ist das Integral gleich 0.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hint"><strong>Merke:</strong> Der Name „ungerade Funktion" kommt daher, dass Potenzfunktionen \(x^n\) mit <em>ungeradem</em> Exponenten (n = 1, 3, 5, …) punktsymmetrisch zum Ursprung sind. Entsprechend sind Potenzfunktionen mit <em>geradem</em> Exponenten (n = 2, 4, 6, …) achsensymmetrisch zur y-Achse – also gerade Funktionen. Für gerade Funktionen gilt das Integral über ein symmetrisches Intervall übrigens <em>nicht</em> zwingend 0 – das ist eine Besonderheit der ungeraden Funktionen.</div>
+      </div>
+    </div>
+
+    <!-- Aufgabenpool Nachweis -->
+    <div class="section-label">Aufgaben · Nachweis</div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">N1.1</span><span class="td de">Einfach</span></div><div class="tq"><strong>Zeigen Sie</strong>, dass \(\displaystyle\int_0^2 (3x^2 - 2x)\,dx = 4\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Stammfunktion: \(F(x) = x^3 - x^2\).<br><br>\(\Big[F(x)\Big]_0^2 = F(2) - F(0) = (8 - 4) - 0 = 4\) ✓</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">N1.2</span><span class="td de">Einfach</span></div><div class="tq"><strong>Zeigen Sie</strong>, dass \(F(x) = \frac{1}{4}x^4 - \frac{3}{2}x^2 + 1\) eine Stammfunktion von \(f(x) = x^3 - 3x\) ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Probe durch Ableiten:<br>\(F'(x) = x^3 - 3x = f(x)\) ✓<br><br>Da \(F'(x) = f(x)\) gilt, ist \(F\) nach Definition eine Stammfunktion von \(f\).</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">N1.3</span><span class="td dm">Mittel</span></div><div class="tq">Gegeben ist \(f(x) = -x^2 + 4\). <strong>Zeigen Sie</strong>, dass die von \(f\) und der x-Achse eingeschlossene Fläche den Inhalt \(\frac{32}{3}\) hat.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(-x^2 + 4 = 0 \Rightarrow x = \pm 2\). Auf \([-2, 2]\): \(f \geq 0\).<br><br>Stammfunktion: \(F(x) = -\frac{x^3}{3} + 4x\).<br><br>\(\Big[F(x)\Big]_{-2}^2 = \left(-\frac{8}{3} + 8\right) - \left(\frac{8}{3} - 8\right) = \frac{16}{3} + \frac{16}{3} = \frac{32}{3}\) ✓</div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">N1.4</span><span class="td dm">Mittel</span></div><div class="tq">Gegeben ist \(f(t) = -t^2 + 8t\) als Speicherrate eines Kraftwerks (MWh/h) für \(0 \leq t \leq 8\). <strong>Zeigen Sie</strong>, dass die insgesamt gespeicherte Energiemenge genau \(\frac{256}{3}\) MWh beträgt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Stammfunktion: \(F(t) = -\frac{t^3}{3} + 4t^2\).<br><br>\(\Big[F(t)\Big]_0^8 = \left(-\frac{512}{3} + 256\right) - 0 = -\frac{512}{3} + \frac{768}{3} = \frac{256}{3}\) ✓</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">N1.5</span><span class="td dh">Schwer</span></div><div class="tq">Gegeben ist \(f(x) = x^2 - 4x + 3\). <strong>Zeigen Sie</strong>, dass \(\displaystyle\int_0^3 f(x)\,dx = 0\) gilt, und <strong>erläutern Sie</strong>, was dieses Ergebnis geometrisch bedeutet.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Stammfunktion: \(F(x) = \frac{x^3}{3} - 2x^2 + 3x\).<br><br>\(\Big[F(x)\Big]_0^3 = (9 - 18 + 9) - 0 = 0\) ✓<br><br>Geometrische Bedeutung: Die positive Fläche auf \([0,1]\) und die negative Fläche auf \([1,3]\) sind gleich groß – sie heben sich in der Flächenbilanz genau auf. Der tatsächliche Flächeninhalt ist dennoch \(\frac{8}{3} \neq 0\).</div></div>
+      </div>
+    </div>
+
+    <!-- Aufgabenpool Graph-Ablesen -->
+    <div class="section-label">Aufgaben · Graph ablesen &amp; interpretieren</div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">G1.1</span><span class="td de">Einfach</span></div><div class="tq">Der Graph einer Funktion \(f\) ist abgebildet. Er verläuft auf \([0,4]\) vollständig oberhalb der x-Achse und schließt dort eine Fläche von \(A = 12\) ein. Der Anfangswert eines Bestandes beträgt \(B(0) = 5\).<br><br>
+          <div style="margin:8px 0">
+            <svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;max-width:400px">
+              <!-- Fläche -->
+              <path d="M40,135 C55,130 75,30 110,22 C145,15 175,60 200,135" fill="#1a6fbf" fill-opacity="0.15" stroke="none"/>
+              <!-- Graph f (asymmetrisches Polynom 3. Grades, Scheitelpunkt links) -->
+              <path d="M40,135 C55,130 75,30 110,22 C145,15 175,60 200,135" fill="none" stroke="#1a6fbf" stroke-width="2.2"/>
+              <!-- Achsen -->
+              <line x1="25" y1="135" x2="255" y2="135" stroke="#555" stroke-width="1.5"/>
+              <line x1="25" y1="145" x2="25" y2="10" stroke="#555" stroke-width="1.5"/>
+              <!-- Pfeile -->
+              <polygon points="255,132 255,138 262,135" fill="#555"/>
+              <polygon points="22,10 28,10 25,3" fill="#555"/>
+              <!-- Achsenbeschriftungen -->
+              <text x="264" y="128" font-size="11" fill="#555">t</text>
+              <text x="29" y="11" font-size="11" fill="#555">f(t)</text>
+              <!-- Markierungen t-Achse -->
+              <line x1="40" y1="132" x2="40" y2="138" stroke="#555" stroke-width="1.5"/>
+              <line x1="200" y1="132" x2="200" y2="138" stroke="#555" stroke-width="1.5"/>
+              <!-- Gestrichelte Linien -->
+              <line x1="40" y1="132" x2="40" y2="135" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="200" y1="132" x2="200" y2="135" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- Beschriftungen -->
+              <text x="37" y="150" font-size="11" fill="#555" text-anchor="middle">0</text>
+              <text x="200" y="150" font-size="11" fill="#555" text-anchor="middle">4</text>
+              <!-- Flächenlabel -->
+              <text x="125" y="90" font-size="12" fill="#1a6fbf" font-weight="700" text-anchor="middle">A = 12</text>
+              <!-- Funktionslabel -->
+              <text x="215" y="110" font-size="11" fill="#1a6fbf" font-style="italic">f(t)</text>
+            </svg>
+          </div>
+          a) <strong>Gib</strong> den Bestand \(B(4)\) an und <strong>interpretiere</strong> das Ergebnis im Sachkontext.<br>
+          b) <strong>Begründe</strong> ohne Rechnung, dass \(\displaystyle\int_0^4 f(t)\,dt > 0\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(B(4) = B(0) + \int_0^4 f(t)\,dt = 5 + 12 = \mathbf{17}\).<br>Der Bestand ist von 5 auf 17 gestiegen – die Änderungsrate ist auf \([0,4]\) stets positiv, der Bestand wächst also durchgehend.<br><br>b) Da \(f\) auf \([0,4]\) vollständig oberhalb der x-Achse liegt, gilt \(f(t) \geq 0\) für alle \(t \in [0,4]\). Das Integral entspricht der eingeschlossenen Fläche und ist daher positiv.</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">G1.2</span><span class="td dm">Mittel</span></div><div class="tq">Der Graph einer Änderungsrate \(f\) schließt auf \([0,5]\) eine Fläche von \(A_1 = 15\) (oberhalb der x-Achse) und auf \([5,9]\) eine Fläche von \(A_2 = 8\) (unterhalb der x-Achse) ein. Der Anfangswert ist \(B(0) = 20\).<br><br>
+          a) <strong>Berechne</strong> \(\displaystyle\int_0^9 f(t)\,dt\) (Flächenbilanz) und \(B(9)\).<br>
+          b) <strong>Erkläre</strong>, warum \(B(9) > B(0)\) gilt, obwohl der Graph auch unterhalb der x-Achse verläuft.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Flächenbilanz: \(\int_0^9 f(t)\,dt = 15 - 8 = 7\).<br>\(B(9) = 20 + 7 = \mathbf{27}\).<br><br>b) Obwohl \(f\) auf \([5,9]\) negativ ist (der Bestand nimmt ab), überwiegt der positive Anteil auf \([0,5]\). Die Bilanz ist insgesamt \(+7\), der Bestand ist gestiegen.</div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">G1.3</span><span class="td dm">Mittel</span></div><div class="tq">Der Graph einer Funktion \(f\) ist gegeben. Der Graph schneidet die x-Achse bei \(x = 2\). Die Fläche auf \([0,2]\) beträgt \(A_1 = 6\) (oberhalb), die Fläche auf \([2,5]\) beträgt \(A_2 = 6\) (unterhalb).<br><br>
+          a) <strong>Geben Sie an</strong>, welchen Wert \(\displaystyle\int_0^5 f(x)\,dx\) hat, und <strong>begründen Sie</strong> Ihre Antwort ohne Rechnung.<br>
+          b) <strong>Bestimmen Sie</strong> den tatsächlichen Flächeninhalt, den \(f\) mit der x-Achse auf \([0,5]\) einschließt.<br>
+          c) <strong>Erläutern Sie</strong>, warum die Antworten in a) und b) unterschiedlich sind.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(\int_0^5 f(x)\,dx = 6 - 6 = 0\). Die positive Fläche auf \([0,2]\) und die negative Fläche auf \([2,5]\) sind gleich groß und heben sich in der Bilanz genau auf.<br><br>b) Tatsächlicher Flächeninhalt: \(A = A_1 + A_2 = 6 + 6 = 12\).<br><br>c) Das bestimmte Integral liefert die <em>Flächenbilanz</em> mit Vorzeichen – negative Flächen werden subtrahiert. Der tatsächliche Flächeninhalt addiert dagegen die <em>Beträge</em> aller Teilflächen.</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">G1.4</span><span class="td dh">Schwer</span></div><div class="tq">Der Graph einer Änderungsrate \(f(t)\) eines Wasserspiegels (in cm/h) ist für \(0 \leq t \leq 10\) gegeben. Der Anfangswert beträgt \(h(0) = 40\) cm. Aus dem Graphen lassen sich folgende Informationen entnehmen: \(f(t) > 0\) auf \([0,6]\) mit \(\int_0^6 f(t)\,dt = 18\); \(f(t) < 0\) auf \([6,10]\) mit \(\int_6^{10} f(t)\,dt = -24\).<br><br>
+          a) <strong>Bestimmen Sie</strong> den Wasserstand nach 6 und nach 10 Stunden.<br>
+          b) <strong>Interpretieren Sie</strong> das Ergebnis für \(t = 10\) im Sachkontext.<br>
+          c) <strong>Zeigen Sie</strong>, dass der Wasserstand zu einem Zeitpunkt \(t^* \in (6,10)\) auf 40 cm zurückgekehrt sein muss, und <strong>erläutern Sie</strong>, wie \(t^*\) berechnet werden könnte.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(h(6) = 40 + 18 = \mathbf{58}\) cm.<br>\(h(10) = 40 + 18 - 24 = \mathbf{34}\) cm.<br><br>b) Nach 10 Stunden ist der Wasserstand auf 34 cm gefallen – er liegt 6 cm unter dem Ausgangswert. Der Abfluss auf \([6,10]\) überwog den Zufluss auf \([0,6]\).<br><br>c) Bei \(t = 6\) gilt \(h(6) = 58 > 40\), bei \(t = 10\) gilt \(h(10) = 34 < 40\). Da \(h\) stetig ist, muss es nach dem Zwischenwertsatz ein \(t^* \in (6,10)\) geben, bei dem \(h(t^*) = 40\). Zur Berechnung: \(\int_6^{t^*} f(t)\,dt = -18\) lösen (z.B. mit Stammfunktion von \(f\)).</div></div>
+      </div>
+    </div>
+
+    <!-- Aufgabenpool Hauptsatz & Flächen -->
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.1</span><span class="td de">Einfach</span></div><div class="tq">Berechne \(\displaystyle\int_0^3 x^2\,dx\) und prüfe, ob Flächenbilanz und tatsächlicher Flächeninhalt übereinstimmen. Begründe.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(F(x) = \frac{x^3}{3}\). \(\Big[F\Big]_0^3 = 9 - 0 = 9\).<br>Da \(f(x) = x^2 \geq 0\) auf \([0,3]\), stimmen Flächenbilanz und tatsächlicher Flächeninhalt überein. \(A = 9\).</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.2</span><span class="td de">Einfach</span></div><div class="tq"><strong>Begründen ohne Rechnung.</strong> Begründe, warum \(\displaystyle\int_{-\pi}^{\pi} \sin(x)\,dx = 0\) gilt, ohne das Integral auszurechnen.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(\sin(x)\) ist eine ungerade Funktion, denn \(\sin(-x) = -\sin(x)\). Ihr Graph ist punktsymmetrisch zum Ursprung. Das Intervall \([-\pi, \pi]\) ist symmetrisch um 0. Die positive Fläche auf \([0, \pi]\) und die negative Fläche auf \([-\pi, 0]\) sind gleich groß und heben sich auf – die Flächenbilanz ist daher 0.</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.3</span><span class="td dm">Mittel</span></div><div class="tq">Berechne den tatsächlichen Flächeninhalt, den \(f(x) = -x^2 + 4\) mit der x-Achse einschließt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(x = \pm 2\). Auf \([-2,2]\): \(f \geq 0\).<br>\(F(x) = -\frac{x^3}{3} + 4x\). \(\Big[F\Big]_{-2}^2 = \frac{16}{3} - (-\frac{16}{3}) = \frac{32}{3} \approx 10{,}67\).</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.4</span><span class="td dm">Mittel</span></div><div class="tq">Berechne den tatsächlichen Flächeninhalt zwischen \(f(x) = x^3 - x\) und der x-Achse auf \([-1, 1]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(x = -1, 0, 1\).<br>Auf \([-1,0]\): \(f \geq 0\), auf \([0,1]\): \(f \leq 0\).<br>\(F(x) = \frac{x^4}{4} - \frac{x^2}{2}\). \(\Big[F\Big]_{-1}^0 = \frac{1}{4}\), \(\Big[F\Big]_0^1 = -\frac{1}{4}\).<br>\(A = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}\).</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.5</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Bakterienwachstum.</strong> In einem Labor wird eine Bakterienkultur untersucht. Die Wachstumsrate der Bakterienzahl in Millionen pro Stunde ist für \(0 \leq t \leq 3\) durch \(f(t) = 2e^t\) gegeben. Zu Beginn (\(t = 0\)) sind 5 Millionen Bakterien vorhanden.<br><br>
+          a) <strong>Berechne</strong> mithilfe des bestimmten Integrals, wie viele Bakterien im Zeitraum \([0, 3]\) hinzukommen.<br>
+          b) <strong>Bestimme</strong> den Bakterienbestand nach 3 Stunden und <strong>gib</strong> das Ergebnis im Sachkontext an.<br>
+          c) <strong>Erkläre</strong>, warum die Stammfunktion von \(f(t) = 2e^t\) wieder \(F(t) = 2e^t\) ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(\displaystyle\int_0^3 2e^t\,dt = \Big[2e^t\Big]_0^3 = 2e^3 - 2e^0 = 2e^3 - 2 \approx 40{,}17 - 2 = \mathbf{38{,}17}\) Millionen Bakterien.<br><br>
+          b) Bestand nach 3 h \(= 5 + 38{,}17 \approx \mathbf{43{,}17}\) Millionen Bakterien.<br>
+          <em>Nach 3 Stunden sind ca. 43,2 Millionen Bakterien vorhanden.</em><br><br>
+          c) \(e^t\) ist seine eigene Ableitung: \(\frac{d}{dt}(2e^t) = 2e^t = f(t)\). Damit ist \(F(t) = 2e^t\) nach Definition eine Stammfunktion von \(f\). ✓
+        </div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K2.1</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Integral interpretieren.</strong> \(f(x) = x^2 - 4x + 3\).<br>a) <strong>Berechne</strong> \(\int_0^3 f(x)\,dx\) (Flächenbilanz).<br>b) <strong>Erkläre</strong>, warum das Ergebnis kleiner ist als der tatsächliche Flächeninhalt.<br>c) <strong>Berechne</strong> den tatsächlichen Flächeninhalt auf \([0,3]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(x = 1\) und \(x = 3\).<br>a) \(\Big[F\Big]_0^3 = 0\) – Bilanz ist 0.<br>b) Auf \([1,3]\) liegt \(f \leq 0\) – dieser Anteil hebt den positiven auf.<br>c) \(A = |[F]_0^1| + |[F]_1^3| = \frac{4}{3} + \frac{4}{3} = \frac{8}{3}\).</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K2.2</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Begründen ohne Rechnung.</strong> Entscheide jeweils mit Begründung, ob das Integral positiv, negativ oder gleich null ist:<br><br>a) \(\displaystyle\int_0^{\pi} \sin(x)\,dx\)<br><br>b) \(\displaystyle\int_{-\pi}^{\pi} \cos(x)\,dx\)</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Auf \([0, \pi]\) gilt \(\sin(x) \geq 0\) – der Graph liegt vollständig oberhalb der x-Achse. Das Integral ist daher <strong>positiv</strong>. (Probe: \(\Big[-\cos(x)\Big]_0^{\pi} = 1 + 1 = 2 > 0\) ✓)<br><br>b) \(\cos(x)\) ist eine <strong>gerade</strong> Funktion (\(\cos(-x) = \cos(x)\)), das Symmetrie-Argument für ungerade Funktionen gilt hier <em>nicht</em>. Das Integral kann trotzdem 0 sein – aber nur wegen der speziellen Grenzen, nicht wegen der Punktsymmetrie. (Probe: \(\Big[\sin(x)\Big]_{-\pi}^{\pi} = \sin(\pi) - \sin(-\pi) = 0 - 0 = 0\).)</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K2.5</span><span class="td dm">Mittel</span></div><div class="tq"><strong>Das Solarkraftwerk.</strong> Ein Solarkraftwerk speichert tagsüber Energie in einem Wärmespeicher. Die Speicherrate ist für \(0 \leq t \leq 8\) durch \(f(t) = -t^2 + 8t\) gegeben, wobei \(t\) die Zeit in Stunden nach Sonnenaufgang und \(f(t)\) die Speicherrate in MWh pro Stunde angibt.<br><br>
+          <div style="margin:10px 0">
+            <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;max-width:480px">
+              <path d="M40,175 Q120,15 200,175" fill="#1a6fbf" fill-opacity="0.15" stroke="none"/>
+              <path d="M40,175 Q120,15 200,175" fill="none" stroke="#1a6fbf" stroke-width="2.5"/>
+              <line x1="25" y1="175" x2="290" y2="175" stroke="#555" stroke-width="1.5"/>
+              <line x1="25" y1="185" x2="25" y2="10" stroke="#555" stroke-width="1.5"/>
+              <polygon points="290,172 290,178 298,175" fill="#555"/>
+              <polygon points="22,10 28,10 25,3" fill="#555"/>
+              <text x="300" y="172" font-size="11" fill="#555">t</text>
+              <text x="300" y="183" font-size="10" fill="#888">[h]</text>
+              <text x="29" y="11" font-size="11" fill="#555">f(t)</text>
+              <text x="29" y="22" font-size="10" fill="#888">[MWh/h]</text>
+              <line x1="40" y1="172" x2="40" y2="178" stroke="#555" stroke-width="1.5"/>
+              <line x1="200" y1="172" x2="200" y2="178" stroke="#555" stroke-width="1.5"/>
+              <line x1="120" y1="172" x2="120" y2="178" stroke="#555" stroke-width="1.5"/>
+              <text x="37" y="192" font-size="11" fill="#555" text-anchor="middle">0</text>
+              <text x="120" y="192" font-size="11" fill="#555" text-anchor="middle">4</text>
+              <text x="200" y="192" font-size="11" fill="#555" text-anchor="middle">8</text>
+              <text x="120" y="110" font-size="12" fill="#1a6fbf" font-weight="700" text-anchor="middle">A</text>
+              <text x="215" y="155" font-size="11" fill="#1a6fbf" font-style="italic">f(t)=−t²+8t</text>
+            </svg>
+          </div>
+          a) <strong>Berechne</strong> die Nullstellen von \(f\) und <strong>erkläre</strong>, was diese Zeitpunkte im Sachkontext bedeuten.<br>
+          b) <strong>Berechne</strong> die insgesamt gespeicherte Energiemenge nach 8 Stunden mithilfe des bestimmten Integrals. <strong>Gib</strong> das Ergebnis in MWh im Sachkontext an.<br>
+          c) <strong>Berechne</strong> den Zeitpunkt maximaler Speicherrate und den zugehörigen Wert in MWh/h. <strong>Erkläre</strong> den Zusammenhang mit dem Scheitelpunkt der Parabel.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Nullstellen: \(-t^2+8t = 0 \Rightarrow t(-t+8)=0 \Rightarrow t=0\) oder \(t=8\).<br>
+          <em>Zu Beginn und nach 8 Stunden (Sonnenuntergang) wird keine Energie gespeichert.</em><br><br>
+          b) \(\int_0^8(-t^2+8t)\,dt = \left[-\tfrac{t^3}{3}+4t^2\right]_0^8 = \left(-\tfrac{512}{3}+256\right)-0 = \tfrac{256}{3} \approx \mathbf{85{,}3}\) MWh.<br><br>
+          c) Scheitelpunkt der Parabel: \(t = \tfrac{8}{2} = 4\) h. \(f(4) = -16+32 = \mathbf{16}\) MWh/h.<br>
+          <em>Nach 4 Stunden (Sonnenmittagszeit) erreicht die Speicherrate ihr Maximum von 16 MWh/h.</em>
+        </div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K2.3</span><span class="td dh">Schwer</span></div><div class="tq"><strong>Beweise und berechne.</strong> \(f(x) = -x^2 + 4\).<br>a) <strong>Weise nach</strong>, dass die Nullstellen bei \(x = \pm 2\) liegen.<br>b) <strong>Berechne</strong> den tatsächlichen Flächeninhalt auf \([-3, 3]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-x^2 + 4 = 0 \Rightarrow x^2 = 4 \Rightarrow x = \pm 2\). Probe: \(f(\pm 2) = 0\) ✓<br>b) Auf \([-3,-2]\) und \([2,3]\): \(f \leq 0\).<br>\(|[F]_{-3}^{-2}| = \frac{7}{3}\), \([F]_{-2}^2 = \frac{32}{3}\), \(|[F]_2^3| = \frac{7}{3}\).<br>\(A = \frac{7}{3} + \frac{32}{3} + \frac{7}{3} = \frac{46}{3} \approx 15{,}33\).</div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K2.4</span><span class="td dh">Schwer</span></div><div class="tq"><strong>Funktionenschar.</strong> \(f_a(x) = -x^2 + a^2\) mit \(a > 0\).<br>a) <strong>Bestimme</strong> die Nullstellen in Abhängigkeit von \(a\).<br>b) <strong>Berechne</strong> den von \(f_a\) und der x-Achse eingeschlossenen Flächeninhalt \(A(a)\).<br>c) <strong>Bestimme</strong> \(a\), sodass \(A(a) = \frac{32}{3}\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(x = \pm a\).<br>b) \(A(a) = \int_{-a}^a (-x^2+a^2)\,dx = \left[-\frac{x^3}{3}+a^2 x\right]_{-a}^a = \frac{4a^3}{3}\).<br>c) \(\frac{4a^3}{3} = \frac{32}{3} \Rightarrow a^3 = 8 \Rightarrow a = 2\).</div></div>
+      </div>
+    </div>
+
+  </div><!-- end int-hauptsatz -->
+
+
+  <!-- ── HAUPTSATZ & FLÄCHEN ──────────────────────────────────── -->
+
+
+  <!-- ── FLÄCHEN ZWISCHEN KURVEN ───────────────────────────────── -->
+
+
+  <!-- ── KLAUSURAUFGABEN ────────────────────────────────────────── -->
+
+
+  </div><!-- end main inner -->
+</div><!-- end p4 -->
+</div><!-- end integralrechnung wrapper -->
+
+<script>
+const panels=document.querySelectorAll('.panel');
+const mjRendered = new Set(); // Welche Panel-IDs schon gerendert wurden
+function mjRender(el){
+  if(!el || !window.MathJax || !window.MathJax.typesetPromise) return;
+  const id = el.id || '_';
+  if(mjRendered.has(id)) return;
+  mjRendered.add(id);
+  window.MathJax.typesetPromise([el]).catch(function(){});
+}
+function show(i){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  var t=document.getElementById('p'+i);
+  if(t) t.classList.add('on');
+  // Sidebar
+  const snbs = document.querySelectorAll('.snb');
+  if(snbs[0]) snbs[0].classList.toggle('on', i===0);
+  if(snbs[1]) snbs[1].classList.toggle('on', i===1||i===2||i===3);
+  if(snbs[2]) snbs[2].classList.toggle('on', i===4);
+  // Mobile
+  document.querySelectorAll('.mtnb').forEach((b,j)=>{
+    b.classList.toggle('on', [0,1,1,1,2][i]===j);
+  });
+  // Tab-Bänder ein-/ausblenden
+  const geoTabs = document.getElementById('geo-tabs');
+  const intTabs = document.getElementById('int-tabs');
+  if(geoTabs) geoTabs.style.display = (i>=1&&i<=3) ? 'flex' : 'none';
+  if(intTabs) intTabs.style.display = (i===4) ? 'flex' : 'none';
+  // Geo-Tab-Buttons synchronisieren
+  if(i>=1&&i<=3 && geoTabs) {
+    geoTabs.querySelectorAll('.ptb').forEach((b,j)=>b.classList.toggle('on',j===i-1));
+  }
+  // MathJax für neuen Tab rendern
+  mjRender(t);
+  // Iframes im aktiven Panel laden
+  if(t) loadVisibleIframes(t);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showMain(i){ show(i); }
+function showSub(g,id,btn){ show(1); }
+function syncGeoTab(j) {
+  const geoTabs = document.getElementById('geo-tabs');
+  if(geoTabs) geoTabs.querySelectorAll('.ptb').forEach((b,k)=>b.classList.toggle('on',k===j));
+}
+function loadVisibleIframes(container){
+  if(!container) return;
+  container.querySelectorAll('iframe[data-src]').forEach(function(ifr){
+    if(!ifr.src) ifr.src = ifr.dataset.src;
+  });
+}
+function showIntTab(id, btn) {
+  // Alle Integral-Subpanels ausblenden
+  ['int-stamm','int-bestand','int-grafisch','int-hauptsatz'].forEach(sid => {
+    const el = document.getElementById(sid);
+    if(el) el.classList.remove('on');
+  });
+  const target = document.getElementById(id);
+  if(target){ target.classList.add('on'); loadVisibleIframes(target); mjRender(target); }
+  // Tab-Buttons
+  if(btn) {
+    const tabs = document.getElementById('int-tabs');
+    if(tabs) tabs.querySelectorAll('.ptb').forEach(b => b.classList.toggle('on', b===btn));
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleSub(id){
+  const el=document.getElementById(id);
+  const arrow=document.getElementById('arrow-'+id.replace('sub-',''));
+  if(!el)return;
+  el.classList.toggle('open');
+  if(arrow)arrow.classList.toggle('open');
+}
+function scrollTo(anchor){
+  setTimeout(()=>{
+    const el=document.querySelector(anchor);
+    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
+}
+function togBsp(btn){
+  const a=btn.nextElementSibling;
+  const open=a.classList.toggle('on');
+  btn.textContent=open?'Lösung ausblenden ▴':'Lösung anzeigen ▾';
+}
+function togTask(top){
+  const ans=top.nextElementSibling;
+  const tog=top.querySelector('.tk-toggle');
+  const open=ans.classList.toggle('on');
+  tog.classList.toggle('open',open);
+}
+function updateGroupProgress(group){
+  const all=document.querySelectorAll('.gcheck[data-group="'+group+'"]');
+  const done=[...all].filter(c=>c.classList.contains('done')).length;
+  const pct=all.length?Math.round(done/all.length*100):0;
+  const bar=document.getElementById('pbar-'+group);
+  const pct_el=document.getElementById('ppct-'+group);
+  if(bar)bar.style.width=pct+'%';
+  if(pct_el)pct_el.textContent=pct+' %';
+  // Zweite Fortschrittsleiste (p2) für Geometrie synchronisieren
+  const bar2=document.getElementById('pbar-'+group+'2');
+  const pct_el2=document.getElementById('ppct-'+group+'2');
+  if(bar2)bar2.style.width=pct+'%';
+  if(pct_el2)pct_el2.textContent=pct+' %';
+  // Speichern
+  try{
+    const key='lp_prog_'+group;
+    localStorage.setItem(key,JSON.stringify([...all].map(c=>c.classList.contains('done')?1:0)));
+  }catch(e){}
+}
+function toggleGoal(check){
+  check.classList.toggle('done');
+  const txt=check.parentElement.nextElementSibling;
+  if(txt)txt.classList.toggle('done',check.classList.contains('done'));
+  updateGroupProgress(check.dataset.group||'geo');
+}
+function resetGroupProgress(group){
+  if(!confirm('Lernziele zurücksetzen?'))return;
+  document.querySelectorAll('.gcheck[data-group="'+group+'"]').forEach(c=>{
+    c.classList.remove('done');
+    const txt=c.parentElement.nextElementSibling;
+    if(txt)txt.classList.remove('done');
+  });
+  try{localStorage.removeItem('lp_prog_'+group);}catch(e){}
+  updateGroupProgress(group);
+}
+function showImpressum(){
+  const m = document.getElementById('impressum-modal');
+  m.style.display = 'flex';
+  m.addEventListener('click', function(e){ if(e.target===m) m.style.display='none'; });
+}
+function resetProgress(){ resetGroupProgress('geo'); resetGroupProgress('int'); }
+window.addEventListener('load',()=>{
+  // Startseite sofort rendern
+  mjRender(document.getElementById('p0'));
+  ['geo','int'].forEach(group=>{
+    try{
+      const s=localStorage.getItem('lp_prog_'+group);
+      if(s){
+        const st=JSON.parse(s);
+        const all=document.querySelectorAll('.gcheck[data-group="'+group+'"]');
+        st.forEach((v,i)=>{if(all[i]&&v){all[i].classList.add('done');const txt=all[i].parentElement.nextElementSibling;if(txt)txt.classList.add('done');}});
+      }
+    }catch(e){}
+    updateGroupProgress(group);
+  });
+});
+</script>
+</div><!-- end content-wrap -->
+</div><!-- end app-wrap -->
+
+<!-- Impressum Modal -->
+<div id="impressum-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:14px;padding:36px 40px;max-width:480px;width:90%;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.18)">
+    <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#aaa;line-height:1">×</button>
+    <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">Impressum</div>
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px">Angaben gemäß § 5 TMG</div>
+    <div style="font-size:15px;line-height:1.8;color:#333">
+      <strong>Lutz Leußner</strong><br>
+      <span style="color:#888;font-size:13px;margin-top:8px;display:block">Diese Seite ist ein privates, nicht-kommerzielles Unterrichtsmaterial und wird ausschließlich zu Bildungszwecken bereitgestellt.</span>
+    </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e0deda;font-size:13px;color:#aaa;line-height:1.6">
+      <strong style="color:#555">Urheberrecht</strong><br>
+      Die Inhalte dieser Seite wurden vom Betreiber selbst erstellt. Eine Vervielfältigung oder Verwendung außerhalb des Unterrichts bedarf der ausdrücklichen Genehmigung.<br><br>
+      <strong style="color:#555">Datenschutz</strong><br>
+      Diese Seite speichert keine personenbezogenen Daten. Lernfortschritte werden ausschließlich lokal im Browser gespeichert (localStorage) und nicht übertragen.
+    </div>
+  </div>
+</div>
+
+<script>
+// Lazy-load GeoGebra iframes: nur laden wenn Tab sichtbar wird
+(function(){
+  function loadIframe(iframe){
+    if(iframe.dataset.src && !iframe.src){
+      iframe.src = iframe.dataset.src;
+    }
+  }
+  // Intersection Observer für automatisches Laden beim Scrollen
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) loadIframe(e.target);
+      });
+    }, {rootMargin:'200px'});
+    document.querySelectorAll('iframe[data-src]').forEach(function(ifr){
+      io.observe(ifr);
+    });
+  } else {
+    // Fallback: alles sofort laden
+    document.querySelectorAll('iframe[data-src]').forEach(loadIframe);
+  }
+})();
+</script>
+</body>
+</html>
