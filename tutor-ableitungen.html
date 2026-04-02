@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernportal Mathematik – Ableitungen</title>
+
+    <!-- MathJax Config & CDN -->
+    <script>
+    window.mathJaxReady = false;
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'none'
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea']
+      },
+      startup: {
+        pageReady: function() {
+          window.mathJaxReady = true;
+          return MathJax.startup.defaultPageReady().then(function() {
+            // Re-typeset any content that was added before MathJax was ready
+            if (window._pendingTypeset) {
+              MathJax.typesetPromise().catch(function(e){ console.log(e); });
+            }
+          });
+        }
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+        <style>
+        /* ── Design tokens (Japanese palette – matching index.html) ─────── */
+        :root {
+            --kiku:       #5b6e2e;
+            --kiku-light: #e8edda;
+            --kiku-bg:    #f3f5ec;
+            --sango:      #c75c3a;
+            --sango-light:#fceee9;
+            --fukagawa:   #8a9da7;
+            --fukagawa-light:#ecf1f4;
+            --mushikuri:  #c8b55e;
+            --mushikuri-light:#f7f3e2;
+            --bg:         #fffcf6;
+            --bg-card:    #ffffff;
+            --ink:        #2c2c2c;
+            --ink-soft:   #6b6560;
+            --ink-muted:  #a09a92;
+            --border:     #e8e4de;
+            --border-light:#f0ece6;
+            --radius:     24px;
+            --radius-sm:  14px;
+            --radius-xs:  8px;
+            --shadow-sm:  0 1px 3px rgba(44,42,38,.05);
+            --shadow-md:  0 4px 20px rgba(44,42,38,.07);
+            --transition: .25s cubic-bezier(.4,0,.2,1);
+            --serif:      'DM Serif Display', Georgia, serif;
+            --sans:       'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* ── Header ──────────────────────────────────────────── */
+        .tutor-header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 18px clamp(1.5rem,4vw,3rem);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--kiku);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1.5px solid var(--kiku);
+            transition: all var(--transition);
+            flex-shrink: 0;
+            font-family: var(--sans);
+        }
+        .back-link:hover {
+            background: var(--kiku);
+            color: #fff;
+        }
+        .tutor-header h1 {
+            font-family: var(--serif);
+            font-size: clamp(18px, 2.5vw, 22px);
+            font-weight: 400;
+            letter-spacing: -.01em;
+            flex: 1;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(2rem,5vw,3.5rem) clamp(1.5rem,4vw,3rem);
+        }
+
+        /* ── MathJax ────────────────────────────────────────── */
+        mjx-container { overflow-x: auto; max-width: 100%; }
+        .MathJax { font-size: 1.05em !important; }
+
+        /* ── Buttons ────────────────────────────────────────── */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--radius-xs);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            text-align: center;
+            font-family: var(--sans);
+        }
+        .btn-primary {
+            background: var(--kiku);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #4a5c24;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-secondary {
+            background: var(--mushikuri-light);
+            color: #8a7a30;
+            border: 1.5px solid var(--mushikuri);
+        }
+        .btn-secondary:hover {
+            background: var(--mushikuri);
+            color: #fff;
+        }
+        .btn-success {
+            background: var(--kiku-light);
+            color: var(--kiku);
+            border: 1.5px solid var(--kiku);
+        }
+        .btn-success:hover {
+            background: var(--kiku);
+            color: #fff;
+        }
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 13px;
+        }
+
+        /* ── Cards ──────────────────────────────────────────── */
+        .card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition);
+        }
+        .card:hover { box-shadow: var(--shadow-md); }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            user-select: none;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-xs);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .card-icon.green { background: var(--kiku-light); color: var(--kiku); }
+        .card-icon.blue { background: var(--fukagawa-light); color: var(--fukagawa); }
+        .card-icon.amber { background: var(--mushikuri-light); color: #8a7a30; }
+        .card-icon.red { background: var(--sango-light); color: var(--sango); }
+
+        .card-title {
+            flex: 1;
+            font-family: var(--serif);
+            font-size: clamp(17px, 2vw, 20px);
+            font-weight: 400;
+        }
+        .card-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+        }
+        .card-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+        .badge-green { background: var(--kiku-light); color: var(--kiku); }
+        .badge-amber { background: var(--mushikuri-light); color: #8a7a30; }
+        .badge-red { background: var(--sango-light); color: var(--sango); }
+
+        /* ── Progress Bar ───────────────────────────────────── */
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background: var(--border-light);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--kiku);
+            transition: width .5s;
+            border-radius: 3px;
+        }
+
+        /* ── Quiz Styles ────────────────────────────────────── */
+        .quiz-container { max-width: 700px; margin: 0 auto; }
+        .quiz-header { text-align: center; margin-bottom: 2rem; }
+        .quiz-question-counter {
+            font-size: 13px;
+            color: var(--ink-muted);
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .quiz-question-title {
+            font-family: var(--serif);
+            font-size: clamp(20px, 3vw, 26px);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+        .quiz-option {
+            padding: 16px 20px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition);
+            background: var(--bg-card);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .quiz-option:hover {
+            border-color: var(--kiku);
+            background: var(--kiku-bg);
+        }
+        .quiz-option input[type="radio"] { margin-right: 12px; cursor: pointer; accent-color: var(--kiku); }
+        .quiz-option.selected { border-color: var(--kiku); background: var(--kiku-bg); }
+        .quiz-option.correct { border-color: var(--kiku); background: var(--kiku-light); }
+        .quiz-option.incorrect { border-color: var(--sango); background: var(--sango-light); }
+
+        /* ── Quiz Results ───────────────────────────────────── */
+        .quiz-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin: 2rem 0;
+        }
+        .result-card {
+            padding: 24px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .result-card.mastered { background: var(--kiku-light); border: 1.5px solid var(--kiku); }
+        .result-card.unsure { background: var(--mushikuri-light); border: 1.5px solid var(--mushikuri); }
+        .result-card.needs-practice { background: var(--sango-light); border: 1.5px solid var(--sango); }
+        .result-card-title { font-weight: 600; margin-top: 10px; font-size: 14px; }
+        .result-card-status { font-size: 1.1rem; margin-top: 6px; font-weight: 700; }
+        .result-card.mastered .result-card-status { color: var(--kiku); }
+        .result-card.unsure .result-card-status { color: #8a7a30; }
+        .result-card.needs-practice .result-card-status { color: var(--sango); }
+        .result-icon { font-size: 2.25rem; }
+
+        /* ── Learning Path ──────────────────────────────────── */
+        .learning-path { display: flex; flex-direction: column; gap: 16px; }
+
+        .topic-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition);
+        }
+        .topic-card:hover { box-shadow: var(--shadow-md); }
+
+        .topic-card-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--bg-card);
+            transition: background var(--transition);
+        }
+        .topic-card-header:hover { background: var(--kiku-bg); }
+
+        .topic-card-content {
+            padding: 20px 24px;
+            border-top: 1px solid var(--border-light);
+            animation: slideDown .3s ease;
+        }
+        @keyframes slideDown { from { opacity: 0; } to { opacity: 1; } }
+
+        .topic-meta { flex: 1; }
+        .topic-description { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+        .topic-stats { display: flex; gap: 1.5rem; margin-top: 10px; font-size: 13px; color: var(--ink-muted); }
+        .topic-stat { display: flex; align-items: center; gap: 6px; }
+        .difficulty-dots { display: flex; gap: 4px; }
+        .difficulty-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+        .difficulty-dot.filled { background: var(--mushikuri); }
+
+        /* ── Exercise Styles ─────────────────────────────────── */
+        .exercises { display: flex; flex-direction: column; gap: 16px; margin-top: 1.5rem; }
+        .exercise-card {
+            border: none;
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            background: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+        }
+        .exercise-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .exercise-number {
+            font-weight: 700;
+            color: var(--kiku);
+            font-size: 1.2rem;
+            min-width: 30px;
+        }
+        .exercise-content { flex: 1; }
+        .exercise-title { font-weight: 600; margin-bottom: 6px; font-size: 15px; }
+        .exercise-hints {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-light);
+        }
+        .hint {
+            margin-bottom: 12px;
+            padding: 14px 18px;
+            background: var(--kiku-bg);
+            border-left: 3px solid var(--kiku);
+            border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+        }
+        .hint-label {
+            font-weight: 600;
+            color: var(--kiku);
+            font-size: 13px;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .hint-text { font-size: 15px; color: var(--ink); line-height: 1.7; }
+
+        .solution {
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: var(--kiku-light);
+            border-left: 3px solid var(--kiku);
+            border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+        }
+        .solution-label {
+            font-weight: 600;
+            color: var(--kiku);
+            font-size: 13px;
+            display: block;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .solution-text { font-size: 15px; color: var(--ink); line-height: 1.7; }
+
+        /* ── Theory Card ────────────────────────────────────── */
+        .theory-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .theory-title {
+            font-family: var(--serif);
+            font-size: clamp(18px, 2.5vw, 22px);
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .theory-content { line-height: 1.8; color: var(--ink); }
+        .theory-content p { margin-bottom: 14px; }
+        .theory-content ul, .theory-content ol { margin-left: 1.5rem; line-height: 1.8; }
+
+        .key-insight {
+            margin: 20px 0;
+            padding: 16px 20px;
+            background: var(--kiku-bg);
+            border-left: 4px solid var(--kiku);
+            border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+        }
+        .key-insight-title {
+            font-weight: 700;
+            color: var(--kiku);
+            margin-bottom: 6px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        /* ── Utility ────────────────────────────────────────── */
+        .hidden { display: none !important; }
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+
+        .expand-icon { transition: transform .3s ease; color: var(--ink-muted); }
+        .expand-icon.collapsed { transform: rotate(0deg); }
+        .expand-icon.expanded { transform: rotate(180deg); }
+
+        /* ── Responsive ─────────────────────────────────────── */
+        @media (max-width: 700px) {
+            main { padding: 1.25rem; }
+            .tutor-header { padding: 14px 1rem; }
+            .tutor-header h1 { font-size: 16px; }
+            .quiz-results { grid-template-columns: 1fr; }
+            .topic-stats { flex-direction: column; gap: 8px; }
+        }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="tutor-header">
+        <a href="index.html" class="back-link">← Lernportal</a>
+        <h1>📐 Ableitungen</h1>
+    </div>
+
+    <main>
+        <!-- QUIZ PHASE -->
+        <div id="quiz-phase">
+            <div class="progress-bar">
+                <div class="progress-fill" id="quiz-progress" style="width: 0%;"></div>
+            </div>
+
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-question-counter" id="question-counter">Frage 1 von 8</div>
+                    <div class="quiz-question-title" id="question-text"></div>
+                </div>
+
+                <div class="quiz-options" id="quiz-options"></div>
+
+                <div style="text-align: center;">
+                    <button class="btn btn-primary" id="next-btn" style="display: none;">Weiter →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTS PHASE -->
+        <div id="results-phase" class="hidden">
+            <div class="results-header">
+                <h2>Deine Ergebnisse</h2>
+                <p class="results-description">Basierend auf deinen Antworten haben wir einen personalisierten Lernpfad für dich erstellt.</p>
+            </div>
+
+            <div class="quiz-results" id="results-grid"></div>
+
+            <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="start-path-btn">Zum Lernpfad →</button>
+                <button class="btn btn-secondary" id="retake-quiz-btn">Quiz wiederholen</button>
+            </div>
+        </div>
+
+        <!-- LEARNING PHASE -->
+        <div id="learning-phase" class="hidden">
+            <div class="learning-header">
+                <h2>Dein Lernpfad</h2>
+                <p style="color: var(--ink-soft); margin-bottom: 1.5rem;">Wähle ein Thema, um zu lernen und zu üben</p>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="learning-progress" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="learning-path" id="learning-path-container"></div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn btn-secondary" id="restart-quiz-btn" style="font-size:0.875rem;">Wissensstand per Quiz testen →</button>
+            </div>
+        </div>
+
+        <!-- MODULE PHASE -->
+        <div id="module-phase" class="hidden">
+            <div style="margin-bottom: 2rem;">
+                <button class="btn btn-secondary btn-small" id="back-to-path-btn">← Zurück zum Lernpfad</button>
+            </div>
+            <div id="module-content"></div>
+        </div>
+    </main>
+
+    <script>
+        // ============= QUIZ DATA =============
+        const QUIZ_DATA = {
+            questions: [
+                {
+                    id: 1,
+                    topic: "Ableitungsregeln",
+                    text: "Bestimme die Ableitung von \\( f(x) = 3x^4 - 2x^2 + 5 \\) mittels Potenzregel.",
+                    options: [
+                        "\\( f'(x) = 12x^3 - 4x \\)",
+                        "\\( f'(x) = 12x^4 - 4x^2 \\)",
+                        "\\( f'(x) = 3x^3 - 2x \\)",
+                        "\\( f'(x) = 7x^3 - 2x \\)"
+                    ],
+                    correct: 0
+                },
+                {
+                    id: 2,
+                    topic: "Ableitungsregeln",
+                    text: "Nutze die Kettenregel: Bestimme die Ableitung von \\( g(x) = (2x + 3)^5 \\).",
+                    options: [
+                        "\\( g'(x) = 10(2x + 3)^4 \\)",
+                        "\\( g'(x) = 5(2x + 3)^4 \\)",
+                        "\\( g'(x) = 2(2x + 3)^4 \\)",
+                        "\\( g'(x) = 10(2x + 3)^5 \\)"
+                    ],
+                    correct: 0
+                },
+                {
+                    id: 3,
+                    topic: "Tangentengleichung & Neigungswinkel",
+                    text: "Bestimme die Gleichung der Tangente an \\( f(x) = x^2 \\) an der Stelle \\( x_0 = 2 \\).",
+                    options: [
+                        "\\( y = 4x - 4 \\)",
+                        "\\( y = 2x + 4 \\)",
+                        "\\( y = 4x + 8 \\)",
+                        "\\( y = 2x - 4 \\)"
+                    ],
+                    correct: 0
+                },
+                {
+                    id: 4,
+                    topic: "Tangentengleichung & Neigungswinkel",
+                    text: "Eine Tangente an \\( f(x) = \\sqrt{x} \\) hat die Steigung \\( m = \\frac{1}{4} \\). An welcher Stelle \\( x_0 \\) berührt sie den Graphen?",
+                    options: [
+                        "\\( x_0 = 1 \\)",
+                        "\\( x_0 = 4 \\)",
+                        "\\( x_0 = 2 \\)",
+                        "\\( x_0 = 16 \\)"
+                    ],
+                    correct: 2
+                },
+                {
+                    id: 5,
+                    topic: "Grafisches Ableiten",
+                    text: "Das Schaubild von \\( f(x) \\) hat an der Stelle \\( x = 1 \\) einen Hochpunkt. Was gilt für \\( f'(x) \\)?",
+                    options: [
+                        "\\( f'(1) < 0 \\)",
+                        "\\( f'(1) = 0 \\) und \\( f'(x) > 0 \\) vor \\( x = 1 \\), \\( f'(x) < 0 \\) nach \\( x = 1 \\)",
+                        "\\( f'(1) > 0 \\)",
+                        "\\( f'(x) \\) ist konstant"
+                    ],
+                    correct: 1
+                },
+                {
+                    id: 6,
+                    topic: "Grafisches Ableiten",
+                    text: "Das Schaubild von \\( f(x) \\) ist auf dem Intervall \\( [0, 2] \\) streng monoton fallend. Welche Aussage ist korrekt?",
+                    options: [
+                        "\\( f'(x) > 0 \\) für alle \\( x \\in [0, 2] \\)",
+                        "\\( f'(x) = 0 \\) für alle \\( x \\in [0, 2] \\)",
+                        "\\( f'(x) < 0 \\) für alle \\( x \\in [0, 2] \\)",
+                        "\\( f'(x) \\) ist positiv am Anfang und negativ am Ende"
+                    ],
+                    correct: 2
+                },
+                {
+                    id: 7,
+                    topic: "Ableitungsanwendungen",
+                    text: "Ein Auto fährt mit der Weg-Zeit-Funktion \\( s(t) = 3t^2 + 2t \\) (in Metern). Bestimme seine Geschwindigkeit zum Zeitpunkt \\( t = 2 \\text{ s} \\).",
+                    options: [
+                        "\\( v = 10 \\text{ m/s} \\)",
+                        "\\( v = 14 \\text{ m/s} \\)",
+                        "\\( v = 16 \\text{ m/s} \\)",
+                        "\\( v = 8 \\text{ m/s} \\)"
+                    ],
+                    correct: 1
+                },
+                {
+                    id: 8,
+                    topic: "Ableitungsanwendungen",
+                    text: "Eine Population folgt dem Modell \\( P(t) = 100 \\cdot e^{0.1t} \\). Welche Aussage über die Änderungsrate ist richtig?",
+                    options: [
+                        "Die Änderungsrate ist konstant",
+                        "Die Änderungsrate ist proportional zur aktuellen Populationsgröße",
+                        "Die Änderungsrate nimmt linear ab",
+                        "Die Änderungsrate ist unabhängig von \\( t \\)"
+                    ],
+                    correct: 1
+                }
+            ]
+        };
+
+        const TOPIC_DATA = {
+            "Ableitungsregeln": {
+                description: "Potenzregel, Summenregel, Faktorregel, Kettenregel verstehen und anwenden",
+                difficulty: 1,
+                estimatedTime: "45 min"
+            },
+            "Tangentengleichung & Neigungswinkel": {
+                description: "Tangenten an Kurven berechnen und Steigungswinkel mit arctan bestimmen",
+                difficulty: 2,
+                estimatedTime: "40 min"
+            },
+            "Grafisches Ableiten": {
+                description: "Von der Funktion f auf ihre Ableitung f' graphisch schließen",
+                difficulty: 2,
+                estimatedTime: "35 min"
+            },
+            "Ableitungsanwendungen": {
+                description: "Sekantensteigung, lokale Änderungsrate und Anwendungen in Sachkontexten",
+                difficulty: 2,
+                estimatedTime: "50 min"
+            }
+        };
+
+        const LEARNING_MODULES = {
+            "Ableitungsregeln": {
+                theory: `
+                    <div class="theory-card">
+                        <div class="theory-title">Ableitungsregeln – Theorie</div>
+                        <div class="theory-content">
+                            <p>Die <strong>Ableitung</strong> einer Funktion \\( f(x) \\) beschreibt die momentane Änderungsrate an einer bestimmten Stelle. Es gibt mehrere Regeln, um Ableitungen zu berechnen.</p>
+
+                            <div class="key-insight">
+                                <div class="key-insight-title">Definition:</div>
+                                <p>Die Ableitung \\( f'(x) \\) ist der Grenzwert \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\)</p>
+                            </div>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Potenzregel:</h4>
+                            <p>Für \\( f(x) = x^n \\) gilt:</p>
+                            <p style="text-align: center; font-size: 1.05rem;">\\[ f'(x) = n \\cdot x^{n-1} \\]</p>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Summenregel:</h4>
+                            <p>\\[ [f(x) + g(x)]' = f'(x) + g'(x) \\]</p>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Faktorregel:</h4>
+                            <p>\\[ [c \\cdot f(x)]' = c \\cdot f'(x) \\]</p>
+                            <p style="color: var(--ink-soft); font-size: 0.875rem; margin-top: 0.75rem;">wobei \\( c \\) eine konstante Zahl ist.</p>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Kettenregel:</h4>
+                            <p>Für \\( f(x) = [u(x)]^n \\) mit \\( u(x) \\) als innere Funktion:</p>
+                            <p style="text-align: center; font-size: 1.05rem;">\\[ f'(x) = n \\cdot [u(x)]^{n-1} \\cdot u'(x) \\]</p>
+
+                            <div class="key-insight">
+                                <div class="key-insight-title">Merksatz zur Kettenregel:</div>
+                                <p><strong>\"Äußere Ableitung mal innere Ableitung\"</strong> – Leite die äußere Funktion ab und multipliziere mit der Ableitung der inneren Funktion.</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                exercises: [
+                    {
+                        number: 1,
+                        difficulty: "Leicht",
+                        title: "Potenzregel anwenden",
+                        text: "Bestimme die Ableitung von \\( f(x) = 5x^3 \\).",
+                        hints: [
+                            "Nutze die Potenzregel: \\( [x^n]' = n \\cdot x^{n-1} \\)",
+                            "Hier ist der Exponent \\( n = 3 \\), also wird \\( n-1 = 2 \\).",
+                            "Multipliziere den Koeffizient 5 mit der Ableitung von \\( x^3 \\)."
+                        ],
+                        solution: "\\[ f'(x) = 5 \\cdot 3x^2 = 15x^2 \\]"
+                    },
+                    {
+                        number: 2,
+                        difficulty: "Mittel",
+                        title: "Summenregel und Faktorregel",
+                        text: "Bestimme die Ableitung von \\( f(x) = 4x^3 - 3x + 7 \\).",
+                        hints: [
+                            "Wende die Summenregel an: Leite jeden Term einzeln ab.",
+                            "\\( [4x^3]' = 4 \\cdot 3x^2 = 12x^2 \\), \\( [-3x]' = -3 \\), \\( [7]' = 0 \\)",
+                            "Addiere die Ableitungen der Terme."
+                        ],
+                        solution: "\\[ f'(x) = 12x^2 - 3 \\]"
+                    },
+                    {
+                        number: 3,
+                        difficulty: "Schwer",
+                        title: "Kettenregel",
+                        text: "Bestimme die Ableitung von \\( f(x) = (3x^2 + 2)^4 \\) mittels Kettenregel.",
+                        hints: [
+                            "Erkenne die Verkettung: äußere Funktion \\( u^4 \\) mit innerer Funktion \\( u = 3x^2 + 2 \\).",
+                            "Leite die äußere Funktion ab: \\( [u^4]' = 4u^3 \\)",
+                            "Leite die innere Funktion ab: \\( [3x^2 + 2]' = 6x \\). Multipliziere: \\( 4(3x^2 + 2)^3 \\cdot 6x \\)"
+                        ],
+                        solution: "\\[ f'(x) = 4(3x^2 + 2)^3 \\cdot 6x = 24x(3x^2 + 2)^3 \\]"
+                    }
+                ]
+            },
+            "Tangentengleichung & Neigungswinkel": {
+                theory: `
+                    <div class="theory-card">
+                        <div class="theory-title">Tangentengleichung & Neigungswinkel – Theorie</div>
+                        <div class="theory-content">
+                            <p>Eine <strong>Tangente</strong> ist eine Gerade, die den Graphen einer Funktion an genau einer Stelle berührt. Die Steigung der Tangente ist gleich der Ableitung der Funktion an dieser Stelle.</p>
+
+                            <div class="key-insight">
+                                <div class="key-insight-title">Tangentengleichung:</div>
+                                <p>Die Tangente an \\( f(x) \\) an der Stelle \\( x_0 \\) hat die Gleichung:</p>
+                                <p style="text-align: center; font-size: 1.05rem;">\\[ y = f'(x_0) \\cdot (x - x_0) + f(x_0) \\]</p>
+                            </div>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Bestimmung des Berührpunktes:</h4>
+                            <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                                <li>Berechne \\( f(x_0) \\) – den y-Wert des Berührpunktes</li>
+                                <li>Berechne \\( f'(x_0) \\) – die Steigung der Tangente</li>
+                                <li>Setze beide in die Tangentengleichung ein</li>
+                            </ol>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Neigungswinkel:</h4>
+                            <p>Der <strong>Neigungswinkel</strong> \\( \\alpha \\) einer Geraden mit Steigung \\( m \\) ist:</p>
+                            <p style="text-align: center; font-size: 1.05rem;">\\[ \\alpha = \\arctan(m) \\]</p>
+                            <p style="color: var(--ink-soft); font-size: 0.875rem; margin-top: 0.75rem;">Der Winkel wird in Grad oder Radiant angegeben.</p>
+
+                            <div class="key-insight">
+                                <div class="key-insight-title">Wichtig:</div>
+                                <p>Je größer die Steigung \\( m \\), desto steiler ist die Gerade. Bei \\( m = 0 \\) ist die Gerade horizontal, bei \\( m \\to \\infty \\) wird sie immer steiler.</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                exercises: [
+                    {
+                        number: 1,
+                        difficulty: "Leicht",
+                        title: "Tangente an linearer Funktion",
+                        text: "Bestimme die Tangente an \\( f(x) = 3x + 2 \\) an der Stelle \\( x_0 = 1 \\).",
+                        hints: [
+                            "Für lineare Funktionen ist die Ableitung konstant: \\( f'(x) = 3 \\)",
+                            "Berechne \\( f(1) = 3(1) + 2 = 5 \\)",
+                            "Die Tangente ist: \\( y = 3(x - 1) + 5 = 3x + 2 \\) – die Funktion selbst!"
+                        ],
+                        solution: "\\[ y = 3x + 2 \\]"
+                    },
+                    {
+                        number: 2,
+                        difficulty: "Mittel",
+                        title: "Tangente an Parabel",
+                        text: "Bestimme die Gleichung der Tangente an \\( f(x) = x^2 - 2x + 3 \\) an der Stelle \\( x_0 = 2 \\).",
+                        hints: [
+                            "Berechne die Ableitung: \\( f'(x) = 2x - 2 \\)",
+                            "An der Stelle \\( x_0 = 2 \\): \\( f'(2) = 2(2) - 2 = 2 \\) (Steigung)",
+                            "Berechne \\( f(2) = 4 - 4 + 3 = 3 \\). Nutze: \\( y = 2(x - 2) + 3 = 2x - 1 \\)"
+                        ],
+                        solution: "\\[ y = 2x - 1 \\]"
+                    },
+                    {
+                        number: 3,
+                        difficulty: "Schwer",
+                        title: "Neigungswinkel der Tangente",
+                        text: "An der Stelle \\( x_0 = 1 \\) hat die Funktion \\( f(x) = x^3 - x \\) eine Tangente. Berechne den Neigungswinkel \\( \\alpha \\) dieser Tangente.",
+                        hints: [
+                            "Berechne die Ableitung: \\( f'(x) = 3x^2 - 1 \\)",
+                            "An \\( x_0 = 1 \\): \\( f'(1) = 3(1)^2 - 1 = 2 \\) (Steigung \\( m = 2 \\))",
+                            "Nutze: \\( \\alpha = \\arctan(2) \\approx 63,43° \\)"
+                        ],
+                        solution: "\\[ \\alpha = \\arctan(2) \\approx 63,43° \\text{ oder } \\alpha \\approx 1,107 \\text{ rad} \\]"
+                    }
+                ]
+            },
+            "Grafisches Ableiten": {
+                theory: `
+                    <div class="theory-card">
+                        <div class="theory-title">Grafisches Ableiten – Theorie</div>
+                        <div class="theory-content">
+                            <p><strong>Grafisches Ableiten</strong> bedeutet, aus dem Schaubild von \\( f(x) \\) qualitativ das Schaubild der Ableitung \\( f'(x) \\) zu skizzieren.</p>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Zusammenhang zwischen f und f':</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                                <li><strong>Wo \\( f \\) steigt:</strong> \\( f' > 0 \\) (f' liegt über der x-Achse)</li>
+                                <li><strong>Wo \\( f \\) fällt:</strong> \\( f' < 0 \\) (f' liegt unter der x-Achse)</li>
+                                <li><strong>An Extrempunkten von \\( f \\):</strong> \\( f'(x) = 0 \\) (f' schneidet die x-Achse)</li>
+                                <li><strong>Wo \\( f \\) am steilsten:</strong> \\( |f'(x)| \\) ist maximal</li>
+                                <li><strong>Wendepunkte von \\( f \\):</strong> \\( f' \\) hat Extrempunkte</li>
+                            </ul>
+
+                            <div class="key-insight">
+                                <div class="key-insight-title">Schrittweise Vorgehensweise:</div>
+                                <ol style="margin-left: 1.5rem; line-height: 1.8; font-size: 0.95rem;">
+                                    <li>Identifiziere Extrempunkte von \\( f \\) – dort hat \\( f' \\) Nullstellen</li>
+                                    <li>Bestimme Monotoniebereiche – wo steigt/fällt \\( f \\)?</li>
+                                    <li>Skizziere \\( f' \\) passend: positiv wo \\( f \\) steigt, negativ wo \\( f \\) fällt</li>
+                                    <li>Beachte Steigung von \\( f \\) – großes Steigungspotenzial \\( \\Rightarrow \\) großes \\( |f'| \\)</li>
+                                </ol>
+                            </div>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Beispiele:</h4>
+                            <p>Ist \\( f \\) eine nach oben geöffnete Parabel, dann ist \\( f' \\) eine steigende Gerade. Die Nullstelle von \\( f' \\) liegt beim Scheitelpunkt von \\( f \\).</p>
+                        </div>
+                    </div>
+                `,
+                exercises: [
+                    {
+                        number: 1,
+                        difficulty: "Leicht",
+                        title: "Monotonie erkunden",
+                        text: "Das Schaubild von \\( f \\) steigt auf \\( [0, 2] \\), hat einen Hochpunkt bei \\( x = 2 \\), und fällt auf \\( [2, 5] \\). Welche Aussage über \\( f' \\) ist korrekt?",
+                        hints: [
+                            "Wo \\( f \\) steigt, ist \\( f'(x) > 0 \\).",
+                            "Am Hochpunkt \\( x = 2 \\) ist \\( f'(2) = 0 \\).",
+                            "Wo \\( f \\) fällt, ist \\( f'(x) < 0 \\)."
+                        ],
+                        solution: "\\( f' > 0 \\) auf \\( [0, 2] \\), \\( f'(2) = 0 \\), und \\( f' < 0 \\) auf \\( [2, 5] \\)."
+                    },
+                    {
+                        number: 2,
+                        difficulty: "Mittel",
+                        title: "Wendepunkte und Extrempunkte von f'",
+                        text: "Die Funktion \\( f \\) ist auf \\( [0, 1] \\) konkav (rechtsgekrümmt), auf \\( [1, 3] \\) konvex (linksgekrümmt). Welche Struktur hat \\( f' \\)?",
+                        hints: [
+                            "Rechtskrümmung von \\( f \\) bedeutet \\( f' \\) fällt (\\( f'' < 0 \\)).",
+                            "Linkskrümmung von \\( f \\) bedeutet \\( f' \\) steigt (\\( f'' > 0 \\)).",
+                            "Bei \\( x = 1 \\) wechselt die Krümmung – \\( f' \\) hat dort einen Extrempunkt (Tiefpunkt)."
+                        ],
+                        solution: "\\( f' \\) fällt auf \\( [0, 1] \\) (hat ein Minimum bei \\( x = 1 \\)), und \\( f' \\) steigt auf \\( [1, 3] \\)."
+                    },
+                    {
+                        number: 3,
+                        difficulty: "Schwer",
+                        title: "Komplexes Schaubild interpretieren",
+                        text: "Das Schaubild von \\( f(x) = x^3 - 3x \\) hat einen Hochpunkt bei \\( x \\approx -1 \\) und einen Tiefpunkt bei \\( x \\approx 1 \\). Skizziere qualitativ \\( f' \\).",
+                        hints: [
+                            "Berechne \\( f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x - 1)(x + 1) \\).",
+                            "Nullstellen von \\( f' \\): \\( x = -1 \\) und \\( x = 1 \\) – Extrempunkte von \\( f \\).",
+                            "\\( f' > 0 \\) für \\( x < -1 \\) und \\( x > 1 \\); \\( f' < 0 \\) für \\( -1 < x < 1 \\). Das Schaubild von \\( f' \\) ist eine nach oben geöffnete Parabel."
+                        ],
+                        solution: "\\( f'(x) = 3(x - 1)(x + 1) \\) ist eine nach oben geöffnete Parabel mit Nullstellen bei \\( x = -1 \\) und \\( x = 1 \\)."
+                    }
+                ]
+            },
+            "Ableitungsanwendungen": {
+                theory: `
+                    <div class="theory-card">
+                        <div class="theory-title">Ableitungsanwendungen – Theorie</div>
+                        <div class="theory-content">
+                            <p>Die Ableitung hat zahlreiche praktische Anwendungen. Sie beschreibt die <strong>lokale Änderungsrate</strong> einer Größe und wird in vielen Sachkontexten verwendet.</p>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Sekantensteigung vs. Tangentensteigung:</h4>
+                            <p><strong>Sekantensteigung</strong> (Durchschnittsänderungsrate über ein Intervall \\( [a, b] \\)):</p>
+                            <p style="text-align: center; font-size: 1.05rem;">\\[ m_s = \\frac{f(b) - f(a)}{b - a} \\]</p>
+                            <p style="margin-top: 1rem;"><strong>Tangentensteigung</strong> (lokale Änderungsrate an \\( x_0 \\)):</p>
+                            <p style="text-align: center; font-size: 1.05rem;">\\[ m_t = f'(x_0) = \\lim_{h \\to 0} \\frac{f(x_0 + h) - f(x_0)}{h} \\]</p>
+
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Anwendungen in Sachkontexten:</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                                <li><strong>Physik:</strong> \\( v = \\frac{ds}{dt} \\) (Geschwindigkeit ist Ableitung des Weges)</li>
+                                <li><strong>Ökonomie:</strong> Grenzkosten \\( K'(x) \\) (Kosten pro zusätzliche Einheit)</li>
+                                <li><strong>Biologie:</strong> Wachstumsrate \\( \\frac{dN}{dt} \\) (Zunahme einer Population)</li>
+                                <li><strong>Medizin:</strong> Abnahme von Medikamentkonzentration im Blut</li>
+                            </ul>
+
+                            <div class="key-insight">
+                                <div class="key-insight-title">Exponentielles Wachstum/Zerfall:</div>
+                                <p>Für \\( f(t) = a \\cdot e^{kt} \\) gilt: \\( f'(t) = a \\cdot k \\cdot e^{kt} = k \\cdot f(t) \\). Die Änderungsrate ist proportional zum aktuellen Wert!</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                exercises: [
+                    {
+                        number: 1,
+                        difficulty: "Leicht",
+                        title: "Durchschnittsgeschwindigkeit vs. Momentangeschwindigkeit",
+                        text: "Ein Auto fährt nach \\( s(t) = 2t^2 \\) (in Metern). Bestimme die Geschwindigkeit zum Zeitpunkt \\( t = 3 \\text{ s} \\).",
+                        hints: [
+                            "Die Geschwindigkeit ist die Ableitung des Weges: \\( v(t) = s'(t) \\).",
+                            "Berechne \\( s'(t) = 4t \\).",
+                            "An \\( t = 3 \\): \\( v(3) = 4 \\cdot 3 = 12 \\text{ m/s} \\)"
+                        ],
+                        solution: "\\[ v(3) = 12 \\text{ m/s} \\]"
+                    },
+                    {
+                        number: 2,
+                        difficulty: "Mittel",
+                        title: "Grenzkosten in der Ökonomie",
+                        text: "Eine Produktion kostet \\( K(x) = 100 + 5x + 0,1x^2 \\) Euro (x: Anzahl Einheiten). Bestimme die Grenzkosten beim 10. Stück.",
+                        hints: [
+                            "Grenzkosten sind die Ableitung der Kostenfunktion: \\( K'(x) \\).",
+                            "Berechne \\( K'(x) = 5 + 0,2x \\).",
+                            "Bei \\( x = 10 \\): \\( K'(10) = 5 + 0,2(10) = 7 \\text{ Euro/Stück} \\)"
+                        ],
+                        solution: "\\[ K'(10) = 7 \\text{ Euro/Stück} \\]"
+                    },
+                    {
+                        number: 3,
+                        difficulty: "Schwer",
+                        title: "Exponentielles Wachstum in der Biologie",
+                        text: "Eine Bakterienkultur wächst nach \\( N(t) = 1000 \\cdot e^{0,05t} \\) (t: Zeit in Stunden). Wie schnell wächst die Population zum Zeitpunkt \\( t = 10 \\) Stunden?",
+                        hints: [
+                            "Berechne die Ableitung: \\( N'(t) = 1000 \\cdot 0,05 \\cdot e^{0,05t} = 50 e^{0,05t} \\).",
+                            "Zum Zeitpunkt \\( t = 10 \\): \\( N'(10) = 50 e^{0,5} \\).",
+                            "Berechne \\( e^{0,5} \\approx 1,649 \\), also \\( N'(10) \\approx 82,4 \\) Bakterien pro Stunde."
+                        ],
+                        solution: "\\[ N'(10) = 50 e^{0,5} \\approx 82,4 \\text{ Bakterien/Stunde} \\]"
+                    }
+                ]
+            }
+        };
+
+        // ============= STATE =============
+        let appState = {
+            currentQuestion: 0,
+            answers: [],
+            quizComplete: false,
+            results: {},
+            currentPhase: 'quiz', // quiz, results, learning, module
+            currentModule: null,
+            learningProgress: {}
+        };
+
+        // ============= INITIALIZATION =============
+        function initializeApp() {
+            loadFromLocalStorage();
+            if (!appState.results || Object.keys(appState.results).length === 0) {
+                // Set all topics as available by default (no quiz needed)
+                Object.keys(TOPIC_DATA).forEach(function(topic) {
+                    appState.results[topic] = 'needs-practice';
+                });
+                appState.quizComplete = true;
+            }
+            showLearningPhase();
+        }
+
+        function loadFromLocalStorage() {
+            const saved = localStorage.getItem('mathPortalAbleitungen');
+            if (saved) {
+                appState = JSON.parse(saved);
+            }
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem('mathPortalAbleitungen', JSON.stringify(appState));
+        }
+
+        // ============= QUIZ PHASE =============
+        function showQuizPhase() {
+            document.getElementById('quiz-phase').classList.remove('hidden');
+            document.getElementById('results-phase').classList.add('hidden');
+            document.getElementById('learning-phase').classList.add('hidden');
+            document.getElementById('module-phase').classList.add('hidden');
+
+            appState.currentPhase = 'quiz';
+            showQuestion(appState.currentQuestion);
+        }
+
+        function showQuestion(index) {
+            const question = QUIZ_DATA.questions[index];
+            const progress = ((index) / QUIZ_DATA.questions.length) * 100;
+            document.getElementById('quiz-progress').style.width = progress + '%';
+            document.getElementById('question-counter').textContent = `Frage ${index + 1} von ${QUIZ_DATA.questions.length}`;
+
+            // Render question with MathJax
+            document.getElementById('question-text').innerHTML = question.text;
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            question.options.forEach((option, i) => {
+                const label = document.createElement('label');
+                label.className = 'quiz-option';
+                label.innerHTML = `
+                    <input type="radio" name="answer" value="${i}" ${appState.answers[index] === i ? 'checked' : ''}>
+                    <span>${option}</span>
+                `;
+                label.addEventListener('change', (e) => {
+                    appState.answers[index] = parseInt(e.target.value);
+                    document.querySelectorAll('.quiz-option').forEach((opt, idx) => {
+                        if (idx === parseInt(e.target.value)) {
+                            opt.classList.add('selected');
+                        } else {
+                            opt.classList.remove('selected');
+                        }
+                    });
+                    document.getElementById('next-btn').style.display = 'inline-block';
+                });
+                optionsContainer.appendChild(label);
+            });
+
+            // Update button text for last question
+            const isLast = (index === QUIZ_DATA.questions.length - 1);
+            document.getElementById('next-btn').textContent = isLast ? 'Quiz auswerten →' : 'Weiter →';
+
+            // Show next button if answer selected
+            if (appState.answers[index] !== undefined) {
+                document.querySelectorAll('.quiz-option').forEach((opt, idx) => {
+                    if (idx === appState.answers[index]) {
+                        opt.classList.add('selected');
+                    }
+                });
+                document.getElementById('next-btn').style.display = 'inline-block';
+            } else {
+                document.getElementById('next-btn').style.display = 'none';
+            }
+
+            // Update next button handler
+            document.getElementById('next-btn').onclick = () => nextQuestion();
+
+            // Typecheck MathJax
+            safeTypeset();
+        }
+
+        function nextQuestion() {
+            if (appState.currentQuestion < QUIZ_DATA.questions.length - 1) {
+                appState.currentQuestion++;
+                showQuestion(appState.currentQuestion);
+            } else {
+                completeQuiz();
+            }
+        }
+
+        function completeQuiz() {
+            appState.quizComplete = true;
+            calculateResults();
+            saveToLocalStorage();
+            showResultsPhase();
+        }
+
+        function calculateResults() {
+            appState.results = {};
+            const topicCounts = {};
+            const topicCorrect = {};
+
+            QUIZ_DATA.questions.forEach((question, index) => {
+                const topic = question.topic;
+                if (!topicCounts[topic]) {
+                    topicCounts[topic] = 0;
+                    topicCorrect[topic] = 0;
+                }
+                topicCounts[topic]++;
+                if (appState.answers[index] === question.correct) {
+                    topicCorrect[topic]++;
+                }
+            });
+
+            Object.keys(topicCounts).forEach(topic => {
+                const correct = topicCorrect[topic];
+                const total = topicCounts[topic];
+                const percentage = (correct / total) * 100;
+
+                if (percentage >= 80) {
+                    appState.results[topic] = 'mastered';
+                } else if (percentage >= 50) {
+                    appState.results[topic] = 'unsure';
+                } else {
+                    appState.results[topic] = 'needs-practice';
+                }
+            });
+        }
+
+        function showResultsPhase() {
+            document.getElementById('quiz-phase').classList.add('hidden');
+            document.getElementById('results-phase').classList.remove('hidden');
+            document.getElementById('learning-phase').classList.add('hidden');
+
+            const grid = document.getElementById('results-grid');
+            grid.innerHTML = '';
+
+            Object.keys(appState.results).forEach(topic => {
+                const status = appState.results[topic];
+                const card = document.createElement('div');
+                card.className = `result-card ${status}`;
+
+                let icon = '✓';
+                let statusText = 'Geschafft';
+                if (status === 'unsure') {
+                    icon = '⚠';
+                    statusText = 'Unsicher';
+                } else if (status === 'needs-practice') {
+                    icon = '✗';
+                    statusText = 'Üben nötig';
+                }
+
+                card.innerHTML = `
+                    <div class="result-icon">${icon}</div>
+                    <div class="result-card-title">${topic}</div>
+                    <div class="result-card-status">${statusText}</div>
+                `;
+                grid.appendChild(card);
+            });
+
+            safeTypeset();
+        }
+
+        // ============= LEARNING PHASE =============
+        function showLearningPhase() {
+            document.getElementById('quiz-phase').classList.add('hidden');
+            document.getElementById('results-phase').classList.add('hidden');
+            document.getElementById('learning-phase').classList.remove('hidden');
+            document.getElementById('module-phase').classList.add('hidden');
+
+            appState.currentPhase = 'learning';
+            renderLearningPath();
+            updateLearningProgress();
+        }
+
+        function renderLearningPath() {
+            const container = document.getElementById('learning-path-container');
+            container.innerHTML = '';
+
+            const topicOrder = [
+                "Ableitungsregeln",
+                "Tangentengleichung & Neigungswinkel",
+                "Grafisches Ableiten",
+                "Ableitungsanwendungen"
+            ];
+
+            topicOrder.forEach((topic, index) => {
+                const status = appState.results[topic];
+                const meta = TOPIC_DATA[topic];
+                const isCompleted = status === 'mastered';
+
+                const card = document.createElement('div');
+                card.className = 'topic-card';
+
+                const headerClass = isCompleted ? 'collapsed' : '';
+                const contentClass = isCompleted ? 'hidden' : '';
+
+                const statusIcon = status === 'mastered' ? '✓' : status === 'unsure' ? '⚠' : '✗';
+                const statusClass = status === 'mastered' ? 'green' : status === 'unsure' ? 'amber' : 'red';
+                const expandIcon = isCompleted ? '▼' : '▲';
+
+                card.innerHTML = `
+                    <div class="topic-card-header ${headerClass}">
+                        <div class="card-icon ${statusClass}" style="width: 50px; height: 50px; font-size: 1.75rem;">${statusIcon}</div>
+                        <div class="topic-meta">
+                            <div class="card-title">${topic}</div>
+                            <div class="card-subtitle">${meta.description}</div>
+                            <div class="topic-stats">
+                                <div class="topic-stat">
+                                    <span>⏱</span>
+                                    <span>${meta.estimatedTime}</span>
+                                </div>
+                                <div class="topic-stat">
+                                    <span>Schwierigkeit:</span>
+                                    <div class="difficulty-dots">
+                                        ${Array(3).fill(0).map((_, i) => `<div class="difficulty-dot ${i < meta.difficulty ? 'filled' : ''}"></div>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size: 1.5rem; transition: transform 0.3s;" class="expand-icon">${expandIcon}</div>
+                    </div>
+                    <div class="topic-card-content ${contentClass}" style="max-height: ${isCompleted ? '0' : '1000px'};">
+                        ${isCompleted ? '' : `<button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Thema starten →</button>`}
+                    </div>
+                `;
+
+                const header = card.querySelector('.topic-card-header');
+                const content = card.querySelector('.topic-card-content');
+                const expandIconEl = card.querySelector('.expand-icon');
+
+                header.addEventListener('click', () => {
+                    const isExpanded = !content.classList.contains('hidden');
+                    if (isExpanded) {
+                        content.classList.add('hidden');
+                        header.classList.add('collapsed');
+                        expandIconEl.textContent = '▼';
+                    } else {
+                        content.classList.remove('hidden');
+                        header.classList.remove('collapsed');
+                        expandIconEl.textContent = '▲';
+                    }
+                });
+
+                const startBtn = card.querySelector('.btn-primary');
+                if (startBtn) {
+                    startBtn.addEventListener('click', () => {
+                        startModule(topic);
+                    });
+                }
+
+                container.appendChild(card);
+            });
+        }
+
+        function updateLearningProgress() {
+            const completed = Object.values(appState.results).filter(r => r === 'mastered').length;
+            const total = Object.keys(appState.results).length;
+            const percentage = (completed / total) * 100;
+            document.getElementById('learning-progress').style.width = percentage + '%';
+        }
+
+        // ============= MODULE PHASE =============
+        function startModule(topic) {
+            appState.currentModule = topic;
+            appState.currentPhase = 'module';
+            showModulePhase();
+        }
+
+        function showModulePhase() {
+            document.getElementById('quiz-phase').classList.add('hidden');
+            document.getElementById('results-phase').classList.add('hidden');
+            document.getElementById('learning-phase').classList.add('hidden');
+            document.getElementById('module-phase').classList.remove('hidden');
+
+            const topic = appState.currentModule;
+            const module = LEARNING_MODULES[topic];
+
+            let html = `<h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">📐 ${topic}</h2>`;
+
+            // Theory
+            html += module.theory;
+
+            // Exercises
+            html += `
+                <h3 style="font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--fukagawa); padding-bottom: 0.75rem;">Übungsaufgaben</h3>
+                <div class="exercises">
+            `;
+
+            module.exercises.forEach((exercise) => {
+                const difficultyClass = exercise.difficulty === 'Leicht' ? 'badge-green' :
+                                       exercise.difficulty === 'Mittel' ? 'badge-amber' : 'badge-red';
+                const difficultyEmoji = exercise.difficulty === 'Leicht' ? '🟢' :
+                                       exercise.difficulty === 'Mittel' ? '🟡' : '🔴';
+
+                html += `
+                    <div class="exercise-card">
+                        <div class="exercise-header" onclick="toggleExerciseHints(${module.exercises.indexOf(exercise)})">
+                            <div class="exercise-number">${exercise.number}.</div>
+                            <div class="exercise-content">
+                                <div class="exercise-title">${exercise.title}</div>
+                                <div style="color: var(--ink); margin-top: 0.75rem; line-height: 1.6;">${exercise.text}</div>
+                                <span class="badge ${difficultyClass}" style="margin-top: 0.75rem;">
+                                    ${difficultyEmoji} ${exercise.difficulty}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="exercise-hints" id="hints-${module.exercises.indexOf(exercise)}" style="display: none;">
+                `;
+
+                exercise.hints.forEach((hint, i) => {
+                    html += `
+                        <div class="hint" id="hint-${module.exercises.indexOf(exercise)}-${i}" style="display: none;">
+                            <div class="hint-label">Hinweis ${i + 1}:</div>
+                            <div class="hint-text">${hint}</div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                            <div style="margin-top: 1rem;">
+                                <button class="btn btn-secondary btn-small" onclick="revealHint(${module.exercises.indexOf(exercise)})">
+                                    Nächster Hinweis →
+                                </button>
+                            </div>
+                            <div class="solution" id="solution-${module.exercises.indexOf(exercise)}" style="display: none;">
+                                <div class="solution-label">Lösung:</div>
+                                <div class="solution-text">${exercise.solution}</div>
+                            </div>
+                            <button class="btn btn-success btn-small" style="margin-top: 1rem;" onclick="revealSolution(${module.exercises.indexOf(exercise)})">
+                                Lösung anzeigen
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+
+            document.getElementById('module-content').innerHTML = html;
+
+            // Set up back button
+            document.getElementById('back-to-path-btn').onclick = () => showLearningPhase();
+
+            safeTypeset();
+        }
+
+        let revealedHints = {};
+
+        function toggleExerciseHints(index) {
+            const container = document.getElementById(`hints-${index}`);
+            const isHidden = container.style.display === 'none';
+            container.style.display = isHidden ? 'block' : 'none';
+            if (!revealedHints[index]) {
+                revealedHints[index] = 0;
+            }
+        }
+
+        function revealHint(exerciseIndex) {
+            if (!revealedHints[exerciseIndex]) {
+                revealedHints[exerciseIndex] = 0;
+            }
+            const hintIndex = revealedHints[exerciseIndex];
+            const hint = document.getElementById(`hint-${exerciseIndex}-${hintIndex}`);
+            if (hint) {
+                hint.style.display = 'block';
+                revealedHints[exerciseIndex]++;
+                safeTypeset();
+            }
+        }
+
+        function revealSolution(exerciseIndex) {
+            const solution = document.getElementById(`solution-${exerciseIndex}`);
+            solution.style.display = 'block';
+            safeTypeset();
+        }
+
+        // ============= EVENT LISTENERS =============
+        document.getElementById('retake-quiz-btn').addEventListener('click', () => {
+            appState.currentQuestion = 0;
+            appState.answers = [];
+            appState.quizComplete = false;
+            appState.results = {};
+            revealedHints = {};
+            saveToLocalStorage();
+            showQuizPhase();
+        });
+
+        document.getElementById('restart-quiz-btn').addEventListener('click', () => {
+            appState.currentQuestion = 0;
+            appState.answers = [];
+            appState.quizComplete = false;
+            appState.results = {};
+            revealedHints = {};
+            saveToLocalStorage();
+            showQuizPhase();
+        });
+
+        document.getElementById('start-path-btn').addEventListener('click', () => {
+            showLearningPhase();
+        });
+
+        // ============= SAFE MATHJAX HELPER =============
+        function safeTypeset() {
+            if (window.mathJaxReady && typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                return MathJax.typesetPromise().catch(err => console.log('MathJax:', err));
+            }
+            // MathJax not ready yet — flag for re-typeset when it loads
+            window._pendingTypeset = true;
+            return Promise.resolve();
+        }
+
+        // ============= INITIALIZE =============
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeApp);
+        } else {
+            initializeApp();
+        }
+    </script>
+</body>
+</html>
