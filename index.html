@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lernportal Mathematik – Oberstufe</title>
+<title>Mentor – Mathematik in der Oberstufe</title>
 <script>
 MathJax = {
   tex: {
@@ -238,7 +238,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
     <div style="flex:1;display:flex;align-items:center;gap:10px">
       <div style="width:32px;height:32px;background:var(--kiku);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#fff;font-family:var(--serif);font-size:18px;line-height:1">M</span></div>
       <div>
-        <h1 style="font-size:16px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin:0;font-family:var(--sans)">Lernportal Mathematik</h1>
+        <h1 style="font-size:16px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin:0;font-family:var(--sans)">Mentor – Mathematik in der Oberstufe</h1>
         <div style="font-size:11px;color:var(--ink-muted);font-weight:400;margin-top:1px">Oberstufe · Mecklenburg-Vorpommern</div>
       </div>
     </div>
@@ -259,10 +259,28 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 <div class="main">
 <div class="panel on" id="p0">
 
-  <!-- Hero -->
-  <div style="margin-bottom:clamp(2rem,5vw,3.5rem);padding:clamp(2rem,5vw,4rem) 0">
-    <div style="font-family:var(--serif);font-size:clamp(32px,6vw,56px);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:20px;max-width:800px">Mathematik lernen.<br>In deinem Tempo.</div>
-    <div style="font-size:clamp(15px,1.8vw,19px);line-height:1.7;color:var(--ink-muted);max-width:600px;font-weight:300">Diese Seite begleitet meinen Mathematikunterricht in der Einführungs- und Qualifikationsphase und orientiert sich am Rahmenplan Mecklenburg-Vorpommerns.</div>
+  <!-- Hero + Bedienung -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start;padding:0;margin-bottom:0.75rem">
+    <div>
+      <div style="font-family:var(--serif);font-size:clamp(32px,6vw,56px);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:20px">Mathematik lernen.<br>In deinem Tempo.</div>
+      <div style="font-size:clamp(15px,1.8vw,19px);line-height:1.7;color:var(--ink-muted);max-width:600px;font-weight:300">Diese Seite begleitet meinen Mathematikunterricht in der Einführungs- und Qualifikationsphase und orientiert sich am Rahmenplan Mecklenburg-Vorpommerns.</div>
+    </div>
+    <div class="card" style="margin:0">
+      <div class="card-head"><div class="ci ci-g">↗</div><span class="card-title">So nutzt du diese Seite</span></div>
+      <div class="card-body">
+        <div class="ip">Wähle oben deinen <strong>Jahrgang</strong>, dann das <strong>Thema</strong> in der Tab-Leiste. Jede Einheit beginnt mit <strong>Lernzielen</strong>, gefolgt von Erklärungen, Beispielen und Übungsaufgaben.</div>
+        <div class="two-col">
+          <div>
+            <div class="it">Aufgaben</div>
+            <div class="ip">Klicke auf eine Aufgabe, um die Lösung ein-/auszublenden. Die Sterne zeigen den Schwierigkeitsgrad: ★ leicht, ★★ mittel, ★★★ schwer.</div>
+          </div>
+          <div>
+            <div class="it">Lernziele</div>
+            <div class="ip">Hake Lernziele ab, die du beherrschst. Dein Fortschritt wird automatisch im Browser gespeichert.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Jahrgänge -->
@@ -299,23 +317,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
     </div>
   </div>
 
-  <!-- Bedienung -->
-  <div class="card">
-    <div class="card-head"><div class="ci ci-g">↗</div><span class="card-title">So nutzt du diese Seite</span></div>
-    <div class="card-body">
-      <div class="ip">Wähle oben deinen <strong>Jahrgang</strong>, dann das <strong>Thema</strong> in der Tab-Leiste. Jede Einheit beginnt mit <strong>Lernzielen</strong>, gefolgt von Erklärungen, Beispielen und Übungsaufgaben.</div>
-      <div class="two-col">
-        <div>
-          <div class="it">Aufgaben</div>
-          <div class="ip">Klicke auf eine Aufgabe, um die Lösung ein-/auszublenden. Die Sterne zeigen den Schwierigkeitsgrad: ★ leicht, ★★ mittel, ★★★ schwer.</div>
-        </div>
-        <div>
-          <div class="it">Lernziele</div>
-          <div class="ip">Hake Lernziele ab, die du beherrschst. Dein Fortschritt wird automatisch im Browser gespeichert.</div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="card" style="background:linear-gradient(135deg,var(--sango),#a04830);color:#fff;border:none;">
     <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
       <div>
@@ -349,6 +350,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 
 <!-- ── LOGARITHMEN ──────────────────────────────────── -->
 <div class="subpanel on" id="k10-log">
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Logarithmen beantworten die Frage „Welchen Exponenten brauche ich?" – sie sind die Umkehrung des Potenzierens. Du lernst, logarithmische Gleichungen zu lösen und Rechengesetze sicher anzuwenden.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Potenzgesetze (gleiche Basis, gleicher Exponent) sicher beherrschen.</div>
+  </div>
+</div>
 
 <!-- Learning Objectives -->
 <div class="card">
@@ -638,6 +647,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 <!-- ── EXPONENTIALFUNKTIONEN ─────────────────────────── -->
 </div><!-- close k10-log -->
 <div class="subpanel" id="k10-exp">
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Exponentialfunktionen beschreiben Wachstum und Zerfall – von Bakterienpopulationen bis zum radioaktiven Zerfall. Du lernst die Funktionen \(f(x) = b^x\) und \(f(x) = e^x\) kennen und nutzt Logarithmen, um Gleichungen zu lösen.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Logarithmusbegriff und Potenzgesetze aus dem vorherigen Abschnitt.</div>
+  </div>
+</div>
 
 <!-- Lernziele Card -->
 <div class="card">
@@ -1017,6 +1034,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 <!-- ── TRIGONOMETRIE ────────────────────────────────── -->
 </div><!-- auto-close k10-exp -->
 <div class="subpanel" id="k10-trig">
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Trigonometrie bedeutet „Dreiecksmessung": Mit Sinus, Kosinus und Tangens berechnest du Seiten und Winkel in Dreiecken – auch wenn kein rechter Winkel vorhanden ist (Sinus- und Kosinussatz).</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Satz des Pythagoras, Winkelberechnung in rechtwinkligen Dreiecken.</div>
+  </div>
+</div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Trigonometrie</span></div>
@@ -1500,6 +1525,15 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 
 <!-- ── SINUSFUNKTIONEN ──────────────────────────────── -->
 <div class="subpanel" id="k10-sin">
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+    <div class="card-body">
+      <div class="ip">Sinusfunktionen beschreiben periodische Vorgänge – Schwingungen, Gezeiten, Jahreszeiten. Du lernst, wie die Parameter \(a\), \(b\), \(c\) und \(d\) die Sinuskurve verändern, und analysierst allgemeine Sinusfunktionen.</div>
+      <div class="hint"><strong>Voraussetzung:</strong> Sinus und Kosinus am Einheitskreis, Umrechnung Grad ↔ Bogenmaß.</div>
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Sinusfunktionen</span></div>
     <div class="card-body">
@@ -1834,14 +1868,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 
 <!-- ── STEREOMETRIE (bestehender Inhalt) ────────────── -->
 <div class="subpanel" id="k10-geo">
-<div style="background:#fff8f0;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%" id="pbar-wrap-geo">
-  <span style="font-size:12px;font-weight:600;color:#8a7a30;white-space:nowrap">Geometrie · Lernziele:</span>
-  <div style="flex:1;height:7px;background:#eee;border-radius:4px;overflow:hidden">
-    <div style="height:100%;background:#8a7a30;border-radius:4px;transition:width .4s" id="pbar-geo"></div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+    <div class="card-body">
+      <div class="ip">Stereometrie ist die Geometrie des Raumes: Du arbeitest mit Punkten, Strecken und Körpern im dreidimensionalen Koordinatensystem und berechnest Volumina und Oberflächen von Zylindern, Kegeln und zusammengesetzten Körpern.</div>
+      <div class="hint"><strong>Voraussetzung:</strong> Koordinatensystem in 2D, Flächenformeln (Rechteck, Dreieck, Kreis), Satz des Pythagoras.</div>
+    </div>
   </div>
-  <span style="font-size:12px;font-weight:700;color:#8a7a30;white-space:nowrap;min-width:36px;text-align:right" id="ppct-geo">0 %</span>
-  <button onclick="resetGroupProgress('k10')" style="background:none;border:1px solid #ddd;border-radius:5px;padding:3px 8px;font-size:11px;color:#aaa;cursor:pointer;font-family:inherit">↺</button>
-</div>
 
   <div class="card">
     <div class="card-head"><div class="ci ci-t">⏱</div><span class="card-title">Teil 1: Koordinatensystem · 90 Minuten</span></div>
@@ -2165,7 +2199,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
   <div  id="_sto-kombi-inner">
     <div class="section-label">Kombinatorik &amp; Binomialkoeffizient</div>
     <div class="card">
-      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Stochastik · Klasse 10 · E-Phase · MV</span></div>
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
         <div class="ip">In der Stochastik untersuchen wir Zufallsexperimente und berechnen Wahrscheinlichkeiten. Die Kombinatorik gibt uns Werkzeuge, um <strong>Anzahlen von Möglichkeiten</strong> systematisch zu bestimmen – ohne alles aufzuzählen.</div>
       </div>
@@ -3348,6 +3382,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
      SECTION 1: GRENZWERTE UND STETIGKEIT
      ============================================================================ -->
 <div class="subpanel" id="k11-grenz">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Grenzwerte beschreiben, welchem Wert sich eine Funktion annähert – für \(x \to \infty\) oder an einer bestimmten Stelle. Sie bilden das Fundament für die Ableitung und sind zentral für das Verständnis von Stetigkeit.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Funktionsbegriff, rationale Funktionen, Verhalten für große \(x\)-Werte einschätzen können.</div>
+      </div>
+    </div>
+
     <div class="section-label">Grenzwerte und Stetigkeit</div>
 
     <div class="card">
@@ -3382,6 +3424,73 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
             <div class="ip">Eine <strong>Folge</strong> ist eine Funktion mit Definitionsbereich ℕ. Wir schreiben sie als \((a_n)\) oder \(a_1, a_2, a_3, \ldots\)</div>
             <div class="hint"><strong>Merke:</strong> Eine Folge hat einen <strong>Grenzwert</strong> \(g\), wenn sich die Werte \(a_n\) der Zahl \(g\) immer mehr nähern, je größer \(n\) wird. Wir schreiben: \(\lim_{n \to \infty} a_n = g\)</div>
             <div class="ip" style="margin-top: 12px;">Beispiel: \(a_n = \frac{1}{n}\) hat den Grenzwert 0, denn \(\lim_{n \to \infty} \frac{1}{n} = 0\)</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Grenzwerte mit der Wertetabelle bestimmen</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Bevor du Grenzwerte rechnerisch bestimmst, kannst du sie <strong>experimentell</strong> mit einer Wertetabelle erkennen – auch mit dem Taschenrechner. Die Idee: Setze immer größere (oder immer kleinere) Werte ein und beobachte, wohin sich \(f(x)\) bewegt.</div>
+
+            <div class="bsp">
+              <div class="bsp-label">Beispiel: \(f(x) = \dfrac{3x + 1}{x}\) für \(x \to \infty\)</div>
+              <div class="bsp-q">Setze schrittweise größer werdende Werte für \(x\) ein:</div>
+              <div style="overflow-x:auto;margin:12px 0">
+                <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                  <tr style="background:var(--kiku-light)">
+                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">\(x\)</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">10</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">100</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1 000</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">10 000</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">\(f(x)\)</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">4</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">3,1</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">3,01</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">3,001</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">3,0001</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="ip"><strong>Beobachtung:</strong> Die Funktionswerte nähern sich immer mehr der Zahl 3 an. Also: \(\displaystyle\lim_{x \to \infty} \frac{3x+1}{x} = 3\).</div>
+            </div>
+
+            <div class="bsp" style="margin-top:14px">
+              <div class="bsp-label">Beispiel: \(g(x) = \dfrac{x^2 - 1}{x - 1}\) für \(x \to 1\)</div>
+              <div class="bsp-q">Hier ist \(g(1)\) nicht definiert (Nenner = 0). Nähere dich der Stelle von beiden Seiten:</div>
+              <div style="overflow-x:auto;margin:12px 0">
+                <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                  <tr style="background:var(--sango-light)">
+                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">\(x\)</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,9</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,99</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,999</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1,001</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1,01</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1,1</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">\(g(x)\)</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1,9</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1,99</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1,999</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">2,001</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">2,01</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">2,1</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="ip"><strong>Beobachtung:</strong> Von links und rechts nähern sich die Werte der 2 an. Also: \(\displaystyle\lim_{x \to 1} \frac{x^2-1}{x-1} = 2\).</div>
+              <div class="ip" style="margin-top:6px"><em>Algebraische Bestätigung:</em> \(\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1\), und \(1+1 = 2\) ✓</div>
+            </div>
+
+            <div class="hint" style="margin-top:14px"><strong>Tipp für den Taschenrechner:</strong> Nutze die TABLE-Funktion (oder tippe die Werte einzeln ein). Wähle Zehnerpotenzen: \(x = 1,\; 10,\; 100,\; 1\,000,\; \ldots\) für \(x \to \infty\), oder immer kleinere Abstände zur Stelle: \(x_0 \pm 0{,}1,\; \pm 0{,}01,\; \pm 0{,}001,\; \ldots\) für Stellengrenzwerte.</div>
         </div>
     </div>
 
@@ -3543,6 +3652,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
      SECTION 2: ABLEITUNGEN
      ============================================================================ -->
 <div class="subpanel" id="k11-ableit">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Die Ableitung misst die momentane Änderungsrate einer Funktion – geometrisch ist sie die Steigung der Tangente. Mit Ableitungsregeln (Potenz-, Produkt-, Ketten-, Quotientenregel) kannst du Funktionen systematisch differenzieren.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Grenzwertbegriff, Differenzenquotient als mittlere Änderungsrate.</div>
+      </div>
+    </div>
+
     <div class="section-label">Ableitungen</div>
 
     <div class="card" style="background:linear-gradient(135deg,#1a6fbf,#1555a0);color:#fff;border:none;margin-bottom:18px;">
@@ -3930,6 +4047,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
      SECTION 2b: TANGENTEN
      ============================================================================ -->
 <div class="subpanel" id="k11-tangenten">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Die Tangente berührt den Graphen einer Funktion in genau einem Punkt und hat dort dieselbe Steigung. Du lernst, Tangentengleichungen aufzustellen und den Neigungswinkel aus der Steigung zu berechnen.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Ableitungsregeln sicher anwenden, Geradengleichung \(y = mx + n\).</div>
+      </div>
+    </div>
+
     <div class="section-label">Tangenten und Neigungswinkel</div>
 
     <div class="card">
@@ -4283,6 +4408,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
      SECTION 2c: GRAFISCHES ABLEITEN
      ============================================================================ -->
 <div class="subpanel" id="k11-grafabl">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Grafisches Ableiten heißt: Vom Graphen von \(f\) den Graphen von \(f'\) skizzieren – ohne zu rechnen. Du erkennst Zusammenhänge zwischen Steigung, Nullstellen der Ableitung und Extremstellen der Funktion.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Ableitungsbegriff als Steigung der Tangente, Monotonie und Extremstellen.</div>
+      </div>
+    </div>
+
     <div class="section-label">Grafisches Ableiten</div>
 
     <div class="card">
@@ -4690,6 +4823,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
      SECTION 3: KURVENDISKUSSION
      ============================================================================ -->
 <div class="subpanel" id="k11-kurven">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Die Kurvendiskussion ist das systematische Untersuchen einer Funktion: Nullstellen, Extrempunkte, Wendepunkte, Symmetrie und Verhalten im Unendlichen – alles mithilfe der Ableitungen.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Erste und zweite Ableitung berechnen, notwendige und hinreichende Bedingungen kennen.</div>
+      </div>
+    </div>
+
     <div class="section-label">Kurvendiskussion</div>
 
     <div class="card" style="background:linear-gradient(135deg,#1a7a3c,#15662e);color:#fff;border:none;margin-bottom:18px;">
@@ -5267,6 +5408,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
      SECTION 4: ANWENDUNGEN DER DIFFERENTIALRECHNUNG
      ============================================================================ -->
 <div class="subpanel" id="k11-anwend">
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Hier wendest du die Differentialrechnung auf reale Probleme an: Extremalprobleme (Optimierung), Funktionenscharen mit Parameter und Steckbriefaufgaben, bei denen du eine Funktion aus Bedingungen rekonstruierst.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Kurvendiskussion vollständig beherrschen, Gleichungssysteme lösen.</div>
+      </div>
+    </div>
+
     <div class="section-label">Anwendungen der Differentialrechnung</div>
 
     <div class="card" style="background:linear-gradient(135deg,#b45309,#8a3e06);color:#fff;border:none;margin-bottom:18px;">
@@ -6260,7 +6409,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
   <div class="subpanel" id="k11-stamm">
 
     <div class="card">
-      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Integralrechnung · Klasse 11 · Q1-Phase · MV</span></div>
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
         <div class="ip">Die Integralrechnung verbindet den Begriff der Fläche mit dem der Stammfunktion. Sie baut auf der Differentialrechnung auf – Integrieren ist Differenzieren rückwärts.</div>
         <div class="hint"><strong>Voraussetzung:</strong> Ableitungsregeln für Polynome (Potenz-, Summen-, Faktorregel) sicher beherrschen.</div>
@@ -7737,11 +7886,16 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 
 
 <div class="subpanel on" id="k12-vek">
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+    <div class="card-body">
+      <div class="ip">Vektoren sind das Werkzeug der analytischen Geometrie: Mit ihnen beschreibst du Verschiebungen, Kräfte und Richtungen im Raum. Du lernst Rechenoperationen (Skalarprodukt, Kreuzprodukt) und ihre geometrische Bedeutung.</div>
+      <div class="hint"><strong>Voraussetzung:</strong> Koordinatensystem im Raum (Klasse 10), Satz des Pythagoras in 3D.</div>
+    </div>
+  </div>
+
   <!-- Header -->
   <div class="section-label">Analytische Geometrie Teil 1: Vektoren und Matrizen</div>
-  <div class="ip" style="margin-bottom: 20px;">
-    <strong>Klasse 11 Grundkurs</strong> · Mecklenburg-Vorpommern · 12 Unterrichtsstunden
-  </div>
 
   <div class="card" style="background:linear-gradient(135deg,#6b4fa0,#553c85);color:#fff;border:none;margin-bottom:18px;">
     <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
@@ -8224,6 +8378,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 
 <div class="subpanel" id="k12-gerade">
 
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+    <div class="card-body">
+      <div class="ip">Geraden im Raum werden durch einen Stützvektor und einen Richtungsvektor beschrieben. Du lernst, Lagebeziehungen zu untersuchen (parallel, windschief, schneidend), Schnittpunkte zu berechnen und Abstände zu bestimmen.</div>
+      <div class="hint"><strong>Voraussetzung:</strong> Vektorrechnung (Addition, Skalarprodukt, Betrag), Parameterdarstellung verstehen.</div>
+    </div>
+  </div>
+
   <div class="card" style="background:linear-gradient(135deg,#2d6a8a,#1e5570);color:#fff;border:none;margin-bottom:18px;">
     <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
       <div>
@@ -8392,6 +8554,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 </div>
 
 <div class="subpanel" id="k12-ebenen">
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Ebenen sind zweidimensionale Flächen im Raum. Du lernst drei Darstellungsformen (Parameter-, Normalen-, Koordinatenform), rechnest sie ineinander um und bestimmst Schnittmengen mit Geraden und anderen Ebenen.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Geradengleichung im Raum, Kreuzprodukt zur Normalenberechnung.</div>
+  </div>
+</div>
 
 <!-- Lernziele Ebenen -->
 <div class="card">
@@ -8672,6 +8842,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 
 
 <div class="subpanel" id="k12-sto">
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Stochastik in der Oberstufe verbindet Wahrscheinlichkeitsrechnung mit Statistik: Binomialverteilung, bedingte Wahrscheinlichkeit, Normalverteilung und Hypothesentests bilden die Grundlage für datengestützte Entscheidungen.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Grundlagen der Wahrscheinlichkeitsrechnung (Klasse 10), Baumdiagramme, Kombinatorik.</div>
+      </div>
+    </div>
 
     <div class="card" style="background:linear-gradient(135deg,#c2185b,#9c1449);color:#fff;border:none;margin-bottom:18px;">
       <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
