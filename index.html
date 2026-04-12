@@ -5199,6 +5199,10 @@ setTimeout(updateQuadExplorer,100);
       ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.moveTo(10, oy); ctx.lineTo(cssW - 10, oy); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(ox, cssH - 10); ctx.lineTo(ox, 10); ctx.stroke();
+      // Pfeilspitzen
+      var _as=7;ctx.fillStyle='#2c2c2c';
+      ctx.beginPath();ctx.moveTo(cssW-10,oy);ctx.lineTo(cssW-10-_as,oy-_as/2);ctx.lineTo(cssW-10-_as,oy+_as/2);ctx.closePath();ctx.fill();
+      ctx.beginPath();ctx.moveTo(ox,10);ctx.lineTo(ox-_as/2,10+_as);ctx.lineTo(ox+_as/2,10+_as);ctx.closePath();ctx.fill();
 
       // Axis labels
       ctx.fillStyle = '#2c2c2c';
@@ -5604,6 +5608,24 @@ setTimeout(updateQuadExplorer,100);
     <strong>Potenzregel:</strong> \(\log_a(u^n) = n \cdot \log_a(u)\)<br><br>
     <strong>Basenwechselsatz:</strong> \(\log_a(x) = \frac{\ln(x)}{\ln(a)}\)<br><br>
     <strong>Natürlicher Logarithmus:</strong> \(e^x = y \iff \ln(y) = x\)
+    </div>
+  </div>
+</div>
+
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Berechne im Kopf: \(\log_2(32)\) und \(\log_{10}(0{,}01)\). Erkläre, warum \(\log_b(1) = 0\) für jede Basis \(b > 0\) gilt.</li>
+        <li>Beschreibe in eigenen Worten: Was bedeutet es, dass die Logarithmusfunktion die <em>Umkehrfunktion</em> der Exponentialfunktion ist?</li>
+        <li>Skizziere grob den Graphen von \(\log_3(x)\). Wo schneidet er die x-Achse, und warum ist der Graph für \(x \leq 0\) nicht definiert?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Grafik: Exponential- und Logarithmusfunktion“.
+      </p>
     </div>
   </div>
 </div>
@@ -6770,6 +6792,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 </div><!-- auto-close k10-exp -->
 
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre den Unterschied zwischen exponentiellem Wachstum und linearem Wachstum. Warum wächst \(2^x\) so viel schneller als \(2x\)?</li>
+        <li>Bestimme ohne Taschenrechner: Wenn sich eine Bakterienkultur alle 3 Stunden verdoppelt und du mit 100 Bakterien startest — wie viele sind es nach 9 Stunden?</li>
+        <li>Beschreibe, wie sich der Graph von \(f(x) = a^x\) verändert, wenn die Basis \(a\) größer oder kleiner als 1 ist.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Grafik: Exponentialfunktionen“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k10-trig">
 
 <div class="card">
@@ -7280,6 +7321,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div>
 
 <!-- ── SINUSFUNKTIONEN ──────────────────────────────── -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Gib die Definition von \(\sin(\alpha)\), \(\cos(\alpha)\) und \(\tan(\alpha)\) am rechtwinkligen Dreieck an.</li>
+        <li>Berechne ohne Taschenrechner: \(\sin(30°)\), \(\cos(60°)\) und \(\tan(45°)\). Welcher Zusammenhang besteht zwischen \(\sin\) und \(\cos\) komplementärer Winkel?</li>
+        <li>Erkläre am Einheitskreis, warum \(\sin^2(\alpha) + \cos^2(\alpha) = 1\) gilt.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Sinus, Kosinus und Tangens“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k10-sin">
 
   <div class="card">
@@ -7738,6 +7798,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div>
 
 <!-- ── STEREOMETRIE ────────────────────────────────── -->
+
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Beschreibe, wie sich Amplitude \(a\), Periode \(b\) und Verschiebung \(d\) auf den Graphen von \(f(x) = a \cdot \sin(bx) + d\) auswirken.</li>
+        <li>Bestimme die Periode von \(f(x) = \sin(3x)\). Wie hängt die Periode mit dem Parameter \(b\) zusammen?</li>
+        <li>Nenne eine Alltagssituation, die sich mit einer Sinusfunktion modellieren lässt, und begründe warum.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Die Sinusfunktion“.
+      </p>
+    </div>
+  </div>
+</div>
+
 
 <div class="subpanel" id="k10-geo">
 
@@ -9064,6 +9143,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div><!-- close k10-geo -->
 
 <!-- ── EXKURS: KÖRPER IM KOORDINATENSYSTEM ──────────── -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Nenne die Volumenformeln für Pyramide, Kegel und Kugel. Welcher gemeinsame Faktor \(\tfrac{1}{3}\) verbindet Pyramide und Kegel?</li>
+        <li>Eine Kugel hat den Radius \(r = 5\,\text{cm}\). Berechne Volumen und Oberfläche im Kopf (näherungsweise mit \(\pi \approx 3\)).</li>
+        <li>Erkläre, warum sich die Mantelfläche eines Kegels als „abgewickelter Kreisausschnitt“ beschreiben lässt.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Pyramide, Kegel und Kugel“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k10-koord">
 
 <!-- INTRO -->
@@ -9956,6 +10054,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div><!-- close k10-koord -->
 
 <!-- ── QUADRATISCHE FUNKTIONEN ──────────────────────── -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Berechne den Abstand zwischen \(A(1|3)\) und \(B(4|7)\). Welche Formel verwendest du?</li>
+        <li>Bestimme den Mittelpunkt der Strecke \(\overline{AB}\) mit \(A(-2|5)\) und \(B(6|1)\).</li>
+        <li>Erkläre, wie du prüfen kannst, ob ein Punkt auf einer Geraden liegt, wenn dir die Geradengleichung in Parameterform gegeben ist.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Koordinatengeometrie“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k10-sto">
   <div  id="_sto-kombi-inner">
     <div class="section-label">Kombinatorik &amp; Binomialkoeffizient</div>
@@ -9965,6 +10082,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="ip">In der Stochastik untersuchen wir Zufallsexperimente und berechnen Wahrscheinlichkeiten. Die Kombinatorik gibt uns Werkzeuge, um <strong>Anzahlen von Möglichkeiten</strong> systematisch zu bestimmen – ohne alles aufzuzählen.</div>
       </div>
     </div>
+    <div class="hint" style="margin-bottom:14px;"><strong>Das brauchst du:</strong> Bruchrechnung, Prozentrechnung, Grundlagen der Wahrscheinlichkeit (Zufallsexperiment, Ergebnis, Ereignis).</div>
 
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Einstieg: Warum zählen wir?</span></div>
@@ -11201,6 +11319,25 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="hint"><strong>Binomialverteilung:</strong> \(P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}\), \(\mu = np\), \(\sigma = \sqrt{np(1-p)}\)</div>
     </div>
   </div>
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre den Unterschied zwischen Permutation, Kombination und Variation. Wann rechnest du \(\binom{n}{k}\) und wann \(n!\)?</li>
+        <li>Ein Glücksrad hat 8 gleich große Felder (3 rot, 5 blau). Berechne \(P(\text{rot})\) und \(P(\text{blau})\).</li>
+        <li>Was bedeutet es, dass zwei Ereignisse „unabhängig“ sind? Gib ein Beispiel.</li>
+        <li>Berechne \(\binom{6}{2}\) ohne Taschenrechner. Welche Bedeutung hat das Ergebnis?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Kombinatorik und Wahrscheinlichkeit“.
+      </p>
+    </div>
+  </div>
+</div>
+
 </div><!-- end k10-sto -->
 </div><!-- end k10 main -->
 </div><!-- end p10 -->
@@ -11386,8 +11523,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       ctx1.strokeStyle='#999';ctx1.lineWidth=1;
       ctx1.beginPath();ctx1.moveTo(tx1(xMin),ty1(0));ctx1.lineTo(tx1(xMax),ty1(0));ctx1.stroke();
       ctx1.beginPath();ctx1.moveTo(tx1(0),ty1(yMin));ctx1.lineTo(tx1(0),ty1(yMax));ctx1.stroke();
+      // Pfeilspitzen
+      var _a1=6;ctx1.fillStyle='#999';
+      ctx1.beginPath();ctx1.moveTo(tx1(xMax),ty1(0));ctx1.lineTo(tx1(xMax)-_a1,ty1(0)-_a1/2);ctx1.lineTo(tx1(xMax)-_a1,ty1(0)+_a1/2);ctx1.closePath();ctx1.fill();
+      ctx1.beginPath();ctx1.moveTo(tx1(0),ty1(yMax));ctx1.lineTo(tx1(0)-_a1/2,ty1(yMax)+_a1);ctx1.lineTo(tx1(0)+_a1/2,ty1(yMax)+_a1);ctx1.closePath();ctx1.fill();
+      // Achsennamen + Ursprung
+      ctx1.fillStyle='#555';ctx1.font='bold 13px Inter,sans-serif';ctx1.textAlign='left';ctx1.fillText('x',tx1(xMax)-14,ty1(0)-10);
+      ctx1.textAlign='center';ctx1.fillText('y',tx1(0)+14,ty1(yMax)+4);
+      ctx1.fillStyle='#888';ctx1.font='12px Inter,sans-serif';ctx1.textAlign='right';ctx1.textBaseline='top';ctx1.fillText('O',tx1(0)-5,ty1(0)+4);
       // Ticks
-      ctx1.fillStyle='#777';ctx1.font='11px Inter,sans-serif';ctx1.textAlign='center';
+      ctx1.fillStyle='#777';ctx1.font='11px Inter,sans-serif';ctx1.textAlign='center';ctx1.textBaseline='alphabetic';
       for(var i=Math.ceil(xMin);i<=Math.floor(xMax);i++){if(i===0)continue;ctx1.fillText(i,tx1(i),ty1(0)+14);}
       ctx1.textAlign='right';
       for(var j=Math.ceil(yMin);j<=Math.floor(yMax);j++){if(j===0)continue;ctx1.fillText(j,tx1(0)-6,ty1(j)+4);}
@@ -11410,8 +11555,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       ctx2.strokeStyle='#999';ctx2.lineWidth=1;
       ctx2.beginPath();ctx2.moveTo(tx2(xMin),ty2(0));ctx2.lineTo(tx2(xMax),ty2(0));ctx2.stroke();
       ctx2.beginPath();ctx2.moveTo(tx2(0),ty2(yMin));ctx2.lineTo(tx2(0),ty2(yMax));ctx2.stroke();
+      // Pfeilspitzen
+      var _a2=6;ctx2.fillStyle='#999';
+      ctx2.beginPath();ctx2.moveTo(tx2(xMax),ty2(0));ctx2.lineTo(tx2(xMax)-_a2,ty2(0)-_a2/2);ctx2.lineTo(tx2(xMax)-_a2,ty2(0)+_a2/2);ctx2.closePath();ctx2.fill();
+      ctx2.beginPath();ctx2.moveTo(tx2(0),ty2(yMax));ctx2.lineTo(tx2(0)-_a2/2,ty2(yMax)+_a2);ctx2.lineTo(tx2(0)+_a2/2,ty2(yMax)+_a2);ctx2.closePath();ctx2.fill();
+      // Achsennamen + Ursprung
+      ctx2.fillStyle='#555';ctx2.font='bold 13px Inter,sans-serif';ctx2.textAlign='left';ctx2.fillText('x',tx2(xMax)-14,ty2(0)-10);
+      ctx2.textAlign='center';ctx2.fillText('y',tx2(0)+14,ty2(yMax)+4);
+      ctx2.fillStyle='#888';ctx2.font='12px Inter,sans-serif';ctx2.textAlign='right';ctx2.textBaseline='top';ctx2.fillText('O',tx2(0)-5,ty2(0)+4);
       // Ticks
-      ctx2.fillStyle='#777';ctx2.font='11px Inter,sans-serif';ctx2.textAlign='center';
+      ctx2.fillStyle='#777';ctx2.font='11px Inter,sans-serif';ctx2.textAlign='center';ctx2.textBaseline='alphabetic';
       for(var i2=Math.ceil(xMin);i2<=Math.floor(xMax);i2++){if(i2===0)continue;ctx2.fillText(i2,tx2(i2),ty2(0)+14);}
       ctx2.textAlign='right';
       for(var j2=Math.ceil(yMin);j2<=Math.floor(yMax);j2++){if(j2===0)continue;ctx2.fillText(j2,tx2(0)-6,ty2(j2)+4);}
@@ -11540,6 +11693,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 <!-- ============================================================================
      SECTION 2: ABLEITUNGEN
      ============================================================================ -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre in eigenen Worten, was „Stetigkeit“ einer Funktion bedeutet. Nenne ein Beispiel für eine stetige und eine unstetige Funktion.</li>
+        <li>Was ist der Unterschied zwischen einer „Lücke“ und einem „Sprung“ im Graphen?</li>
+        <li>Warum ist Stetigkeit eine Voraussetzung für die Ableitung? Was passiert an einer Sprungstelle?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Stetigkeit und Grenzwerte“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k11-ableit">
     <!-- Sinnstiftung (D19): Warum Ableitung? -->
     <div class="card">
@@ -11640,9 +11812,9 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
-            <span class="card-title">Von der Sekante zur Tangente — interaktiv</span>
-        </div>
-        <div class="card-body">
+            <span class="card-title">Von der Sekante zur Tangente — interaktiv</span></div>
+    <div class="card-body">
+        <div class="hint" style="margin-bottom:12px;"><strong>Das brauchst du:</strong> Steigungsberechnung linearer Funktionen, Differenzenquotient, Funktionsbegriff, Grenzwertvorstellung.</div>
             <div class="ip">Bewege den Schieberegler und beobachte, wie die <strong style="color:#8a9da7">Sekante</strong> sich der <strong style="color:#c75c3a">Tangente</strong> annähert, wenn h kleiner wird.</div>
             <div style="text-align:center;margin:12px 0">
                 <canvas id="cvSekTan" style="max-width:100%;border-radius:4px"></canvas>
@@ -11677,8 +11849,15 @@ window.addEventListener('resize',function(){updateSimulator();});
         ctx.strokeStyle='#333';ctx.lineWidth=1.5;
         ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
         ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+        // Pfeilspitzen
+        var _as=6;ctx.fillStyle='#333';
+        ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+        ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+        ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-14,ty(0)-10);
+        ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+4);
+        ctx.fillStyle='#888';ctx.font='12px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-5,ty(0)+4);
         // Ticks
-        ctx.fillStyle='#555';ctx.font='12px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillStyle='#555';ctx.font='12px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';
         for(var i=Math.ceil(xMin);i<=Math.floor(xMax);i++){
           if(i===0)continue;
           ctx.beginPath();ctx.moveTo(tx(i),ty(0)-4);ctx.lineTo(tx(i),ty(0)+4);ctx.stroke();
@@ -12116,6 +12295,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 <!-- ============================================================================
      SECTION 2b: TANGENTEN
      ============================================================================ -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Bestimme die Ableitung von \(f(x) = 3x^4 - 2x^2 + 5x - 7\). Welche Regeln wendest du an?</li>
+        <li>Erkläre, warum die Ableitung einer Konstante Null ist. Was bedeutet das geometrisch?</li>
+        <li>Berechne \(f'(2)\) für \(f(x) = x^3 - 6x\). Was sagt dir das Vorzeichen über den Graphen?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Ableitungsregeln“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k11-tangenten">
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
@@ -12189,6 +12387,10 @@ window.addEventListener('resize',function(){updateSimulator();});
             ctx.strokeStyle='#999';ctx.lineWidth=1.2;
             ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
             ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
             ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
             for(var lx=Math.ceil(xMin);lx<=Math.floor(xMax);lx++){if(lx!==0)ctx.fillText(lx,tx(lx),ty(0)+4);}
             ctx.textAlign='right';ctx.textBaseline='middle';
@@ -12276,6 +12478,10 @@ window.addEventListener('resize',function(){updateSimulator();});
             ctx.strokeStyle='#999';ctx.lineWidth=1.2;
             ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
             ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
             /* axis labels */
             ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
             for(var lx=Math.ceil(xMin);lx<=Math.floor(xMax);lx++){if(lx!==0)ctx.fillText(lx,tx(lx),ty(0)+4);}
@@ -12477,6 +12683,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 <!-- ============================================================================
      SECTION 2c: GRAFISCHES ABLEITEN
      ============================================================================ -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre den Zusammenhang zwischen Sekantensteigung und Tangentensteigung. Was passiert beim Grenzübergang \(h \to 0\)?</li>
+        <li>Bestimme die Tangentengleichung an \(f(x) = x^2\) an der Stelle \(x_0 = 3\).</li>
+        <li>Berechne den Neigungswinkel der Tangente, wenn \(f'(x_0) = 1\).</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Tangenten und Ableitungsbegriff“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k11-grafabl">
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
@@ -12892,6 +13117,25 @@ window.addEventListener('resize',function(){updateSimulator();});
 <!-- ============================================================================
      SECTION 3: KURVENDISKUSSION
      ============================================================================ -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Beschreibe: Wenn \(f(x)\) ein Maximum hat, was gilt dort für \(f'(x)\)? Und umgekehrt?</li>
+        <li>Skizziere den Graphen von \(f'\), wenn \(f\) eine nach oben geöffnete Parabel ist.</li>
+        <li>Erkläre, was es für \(f\) bedeutet, wenn \(f'(x) > 0\) in einem Intervall gilt.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Grafisches Ableiten“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k11-kurven">
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
@@ -13017,6 +13261,10 @@ window.addEventListener('resize',function(){updateSimulator();});
             ctx.strokeStyle='#999';ctx.lineWidth=1.2;
             ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
             ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
             ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
             for(var lx=Math.ceil(xMin);lx<=Math.floor(xMax);lx++){if(lx!==0)ctx.fillText(lx,tx(lx),ty(0)+4);}
             ctx.textAlign='right';ctx.textBaseline='middle';
@@ -13299,6 +13547,10 @@ window.addEventListener('resize',function(){updateSimulator();});
                     ctx.strokeStyle='#999';ctx.lineWidth=1.2;
                     ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
                     ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+                    var _as=5;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+                    ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+                    ctx.fillStyle='#555';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+12,ty(yMax)+2);
+                    ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+3);
                     ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
                     for(var l=Math.ceil(xMin);l<=Math.floor(xMax);l++){if(l>0)ctx.fillText(l,tx(l),ty(0)+3);}
                     ctx.textAlign='right';ctx.textBaseline='middle';
@@ -13375,13 +13627,20 @@ window.addEventListener('resize',function(){updateSimulator();});
                     for(var g=0;g<=Math.floor(xMax);g++){ctx.beginPath();ctx.moveTo(tx(g),0);ctx.lineTo(tx(g),cH);ctx.stroke();}
                     for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g+=5){ctx.beginPath();ctx.moveTo(0,ty(g));ctx.lineTo(cW,ty(g));ctx.stroke();}
                     ctx.strokeStyle='#999';ctx.lineWidth=1.2;
-                    ctx.beginPath();ctx.moveTo(tx(0),0);ctx.lineTo(tx(0),cH);ctx.stroke();
+                    ctx.beginPath();ctx.moveTo(tx(0),cH);ctx.lineTo(tx(0),0);ctx.stroke();
                     ctx.beginPath();ctx.moveTo(0,ty(yMin));ctx.lineTo(cW,ty(yMin));ctx.stroke();
-                    ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
+                    /* Pfeilspitzen */
+                    var _as=6;ctx.fillStyle='#999';
+                    ctx.beginPath();ctx.moveTo(cW,ty(yMin));ctx.lineTo(cW-_as,ty(yMin)-_as/2);ctx.lineTo(cW-_as,ty(yMin)+_as/2);ctx.closePath();ctx.fill();
+                    ctx.beginPath();ctx.moveTo(tx(0),0);ctx.lineTo(tx(0)-_as/2,_as);ctx.lineTo(tx(0)+_as/2,_as);ctx.closePath();ctx.fill();
+                    ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='center';ctx.fillText('h(m)',tx(0)+18,8);
+                    ctx.fillStyle='#888';ctx.font='12px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
                     for(var l=0;l<=Math.floor(xMax);l+=2){if(l>0)ctx.fillText(l,tx(l),cH-14);}
                     ctx.fillText('t (Tage)',tx(xMax)-20,cH-14);
-                    ctx.textAlign='right';ctx.textBaseline='middle';
+                    ctx.textAlign='right';ctx.textBaseline='middle';ctx.font='12px Inter,sans-serif';
                     for(var l=Math.ceil(yMin/5)*5;l<=Math.floor(yMax);l+=5){ctx.fillText(l+'m',tx(0)-4,ty(l));}
+                    /* Ursprung */
+                    ctx.fillStyle='#888';ctx.font='12px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(yMin)+4);
                     /* water fill effect */
                     ctx.fillStyle='rgba(138,157,167,0.1)';ctx.beginPath();ctx.moveTo(tx(0),ty(h(0)));
                     for(var px=0;px<=cW;px++){var t=xMin+px/cW*(xMax-xMin);if(t>=0&&t<=9){ctx.lineTo(tx(t),ty(h(t)));}}
@@ -13477,6 +13736,26 @@ window.addEventListener('resize',function(){updateSimulator();});
 <!-- ============================================================================
      SECTION 4: ANWENDUNGEN DER DIFFERENTIALRECHNUNG
      ============================================================================ -->
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Nenne die Schritte einer vollständigen Kurvendiskussion in der richtigen Reihenfolge.</li>
+        <li>Wie prüfst du, ob ein Extremum ein Hoch- oder Tiefpunkt ist? Nenne zwei verschiedene Methoden.</li>
+        <li>Bestimme die Wendestelle von \(f(x) = x^3 - 3x\). Was passiert dort mit der Krümmung?</li>
+        <li>Erkläre, was ein Sattelpunkt ist und wie er sich von einem normalen Wendepunkt unterscheidet.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Kurvendiskussion“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k11-anwend">
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
@@ -13888,6 +14167,10 @@ window.addEventListener('resize',function(){updateSimulator();});
             ctx.strokeStyle='#999';ctx.lineWidth=1.2;
             ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
             ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+            ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+3);
             ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
             for(var l=Math.ceil(xMin);l<=Math.floor(xMax);l++){if(l!==0)ctx.fillText(l,tx(l),ty(0)+3);}
             ctx.textAlign='right';ctx.textBaseline='middle';
@@ -14040,6 +14323,10 @@ ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
             ctx.strokeStyle='#999';ctx.lineWidth=1.2;
             ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
             ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
             ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
             for(var l=Math.ceil(xMin);l<=Math.floor(xMax);l++){if(l!==0)ctx.fillText(l,tx(l),ty(0)+4);}
             ctx.textAlign='right';ctx.textBaseline='middle';
@@ -14117,6 +14404,10 @@ ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
                     for(var g=0;g<=3;g++){ctx.beginPath();ctx.moveTo(0,ty(g));ctx.lineTo(cW,ty(g));ctx.stroke();}
                     ctx.strokeStyle='#999';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(tx(0),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
                     ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+                    var _as=5;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+                    ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+                    ctx.fillStyle='#555';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-7);ctx.textAlign='center';ctx.fillText('y',tx(0)+11,ty(yMax)+2);
+                    ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+3);
                     ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
                     for(var l=1;l<=4;l++)ctx.fillText(l,tx(l),ty(0)+3);
                     ctx.textAlign='right';ctx.textBaseline='middle';
@@ -14167,6 +14458,10 @@ ight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
                     for(var g=0;g<=10;g+=2){ctx.beginPath();ctx.moveTo(0,ty(g));ctx.lineTo(cW,ty(g));ctx.stroke();}
                     ctx.strokeStyle='#999';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(tx(0),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
                     ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+                    var _as=5;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+                    ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+                    ctx.fillStyle='#555';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-7);ctx.textAlign='center';ctx.fillText('y',tx(0)+11,ty(yMax)+2);
+                    ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+3);
                     ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
                     for(var l=1;l<=6;l++)ctx.fillText(l,tx(l),ty(0)+3);
                     ctx.textAlign='right';ctx.textBaseline='middle';
@@ -14223,6 +14518,10 @@ ight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
                     for(var g=0;g<=4;g++){ctx.beginPath();ctx.moveTo(0,ty(g));ctx.lineTo(cW,ty(g));ctx.stroke();}
                     ctx.strokeStyle='#999';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
                     ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+                    var _as=5;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+                    ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+                    ctx.fillStyle='#555';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-7);ctx.textAlign='center';ctx.fillText('y',tx(0)+11,ty(yMax)+2);
+                    ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+3);
                     ctx.fillStyle='#888';ctx.font='10px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
                     for(var l=1;l<=4;l++)ctx.fillText(l,tx(l),ty(0)+3);
                     ctx.textAlign='right';ctx.textBaseline='middle';
@@ -14270,6 +14569,25 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
     </div>
 
 </div>
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Nenne die fünf Schritte einer Extremwertaufgabe in der richtigen Reihenfolge.</li>
+        <li>Was ist der Unterschied zwischen Hauptbedingung und Nebenbedingung? Warum braucht man beide?</li>
+        <li>Warum muss man nach dem Ableiten auch die Randwerte des Definitionsbereichs prüfen?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Extremwertaufgaben“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k11-stamm">
 
     <div class="card">
@@ -14487,12 +14805,37 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
         <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K1.5</span><span class="td dm">★★</span></div><div class="tq"><strong>Sachkontext.</strong> Ein Heißluftballon steigt mit der Geschwindigkeit \(v(t) = 6t - 0{,}5t^2\) (in m/s, \(t\) in Sekunden). Bestimme eine Stammfunktion \(H(t)\), die die Höhe über dem Startpunkt beschreibt, wenn der Ballon zum Zeitpunkt \(t = 0\) am Boden steht. Berechne die Höhe nach 8 Sekunden.</div></div><div class="tk-toggle">⌄</div></div><div class="ta"><div class="ip">\(H(t) = 3t^2 - \tfrac{1}{6}t^3 + C\). Anfangsbedingung: \(H(0) = 0 \Rightarrow C = 0\).</div><div class="ip">Also \(H(t) = 3t^2 - \tfrac{1}{6}t^3\).</div><div class="ip">\(H(8) = 3 \cdot 64 - \tfrac{1}{6} \cdot 512 = 192 - 85{,}\overline{3} \approx 106{,}7\text{ m}\).</div><div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">K3: Sachsituation in mathematisches Modell übersetzen · K5: Stammfunktion mit Anfangswert korrekt bestimmen</div></div></div>
       </div>
     </div>
-  </div><!-- end int-stamm -->
+  
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Bestimme eine Stammfunktion von \(f(x) = 4x^3 - 6x + 2\). Warum gibt es unendlich viele Stammfunktionen?</li>
+        <li>Was bedeutet \(F(0) = 5\) als Anfangsbedingung? Wie bestimmst du die Konstante \(C\)?</li>
+        <li>Erkläre den Zusammenhang: Wenn \(F\) eine Stammfunktion von \(f\) ist, dann gilt \(F' = f\).</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Stammfunktionen“.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end int-stamm -->
 
   <!-- ── BESTÄNDE ──────────────────────────────────────────────── -->
 
   <div class="subpanel" id="k11-bestand">
     <div class="section-label" id="zwischenschritt-bestaende">Zwischenschritt · Bestände – vom Graphen zum Integral</div>
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);margin-bottom:14px;">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
+        <div class="ip">Ein Stausee wird gefüllt und gleichzeitig fließt Wasser ab. Du kennst nur die <em>Zu- und Abflussraten</em> als Graph — wie findest du heraus, wie viel Wasser tatsächlich im See ist? Die Antwort: Du zählst Flächen unter dem Graphen. Fläche oberhalb der x-Achse = Zufluss, darunter = Abfluss. Die Differenz ergibt die Bestandsänderung.</div>
+      </div>
+    </div>
+    <div class="hint" style="margin-bottom:14px;"><strong>Das brauchst du:</strong> Bestimmtes Integral, Flächenberechnung unter Funktionsgraphen, Stammfunktionen.</div>
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Von der Fläche zum Bestand</span></div>
       <div class="card-body">
@@ -14660,10 +15003,35 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
       <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">B4</span><span class="td dm">★★</span></div><div class="tq">Erläutere, warum bei Bestandsaufgaben Flächen unterhalb der x-Achse mit negativem Vorzeichen eingehen. Beschreibe den Sachzusammenhang am Beispiel des Schwimmbeckens.</div></div><div class="tk-toggle">⌄</div></div><div class="ta"><div class="ip">Die Funktion \(f\) beschreibt die Änderungsrate. Positive Werte bedeuten Zufluss (Bestand wächst), negative Werte Abfluss (Bestand sinkt).</div><div class="ip">Die Fläche unter der x-Achse entspricht dem Gesamtabfluss – sie verringert den Bestand. Deshalb wird sie negativ gezählt.</div><div class="ip">Die Gesamtänderung ist die Bilanz: positive Flächen minus negative Flächen = Nettoänderung des Bestands.</div><div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span></div><div class="komp-desc">K6: Vorzeichen der Fläche im Sachkontext erläutern · K3: Mathematisches Modell mit Realität verbinden</div></div></div>
     </div>
   </div><!-- end int-bestand inner -->
-  </div><!-- end int-bestand -->
+  
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre in eigenen Worten: Was bedeutet „Bestand = Anfangswert + Flächenbilanz“?</li>
+        <li>Warum zählen Flächen unterhalb der x-Achse negativ? Was bedeutet das im Sachkontext (z. B. Zu-/Abfluss)?</li>
+        <li>Wie hängt die Flächenbilanz mit dem bestimmten Integral zusammen?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Von der Fläche zum Bestand“.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end int-bestand -->
 
 
   <div class="subpanel" id="k11-grafisch">
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);margin-bottom:14px;">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
+        <div class="ip">Nicht immer kann man eine Stammfunktion als Formel angeben. Aber man kann aus dem Graphen der Änderungsrate trotzdem die Bestandsfunktion <em>Stück für Stück zeichnen</em>: Wo die Rate positiv ist, steigt der Bestand — wo sie negativ ist, fällt er. So wird aus einer grafischen Ablesung ein vollständiges Bild.</div>
+      </div>
+    </div>
+    <div class="hint" style="margin-bottom:14px;"><strong>Das brauchst du:</strong> Bestimmtes Integral als Flächenbilanz, Stammfunktionen, Zusammenhang zwischen Funktion und Ableitung.</div>
 
     <div class="section-label">Vom Graphen von f zum Graphen von F</div>
     <div class="card">
@@ -15082,7 +15450,25 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
       </div>
     </div>
 
-  </div><!-- end int-grafisch -->
+  
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Beschreibe, wie du aus dem Graphen der Änderungsrate \(f\) den Graphen der Bestandsfunktion \(F\) zeichnest.</li>
+        <li>Wenn \(f(x) > 0\) in einem Intervall, was passiert mit \(F\) in diesem Intervall? Und wenn \(f(x) < 0\)?</li>
+        <li>Was passiert mit \(F\) an einer Stelle, wo \(f\) die x-Achse schneidet?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Grafisches Integrieren“.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end int-grafisch -->
 
 
   <div class="subpanel" id="k11-hauptsatz">
@@ -15459,10 +15845,34 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
     <div class="tg">
       <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">N1.6</span><span class="td dm">★★</span></div><div class="tq">Erläutere den Hauptsatz der Differential- und Integralrechnung in eigenen Worten. Erkläre, warum man zum Berechnen eines bestimmten Integrals eine Stammfunktion benötigt, und beschreibe den Zusammenhang \(\int_a^b f(x)\,dx = F(b) - F(a)\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta"><div class="ip">Der Hauptsatz verbindet Ableitung und Integration: Ist \(F\) eine Stammfunktion von \(f\) (also \(F' = f\)), dann gilt:</div><div class="ip">\(\int_a^b f(x)\,dx = F(b) - F(a)\)</div><div class="ip">Man berechnet die Stammfunktion an den Grenzen und bildet die Differenz. Die Integrationskonstante \(C\) kürzt sich dabei heraus.</div><div class="ip">Anschaulich: \(F(b) - F(a)\) gibt die Gesamtänderung des Bestands von \(a\) bis \(b\) an — genau das, was die Fläche unter \(f\) misst.</div><div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div><div class="komp-desc">K6: Hauptsatz in eigenen Worten formulieren · K1: Zusammenhang Ableitung ↔ Integral begründen</div></div></div>
     </div>
-  </div><!-- end int-hauptsatz -->
+  
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Formuliere den Hauptsatz in eigenen Worten. Was verbindet er?</li>
+        <li>Berechne \(\int_1^3 (2x + 1)\,dx\) mithilfe einer Stammfunktion.</li>
+        <li>Erkläre, warum \(\int_a^a f(x)\,dx = 0\) gilt — auch geometrisch.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Hauptsatz der Differential- und Integralrechnung“.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end int-hauptsatz -->
 
 
   <div class="subpanel" id="k11-flaechen">
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);margin-bottom:14px;">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
+        <div class="ip">Wie groß ist die Fläche <em>zwischen</em> zwei Funktionsgraphen? Diese Frage taucht überall auf: bei Gewinn- und Kostenfunktionen, bei Temperaturvergleichen, bei physikalischen Energieberechnungen. Die Idee: Ziehe die untere Funktion von der oberen ab und integriere die Differenz.</div>
+      </div>
+    </div>
 
     <div class="section-label">Fläche zwischen zwei Graphen</div>
     <div class="card">
@@ -15731,7 +16141,25 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
       <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.7</span><span class="td dm">★★</span></div><div class="tq">Begründe, warum man bei der Flächenberechnung zwischen zwei Graphen stets \(|f(x) - g(x)|\) verwenden muss und nicht einfach \(f(x) - g(x)\). Erkläre an einem Beispiel, was schief geht, wenn man das Betragszeichen weglässt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta"><div class="ip">Das Integral \(\int_a^b (f(x) - g(x))\,dx\) kann positiv oder negativ sein, je nachdem welche Funktion oben liegt.</div><div class="ip">Liegt auf einem Teilintervall \(g\) über \(f\), so ist \(f(x) - g(x) < 0\). Die Fläche wird dann mit negativem Vorzeichen gezählt und verringert das Gesamtergebnis.</div><div class="ip"><strong>Beispiel:</strong> \(f(x) = x^2\) und \(g(x) = x\) auf \([0;\,2]\). Ab \(x = 1\) ist \(f > g\), davor \(g > f\). Ohne Betrag: \(\int_0^2 (x^2 - x)\,dx = \frac{2}{3}\), aber die tatsächliche Fläche ist \(\int_0^1 (x - x^2)\,dx + \int_1^2 (x^2 - x)\,dx = \frac{1}{6} + \frac{5}{6} = 1\).</div><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K1: Notwendigkeit des Betrags begründen · K6: Fehlervermeidung am Beispiel erklären</div></div></div>
     </div>
 
-  </div><!-- end int-kurven -->
+  
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre das Vorgehen: Wie berechnest du die Fläche zwischen \(f(x)\) und \(g(x)\)?</li>
+        <li>Warum musst du zuerst die Schnittstellen bestimmen, bevor du integrieren kannst?</li>
+        <li>Was passiert, wenn du vergisst, den Betrag zu nehmen? Welchen Fehler machst du dann?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Fläche zwischen Funktionsgraphen“.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end int-kurven -->
 
 
 </div><!-- end k11 main -->
@@ -16254,6 +16682,26 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
 
 
 
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Berechne \(\vec{a} + \vec{b}\) und \(\vec{a} \cdot \vec{b}\) für \(\vec{a} = \begin{pmatrix}2\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\4\\-2\end{pmatrix}\).</li>
+        <li>Erkläre den Unterschied zwischen Ortsvektor und freiem Vektor.</li>
+        <li>Was sagt das Skalarprodukt über den Winkel zwischen zwei Vektoren aus? Wann sind zwei Vektoren orthogonal?</li>
+        <li>Berechne das Kreuzprodukt \(\vec{a} \times \vec{b}\) und erkläre seine geometrische Bedeutung.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Vektoren“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k12-gerade">
 
   <div class="card">
@@ -16348,63 +16796,95 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
     <div class="two-col">
       <div style="padding:8px;">
         <div style="text-align:center;margin-bottom:8px;font-weight:700;color:var(--kiku);">Schneidende Geraden</div>
-        <svg viewBox="0 0 280 200" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
-          <!-- Koordinatenachsen -->
-          <line x1="20" y1="160" x2="120" y2="160" stroke="#ccc" stroke-width="1"/>
-          <line x1="20" y1="160" x2="20" y2="60" stroke="#ccc" stroke-width="1"/>
-          <line x1="20" y1="160" x2="60" y2="140" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+        <svg viewBox="0 0 280 220" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
+          <defs><marker id="ah1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#888"/></marker></defs>
+          <!-- 3D-Koordinatenachsen mit Pfeilen -->
+          <line x1="30" y1="175" x2="140" y2="175" stroke="#888" stroke-width="1.2" marker-end="url(#ah1)"/>
+          <line x1="30" y1="175" x2="30" y2="50" stroke="#888" stroke-width="1.2" marker-end="url(#ah1)"/>
+          <line x1="30" y1="175" x2="75" y2="148" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#ah1)"/>
+          <!-- Achsenbeschriftungen -->
+          <text x="145" y="179" font-size="13" font-weight="bold" fill="#555">x</text>
+          <text x="34" y="46" font-size="13" font-weight="bold" fill="#555">z</text>
+          <text x="80" y="145" font-size="13" font-weight="bold" fill="#555">y</text>
+          <text x="18" y="190" font-size="12" fill="#888">O</text>
+          <!-- Tick-Marks -->
+          <line x1="60" y1="172" x2="60" y2="178" stroke="#888" stroke-width="1"/><text x="60" y="192" font-size="10" text-anchor="middle" fill="#888">1</text>
+          <line x1="90" y1="172" x2="90" y2="178" stroke="#888" stroke-width="1"/><text x="90" y="192" font-size="10" text-anchor="middle" fill="#888">2</text>
+          <line x1="120" y1="172" x2="120" y2="178" stroke="#888" stroke-width="1"/><text x="120" y="192" font-size="10" text-anchor="middle" fill="#888">3</text>
+          <line x1="27" y1="145" x2="33" y2="145" stroke="#888" stroke-width="1"/><text x="20" y="148" font-size="10" text-anchor="end" fill="#888">1</text>
+          <line x1="27" y1="115" x2="33" y2="115" stroke="#888" stroke-width="1"/><text x="20" y="118" font-size="10" text-anchor="end" fill="#888">2</text>
+          <line x1="27" y1="85" x2="33" y2="85" stroke="#888" stroke-width="1"/><text x="20" y="88" font-size="10" text-anchor="end" fill="#888">3</text>
           <!-- Gerade g₁ (rot/orange) -->
-          <line x1="40" y1="140" x2="100" y2="80" stroke="#c75c3a" stroke-width="2.5"/>
-          <text x="105" y="85" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
+          <line x1="40" y1="150" x2="115" y2="80" stroke="#c75c3a" stroke-width="2.5"/>
+          <text x="120" y="82" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
           <!-- Gerade g₂ (grün) -->
-          <line x1="20" y1="100" x2="110" y2="140" stroke="#5b6e2e" stroke-width="2.5"/>
-          <text x="112" y="145" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
+          <line x1="35" y1="110" x2="120" y2="148" stroke="#5b6e2e" stroke-width="2.5"/>
+          <text x="124" y="152" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
           <!-- Schnittpunkt S -->
-          <circle cx="70" cy="110" r="3.5" fill="#333" stroke="#333" stroke-width="1"/>
-          <circle cx="70" cy="110" r="6" fill="none" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="2,2"/>
-          <text x="72" y="125" font-size="11" font-weight="bold" fill="#333">S</text>
+          <circle cx="78" cy="118" r="4" fill="#333"/>
+          <circle cx="78" cy="118" r="7" fill="none" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <text x="84" y="134" font-size="12" font-weight="bold" fill="#333">S</text>
         </svg>
       </div>
       <div style="padding:8px;">
         <div style="text-align:center;margin-bottom:8px;font-weight:700;color:var(--kiku);">Parallele Geraden</div>
-        <svg viewBox="0 0 280 200" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
-          <!-- Koordinatenachsen -->
-          <line x1="20" y1="160" x2="120" y2="160" stroke="#ccc" stroke-width="1"/>
-          <line x1="20" y1="160" x2="20" y2="60" stroke="#ccc" stroke-width="1"/>
-          <line x1="20" y1="160" x2="60" y2="140" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+        <svg viewBox="0 0 280 220" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
+          <defs><marker id="ah2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#888"/></marker></defs>
+          <!-- 3D-Koordinatenachsen mit Pfeilen -->
+          <line x1="30" y1="175" x2="140" y2="175" stroke="#888" stroke-width="1.2" marker-end="url(#ah2)"/>
+          <line x1="30" y1="175" x2="30" y2="50" stroke="#888" stroke-width="1.2" marker-end="url(#ah2)"/>
+          <line x1="30" y1="175" x2="75" y2="148" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#ah2)"/>
+          <text x="145" y="179" font-size="13" font-weight="bold" fill="#555">x</text>
+          <text x="34" y="46" font-size="13" font-weight="bold" fill="#555">z</text>
+          <text x="80" y="145" font-size="13" font-weight="bold" fill="#555">y</text>
+          <text x="18" y="190" font-size="12" fill="#888">O</text>
+          <line x1="60" y1="172" x2="60" y2="178" stroke="#888" stroke-width="1"/><text x="60" y="192" font-size="10" text-anchor="middle" fill="#888">1</text>
+          <line x1="90" y1="172" x2="90" y2="178" stroke="#888" stroke-width="1"/><text x="90" y="192" font-size="10" text-anchor="middle" fill="#888">2</text>
+          <line x1="27" y1="145" x2="33" y2="145" stroke="#888" stroke-width="1"/><text x="20" y="148" font-size="10" text-anchor="end" fill="#888">1</text>
+          <line x1="27" y1="115" x2="33" y2="115" stroke="#888" stroke-width="1"/><text x="20" y="118" font-size="10" text-anchor="end" fill="#888">2</text>
           <!-- Gerade g₁ (rot/orange) -->
-          <line x1="30" y1="130" x2="110" y2="90" stroke="#c75c3a" stroke-width="2.5"/>
-          <text x="112" y="92" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
-          <!-- Gerade g₂ (grün) parallel zu g₁ -->
-          <line x1="30" y1="105" x2="110" y2="65" stroke="#5b6e2e" stroke-width="2.5"/>
-          <text x="112" y="67" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
+          <line x1="45" y1="138" x2="125" y2="95" stroke="#c75c3a" stroke-width="2.5"/>
+          <text x="128" y="97" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
+          <!-- Gerade g₂ (grün) parallel -->
+          <line x1="45" y1="108" x2="125" y2="65" stroke="#5b6e2e" stroke-width="2.5"/>
+          <text x="128" y="67" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
           <!-- Abstandsmarker -->
-          <line x1="25" y1="110" x2="25" y2="130" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="2,2"/>
-          <line x1="20" y1="110" x2="30" y2="110" stroke="#8a9da7" stroke-width="1.5"/>
-          <line x1="20" y1="130" x2="30" y2="130" stroke="#8a9da7" stroke-width="1.5"/>
-          <text x="28" y="121" font-size="10" fill="#8a9da7" font-weight="600">d</text>
+          <line x1="38" y1="116" x2="38" y2="136" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <line x1="34" y1="116" x2="42" y2="116" stroke="#8a9da7" stroke-width="1.5"/>
+          <line x1="34" y1="136" x2="42" y2="136" stroke="#8a9da7" stroke-width="1.5"/>
+          <text x="44" y="129" font-size="11" fill="#8a9da7" font-weight="600">d</text>
         </svg>
       </div>
       <div style="padding:8px;grid-column:1/-1;">
         <div style="text-align:center;margin-bottom:8px;font-weight:700;color:var(--kiku);">Windschiefe Geraden</div>
-        <svg viewBox="0 0 280 200" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
-          <!-- 3D-Koordinatenachsen -->
-          <line x1="30" y1="160" x2="130" y2="160" stroke="#ccc" stroke-width="1"/>
-          <line x1="30" y1="160" x2="30" y2="50" stroke="#ccc" stroke-width="1"/>
-          <line x1="30" y1="160" x2="80" y2="135" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
-          <!-- Gerade g₁ (rot/orange) — in xy-Ebene -->
-          <line x1="40" y1="140" x2="110" y2="100" stroke="#c75c3a" stroke-width="2.5"/>
-          <text x="115" y="102" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
-          <!-- Gerade g₂ (grün) — in höherer z-Ebene, schräg -->
-          <line x1="70" y1="80" x2="130" y2="130" stroke="#5b6e2e" stroke-width="2.5"/>
-          <text x="132" y="132" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
-          <!-- Minimaler Abstand markieren (blau-grau) -->
-          <line x1="88" y1="95" x2="100" y2="105" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="3,2"/>
-          <circle cx="88" cy="95" r="2.5" fill="#8a9da7"/>
-          <circle cx="100" cy="105" r="2.5" fill="#8a9da7"/>
-          <!-- Erklärungstext -->
-          <text x="35" y="25" font-size="11" fill="#666" font-weight="500">3D: Geraden schneiden sich nicht</text>
-          <text x="35" y="40" font-size="11" fill="#666" font-weight="500">und sind nicht parallel</text>
+        <svg viewBox="0 0 280 220" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
+          <defs><marker id="ah3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#888"/></marker></defs>
+          <!-- 3D-Koordinatenachsen mit Pfeilen -->
+          <line x1="30" y1="175" x2="145" y2="175" stroke="#888" stroke-width="1.2" marker-end="url(#ah3)"/>
+          <line x1="30" y1="175" x2="30" y2="40" stroke="#888" stroke-width="1.2" marker-end="url(#ah3)"/>
+          <line x1="30" y1="175" x2="80" y2="145" stroke="#888" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#ah3)"/>
+          <text x="150" y="179" font-size="13" font-weight="bold" fill="#555">x</text>
+          <text x="34" y="36" font-size="13" font-weight="bold" fill="#555">z</text>
+          <text x="84" y="142" font-size="13" font-weight="bold" fill="#555">y</text>
+          <text x="18" y="190" font-size="12" fill="#888">O</text>
+          <line x1="60" y1="172" x2="60" y2="178" stroke="#888" stroke-width="1"/><text x="60" y="192" font-size="10" text-anchor="middle" fill="#888">1</text>
+          <line x1="90" y1="172" x2="90" y2="178" stroke="#888" stroke-width="1"/><text x="90" y="192" font-size="10" text-anchor="middle" fill="#888">2</text>
+          <line x1="27" y1="145" x2="33" y2="145" stroke="#888" stroke-width="1"/><text x="20" y="148" font-size="10" text-anchor="end" fill="#888">1</text>
+          <line x1="27" y1="115" x2="33" y2="115" stroke="#888" stroke-width="1"/><text x="20" y="118" font-size="10" text-anchor="end" fill="#888">2</text>
+          <!-- Gerade g₁ — in xy-Ebene -->
+          <line x1="50" y1="150" x2="125" y2="105" stroke="#c75c3a" stroke-width="2.5"/>
+          <text x="130" y="107" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
+          <!-- Gerade g₂ — höhere z-Ebene -->
+          <line x1="75" y1="75" x2="140" y2="132" stroke="#5b6e2e" stroke-width="2.5"/>
+          <text x="143" y="135" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
+          <!-- Minimaler Abstand -->
+          <line x1="95" y1="98" x2="108" y2="112" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <circle cx="95" cy="98" r="3" fill="#8a9da7"/>
+          <circle cx="108" cy="112" r="3" fill="#8a9da7"/>
+          <text x="115" y="102" font-size="11" fill="#8a9da7" font-weight="600">dₘₗₙ</text>
+          <!-- Erklärung -->
+          <text x="40" y="22" font-size="11" fill="#666" font-weight="500">3D: Geraden schneiden sich nicht</text>
+          <text x="40" y="37" font-size="11" fill="#666" font-weight="500">und sind nicht parallel</text>
         </svg>
       </div>
     </div>
@@ -16504,6 +16984,25 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
 
 </div>
 
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Stelle die Parameterform einer Geraden durch \(A(1|2|3)\) mit Richtungsvektor \(\vec{v} = \begin{pmatrix}2\\-1\\1\end{pmatrix}\) auf.</li>
+        <li>Nenne die drei möglichen Lagebeziehungen zweier Geraden im Raum und erkläre, wie man sie rechnerisch unterscheidet.</li>
+        <li>Was sind windschiefe Geraden? Warum gibt es sie nur im Raum (3D) und nicht in der Ebene (2D)?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Geraden im Raum“.
+      </p>
+    </div>
+  </div>
+</div>
+
+
 <div class="subpanel" id="k12-ebenen">
 
 <div class="card">
@@ -16543,6 +17042,32 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
         <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Volumen und Oberflächen geradlinig begrenzter Körper berechnen</span>
       </li>
     </ul>
+  </div>
+</div>
+
+<!-- GeoGebra 3D-Visualisierung Ebenen -->
+<div class="card" style="margin-bottom:18px;">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Interaktiv: Ebenen im 3D-Raum erkunden</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Verschiebe die Punkte A, B und C und beobachte, wie sich die Ebene verändert. Erkenne den Zusammenhang zwischen Stützvektor, Spannvektoren und der Lage der Ebene im Raum.</div>
+    <div class="ggb-wrap">
+      <iframe data-src="https://www.geogebra.org/material/iframe/id/yxadpqjg/width/800/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false"
+        loading="lazy" allowfullscreen style="width:100%;aspect-ratio:8/5;border:none;border-radius:8px;"></iframe>
+    </div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;text-align:center;">Bewege die Punkte, um die Parameterform der Ebene zu veranschaulichen.</div>
+    <div class="ip" style="margin-top:12px;"><strong>Beobachte:</strong> Wie verändern sich Normalenvektor und Koordinatengleichung, wenn du die Spannvektoren veränderst?</div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:18px;">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Interaktiv: Schnitt von Ebene und Gerade</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Untersuche die Lagebeziehung zwischen Gerade g und Ebene E. Verschiebe die Gerade und beobachte, wann sie die Ebene schneidet, parallel verläuft oder in ihr liegt.</div>
+    <div class="ggb-wrap">
+      <iframe data-src="https://www.geogebra.org/material/iframe/id/dmnbhkzs/width/800/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false"
+        loading="lazy" allowfullscreen style="width:100%;aspect-ratio:8/5;border:none;border-radius:8px;"></iframe>
+    </div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;text-align:center;">Untersuche die drei Lagebeziehungen: Schnittpunkt, parallel, Gerade in Ebene.</div>
   </div>
 </div>
 
@@ -16790,6 +17315,26 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
 
 
 <!-- ── STOCHASTIK Q-PHASE (neu) ─────────────────────── -->
+
+
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Erkläre die drei Darstellungsformen einer Ebene: Parameterform, Normalenform, Koordinatenform. Wann verwendest du welche?</li>
+        <li>Wie bestimmst du den Normalenvektor einer Ebene in Parameterform? Welche Rechnung führst du durch?</li>
+        <li>Beschreibe das Vorgehen: Wie prüfst du, ob eine Gerade eine Ebene schneidet, parallel zu ihr ist oder in ihr liegt?</li>
+        <li>Berechne den Abstand eines Punktes von einer Ebene. Welche Darstellungsform eignet sich dafür am besten?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Ebenen im Raum“.
+      </p>
+    </div>
+  </div>
+</div>
 
 
 <div class="subpanel" id="k12-sto">
@@ -17447,6 +17992,24 @@ Der Kaufpreis sollte mindestens 2,15€ betragen, damit die Lotterie kostendecke
         <div class="komp-desc">K1: Paradoxon mit Bayes erklären · K3: Medizinischen Kontext modellieren · K6: Ergebnis allgemeinverständlich interpretieren</div>
       </div>
     </div>
+
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Nenne die Voraussetzungen für ein Bernoulli-Experiment. Wann darfst du die Binomialverteilung verwenden?</li>
+        <li>Berechne \(P(X = 3)\) bei \(n = 5\) Versuchen und \(p = 0{,}4\).</li>
+        <li>Erkläre, was der Erwartungswert \(\mu = n \cdot p\) und die Standardabweichung \(\sigma = \sqrt{n \cdot p \cdot (1-p)}\) im Sachkontext bedeuten.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Stochastik Klasse 12“.
+      </p>
+    </div>
+  </div>
+</div>
 
 </div><!-- end k12-sto -->
 
