@@ -16769,21 +16769,25 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
 <!-- Section 1: Geradengleichungen -->
 <div class="section-label">1. Geradengleichungen in Parameterform</div>
 
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-i">i</div>
-    <span class="card-title">Parameterform einer Gerade</span>
+<div class="two-col" style="align-items:start;gap:18px;">
+  <div>
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-head">
+        <div class="ci ci-i">i</div>
+        <span class="card-title">Parameterform einer Gerade</span>
+      </div>
+      <div class="card-body">
+        <div class="ip">Eine Gerade im Raum wird durch einen <strong>Stützpunkt</strong> und einen <strong>Richtungsvektor</strong> bestimmt.</div>
+        <div class="it">Parametergleichung:</div>
+        <div class="hint"><strong>Merke:</strong> \[\vec{x} = \vec{p} + t \cdot \vec{d}, \quad t \in \mathbb{R}\]
+        wobei \(\vec{p}\) der Ortsvektor eines Punktes auf der Gerade (Stützvektor) ist und \(\vec{d}\) der Richtungsvektor.</div>
+        <div class="ip" style="margin-top:8px;font-size:13px;color:var(--ink-muted);">Der Parameter \(t\) durchläuft alle reellen Zahlen — für jeden Wert von \(t\) erhältst du einen anderen Punkt auf der Geraden.</div>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <div class="ip">Eine Gerade im Raum wird durch einen Stützpunkt und einen Richtungsvektor bestimmt.</div>
-    <div class="it">Parametergleichung:</div>
-    <div class="hint"><strong>Merke:</strong> \[\vec{x} = \vec{p} + t \cdot \vec{d}, \quad t \in \mathbb{R}\]
-    wobei \(\vec{p}\) ein Punkt auf der Gerade ist und \(\vec{d}\) der Richtungsvektor.</div>
-  </div>
-</div>
-
-<div style="text-align:center;margin:12px 0 16px;">
-<svg viewBox="0 0 360 295" style="width:100%;max-width:420px;display:block;border-radius:4px;background:#fafafa;">
+  <div>
+    <div style="text-align:center;">
+<svg viewBox="0 0 360 295" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;background:#fafafa;">
 <line x1="55.0" y1="30.0" x2="55.0" y2="250.0" stroke="#e8e8e8" stroke-width="0.7"/>
 <line x1="94.3" y1="30.0" x2="94.3" y2="250.0" stroke="#e8e8e8" stroke-width="0.7"/>
 <line x1="133.6" y1="30.0" x2="133.6" y2="250.0" stroke="#e8e8e8" stroke-width="0.7"/>
@@ -16855,7 +16859,9 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
   = <tspan style="text-decoration:overline;">p</tspan>
   + t · <tspan style="text-decoration:overline;">d</tspan></text>
 </svg>
-<div style="font-size:12px;color:var(--ink-muted);margin-top:4px;">Veranschaulichung: Die Gerade g wird durch den Stützpunkt P und den Richtungsvektor bestimmt.</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:4px;">Die Gerade g wird durch den Stützpunkt P und den Richtungsvektor bestimmt.</div>
+    </div>
+  </div>
 </div>
 
 
@@ -17057,6 +17063,34 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Untersuche die Lagebeziehung der Geraden
+    \[g_1: \vec{x} = \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} + t \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix} \qquad g_2: \vec{x} = \begin{pmatrix} 4 \\ 0 \\ 3 \end{pmatrix} + s \begin{pmatrix} 3 \\ 1 \\ -1 \end{pmatrix}\]
+  </div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <strong>Lösung:</strong><br><br>
+    <strong>Schritt 1: Richtungsvektoren parallel?</strong><br>
+    Prüfe, ob \(\vec{d}_1 = \begin{pmatrix}1\\2\\1\end{pmatrix}\) ein Vielfaches von \(\vec{d}_2 = \begin{pmatrix}3\\1\\-1\end{pmatrix}\) ist.<br>
+    Aus der ersten Komponente: \(1 = k \cdot 3 \Rightarrow k = \tfrac{1}{3}\).<br>
+    Probe zweite Komponente: \(2 \neq \tfrac{1}{3} \cdot 1\).<br>
+    → Die Richtungsvektoren sind <strong>nicht parallel</strong>.<br><br>
+    <strong>Schritt 2: Geraden gleichsetzen</strong><br>
+    \(\begin{pmatrix}2\\1\\0\end{pmatrix} + t\begin{pmatrix}1\\2\\1\end{pmatrix} = \begin{pmatrix}4\\0\\3\end{pmatrix} + s\begin{pmatrix}3\\1\\-1\end{pmatrix}\)<br><br>
+    Das ergibt das LGS:<br>
+    (I) \(2 + t = 4 + 3s\) → \(t - 3s = 2\)<br>
+    (II) \(1 + 2t = s\) → \(2t - s = -1\)<br>
+    (III) \(t = 3 - s\) → \(t + s = 3\)<br><br>
+    <strong>Schritt 3: LGS lösen</strong><br>
+    Aus (III): \(t = 3 - s\). In (II): \(2(3-s) - s = -1\) → \(6 - 3s = -1\) → \(s = \tfrac{7}{3}\).<br>
+    Damit: \(t = 3 - \tfrac{7}{3} = \tfrac{2}{3}\).<br><br>
+    <strong>Probe in (I):</strong> \(\tfrac{2}{3} - 3 \cdot \tfrac{7}{3} = \tfrac{2}{3} - 7 = -\tfrac{19}{3} \neq 2\) ✗<br><br>
+    Das LGS hat <strong>keine Lösung</strong>.<br><br>
+    <strong>Ergebnis:</strong> Die Geraden sind nicht parallel und haben keinen Schnittpunkt → sie sind <strong>windschief</strong>.
   </div>
 </div>
 
