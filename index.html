@@ -2709,6 +2709,28 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
     </div>
   </div>
 
+  <!-- Einstieg: Ikonische Einführung in Ähnlichkeit (P3) -->
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Einstieg: Was bedeutet „ähnlich"?</span></div>
+    <div class="card-body">
+      <div class="ip">Schau dir die beiden Rechtecke an:</div>
+      <div style="display:flex;justify-content:center;gap:30px;align-items:end;margin:16px 0">
+        <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" style="width:120px">
+          <rect x="10" y="10" width="60" height="40" fill="#5b6e2e" fill-opacity="0.15" stroke="#5b6e2e" stroke-width="2"/>
+          <text x="40" y="60" font-size="11" fill="#5b6e2e" text-anchor="middle">3 cm × 2 cm</text>
+          <text x="40" y="78" font-size="10" fill="#888" text-anchor="middle">Original</text>
+        </svg>
+        <svg viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg" style="width:180px">
+          <rect x="10" y="10" width="120" height="80" fill="#c75c3a" fill-opacity="0.15" stroke="#c75c3a" stroke-width="2"/>
+          <text x="70" y="105" font-size="11" fill="#c75c3a" text-anchor="middle">6 cm × 4 cm</text>
+          <text x="70" y="122" font-size="10" fill="#888" text-anchor="middle">Vergrößerung (k = 2)</text>
+        </svg>
+      </div>
+      <div class="ip">Beide Rechtecke haben dasselbe Seitenverhältnis: \(\frac{3}{2} = \frac{6}{4} = 1{,}5\). Das rechte Rechteck ist eine <strong>vergrößerte Kopie</strong> des linken — mit dem Vergrößerungsfaktor \(k = 2\). Solche Figuren nennt man <em>ähnlich</em>.</div>
+      <div class="ip">Im Alltag kennst du das vom Fotodruck: Ein Foto in 10×15 und in 20×30 zeigt dasselbe Bild — nur größer. Die Proportionen stimmen überein.</div>
+    </div>
+  </div>
+
   <!-- Erklärung 1: Ähnlichkeit -->
   <div class="card">
     <div class="card-head">
@@ -2733,6 +2755,29 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
         • Alle Seitenlängen sind im Verhältnis \(k\)<br>
         • Alle Flächeninhalte sind im Verhältnis \(k^2\)<br>
         • Bei 3D-Körpern: Alle Volumen sind im Verhältnis \(k^3\)
+      </div>
+    </div>
+  </div>
+
+  <!-- k³-Veranschaulichungsbeispiel (P3) -->
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-t">★</div>
+      <span class="card-title">Beispiel: k³-Regel am Würfel</span>
+    </div>
+    <div class="card-body">
+      <div class="bsp">
+        <div class="it">Aufgabe</div>
+        <div class="ip">Ein Würfel hat die Kantenlänge 1 cm. Ein ähnlicher Würfel hat den Vergrößerungsfaktor \(k = 2\).</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-body">
+          <div class="it">Lösung</div>
+          <div class="ip">
+            <strong>Oberfläche:</strong> Original: \(6 \cdot 1^2 = 6\) cm². Vergrößert: \(6 \cdot 2^2 = 24\) cm². Faktor: \(\frac{24}{6} = 4 = k^2\) ✓<br><br>
+            <strong>Volumen:</strong> Original: \(1^3 = 1\) cm³. Vergrößert: \(2^3 = 8\) cm³. Faktor: \(\frac{8}{1} = 8 = k^3\) ✓<br><br>
+            <strong>Merke:</strong> Längen wachsen mit \(k\), Flächen mit \(k^2\), Volumen mit \(k^3\).
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2932,6 +2977,48 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
               <span class="kb kb-k3">K3</span>
             </div>
             <div class="komp-desc">Modellieren mit Maßstab</div>
+          </div>
+        </li>
+
+        <!-- AFB II - Klassifizieraufgabe (P10) -->
+        <li class="task-item dm" onclick="togTask(this)">
+          <div class="task-head">
+            <span><strong>7. (Klassifizieraufgabe)</strong> Entscheide jeweils, ob die Figuren ähnlich sind. Begründe.</span>
+          </div>
+          <div class="task-body">
+            <div class="ip">
+              <strong>a) Ein Quadrat mit Seitenlänge 3 cm und ein Quadrat mit Seitenlänge 7 cm.</strong><br>
+              Ja. Alle Quadrate sind ähnlich zueinander, denn alle Winkel sind 90° und das Seitenverhältnis ist immer 1:1. Vergrößerungsfaktor: \(k = \frac{7}{3} \approx 2{,}33\).<br><br>
+              <strong>b) Ein Rechteck 4×6 und ein Rechteck 6×8.</strong><br>
+              Nein. Seitenverhältnisse: \(\frac{4}{6} = \frac{2}{3} \approx 0{,}67\), aber \(\frac{6}{8} = \frac{3}{4} = 0{,}75\). Da \(\frac{2}{3} \neq \frac{3}{4}\), sind die Rechtecke nicht ähnlich.<br><br>
+              <strong>c) Ein gleichseitiges Dreieck mit Seite 5 cm und eines mit Seite 12 cm.</strong><br>
+              Ja. Alle gleichseitigen Dreiecke sind ähnlich (alle Winkel = 60°). Vergrößerungsfaktor: \(k = \frac{12}{5} = 2{,}4\).
+            </div>
+            <div class="komp-wrap" style="margin-top:8px">
+              <span class="kb kb-k3">K3</span>
+            </div>
+            <div class="komp-desc">Ähnlichkeitskriterien anwenden und begründen</div>
+          </div>
+        </li>
+
+        <!-- AFB III - Rückwärtsaufgabe zur k³-Regel -->
+        <li class="task-item dh" onclick="togTask(this)">
+          <div class="task-head">
+            <span><strong>8. (Rückwärtsaufgabe zur k³-Regel)</strong> Ein Modellschiff hat den Maßstab 1:50. Das Modell ist 60 cm lang und hat ein Volumen von 2.400 cm³.</span>
+          </div>
+          <div class="task-body">
+            <div class="ip">
+              <strong>a) Berechne die Länge des echten Schiffs.</strong><br>
+              Maßstab \(k = 50\). Echte Länge: \(60 \text{ cm} \cdot 50 = 3.000 \text{ cm} = 30 \text{ m}\).<br><br>
+              <strong>b) Berechne das Volumen des echten Schiffs in m³.</strong><br>
+              Volumen: \(2.400 \cdot 50^3 = 2.400 \cdot 125.000 = 300.000.000 \text{ cm}^3 = 300 \text{ m}^3\).<br><br>
+              <strong>c) Erläutere, warum das Volumen nicht einfach 50-mal so groß ist wie beim Modell.</strong><br>
+              Längen wachsen mit Faktor \(k = 50\), aber das Volumen wächst mit \(k^3 = 125.000\). Das Schiff ist in jeder Richtung 50-mal größer — Länge × Breite × Höhe = \(50 \times 50 \times 50 = 125.000\)-mal so viel Raum. Die k³-Regel beschreibt diesen dreidimensionalen Wachstum.
+            </div>
+            <div class="komp-wrap" style="margin-top:8px">
+              <span class="kb kb-k5">K5</span>
+            </div>
+            <div class="komp-desc">k³-Regel bei Volumenvergrößerung verstehen und anwenden</div>
           </div>
         </li>
 
@@ -7265,6 +7352,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Parameter der Sinusfunktion \(f(x) = a \sin(b(x + c)) + d\)</span></div>
     <div class="card-body">
+      <div class="ip">Warum wirken die Parameter so? Denke an den Einheitskreis: Ein Punkt läuft auf dem Kreis, und der Sinus ist seine y-Koordinate. Wenn wir <strong>\(a\)</strong> ändern, wird der Kreis größer oder kleiner (→ Amplitude). Wenn wir <strong>\(b\)</strong> ändern, läuft der Punkt schneller oder langsamer (→ Periode). <strong>\(c\)</strong> verschiebt den Startpunkt auf dem Kreis (→ Phasenverschiebung). <strong>\(d\)</strong> verschiebt den gesamten Kreis nach oben oder unten (→ vertikale Verschiebung).</div>
       <div class="ip"><strong>a:</strong> Amplitude — streckt/staucht die Kurve vertikal um den Faktor \(|a|\)</div>
       <div class="ip"><strong>b:</strong> Frequenz — bestimmt die Periode: \(T = \frac{2\pi}{b}\)</div>
       <div class="ip"><strong>c:</strong> Phasenverschiebung — verschiebt die Kurve horizontal (nach links bei \(c > 0\))</div>
@@ -7324,7 +7412,43 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
   </div>
 
-  <div class="section-label">6. Aufgaben</div>
+  <div class="section-label">6. Kosinusfunktion und Phasenverschiebung</div>
+
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Von Sinus zu Kosinus</span></div>
+    <div class="card-body">
+      <div class="ip">Die Kosinusfunktion ist keine neue Funktion — sie ist eine <strong>verschobene Sinusfunktion</strong>:</div>
+      <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+        \[\cos(x) = \sin\!\left(x + \frac{\pi}{2}\right)\]
+      </div>
+      <div class="ip">Der Kosinus-Graph entsteht, wenn man den Sinus-Graph um \(\frac{\pi}{2}\) (= 90°) <strong>nach links</strong> verschiebt. Das bedeutet: Was beim Sinus bei \(x = \frac{\pi}{2}\) passiert (Maximum), passiert beim Kosinus schon bei \(x = 0\).</div>
+      <div class="hint"><strong>Merke:</strong> Sinus startet bei 0 und steigt, Kosinus startet beim Maximum 1 und fällt. Beide haben Periode \(2\pi\) und Amplitude 1.</div>
+      <div class="bsp">
+        <div class="bsp-label">Beispiel</div>
+        <div class="bsp-q">Überprüfe: \(\cos(0) = \sin\!\left(0 + \frac{\pi}{2}\right)\)</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+          \(\cos(0) = 1\) und \(\sin\!\left(\frac{\pi}{2}\right) = 1\) ✓<br><br>
+          Ebenso: \(\cos\!\left(\frac{\pi}{2}\right) = 0\) und \(\sin(\pi) = 0\) ✓
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">7. Aufgaben · Sinusfunktionen erweitert</div>
+
+  <div class="two-col">
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.1</span><span class="td dm">★★</span></div><div class="tq"><strong>Fehleranalyse.</strong> Ein Schüler behauptet: „Die Periode von \(f(x) = \sin(2x)\) ist \(2\pi\), weil Sinus immer die Periode \(2\pi\) hat." Erkläre, warum das falsch ist, und bestimme die korrekte Periode.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Falsch. Die allgemeine Sinusfunktion \(f(x) = \sin(bx)\) hat die Periode \(T = \frac{2\pi}{|b|}\).<br><br>Für \(b = 2\): \(T = \frac{2\pi}{2} = \pi\).<br><br>Der Faktor \(b\) vor dem \(x\) staucht den Graphen horizontal — die Schwingung wird schneller, die Periode kürzer.</div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Rückwärtsaufgabe.</strong> Der Graph einer Sinusfunktion hat Amplitude 3, Periode \(\pi\) und ist um 2 Einheiten nach oben verschoben. Bestimme die zugehörige Funktionsgleichung \(f(x) = a \cdot \sin(bx) + d\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Amplitude: \(a = 3\).<br>Periode: \(T = \pi \Rightarrow b = \frac{2\pi}{T} = \frac{2\pi}{\pi} = 2\).<br>Vertikale Verschiebung: \(d = 2\).<br><br>\(f(x) = 3\sin(2x) + 2\)</div></div>
+    </div>
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">S2.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Sachkontext: Gezeitenmodell.</strong> Der Wasserstand eines Hafens lässt sich durch \(h(t) = 2{,}5 \cdot \cos\!\left(\frac{\pi}{6}\,t\right) + 5\) modellieren (\(h\) in Metern, \(t\) in Stunden ab Hochwasser).<br><br>a) Bestimme Amplitude, Periode und Mittelwert des Wasserstands.<br>b) Berechne, wann erstmals Niedrigwasser eintritt.<br>c) Erläutere, warum hier ein Kosinusmodell passender ist als ein Sinusmodell.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Amplitude: \(a = 2{,}5\) m, Periode: \(T = \frac{2\pi}{\pi/6} = 12\) h, Mittelwert: \(d = 5\) m.<br><br>b) Niedrigwasser = Minimum der Kosinusfunktion, also bei \(\cos(\ldots) = -1\):<br>\(\frac{\pi}{6}t = \pi \Rightarrow t = 6\) h nach Hochwasser.<br><br>c) Kosinus startet bei \(t = 0\) im Maximum (\(\cos(0) = 1\)). Da die Messung ab Hochwasser beginnt, passt Kosinus besser als Sinus (der bei 0 starten würde).</div></div>
+    </div>
+  </div>
+
+  <div class="section-label">8. Grundaufgaben zu Einheitskreis, Bogenmaß und Basisfunktionen</div>
 
   <div class="tg">
     <div class="tk">
@@ -9494,6 +9618,20 @@ window.addEventListener('resize',function(){updateSimulator();});
 <div class="section-label" style="margin-top:30px;">3. Längen und Mittelpunkte aus Koordinaten</div>
 
 <div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Warum gilt die Abstandsformel im 3D?</span></div>
+  <div class="card-body">
+    <div class="ip">Im 2D kennst du bereits den Satz des Pythagoras für den Abstand zweier Punkte:</div>
+    <div class="ip" style="text-align:center">\(d_{2D} = \sqrt{(\Delta x)^2 + (\Delta y)^2}\)</div>
+    <div class="ip">Im 3D kommt eine dritte Richtung hinzu. Stell dir vor, du gehst vom Punkt \(A\) zum Punkt \(B\) in drei Schritten: erst in x-Richtung (\(\Delta x\)), dann in y-Richtung (\(\Delta y\)), dann in z-Richtung (\(\Delta z\)).</div>
+    <div class="ip">Die ersten beiden Schritte bilden ein rechtwinkliges Dreieck im Boden mit Hypotenuse \(d_{xy} = \sqrt{(\Delta x)^2 + (\Delta y)^2}\). Nun steht \(\Delta z\) senkrecht auf diesem Boden — es entsteht ein zweites rechtwinkliges Dreieck:</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+      \[d_{3D} = \sqrt{d_{xy}^2 + (\Delta z)^2} = \sqrt{(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2}\]
+    </div>
+    <div class="hint"><strong>Merke:</strong> Die 3D-Abstandsformel ist nichts anderes als <em>zweimal Pythagoras hintereinander</em>.</div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:16px;">
   <div class="card-head"><div class="ci ci-k">f</div><span class="card-title">Abstandsformel im Raum</span></div>
   <div class="card-body">
     <div class="ip">
@@ -9800,6 +9938,21 @@ window.addEventListener('resize',function(){updateSimulator();});
 <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
 <div class="komp-desc">K1: Dreieckstyp aus Seitenlängen begründen · K2: Koordinatenwissen auf Dreiecke anwenden · K5: Abstandsformel dreifach anwenden</div>
 
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- VERTIEFUNGSAUFGABEN: FEHLERANALYSE, KONSTRUKTION, SACHKONTEXT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="section-label" style="margin-top:30px;">Aufgaben · Vertiefung Koordinatensystem</div>
+<div class="two-col">
+  <div class="tg">
+    <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KS2.1</span><span class="td dm">★★</span></div><div class="tq"><strong>Fehleranalyse.</strong> Ein Schüler berechnet den Abstand zwischen \(A(1|2|3)\) und \(B(4|5|6)\) so: \(d = \sqrt{3 + 3 + 3} = 3\). Erkläre den Fehler und berechne den Abstand korrekt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Der Schüler hat vergessen zu <em>quadrieren</em>. Er hat \(\sqrt{(4-1) + (5-2) + (6-3)}\) statt \(\sqrt{(4-1)^2 + (5-2)^2 + (6-3)^2}\) gerechnet.<br><br>Korrekt: \(d = \sqrt{3^2 + 3^2 + 3^2} = \sqrt{9 + 9 + 9} = \sqrt{27} = 3\sqrt{3} \approx 5{,}20\)</div></div>
+
+    <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KS2.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Konstruktionsaufgabe.</strong> Gegeben sind \(A(1|2|0)\), \(B(5|2|0)\), \(C(6|5|0)\). Bestimme den Punkt \(D\), sodass \(ABCD\) ein Parallelogramm bildet.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Im Parallelogramm gilt: \(\vec{AB} = \vec{DC}\).<br>\(\vec{AB} = (4|0|0)\).<br>\(D = C - \vec{AB} = (6-4\,|\,5-0\,|\,0-0) = (2|5|0)\)<br><br>Probe: \(\vec{DC} = (6-2\,|\,5-5\,|\,0-0) = (4|0|0) = \vec{AB}\) ✓</div></div>
+  </div>
+  <div class="tg">
+    <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KS2.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Sachkontext: Louvre-Pyramide.</strong> Die Glaspyramide des Louvre hat eine quadratische Grundfläche mit Seitenlänge 35 m und eine Höhe von 21,6 m. Platziere die Mitte der Grundfläche im Ursprung eines Koordinatensystems.<br><br>a) Gib die Koordinaten der vier Ecken der Grundfläche und der Spitze an.<br>b) Berechne die Länge einer Seitenkante (von Ecke zur Spitze).<br>c) Erläutere, warum alle vier Seitenkanten gleich lang sind.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Ecken: \(A(17{,}5|17{,}5|0)\), \(B(-17{,}5|17{,}5|0)\), \(C(-17{,}5|-17{,}5|0)\), \(D(17{,}5|-17{,}5|0)\). Spitze: \(S(0|0|21{,}6)\).<br><br>b) \(|AS| = \sqrt{17{,}5^2 + 17{,}5^2 + 21{,}6^2} = \sqrt{306{,}25 + 306{,}25 + 466{,}56} = \sqrt{1079{,}06} \approx 32{,}8 \text{ m}\)<br><br>c) Da die Grundfläche ein Quadrat ist und die Spitze senkrecht über dem Mittelpunkt steht, haben alle vier Ecken denselben Abstand zum Mittelpunkt (\(\sqrt{17{,}5^2 + 17{,}5^2} = 17{,}5\sqrt{2}\)). Die z-Koordinate ist bei allen gleich. Also sind alle Seitenkanten gleich lang.</div></div>
+  </div>
+</div>
+
 </div><!-- close k10-koord -->
 
 <!-- ── QUADRATISCHE FUNKTIONEN ──────────────────────── -->
@@ -9810,6 +9963,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
         <div class="ip">In der Stochastik untersuchen wir Zufallsexperimente und berechnen Wahrscheinlichkeiten. Die Kombinatorik gibt uns Werkzeuge, um <strong>Anzahlen von Möglichkeiten</strong> systematisch zu bestimmen – ohne alles aufzuzählen.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Einstieg: Warum zählen wir?</span></div>
+      <div class="card-body">
+        <div class="ip">Stell dir vor, du hast 3 Bücher (A, B, C) und willst sie in ein Regal stellen. Wie viele verschiedene Reihenfolgen gibt es?</div>
+        <div class="ip">Probiere es konkret aus: ABC, ACB, BAC, BCA, CAB, CBA — das sind <strong>6 Möglichkeiten</strong>.</div>
+        <div class="ip">Und wenn du nur 2 der 3 Bücher auswählen willst? AB, AC, BA, BC, CA, CB — das sind ebenfalls 6. Aber wenn die <em>Reihenfolge egal ist</em> (du legst sie einfach nebeneinander)? Dann sind {A,B} und {B,A} dasselbe: AB, AC, BC — nur noch <strong>3 Möglichkeiten</strong>.</div>
+        <div class="ip">Genau diese Unterscheidung — <em>mit oder ohne Reihenfolge</em> — ist der Schlüssel zur Kombinatorik. Die Formeln, die du gleich kennenlernst, machen nichts anderes als dieses Abzählen systematisch und schnell.</div>
       </div>
     </div>
 
@@ -9841,6 +10004,20 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
 
     <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Warum gilt die Formel?</span></div>
+      <div class="card-body">
+        <div class="ip">Schritt für Schritt:</div>
+        <div class="ip"><strong>1.</strong> Wenn wir \(k\) Objekte aus \(n\) auswählen <em>mit</em> Reihenfolge, gibt es \(n \cdot (n-1) \cdot \ldots \cdot (n-k+1) = \frac{n!}{(n-k)!}\) Möglichkeiten (Variationen).</div>
+        <div class="ip"><strong>2.</strong> Aber wenn die Reihenfolge <em>nicht</em> zählt, haben wir zu viel gezählt: Jede Auswahl wurde \(k!\)-mal gezählt (jede Anordnung der \(k\) Objekte).</div>
+        <div class="ip"><strong>3.</strong> Also teilen wir durch \(k!\):</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+          \[\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}\]
+        </div>
+        <div class="ip"><strong>Beispiel:</strong> Aus 5 Schülern 2 für die Projektgruppe auswählen: \(\binom{5}{2} = \frac{5!}{2! \cdot 3!} = \frac{120}{2 \cdot 6} = 10\)</div>
+      </div>
+    </div>
+
+    <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Der Binomialkoeffizient</span></div>
       <div class="card-body">
         <div class="ip">\(\binom{n}{k}\) (lies: „\(n\) über \(k\)") gibt an, auf wie viele Arten man \(k\) Elemente aus \(n\) auswählen kann – ohne Reihenfolge, ohne Wiederholung.</div>
@@ -9865,6 +10042,23 @@ window.addEventListener('resize',function(){updateSimulator();});
           </div>
         </div>
         <div class="hint" style="margin-top:12px"><strong>Begründung der Symmetrie:</strong> \(\binom{n}{k} = \binom{n}{n-k}\), weil jede Auswahl von \(k\) Elementen eindeutig einer Nicht-Auswahl von \(n-k\) Elementen entspricht.</div>
+      </div>
+    </div>
+
+    <div class="section-label">Welches Verfahren passt?</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Entscheidungshilfe</span></div>
+      <div class="card-body">
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:16px 18px">
+          <strong>Frage 1:</strong> Darf jedes Element mehrfach gewählt werden?<br><br>
+          → <strong>Ja</strong> (mit Wiederholung):<br>
+          &nbsp;&nbsp;&nbsp;Zählt Reihenfolge? <strong>Ja</strong> → \(n^k\) (z.B. PIN-Code: 10⁴ = 10.000)<br>
+          &nbsp;&nbsp;&nbsp;Zählt Reihenfolge? <strong>Nein</strong> → selten, Spezialformel<br><br>
+          → <strong>Nein</strong> (ohne Wiederholung):<br>
+          &nbsp;&nbsp;&nbsp;Zählt Reihenfolge? <strong>Ja</strong> → \(\frac{n!}{(n-k)!}\) (Variation)<br>
+          &nbsp;&nbsp;&nbsp;Zählt Reihenfolge? <strong>Nein</strong> → \(\binom{n}{k}\) (Kombination)<br><br>
+          <strong>Sonderfall: Alle Elemente anordnen?</strong> → \(n!\) (Permutation)
+        </div>
       </div>
     </div>
 
@@ -10023,6 +10217,18 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K1.7</span><span class="td dh">★★★</span></div><div class="tq">Ein Restaurant bietet ein Menü mit Vorspeise (4 Auswahl), Hauptgang (6 Auswahl) und Dessert (3 Auswahl) an.<br><br>a) <strong>Bestimme</strong> die Anzahl verschiedener Menüs.<br>b) Ein Gast möchte zusätzlich aus 5 Getränken genau 2 verschiedene bestellen. <strong>Berechne</strong> die Anzahl der Getränkekombinationen und <strong>erkläre</strong>, warum hier \(\binom{5}{2}\) passend ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Multiplikationsprinzip: \(4 \cdot 6 \cdot 3 = 72\) verschiedene Menüs.<br><br>b) Reihenfolge der Getränke spielt keine Rolle, kein Getränk wird doppelt bestellt → Kombination ohne Wiederholung.<br>\(\binom{5}{2} = 10\) Getränkekombinationen.<div class="komp-wrap"><span class="kb kb-k3">K3</span></div><div class="komp-desc">Modellieren: Sachkontext mit Zählprinzipien lösen</div></div></div>
 
         <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">K1.8</span><span class="td dm">★★</span></div><div class="tq"><strong>Fehlersuche:</strong> Ein Schüler berechnet: „Aus 6 Schülern sollen 2 für ein Projekt ausgewählt werden. Lösung: \(6 \cdot 5 = 30\) Möglichkeiten." <strong>Erkläre</strong>, welchen Denkfehler der Schüler macht, und <strong>berechne</strong> das korrekte Ergebnis.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Der Schüler berechnet Variationen (geordnete Auswahl: \(6 \cdot 5 = 30\)), zählt also jede Auswahl doppelt (z.B. {Anna, Ben} und {Ben, Anna}). Da die Reihenfolge bei einer Teamauswahl nicht zählt, ist die korrekte Lösung eine Kombination:<br><br>\(\binom{6}{2} = \frac{6!}{2!\cdot 4!} = \frac{30}{2} = 15\) Möglichkeiten.<div class="komp-wrap"><span class="kb kb-k6">K6</span></div><div class="komp-desc">Kommunizieren: Fehler erkennen und korrigieren, Konzepte unterscheiden</div></div></div>
+      </div>
+    </div>
+
+    <div class="section-label">Aufgaben · Vertiefung</div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KO2.1</span><span class="td dm">★★</span></div><div class="tq"><strong>Fehleranalyse.</strong> Ein Schüler berechnet: "\(\binom{5}{2} = 5 \cdot 4 = 20\), weil ich zweimal hintereinander aus 5 bzw. 4 auswähle." Erkläre den Fehler und berechne korrekt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Der Schüler berechnet die <em>Variationen</em> (mit Reihenfolge): \(5 \cdot 4 = 20\). Aber bei Kombinationen zählt die Reihenfolge nicht — er hat jede Auswahl doppelt gezählt (AB und BA sind dasselbe).<br><br>Korrekt: \(\binom{5}{2} = \frac{5 \cdot 4}{2!} = \frac{20}{2} = 10\)<div class="komp-wrap"><span class="kb kb-k6">K6</span></div><div class="komp-desc">Kommunizieren: Fehler erkennen und korrigieren, Konzepte unterscheiden</div></div></div>
+
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KO2.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Lotto-Wahrscheinlichkeit.</strong> Beim Lotto "6 aus 49" werden 6 Zahlen aus 49 gezogen (ohne Zurücklegen, Reihenfolge egal). Berechne die Anzahl möglicher Tippreihen und die Wahrscheinlichkeit, alle 6 Richtige zu haben.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(\binom{49}{6} = \frac{49!}{6! \cdot 43!} = \frac{49 \cdot 48 \cdot 47 \cdot 46 \cdot 45 \cdot 44}{720} = 13\,983\,816\)<br><br>Wahrscheinlichkeit: \(P = \frac{1}{13\,983\,816} \approx 0{,}0000000715\) (ca. 1 zu 14 Millionen)<div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Symbolisch-formal: Binomialkoeffizient korrekt berechnen und in Wahrscheinlichkeit umwandeln</div></div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KO2.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Vergleich.</strong> In einer Klasse mit 30 Schülern soll ein 3er-Team für einen Wettbewerb gewählt werden.<br>a) Bestimme die Anzahl der Möglichkeiten, wenn die Reihenfolge im Team keine Rolle spielt.<br>b) Bestimme die Anzahl, wenn einer Kapitän, einer Vizekaptitän und einer Schriftführer wird.<br>c) Erläutere den Zusammenhang zwischen den Ergebnissen aus a) und b).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Kombination: \(\binom{30}{3} = \frac{30 \cdot 29 \cdot 28}{3!} = \frac{24\,360}{6} = 4\,060\)<br><br>b) Variation: \(30 \cdot 29 \cdot 28 = 24\,360\)<br><br>c) Das Ergebnis in b) ist genau \(3! = 6\)-mal so groß wie in a). Das liegt daran, dass jede 3er-Gruppe auf \(3! = 6\) verschiedene Arten den drei Rollen zugeordnet werden kann. Es gilt: Variationen = Kombinationen × k!<div class="komp-wrap"><span class="kb kb-k3">K3</span></div><div class="komp-desc">Modellieren: Sachkontext mit Abzählverfahren lösen und Zusammenhänge erkunden</div></div></div>
       </div>
     </div>
   </div><!-- end sto-kombi -->
@@ -13763,7 +13969,8 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
             <div class="ta">
                 <strong>Lösung:</strong> \(f_a'(x) = 2ax + 2 = 0 \;\Rightarrow\; x_E = -\dfrac{1}{a}\)<br>
                 \(f_a''(x) = 2a\). Für \(a > 0\): Minimum; für \(a < 0\): Maximum.<br>
-                Extremwert: \(f_a\!\left(-\dfrac{1}{a}ight) = a \cdot \dfrac{1}{a^2} - \dfrac{2}{a} - a = \dfrac{1}{a} - \dfrac{2}{a} - a = -\dfrac{1}{a} - a\)
+                Extremwert: \(f_a\!\left(-\dfrac{1}{a}
+ight) = a \cdot \dfrac{1}{a^2} - \dfrac{2}{a} - a = \dfrac{1}{a} - \dfrac{2}{a} - a = -\dfrac{1}{a} - a\)
             </div>
         </div>
     </div>
@@ -13780,7 +13987,8 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
             </div>
             <div class="ta">
                 <strong>Lösung:</strong> \(f_a'(x) = 3x^2 - 3a = 0 \;\Rightarrow\; x = \sqrt{a}\) (Tiefpunkt, da \(f_a''(\sqrt{a}) = 6\sqrt{a} > 0\))<br>
-                \(T\!\left(\sqrt{a} \,ig|\, -2a\sqrt{a}ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
+                \(T\!\left(\sqrt{a} \,ig|\, -2a\sqrt{a}
+ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
                 \(y = -2x^2 \cdot x = -2x^3\). <strong>Ortskurve:</strong> \(y = -2x^3\) für \(x > 0\).
             </div>
         </div>
@@ -13920,7 +14128,8 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
                 })();
                 </script>
                 <strong>Lösung:</strong><br>
-                a) \(A(a) = rac{1}{2} \cdot a \cdot f(a) = rac{1}{2} a\left(3 - rac{3}{4}aight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
+                a) \(A(a) = rac{1}{2} \cdot a \cdot f(a) = rac{1}{2} a\left(3 - rac{3}{4}a
+ight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
                 Definitionsbereich: \(0 < a < 4\) (bei \(a = 4\) schneidet \(f\) die x-Achse)<br><br>
                 b) \(A'(a) = rac{3}{2} - rac{3}{4}a = 0 \;\Rightarrow\; a = 2\)<br>
                 \(A''(a) = -rac{3}{4} < 0\) → Maximum.<br>
@@ -14031,11 +14240,13 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
                 })();
                 </script>
                 <strong>Lösung:</strong><br>
-                a) \(A(a) = rac{1}{2} \cdot a \cdot f(a) = rac{1}{2}a\left(-rac{1}{4}a^2 + 4ight) = -rac{1}{8}a^3 + 2a\)<br>
+                a) \(A(a) = rac{1}{2} \cdot a \cdot f(a) = rac{1}{2}a\left(-rac{1}{4}a^2 + 4
+ight) = -rac{1}{8}a^3 + 2a\)<br>
                 Definitionsbereich: \(0 < a < 4\) (positive Nullstelle von \(f\))<br><br>
                 b) \(A'(a) = -rac{3}{8}a^2 + 2 = 0 \;\Rightarrow\; a^2 = rac{16}{3} \;\Rightarrow\; a = rac{4}{\sqrt{3}} = rac{4\sqrt{3}}{3} pprox 2{,}31\)<br>
                 \(A''(a) = -rac{3}{4}a < 0\) → Maximum<br>
-                \(A\!\left(	frac{4\sqrt{3}}{3}ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac{8\sqrt{3}}{9} + rac{8\sqrt{3}}{3} = rac{16\sqrt{3}}{9} pprox 3{,}08\) FE
+                \(A\!\left(	frac{4\sqrt{3}}{3}
+ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac{8\sqrt{3}}{9} + rac{8\sqrt{3}}{3} = rac{16\sqrt{3}}{9} pprox 3{,}08\) FE
             </div>
         </div>
     </div>
@@ -14878,11 +15089,25 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
 
     <div class="section-label">Hauptsatz der Differential- und Integralrechnung</div>
 
+    <!-- Karte 0: Worum geht es? -->
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
+        <div class="ip">Bisher hast du Stammfunktionen bestimmt und Flächen unter Graphen grafisch abgeschätzt. Jetzt kommt die entscheidende Verbindung: Der Hauptsatz zeigt, dass man die <strong>exakte Fläche unter einem Graphen</strong> berechnen kann — einfach indem man eine Stammfunktion in die Grenzen einsetzt. Das ist die tiefste Erkenntnis der Analysis: <em>Differenzieren und Integrieren sind Umkehroperationen.</em></div>
+      </div>
+    </div>
+
+    <!-- Karte 0b: Das brauchst du -->
+    <div class="hint">
+      <strong>Das brauchst du:</strong> Stammfunktionen bestimmen (Potenzregel, Summenregel, Faktorregel) · Nullstellen berechnen · Graphen skizzieren · Vorzeichen einer Funktion in Intervallen bestimmen
+    </div>
+
     <!-- Karte 1: Hauptsatz-Formel -->
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Der Hauptsatz</span></div>
       <div class="card-body">
-        <div class="ip">Der Hauptsatz verbindet Differenzieren und Integrieren: Das bestimmte Integral lässt sich mithilfe einer Stammfunktion berechnen.</div>
+        <div class="ip">Stell dir vor, du willst die Fläche unter \(f(x) = 2x\) auf \([0, 3]\) berechnen. Geometrisch ist das ein Dreieck mit Grundseite 3 und Höhe 6 — also \(A = \frac{1}{2} \cdot 3 \cdot 6 = 9\). Aber was, wenn die Funktion keine einfache geometrische Form hat?</div>
+        <div class="ip">Der Hauptsatz liefert die Lösung: Er verbindet Differenzieren und Integrieren. Das bestimmte Integral lässt sich mithilfe einer Stammfunktion berechnen — für <strong>jede</strong> stetige Funktion:</div>
         <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
           \[\int_a^b f(x)\,dx = F(b) - F(a) = \Big[F(x)\Big]_a^b\]
         </div>
@@ -16113,6 +16338,79 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
   </div>
 </div>
 
+<!-- Visualisierungen der Lagebeziehungen -->
+<div class="card" style="margin-bottom:18px;">
+  <div class="card-head">
+    <div class="ci ci-i">i</div>
+    <span class="card-title">Visualisierung: Lagebeziehungen im 3D-Raum</span>
+  </div>
+  <div class="card-body">
+    <div class="two-col">
+      <div style="padding:8px;">
+        <div style="text-align:center;margin-bottom:8px;font-weight:700;color:var(--kiku);">Schneidende Geraden</div>
+        <svg viewBox="0 0 280 200" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
+          <!-- Koordinatenachsen -->
+          <line x1="20" y1="160" x2="120" y2="160" stroke="#ccc" stroke-width="1"/>
+          <line x1="20" y1="160" x2="20" y2="60" stroke="#ccc" stroke-width="1"/>
+          <line x1="20" y1="160" x2="60" y2="140" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+          <!-- Gerade g₁ (rot/orange) -->
+          <line x1="40" y1="140" x2="100" y2="80" stroke="#c75c3a" stroke-width="2.5"/>
+          <text x="105" y="85" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
+          <!-- Gerade g₂ (grün) -->
+          <line x1="20" y1="100" x2="110" y2="140" stroke="#5b6e2e" stroke-width="2.5"/>
+          <text x="112" y="145" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
+          <!-- Schnittpunkt S -->
+          <circle cx="70" cy="110" r="3.5" fill="#333" stroke="#333" stroke-width="1"/>
+          <circle cx="70" cy="110" r="6" fill="none" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <text x="72" y="125" font-size="11" font-weight="bold" fill="#333">S</text>
+        </svg>
+      </div>
+      <div style="padding:8px;">
+        <div style="text-align:center;margin-bottom:8px;font-weight:700;color:var(--kiku);">Parallele Geraden</div>
+        <svg viewBox="0 0 280 200" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
+          <!-- Koordinatenachsen -->
+          <line x1="20" y1="160" x2="120" y2="160" stroke="#ccc" stroke-width="1"/>
+          <line x1="20" y1="160" x2="20" y2="60" stroke="#ccc" stroke-width="1"/>
+          <line x1="20" y1="160" x2="60" y2="140" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+          <!-- Gerade g₁ (rot/orange) -->
+          <line x1="30" y1="130" x2="110" y2="90" stroke="#c75c3a" stroke-width="2.5"/>
+          <text x="112" y="92" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
+          <!-- Gerade g₂ (grün) parallel zu g₁ -->
+          <line x1="30" y1="105" x2="110" y2="65" stroke="#5b6e2e" stroke-width="2.5"/>
+          <text x="112" y="67" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
+          <!-- Abstandsmarker -->
+          <line x1="25" y1="110" x2="25" y2="130" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <line x1="20" y1="110" x2="30" y2="110" stroke="#8a9da7" stroke-width="1.5"/>
+          <line x1="20" y1="130" x2="30" y2="130" stroke="#8a9da7" stroke-width="1.5"/>
+          <text x="28" y="121" font-size="10" fill="#8a9da7" font-weight="600">d</text>
+        </svg>
+      </div>
+      <div style="padding:8px;grid-column:1/-1;">
+        <div style="text-align:center;margin-bottom:8px;font-weight:700;color:var(--kiku);">Windschiefe Geraden</div>
+        <svg viewBox="0 0 280 200" style="width:100%;display:block;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;">
+          <!-- 3D-Koordinatenachsen -->
+          <line x1="30" y1="160" x2="130" y2="160" stroke="#ccc" stroke-width="1"/>
+          <line x1="30" y1="160" x2="30" y2="50" stroke="#ccc" stroke-width="1"/>
+          <line x1="30" y1="160" x2="80" y2="135" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+          <!-- Gerade g₁ (rot/orange) — in xy-Ebene -->
+          <line x1="40" y1="140" x2="110" y2="100" stroke="#c75c3a" stroke-width="2.5"/>
+          <text x="115" y="102" font-size="12" font-weight="bold" fill="#c75c3a">g₁</text>
+          <!-- Gerade g₂ (grün) — in höherer z-Ebene, schräg -->
+          <line x1="70" y1="80" x2="130" y2="130" stroke="#5b6e2e" stroke-width="2.5"/>
+          <text x="132" y="132" font-size="12" font-weight="bold" fill="#5b6e2e">g₂</text>
+          <!-- Minimaler Abstand markieren (blau-grau) -->
+          <line x1="88" y1="95" x2="100" y2="105" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <circle cx="88" cy="95" r="2.5" fill="#8a9da7"/>
+          <circle cx="100" cy="105" r="2.5" fill="#8a9da7"/>
+          <!-- Erklärungstext -->
+          <text x="35" y="25" font-size="11" fill="#666" font-weight="500">3D: Geraden schneiden sich nicht</text>
+          <text x="35" y="40" font-size="11" fill="#666" font-weight="500">und sind nicht parallel</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Aufgaben Geraden -->
 <div class="section-label">Aufgaben · Geraden</div>
 
@@ -16190,7 +16488,7 @@ eq 0\). Bestimme die Extremstelle und den Extremwert in Abhängigkeit von \(a\).
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">G1.7</span><span class="td dm">★★</span></div>
+          <div class="tkt"><span class="tn">G1.7</span><span class="td dh">★★★</span></div>
           <div class="tq">Erläutere den Unterschied zwischen parallelen und windschiefen Geraden im Raum. Beschreibe, warum es windschiefe Geraden in der Ebene (\(\mathbb{R}^2\)) nicht geben kann.</div>
           <div class="tk-toggle">⌄</div>
         </div>
