@@ -15576,8 +15576,15 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
             <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
             <div class="bsp-a">
               Stammfunktion: \(F(x) = -\frac{x^3}{9} + x^2\)<br><br>
-              \(\Big[F(x)\Big]_2^8 = F(8) - F(2) = \left(-\frac{512}{9} + 64\right) - \left(-\frac{8}{9} + 4\right) = \frac{64}{9} - \frac{28}{9} = \frac{36}{9} = 4\)<br><br>
-              Die Nullstelle liegt bei x = 6. Auf [2, 6] liegt f oberhalb, auf [6, 8] unterhalb der x-Achse. Der negative Anteil hebt einen Teil des positiven auf – die Bilanz beträgt daher nur <strong>4 FE</strong>.
+              <strong>Flächenbilanz</strong> (das Integral über das ganze Intervall):<br>
+              \(\displaystyle\int_2^8 f(x)\,dx = \Big[F\Big]_2^8 = F(8) - F(2) = \left(-\frac{512}{9}+64\right) - \left(-\frac{8}{9}+4\right) = \frac{64}{9} - \frac{28}{9} = \frac{36}{9} = \mathbf{4 \text{ FE}}\)<br><br>
+              Die Nullstelle liegt bei \(x=6\). Auf \([2,6]\) liegt \(f\) oberhalb, auf \([6,8]\) unterhalb der x-Achse. Der negative Anteil hebt einen Teil des positiven auf — die <strong>Bilanz</strong> beträgt daher nur 4 FE.<br><br>
+              <strong>Tatsächlicher Flächeninhalt</strong> (Intervall an der Nullstelle aufteilen, Teilintegrale berechnen, Beträge addieren):<br>
+              Zwischenwerte: \(F(2) = -\frac{8}{9}+4 = \frac{28}{9}\), \(F(6) = -24+36 = 12\), \(F(8) = -\frac{512}{9}+64 = \frac{64}{9}\).<br>
+              \(A_1 = [F]_2^6 = 12 - \frac{28}{9} = \frac{80}{9}\) &nbsp;(positiv, weil \(f \geq 0\) auf \([2,6]\))<br>
+              \(A_2 = [F]_6^8 = \frac{64}{9} - 12 = -\frac{44}{9}\) &nbsp;(negativ, weil \(f \leq 0\) auf \([6,8]\))<br><br>
+              \(A = |A_1| + |A_2| = \frac{80}{9} + \frac{44}{9} = \frac{124}{9} \approx \mathbf{13{,}78 \text{ FE}}\)<br><br>
+              <em>Der tatsächliche Flächeninhalt (≈ 13,78) ist deutlich größer als die Flächenbilanz (4), weil in der Bilanz die positive und die negative Teilfläche gegeneinander verrechnet werden.</em>
             </div>
           </div>
         </div>
@@ -15590,6 +15597,9 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Flächenbilanz vs. tatsächlicher Flächeninhalt</span></div>
       <div class="card-body">
+        <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+          <strong style="color:#8a7a30">Kernidee:</strong> Das bestimmte Integral \(\displaystyle\int_a^b f(x)\,dx\) liefert <strong>immer die Flächenbilanz</strong> – mit Vorzeichen. Wer den <strong>tatsächlichen Flächeninhalt</strong> haben möchte, muss <strong>Beträge bilden</strong> (bzw. die Beträge der Teilintegrale an den Nullstellen addieren). Flächeninhalte sind nie negativ.
+        </div>
         <div class="two-col" style="align-items:start">
           <div>
             <div class="it">Was ist die Flächenbilanz?</div>
@@ -15642,11 +15652,15 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
           <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
           <div class="bsp-a">
             \(F(x) = \frac{x^3}{3} - 4x\)<br><br>
-            a) Flächenbilanz: \(\Big[F\Big]_{-2}^3 = \left(9 - 12\right) - \left(-\frac{8}{3} + 8\right) = -3 - \frac{16}{3} = -\frac{25}{3}\)<br><br>
-            b) Nullstelle bei \(x = 2\). Auf \([-2,2]\): \(f \leq 0\), auf \([2,3]\): \(f \geq 0\).<br>
-            \(|[F]_{-2}^2| = \left|\left(\frac{8}{3}-8\right)-\left(-\frac{8}{3}+8\right)\right| = \frac{32}{3}\)<br>
-            \([F]_2^3 = -3 - \left(\frac{8}{3}-8\right) = \frac{7}{3}\)<br>
-            Tatsächlicher Flächeninhalt: \(\frac{32}{3} + \frac{7}{3} = \frac{39}{3} = 13\)
+            <strong>a) Flächenbilanz</strong> (ein Integral über das ganze Intervall):<br>
+            \(\displaystyle\int_{-2}^3 f(x)\,dx = \Big[F\Big]_{-2}^3 = \left(9 - 12\right) - \left(-\frac{8}{3} + 8\right) = -3 - \frac{16}{3} = -\frac{25}{3}\)<br><br>
+            <strong>b) Tatsächlicher Flächeninhalt</strong> (Intervall an Nullstelle aufteilen):<br>
+            Nullstelle bei \(x = 2\). Auf \([-2,2]\): \(f \leq 0\), auf \([2,3]\): \(f \geq 0\).<br>
+            Teilintegrale berechnen (mit Vorzeichen):<br>
+            \(A_1 = [F]_{-2}^2 = \left(\frac{8}{3}-8\right)-\left(-\frac{8}{3}+8\right) = -\frac{32}{3}\) &nbsp;(negativ, weil \(f \leq 0\))<br>
+            \(A_2 = [F]_2^3 = -3 - \left(\frac{8}{3}-8\right) = \frac{7}{3}\)<br><br>
+            Beträge addieren:<br>
+            \(A = |A_1| + |A_2| = \frac{32}{3} + \frac{7}{3} = \frac{39}{3} = 13\)
           </div>
         </div>
       </div>
@@ -15657,12 +15671,12 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vorgehen bei Vorzeichenwechsel</span></div>
       <div class="card-body">
-        <div class="ip">Wechselt \(f\) im Intervall das Vorzeichen, liefert das Integral nicht den tatsächlichen Flächeninhalt. Dann muss das Intervall aufgeteilt werden:</div>
+        <div class="ip">Wechselt \(f\) im Intervall das Vorzeichen, liefert das Integral nur die <strong>Flächenbilanz</strong> – negative Teilflächen werden gegen positive verrechnet. Für den <strong>tatsächlichen Flächeninhalt</strong> muss das Intervall aufgeteilt und mit Beträgen gearbeitet werden:</div>
         <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px">
           <strong>&#9312;</strong> Nullstellen von \(f\) im Intervall \([a,b]\) bestimmen<br>
           <strong>&#9313;</strong> Vorzeichen von \(f\) in jedem Teilintervall prüfen<br>
-          <strong>&#9314;</strong> Teilintegrale einzeln berechnen<br>
-          <strong>&#9315;</strong> Beträge der Teilintegrale addieren: \(A = |A_1| + |A_2| + \ldots\)
+          <strong>&#9314;</strong> Teilintegrale \(A_i = [F]_{x_{i-1}}^{x_i}\) einzeln berechnen &nbsp;<em>(können negative Werte haben!)</em><br>
+          <strong>&#9315;</strong> <strong>Beträge</strong> der Teilintegrale addieren: \(A = |A_1| + |A_2| + \ldots\) &nbsp;<em>(Flächeninhalte sind nie negativ)</em>
         </div>
         <div class="hint"><strong>Tipp:</strong> Zeichne zunächst einen groben Graphen von f – so siehst du auf einen Blick, in welchen Intervallen f positiv oder negativ ist, und wo du das Integral aufteilen musst.</div>
         <div class="hint"><strong>Merke:</strong> Die Flächenbilanz kann 0 sein, obwohl tatsächlich Flächen eingeschlossen werden – etwa bei symmetrischen Funktionen über symmetrischen Intervallen.</div>
@@ -15972,7 +15986,7 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
 
         <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.3</span><span class="td dm">★★</span></div><div class="tq">Berechne den tatsächlichen Flächeninhalt, den \(f(x) = -x^2 + 4\) mit der x-Achse einschließt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(x = \pm 2\). Auf \([-2,2]\): \(f \geq 0\).<br>\(F(x) = -\frac{x^3}{3} + 4x\). \(\Big[F\Big]_{-2}^2 = \frac{16}{3} - (-\frac{16}{3}) = \frac{32}{3} \approx 10{,}67\).</div></div>
 
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.4</span><span class="td dm">★★</span></div><div class="tq">Berechne den tatsächlichen Flächeninhalt zwischen \(f(x) = x^3 - x\) und der x-Achse auf \([-1, 1]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(x = -1, 0, 1\).<br>Auf \([-1,0]\): \(f \geq 0\), auf \([0,1]\): \(f \leq 0\).<br>\(F(x) = \frac{x^4}{4} - \frac{x^2}{2}\). \(\Big[F\Big]_{-1}^0 = \frac{1}{4}\), \(\Big[F\Big]_0^1 = -\frac{1}{4}\).<br>\(A = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}\).</div></div>
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.4</span><span class="td dm">★★</span></div><div class="tq">Berechne den tatsächlichen Flächeninhalt zwischen \(f(x) = x^3 - x\) und der x-Achse auf \([-1, 1]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nullstellen: \(x = -1, 0, 1\).<br>Auf \([-1,0]\): \(f \geq 0\), auf \([0,1]\): \(f \leq 0\).<br>\(F(x) = \frac{x^4}{4} - \frac{x^2}{2}\).<br>\(A_1 = [F]_{-1}^0 = 0 - \left(\frac{1}{4}-\frac{1}{2}\right) = \frac{1}{4}\) &nbsp;(positiv)<br>\(A_2 = [F]_0^1 = \left(\frac{1}{4}-\frac{1}{2}\right) - 0 = -\frac{1}{4}\) &nbsp;(negativ, weil \(f \leq 0\))<br>\(A = |A_1| + |A_2| = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}\).</div></div>
         <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">I2.5</span><span class="td dm">★★</span></div><div class="tq"><strong>Bakterienwachstum.</strong> In einem Labor wird eine Bakterienkultur untersucht. Die Wachstumsrate der Bakterienzahl in Millionen pro Stunde ist für \(0 \leq t \leq 3\) durch \(f(t) = 2e^t\) gegeben. Zu Beginn (\(t = 0\)) sind 5 Millionen Bakterien vorhanden.<br><br>
           a) <strong>Berechne</strong> mithilfe des bestimmten Integrals, wie viele Bakterien im Zeitraum \([0, 3]\) hinzukommen.<br>
           b) <strong>Bestimme</strong> den Bakterienbestand nach 3 Stunden und <strong>gib</strong> das Ergebnis im Sachkontext an.<br>
