@@ -4492,6 +4492,388 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   </div>
 </div>
 
+
+<!-- ═══ 5a. Quadratische Ergänzung ═══ -->
+<div class="section-label">5a. Quadratische Ergänzung — von der Normalform zur Scheitelpunktform</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Quadratische Ergänzung — der Schlüssel zwischen den Formen</span></div>
+  <div class="card-body">
+    <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+      <strong style="color:#8a7a30">Kernidee:</strong> Die <strong>Normalform</strong> \(f(x) = x^2 + p\,x + q\) und die <strong>Scheitelpunktform</strong> \(f(x) = (x - x_S)^2 + y_S\) beschreiben dieselbe Parabel — nur andere „Sprache". Mit der <em>quadratischen Ergänzung</em> rechnen wir die Normalform in die Scheitelpunktform um. Dann lassen sich Scheitel und Symmetrieachse direkt ablesen.
+    </div>
+    <div class="ip">Bei \(f(x) = x^2 + p\,x + q\) ergänzt man den Term \(x^2 + p\,x\) zu einem vollständigen Quadrat:</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+      \[x^2 + p\,x = \left(x + \tfrac{p}{2}\right)^2 - \left(\tfrac{p}{2}\right)^2\]
+    </div>
+    <div class="ip">Daraus folgt die Scheitelpunktform:</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+      \[f(x) = \left(x + \tfrac{p}{2}\right)^2 - \left(\tfrac{p}{2}\right)^2 + q\]
+    </div>
+    <div class="ip">Daraus liest man ab: \(x_S = -\tfrac{p}{2}\), \(y_S = q - \left(\tfrac{p}{2}\right)^2\).</div>
+    <div class="hint"><strong>Merke:</strong> Der trickreiche Schritt ist „die Hälfte des linearen Koeffizienten quadrieren und ergänzen" — einmal als \(+\), einmal als \(-\), damit der Term sich nicht ändert. Bei \(a \neq 1\) zuerst \(a\) ausklammern: \(a x^2 + b x + c = a\!\left(x^2 + \tfrac{b}{a}x\right) + c\).</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe — Normalform → Scheitelpunktform</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme den Scheitelpunkt von \(f(x) = x^2 + 6\,x + 5\).</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip"><strong>Schritt 1:</strong> Hälfte des linearen Koeffizienten: \(\tfrac{p}{2} = \tfrac{6}{2} = 3\). Quadrat: \(3^2 = 9\).</div>
+    <div class="ip"><strong>Schritt 2:</strong> Ergänzen und subtrahieren:</div>
+    <div class="ip">\(f(x) = x^2 + 6x + 9 - 9 + 5 = (x+3)^2 - 4\)</div>
+    <div class="ip"><strong>Schritt 3:</strong> Ablesen: \(x_S = -3\), \(y_S = -4\), also \(S(-3 \mid -4)\).</div>
+    <div class="ip"><em>Probe:</em> \(f(-3) = (-3)^2 + 6\cdot(-3) + 5 = 9 - 18 + 5 = -4\) ✓</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe — mit Faktor a vor x²</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme den Scheitelpunkt von \(f(x) = 2x^2 - 8x + 1\).</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip"><strong>Schritt 1:</strong> Faktor \(a = 2\) aus den ersten beiden Termen ausklammern:</div>
+    <div class="ip">\(f(x) = 2(x^2 - 4x) + 1\)</div>
+    <div class="ip"><strong>Schritt 2:</strong> Innerhalb der Klammer quadratisch ergänzen — Hälfte von \(-4\) ist \(-2\), Quadrat \(4\):</div>
+    <div class="ip">\(f(x) = 2\bigl((x-2)^2 - 4\bigr) + 1 = 2(x-2)^2 - 8 + 1 = 2(x-2)^2 - 7\)</div>
+    <div class="ip"><strong>Schritt 3:</strong> Ablesen: \(a = 2\), \(x_S = 2\), \(y_S = -7\), also \(S(2 \mid -7)\). Die Parabel ist nach oben geöffnet (\(a>0\)) und doppelt so schmal wie die Normalparabel.</div>
+  </div>
+</div>
+
+<div class="it" style="margin-top:24px; font-size:15px; font-weight:bold; color:#5b6e2e;">Aufgaben — Quadratische Ergänzung</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5a.1</span><span class="td de">★</span></div>
+    <div class="tq">Wandle in die Scheitelpunktform um und gib den Scheitelpunkt an: (a) \(f(x) = x^2 + 4x + 1\), (b) \(g(x) = x^2 - 10x + 21\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>(a)</strong> Hälfte von 4 ist 2, Quadrat 4. \(f(x) = (x+2)^2 - 4 + 1 = (x+2)^2 - 3\). Scheitel \(S(-2\mid -3)\).</div>
+    <div class="ip"><strong>(b)</strong> Hälfte von \(-10\) ist \(-5\), Quadrat 25. \(g(x) = (x-5)^2 - 25 + 21 = (x-5)^2 - 4\). Scheitel \(S(5\mid -4)\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">Symbolisch: Normalform → Scheitelpunktform durch quadratische Ergänzung.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5a.2</span><span class="td dm">★★</span></div>
+    <div class="tq">Bestimme Scheitelpunkt und Öffnungsrichtung von \(f(x) = -3x^2 + 12x - 5\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">\(a = -3\) ausklammern: \(f(x) = -3(x^2 - 4x) - 5\). Innen ergänzen (Hälfte von \(-4\) ist \(-2\), Quadrat 4):</div>
+    <div class="ip">\(f(x) = -3\bigl((x-2)^2 - 4\bigr) - 5 = -3(x-2)^2 + 12 - 5 = -3(x-2)^2 + 7\).</div>
+    <div class="ip">Scheitel \(S(2\mid 7)\), Parabel nach unten geöffnet (\(a = -3 < 0\)) und schmaler als die Normalparabel.</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">Symbolisch + Argumentieren: Form vorhersagen aus den Parametern.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5a.3</span><span class="td dh">★★★</span></div>
+    <div class="tq">Zeige durch quadratische Ergänzung: Die Funktion \(f(x) = x^2 + p\,x + q\) hat Scheitelpunkt \(S\!\left(-\tfrac{p}{2}\,\big|\,q - \tfrac{p^2}{4}\right)\). Folgere daraus eine Bedingung an \(p\) und \(q\), unter der \(f\) keine reelle Nullstelle besitzt.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Quadratische Ergänzung: \(f(x) = \bigl(x + \tfrac{p}{2}\bigr)^2 - \tfrac{p^2}{4} + q\), also \(x_S = -\tfrac{p}{2}\) und \(y_S = q - \tfrac{p^2}{4}\).</div>
+    <div class="ip">Da der quadratische Term \(\bigl(x + \tfrac{p}{2}\bigr)^2 \geq 0\) ist, gilt \(f(x) \geq y_S\) für alle \(x\). Wenn \(y_S > 0\), liegt die Parabel komplett oberhalb der x-Achse — keine Nullstelle.</div>
+    <div class="ip"><strong>Bedingung:</strong> \(q - \tfrac{p^2}{4} > 0 \;\Leftrightarrow\; q > \tfrac{p^2}{4}\). Diese Bedingung ist äquivalent zur „Diskriminante \(D = \tfrac{p^2}{4} - q < 0\)" aus Abschnitt 5c.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">Argumentieren + Symbolisch: Allgemeine Aussage durch quadratische Ergänzung herleiten.</div>
+  </div>
+</div>
+
+<!-- ═══ 5b. Allgemeine Form, Vieta, faktorisierte Form ═══ -->
+<div class="section-label">5b. Drei Formen der quadratischen Funktion — allgemeine Form, Scheitelpunktform, faktorisierte Form</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Drei Formen — drei Stärken</span></div>
+  <div class="card-body">
+    <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+      <strong style="color:#8a7a30">Kernidee:</strong> Eine quadratische Funktion lässt sich in <strong>drei Formen</strong> schreiben — jede betont andere Eigenschaften:
+      <ul style="margin:8px 0 0 20px">
+        <li><strong>Allgemeine Form</strong> \(f(x) = ax^2 + bx + c\) — der y-Achsenabschnitt \(c\) ist direkt sichtbar.</li>
+        <li><strong>Scheitelpunktform</strong> \(f(x) = a(x - x_S)^2 + y_S\) — Scheitel und Öffnung direkt sichtbar.</li>
+        <li><strong>Faktorisierte Form</strong> \(f(x) = a(x - x_1)(x - x_2)\) — die Nullstellen \(x_1\) und \(x_2\) direkt sichtbar.</li>
+      </ul>
+      Die Übergänge zwischen den Formen lernst du in 5a (quadratische Ergänzung) und 5c (pq-Formel).
+    </div>
+    <div class="it" style="margin-top:8px"><strong>Satz von Vieta</strong> (für die Normalform \(x^2 + p\,x + q\))</div>
+    <div class="ip">Sind \(x_1, x_2\) die beiden Nullstellen, so gilt:</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+      \[x_1 + x_2 = -p \qquad\text{und}\qquad x_1 \cdot x_2 = q\]
+    </div>
+    <div class="hint"><strong>Merke:</strong> Vieta hilft, Nullstellen <em>zu raten</em> — vor allem bei „schönen" ganzzahligen Koeffizienten. Beispiel \(x^2 - 5x + 6\): Suche zwei Zahlen mit Summe \(5\) und Produkt \(6\) → \(2\) und \(3\). Faktorisiert: \((x-2)(x-3)\).</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe — Vieta + faktorisierte Form</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Schreibe \(f(x) = x^2 - 7x + 10\) in faktorisierter Form.</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip"><strong>Vieta:</strong> Suche zwei Zahlen mit Summe \(7\) und Produkt \(10\). Probieren: \(2\) und \(5\) — Summe \(7\) ✓, Produkt \(10\) ✓.</div>
+    <div class="ip">Also \(x_1 = 2, x_2 = 5\) und \(f(x) = (x - 2)(x - 5)\).</div>
+    <div class="ip"><em>Probe (Ausmultiplizieren):</em> \((x-2)(x-5) = x^2 - 5x - 2x + 10 = x^2 - 7x + 10\) ✓.</div>
+  </div>
+</div>
+
+<div class="it" style="margin-top:24px; font-size:15px; font-weight:bold; color:#5b6e2e;">Aufgaben — Allgemeine Form, Vieta, faktorisierte Form</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5b.1</span><span class="td de">★</span></div>
+    <div class="tq">Gib den y-Achsenabschnitt \(c\) und das \(a\) an: (a) \(f(x) = 3x^2 - 4x + 2\), (b) \(g(x) = -x^2 + 5x\), (c) \(h(x) = \tfrac{1}{2}x^2 + 3\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">(a) \(a = 3\), \(c = 2\). (b) \(a = -1\), \(c = 0\). (c) \(a = \tfrac{1}{2}\), \(c = 3\).</div>
+    <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">Darstellungen lesen.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5b.2</span><span class="td dm">★★</span></div>
+    <div class="tq">Zerlege mit Vieta in Linearfaktoren: (a) \(f(x) = x^2 + 2x - 15\), (b) \(g(x) = x^2 - 9x + 20\), (c) \(h(x) = x^2 - 4\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>(a)</strong> Summe \(-2\), Produkt \(-15\) → \(3\) und \(-5\). Also \(f(x) = (x-3)(x+5)\).</div>
+    <div class="ip"><strong>(b)</strong> Summe \(9\), Produkt \(20\) → \(4\) und \(5\). Also \(g(x) = (x-4)(x-5)\).</div>
+    <div class="ip"><strong>(c)</strong> Drittes binomisches Gesetz: \(h(x) = (x-2)(x+2)\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">Symbolisch: Vieta-Satz nutzen.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5b.3</span><span class="td dm">★★</span></div>
+    <div class="tq">Eine Parabel hat die Nullstellen \(x_1 = -1\) und \(x_2 = 4\) und verläuft durch den Punkt \(P(0\mid -8)\). Bestimme die Funktionsgleichung in faktorisierter und in allgemeiner Form.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Faktorisierter Ansatz: \(f(x) = a(x + 1)(x - 4)\). Punkt einsetzen:</div>
+    <div class="ip">\(f(0) = a \cdot 1 \cdot (-4) = -4a = -8 \;\Rightarrow\; a = 2\).</div>
+    <div class="ip"><strong>Faktorisierte Form:</strong> \(f(x) = 2(x+1)(x-4)\).</div>
+    <div class="ip"><strong>Allgemeine Form</strong> (Ausmultiplizieren): \(f(x) = 2(x^2 - 3x - 4) = 2x^2 - 6x - 8\).</div>
+    <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">Probleme lösen + Darstellungen wechseln.</div>
+  </div>
+</div>
+
+<!-- ═══ 5c. pq-Formel und Diskriminante ═══ -->
+<div class="section-label">5c. Quadratische Gleichungen lösen — pq-Formel und Diskriminante</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die pq-Formel — Standardwerkzeug für Nullstellen</span></div>
+  <div class="card-body">
+    <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+      <strong style="color:#8a7a30">Kernidee:</strong> Die <strong>quadratische Gleichung</strong> \(x^2 + p\,x + q = 0\) (Normalform) hat höchstens zwei Lösungen. Die <em>pq-Formel</em> liefert sie direkt — und ihre <em>Diskriminante</em> sagt vorab, wie viele Lösungen es überhaupt gibt.
+    </div>
+    <div class="ip"><strong>pq-Formel</strong> für \(x^2 + p\,x + q = 0\):</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+      \[x_{1,2} = -\tfrac{p}{2} \pm \sqrt{\left(\tfrac{p}{2}\right)^2 - q}\]
+    </div>
+    <div class="ip">Der Ausdruck unter der Wurzel heißt <strong>Diskriminante</strong>:</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+      \[D = \left(\tfrac{p}{2}\right)^2 - q\]
+    </div>
+    <div class="it" style="margin-top:10px"><strong>Drei Fälle</strong> (sortiert nach dem Vorzeichen von \(D\))</div>
+    <div class="ip" style="overflow-x:auto;margin-top:6px">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead><tr style="background:#f4f3f0">
+          <th style="padding:8px 10px;border:1px solid #d8d3c7;text-align:left">Diskriminante</th>
+          <th style="padding:8px 10px;border:1px solid #d8d3c7;text-align:left">Anzahl Lösungen</th>
+          <th style="padding:8px 10px;border:1px solid #d8d3c7;text-align:left">Lage der Parabel</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="padding:8px 10px;border:1px solid #d8d3c7"><strong>\(D > 0\)</strong></td>
+              <td style="padding:8px 10px;border:1px solid #d8d3c7;color:#5b6e2e;font-weight:700">zwei Nullstellen</td>
+              <td style="padding:8px 10px;border:1px solid #d8d3c7">Parabel schneidet die x-Achse zweimal</td></tr>
+          <tr style="background:#fafaf7"><td style="padding:8px 10px;border:1px solid #d8d3c7"><strong>\(D = 0\)</strong></td>
+              <td style="padding:8px 10px;border:1px solid #d8d3c7;color:#c8b55e;font-weight:700">eine (doppelte) Nullstelle</td>
+              <td style="padding:8px 10px;border:1px solid #d8d3c7">Parabel berührt die x-Achse (Scheitel auf der Achse)</td></tr>
+          <tr><td style="padding:8px 10px;border:1px solid #d8d3c7"><strong>\(D < 0\)</strong></td>
+              <td style="padding:8px 10px;border:1px solid #d8d3c7;color:#c75c3a;font-weight:700">keine reelle Nullstelle</td>
+              <td style="padding:8px 10px;border:1px solid #d8d3c7">Parabel liegt komplett oberhalb (\(a>0\)) bzw. unterhalb (\(a<0\)) der x-Achse</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hint"><strong>Wichtig:</strong> Die pq-Formel gilt nur für die <em>Normalform</em> \(x^2 + p\,x + q = 0\). Bei \(ax^2 + bx + c = 0\) mit \(a \neq 1\) zuerst durch \(a\) teilen, damit der \(x^2\)-Koeffizient 1 wird.</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe — pq-Formel anwenden</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme alle Lösungen von \(x^2 - 4x - 5 = 0\).</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip">\(p = -4\), \(q = -5\). Diskriminante: \(D = \left(\tfrac{-4}{2}\right)^2 - (-5) = 4 + 5 = 9 > 0\) → zwei Lösungen.</div>
+    <div class="ip">\(x_{1,2} = -\tfrac{-4}{2} \pm \sqrt{9} = 2 \pm 3\).</div>
+    <div class="ip"><strong>Ergebnis:</strong> \(x_1 = 2 - 3 = -1\), \(x_2 = 2 + 3 = 5\).</div>
+    <div class="ip"><em>Vieta-Probe:</em> \(x_1 + x_2 = 4 = -p\) ✓, \(x_1 \cdot x_2 = -5 = q\) ✓.</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe — Diskriminante als Entscheidungsmittel</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Entscheide ohne Ausrechnen, wie viele Nullstellen \(f(x) = x^2 - 6x + 9\) bzw. \(g(x) = x^2 + x + 2\) haben.</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip"><strong>\(f\):</strong> \(p = -6\), \(q = 9\). \(D = 9 - 9 = 0\) → <strong>eine doppelte Nullstelle</strong>.</div>
+    <div class="ip"><strong>\(g\):</strong> \(p = 1\), \(q = 2\). \(D = \tfrac{1}{4} - 2 = -\tfrac{7}{4} < 0\) → <strong>keine reelle Nullstelle</strong>.</div>
+  </div>
+</div>
+
+<div class="it" style="margin-top:24px; font-size:15px; font-weight:bold; color:#5b6e2e;">Aufgaben — pq-Formel und Diskriminante</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5c.1</span><span class="td de">★</span></div>
+    <div class="tq">Löse mit der pq-Formel: (a) \(x^2 - 6x + 8 = 0\), (b) \(x^2 + 2x - 15 = 0\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>(a)</strong> \(p = -6, q = 8\). \(D = 9 - 8 = 1\). \(x_{1,2} = 3 \pm 1\) → \(x_1 = 2, x_2 = 4\).</div>
+    <div class="ip"><strong>(b)</strong> \(p = 2, q = -15\). \(D = 1 + 15 = 16\). \(x_{1,2} = -1 \pm 4\) → \(x_1 = -5, x_2 = 3\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">Symbolisch: pq-Formel sicher anwenden.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5c.2</span><span class="td dm">★★</span></div>
+    <div class="tq">Bestimme die Nullstellen von \(2x^2 - 12x + 10 = 0\). Tipp: zuerst durch 2 teilen, dann pq-Formel.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Durch 2 teilen: \(x^2 - 6x + 5 = 0\). \(p = -6, q = 5\), \(D = 9 - 5 = 4\).</div>
+    <div class="ip">\(x_{1,2} = 3 \pm 2\) → \(x_1 = 1, x_2 = 5\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">Allgemeine Form auf Normalform reduzieren.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5c.3</span><span class="td dm">★★</span></div>
+    <div class="tq">Entscheide jeweils ohne pq-Formel, wie viele Lösungen die Gleichung hat. Begründe mit der Diskriminante. (a) \(x^2 + 4x + 4 = 0\), (b) \(x^2 - 3x + 5 = 0\), (c) \(x^2 + 2x - 7 = 0\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>(a)</strong> \(D = 4 - 4 = 0\) → eine doppelte Lösung (\(x = -2\)).</div>
+    <div class="ip"><strong>(b)</strong> \(D = \tfrac{9}{4} - 5 = -\tfrac{11}{4} < 0\) → keine reelle Lösung.</div>
+    <div class="ip"><strong>(c)</strong> \(D = 1 + 7 = 8 > 0\) → zwei Lösungen.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">Argumentieren: Lösungsanzahl aus Diskriminante folgern, ohne explizit zu lösen.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5c.4</span><span class="td dh">★★★</span></div>
+    <div class="tq">Für welchen Wert von \(c\) hat die Gleichung \(x^2 - 4x + c = 0\) genau eine (doppelte) Lösung? Bestimme diese Lösung.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Doppelte Lösung \(\Leftrightarrow D = 0\). Hier: \(D = \left(\tfrac{-4}{2}\right)^2 - c = 4 - c\).</div>
+    <div class="ip">\(D = 0 \;\Leftrightarrow\; c = 4\). Dann ist \(x_{1,2} = -\tfrac{-4}{2} = 2\), also doppelte Lösung \(x = 2\).</div>
+    <div class="ip"><em>Plausibilität:</em> \(x^2 - 4x + 4 = (x-2)^2\) — die Parabel berührt die x-Achse im Scheitel \((2|0)\).</div>
+    <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">Parameter so bestimmen, dass eine vorgegebene Anzahl Lösungen entsteht.</div>
+  </div>
+</div>
+
+<!-- ═══ 5d. Lagebeziehung Parabel und Gerade ═══ -->
+<div class="section-label">5d. Lagebeziehung Parabel und Gerade — Sekante, Tangente, Passante</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Schneiden, berühren oder vorbeigehen?</span></div>
+  <div class="card-body">
+    <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+      <strong style="color:#8a7a30">Kernidee:</strong> Eine Gerade kann zu einer Parabel in genau einer von <strong>drei Lagen</strong> stehen — <strong>Sekante</strong> (zwei Schnittpunkte), <strong>Tangente</strong> (genau ein Berührpunkt) oder <strong>Passante</strong> (kein gemeinsamer Punkt). Welche es ist, sagt dir die <em>Diskriminante</em> aus 5c — angewendet auf die Gleichung <em>Parabel = Gerade</em>.
+    </div>
+    <div class="it"><strong>Vorgehen</strong></div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px">
+      <strong>①</strong> Gleichsetzen: \(f(x) = g(x)\), wobei \(f\) die quadratische Funktion und \(g\) die Geradengleichung ist.<br>
+      <strong>②</strong> Auf Normalform bringen: alles auf eine Seite, sodass \(x^2 + p\,x + q = 0\) entsteht.<br>
+      <strong>③</strong> Diskriminante \(D = \left(\tfrac{p}{2}\right)^2 - q\) berechnen und auswerten:<br>
+      &nbsp;&nbsp;&nbsp;• \(D > 0\) → <strong style="color:#5b6e2e">Sekante</strong> (zwei Schnittpunkte)<br>
+      &nbsp;&nbsp;&nbsp;• \(D = 0\) → <strong style="color:#c8b55e">Tangente</strong> (genau ein Berührpunkt)<br>
+      &nbsp;&nbsp;&nbsp;• \(D < 0\) → <strong style="color:#c75c3a">Passante</strong> (kein Schnittpunkt)<br>
+      <strong>④</strong> Bei Sekante/Tangente die Schnitt- bzw. Berührpunkte berechnen (\(x\)-Werte mit pq-Formel, dann \(y\)-Werte einsetzen).
+    </div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe — Lage erkennen und Schnittpunkte berechnen</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Untersuche die Lage von \(g: y = 2x - 1\) zur Parabel \(f(x) = x^2\). Bestimme ggf. die Schnittpunkte.</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip"><strong>① Gleichsetzen:</strong> \(x^2 = 2x - 1\)</div>
+    <div class="ip"><strong>② Normalform:</strong> \(x^2 - 2x + 1 = 0\), also \(p = -2\), \(q = 1\).</div>
+    <div class="ip"><strong>③ Diskriminante:</strong> \(D = 1 - 1 = 0\) → genau ein Berührpunkt → <strong>Tangente</strong>.</div>
+    <div class="ip"><strong>④ Berührpunkt:</strong> \(x = -\tfrac{-2}{2} = 1\), \(y = f(1) = 1\). Berührpunkt \(B(1\mid 1)\).</div>
+    <div class="ip"><em>Plausibilität:</em> \(x^2 - 2x + 1 = (x-1)^2\) — die quadratische Gleichung hat genau eine doppelte Lösung, was die Tangentenlage bestätigt.</div>
+  </div>
+</div>
+
+<div class="it" style="margin-top:24px; font-size:15px; font-weight:bold; color:#5b6e2e;">Aufgaben — Lagebeziehung Parabel und Gerade</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5d.1</span><span class="td dm">★★</span></div>
+    <div class="tq">Untersuche die Lage von \(g: y = x + 2\) zur Parabel \(f(x) = x^2\) und bestimme ggf. die Schnittpunkte.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Gleichsetzen: \(x^2 = x + 2 \;\Rightarrow\; x^2 - x - 2 = 0\). \(p = -1, q = -2\), \(D = \tfrac{1}{4} + 2 = \tfrac{9}{4} > 0\) → <strong>Sekante</strong>.</div>
+    <div class="ip">\(x_{1,2} = \tfrac{1}{2} \pm \tfrac{3}{2}\) → \(x_1 = -1, x_2 = 2\). \(y\)-Werte: \(g(-1) = 1\), \(g(2) = 4\).</div>
+    <div class="ip">Schnittpunkte \(S_1(-1\mid 1)\), \(S_2(2\mid 4)\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">Symbolisch: Lage und Schnittpunkte über quadratische Gleichung.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5d.2</span><span class="td dm">★★</span></div>
+    <div class="tq">Zeige, dass \(g: y = 2\) eine Passante zur Parabel \(f(x) = x^2 + 3\) ist.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Gleichsetzen: \(x^2 + 3 = 2 \;\Rightarrow\; x^2 = -1\). Da \(x^2 \geq 0\) für alle reellen \(x\), gibt es keine Lösung — kein Schnittpunkt → <strong>Passante</strong>.</div>
+    <div class="ip"><em>Anschaulich:</em> Der Scheitel von \(f\) liegt bei \((0|3)\), die Gerade verläuft auf \(y = 2\) — da die Parabel nach oben geöffnet ist und ihr tiefster Punkt schon oberhalb der Geraden liegt, kann es keinen Schnittpunkt geben.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">Argumentieren: Nichtexistenz von Schnittpunkten begründen.</div>
+  </div>
+</div>
+
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Q5d.3</span><span class="td dh">★★★</span></div>
+    <div class="tq">Bestimme \(t\) so, dass die Gerade \(g_t: y = 2x + t\) zur Parabel \(f(x) = x^2\) Tangente ist. Gib auch den Berührpunkt an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Gleichsetzen: \(x^2 = 2x + t \;\Rightarrow\; x^2 - 2x - t = 0\). Hier sind \(p = -2\) und \(q = -t\).</div>
+    <div class="ip">Tangente \(\Leftrightarrow D = 0\): \(D = \tfrac{(-2)^2}{4} - (-t) = 1 + t = 0 \;\Rightarrow\; t = -1\).</div>
+    <div class="ip">Berührpunkt: \(x = -\tfrac{-2}{2} = 1\), \(y = f(1) = 1\), also \(B(1\mid 1)\).</div>
+    <div class="ip"><em>Vergleich:</em> Das ist genau die Tangente aus dem Lehrbeispiel oben — andere Schreibweise (\(2x - 1 = 2x + (-1)\)).</div>
+    <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">Probleme lösen + Argumentieren: Parameter so bestimmen, dass eine geforderte Lage entsteht.</div>
+  </div>
+</div>
+
 <!-- ═══ 6. Interaktiver Parabel-Explorer ═══ -->
 <div class="section-label">6. Interaktiver Parabel-Explorer</div>
 
