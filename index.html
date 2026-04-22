@@ -3827,6 +3827,11 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   </div>
 </div>
 
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:14px 0">
+  <strong style="color:#8a7a30">Kernidee:</strong>
+  Eine <strong>quadratische Funktion</strong> ordnet jeder Zahl \(x\) einen Wert \(f(x)\) zu, der einen \(x^2\)-Term als höchste Potenz enthält. Ihr <strong>Graph</strong> heißt <strong>Parabel</strong> und ist <em>immer</em> achsensymmetrisch. Jede Parabel hat genau einen <strong>Scheitelpunkt</strong> \(S(x_S\mid y_S)\) — ihren höchsten oder tiefsten Punkt — und öffnet sich entweder nach oben oder nach unten. Drei Parameter legen sie eindeutig fest: <strong>\(a\)</strong> bestimmt Form und Öffnungsrichtung, <strong>\(x_S\)</strong> die waagerechte Lage des Scheitels, <strong>\(y_S\)</strong> die senkrechte. Die folgenden Abschnitte bauen diese drei Parameter nacheinander auf und setzen sie in der <em>Scheitelpunktform</em> \(f(x) = a(x - x_S)^2 + y_S\) zusammen.
+</div>
+
 <!-- Lernziele -->
 <div class="card">
   <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
@@ -3969,7 +3974,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
     <div class="ip">\(|a| > 1\): Die Parabel wird <strong>schmaler</strong> (gestreckt). Sie wächst schneller als die Normalparabel.</div>
     <div class="ip">\(0 < |a| < 1\): Die Parabel wird <strong>breiter</strong> (gestaucht). Sie wächst langsamer.</div>
     <div class="ip">\(a > 0\): Öffnung nach <strong>oben</strong>. \(a < 0\): Öffnung nach <strong>unten</strong> (Spiegelung an der \(x\)-Achse).</div>
-    <div class="hint"><strong>Merke:</strong> Der Scheitelpunkt bleibt bei \(S(0\mid 0)\). Nur die Form ändert sich!</div>
+    <div class="hint"><strong>Merke:</strong> Der Scheitelpunkt bleibt bei \(S(0\mid 0)\) — nur die Form ändert sich. Sprachlich gilt: „<strong>gestreckt</strong>" \(\Leftrightarrow\) „<strong>schmaler</strong>" (\(|a|>1\)), „<strong>gestaucht</strong>" \(\Leftrightarrow\) „<strong>breiter</strong>" (\(0<|a|<1\)).</div>
   </div>
 </div>
 
@@ -4077,6 +4082,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">Entscheidend ist das Vorzeichen des gesamten Faktors \(a\), hier \(a = -0{,}5 < 0\). Die Parabel öffnet sich nach <strong>unten</strong>. Das positive \(0{,}5\) gibt nur den Betrag an (Stauchung), aber das Minuszeichen bewirkt die Spiegelung.</div>
+          <div class="ip" style="background:#fff8e6;border-left:4px solid #c8b55e;padding:10px 14px;margin-top:8px;border-radius:8px"><strong style="color:#8a7a30">Merksatz:</strong> Die Öffnungsrichtung einer Parabel wird allein durch das <strong>Vorzeichen des gesamten Faktors \(a\)</strong> bestimmt — nie durch einen Teil davon.</div>
           <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
           <div class="komp-desc">Argumentieren: Fehler identifizieren und korrigieren.</div>
   </div>
@@ -4240,6 +4246,14 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
       <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Breite</strong></td><td style="padding:8px">\(|a| > 1\): schmaler, \(|a| < 1\): breiter</td></tr>
       <tr><td style="padding:8px"><strong>y-Achsenabschnitt</strong></td><td style="padding:8px">\(f(0) = a \cdot x_S^2 + y_S\)</td></tr>
     </table>
+    <div class="hint">
+      <strong>Drei Merksätze zur Scheitelpunktform:</strong>
+      <ul style="margin:6px 0 0 18px;padding:0">
+        <li><strong>Reihenfolge der Transformationen:</strong> Erst \((x - x_S)\) bilden (x-verschieben), dann quadrieren, dann mit \(a\) strecken, zuletzt \(y_S\) addieren (y-verschieben). In dieser Reihenfolge entsteht aus der Normalparabel die allgemeine Parabel.</li>
+        <li><strong>Scheitelpunkt ist Extremum:</strong> Bei \(a > 0\) ist \(y_S\) der <em>kleinste</em> Funktionswert (Minimum), bei \(a < 0\) der <em>größte</em> (Maximum). Das macht den Scheitelpunkt zum zentralen Objekt bei Optimierungsaufgaben.</li>
+        <li><strong>Symmetrieachse:</strong> Die senkrechte Gerade \(x = x_S\) ist die Symmetrieachse der Parabel. An ihr gespiegelt liefert \(f\) gleiche Werte: \(f(x_S + d) = f(x_S - d)\) für jedes \(d\).</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -4393,7 +4407,7 @@ setTimeout(updateQuadExplorer,100);
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">Q6.1</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF1 ★</strong> Gib jeweils den Scheitelpunkt, die Öffnungsrichtung und die Symmetrieachse an:<br>(a) \(f(x) = 3(x-1)^2 + 2\) &emsp; (b) \(g(x) = -(x+5)^2 - 3\) &emsp; (c) \(h(x) = 0{,}5\,x^2 + 4\).</div>
+    <div class="tq">Gib jeweils den Scheitelpunkt, die Öffnungsrichtung und die Symmetrieachse an:<br>(a) \(f(x) = 3(x-1)^2 + 2\) &emsp; (b) \(g(x) = -(x+5)^2 - 3\) &emsp; (c) \(h(x) = 0{,}5\,x^2 + 4\).</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">(a) \(S(1\mid 2)\), nach oben, \(x = 1\). (b) \(S(-5\mid -3)\), nach unten, \(x = -5\). (c) \(S(0\mid 4)\), nach oben, \(x = 0\) (y-Achse).</div>
@@ -4403,7 +4417,7 @@ setTimeout(updateQuadExplorer,100);
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">Q6.2</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF2 ★</strong> Erstelle eine Wertetabelle für \(f(x) = -2(x-1)^2 + 3\) mit \(x \in \{-1;\,0;\,1;\,2;\,3\}\) und skizziere den Graphen.</div>
+    <div class="tq">Erstelle eine Wertetabelle für \(f(x) = -2(x-1)^2 + 3\) mit \(x \in \{-1;\,0;\,1;\,2;\,3\}\) und skizziere den Graphen.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">\(f(-1) = -2\cdot 4+3 = -5\), \(f(0) = -2\cdot 1+3 = 1\), \(f(1) = 3\), \(f(2) = -2\cdot 1+3 = 1\), \(f(3) = -2\cdot 4+3 = -5\).</div>
@@ -4413,8 +4427,8 @@ setTimeout(updateQuadExplorer,100);
 
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">Q6.3</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF3 ★★</strong> Beschreibe die Transformation, die von \(f(x) = x^2\) zur gegebenen Funktion führt:<br>(a) \(g(x) = (x-3)^2 + 1\) &emsp; (b) \(h(x) = -2(x+1)^2 - 4\).</div>
+    <div class="tkt"><span class="tn">Q6.3</span><span class="td dm">★★</span></div>
+    <div class="tq">Beschreibe die Transformation, die von \(f(x) = x^2\) zur gegebenen Funktion führt:<br>(a) \(g(x) = (x-3)^2 + 1\) &emsp; (b) \(h(x) = -2(x+1)^2 - 4\).</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip"><strong>(a)</strong> Verschiebung um 3 nach rechts und 1 nach oben.</div>
@@ -4426,8 +4440,8 @@ setTimeout(updateQuadExplorer,100);
 
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">Q6.4</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF4 ★★</strong> Der Scheitelpunkt einer Parabel liegt bei \(S(-2\mid 5)\) und der Graph verläuft durch den Punkt \(A(0\mid 1)\). Bestimme die Funktionsgleichung in Scheitelpunktform.</div>
+    <div class="tkt"><span class="tn">Q6.4</span><span class="td dm">★★</span></div>
+    <div class="tq">Der Scheitelpunkt einer Parabel liegt bei \(S(-2\mid 5)\) und der Graph verläuft durch den Punkt \(A(0\mid 1)\). Bestimme die Funktionsgleichung in Scheitelpunktform.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">Ansatz: \(f(x) = a(x+2)^2 + 5\). Einsetzen von \(A(0\mid 1)\): \(1 = a(0+2)^2 + 5 = 4a + 5\).</div>
@@ -4439,14 +4453,15 @@ setTimeout(updateQuadExplorer,100);
 
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">Q6.5</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF5 ★★</strong> Sachkontext: Ein Fußballspieler schießt den Ball. Die Flughöhe wird durch \(h(x) = -0{,}02\,(x-25)^2 + 12{,}5\) beschrieben, wobei \(x\) die horizontale Entfernung in Metern und \(h\) die Höhe in Metern ist.<br>(a) Bestimme die maximale Flughöhe und bei welcher Entfernung sie erreicht wird.<br>(b) Berechne, bei welcher Entfernung der Ball auf dem Boden aufkommt.</div>
+    <div class="tkt"><span class="tn">Q6.5</span><span class="td dm">★★</span></div>
+    <div class="tq">Sachkontext: Ein Fußballspieler schießt den Ball. Die Flughöhe wird durch \(h(x) = -0{,}02\,(x-25)^2 + 12{,}5\) beschrieben, wobei \(x\) die horizontale Entfernung in Metern und \(h\) die Höhe in Metern ist.<br>(a) Bestimme die maximale Flughöhe und bei welcher Entfernung sie erreicht wird.<br>(b) Berechne, bei welcher Entfernung der Ball auf dem Boden aufkommt.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip"><strong>(a)</strong> Der Scheitelpunkt ist \(S(25\mid 12{,}5)\). Die maximale Höhe beträgt 12,5 m bei 25 m Entfernung.</div>
           <div class="ip"><strong>(b)</strong> Setze \(h(x) = 0\): \(-0{,}02(x-25)^2 + 12{,}5 = 0\).</div>
           <div class="ip">\((x-25)^2 = \frac{12{,}5}{0{,}02} = 625\), also \(x - 25 = \pm 25\).</div>
           <div class="ip">\(x_1 = 0\) (Abschusspunkt), \(x_2 = 50\) (Auftreffpunkt). Der Ball landet nach 50 m.</div>
+          <div class="ip"><em>Interpretation:</em> Die beiden Nullstellen liegen symmetrisch zum höchsten Punkt bei \(x = 25\) — Aufstieg und Abstieg sind gleich lang. Das ist die Achsensymmetrie der Parabel im Sachkontext.</div>
           <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
           <div class="komp-desc">Modellieren: Sachsituation mit quadratischer Funktion beschreiben und auswerten.</div>
   </div>
@@ -4454,14 +4469,15 @@ setTimeout(updateQuadExplorer,100);
 
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">Q6.6</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF6 ★★</strong> Sachkontext: Ein Brückenbogen hat die Form einer nach unten geöffneten Parabel. Die Fahrbahn liegt auf Höhe \(y = 0\). Der Bogen ist 30 m breit und in der Mitte 10 m hoch. Ermittle die Funktionsgleichung.</div>
+    <div class="tkt"><span class="tn">Q6.6</span><span class="td dm">★★</span></div>
+    <div class="tq">Sachkontext: Ein Brückenbogen hat die Form einer nach unten geöffneten Parabel. Die Fahrbahn liegt auf Höhe \(y = 0\). Der Bogen ist 30 m breit und in der Mitte 10 m hoch. Ermittle die Funktionsgleichung.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip"><strong>Koordinatensystem:</strong> Scheitelpunkt in der Mitte: \(S(15\mid 10)\). Nullstellen bei \(x = 0\) und \(x = 30\).</div>
           <div class="ip"><strong>Ansatz:</strong> \(f(x) = a(x-15)^2 + 10\). Bedingung \(f(0) = 0\):</div>
           <div class="ip">\(a \cdot 225 + 10 = 0 \;\Rightarrow\; a = -\frac{10}{225} = -\frac{2}{45} \approx -0{,}044\).</div>
           <div class="ip">\(f(x) = -\frac{2}{45}(x-15)^2 + 10\).</div>
+          <div class="ip"><em>Interpretation:</em> Das Minuszeichen bedeutet: Die Parabel öffnet sich nach unten — passend zum Brückenbogen. Der sehr kleine Betrag \(|a| \approx 0{,}044\) bedeutet eine sehr breite Parabel — passend zur großen Spannweite von 30 m bei nur 10 m Höhe.</div>
           <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
           <div class="komp-desc">Modellieren: Reale Form durch quadratische Funktion beschreiben.</div>
   </div>
@@ -4469,8 +4485,8 @@ setTimeout(updateQuadExplorer,100);
 
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">Q6.7</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF7 ★★★</strong> Rückwärtsaufgabe: Entscheide, ob es eine Parabel der Form \(f(x) = a(x-x_S)^2 + y_S\) gibt, die durch die Punkte \(A(0\mid 3)\) und \(B(4\mid 3)\) verläuft und den Scheitelpunkt \(S(2\mid -1)\) hat. Falls ja, bestimme die Gleichung.</div>
+    <div class="tkt"><span class="tn">Q6.7</span><span class="td dh">★★★</span></div>
+    <div class="tq">Rückwärtsaufgabe: Entscheide, ob es eine Parabel der Form \(f(x) = a(x-x_S)^2 + y_S\) gibt, die durch die Punkte \(A(0\mid 3)\) und \(B(4\mid 3)\) verläuft und den Scheitelpunkt \(S(2\mid -1)\) hat. Falls ja, bestimme die Gleichung.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">\(A\) und \(B\) haben denselben \(y\)-Wert und liegen symmetrisch um \(x_S = 2\) (da \(0\) und \(4\) gleich weit von \(2\) entfernt sind). Das passt zu einer Parabel mit Scheitelpunkt bei \(x = 2\).</div>
@@ -4484,8 +4500,8 @@ setTimeout(updateQuadExplorer,100);
 
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">Q6.8</span><span class="td de">★</span></div>
-    <div class="tq"><strong>QF8 ★★★</strong> Verallgemeinere: Zeige, dass für jede Parabel \(f(x) = a(x-x_S)^2 + y_S\) mit \(a > 0\) und \(y_S < 0\) genau zwei Nullstellen existieren. Bestimme eine allgemeine Formel für diese Nullstellen.</div>
+    <div class="tkt"><span class="tn">Q6.8</span><span class="td dh">★★★</span></div>
+    <div class="tq">Verallgemeinere: Zeige, dass für jede Parabel \(f(x) = a(x-x_S)^2 + y_S\) mit \(a > 0\) und \(y_S < 0\) genau zwei Nullstellen existieren. Bestimme eine allgemeine Formel für diese Nullstellen.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">Setze \(f(x) = 0\): \(a(x-x_S)^2 + y_S = 0\).</div>
@@ -14021,7 +14037,7 @@ window.addEventListener('resize',function(){updateSimulator();});
 
             <strong>Schritt 2 – Hauptbedingung (H) aufstellen:</strong><br>
             Optimiert werden soll die Fläche:<br>
-            \[oxed{A = x \cdot y} \quad 	ext{(zwei Variablen – noch nicht ableitbar!)}\]
+            \[\boxed{A = x \cdot y} \quad 	ext{(zwei Variablen – noch nicht ableitbar!)}\]
 
             <strong>Schritt 3 – Nebenbedingung (N) aufstellen:</strong><br>
             Nur drei Seiten werden eingezäunt (eine Seite ist die Scheunenwand):<br>
@@ -14116,9 +14132,9 @@ window.addEventListener('resize',function(){updateSimulator();});
                 Definitionsbereich: \(0 < x < 10\) (die kürzere Seite hat 20 cm, also \(20-2x > 0\))<br><br>
                 <strong>b)</strong> \(V'(x) = 12x^2 - 200x + 600 = 0 \;\Rightarrow\; 3x^2 - 50x + 150 = 0\)<br>
                 \(x = \dfrac{50 \pm \sqrt{2500 - 1800}}{6} = \dfrac{50 \pm \sqrt{700}}{6}\)<br>
-                \(x_1 pprox \dfrac{50 - 26{,}46}{6} pprox 3{,}92\) (liegt im D-Bereich) &emsp; \(x_2 pprox 12{,}74\) (außerhalb!)<br>
-                \(V''(x) = 24x - 200\), \(V''(3{,}92) pprox -106 < 0\) → Maximum<br>
-                <strong>Antwort:</strong> \(x pprox 3{,}92\) cm ergibt das maximale Volumen von ca. \(V pprox 1056\) cm³.
+                \(x_1 \approx \dfrac{50 - 26{,}46}{6} \approx 3{,}92\) (liegt im D-Bereich) &emsp; \(x_2 \approx 12{,}74\) (außerhalb!)<br>
+                \(V''(x) = 24x - 200\), \(V''(3{,}92) \approx -106 < 0\) → Maximum<br>
+                <strong>Antwort:</strong> \(x \approx 3{,}92\) cm ergibt das maximale Volumen von ca. \(V \approx 1056\) cm³.
             </div>
         </div>
     </div>
@@ -14290,7 +14306,7 @@ ight) = a \cdot \dfrac{1}{a^2} - \dfrac{2}{a} - a = \dfrac{1}{a} - \dfrac{2}{a} 
             </div>
             <div class="ta">
                 <strong>Lösung:</strong> \(f_a'(x) = 3x^2 - 3a = 0 \;\Rightarrow\; x = \sqrt{a}\) (Tiefpunkt, da \(f_a''(\sqrt{a}) = 6\sqrt{a} > 0\))<br>
-                \(T\!\left(\sqrt{a} \,ig|\, -2a\sqrt{a}
+                \(T\!\left(\sqrt{a} \,\big|\, -2a\sqrt{a}
 ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
                 \(y = -2x^2 \cdot x = -2x^3\). <strong>Ortskurve:</strong> \(y = -2x^3\) für \(x > 0\).
             </div>
@@ -14389,10 +14405,10 @@ ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
             <strong>Skizze und Variable:</strong> Das Rechteck hat die Breite \(2a\) und die Höhe \(f(a) = 4 - a^2\).<br><br>
             <strong>Zielfunktion:</strong> \(A(a) = 2a \cdot (4 - a^2) = 8a - 2a^3\)<br>
             <strong>Definitionsbereich:</strong> \(0 < a < 2\) (positive Nullstelle von \(f\))<br><br>
-            <strong>Ableitung:</strong> \(A'(a) = 8 - 6a^2 = 0 \;\Rightarrow\; a^2 = \dfrac{4}{3} \;\Rightarrow\; a = \dfrac{2}{\sqrt{3}} = \dfrac{2\sqrt{3}}{3} pprox 1{,}15\)<br>
+            <strong>Ableitung:</strong> \(A'(a) = 8 - 6a^2 = 0 \;\Rightarrow\; a^2 = \dfrac{4}{3} \;\Rightarrow\; a = \dfrac{2}{\sqrt{3}} = \dfrac{2\sqrt{3}}{3} \approx 1{,}15\)<br>
             \(A''(a) = -12a < 0\) → Maximum<br><br>
-            <strong>Maße:</strong> Breite \(= 2a = \dfrac{4\sqrt{3}}{3} pprox 2{,}31\), Höhe \(= 4 - \dfrac{4}{3} = \dfrac{8}{3} pprox 2{,}67\)<br>
-            <strong>Maximaler Flächeninhalt:</strong> \(A = \dfrac{4\sqrt{3}}{3} \cdot \dfrac{8}{3} = \dfrac{32\sqrt{3}}{9} pprox 6{,}16\) FE
+            <strong>Maße:</strong> Breite \(= 2a = \dfrac{4\sqrt{3}}{3} \approx 2{,}31\), Höhe \(= 4 - \dfrac{4}{3} = \dfrac{8}{3} \approx 2{,}67\)<br>
+            <strong>Maximaler Flächeninhalt:</strong> \(A = \dfrac{4\sqrt{3}}{3} \cdot \dfrac{8}{3} = \dfrac{32\sqrt{3}}{9} \approx 6{,}16\) FE
         </div>
     </div>
 
@@ -14404,7 +14420,7 @@ ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
                     <span class="tn">D4.10</span>
                     <span class="td de">★</span>
                 </div>
-                <div class="tq">Gegeben ist \(f(x) = 3 - rac{3}{4}x\) für \(x \geq 0\). Die Punkte \(O(0\,|\,0)\), \(B(a\,|\,0)\) und \(C(a\,|\,f(a))\) bilden ein rechtwinkliges Dreieck.<br>
+                <div class="tq">Gegeben ist \(f(x) = 3 - \frac{3}{4}x\) für \(x \geq 0\). Die Punkte \(O(0\,|\,0)\), \(B(a\,|\,0)\) und \(C(a\,|\,f(a))\) bilden ein rechtwinkliges Dreieck.<br>
                 a) Stelle die Zielfunktion \(A(a)\) für den Flächeninhalt auf und gib den Definitionsbereich an.<br>
                 b) Bestimme den Wert von \(a\), für den der Flächeninhalt maximal wird.</div>
                 <div class="tk-toggle">⌄</div>
@@ -14439,12 +14455,12 @@ ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
                 })();
                 </script>
                 <strong>Lösung:</strong><br>
-                a) \(A(a) = rac{1}{2} \cdot a \cdot f(a) = rac{1}{2} a\left(3 - rac{3}{4}a
-ight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
+                a) \(A(a) = \frac{1}{2} \cdot a \cdot f(a) = \frac{1}{2} a\left(3 - \frac{3}{4}a
+ight) = \frac{3}{2}a - \frac{3}{8}a^2\)<br>
                 Definitionsbereich: \(0 < a < 4\) (bei \(a = 4\) schneidet \(f\) die x-Achse)<br><br>
-                b) \(A'(a) = rac{3}{2} - rac{3}{4}a = 0 \;\Rightarrow\; a = 2\)<br>
-                \(A''(a) = -rac{3}{4} < 0\) → Maximum.<br>
-                \(A(2) = rac{1}{2} \cdot 2 \cdot 1{,}5 = 1{,}5\) FE. <strong>Maximaler Flächeninhalt bei \(a = 2\).</strong>
+                b) \(A'(a) = \frac{3}{2} - \frac{3}{4}a = 0 \;\Rightarrow\; a = 2\)<br>
+                \(A''(a) = -\frac{3}{4} < 0\) → Maximum.<br>
+                \(A(2) = \frac{1}{2} \cdot 2 \cdot 1{,}5 = 1{,}5\) FE. <strong>Maximaler Flächeninhalt bei \(a = 2\).</strong>
             </div>
         </div>
     </div>
@@ -14517,7 +14533,7 @@ ight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
                     <span class="tn">D4.12</span>
                     <span class="td dm">★★</span>
                 </div>
-                <div class="tq">Gegeben ist \(f(x) = -rac{1}{4}x^2 + 4\). Die Punkte \(A(0\,|\,0)\), \(B(a\,|\,0)\) und \(C(a\,|\,f(a))\) bilden ein rechtwinkliges Dreieck im 1. Quadranten.<br>
+                <div class="tq">Gegeben ist \(f(x) = -\frac{1}{4}x^2 + 4\). Die Punkte \(A(0\,|\,0)\), \(B(a\,|\,0)\) und \(C(a\,|\,f(a))\) bilden ein rechtwinkliges Dreieck im 1. Quadranten.<br>
                 a) Stelle die Zielfunktion für den Flächeninhalt auf und gib den Definitionsbereich an.<br>
                 b) Ermittle den Wert von \(a\), für den der Flächeninhalt maximal wird, und gib den maximalen Flächeninhalt an.</div>
                 <div class="tk-toggle">⌄</div>
@@ -14559,13 +14575,13 @@ ight) = rac{3}{2}a - rac{3}{8}a^2\)<br>
                 })();
                 </script>
                 <strong>Lösung:</strong><br>
-                a) \(A(a) = rac{1}{2} \cdot a \cdot f(a) = rac{1}{2}a\left(-rac{1}{4}a^2 + 4
-ight) = -rac{1}{8}a^3 + 2a\)<br>
+                a) \(A(a) = \frac{1}{2} \cdot a \cdot f(a) = \frac{1}{2}a\left(-\frac{1}{4}a^2 + 4
+ight) = -\frac{1}{8}a^3 + 2a\)<br>
                 Definitionsbereich: \(0 < a < 4\) (positive Nullstelle von \(f\))<br><br>
-                b) \(A'(a) = -rac{3}{8}a^2 + 2 = 0 \;\Rightarrow\; a^2 = rac{16}{3} \;\Rightarrow\; a = rac{4}{\sqrt{3}} = rac{4\sqrt{3}}{3} pprox 2{,}31\)<br>
-                \(A''(a) = -rac{3}{4}a < 0\) → Maximum<br>
+                b) \(A'(a) = -\frac{3}{8}a^2 + 2 = 0 \;\Rightarrow\; a^2 = \frac{16}{3} \;\Rightarrow\; a = \frac{4}{\sqrt{3}} = \frac{4\sqrt{3}}{3} \approx 2{,}31\)<br>
+                \(A''(a) = -\frac{3}{4}a < 0\) → Maximum<br>
                 \(A\!\left(	frac{4\sqrt{3}}{3}
-ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac{8\sqrt{3}}{9} + rac{8\sqrt{3}}{3} = rac{16\sqrt{3}}{9} pprox 3{,}08\) FE
+ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\frac{8\sqrt{3}}{9} + \frac{8\sqrt{3}}{3} = \frac{16\sqrt{3}}{9} \approx 3{,}08\) FE
             </div>
         </div>
     </div>
@@ -15730,7 +15746,7 @@ ight) = -rac{1}{8}\cdotrac{64\sqrt{3}}{9} + 2 \cdot rac{4\sqrt{3}}{3} = -rac
             Nullstelle bei \(x = 2\). Auf \([0,2]\): \(f \leq 0\). Auf \([2,3]\): \(f \geq 0\).<br><br>
             \(A_1 = \left|[F]_0^2\right| = \left|\left(\frac{8}{3}-8\right) - 0\right| = \frac{16}{3}\)<br>
             \(A_2 = [F]_2^3 = \left(9-12\right) - \left(\frac{8}{3}-8\right) = \frac{7}{3}\)<br><br>
-            Tatsächlicher Flächeninhalt: \(A = \frac{16}{3} + \frac{7}{3} = \frac{23}{3} \approx 7{,}67\)
+            Tatsächlicher Flächeninhalt: \(A = \frac{16}{3} + \frac{7}{3} = \frac{23}{3} \approx 7{,}67\)
           </div>
         </div>
         <div class="komp-wrap">
