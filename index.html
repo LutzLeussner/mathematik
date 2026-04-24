@@ -18027,31 +18027,31 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
     <div class="section-label">Flächeninhalt mit e-Funktion · Abi-Vorlage</div>
     <div class="card">
-      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Beispiel 3 · 1:1 nach Musterabitur 2025 MV (GK)</span></div>
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Beispiel 3 · Aufgabentyp aktueller MV-Abituraufgaben</span></div>
       <div class="card-body">
-        <div class="ip">Im Musterabitur 2025 (Grundkurs, WTR, Aufgabe 1.2) tauchte folgende Funktion auf: \(f(x) = -e^x + 2\). Wir bestimmen den Flächeninhalt zwischen Graph und x-Achse links der Nullstelle.</div>
+        <div class="ip">Im aktuellen MV-Abitur (Grundkurs) sind Aufgaben vom Typ „Fläche zwischen einer Funktion \(f(x) = c - e^x\) und der x-Achse" eine wiederkehrende Vorlage. Wir üben das mit der eigenen Variante \(f(x) = 3 - e^x\) auf dem Intervall \([-1, \ln 3]\).</div>
         <canvas id="cv-esin-3" style="width:100%;height:280px;background:#fffcf6;border-radius:8px;margin:10px 0"></canvas>
 
         <div class="bsp">
           <div class="bsp-label">Beispiel 3 · vollständig gerechnet</div>
-          <div class="bsp-q">Gegeben ist \(f(x) = -e^x + 2\). a) Bestimme die Nullstelle von \(f\). b) Berechne den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([-1, \ln 2]\).</div>
+          <div class="bsp-q">Gegeben ist \(f(x) = 3 - e^x\). a) Bestimme die Nullstelle von \(f\). b) Berechne den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([-1, \ln 3]\).</div>
           <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
           <div class="bsp-a">
             <div class="ip"><strong>a) Nullstelle:</strong></div>
             <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
-              \(-e^x + 2 = 0 \;\Leftrightarrow\; e^x = 2 \;\Leftrightarrow\; x = \ln 2 \approx 0{,}693\)
+              \(3 - e^x = 0 \;\Leftrightarrow\; e^x = 3 \;\Leftrightarrow\; x = \ln 3 \approx 1{,}099\)
             </div>
-            <div class="ip"><strong>b) Vorzeichenanalyse:</strong> Auf \([-1, \ln 2]\) gilt \(e^x \leq 2\), also \(-e^x + 2 \geq 0\). Der Graph liegt vollständig oberhalb der x-Achse. Flächenbilanz = tatsächlicher Flächeninhalt.</div>
-            <div class="ip"><strong>Stammfunktion:</strong> \(F(x) = -e^x + 2x\)</div>
+            <div class="ip"><strong>b) Vorzeichenanalyse:</strong> Auf \([-1, \ln 3]\) gilt \(e^x \leq 3\), also \(3 - e^x \geq 0\). Der Graph liegt vollständig oberhalb der x-Achse. Flächenbilanz = tatsächlicher Flächeninhalt.</div>
+            <div class="ip"><strong>Stammfunktion:</strong> \(F(x) = 3x - e^x\)</div>
             <div class="ip"><strong>Hauptsatz:</strong></div>
             <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
-              \(A = \displaystyle\int_{-1}^{\ln 2} (-e^x + 2)\,dx = \Big[-e^x + 2x\Big]_{-1}^{\ln 2}\)<br><br>
-              \(\quad = \big(-e^{\ln 2} + 2 \ln 2\big) - \big(-e^{-1} + 2 \cdot (-1)\big)\)<br>
-              \(\quad = \big(-2 + 2\ln 2\big) - \big(-\tfrac{1}{e} - 2\big)\)<br>
-              \(\quad = -2 + 2\ln 2 + \tfrac{1}{e} + 2\)<br>
-              \(\quad = 2\ln 2 + \tfrac{1}{e} \approx 1{,}386 + 0{,}368 = \mathbf{1{,}754}\)
+              \(A = \displaystyle\int_{-1}^{\ln 3} (3 - e^x)\,dx = \Big[3x - e^x\Big]_{-1}^{\ln 3}\)<br><br>
+              \(\quad = \big(3 \ln 3 - e^{\ln 3}\big) - \big(3 \cdot (-1) - e^{-1}\big)\)<br>
+              \(\quad = \big(3\ln 3 - 3\big) - \big(-3 - \tfrac{1}{e}\big)\)<br>
+              \(\quad = 3\ln 3 - 3 + 3 + \tfrac{1}{e}\)<br>
+              \(\quad = 3\ln 3 + \tfrac{1}{e} \approx 3{,}296 + 0{,}368 = \mathbf{3{,}664}\)
             </div>
-            <div class="ip"><em>Der Flächeninhalt beträgt etwa \(1{,}75\) Flächeneinheiten.</em></div>
+            <div class="ip"><em>Der Flächeninhalt beträgt etwa \(3{,}66\) Flächeneinheiten.</em></div>
           </div>
         </div>
       </div>
@@ -18106,9 +18106,9 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="tg">
       <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.1</span><span class="td dm">★★</span></div><div class="tq">Gegeben ist \(f(x) = e^x - 1\).<br>a) <strong>Bestimme</strong> die Nullstelle von \(f\).<br>b) <strong>Berechne</strong> den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([-1, 1]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(e^x - 1 = 0 \Leftrightarrow e^x = 1 \Leftrightarrow x = 0\).<br><br>b) Auf \([-1, 0]\) gilt \(f(x) \leq 0\), auf \([0, 1]\) gilt \(f(x) \geq 0\). Vorzeichenwechsel an \(x=0\) → Beträge der Teilintegrale.<br>Stammfunktion: \(F(x) = e^x - x\).<br>\(A_1 = \big[e^x - x\big]_{-1}^{0} = (1 - 0) - (e^{-1} + 1) = -\tfrac{1}{e}\). Betrag: \(\tfrac{1}{e}\).<br>\(A_2 = \big[e^x - x\big]_0^1 = (e - 1) - (1 - 0) = e - 2\). Bereits positiv.<br>\(A = \tfrac{1}{e} + (e - 2) \approx 0{,}368 + 0{,}718 = \mathbf{1{,}086}\) Flächeneinheiten.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Tatsächlicher Flächeninhalt mit Vorzeichenwechsel und e-Funktion</div></div></div>
 
-      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Anlehnung Musterabi 2025 MV (GK).</strong> Gegeben ist \(f(x) = -e^x + 4\).<br>a) <strong>Bestimme</strong> die Nullstelle von \(f\).<br>b) <strong>Berechne</strong> den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([0, \ln 4]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-e^x + 4 = 0 \Leftrightarrow e^x = 4 \Leftrightarrow x = \ln 4 \approx 1{,}386\).<br><br>b) Auf \([0, \ln 4]\) gilt \(e^x \leq 4\), also \(f(x) \geq 0\). Bilanz = Flächeninhalt.<br>Stammfunktion: \(F(x) = -e^x + 4x\).<br>\(A = \big[-e^x + 4x\big]_0^{\ln 4} = (-4 + 4\ln 4) - (-1 + 0) = -3 + 4\ln 4 \approx -3 + 5{,}545 = \mathbf{2{,}545}\) Flächeneinheiten.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span></div><div class="komp-desc">Aufgabentyp aus aktueller Abiturprüfung MV (GK)</div></div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Aufgabentyp Abitur — eigene Variante.</strong> Gegeben ist \(g(x) = 5 - e^x\).<br>a) <strong>Bestimme</strong> die Nullstelle von \(g\).<br>b) <strong>Berechne</strong> den Flächeninhalt zwischen dem Graphen von \(g\) und der x-Achse auf dem Intervall \([0, \ln 5]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(5 - e^x = 0 \Leftrightarrow e^x = 5 \Leftrightarrow x = \ln 5 \approx 1{,}609\).<br><br>b) Auf \([0, \ln 5]\) gilt \(e^x \leq 5\), also \(g(x) \geq 0\). Bilanz = Flächeninhalt.<br>Stammfunktion: \(G(x) = 5x - e^x\).<br>\(A = \big[5x - e^x\big]_0^{\ln 5} = (5\ln 5 - 5) - (0 - 1) = 5\ln 5 - 4 \approx 8{,}047 - 4 = \mathbf{4{,}047}\) Flächeneinheiten.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span></div><div class="komp-desc">Aufgabentyp im Stil aktueller MV-Abituraufgaben (eigene Variation, kein direkter Übernahme)</div></div></div>
 
-      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Funktionenschar.</strong> Gegeben ist \(f_a(x) = -e^x + a\) mit \(a > 1\).<br>a) <strong>Bestimme</strong> die Nullstelle \(x_a\) in Abhängigkeit von \(a\).<br>b) <strong>Berechne</strong> den Flächeninhalt \(A(a)\) zwischen dem Graphen von \(f_a\) und der x-Achse auf \([0, x_a]\).<br>c) <strong>Bestimme</strong> denjenigen Wert von \(a\), für den \(A(a) = 1\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-e^x + a = 0 \Leftrightarrow x_a = \ln a\). (Da \(a > 1\), ist \(\ln a > 0\).)<br><br>b) Auf \([0, \ln a]\) gilt \(e^x \leq a\), also \(f_a(x) \geq 0\).<br>Stammfunktion: \(F_a(x) = -e^x + a x\).<br>\(A(a) = \big[-e^x + a x\big]_0^{\ln a} = (-a + a\ln a) - (-1) = a\ln a - a + 1\).<br><br>c) \(A(a) = 1 \Leftrightarrow a\ln a - a + 1 = 1 \Leftrightarrow a\ln a - a = 0 \Leftrightarrow a(\ln a - 1) = 0\).<br>Da \(a > 1\), kann \(a = 0\) ausgeschlossen werden. Also \(\ln a = 1 \Leftrightarrow a = e \approx 2{,}718\). <em>Probe:</em> \(A(e) = e \cdot 1 - e + 1 = 1\) ✓<br><div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">K2: Parameter ermitteln, sodass eine Flächeninhaltsbedingung erfüllt ist · K5: Funktionenschar integrieren</div></div></div>
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Funktionenschar.</strong> Gegeben ist \(f_a(x) = a - e^x\) mit \(a > 1\).<br>a) <strong>Bestimme</strong> die Nullstelle \(x_a\) in Abhängigkeit von \(a\).<br>b) <strong>Berechne</strong> den Flächeninhalt \(A(a)\) zwischen dem Graphen von \(f_a\) und der x-Achse auf \([0, x_a]\).<br>c) <strong>Bestimme</strong> denjenigen Wert von \(a\), für den \(A(a) = 1\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(a - e^x = 0 \Leftrightarrow x_a = \ln a\). (Da \(a > 1\), ist \(\ln a > 0\).)<br><br>b) Auf \([0, \ln a]\) gilt \(e^x \leq a\), also \(f_a(x) \geq 0\).<br>Stammfunktion: \(F_a(x) = a x - e^x\).<br>\(A(a) = \big[a x - e^x\big]_0^{\ln a} = (a\ln a - a) - (0 - 1) = a\ln a - a + 1\).<br><br>c) \(A(a) = 1 \Leftrightarrow a\ln a - a + 1 = 1 \Leftrightarrow a\ln a - a = 0 \Leftrightarrow a(\ln a - 1) = 0\).<br>Da \(a > 1\), kann \(a = 0\) ausgeschlossen werden. Also \(\ln a = 1 \Leftrightarrow a = e \approx 2{,}718\). <em>Probe:</em> \(A(e) = e \cdot 1 - e + 1 = 1\) ✓<br><div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">K2: Parameter ermitteln, sodass eine Flächeninhaltsbedingung erfüllt ist · K5: Funktionenschar integrieren</div></div></div>
     </div>
 
 
@@ -18151,9 +18151,45 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
     <script>
     (function(){
+      // Lazy-Init Helfer: zeichnet erst, wenn Canvas tatsächlich eine Breite hat
+      // (kritisch, wenn der Tab beim Page-Load mit display:none versteckt ist)
+      function lazyDraw(canvasId, drawFn) {
+        var c = document.getElementById(canvasId);
+        if (!c) return;
+        var drawn = false;
+        function tryDraw() {
+          if (drawn) return;
+          if (c.clientWidth > 0 && c.clientHeight > 0) {
+            drawFn(c);
+            drawn = true;
+            if (io) io.disconnect();
+          }
+        }
+        tryDraw();
+        var io = null;
+        if (!drawn && window.IntersectionObserver) {
+          io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if (e.isIntersecting) tryDraw(); });
+          });
+          io.observe(c);
+        }
+        // Zusätzlich: bei Tab-Wechsel via Klick (showK11Tab macht .on)
+        // wird der MutationObserver aktiv – als Backup
+        if (!drawn && window.MutationObserver) {
+          var panel = c.closest('.subpanel');
+          if (panel) {
+            var mo = new MutationObserver(function(){
+              if (panel.classList.contains('on')) {
+                setTimeout(tryDraw, 30);
+              }
+            });
+            mo.observe(panel, {attributes: true, attributeFilter: ['class']});
+          }
+        }
+      }
+
       // ── Canvas 1: sin(x) und -cos(x) auf [0, 2π] ──
-      var c1 = document.getElementById('cv-esin-1');
-      if (c1) {
+      lazyDraw('cv-esin-1', function(c1){
         var ctx = c1.getContext('2d');
         var dpr = window.devicePixelRatio || 1;
         var cssW = c1.clientWidth, cssH = c1.clientHeight;
@@ -18205,11 +18241,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         ctx.textAlign = 'left'; ctx.textBaseline = 'top';
         ctx.fillStyle = '#5b6e2e'; ctx.fillText('f(x) = sin x', pad.l + 6, pad.t + 2);
         ctx.fillStyle = '#c75c3a'; ctx.fillText('F(x) = \u2212cos x', pad.l + 6, pad.t + 18);
-      }
+      });
 
       // ── Canvas 2: e^x mit Flächen-Integral [0, ln 2] ──
-      var c2 = document.getElementById('cv-esin-2');
-      if (c2) {
+      lazyDraw('cv-esin-2', function(c2){
         var ctx = c2.getContext('2d');
         var dpr = window.devicePixelRatio || 1;
         var cssW = c2.clientWidth, cssH = c2.clientHeight;
@@ -18268,11 +18303,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         ctx.font = 'bold 12px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
         ctx.fillText('A = 1', tx(ln2 / 2), ty(0.7));
-      }
+      });
 
-      // ── Canvas 3: f(x) = -e^x + 2 (Abi-Vorlage) ──
-      var c3 = document.getElementById('cv-esin-3');
-      if (c3) {
+      // ── Canvas 3: f(x) = 3 - e^x (eigene Variante) ──
+      lazyDraw('cv-esin-3', function(c3){
         var ctx = c3.getContext('2d');
         var dpr = window.devicePixelRatio || 1;
         var cssW = c3.clientWidth, cssH = c3.clientHeight;
@@ -18280,19 +18314,19 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         ctx.scale(dpr, dpr);
         var W = cssW, H = cssH;
         var pad = {l: 36, r: 22, t: 22, b: 32};
-        var xMin = -1.4, xMax = 1.6, yMin = -2.6, yMax = 2.6;
+        var xMin = -1.4, xMax = 1.7, yMin = -3.0, yMax = 3.5;
         function tx(x){ return pad.l + (x - xMin) / (xMax - xMin) * (W - pad.l - pad.r); }
         function ty(y){ return H - pad.b - (y - yMin) / (yMax - yMin) * (H - pad.t - pad.b); }
-        var ln2 = Math.log(2);
+        var ln3 = Math.log(3);
         ctx.fillStyle = 'rgba(91, 110, 46, 0.18)';
         ctx.beginPath();
         ctx.moveTo(tx(-1), ty(0));
         for (var i = 0; i <= 80; i++) {
-          var x = -1 + i / 80 * (ln2 - (-1));
-          var y = -Math.exp(x) + 2;
+          var x = -1 + i / 80 * (ln3 - (-1));
+          var y = 3 - Math.exp(x);
           ctx.lineTo(tx(x), ty(y));
         }
-        ctx.lineTo(tx(ln2), ty(0));
+        ctx.lineTo(tx(ln3), ty(0));
         ctx.closePath(); ctx.fill();
         ctx.strokeStyle = '#333'; ctx.lineWidth = 1.2;
         ctx.beginPath(); ctx.moveTo(pad.l, ty(0)); ctx.lineTo(W - pad.r, ty(0)); ctx.stroke();
@@ -18305,10 +18339,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
           ctx.beginPath(); ctx.moveTo(tx(xv), ty(0) - 3); ctx.lineTo(tx(xv), ty(0) + 3); ctx.stroke();
           ctx.fillText(xv, tx(xv), ty(0) + 5);
         });
-        ctx.beginPath(); ctx.moveTo(tx(ln2), ty(0) - 3); ctx.lineTo(tx(ln2), ty(0) + 3); ctx.stroke();
-        ctx.fillStyle = '#c75c3a'; ctx.fillText('ln 2', tx(ln2), ty(0) + 5);
+        ctx.beginPath(); ctx.moveTo(tx(ln3), ty(0) - 3); ctx.lineTo(tx(ln3), ty(0) + 3); ctx.stroke();
+        ctx.fillStyle = '#c75c3a'; ctx.fillText('ln 3', tx(ln3), ty(0) + 5);
         ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#555';
-        [-2, -1, 1, 2].forEach(function(yv){
+        [-2, -1, 1, 2, 3].forEach(function(yv){
           ctx.beginPath(); ctx.moveTo(tx(0) - 3, ty(yv)); ctx.lineTo(tx(0) + 3, ty(yv)); ctx.stroke();
           ctx.fillText(yv, tx(0) - 6, ty(yv));
         });
@@ -18321,20 +18355,20 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         var firstC3 = true;
         for (var i = 0; i <= 200; i++) {
           var x = xMin + i / 200 * (xMax - xMin);
-          var y = -Math.exp(x) + 2;
+          var y = 3 - Math.exp(x);
           if (y < yMin || y > yMax) { firstC3 = true; continue; }
           if (firstC3) { ctx.moveTo(tx(x), ty(y)); firstC3 = false; } else ctx.lineTo(tx(x), ty(y));
         }
         ctx.stroke();
         ctx.fillStyle = '#c75c3a';
-        ctx.beginPath(); ctx.arc(tx(ln2), ty(0), 4, 0, 2 * Math.PI); ctx.fill();
+        ctx.beginPath(); ctx.arc(tx(ln3), ty(0), 4, 0, 2 * Math.PI); ctx.fill();
         ctx.font = 'bold 14px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
         ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
-        ctx.fillText('f(x) = \u2212e^x + 2', tx(0.6), ty(-1.2));
+        ctx.fillText('f(x) = 3 \u2212 e^x', tx(0.55), ty(-1.6));
         ctx.font = 'bold 13px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillText('A', tx(-0.2), ty(0.9));
-      }
+        ctx.fillText('A', tx(0.0), ty(1.4));
+      });
     })();
     </script>
 
@@ -20452,7 +20486,7 @@ function showK10Tab(id, btn) {
 }
 
 function showK11Tab(id, btn) {
-  ['k11-grenz','k11-ableit','k11-tangenten','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-flaechen'].forEach(function(sid) {
+  ['k11-grenz','k11-ableit','k11-tangenten','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-flaechen','k11-esin'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
