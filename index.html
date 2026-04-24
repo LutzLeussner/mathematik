@@ -12929,6 +12929,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <button class="ptb" onclick="showK11Tab('k11-hauptsatz',this)">Hauptsatz</button>
   <button class="ptb" onclick="showK11Tab('k11-esin',this)">e- &amp; Sinus</button>
   <button class="ptb" onclick="showK11Tab('k11-flaechen',this)">Flächen zw. Kurven</button>
+  <button class="ptb" onclick="showK11Tab('k11-pflicht',this)">Komplexe Aufgaben</button>
 </div>
 <div style="background:#fff;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%">
   <span style="font-size:12px;font-weight:600;color:#666;white-space:nowrap">Klasse 11 · Lernziele:</span>
@@ -18380,6 +18381,360 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
 </div><!-- end int-kurven -->
 
+  <div class="subpanel" id="k11-pflicht">
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">In der schriftlichen Mathematikprüfung am Ende der Qualifikationsphase erwarten dich <strong>komplexe Pflichtaufgaben</strong> aus der Analysis: Eine Funktion wird vorgegeben — du untersuchst sie schrittweise auf Nullstellen, Extrema, Wendestellen, berechnest Tangenten und Flächeninhalte und deutest die Ergebnisse im Sachkontext. Mehrere Bereiche werden also <em>verzahnt</em>: Differential- und Integralrechnung greifen ineinander.</div>
+        <div class="hint"><strong>In diesem Tab:</strong> zwei vollständige Pflichtaufgaben mit jeweils 7–8 Teilaufgaben. Eine ganzrationale Funktion 3. Grades und eine Funktion mit e-Anteil. Beide haben einen Sachkontext und enden mit einer Reflexionsaufgabe. Lösungen ausführlich, mit Zwischenschritten.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Strategie für komplexe Pflichtaufgaben</span></div>
+      <div class="card-body">
+        <div class="two-col">
+          <div>
+            <div class="it">Bevor du rechnest</div>
+            <div class="ip" style="font-size:14px">
+              <strong>①</strong> Funktion und Sachkontext lesen — was bedeutet \(x\) (oder \(t\)), was bedeutet \(f(x)\)?<br>
+              <strong>②</strong> Definitionsbereich beachten (oft eingeschränkt!).<br>
+              <strong>③</strong> Skizze zur Orientierung — ungefähr im Kopf.
+            </div>
+          </div>
+          <div>
+            <div class="it">Während der Bearbeitung</div>
+            <div class="ip" style="font-size:14px">
+              <strong>④</strong> Zwischenergebnisse aufschreiben (auch wenn ein Folgeschritt schiefgeht).<br>
+              <strong>⑤</strong> Bei Sachkontextfragen IMMER eine Antwort im Sachkontext geben (nicht nur Zahl).<br>
+              <strong>⑥</strong> Einheiten mitführen — vor allem bei Integralen!
+            </div>
+          </div>
+        </div>
+        <div class="hint" style="margin-top:12px"><strong>Punktevergabe:</strong> Auch wenn du den Endwert nicht sauber rauskriegst — Zwischenrechnungen werden bewertet. Lieber eine Teillösung sauber aufschreiben als gar nichts.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Das brauchst du</span></div>
+      <div class="card-body">
+        <div class="ip">Dieser Tab setzt alle vorherigen Tabs der K11-Reihe voraus. Bevor du loslegst, solltest du sicher sein in:</div>
+        <ul style="margin:8px 0 0 20px;padding:0">
+          <li><strong>Differentialrechnung:</strong> Ableitungsregeln (Potenz-, Summen-, Faktorregel), notwendige und hinreichende Bedingung fuer Extrema und Wendestellen, Tangente an einem Punkt (Tabs <em>Ableitungen</em>, <em>Tangenten</em>, <em>Kurvendiskussion</em>)</li>
+          <li><strong>Stammfunktion und Hauptsatz:</strong> Stammfunktion einer Polynom- und einer e-Funktion bestimmen, bestimmtes Integral mit Hauptsatz berechnen (Tabs <em>Stammfunktion</em>, <em>Hauptsatz</em>)</li>
+          <li><strong>Integralrechnung:</strong> Bilanz vs. tatsaechlicher Flaecheninhalt unterscheiden, Vorzeichenanalyse durchfuehren (Tab <em>Hauptsatz</em>, Block "Flaechenbilanz und tatsaechlicher Flaechinhalt")</li>
+          <li><strong>e-Funktion:</strong> Stammfunktion von e^x, Werte e^0 = 1 und e^(ln c) = c (Tab <em>e- &amp; Sinus</em>)</li>
+          <li><strong>Sachkontext:</strong> Funktionswerte und Integrale im Sachzusammenhang interpretieren — z. B. Rate vs. Bestand</li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div style="display:flex;align-items:center;gap:18px;margin:36px 0 16px;padding:20px 24px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:50px;color:#8a9da7;line-height:1;font-weight:400;min-width:54px;text-align:center">1</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Pflichtaufgabe · 1</div>
+        <div style="font-size:22px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Wachstumsrate einer Mikroorganismen-Kultur</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;line-height:1.5">Funktionsuntersuchung 3. Grades · Stammfunktion und Bestand · tatsächlicher Flächeninhalt</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="ip" style="font-size:15px"><strong>Aufgabenstellung.</strong> In einem Bioreaktor wird eine Mikroorganismen-Kultur über sieben Tage beobachtet. Die <em>Wachstumsrate</em> der Kultur — also die zeitliche Änderung der Zellzahl pro Tag — wird modelliert durch:</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center;font-size:18px">
+          \(r(t) = t^3 - 9t^2 + 18t \quad\text{für}\; 0 \leq t \leq 7\)
+        </div>
+        <div class="ip" style="font-size:14px;color:var(--ink-muted)"><em>Einheiten:</em> \(t\) in Tagen, \(r(t)\) in 1000 Zellen pro Tag. Negative Werte bedeuten: Die Kultur schrumpft. Zum Zeitpunkt \(t = 0\) sind 50 (in 1000 Zellen) vorhanden.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="ip" style="font-size:13px;color:var(--ink-muted)"><em>Funktionsgraph zur Orientierung</em> — alle markanten Punkte sind eingezeichnet:</div>
+        <canvas id="cv-pa1" style="width:100%;height:300px;background:#fffcf6;border-radius:8px;margin-top:8px"></canvas>
+      </div>
+    </div>
+
+
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.a</span><span class="td de">★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Berechne</strong> die Werte \(r(0)\), \(r(2)\) und \(r(5)\). <strong>Erläutere</strong>, was die Vorzeichen im Sachkontext bedeuten.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(r(0) = 0\) — die Wachstumsrate ist zu Beginn null.<br>\(r(2) = 8 - 36 + 36 = \mathbf{8}\) — die Kultur wächst um 8000 Zellen pro Tag.<br>\(r(5) = 125 - 225 + 90 = \mathbf{-10}\) — die Kultur <em>schrumpft</em> um 10 000 Zellen pro Tag.<br><em>Sachinterpretation:</em> Positives Vorzeichen = Wachstum, negatives Vorzeichen = Schrumpfung. Am Tag 5 verliert die Kultur Zellen (z. B. wegen aufgebrauchter Nährstoffe oder Stress).<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K5: Funktionswerte berechnen · K6: Vorzeichen im Sachkontext deuten</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.b</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Bestimme</strong> alle Nullstellen von \(r\) auf dem Definitionsbereich \([0, 7]\). <strong>Gib</strong> ihre Bedeutung im Sachkontext an.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(r(t) = t \cdot (t^2 - 9t + 18) = t \cdot (t - 3)(t - 6) = 0\)<br>Nullstellen: \(t_1 = 0\), \(t_2 = 3\), \(t_3 = 6\). Alle drei liegen im Definitionsbereich \([0, 7]\).<br><em>Sachinterpretation:</em> An diesen drei Zeitpunkten ist die Wachstumsrate momentan null — die Kultur wächst weder noch schrumpft sie. Bei \(t_1 = 0\): Beobachtungsbeginn. Bei \(t_2 = 3\) und \(t_3 = 6\): Übergänge zwischen Wachstums- und Schrumpfungsphasen.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">Nullstellen einer faktorisierbaren Polynom-Funktion und Sachkontext-Deutung</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.c</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">5 BE</span></div><div class="tq"><strong>Bestimme</strong> die Extremstellen von \(r\) auf \([0, 7]\) und die zugehörigen Funktionswerte. <strong>Gib</strong> die maximale Wachstumsrate (in 1000 Zellen pro Tag) an.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(r'(t) = 3t^2 - 18t + 18\)<br>Notwendige Bedingung: \(r'(t) = 0 \Leftrightarrow t^2 - 6t + 6 = 0 \Leftrightarrow t = 3 \pm \sqrt{3}\)<br>Numerisch: \(t_M \approx 1{,}268\) und \(t_m \approx 4{,}732\) (beide im Definitionsbereich).<br><br>Hinreichende Bedingung über \(r''(t) = 6t - 18\):<br>\(r''(1{,}268) = 6 \cdot 1{,}268 - 18 = -10{,}39 < 0\) → <strong>Hochpunkt</strong>.<br>\(r''(4{,}732) = 6 \cdot 4{,}732 - 18 = 10{,}39 > 0\) → <strong>Tiefpunkt</strong>.<br><br>Funktionswerte:<br>\(r(t_M) = r(3 - \sqrt{3}) = 6\sqrt{3} \approx \mathbf{10{,}39}\)<br>\(r(t_m) = r(3 + \sqrt{3}) = -6\sqrt{3} \approx -10{,}39\)<br><br><em>Sachinterpretation:</em> Die maximale Wachstumsrate beträgt etwa <strong>10 390 Zellen pro Tag</strong> und wird am Tag \(\approx 1{,}27\) erreicht. Die größte Schrumpfungsrate liegt bei etwa 10 390 Zellen pro Tag am Tag \(\approx 4{,}73\).<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Extrema bestimmen mit notwendiger und hinreichender Bedingung</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.d</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Bestimme</strong> die Wendestelle von \(r\) und <strong>erläutere</strong> ihre Bedeutung für die Wachstumsdynamik.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(r''(t) = 6t - 18 = 0 \Leftrightarrow t = 3\). \(r'''(t) = 6 \neq 0\) → tatsächlich Wendestelle.<br>\(r(3) = 27 - 81 + 54 = 0\). <strong>Wendepunkt: \(W(3 \mid 0)\)</strong>.<br><em>Sachinterpretation:</em> Bei \(t = 3\) wechselt die Wachstumsdynamik ihren Charakter. Vor der Wendestelle wird das Wachstum „schwächer" (Bremsphase), danach verstärkt sich die Schrumpfung. Genau hier liegt der Übergang von einem Maximum (vorher) zu einem Minimum (nachher) der Wachstumsrate.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">Wendestelle bestimmen und im Sachkontext deuten</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.e</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Bestimme</strong> die Gleichung der Tangente an den Graphen von \(r\) im Punkt \(P\big(2 \mid r(2)\big)\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(P(2 \mid 8)\) (siehe P1.a). Tangentensteigung: \(r'(2) = 3 \cdot 4 - 18 \cdot 2 + 18 = 12 - 36 + 18 = -6\).<br>Punkt-Steigungs-Form: \(y - 8 = -6 \cdot (x - 2) \Leftrightarrow y = -6x + 12 + 8\).<br><strong>Tangente: \(t(x) = -6x + 20\)</strong>.<br>Probe: \(t(2) = -12 + 20 = 8 = r(2)\) ✓<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Tangentengleichung mit Ableitung und Punkt-Steigungs-Form</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.f</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Bestimme</strong> die Stammfunktion \(R(t)\) von \(r(t)\). <strong>Gib</strong> dann den Bestand \(N(t)\) (in 1000 Zellen) als Funktion der Zeit an, wenn zum Zeitpunkt \(t = 0\) genau 50 (in 1000 Zellen) vorhanden sind.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Stammfunktion: \(R(t) = \tfrac{1}{4}t^4 - 3 t^3 + 9 t^2 + C\). Probe: \(R'(t) = t^3 - 9 t^2 + 18 t = r(t)\) ✓<br><br>Bestand = Anfangsbestand + Integral der Wachstumsrate:<br>\(N(t) = 50 + \displaystyle\int_0^t r(s)\,ds = 50 + \big[\tfrac{1}{4}s^4 - 3 s^3 + 9 s^2\big]_0^t\)<br>\(\boxed{N(t) = \tfrac{1}{4} t^4 - 3 t^3 + 9 t^2 + 50}\)<br>Probe: \(N(0) = 50\) ✓<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K5: Stammfunktion · K6: Integral als rekonstruierten Bestand deuten</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.g</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Berechne</strong> den Bestand der Kultur am Tag 6. <strong>Erläutere</strong> dein Ergebnis im Sachkontext.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(N(6) = \tfrac{1}{4} \cdot 6^4 - 3 \cdot 6^3 + 9 \cdot 6^2 + 50 = \tfrac{1296}{4} - 648 + 324 + 50 = 324 - 648 + 324 + 50 = \mathbf{50}\)<br><br><em>Sachinterpretation:</em> Am Tag 6 hat die Kultur exakt wieder ihren Anfangsbestand (50 000 Zellen). Das ist <em>kein</em> Zufall: Auf \([0, 3]\) war die Wachstumsrate positiv (Bilanz: \(+\tfrac{81}{4}\)), auf \([3, 6]\) war sie negativ mit gleichem Betrag (Bilanz: \(-\tfrac{81}{4}\)). Beide Beiträge heben sich auf — Bilanz null. Achtung: Die Kultur war zwischendurch deutlich größer (am Tag 3 etwa 70 250 Zellen).<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">Bestandsfunktion auswerten und symmetrische Bilanz im Sachkontext deuten</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P1.h</span><span class="td dh">★★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">4 BE</span></div><div class="tq"><strong>Berechne</strong> den tatsächlichen Flächeninhalt zwischen dem Graphen von \(r\) und der \(t\)-Achse auf dem Intervall \([0, 7]\). <strong>Erläutere</strong>, was diese Größe im Sachkontext bedeutet — und warum sie sich von der Bestandsänderung zwischen Tag 0 und Tag 7 unterscheidet.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Vorzeichenanalyse: Nullstellen bei \(t = 0, 3, 6\). Auf \([0, 3]\): \(r \geq 0\). Auf \([3, 6]\): \(r \leq 0\). Auf \([6, 7]\): \(r \geq 0\) (Probe \(r(7) = 343 - 441 + 126 = 28 > 0\) ✓).<br><br>Teilintegrale:<br>\(I_1 = \big[R(t)\big]_0^3 = \tfrac{81}{4} - 81 + 81 = \tfrac{81}{4} = 20{,}25\)<br>\(I_2 = \big[R(t)\big]_3^6 = (324 - 648 + 324) - \tfrac{81}{4} = 0 - \tfrac{81}{4} = -\tfrac{81}{4} = -20{,}25\)<br>\(I_3 = \big[R(t)\big]_6^7 = (\tfrac{2401}{4} - 1029 + 441) - 0 = \tfrac{2401 - 2352}{4} = \tfrac{49}{4} = 12{,}25\)<br><br>Tatsächlicher Flächeninhalt: \(A = |I_1| + |I_2| + |I_3| = 20{,}25 + 20{,}25 + 12{,}25 = \mathbf{52{,}75}\)<br><br><em>Sachinterpretation:</em> Der tatsächliche Flächeninhalt entspricht der <strong>Gesamtmenge an Zellbewegungen</strong>: ca. 52 750 Zellen wurden zwischen Tag 0 und Tag 7 entweder produziert oder abgebaut. Die <em>Bestandsänderung</em> zwischen Tag 0 und Tag 7 dagegen ist nur \(N(7) - N(0) = 62{,}25 - 50 = 12{,}25\) (in 1000 Zellen) — also nur die <em>Bilanz</em>. Wachstum und Schrumpfung gleichen sich teilweise aus, deshalb ist der tatsächliche Umsatz viel größer als der Nettobestand.<br><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">Tatsächlicher Flächeninhalt mit Vorzeichenwechsel · K6-Schwerpunkt: Bilanz vs. Umsatz im Sachkontext sauber trennen</div></div></div>
+    </div>
+
+
+    <div style="display:flex;align-items:center;gap:18px;margin:48px 0 16px;padding:20px 24px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:50px;color:#c8b55e;line-height:1;font-weight:400;min-width:54px;text-align:center">2</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Pflichtaufgabe · 2</div>
+        <div style="font-size:22px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Eine Funktion mit e-Anteil</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;line-height:1.5">Funktionsuntersuchung mit Exponentialterm · mittlere Steigung · Tangente · Flächeninhalt · Reflexion</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="ip" style="font-size:15px"><strong>Aufgabenstellung.</strong> Gegeben ist die Funktion</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center;font-size:18px">
+          \(f(x) = e^x - x - 1 \quad\text{für}\; x \in [-1, 2]\)
+        </div>
+        <div class="ip" style="font-size:14px;color:var(--ink-muted)"><em>Hinweis:</em> Diese Funktion taucht häufig in technischen Anwendungen auf — etwa beim Vergleich exponentieller Wachstums- mit linearen Beobachtungsmodellen.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="ip" style="font-size:13px;color:var(--ink-muted)"><em>Funktionsgraph zur Orientierung</em> mit Tiefpunkt und der Tangente \(g(x) = x + 1\) (siehe P2.g):</div>
+        <canvas id="cv-pa2" style="width:100%;height:300px;background:#fffcf6;border-radius:8px;margin-top:8px"></canvas>
+      </div>
+    </div>
+
+
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.a</span><span class="td de">★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Weise nach</strong>, dass \(f\) bei \(x_0 = 0\) eine Nullstelle hat. <strong>Untersuche</strong>, ob es im Definitionsbereich weitere Nullstellen gibt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Nachweis: \(f(0) = e^0 - 0 - 1 = 1 - 0 - 1 = 0\) ✓<br><br>Weitere Nullstellen: Wir untersuchen die Ableitung \(f'(x) = e^x - 1\). Setzen wir gleich null: \(e^x = 1 \Leftrightarrow x = 0\). Da \(f''(x) = e^x > 0\) für alle \(x\), ist \(x = 0\) ein <strong>Tiefpunkt</strong> mit \(f(0) = 0\). Die Funktion ist also überall \(\geq 0\) und nimmt den Wert null nur bei \(x = 0\) an. <strong>Es gibt keine weiteren Nullstellen.</strong><br><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">Nullstelle nachweisen und Eindeutigkeit über Monotonie/Extremum begründen</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.b</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Bestimme</strong> den Tiefpunkt von \(f\) (mit notwendiger und hinreichender Bedingung).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(f'(x) = e^x - 1\). Notwendige Bedingung: \(f'(x) = 0 \Leftrightarrow e^x = 1 \Leftrightarrow x = 0\).<br>\(f''(x) = e^x\). Hinreichende Bedingung: \(f''(0) = e^0 = 1 > 0\) → <strong>Tiefpunkt</strong>.<br>Funktionswert: \(f(0) = 0\) (siehe P2.a). <strong>Tiefpunkt: \(T(0 \mid 0)\)</strong>.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Extremstelle einer Funktion mit Exponentialterm bestimmen</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.c</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">2 BE</span></div><div class="tq"><strong>Begründe</strong> ohne Rechnung, dass \(f\) keinen Wendepunkt besitzt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Eine Wendestelle erfordert \(f''(x) = 0\) mit Vorzeichenwechsel. Hier gilt aber \(f''(x) = e^x > 0\) für <em>alle</em> \(x\) (die Exponentialfunktion ist immer positiv). Damit hat \(f''\) gar keine Nullstelle — folglich existiert keine Wendestelle. Der Graph ist auf dem ganzen Definitionsbereich linksgekrümmt (konvex).<br><div class="komp-wrap"><span class="kb kb-k1">K1</span></div><div class="komp-desc">Argumentation über das Vorzeichen der zweiten Ableitung</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.d</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Berechne</strong> die mittlere Änderungsrate (durchschnittliche Steigung) von \(f\) auf dem Intervall \([0, 2]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(\bar m = \dfrac{f(2) - f(0)}{2 - 0} = \dfrac{(e^2 - 2 - 1) - 0}{2} = \dfrac{e^2 - 3}{2}\)<br><br>Numerisch: \(e^2 \approx 7{,}389\), also \(\bar m \approx \dfrac{7{,}389 - 3}{2} = \dfrac{4{,}389}{2} \approx \mathbf{2{,}194}\).<br><em>Deutung:</em> Im Intervall \([0, 2]\) steigt der Funktionswert im Schnitt um etwa 2,194 Einheiten pro x-Einheit.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Differenzenquotient als mittlere Änderungsrate</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.e</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">3 BE</span></div><div class="tq"><strong>Bestimme</strong> die Gleichung der Tangente an den Graphen von \(f\) im Punkt \(P\big(1 \mid f(1)\big)\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">\(f(1) = e - 1 - 1 = e - 2 \approx 0{,}718\). Tangentensteigung: \(f'(1) = e^1 - 1 = e - 1 \approx 1{,}718\).<br>Punkt-Steigungs-Form: \(y - (e - 2) = (e - 1)(x - 1)\)<br>Auflösen: \(y = (e - 1) x - (e - 1) + (e - 2) = (e - 1) x - 1\).<br><strong>Tangente: \(t(x) = (e - 1) x - 1 \approx 1{,}718 x - 1\)</strong>.<br>Probe: \(t(1) = e - 1 - 1 = e - 2 = f(1)\) ✓<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Tangentengleichung an Funktion mit Exponentialterm</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.f</span><span class="td dm">★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">4 BE</span></div><div class="tq"><strong>Berechne</strong> den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([0, 1]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Vorzeichenanalyse: Auf \([0, 1]\) ist \(f(x) \geq 0\) (siehe P2.a/P2.b: Tiefpunkt bei 0 mit Wert 0, dann monoton steigend). Bilanz = Flächeninhalt.<br>Stammfunktion: \(F(x) = e^x - \tfrac{1}{2} x^2 - x\). Probe: \(F'(x) = e^x - x - 1 = f(x)\) ✓<br>Hauptsatz:<br>\(A = \displaystyle\int_0^1 f(x)\,dx = \big[e^x - \tfrac{1}{2} x^2 - x\big]_0^1\)<br>\(\quad = (e - \tfrac{1}{2} - 1) - (1 - 0 - 0) = e - \tfrac{5}{2} \approx \mathbf{0{,}218}\) Flächeneinheiten.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Bestimmtes Integral mit gemischtem Polynom-/Exponential-Integranden</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">P2.g</span><span class="td dh">★★★</span><span style="margin-left:auto;font-size:11px;color:#888;font-weight:600">4 BE</span></div><div class="tq"><strong>Untersuche</strong> die Lage des Graphen von \(f\) zur Geraden \(g: y = x + 1\) auf dem Definitionsbereich. <strong>Begründe</strong> deine Antwort. <strong>Erläutere</strong>, in welchem Punkt sich Graph und Gerade berühren — und welche besondere geometrische Bedeutung diese Berührung hat.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Setze \(d(x) = e^x - g(x) = e^x - (x + 1)\). Damit gilt \(f(x) = e^x - x - 1 = d(x)\), also <strong>\(f(x)\) misst direkt den Abstand zwischen \(e^x\) und \(g\)</strong>.<br><br>Wir wissen aus P2.a/P2.b: \(f(x) \geq 0\) für alle \(x\), Gleichheit nur bei \(x = 0\). Also \(e^x \geq x + 1\) für alle \(x\), Gleichheit nur bei \(x = 0\).<br><br>Geometrisch bedeutet das: Der Graph von \(y = e^x\) liegt überall <em>oberhalb</em> der Geraden \(y = x + 1\), berührt sie aber bei \(x = 0\) (Punkt \((0 \mid 1)\)). Dort gilt: \(e^0 = 1\) ✓ und Tangentensteigung \(\tfrac{d}{dx} e^x \big|_{x=0} = e^0 = 1 = \) Steigung der Geraden.<br><br><strong>Geometrische Bedeutung:</strong> Die Gerade \(y = x + 1\) ist die <em>Tangente</em> an die Exponentialkurve im Punkt \((0 \mid 1)\). Die Aussage \(e^x \geq x + 1\) ist als <strong>Tangentenungleichung</strong> bekannt — eine grundlegende Eigenschaft konvexer Funktionen.<br><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K1: Aussage über Funktionslage begründen · K6: geometrische Bedeutung der Tangentenungleichung erkennen</div></div></div>
+    </div>
+
+
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid #c8b55e;margin-top:36px">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:#8a7a30">✓ Selbstlerncheck — Strategie für komplexe Aufgaben</div>
+        <div class="ip">
+          <p>Bevor du in die schriftliche Prüfung gehst — kannst du diese Strategiefragen beantworten?</p>
+          <ol>
+            <li>In welcher Reihenfolge bearbeitest du die Teilaufgaben einer Pflichtaufgabe? Was tust du, wenn du eine Teilaufgabe nicht lösen kannst?</li>
+            <li>Wie unterscheidest du in einer Funktionsuntersuchung systematisch zwischen <em>notwendiger</em> und <em>hinreichender</em> Bedingung bei Extrema und Wendestellen?</li>
+            <li>Welche Frage stellst du dir bei jeder Sachkontextaufgabe, bevor du den Endwert hinschreibst?</li>
+            <li>Bei einem Integral mit Vorzeichenwechsel im Integrationsbereich: Was ist der Unterschied zwischen „Bilanz" und „tatsächlichem Flächeninhalt"? Wann fragt eine Aufgabe nach dem einen, wann nach dem anderen?</li>
+            <li>Wenn eine Aufgabe „begründe ohne Rechnung" verlangt — welche Argumente sind hier zulässig und besonders schnell? (Tipp: Vorzeichen, Symmetrie, Monotonie)</li>
+          </ol>
+          <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+            Wenn du bei einer Frage unsicher bist: Frage 1 → Strategie-Karte am Tab-Anfang. Frage 2 → P1.c und P2.b. Frage 3 → Sachinterpretation in P1.a, P1.g, P1.h. Frage 4 → P1.h. Frage 5 → P2.c und P2.g.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  
+    <script>
+    (function(){
+      function lazyDraw(canvasId, drawFn) {
+        var c = document.getElementById(canvasId);
+        if (!c) return;
+        var drawn = false;
+        function tryDraw() {
+          if (drawn) return;
+          if (c.clientWidth > 0 && c.clientHeight > 0) {
+            drawFn(c); drawn = true;
+            if (io) io.disconnect();
+          }
+        }
+        tryDraw();
+        var io = null;
+        if (!drawn && window.IntersectionObserver) {
+          io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if (e.isIntersecting) tryDraw(); });
+          });
+          io.observe(c);
+        }
+        if (!drawn && window.MutationObserver) {
+          var panel = c.closest('.subpanel');
+          if (panel) {
+            var mo = new MutationObserver(function(){
+              if (panel.classList.contains('on')) setTimeout(tryDraw, 30);
+            });
+            mo.observe(panel, {attributes: true, attributeFilter: ['class']});
+          }
+        }
+      }
+
+      // ── PA1: r(t) = t^3 - 9t^2 + 18t auf [0,7] ──
+      lazyDraw('cv-pa1', function(c){
+        var ctx = c.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var cssW = c.clientWidth, cssH = c.clientHeight;
+        c.width = cssW*dpr; c.height = cssH*dpr; ctx.scale(dpr,dpr);
+        var W=cssW, H=cssH, pad={l:42, r:18, t:18, b:30};
+        var xMin=-0.3, xMax=7.5, yMin=-13, yMax=14;
+        function tx(x){ return pad.l + (x-xMin)/(xMax-xMin)*(W-pad.l-pad.r); }
+        function ty(y){ return H-pad.b - (y-yMin)/(yMax-yMin)*(H-pad.t-pad.b); }
+        // Achsen
+        ctx.strokeStyle='#333'; ctx.lineWidth=1.2;
+        ctx.beginPath(); ctx.moveTo(pad.l, ty(0)); ctx.lineTo(W-pad.r, ty(0)); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0), H-pad.b); ctx.stroke();
+        // Pfeilspitzen
+        ctx.fillStyle='#333';
+        ctx.beginPath(); ctx.moveTo(W-pad.r, ty(0)); ctx.lineTo(W-pad.r-7, ty(0)-4); ctx.lineTo(W-pad.r-7, ty(0)+4); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0)-4, pad.t+7); ctx.lineTo(tx(0)+4, pad.t+7); ctx.closePath(); ctx.fill();
+        // Tick-Labels x
+        ctx.font='12px Inter, system-ui'; ctx.fillStyle='#555'; ctx.textAlign='center'; ctx.textBaseline='top';
+        for (var i=1; i<=7; i++) {
+          ctx.beginPath(); ctx.moveTo(tx(i), ty(0)-3); ctx.lineTo(tx(i), ty(0)+3); ctx.stroke();
+          ctx.fillText(i, tx(i), ty(0)+5);
+        }
+        // Tick-Labels y
+        ctx.textAlign='right'; ctx.textBaseline='middle';
+        [-10,-5,5,10].forEach(function(yv){
+          ctx.beginPath(); ctx.moveTo(tx(0)-3, ty(yv)); ctx.lineTo(tx(0)+3, ty(yv)); ctx.stroke();
+          ctx.fillText(yv, tx(0)-6, ty(yv));
+        });
+        // Achsen-Labels
+        ctx.font='bold 13px Inter, system-ui'; ctx.fillStyle='#333';
+        ctx.textAlign='right'; ctx.textBaseline='bottom'; ctx.fillText('t', W-pad.r-4, ty(0)-4);
+        ctx.textAlign='left'; ctx.textBaseline='top'; ctx.fillText('r(t)', tx(0)+6, pad.t);
+        // Ursprung
+        ctx.font='12px Inter, system-ui'; ctx.fillStyle='#888';
+        ctx.textAlign='right'; ctx.textBaseline='top'; ctx.fillText('O', tx(0)-5, ty(0)+5);
+        // Funktionsgraph
+        ctx.strokeStyle='#5b6e2e'; ctx.lineWidth=2; ctx.beginPath();
+        var first=true;
+        for (var k=0; k<=210; k++) {
+          var x = 0 + k/210 * 7;
+          var y = x*x*x - 9*x*x + 18*x;
+          if (y < yMin || y > yMax) { first=true; continue; }
+          if (first) { ctx.moveTo(tx(x), ty(y)); first=false; } else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        // Markante Punkte: Nullstellen 0,3,6 + Extrema (3-sqrt3) und (3+sqrt3) + Wendestelle 3
+        ctx.fillStyle='#c75c3a';
+        var sqrt3 = Math.sqrt(3);
+        // Nullstellen
+        [{x:0, y:0, lab:'(0|0)', dx:0, dy:14},
+         {x:3, y:0, lab:'(3|0)', dx:0, dy:14},
+         {x:6, y:0, lab:'(6|0)', dx:0, dy:14}].forEach(function(p){
+          ctx.beginPath(); ctx.arc(tx(p.x), ty(p.y), 3.5, 0, 2*Math.PI); ctx.fill();
+        });
+        // Extrema
+        var tM = 3 - sqrt3, tm = 3 + sqrt3;
+        var rM = 6*sqrt3, rm = -6*sqrt3;
+        ctx.fillStyle='#c8b55e';
+        ctx.beginPath(); ctx.arc(tx(tM), ty(rM), 4, 0, 2*Math.PI); ctx.fill();
+        ctx.beginPath(); ctx.arc(tx(tm), ty(rm), 4, 0, 2*Math.PI); ctx.fill();
+        // Wendestelle (3,0) — bereits oben als Nullstelle markiert
+        // Funktionslabel
+        ctx.font='bold 13px Inter, system-ui'; ctx.fillStyle='#5b6e2e';
+        ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText('r(t) = t^3 - 9t^2 + 18t', tx(3.5), ty(11.5));
+        // Punktbeschriftungen
+        ctx.font='11px Inter, system-ui'; ctx.fillStyle='#888';
+        ctx.textAlign='center'; ctx.textBaseline='bottom';
+        ctx.fillStyle='#c8b55e';
+        ctx.fillText('Hochpunkt', tx(tM), ty(rM)-7);
+        ctx.fillText('Tiefpunkt', tx(tm), ty(rm)+15);
+        ctx.textBaseline='top';
+      });
+
+      // ── PA2: f(x) = e^x - x - 1 auf [-1, 2] mit Tangente y = x+1 ──
+      lazyDraw('cv-pa2', function(c){
+        var ctx = c.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var cssW = c.clientWidth, cssH = c.clientHeight;
+        c.width = cssW*dpr; c.height = cssH*dpr; ctx.scale(dpr,dpr);
+        var W=cssW, H=cssH, pad={l:38, r:18, t:18, b:30};
+        var xMin=-1.4, xMax=2.4, yMin=-2.5, yMax=8;
+        function tx(x){ return pad.l + (x-xMin)/(xMax-xMin)*(W-pad.l-pad.r); }
+        function ty(y){ return H-pad.b - (y-yMin)/(yMax-yMin)*(H-pad.t-pad.b); }
+        // Achsen
+        ctx.strokeStyle='#333'; ctx.lineWidth=1.2;
+        ctx.beginPath(); ctx.moveTo(pad.l, ty(0)); ctx.lineTo(W-pad.r, ty(0)); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0), H-pad.b); ctx.stroke();
+        ctx.fillStyle='#333';
+        ctx.beginPath(); ctx.moveTo(W-pad.r, ty(0)); ctx.lineTo(W-pad.r-7, ty(0)-4); ctx.lineTo(W-pad.r-7, ty(0)+4); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0)-4, pad.t+7); ctx.lineTo(tx(0)+4, pad.t+7); ctx.closePath(); ctx.fill();
+        // Tick-Labels x
+        ctx.font='12px Inter, system-ui'; ctx.fillStyle='#555'; ctx.textAlign='center'; ctx.textBaseline='top';
+        [-1, 1, 2].forEach(function(xv){
+          ctx.beginPath(); ctx.moveTo(tx(xv), ty(0)-3); ctx.lineTo(tx(xv), ty(0)+3); ctx.stroke();
+          ctx.fillText(xv, tx(xv), ty(0)+5);
+        });
+        // Tick-Labels y
+        ctx.textAlign='right'; ctx.textBaseline='middle';
+        [-2, 1, 2, 4, 6].forEach(function(yv){
+          ctx.beginPath(); ctx.moveTo(tx(0)-3, ty(yv)); ctx.lineTo(tx(0)+3, ty(yv)); ctx.stroke();
+          ctx.fillText(yv, tx(0)-6, ty(yv));
+        });
+        // Achsen-Labels
+        ctx.font='bold 13px Inter, system-ui'; ctx.fillStyle='#333';
+        ctx.textAlign='right'; ctx.textBaseline='bottom'; ctx.fillText('x', W-pad.r-4, ty(0)-4);
+        ctx.textAlign='left'; ctx.textBaseline='top'; ctx.fillText('y', tx(0)+6, pad.t);
+        // Ursprung
+        ctx.font='12px Inter, system-ui'; ctx.fillStyle='#888';
+        ctx.textAlign='right'; ctx.textBaseline='top'; ctx.fillText('O', tx(0)-5, ty(0)+5);
+        // f(x) = e^x - x - 1
+        ctx.strokeStyle='#5b6e2e'; ctx.lineWidth=2; ctx.beginPath();
+        var first=true;
+        for (var k=0; k<=200; k++) {
+          var x = -1 + k/200 * 3;
+          var y = Math.exp(x) - x - 1;
+          if (y < yMin || y > yMax) { first=true; continue; }
+          if (first) { ctx.moveTo(tx(x), ty(y)); first=false; } else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        // Optional: e^x als hellere Kurve, damit man die Tangentenungleichung sieht
+        ctx.strokeStyle='rgba(138, 157, 167, 0.7)'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]); ctx.beginPath();
+        first=true;
+        for (var k=0; k<=200; k++) {
+          var x = -1 + k/200 * 3;
+          var y = Math.exp(x);
+          if (y < yMin || y > yMax) { first=true; continue; }
+          if (first) { ctx.moveTo(tx(x), ty(y)); first=false; } else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        // Tangente y = x + 1 (auf [-1.4, 2.4])
+        ctx.strokeStyle='#c75c3a'; ctx.lineWidth=1.5; ctx.setLineDash([]);
+        ctx.beginPath();
+        ctx.moveTo(tx(-1.4), ty(-1.4 + 1));
+        ctx.lineTo(tx(2.4), ty(2.4 + 1));
+        ctx.stroke();
+        // Tiefpunkt T(0|0) markieren
+        ctx.fillStyle='#c8b55e';
+        ctx.beginPath(); ctx.arc(tx(0), ty(0), 4, 0, 2*Math.PI); ctx.fill();
+        // Beruehrpunkt (0,1) auf e^x markieren
+        ctx.fillStyle='#c75c3a';
+        ctx.beginPath(); ctx.arc(tx(0), ty(1), 3.5, 0, 2*Math.PI); ctx.fill();
+        // Labels
+        ctx.font='bold 13px Inter, system-ui'; ctx.fillStyle='#5b6e2e';
+        ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText('f(x) = e^x - x - 1', tx(0.05), ty(5.5));
+        ctx.fillStyle='#8a9da7';
+        ctx.fillText('e^x', tx(1.7), ty(5));
+        ctx.fillStyle='#c75c3a';
+        ctx.fillText('g(x) = x + 1', tx(1.4), ty(2.0));
+        // Tiefpunkt-Label
+        ctx.font='11px Inter, system-ui'; ctx.fillStyle='#c8b55e';
+        ctx.textAlign='left'; ctx.textBaseline='top';
+        ctx.fillText('T(0|0)', tx(0.05), ty(0)+6);
+      });
+    })();
+    </script>
+
+  </div><!-- end k11-pflicht -->
+
+
 
 
 </div><!-- end k11 main -->
@@ -20492,7 +20847,7 @@ function showK10Tab(id, btn) {
 }
 
 function showK11Tab(id, btn) {
-  ['k11-grenz','k11-ableit','k11-tangenten','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-esin','k11-flaechen'].forEach(function(sid) {
+  ['k11-grenz','k11-ableit','k11-tangenten','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-esin','k11-flaechen','k11-pflicht'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
