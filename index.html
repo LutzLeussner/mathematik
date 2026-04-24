@@ -12928,6 +12928,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <button class="ptb" onclick="showK11Tab('k11-grafisch',this)">Graf. Integrieren</button>
   <button class="ptb" onclick="showK11Tab('k11-hauptsatz',this)">Hauptsatz</button>
   <button class="ptb" onclick="showK11Tab('k11-flaechen',this)">Flächen zw. Kurven</button>
+  <button class="ptb" onclick="showK11Tab('k11-esin',this)">e- &amp; Sinus</button>
 </div>
 <div style="background:#fff;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%">
   <span style="font-size:12px;font-weight:600;color:#666;white-space:nowrap">Klasse 11 · Lernziele:</span>
@@ -17902,6 +17903,443 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 </div>
 
 </div><!-- end int-kurven -->
+
+  <div class="subpanel" id="k11-esin">
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Aus der Steckdose kommt Wechselstrom: Die Stromstärke pulsiert sinusförmig zwischen positiven und negativen Werten. Trotzdem fließt elektrische Ladung — und Geräte arbeiten mit einer konstanten mittleren Leistung. Wie passt das zusammen? Die Antwort liefert das Integral über die Sinusfunktion. Genauso liefert das Integral über eine exponentielle Wachstumsrate \(f(t)=e^t\) die tatsächliche Bestandszunahme.</div>
+        <div class="hint"><strong>In diesem Tab:</strong> Du wendest den Hauptsatz auf die Stammfunktionen \(e^x\), \(\sin x\) und \(\cos x\) an. Du übst, wie sich die Vorzeichenfalle bei der Sinuskurve auf den tatsächlichen Flächeninhalt auswirkt — und löst eine Aufgabe vom Typ aus dem aktuellen MV-Abitur.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Das brauchst du</span></div>
+      <div class="card-body">
+        <div class="ip">Bevor du loslegst — diese Inhalte aus den vorherigen Tabs solltest du sicher beherrschen:</div>
+        <ul style="margin:8px 0 0 20px;padding:0">
+          <li>Stammfunktionen-Tabelle für \(x^n\), \(e^x\), \(\sin x\) und \(\cos x\) (Tab <em>Stammfunktion</em>)</li>
+          <li>Hauptsatz: \(\int_a^b f(x)\,dx = F(b) - F(a)\) (Tab <em>Hauptsatz</em>)</li>
+          <li>Unterscheidung Flächenbilanz ↔ tatsächlicher Flächeninhalt (Tab <em>Hauptsatz</em>)</li>
+          <li>Werte \(e^0 = 1\), \(\ln 1 = 0\), \(\ln 2 \approx 0{,}693\)</li>
+          <li>Werte von \(\sin\) und \(\cos\) an \(0,\;\tfrac{\pi}{2},\;\pi,\;\tfrac{3\pi}{2},\;2\pi\)</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="section-label">Stammfunktionen wiederholt — kompakt</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die vier Grundstammfunktionen</span></div>
+      <div class="card-body">
+        <div class="ip">Du kennst alle vier Stammfunktionen schon — hier nochmal als Übersicht, damit du sie für diesen Tab griffbereit hast:</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;font-size:16px;text-align:center;line-height:2">
+          \(\displaystyle\int x^n\,dx = \tfrac{x^{n+1}}{n+1}+C\) &nbsp;<span style="color:#aaa">(\(n\neq -1\))</span><br>
+          \(\displaystyle\int e^x\,dx = e^x+C\) &nbsp;<span style="color:#aaa">(Funktion = Stammfunktion!)</span><br>
+          \(\displaystyle\int \sin x\,dx = -\cos x+C\) &nbsp;<span style="color:#aaa">(Vorzeichenwechsel!)</span><br>
+          \(\displaystyle\int \cos x\,dx = \phantom{-}\sin x+C\)
+        </div>
+        <div class="two-col" style="margin-top:14px">
+          <div>
+            <div class="it">Sonderrolle der e-Funktion</div>
+            <div class="ip">Beim Ableiten und beim Integrieren ändert sich nichts: \(e^x\) ist seine eigene Ableitung <em>und</em> seine eigene Stammfunktion. Die Integrationskonstante \(C\) ist der einzige Unterschied.</div>
+          </div>
+          <div>
+            <div class="it">Der Sinus-Kosinus-Kreis</div>
+            <div class="ip" style="background:#fff8e6;border-radius:10px;padding:10px 14px;border-left:3px solid #c8b55e">
+              Beim <strong>Ableiten</strong> wandert: <br>
+              \(\sin \to \cos \to -\sin \to -\cos \to \sin\)<br>
+              Beim <strong>Integrieren</strong> läuft der Kreis <em>rückwärts</em>: <br>
+              \(\sin\) kommt von \(-\cos\), denn \(\big(-\cos x\big)' = \sin x\). ✓
+            </div>
+          </div>
+        </div>
+        <div class="bsp">
+          <div class="bsp-label">Beispielaufgabe · Linearkombination</div>
+          <div class="bsp-q">Bestimme die Stammfunktion von \(f(x) = 4 e^x - 3 \sin x + 2 \cos x\).</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            <div class="ip">Faktor- und Summenregel: jeder Summand wird einzeln integriert.</div>
+            <div class="ip">\(F(x) = 4 e^x + 3\cos x + 2\sin x + C\)</div>
+            <div class="ip"><strong>Probe:</strong> \(F'(x) = 4 e^x - 3\sin x + 2\cos x = f(x)\) ✓</div>
+            <div class="ip" style="font-size:14px;color:#888"><em>Achtung:</em> Aus \(-3\sin x\) wird \(+3\cos x\) — Vorzeichen genau prüfen!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section-label">Bestimmtes Integral mit e-Funktion und Sinus</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Beziehung Funktion ↔ Stammfunktion · ikonisch</span></div>
+      <div class="card-body">
+        <div class="ip">Die folgende Grafik zeigt links die Sinusfunktion und ihre Stammfunktion \(F(x) = -\cos x\), rechts die e-Funktion und ihre Stammfunktion (die mit ihr identisch ist, bis auf eine Konstante). Beobachte: Wo \(f\) positiv ist, steigt \(F\); wo \(f\) negativ ist, fällt \(F\).</div>
+        <div class="two-col" style="margin-top:12px">
+          <div>
+            <canvas id="cv-esin-1" style="width:100%;height:240px;background:#fffcf6;border-radius:8px"></canvas>
+            <div class="it" style="text-align:center;margin-top:6px">links: \(f(x)=\sin x\), \(F(x)=-\cos x\)</div>
+          </div>
+          <div>
+            <canvas id="cv-esin-2" style="width:100%;height:240px;background:#fffcf6;border-radius:8px"></canvas>
+            <div class="it" style="text-align:center;margin-top:6px">rechts: \(f(x)=e^x\) — Funktion und Stammfunktion fallen zusammen</div>
+          </div>
+        </div>
+
+        <div class="bsp" style="margin-top:18px">
+          <div class="bsp-label">Beispiel 1 · Bestimmtes Integral mit e-Funktion</div>
+          <div class="bsp-q">Berechne \(\displaystyle\int_0^{\ln 2} e^x \, dx\) und deute das Ergebnis als Flächeninhalt.</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            <div class="ip"><strong>① Stammfunktion:</strong> \(F(x) = e^x\)</div>
+            <div class="ip"><strong>② Hauptsatz anwenden:</strong></div>
+            <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
+              \(\displaystyle\int_0^{\ln 2} e^x \, dx = \Big[e^x\Big]_0^{\ln 2} = e^{\ln 2} - e^0 = 2 - 1 = \mathbf{1}\)
+            </div>
+            <div class="ip"><strong>③ Deutung:</strong> Da \(e^x > 0\) für alle \(x\), liegt der Graph vollständig oberhalb der x-Achse. Flächenbilanz und tatsächlicher Flächeninhalt stimmen überein: Die Fläche zwischen \(f(x) = e^x\) und der x-Achse auf \([0, \ln 2]\) beträgt genau \(\mathbf{1}\) Flächeneinheit.</div>
+            <div class="ip" style="font-size:14px;color:#888"><em>Trick:</em> \(e^{\ln 2} = 2\) — denn \(\ln\) ist die Umkehrfunktion von \(e^x\).</div>
+          </div>
+        </div>
+
+        <div class="bsp">
+          <div class="bsp-label">Beispiel 2 · Sinus und die Vorzeichenfalle</div>
+          <div class="bsp-q">a) Berechne \(\displaystyle\int_0^{\pi} \sin x \, dx\).<br>b) Berechne \(\displaystyle\int_0^{2\pi} \sin x \, dx\).<br>c) Erläutere den Unterschied zwischen Flächenbilanz und tatsächlichem Flächeninhalt auf \([0, 2\pi]\).</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            <div class="ip"><strong>a)</strong> \(F(x) = -\cos x\). Damit:</div>
+            <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
+              \(\displaystyle\int_0^{\pi} \sin x \, dx = \Big[-\cos x\Big]_0^{\pi} = -\cos \pi - (-\cos 0) = -(-1) - (-1) = 1 + 1 = \mathbf{2}\)
+            </div>
+            <div class="ip"><strong>b)</strong></div>
+            <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
+              \(\displaystyle\int_0^{2\pi} \sin x \, dx = \Big[-\cos x\Big]_0^{2\pi} = -\cos(2\pi) - (-\cos 0) = -1 + 1 = \mathbf{0}\)
+            </div>
+            <div class="ip"><strong>c) Vorzeichenfalle.</strong> Auf \([0,\pi]\) liegt der Sinusgraph oberhalb der x-Achse (positive Fläche \(2\)). Auf \([\pi, 2\pi]\) liegt er unterhalb (negative Flächenbilanz \(-2\)). Die Bilanz ergibt \(2 + (-2) = 0\) — der tatsächliche Flächeninhalt aber:</div>
+            <div class="ip" style="background:#fceee9;border-radius:8px;padding:10px 14px;border-left:3px solid #c75c3a">
+              \(A = \big|[F]_0^{\pi}\big| + \big|[F]_{\pi}^{2\pi}\big| = |2| + |-2| = \mathbf{4}\)
+            </div>
+            <div class="ip"><em>Merke:</em> Bei der Sinuskurve über eine ganze Periode wird die Bilanz null. Wer das mit „die Fläche ist null" verwechselt, fällt durch.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section-label">Flächeninhalt mit e-Funktion · Abi-Vorlage</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Beispiel 3 · 1:1 nach Musterabitur 2025 MV (GK)</span></div>
+      <div class="card-body">
+        <div class="ip">Im Musterabitur 2025 (Grundkurs, WTR, Aufgabe 1.2) tauchte folgende Funktion auf: \(f(x) = -e^x + 2\). Wir bestimmen den Flächeninhalt zwischen Graph und x-Achse links der Nullstelle.</div>
+        <canvas id="cv-esin-3" style="width:100%;height:280px;background:#fffcf6;border-radius:8px;margin:10px 0"></canvas>
+
+        <div class="bsp">
+          <div class="bsp-label">Beispiel 3 · vollständig gerechnet</div>
+          <div class="bsp-q">Gegeben ist \(f(x) = -e^x + 2\). a) Bestimme die Nullstelle von \(f\). b) Berechne den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([-1, \ln 2]\).</div>
+          <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+          <div class="bsp-a">
+            <div class="ip"><strong>a) Nullstelle:</strong></div>
+            <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
+              \(-e^x + 2 = 0 \;\Leftrightarrow\; e^x = 2 \;\Leftrightarrow\; x = \ln 2 \approx 0{,}693\)
+            </div>
+            <div class="ip"><strong>b) Vorzeichenanalyse:</strong> Auf \([-1, \ln 2]\) gilt \(e^x \leq 2\), also \(-e^x + 2 \geq 0\). Der Graph liegt vollständig oberhalb der x-Achse. Flächenbilanz = tatsächlicher Flächeninhalt.</div>
+            <div class="ip"><strong>Stammfunktion:</strong> \(F(x) = -e^x + 2x\)</div>
+            <div class="ip"><strong>Hauptsatz:</strong></div>
+            <div class="ip" style="background:#f4f3f0;border-radius:8px;padding:10px 14px">
+              \(A = \displaystyle\int_{-1}^{\ln 2} (-e^x + 2)\,dx = \Big[-e^x + 2x\Big]_{-1}^{\ln 2}\)<br><br>
+              \(\quad = \big(-e^{\ln 2} + 2 \ln 2\big) - \big(-e^{-1} + 2 \cdot (-1)\big)\)<br>
+              \(\quad = \big(-2 + 2\ln 2\big) - \big(-\tfrac{1}{e} - 2\big)\)<br>
+              \(\quad = -2 + 2\ln 2 + \tfrac{1}{e} + 2\)<br>
+              \(\quad = 2\ln 2 + \tfrac{1}{e} \approx 1{,}386 + 0{,}368 = \mathbf{1{,}754}\)
+            </div>
+            <div class="ip"><em>Der Flächeninhalt beträgt etwa \(1{,}75\) Flächeneinheiten.</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">I</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · I</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Routine — Stammfunktion und bestimmtes Integral</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Sicheres Anwenden der Grundregeln für \(e^x\), \(\sin x\), \(\cos x\)</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES1.1</span><span class="td de">★</span></div><div class="tq"><strong>Bestimme</strong> jeweils alle Stammfunktionen.<br>a) \(f(x) = e^x + \sin x\)<br>b) \(g(x) = 5\cos x - 2 e^x\)<br>c) \(h(x) = -\sin x + 3 x^2\)</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(F(x) = e^x - \cos x + C\)<br>b) \(G(x) = 5\sin x - 2 e^x + C\)<br>c) \(H(x) = \cos x + x^3 + C\)<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Symbolisch-formal: Stammfunktionen routiniert bestimmen</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES1.2</span><span class="td de">★</span></div><div class="tq"><strong>Berechne</strong> die folgenden bestimmten Integrale.<br>a) \(\displaystyle\int_0^1 e^x \, dx\)<br>b) \(\displaystyle\int_0^{\pi/2} \cos x \, dx\)<br>c) \(\displaystyle\int_0^{\pi} \sin x \, dx\)</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(\Big[e^x\Big]_0^1 = e - 1 \approx \mathbf{1{,}718}\)<br>b) \(\Big[\sin x\Big]_0^{\pi/2} = \sin\tfrac{\pi}{2} - \sin 0 = 1 - 0 = \mathbf{1}\)<br>c) \(\Big[-\cos x\Big]_0^{\pi} = -\cos\pi + \cos 0 = 1 + 1 = \mathbf{2}\)<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Hauptsatz auf trigonometrische und exponentielle Funktionen anwenden</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES1.3</span><span class="td dm">★★</span></div><div class="tq"><strong>Anfangswertproblem.</strong> Gegeben ist \(f(x) = e^x + \cos x\). <strong>Bestimme</strong> diejenige Stammfunktion \(F\), für die \(F(0) = 3\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Allgemein: \(F(x) = e^x + \sin x + C\). Bedingung: \(F(0) = e^0 + \sin 0 + C = 1 + 0 + C = 3 \Rightarrow C = 2\). Also \(F(x) = e^x + \sin x + 2\).<br>Probe: \(F'(x) = e^x + \cos x = f(x)\) ✓<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Anfangswertproblem mit gemischter Stammfunktion lösen</div></div></div>
+    </div>
+
+
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">II</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · II</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Sinus &amp; Vorzeichen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Halbwelle vs. ganze Periode — Bilanz und tatsächlicher Flächeninhalt unterscheiden</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES2.1</span><span class="td dm">★★</span></div><div class="tq"><strong>Berechne</strong> jeweils Flächenbilanz und tatsächlichen Flächeninhalt zwischen dem Graphen von \(f(x) = \sin x\) und der x-Achse:<br>a) auf \([0, \tfrac{3\pi}{2}]\)<br>b) auf \([0, 2\pi]\)</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Stammfunktion: \(F(x) = -\cos x\).<br><br><strong>a) auf \([0, \tfrac{3\pi}{2}]\):</strong><br>Bilanz: \(\Big[-\cos x\Big]_0^{3\pi/2} = -\cos\tfrac{3\pi}{2} + \cos 0 = 0 + 1 = \mathbf{1}\).<br>Vorzeichenanalyse: Nullstelle bei \(x = \pi\). Auf \([0,\pi]\): \(\sin x \geq 0\); auf \([\pi, \tfrac{3\pi}{2}]\): \(\sin x \leq 0\).<br>\(A_1 = \big[-\cos x\big]_0^{\pi} = 2\). \(A_2 = \big[-\cos x\big]_{\pi}^{3\pi/2} = 0 - 1 = -1\).<br>Tatsächlich: \(A = |2| + |-1| = \mathbf{3}\). Bilanz und Flächeninhalt unterscheiden sich!<br><br><strong>b) auf \([0, 2\pi]\):</strong><br>Bilanz: \(\Big[-\cos x\Big]_0^{2\pi} = -1 + 1 = \mathbf{0}\).<br>Tatsächlich: Zwei Halbwellen, je \(2\): \(A = 2 + 2 = \mathbf{4}\). Klassische Vorzeichenfalle.<br><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">K1: Bilanz vs. Flächeninhalt argumentativ trennen · K5: Stammfunktion korrekt einsetzen</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES2.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Begründen ohne Rechnung.</strong> Entscheide jeweils, ob das Integral positiv, negativ oder gleich null ist. <strong>Begründe</strong> jeweils mit einem Symmetrie- oder Vorzeichenargument.<br>a) \(\displaystyle\int_{\pi}^{2\pi}\sin x\,dx\)<br>b) \(\displaystyle\int_{-\pi/2}^{\pi/2}\cos x\,dx\)<br>c) \(\displaystyle\int_0^1 e^x\,dx\)</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Auf \([\pi, 2\pi]\) gilt \(\sin x \leq 0\) — der Graph liegt vollständig unterhalb der x-Achse. Das Integral ist <strong>negativ</strong>. (Probe: \(\big[-\cos x\big]_{\pi}^{2\pi} = -1 - 1 = -2\) ✓)<br><br>b) \(\cos\) ist gerade und auf \([-\tfrac{\pi}{2}, \tfrac{\pi}{2}]\) durchgängig \(\geq 0\). Der Graph liegt oberhalb der x-Achse, also <strong>positiv</strong>. (Probe: \(\big[\sin x\big]_{-\pi/2}^{\pi/2} = 1 - (-1) = 2\) ✓)<br><br>c) \(e^x > 0\) für alle \(x\) — also auch auf \([0,1]\). Das Integral ist <strong>positiv</strong>.<br><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K1: Integralwerte ohne Rechnung mit Symmetrie-/Vorzeichenargument begründen</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES2.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Fehleraufgabe.</strong> Eine Schülerin schreibt: <em>„Ich berechne \(\int_0^{2\pi}\sin x \, dx = 0\). Also ist die Fläche unter der Sinuskurve auf einer ganzen Periode gleich null."</em><br><br>a) <strong>Erläutere</strong>, welcher Begriff hier verwechselt wurde.<br>b) <strong>Bestimme</strong> den tatsächlichen Flächeninhalt zwischen dem Sinusgraphen und der x-Achse auf \([0, 2\pi]\).<br>c) <strong>Gib</strong> einen Funktionsterm \(g(x)\) an, für den \(\int_a^b g(x) \, dx = 0\) <em>und</em> der Flächeninhalt zwischen Graph und x-Achse auf \([a,b]\) <em>tatsächlich</em> null ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Verwechselt wurden <strong>Flächenbilanz</strong> (Integralwert mit Vorzeichen) und <strong>tatsächlicher Flächeninhalt</strong> (immer \(\geq 0\), Beträge der Teilintegrale addieren). Auf \([0, 2\pi]\) heben sich positive Halbwelle (\(+2\)) und negative Halbwelle (\(-2\)) in der Bilanz auf — der Flächeninhalt ist aber \(2+2=4\).<br><br>b) \(A = \big|\int_0^{\pi}\sin x\,dx\big| + \big|\int_{\pi}^{2\pi}\sin x\,dx\big| = |2| + |-2| = \mathbf{4}\) Flächeneinheiten.<br><br>c) Z. B. \(g(x) = 0\) auf jedem Intervall — trivial. Nicht-trivial: jede Funktion mit \(g(x) = 0\) auf ganz \([a,b]\). Der Integralwert null mit gleichzeitig Flächeninhalt null erzwingt, dass \(g\) im Integrationsbereich überall null ist. <em>Schlussfolgerung:</em> Sobald der Graph stetig ist und an wenigstens einer Stelle von der x-Achse abweicht, ist der Flächeninhalt strikt positiv — auch wenn die Bilanz null sein kann.<br><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K1: typischen Schülerfehler diagnostizieren und korrigieren · K6: Begriffspaar Bilanz/Flächeninhalt sauber trennen</div></div></div>
+    </div>
+
+
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c8b55e;line-height:1;font-weight:400;min-width:44px;text-align:center">III</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · III</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Flächeninhalt mit e-Funktion</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben im Stil aktueller MV-Abituraufgaben</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.1</span><span class="td dm">★★</span></div><div class="tq">Gegeben ist \(f(x) = e^x - 1\).<br>a) <strong>Bestimme</strong> die Nullstelle von \(f\).<br>b) <strong>Berechne</strong> den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([-1, 1]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(e^x - 1 = 0 \Leftrightarrow e^x = 1 \Leftrightarrow x = 0\).<br><br>b) Auf \([-1, 0]\) gilt \(f(x) \leq 0\), auf \([0, 1]\) gilt \(f(x) \geq 0\). Vorzeichenwechsel an \(x=0\) → Beträge der Teilintegrale.<br>Stammfunktion: \(F(x) = e^x - x\).<br>\(A_1 = \big[e^x - x\big]_{-1}^{0} = (1 - 0) - (e^{-1} + 1) = -\tfrac{1}{e}\). Betrag: \(\tfrac{1}{e}\).<br>\(A_2 = \big[e^x - x\big]_0^1 = (e - 1) - (1 - 0) = e - 2\). Bereits positiv.<br>\(A = \tfrac{1}{e} + (e - 2) \approx 0{,}368 + 0{,}718 = \mathbf{1{,}086}\) Flächeneinheiten.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span></div><div class="komp-desc">Tatsächlicher Flächeninhalt mit Vorzeichenwechsel und e-Funktion</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Anlehnung Musterabi 2025 MV (GK).</strong> Gegeben ist \(f(x) = -e^x + 4\).<br>a) <strong>Bestimme</strong> die Nullstelle von \(f\).<br>b) <strong>Berechne</strong> den Flächeninhalt zwischen dem Graphen von \(f\) und der x-Achse auf dem Intervall \([0, \ln 4]\).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-e^x + 4 = 0 \Leftrightarrow e^x = 4 \Leftrightarrow x = \ln 4 \approx 1{,}386\).<br><br>b) Auf \([0, \ln 4]\) gilt \(e^x \leq 4\), also \(f(x) \geq 0\). Bilanz = Flächeninhalt.<br>Stammfunktion: \(F(x) = -e^x + 4x\).<br>\(A = \big[-e^x + 4x\big]_0^{\ln 4} = (-4 + 4\ln 4) - (-1 + 0) = -3 + 4\ln 4 \approx -3 + 5{,}545 = \mathbf{2{,}545}\) Flächeneinheiten.<br><div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span></div><div class="komp-desc">Aufgabentyp aus aktueller Abiturprüfung MV (GK)</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES3.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Funktionenschar.</strong> Gegeben ist \(f_a(x) = -e^x + a\) mit \(a > 1\).<br>a) <strong>Bestimme</strong> die Nullstelle \(x_a\) in Abhängigkeit von \(a\).<br>b) <strong>Berechne</strong> den Flächeninhalt \(A(a)\) zwischen dem Graphen von \(f_a\) und der x-Achse auf \([0, x_a]\).<br>c) <strong>Bestimme</strong> denjenigen Wert von \(a\), für den \(A(a) = 1\) gilt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-e^x + a = 0 \Leftrightarrow x_a = \ln a\). (Da \(a > 1\), ist \(\ln a > 0\).)<br><br>b) Auf \([0, \ln a]\) gilt \(e^x \leq a\), also \(f_a(x) \geq 0\).<br>Stammfunktion: \(F_a(x) = -e^x + a x\).<br>\(A(a) = \big[-e^x + a x\big]_0^{\ln a} = (-a + a\ln a) - (-1) = a\ln a - a + 1\).<br><br>c) \(A(a) = 1 \Leftrightarrow a\ln a - a + 1 = 1 \Leftrightarrow a\ln a - a = 0 \Leftrightarrow a(\ln a - 1) = 0\).<br>Da \(a > 1\), kann \(a = 0\) ausgeschlossen werden. Also \(\ln a = 1 \Leftrightarrow a = e \approx 2{,}718\). <em>Probe:</em> \(A(e) = e \cdot 1 - e + 1 = 1\) ✓<br><div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">K2: Parameter ermitteln, sodass eine Flächeninhaltsbedingung erfüllt ist · K5: Funktionenschar integrieren</div></div></div>
+    </div>
+
+
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c75c3a;line-height:1;font-weight:400;min-width:44px;text-align:center">IV</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#c75c3a;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · IV</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Sachkontexte: Wechselstrom &amp; exponentielles Wachstum</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Bestand aus Rate rekonstruieren — Sinus und e-Funktion in der Anwendung</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES4.1</span><span class="td dm">★★</span></div><div class="tq"><strong>Wechselstrom.</strong> Die Stromstärke in einem Wechselstromkreis wird modelliert durch \(I(t) = \sin t\) (in Ampere, \(t\) in Sekunden, vereinfachte Modellannahme).<br><br>a) <strong>Berechne</strong> die im ersten Halbzyklus \([0, \pi]\) insgesamt geflossene elektrische Ladung \(Q = \int_0^{\pi} I(t)\,dt\) (in Ampere-Sekunden).<br>b) <strong>Erläutere</strong>, warum die geflossene Ladung über eine ganze Periode \([0, 2\pi]\) als Integral null ergibt — und was das physikalisch bedeutet.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(Q = \big[-\cos t\big]_0^{\pi} = -\cos\pi + \cos 0 = 1 + 1 = \mathbf{2}\) Ampere-Sekunden.<br><br>b) Über die ganze Periode fließt der Strom in der ersten Halbwelle in eine Richtung (positives Vorzeichen) und in der zweiten in die Gegenrichtung (negatives Vorzeichen). Beide Beiträge heben sich in der Bilanz auf — die <em>Netto-Ladung</em> ist null. Physikalisch: Das Wechseln der Stromrichtung sorgt dafür, dass über lange Zeit keine Ladung in eine Richtung wandert. Die transportierte Ladungsmenge im Sinn von „wieviel Ladung war insgesamt unterwegs" ist aber \(2 + 2 = 4\) Ampere-Sekunden — also der tatsächliche Flächeninhalt.<br><div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K3: physikalischer Sachkontext modelliert · K6: Bilanz vs. Flächeninhalt im Sachzusammenhang deuten</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES4.2</span><span class="td dm">★★</span></div><div class="tq"><strong>Bakterienwachstum.</strong> Die Wachstumsrate einer Bakterienkultur (in Millionen Zellen pro Stunde) ist gegeben durch \(f(t) = 0{,}5\,e^t\) für \(0 \leq t \leq 4\). Zum Zeitpunkt \(t = 0\) sind 10 Millionen Bakterien vorhanden.<br><br>a) <strong>Bestimme</strong>, um wie viele Millionen Bakterien die Kultur in den ersten 4 Stunden zunimmt.<br>b) <strong>Gib</strong> den Bestand \(B(t)\) als Funktion der Zeit an.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Zunahme = Integral der Rate:<br>\(\Delta B = \displaystyle\int_0^4 0{,}5\,e^t\,dt = \big[0{,}5\,e^t\big]_0^4 = 0{,}5\,e^4 - 0{,}5 \approx 0{,}5 \cdot 54{,}598 - 0{,}5 \approx \mathbf{26{,}80}\) Millionen Bakterien.<br><br>b) Bestand = Anfangswert + Integral der Rate:<br>\(B(t) = 10 + \displaystyle\int_0^t 0{,}5\,e^s\,ds = 10 + \big[0{,}5\,e^s\big]_0^t = 10 + 0{,}5\,e^t - 0{,}5 = 9{,}5 + 0{,}5\,e^t\).<br>Probe: \(B(0) = 9{,}5 + 0{,}5 = 10\) ✓<br><div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K3: biologisches Wachstumsmodell · K6: Integral als rekonstruierten Bestand deuten (Rahmenplan-Pflichtkompetenz)</div></div></div>
+
+      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">ES4.3</span><span class="td dm">★★</span></div><div class="tq"><strong>Wechselstrom · Tatsächlich umgesetzte Ladung.</strong> In einem Wechselstromkreis fließt während der ersten 4 Sekunden ein Strom mit der Stärke \(I(t) = 3 \sin t\) (in Ampere). Dabei sind etwa 4 Sekunden ein wenig länger als eine ganze Periode (eine Periode der Sinusfunktion dauert hier \(2\pi \approx 6{,}28\) s).<br><br>a) <strong>Berechne</strong> die <em>Bilanz</em> der Ladungsmenge im Intervall \([0, 4]\) als bestimmtes Integral \(\int_0^4 I(t)\,dt\).<br>b) <strong>Berechne</strong> den <em>tatsächlichen</em> Flächeninhalt zwischen \(I\) und der t-Achse auf \([0, \pi]\). Was sagt das Ergebnis im Sachkontext aus?</div></div><div class="tk-toggle">⌄</div></div><div class="ta">Stammfunktion: \(R(t) = -3\cos t\).<br><br>a) Bilanz auf \([0, 4]\):<br>\(\big[-3\cos t\big]_0^4 = -3\cos 4 - (-3\cos 0) = -3\cos 4 + 3\).<br>Mit \(\cos 4 \approx -0{,}654\) folgt: Bilanz \(\approx -3 \cdot (-0{,}654) + 3 = 1{,}961 + 3 \approx \mathbf{4{,}96}\) Ampere-Sekunden.<br><br>b) Auf \([0, \pi]\) gilt \(\sin t \geq 0\), also \(I(t) \geq 0\). Bilanz = Flächeninhalt:<br>\(A = \big[-3\cos t\big]_0^{\pi} = 3 + 3 = \mathbf{6}\) Ampere-Sekunden. Das ist die in der ersten Halbwelle in eine Richtung geflossene Ladungsmenge.<br><div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">Sinus-Sachkontext mit gemischter Bilanz und reiner Halbwelle</div></div></div>
+    </div>
+
+
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid #c8b55e;margin-top:32px">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:#8a7a30">✓ Selbstlerncheck</div>
+        <div class="ip">
+          <p>Bevor du den Tab abschließt — kannst du diese Fragen beantworten?</p>
+          <ol>
+            <li>Wie lautet die Stammfunktion zu \(\sin x\) — und warum steht da ein Minuszeichen?</li>
+            <li>Was unterscheidet die e-Funktion von allen anderen Funktionen, wenn es um Stammfunktionen geht?</li>
+            <li>Wann sind Flächenbilanz und tatsächlicher Flächeninhalt gleich, wann unterscheiden sie sich?</li>
+            <li>Beim Sinus über eine ganze Periode ergibt das Integral null. Was bedeutet das physikalisch im Wechselstromkontext — und was <em>nicht</em>?</li>
+          </ol>
+          <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+            Wenn du bei einer Frage unsicher bist: Frage 1 und 2 → Abschnitt „Stammfunktionen wiederholt — kompakt". Frage 3 → Beispiel 2 sowie Aufgabe ES2.1. Frage 4 → Aufgabe ES4.1.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+    (function(){
+      // ── Canvas 1: sin(x) und -cos(x) auf [0, 2π] ──
+      var c1 = document.getElementById('cv-esin-1');
+      if (c1) {
+        var ctx = c1.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var cssW = c1.clientWidth, cssH = c1.clientHeight;
+        c1.width = cssW * dpr; c1.height = cssH * dpr;
+        ctx.scale(dpr, dpr);
+        var W = cssW, H = cssH;
+        var pad = {l: 32, r: 18, t: 18, b: 28};
+        var xMin = 0, xMax = 2 * Math.PI, yMin = -1.4, yMax = 1.4;
+        function tx(x){ return pad.l + (x - xMin) / (xMax - xMin) * (W - pad.l - pad.r); }
+        function ty(y){ return H - pad.b - (y - yMin) / (yMax - yMin) * (H - pad.t - pad.b); }
+        ctx.strokeStyle = '#333'; ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.moveTo(pad.l, ty(0)); ctx.lineTo(W - pad.r, ty(0)); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0), H - pad.b); ctx.stroke();
+        ctx.fillStyle = '#333';
+        ctx.beginPath(); ctx.moveTo(W - pad.r, ty(0)); ctx.lineTo(W - pad.r - 7, ty(0) - 4); ctx.lineTo(W - pad.r - 7, ty(0) + 4); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0) - 4, pad.t + 7); ctx.lineTo(tx(0) + 4, pad.t + 7); ctx.closePath(); ctx.fill();
+        ctx.font = '12px Inter, system-ui'; ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+        var xticks = [{v:0, l:'0'}, {v:Math.PI/2, l:'\u03c0/2'}, {v:Math.PI, l:'\u03c0'}, {v:3*Math.PI/2, l:'3\u03c0/2'}, {v:2*Math.PI, l:'2\u03c0'}];
+        xticks.forEach(function(t){
+          ctx.beginPath(); ctx.moveTo(tx(t.v), ty(0) - 3); ctx.lineTo(tx(t.v), ty(0) + 3); ctx.stroke();
+          if (t.v > 0) ctx.fillText(t.l, tx(t.v), ty(0) + 5);
+        });
+        ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+        [-1, 1].forEach(function(yv){
+          ctx.beginPath(); ctx.moveTo(tx(0) - 3, ty(yv)); ctx.lineTo(tx(0) + 3, ty(yv)); ctx.stroke();
+          ctx.fillText(yv, tx(0) - 6, ty(yv));
+        });
+        ctx.font = 'bold 13px Inter, system-ui'; ctx.fillStyle = '#333';
+        ctx.textAlign = 'right'; ctx.textBaseline = 'bottom'; ctx.fillText('x', W - pad.r - 4, ty(0) - 4);
+        ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText('y', tx(0) + 6, pad.t);
+        ctx.font = '12px Inter, system-ui'; ctx.fillStyle = '#888';
+        ctx.textAlign = 'right'; ctx.textBaseline = 'top'; ctx.fillText('O', tx(0) - 5, ty(0) + 5);
+        ctx.strokeStyle = '#5b6e2e'; ctx.lineWidth = 2; ctx.beginPath();
+        for (var i = 0; i <= 200; i++) {
+          var x = xMin + i / 200 * (xMax - xMin);
+          var y = Math.sin(x);
+          if (i === 0) ctx.moveTo(tx(x), ty(y)); else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        ctx.strokeStyle = '#c75c3a'; ctx.lineWidth = 2; ctx.setLineDash([5, 4]); ctx.beginPath();
+        for (var i = 0; i <= 200; i++) {
+          var x = xMin + i / 200 * (xMax - xMin);
+          var y = -Math.cos(x);
+          if (i === 0) ctx.moveTo(tx(x), ty(y)); else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.font = 'bold 13px Inter, system-ui';
+        ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+        ctx.fillStyle = '#5b6e2e'; ctx.fillText('f(x) = sin x', pad.l + 6, pad.t + 2);
+        ctx.fillStyle = '#c75c3a'; ctx.fillText('F(x) = \u2212cos x', pad.l + 6, pad.t + 18);
+      }
+
+      // ── Canvas 2: e^x mit Flächen-Integral [0, ln 2] ──
+      var c2 = document.getElementById('cv-esin-2');
+      if (c2) {
+        var ctx = c2.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var cssW = c2.clientWidth, cssH = c2.clientHeight;
+        c2.width = cssW * dpr; c2.height = cssH * dpr;
+        ctx.scale(dpr, dpr);
+        var W = cssW, H = cssH;
+        var pad = {l: 32, r: 18, t: 18, b: 28};
+        var xMin = -0.8, xMax = 1.6, yMin = 0, yMax = 5.2;
+        function tx(x){ return pad.l + (x - xMin) / (xMax - xMin) * (W - pad.l - pad.r); }
+        function ty(y){ return H - pad.b - (y - yMin) / (yMax - yMin) * (H - pad.t - pad.b); }
+        var ln2 = Math.log(2);
+        ctx.fillStyle = 'rgba(91, 110, 46, 0.18)';
+        ctx.beginPath();
+        ctx.moveTo(tx(0), ty(0));
+        for (var i = 0; i <= 60; i++) {
+          var x = i / 60 * ln2;
+          ctx.lineTo(tx(x), ty(Math.exp(x)));
+        }
+        ctx.lineTo(tx(ln2), ty(0));
+        ctx.closePath(); ctx.fill();
+        ctx.strokeStyle = '#333'; ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.moveTo(pad.l, ty(0)); ctx.lineTo(W - pad.r, ty(0)); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0), H - pad.b); ctx.stroke();
+        ctx.fillStyle = '#333';
+        ctx.beginPath(); ctx.moveTo(W - pad.r, ty(0)); ctx.lineTo(W - pad.r - 7, ty(0) - 4); ctx.lineTo(W - pad.r - 7, ty(0) + 4); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0) - 4, pad.t + 7); ctx.lineTo(tx(0) + 4, pad.t + 7); ctx.closePath(); ctx.fill();
+        ctx.font = '12px Inter, system-ui'; ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+        [{v:-0.5, l:'-0,5'}, {v:0.5, l:'0,5'}, {v:1, l:'1'}, {v:1.5, l:'1,5'}].forEach(function(t){
+          ctx.beginPath(); ctx.moveTo(tx(t.v), ty(0) - 3); ctx.lineTo(tx(t.v), ty(0) + 3); ctx.stroke();
+          ctx.fillText(t.l, tx(t.v), ty(0) + 5);
+        });
+        ctx.beginPath(); ctx.moveTo(tx(ln2), ty(0) - 3); ctx.lineTo(tx(ln2), ty(0) + 3); ctx.stroke();
+        ctx.fillStyle = '#5b6e2e'; ctx.fillText('ln 2', tx(ln2), ty(0) + 5);
+        ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#555';
+        [1, 2, 3, 4, 5].forEach(function(yv){
+          ctx.beginPath(); ctx.moveTo(tx(0) - 3, ty(yv)); ctx.lineTo(tx(0) + 3, ty(yv)); ctx.stroke();
+          ctx.fillText(yv, tx(0) - 6, ty(yv));
+        });
+        ctx.font = 'bold 13px Inter, system-ui'; ctx.fillStyle = '#333';
+        ctx.textAlign = 'right'; ctx.textBaseline = 'bottom'; ctx.fillText('x', W - pad.r - 4, ty(0) - 4);
+        ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText('y', tx(0) + 6, pad.t);
+        ctx.font = '12px Inter, system-ui'; ctx.fillStyle = '#888';
+        ctx.textAlign = 'right'; ctx.textBaseline = 'top'; ctx.fillText('O', tx(0) - 5, ty(0) + 5);
+        ctx.strokeStyle = '#5b6e2e'; ctx.lineWidth = 2; ctx.beginPath();
+        var first = true;
+        for (var i = 0; i <= 200; i++) {
+          var x = xMin + i / 200 * (xMax - xMin);
+          var y = Math.exp(x);
+          if (y > yMax) { first = true; continue; }
+          if (first) { ctx.moveTo(tx(x), ty(y)); first = false; } else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        ctx.font = 'bold 14px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
+        ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+        ctx.fillText('f(x) = e^x', tx(1.05), ty(2.85));
+        ctx.font = 'bold 12px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('A = 1', tx(ln2 / 2), ty(0.7));
+      }
+
+      // ── Canvas 3: f(x) = -e^x + 2 (Abi-Vorlage) ──
+      var c3 = document.getElementById('cv-esin-3');
+      if (c3) {
+        var ctx = c3.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var cssW = c3.clientWidth, cssH = c3.clientHeight;
+        c3.width = cssW * dpr; c3.height = cssH * dpr;
+        ctx.scale(dpr, dpr);
+        var W = cssW, H = cssH;
+        var pad = {l: 36, r: 22, t: 22, b: 32};
+        var xMin = -1.4, xMax = 1.6, yMin = -2.6, yMax = 2.6;
+        function tx(x){ return pad.l + (x - xMin) / (xMax - xMin) * (W - pad.l - pad.r); }
+        function ty(y){ return H - pad.b - (y - yMin) / (yMax - yMin) * (H - pad.t - pad.b); }
+        var ln2 = Math.log(2);
+        ctx.fillStyle = 'rgba(91, 110, 46, 0.18)';
+        ctx.beginPath();
+        ctx.moveTo(tx(-1), ty(0));
+        for (var i = 0; i <= 80; i++) {
+          var x = -1 + i / 80 * (ln2 - (-1));
+          var y = -Math.exp(x) + 2;
+          ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.lineTo(tx(ln2), ty(0));
+        ctx.closePath(); ctx.fill();
+        ctx.strokeStyle = '#333'; ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.moveTo(pad.l, ty(0)); ctx.lineTo(W - pad.r, ty(0)); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0), H - pad.b); ctx.stroke();
+        ctx.fillStyle = '#333';
+        ctx.beginPath(); ctx.moveTo(W - pad.r, ty(0)); ctx.lineTo(W - pad.r - 7, ty(0) - 4); ctx.lineTo(W - pad.r - 7, ty(0) + 4); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0) - 4, pad.t + 7); ctx.lineTo(tx(0) + 4, pad.t + 7); ctx.closePath(); ctx.fill();
+        ctx.font = '12px Inter, system-ui'; ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+        [-1, 1].forEach(function(xv){
+          ctx.beginPath(); ctx.moveTo(tx(xv), ty(0) - 3); ctx.lineTo(tx(xv), ty(0) + 3); ctx.stroke();
+          ctx.fillText(xv, tx(xv), ty(0) + 5);
+        });
+        ctx.beginPath(); ctx.moveTo(tx(ln2), ty(0) - 3); ctx.lineTo(tx(ln2), ty(0) + 3); ctx.stroke();
+        ctx.fillStyle = '#c75c3a'; ctx.fillText('ln 2', tx(ln2), ty(0) + 5);
+        ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#555';
+        [-2, -1, 1, 2].forEach(function(yv){
+          ctx.beginPath(); ctx.moveTo(tx(0) - 3, ty(yv)); ctx.lineTo(tx(0) + 3, ty(yv)); ctx.stroke();
+          ctx.fillText(yv, tx(0) - 6, ty(yv));
+        });
+        ctx.font = 'bold 13px Inter, system-ui'; ctx.fillStyle = '#333';
+        ctx.textAlign = 'right'; ctx.textBaseline = 'bottom'; ctx.fillText('x', W - pad.r - 4, ty(0) - 4);
+        ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText('y', tx(0) + 6, pad.t);
+        ctx.font = '12px Inter, system-ui'; ctx.fillStyle = '#888';
+        ctx.textAlign = 'right'; ctx.textBaseline = 'top'; ctx.fillText('O', tx(0) - 5, ty(0) + 5);
+        ctx.strokeStyle = '#5b6e2e'; ctx.lineWidth = 2; ctx.beginPath();
+        var firstC3 = true;
+        for (var i = 0; i <= 200; i++) {
+          var x = xMin + i / 200 * (xMax - xMin);
+          var y = -Math.exp(x) + 2;
+          if (y < yMin || y > yMax) { firstC3 = true; continue; }
+          if (firstC3) { ctx.moveTo(tx(x), ty(y)); firstC3 = false; } else ctx.lineTo(tx(x), ty(y));
+        }
+        ctx.stroke();
+        ctx.fillStyle = '#c75c3a';
+        ctx.beginPath(); ctx.arc(tx(ln2), ty(0), 4, 0, 2 * Math.PI); ctx.fill();
+        ctx.font = 'bold 14px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
+        ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+        ctx.fillText('f(x) = \u2212e^x + 2', tx(0.6), ty(-1.2));
+        ctx.font = 'bold 13px Inter, system-ui'; ctx.fillStyle = '#5b6e2e';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('A', tx(-0.2), ty(0.9));
+      }
+    })();
+    </script>
+
+  </div><!-- end k11-esin -->
+
 
 
 </div><!-- end k11 main -->
