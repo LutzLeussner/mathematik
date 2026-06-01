@@ -22864,5 +22864,32 @@ window.addEventListener('load',function(){
   }
 })();
 </script>
+
+<script>
+/* ── Deep-Link Hash-Router ──────────────────────────────────
+   Erlaubt die direkte Verlinkung auf einen Themen-Tab von aussen, z. B.
+   .../index.html#k11-hauptsatz  -> oeffnet Klasse 11 und den Tab "Hauptsatz".
+   Greift bei Erstaufruf mit Hash und bei jeder Hash-Aenderung. Nutzt die
+   bereits global definierten Funktionen show() und showKxxTab(). */
+(function(){
+  var tabFns = {7:'showK7Tab',8:'showK8Tab',9:'showK9Tab',10:'showK10Tab',11:'showK11Tab',12:'showK12Tab'};
+  function routeHash(){
+    var h = (window.location.hash || '').replace(/^#/,'');
+    var m = h.match(/^k(\d+)-/);
+    if(!m) return;
+    var grade = parseInt(m[1],10);
+    var fn = window[tabFns[grade]];
+    if(typeof window.show === 'function') window.show(grade);
+    if(typeof fn === 'function'){
+      var btn = document.querySelector('#k'+grade+'-tabs .ptb[onclick*="'+h+'"]')
+             || document.querySelector('[onclick*="'+h+'"]');
+      fn(h, btn || undefined);
+    }
+  }
+  if(document.readyState !== 'loading') routeHash();
+  else document.addEventListener('DOMContentLoaded', routeHash);
+  window.addEventListener('hashchange', routeHash);
+})();
+</script>
 </body>
 </html>
