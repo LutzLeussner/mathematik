@@ -11964,6 +11964,661 @@ window.addEventListener('resize',function(){updateSimulator();});
 <!-- ════════════════════════════════════════════════════════════ -->
 <!-- §0: KOORDINATENSYSTEM AUF KARIERTEM PAPIER ZEICHNEN -->
 <!-- ════════════════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- §0: MIT DEM BASTEL-KOORDINATENSYSTEM ARBEITEN (enaktiver Einstieg) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="section-label" style="margin-top:30px;">0. Mit dem Bastel-Koordinatensystem arbeiten</div>
+
+<!-- WORUM GEHT ES? -->
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
+    <div class="ip">
+      Du hast aus drei Karton-Quadraten ein <strong>räumliches Koordinatensystem</strong> gebaut: einen
+      grünen Boden und zwei senkrechte Wände, gelb und rot. Diese Ecke ist wie die Ecke eines Zimmers —
+      jeder Ort darin lässt sich durch drei Angaben festlegen: <em>wie weit nach vorn (x), wie weit zur
+      Seite (y), wie hoch (z)</em>. In diesem Abschnitt legst du echte Holzkörper und ausgeschnittene
+      Papierfiguren in dein Modell, liest ihre Eckpunkte ab, zeichnest sie im Schrägbild und bewegst sie:
+      verschieben, schneiden, spiegeln, zu einer Pyramide aufrichten, drehen. So baust du Schritt für
+      Schritt die räumliche Vorstellung auf, die du in der ganzen analytischen Geometrie brauchst.
+    </div>
+  </div>
+</div>
+
+<!-- DAS BRAUCHST DU -->
+<div class="hint">
+  <strong>Das brauchst du:</strong> dein gebasteltes Karton-Koordinatensystem (1&nbsp;Kästchen = 1&nbsp;Einheit),
+  die Holzkörper (Quader, Würfel, Dreiecksprisma), die selbst ausgeschnittenen Papierfiguren (Quadrat,
+  Rechteck, rechtwinkliges Dreieck), Punkte im Raum als Tripel \(P(x\,|\,y\,|\,z)\) lesen, Satz des Pythagoras.
+</div>
+
+<!-- ORIENTIERUNG: DAS MODELL ALS KOS -->
+<div class="card" style="margin-top:16px;">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Dein Modell ist das Koordinatensystem</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Die drei Karton-Ebenen sind die drei <strong>Koordinatenebenen</strong>. Präge dir die Zuordnung ein —
+      die Farben am Bildschirm sind genau die deines Modells:
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;">
+        <canvas id="cvBKmodell" style="border-radius:6px; display:block;"></canvas>
+      </div>
+      <div style="flex:1; min-width:230px;">
+        <div style="padding:10px 14px; background:var(--kiku-bg); border-radius:6px; border-left:4px solid var(--kiku); font-size:14px; line-height:1.7;">
+          <strong>grün</strong> = <strong>xy-Ebene</strong> (Boden) — hier ist \(z=0\)<br>
+          <strong>gelb</strong> = <strong>xz-Ebene</strong> (Wand) — hier ist \(y=0\)<br>
+          <strong>rot</strong> = <strong>yz-Ebene</strong> (Wand) — hier ist \(x=0\)
+        </div>
+        <ul style="margin:12px 0 0 18px; padding:0; line-height:1.85; font-size:14px;">
+          <li>Die <strong>x-Achse</strong> läuft nach vorn, die <strong>y-Achse</strong> zur Seite, die
+              <strong>z-Achse</strong> nach oben — sie schneiden sich im <strong>Ursprung O(0&thinsp;|&thinsp;0&thinsp;|&thinsp;0)</strong>.</li>
+          <li>Der Bereich, in dem alle drei Koordinaten positiv sind (\(x>0,\,y>0,\,z>0\)), heißt
+              <strong>1.&nbsp;Oktant</strong> — das ist der offene Raum in deiner Modell-Ecke.</li>
+          <li>Liegt ein Punkt <em>auf einer Ebene</em>, ist genau eine Koordinate 0. Liegt er
+              <em>auf einer Achse</em>, sind zwei Koordinaten 0.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ip" style="margin-top:14px; padding:10px 14px; background:#f5f2ed; border-left:4px solid var(--mushikuri); border-radius:4px; font-size:13px;">
+      <strong>Aus dem 2D-Koordinatensystem mitgebracht:</strong> Vom ebenen Koordinatensystem kennst du
+      „nach rechts und nach oben“ — diese Vorstellung ist gut und bleibt richtig für \(x\) und \(z\).
+      Neu ist allein die <em>dritte</em> Richtung: \(y\) führt <em>in die Tiefe</em>. Verlass dich
+      also auf dein 2D-Wissen und ergänze nur die Tiefe — im Modell ist \(y\) der Weg über den Boden
+      zur Seite (im Schrägbild schräg, halbe Länge), \(z\) bleibt die senkrechte Kante nach oben.
+    </div>
+  </div>
+</div>
+
+<!-- BRÜCKEN-CARD: VIER DARSTELLUNGEN -->
+<div class="card" style="margin-top:16px;">
+  <div class="card-head"><div class="ci ci-k">f</div><span class="card-title">Vier Wege, denselben Punkt zu beschreiben</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Einen Punkt zu <em>kennen</em> heißt noch nicht, ihn am echten Körper zu <em>finden</em>. Übe darum
+      bewusst den Wechsel zwischen vier Darstellungen — immer am selben Eckpunkt:
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:12px; font-size:13.5px;">
+      <div style="padding:10px 12px; background:var(--kiku-bg); border-radius:6px;"><strong>1 · Körper</strong><br>Lege den Körper ins Modell und zeige mit dem Finger auf die Ecke.</div>
+      <div style="padding:10px 12px; background:var(--kiku-bg); border-radius:6px;"><strong>2 · Ablesen</strong><br>Zähle die Kästchen: nach vorn, zur Seite, nach oben.</div>
+      <div style="padding:10px 12px; background:var(--kiku-bg); border-radius:6px;"><strong>3 · Schrägbild</strong><br>Zeichne die Ecke ins Schrägbild (y schräg, halbe Länge).</div>
+      <div style="padding:10px 12px; background:var(--kiku-bg); border-radius:6px;"><strong>4 · Tripel</strong><br>Schreibe \(P(x\,|\,y\,|\,z)\) hin.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────── STUFE 1 ─────────────── -->
+<div class="section-label" style="margin-top:26px;">0.1 Gerade Körper ablesen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Eine Ecke im Ursprung, Kanten entlang der Achsen</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Am einfachsten ist ein Körper zu beschreiben, wenn eine Ecke im <strong>Ursprung O</strong> liegt und
+      die Kanten <em>parallel zu den Achsen</em> verlaufen. Dann kannst du jede Eckkoordinate direkt am
+      Gitter abzählen.
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;"><canvas id="cvBK1" style="border-radius:6px; display:block;"></canvas></div>
+      <div style="flex:1; min-width:220px;">
+        <div class="it">Würfel (Kantenlänge 5), Ecke in O, auf dem grünen Boden</div>
+        <div class="ip" style="font-size:14px;">Die acht Eckpunkte:</div>
+        <div style="font-family:'DM Serif Display',serif; font-size:13.5px; line-height:1.9;">
+          O(0|0|0), A(5|0|0), B(5|5|0), C(0|5|0),<br>
+          D(0|0|5), E(5|0|5), F(5|5|5), G(0|5|5)
+        </div>
+        <div class="ip" style="font-size:13.5px; margin-top:8px;">
+          Die vier Ecken mit \(z=0\) liegen in der <strong>xy-Ebene</strong> (grüner Boden), die vier mit
+          \(z=5\) bilden die Deckfläche darüber.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Beispielaufgabe Stufe 1 -->
+<div class="bsp" style="margin-top:16px;">
+  <div class="bsp-label">Beispielaufgabe</div>
+  <div class="bsp-q">
+    Lege den Würfel (Kantenlänge 5) mit einer Ecke in O auf den Boden. Gib die Koordinaten aller Ecken
+    an, die <strong>auf einer Achse</strong> liegen.
+  </div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip">Auf einer Achse liegen Punkte mit <strong>zwei</strong> Nullkoordinaten:</div>
+    <div class="ip">A(5&thinsp;|&thinsp;0&thinsp;|&thinsp;0) auf der x-Achse, C(0&thinsp;|&thinsp;5&thinsp;|&thinsp;0) auf der y-Achse, D(0&thinsp;|&thinsp;0&thinsp;|&thinsp;5) auf der z-Achse.</div>
+    <div class="ip" style="margin-top:8px;">Der Ursprung O zählt nicht als „auf einer Achse“ im engeren Sinn — er liegt auf <em>allen</em> Achsen zugleich.</div>
+  </div>
+</div>
+
+<div class="tg" style="margin-top:16px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK1.1</span><span class="td de">★</span></div>
+    <div class="tq">Lege den Quader Nr.&nbsp;1 (3&thinsp;cm × 3&thinsp;cm × 5&thinsp;cm) mit einer Ecke in O auf den Boden, die Seite der Länge 5 nach oben (z-Richtung). Gib alle 8 Eckpunkte an und nenne die vier, die in der gelben xz-Ebene liegen.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">
+      O(0|0|0), A(3|0|0), B(3|3|0), C(0|3|0), D(0|0|5), E(3|0|5), F(3|3|5), G(0|3|5)
+    </div>
+    <div class="ip" style="margin-top:8px;">In der <strong>gelben xz-Ebene</strong> gilt \(y=0\): das sind O(0|0|0), A(3|0|0), D(0|0|5) und E(3|0|5).</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K4: Koordinaten am Modell ablesen · K5: alle Eckpunkte systematisch bestimmen</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK1.2</span><span class="td de">★</span></div>
+    <div class="tq">Gib an, welche Koordinate für alle Punkte auf dem grünen Boden gleich null ist. Nenne anschließend die Fachbegriffe für die drei Karton-Ebenen deines Modells.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Auf dem grünen Boden ist \(z=0\).</div>
+    <div class="ip" style="margin-top:6px;">grün = <strong>xy-Ebene</strong> (\(z=0\)), gelb = <strong>xz-Ebene</strong> (\(y=0\)), rot = <strong>yz-Ebene</strong> (\(x=0\)).</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+<div class="komp-desc">K1: Lagebeziehung begründen · K4: Koordinatenebenen benennen</div>
+
+<!-- ─────────────── STUFE 2 ─────────────── -->
+<div class="section-label" style="margin-top:26px;">0.2 Körper an vorgegebene Koordinaten legen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Verschoben, aber noch achsenparallel</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Jetzt liegt die O-nächste Ecke nicht mehr im Ursprung, sondern an einer vorgegebenen Stelle. Die
+      Kanten bleiben parallel zu den Achsen — du addierst die Kantenlängen einfach zur Startecke.
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;"><canvas id="cvBK2" style="border-radius:6px; display:block;"></canvas></div>
+      <div style="flex:1; min-width:220px;">
+        <div class="it">Würfel (Kantenlänge 5), vordere Ecke bei (2&thinsp;|&thinsp;1&thinsp;|&thinsp;0)</div>
+        <div style="font-family:'DM Serif Display',serif; font-size:13.5px; line-height:1.9;">
+          (2|1|0), (7|1|0), (7|6|0), (2|6|0),<br>
+          (2|1|5), (7|1|5), (7|6|5), (2|6|5)
+        </div>
+        <div class="ip" style="font-size:13.5px; margin-top:8px;">
+          Zu jeder Koordinate kommt die Kantenlänge 5 dazu — in x von 2 auf 7, in y von 1 auf 6, in z von 0 auf 5.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tg" style="margin-top:16px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK2.1</span><span class="td dm">★★</span></div>
+    <div class="tq">Lege den Quader Nr.&nbsp;1 (3 × 3 × 5) so an die gelbe xz-Ebene, dass eine Fläche ganz in dieser Ebene liegt und die O-nächste Ecke bei (1&thinsp;|&thinsp;0&thinsp;|&thinsp;0) ist. Die Länge 5 zeigt nach oben, die Tiefe 3 in y-Richtung. Gib alle 8 Eckpunkte an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Die Fläche in der xz-Ebene hat \(y=0\); der Körper ragt um 3 in die Tiefe (\(y=3\)).</div>
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">
+      (1|0|0), (4|0|0), (1|0|5), (4|0|5), (1|3|0), (4|3|0), (1|3|5), (4|3|5)
+    </div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K4: Lage zur Ebene deuten · K5: Eckpunkte aus Startecke und Kantenlängen bestimmen</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK2.2</span><span class="td dm">★★</span></div>
+    <div class="tq">Zeichne den Würfel aus dem Beispiel (vordere Ecke (2&thinsp;|&thinsp;1&thinsp;|&thinsp;0)) im Schrägbild ab: x-Achse waagerecht, y-Achse unter 45° mit halber Länge, z-Achse senkrecht. Markiere die Startecke und beschrifte sie.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>Kontrolle deiner Zeichnung:</strong> Gehe vom Ursprung 2 nach rechts (x), dann 1 schräg (y, also 1 Kästchen rechts und ein halbes hoch), dort liegt die Startecke (2|1|0). Von ihr aus baust du den Würfel: 5 weiter in x, 5 schräg in y, 5 senkrecht in z.</div>
+    <div class="ip" style="margin-top:6px;">Achte darauf, dass die <em>verdeckten</em> Kanten (von der hinteren unteren Ecke aus) gestrichelt gezeichnet werden.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+<div class="komp-desc">K4: Punkte und Körper im Schrägbild korrekt darstellen</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK2.3</span><span class="td dm">★★</span></div>
+    <div class="tq"><strong>Sachkontext: Regal in der Zimmerecke.</strong> Ein würfelförmiges Regal (Kantenlänge 5&thinsp;dm) steht genau in einer Zimmerecke. Die Ecke ist der Ursprung, die beiden Wände sind die xz- und die yz-Ebene, der Boden ist die xy-Ebene. Mittig auf die Deckfläche stellst du eine Box (Quader 3 × 3 × 2&thinsp;dm). Bestimme die Koordinaten der vier oberen Ecken der Box.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Das Regal füllt den Bereich \(0\le x,y,z\le 5\); seine Deckfläche liegt bei \(z=5\).</div>
+    <div class="ip">Die Box (Grundfläche 3 × 3) steht mittig: in x und y bleibt links und rechts je \(\tfrac{5-3}{2}=1\) frei, also \(x,y\) von 1 bis 4. Sie ist 2 hoch, ihre Oberseite liegt bei \(z=5+2=7\).</div>
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">(1|1|7), (4|1|7), (4|4|7), (1|4|7)</div>
+    <div class="ip" style="margin-top:6px;">Praktisch: Die obersten Ecken liegen genau am Rand deines Modells (\(z=7\)) — gerade noch ablesbar.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K3: reale Situation ins Koordinatensystem übersetzen · K4/K5: Eckpunkte bestimmen</div>
+
+<!-- ─────────────── STUFE 3 ─────────────── -->
+<div class="section-label" style="margin-top:26px;">0.3 Schnittebenen zeichnen und beschreiben</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Mit einer Ebene durch den Körper schneiden</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Schneidest du einen Körper mit einer Ebene, entsteht eine <strong>Schnittfläche</strong>. Liegt die
+      Schnittebene parallel zu einer Koordinatenebene, ist die Schnittfigur leicht zu beschreiben: alle
+      Punkte teilen eine feste Koordinate.
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;"><canvas id="cvBK3" style="border-radius:6px; display:block;"></canvas></div>
+      <div style="flex:1; min-width:220px;">
+        <div class="it">Würfel (Ecke O, Kante 5), waagerechter Schnitt bei \(z=2\)</div>
+        <div class="ip" style="font-size:13.5px;">
+          Die Schnittfläche ist ein <strong>Quadrat 5 × 5</strong>, parallel zur xy-Ebene, in der Höhe
+          \(z=2\). Ecken:
+        </div>
+        <div style="font-family:'DM Serif Display',serif; font-size:13.5px; line-height:1.9;">
+          (0|0|2), (5|0|2), (5|5|2), (0|5|2)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tg" style="margin-top:16px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK3.1</span><span class="td dm">★★</span></div>
+    <div class="tq">Schneide denselben Würfel (Ecke O, Kante 5) mit einer Ebene parallel zur gelben xz-Ebene bei \(y=2\). Beschreibe die Schnittfigur und gib ihre vier Eckpunkte an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Die Schnittfigur ist ein <strong>Quadrat 5 × 5</strong> in der Ebene \(y=2\) (parallel zur xz-Ebene).</div>
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">(0|2|0), (5|2|0), (5|2|5), (0|2|5)</div>
+    <div class="ip" style="margin-top:6px;">Alle vier Punkte teilen die feste Koordinate \(y=2\).</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+<div class="komp-desc">K1: Schnittfigur beschreiben und begründen · K4: Eckpunkte angeben</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK3.2</span><span class="td dh">★★★</span></div>
+    <div class="tq">Lege durch die drei Achsenpunkte (5&thinsp;|&thinsp;0&thinsp;|&thinsp;0), (0&thinsp;|&thinsp;5&thinsp;|&thinsp;0) und (0&thinsp;|&thinsp;0&thinsp;|&thinsp;5) eine schräge Schnittebene durch den Würfel (Ecke O, Kante 5). Bestimme die Form der Schnittfigur und begründe, welche Art von Dreieck entsteht.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Die drei Punkte liegen je auf einer Achse im Abstand 5 vom Ursprung. Verbindet man sie, entsteht ein <strong>Dreieck</strong>.</div>
+    <div class="ip" style="margin-top:6px;">Jede Seite verbindet zwei Achsenpunkte, z.&nbsp;B. von (5|0|0) zu (0|5|0):</div>
+    <div class="ip">\[ \sqrt{5^2+5^2+0^2} = \sqrt{50} = 5\sqrt{2} \]</div>
+    <div class="ip">Aus Symmetrie sind alle drei Seiten \(5\sqrt2\) lang — die Schnittfigur ist ein <strong>gleichseitiges Dreieck</strong>.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K1: Dreieckstyp begründen · K2: räumliche Schnittfigur erfassen · K5: Seitenlängen berechnen</div>
+
+<!-- ─────────────── STUFE 4 ─────────────── -->
+<div class="section-label" style="margin-top:26px;">0.4 Spiegeln, Mittelpunkte und zusammengesetzte Körper</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-k">f</div><span class="card-title">Spiegeln an einer Koordinatenebene</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Spiegelst du einen Punkt an einer Koordinatenebene, ändert sich genau <strong>eine</strong> Koordinate
+      ihr Vorzeichen — die zur Spiegelebene senkrechte:
+    </div>
+    <div class="hint" style="margin-top:10px;">
+      Spiegelung an der <strong>xy-Ebene</strong>: \(z \to -z\) &nbsp;·&nbsp;
+      an der <strong>yz-Ebene</strong>: \(x \to -x\) &nbsp;·&nbsp;
+      an der <strong>xz-Ebene</strong>: \(y \to -y\).
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;"><canvas id="cvBK4" style="border-radius:6px; display:block;"></canvas></div>
+      <div style="flex:1; min-width:220px;">
+        <div class="it">Würfel (Ecke O, Kante 5), gespiegelt an der xy-Ebene</div>
+        <div class="ip" style="font-size:13.5px;">
+          Das Spiegelbild reicht von \(z=0\) bis \(z=-5\). Zusammen mit dem Original entsteht ein
+          <strong>Quader 5 × 5 × 10</strong>, der von \(z=-5\) bis \(z=5\) reicht.
+        </div>
+        <div class="ip" style="font-size:13.5px; margin-top:8px;">
+          Der Mittelpunkt der Raumdiagonale des ursprünglichen Würfels (von O zu (5|5|5)) liegt bei
+          \(M(2{,}5\,|\,2{,}5\,|\,2{,}5)\).
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tg" style="margin-top:16px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK4.1</span><span class="td dm">★★</span></div>
+    <div class="tq">Der Quader Nr.&nbsp;1 liegt mit einer Ecke in O und reicht bis (3&thinsp;|&thinsp;3&thinsp;|&thinsp;5). Spiegle ihn an der roten yz-Ebene. Gib die acht Eckpunkte des Spiegelbildes an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">An der yz-Ebene wird \(x \to -x\). Aus jeder x-Koordinate wird ihr negatives:</div>
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">
+      (0|0|0), (−3|0|0), (−3|3|0), (0|3|0), (0|0|5), (−3|0|5), (−3|3|5), (0|3|5)
+    </div>
+    <div class="ip" style="margin-top:6px;">Das Spiegelbild liegt im Bereich \(x\le 0\) — auf der anderen Seite der roten Wand.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K2: Spiegelung als Vorzeichenwechsel anwenden · K5: Eckpunkte bestimmen</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK4.2</span><span class="td dm">★★</span></div>
+    <div class="tq">Zwei Ecken eines Körpers liegen bei P(1&thinsp;|&thinsp;0&thinsp;|&thinsp;0) und Q(5&thinsp;|&thinsp;4&thinsp;|&thinsp;6). Bestimme den Mittelpunkt der Strecke \(\overline{PQ}\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Die Mittelpunktformel mittelt jede Koordinate:</div>
+    <div class="ip">\[ M = \left(\tfrac{1+5}{2}\,\Big|\,\tfrac{0+4}{2}\,\Big|\,\tfrac{0+6}{2}\right) = (3\,|\,2\,|\,3) \]</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K2: Mittelpunktvorstellung nutzen · K5: Mittelpunktformel anwenden</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK4.3</span><span class="td dm">★★</span></div>
+    <div class="tq">Du legst den Würfel (Ecke O, Kante 5) ins Modell und spiegelst ihn zusätzlich an der gelben xz-Ebene. Beschreibe den zusammengesetzten Körper und gib seine Maße (Länge × Breite × Höhe) an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">An der xz-Ebene wird \(y \to -y\). Das Spiegelbild reicht von \(y=0\) bis \(y=-5\).</div>
+    <div class="ip" style="margin-top:6px;">Zusammen entsteht ein <strong>Quader 5 × 10 × 5</strong> (x von 0 bis 5, y von −5 bis 5, z von 0 bis 5).</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k3">K3</span></div>
+<div class="komp-desc">K3: zusammengesetzten Körper modellieren · K2: Spiegelung räumlich deuten</div>
+
+<!-- ─────────────── STUFE 5 ─────────────── -->
+<div class="section-label" style="margin-top:26px;">0.5 Figuren zu einer Pyramide aufrichten</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Grundfigur + Spitze = Pyramide</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Lege eine Papierfigur als <strong>Grundfläche</strong> in den Boden und stelle dir eine
+      <strong>Spitze</strong> darüber vor — fertig ist eine Pyramide. Steht die Spitze senkrecht über einem
+      bestimmten Grundpunkt, behält sie dessen x- und y-Koordinate; nur die Höhe \(h\) kommt als
+      z-Koordinate dazu.
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;"><canvas id="cvBK5" style="border-radius:6px; display:block;"></canvas></div>
+      <div style="flex:1; min-width:220px;">
+        <div class="it">Papier-Quadrat (Seite 4), Mittelpunkt (3&thinsp;|&thinsp;3&thinsp;|&thinsp;0), Höhe 6</div>
+        <div class="ip" style="font-size:13.5px;">Grundecken: (1|1|0), (5|1|0), (5|5|0), (1|5|0).</div>
+        <div class="ip" style="font-size:13.5px; margin-top:6px;">Spitze senkrecht über dem Mittelpunkt: \(S(3\,|\,3\,|\,6)\).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tg" style="margin-top:16px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK5.1</span><span class="td dm">★★</span></div>
+    <div class="tq">Lege das rechtwinklige Dreieck (Katheten 4 entlang der x-Achse und 3 entlang der y-Achse, rechter Winkel in O) in den Boden. Richte über dem rechten Winkel O eine Spitze der Höhe 5 auf. Gib die Koordinaten aller vier Eckpunkte der entstehenden Pyramide an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Grundfläche: O(0|0|0), P(4|0|0), Q(0|3|0).</div>
+    <div class="ip">Spitze senkrecht über O in Höhe 5: \(S(0\,|\,0\,|\,5)\).</div>
+    <div class="ip" style="margin-top:6px;">Diese Pyramide hat drei rechtwinklige Seitenflächen, die in den Koordinatenebenen liegen.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K4: Spitze über Grundpunkt deuten · K5: Eckpunkte angeben</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK5.2</span><span class="td dh">★★★</span></div>
+    <div class="tq">Lege ein gleichseitiges Dreieck mit Seitenlänge 5 so in den Boden, dass eine Ecke in O liegt und eine Seite auf der x-Achse. Bestimme die Koordinaten der dritten Grundecke und des Schwerpunkts. Richte über dem Schwerpunkt eine Spitze der Höhe 6 auf und gib ihre Koordinaten an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Zwei Ecken: O(0|0|0) und (5|0|0). Die dritte liegt mittig darüber, um die Dreieckshöhe \(\tfrac{5}{2}\sqrt3\) versetzt:</div>
+    <div class="ip">\[ \left(2{,}5 \,\Big|\, \tfrac{5}{2}\sqrt3 \,\Big|\, 0\right) \approx (2{,}5\,|\,4{,}33\,|\,0) \]</div>
+    <div class="ip" style="margin-top:6px;">Schwerpunkt = Mittel der drei Ecken:</div>
+    <div class="ip">\[ T = \left(\tfrac{0+5+2{,}5}{3} \,\Big|\, \tfrac{0+0+4{,}33}{3} \,\Big|\, 0\right) = \left(2{,}5\,\Big|\,\tfrac{5}{6}\sqrt3\,\Big|\,0\right) \approx (2{,}5\,|\,1{,}44\,|\,0) \]</div>
+    <div class="ip" style="margin-top:6px;">Spitze in Höhe 6 darüber: \(S \approx (2{,}5\,|\,1{,}44\,|\,6)\).</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+<div class="komp-desc">K5: mit Wurzeln rechnen · K2/K6: Schwerpunkt und Spitze sauber begründen</div>
+
+<!-- ─────────────── STUFE 6 ─────────────── -->
+<div class="section-label" style="margin-top:26px;">0.6 Schief und gedreht im Raum</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Wenn die Kanten nicht mehr entlang der Achsen laufen</span></div>
+  <div class="card-body">
+    <div class="ip">
+      Drehst du einen Körper, sind seine Kanten nicht mehr parallel zu den Achsen. Dann lassen sich die
+      Eckpunkte oft noch ablesen — aber die <em>Kantenlängen</em> musst du rechnen, und sie sind häufig
+      keine ganzen Zahlen mehr.
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
+      <div style="flex:0 0 auto;"><canvas id="cvBK6" style="border-radius:6px; display:block;"></canvas></div>
+      <div style="flex:1; min-width:220px;">
+        <div class="it">Papier-Quadrat, um 45° gedreht im Boden („Raute“)</div>
+        <div class="ip" style="font-size:13.5px;">Ecken: (3|0|0), (6|3|0), (3|6|0), (0|3|0) — alle <strong>ganzzahlig</strong>.</div>
+        <div class="ip" style="font-size:13.5px; margin-top:6px;">Die Seitenlänge ist aber <strong>nicht</strong> 6, sondern</div>
+        <div class="ip">\[ \sqrt{3^2+3^2} = \sqrt{18} = 3\sqrt2 \approx 4{,}24. \]</div>
+        <div class="ip" style="font-size:13.5px;">Die Strecken zwischen den Ecken (6) sind die <em>Diagonalen</em>, nicht die Seiten.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tg" style="margin-top:16px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK6.1</span><span class="td dh">★★★</span></div>
+    <div class="tq">Begründe an der Raute aus dem Beispiel, warum die Seitenlänge \(3\sqrt2\) und nicht 6 beträgt. Erkläre, woran man im Modell den Unterschied zwischen Seite und Diagonale erkennt.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Eine Seite verbindet zwei <em>benachbarte</em> Ecken, z.&nbsp;B. (3|0|0) und (6|3|0). Der Abstand ist</div>
+    <div class="ip">\[ \sqrt{(6-3)^2+(3-0)^2}=\sqrt{18}=3\sqrt2\approx4{,}24. \]</div>
+    <div class="ip" style="margin-top:6px;">Die 6 ist der Abstand <em>gegenüberliegender</em> Ecken, also die Diagonale (z.&nbsp;B. von (3|0|0) zu (3|6|0)). Im Modell: die Seiten begrenzen die Figur, die Diagonalen verlaufen quer durch ihre Mitte.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+<div class="komp-desc">K1/K6: Seite und Diagonale unterscheiden und begründen · K5: Längen berechnen</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK6.2</span><span class="td dh">★★★</span></div>
+    <div class="tq">Lege den Quader Nr.&nbsp;2 (3 × 5 × 10) mit einer Ecke in O so ins Modell, dass die längste Kante (10) nach oben zeigt. Bestimme die Ecke, die am höchsten liegt, und erläutere, warum du ihre z-Koordinate nicht direkt am Gitter ablesen kannst — gib sie trotzdem an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Die höchste Ecke ist (3&thinsp;|&thinsp;5&thinsp;|&thinsp;10).</div>
+    <div class="ip" style="margin-top:6px;">Dein Karton-Gitter reicht nur bis 7 — die Ecke liegt <em>über</em> dem Modell, der Körper ragt heraus. Die z-Koordinate bekommst du durch Weiterzählen bzw. Rechnen: \(7+3=10\).</div>
+    <div class="ip" style="margin-top:6px;"><strong>Merke:</strong> Das Karton-Modell ist endlich, das Koordinatensystem aber <em>unendlich</em> — die Pfeile an den Achsen zeigen, dass es in jede Richtung weitergeht.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+<div class="komp-desc">K6: Reichweite des Modells reflektieren · K4: Koordinate über den Gitterbereich hinaus bestimmen</div>
+
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK6.3</span><span class="td dh">★★★</span></div>
+    <div class="tq">Nimm die gedrehte Raute (Ecken (3|0|0), (6|3|0), (3|6|0), (0|3|0)) als Grundfläche eines geraden Prismas und ziehe sie 5 Einheiten nach oben. Gib die vier Eckpunkte der Deckfläche an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Beim senkrechten Hochziehen bleiben x und y gleich, nur \(z\) wird 5:</div>
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">(3|0|5), (6|3|5), (3|6|5), (0|3|5)</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K4: Extrusion als Verschiebung in z deuten · K5: Eckpunkte angeben</div>
+
+<!-- SELBSTLERNCHECK -->
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:22px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen am Modell und auf dem Papier beantworten?</p>
+      <ol>
+        <li>Zeige im Modell einen Punkt, der <em>auf der y-Achse</em> liegt. Welche zwei Koordinaten sind dort null?</li>
+        <li>Ein Würfel (Kante 4) liegt mit einer Ecke bei (1&thinsp;|&thinsp;2&thinsp;|&thinsp;0) achsenparallel auf dem Boden. Gib die acht Eckpunkte an.</li>
+        <li>Erkläre, warum die Seite einer um 45° gedrehten Figur eine andere Länge hat als der Abstand zweier gegenüberliegender Ecken.</li>
+        <li>Beschreibe in eigenen Worten, was sich an den Koordinaten ändert, wenn du einen Körper an der grünen xy-Ebene spiegelst.</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Unsicher? Lies noch einmal ab „Dein Modell ist das Koordinatensystem“ (Begriffe) bzw. ab „Schief und gedreht im Raum“ (Drehung).
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Schrägbild-Zeichenfunktion für den Bastel-Abschnitt ── -->
+<script>
+(function(){
+  if(window.__bkReady) return; window.__bkReady=true;
+  var DPR = window.devicePixelRatio || 1;
+  var K = {kiku:'#5b6e2e', gelb:'#c8b55e', rot:'#c75c3a', blau:'#8a9da7', ink:'#2c2c2c', soft:'#6b6560'};
+
+  function bkInit(id, opt){
+    var cv = document.getElementById(id); if(!cv) return;
+    opt = opt || {};
+    var W = opt.W||380, H = opt.H||330, S = opt.S||24, ox = opt.ox||64, oy = opt.oy||272;
+    cv.width = W*DPR; cv.height = H*DPR; cv.style.width = W+'px'; cv.style.height = H+'px';
+    cv.style.display = 'block';
+    var ctx = cv.getContext('2d'); ctx.scale(DPR, DPR);
+    ctx.fillStyle = '#fffdf8'; ctx.fillRect(0,0,W,H);
+
+    function P(x,y,z){ return {x: ox + x*S + y*S*0.5, y: oy - y*S*0.30 - z*S}; }
+    function line(a,b,col,w,dash){
+      ctx.strokeStyle = col; ctx.lineWidth = w||1.4; ctx.setLineDash(dash||[]);
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); ctx.setLineDash([]);
+    }
+    function unit(a,b){ var dx=b.x-a.x, dy=b.y-a.y, L=Math.hypot(dx,dy)||1; return {x:dx/L, y:dy/L}; }
+    function head(end,dir){
+      var L=9, wd=4.5, nx=end.x-dir.x*L, ny=end.y-dir.y*L, px=-dir.y, py=dir.x;
+      ctx.fillStyle = K.ink; ctx.beginPath(); ctx.moveTo(end.x,end.y);
+      ctx.lineTo(nx+px*wd, ny+py*wd); ctx.lineTo(nx-px*wd, ny-py*wd); ctx.closePath(); ctx.fill();
+    }
+
+    var xm = opt.xm||6, ym = opt.ym||6, zm = opt.zm||6;
+
+    // Koordinatenebenen einfärben (Modellfarben)
+    (opt.faces||[]).forEach(function(f){
+      var pts, col;
+      if(f==='xy'){ pts=[P(0,0,0),P(xm,0,0),P(xm,ym,0),P(0,ym,0)]; col=K.kiku; }
+      else if(f==='xz'){ pts=[P(0,0,0),P(xm,0,0),P(xm,0,zm),P(0,0,zm)]; col=K.gelb; }
+      else { pts=[P(0,0,0),P(0,ym,0),P(0,ym,zm),P(0,0,zm)]; col=K.rot; }
+      ctx.fillStyle = col+'18'; ctx.beginPath(); ctx.moveTo(pts[0].x,pts[0].y);
+      for(var i=1;i<4;i++) ctx.lineTo(pts[i].x,pts[i].y); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = col; ctx.lineWidth = 1.6; ctx.stroke();
+    });
+
+    // dezentes Bodengitter
+    if(opt.grid){
+      for(var gi=1; gi<=xm; gi++) line(P(gi,0,0), P(gi,ym,0), K.kiku+'33', 0.7);
+      for(var gj=1; gj<=ym; gj++) line(P(0,gj,0), P(xm,gj,0), K.kiku+'33', 0.7);
+    }
+
+    // Achsen mit Pfeilspitzen
+    var O=P(0,0,0), AX=P(xm,0,0), AY=P(0,ym,0), AZ=P(0,0,zm);
+    line(O,AX,K.ink,1.8); line(O,AY,K.ink,1.8); line(O,AZ,K.ink,1.8);
+    head(AX,unit(O,AX)); head(AY,unit(O,AY)); head(AZ,unit(O,AZ));
+
+    // Ticks + Zahlen
+    ctx.fillStyle=K.soft; ctx.font='12px Inter,system-ui,sans-serif';
+    ctx.textAlign='center'; ctx.textBaseline='top';
+    for(var i=1;i<=xm;i++){ var tx=P(i,0,0); ctx.fillText(i, tx.x, tx.y+5); }
+    ctx.textAlign='left'; ctx.textBaseline='middle';
+    for(var j=1;j<=ym;j++){ var ty=P(0,j,0); ctx.fillText(j, ty.x+5, ty.y+2); }
+    ctx.textAlign='right'; ctx.textBaseline='middle';
+    for(var k=1;k<=zm;k++){ var tz=P(0,0,k); ctx.fillText(k, tz.x-6, tz.y); }
+
+    // Achsennamen
+    ctx.fillStyle=K.ink; ctx.font='bold 13px Inter,system-ui,sans-serif';
+    ctx.textAlign='center'; ctx.textBaseline='top'; ctx.fillText('x', AX.x+7, AX.y+1);
+    ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText('y', AY.x+8, AY.y+5);
+    ctx.textAlign='right'; ctx.textBaseline='bottom'; ctx.fillText('z', AZ.x-4, AZ.y-2);
+
+    // Ursprung
+    ctx.fillStyle=K.soft; ctx.font='12px Inter,system-ui,sans-serif';
+    ctx.textAlign='right'; ctx.textBaseline='top'; ctx.fillText('O', O.x-5, O.y+5);
+
+    function quader(x0,y0,z0,dx,dy,dz,col){
+      col = col || K.blau;
+      var v=[P(x0,y0,z0),P(x0+dx,y0,z0),P(x0+dx,y0+dy,z0),P(x0,y0+dy,z0),
+             P(x0,y0,z0+dz),P(x0+dx,y0,z0+dz),P(x0+dx,y0+dy,z0+dz),P(x0,y0+dy,z0+dz)];
+      // Deckfläche füllen
+      ctx.fillStyle=col+'33'; ctx.beginPath();
+      [4,5,6,7].forEach(function(idx,kk){ kk?ctx.lineTo(v[idx].x,v[idx].y):ctx.moveTo(v[idx].x,v[idx].y); });
+      ctx.closePath(); ctx.fill();
+      // verdeckte Kanten von v0 gestrichelt
+      line(v[0],v[1],col,1.2,[4,3]); line(v[0],v[3],col,1.2,[4,3]); line(v[0],v[4],col,1.2,[4,3]);
+      // sichtbare Kanten
+      line(v[1],v[2],col,1.8); line(v[2],v[3],col,1.8);
+      line(v[4],v[5],col,1.8); line(v[5],v[6],col,1.8); line(v[6],v[7],col,1.8); line(v[7],v[4],col,1.8);
+      line(v[1],v[5],col,1.8); line(v[2],v[6],col,1.8); line(v[3],v[7],col,1.8);
+    }
+    function poly(arr,col,fillc){
+      ctx.strokeStyle=col; ctx.lineWidth=1.8; ctx.beginPath();
+      arr.forEach(function(p,i){ i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y); }); ctx.closePath();
+      if(fillc){ ctx.fillStyle=fillc; ctx.fill(); } ctx.stroke();
+    }
+    function dot(p,label,col){
+      col=col||K.rot; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(p.x,p.y,3.8,0,2*Math.PI); ctx.fill();
+      if(label){ ctx.font='bold 12px Inter,system-ui,sans-serif'; ctx.textAlign='left'; ctx.textBaseline='bottom'; ctx.fillText(label, p.x+6, p.y-3); }
+    }
+
+    if(opt.draw) opt.draw({ctx:ctx, P:P, line:line, quader:quader, poly:poly, dot:dot, K:K});
+  }
+  window.bkInit = bkInit;
+
+  function run(){
+    // Orientierung — alle drei Ebenen
+    bkInit('cvBKmodell', {W:390,H:340,S:24,ox:78,oy:286,xm:7,ym:7,zm:7,faces:['xy','xz','yz'],grid:true});
+
+    // Stufe 1: Würfel Ecke O
+    bkInit('cvBK1', {faces:['xy'],grid:true,xm:6,ym:6,zm:6, draw:function(g){
+      g.quader(0,0,0,5,5,5,g.K.blau);
+      g.dot(g.P(5,5,5),'F(5|5|5)',g.K.rot); g.dot(g.P(0,0,0),'O',g.K.ink);
+    }});
+
+    // Stufe 2: Würfel verschoben (2|1|0)
+    bkInit('cvBK2', {faces:['xy'],grid:true,xm:8,ym:7,zm:6,S:22,ox:60,oy:280, draw:function(g){
+      g.quader(2,1,0,5,5,5,g.K.blau);
+      g.dot(g.P(2,1,0),'(2|1|0)',g.K.rot);
+    }});
+
+    // Stufe 3: Würfel + Schnittebene z=2
+    bkInit('cvBK3', {faces:['xy'],grid:true,xm:6,ym:6,zm:6, draw:function(g){
+      g.quader(0,0,0,5,5,5,g.K.blau);
+      g.poly([g.P(0,0,2),g.P(5,0,2),g.P(5,5,2),g.P(0,5,2)], g.K.rot, g.K.rot+'44');
+      g.dot(g.P(0,0,2),'z=2',g.K.rot);
+    }});
+
+    // Stufe 4: Würfel + Spiegelung an xy-Ebene
+    bkInit('cvBK4', {faces:['xy'],grid:false,xm:6,ym:6,zm:5,S:23,ox:64,oy:188, draw:function(g){
+      g.quader(0,0,0,5,5,5,g.K.blau);
+      g.quader(0,0,-5,5,5,5,g.K.gelb);
+      g.dot(g.P(2.5,2.5,2.5),'M',g.K.rot);
+    }});
+
+    // Stufe 5: Pyramide über Quadrat
+    bkInit('cvBK5', {faces:['xy'],grid:true,xm:7,ym:7,zm:7,S:22,ox:64,oy:286, draw:function(g){
+      var A=g.P(1,1,0),B=g.P(5,1,0),C=g.P(5,5,0),D=g.P(1,5,0),S=g.P(3,3,6);
+      g.poly([A,B,C,D], g.K.blau, g.K.blau+'22');
+      g.line(A,S,g.K.blau,1.6); g.line(B,S,g.K.blau,1.6); g.line(C,S,g.K.blau,1.6); g.line(D,S,g.K.blau,1.6);
+      g.dot(S,'S(3|3|6)',g.K.rot);
+    }});
+
+    // Stufe 6: gedrehte Raute
+    bkInit('cvBK6', {faces:['xy'],grid:true,xm:7,ym:7,zm:5, draw:function(g){
+      var a=g.P(3,0,0),b=g.P(6,3,0),c=g.P(3,6,0),d=g.P(0,3,0);
+      g.poly([a,b,c,d], g.K.blau, g.K.blau+'22');
+      g.dot(a,'(3|0|0)',g.K.rot); g.dot(c,'(3|6|0)',g.K.rot);
+    }});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
+})();
+</script>
+
 <div class="section-label" style="margin-top:30px;">1. Koordinatensystem auf kariertem Papier zeichnen</div>
 
 <div class="card">
