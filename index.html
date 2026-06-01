@@ -12120,6 +12120,19 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div>
 <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
 <div class="komp-desc">K1: Lagebeziehung begründen · K4: Koordinatenebenen benennen</div>
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK1.3</span><span class="td de">★</span></div>
+    <div class="tq">Lege das ausgeschnittene <strong>Rechteck</strong> (Seiten 4 und 2) flach auf den grünen Boden — eine Ecke in O, die lange Seite entlang der x-Achse. Gib die Koordinaten aller vier Ecken an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">(0|0|0), (4|0|0), (4|2|0), (0|2|0)</div>
+    <div class="ip" style="margin-top:6px;">Alle Ecken liegen in der xy-Ebene, also ist bei allen z = 0.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+<div class="komp-desc">K4: eine Figur in der Ebene ablesen und ihre Eckpunkte angeben</div>
 
 <!-- ─────────────── STUFE 2 ─────────────── -->
 <div class="section-label" style="margin-top:26px;">0.2 Körper an vorgegebene Koordinaten legen</div>
@@ -12128,13 +12141,13 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Verschoben, aber noch achsenparallel</span></div>
   <div class="card-body">
     <div class="ip">
-      Jetzt liegt die O-nächste Ecke nicht mehr im Ursprung, sondern an einer vorgegebenen Stelle. Die
-      Kanten bleiben parallel zu den Achsen — du addierst die Kantenlängen einfach zur Startecke.
+      Jetzt liegt die Ecke, die O am nächsten liegt, nicht mehr im Ursprung, sondern an einer vorgegebenen Stelle. Die
+      Kanten bleiben parallel zu den Achsen — du addierst die Kantenlängen einfach zu dieser Ecke.
     </div>
     <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; align-items:flex-start;">
       <div style="flex:0 0 auto;"><canvas id="cvBK2" style="border-radius:6px; display:block;"></canvas></div>
       <div style="flex:1; min-width:220px;">
-        <div class="it">Würfel (Kantenlänge 5), vordere Ecke bei (2&thinsp;|&thinsp;1&thinsp;|&thinsp;0)</div>
+        <div class="it">Würfel (Kantenlänge 5), die O am nächsten liegende Ecke bei (2&thinsp;|&thinsp;1&thinsp;|&thinsp;0)</div>
         <div style="font-family:'DM Serif Display',serif; font-size:13.5px; line-height:1.9;">
           (2|1|0), (7|1|0), (7|6|0), (2|6|0),<br>
           (2|1|5), (7|1|5), (7|6|5), (2|6|5)
@@ -12150,7 +12163,7 @@ window.addEventListener('resize',function(){updateSimulator();});
 <div class="tg" style="margin-top:16px;"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">BK2.1</span><span class="td dm">★★</span></div>
-    <div class="tq">Lege den Quader Nr.&nbsp;1 (3 × 3 × 5) so an die gelbe xz-Ebene, dass eine Fläche ganz in dieser Ebene liegt und die O-nächste Ecke bei (1&thinsp;|&thinsp;0&thinsp;|&thinsp;0) ist. Die Länge 5 zeigt nach oben, die Tiefe 3 in y-Richtung. Gib alle 8 Eckpunkte an.</div>
+    <div class="tq">Lege den Quader Nr.&nbsp;1 (3 × 3 × 5) so an die gelbe xz-Ebene, dass eine Fläche ganz in dieser Ebene liegt und die Ecke, die O am nächsten liegt, bei (1&thinsp;|&thinsp;0&thinsp;|&thinsp;0) ist. Die Länge 5 zeigt nach oben, die Tiefe 3 in y-Richtung. Gib alle 8 Eckpunkte an.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta">
@@ -12161,16 +12174,16 @@ window.addEventListener('resize',function(){updateSimulator();});
   </div>
 </div>
 <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
-<div class="komp-desc">K4: Lage zur Ebene deuten · K5: Eckpunkte aus Startecke und Kantenlängen bestimmen</div>
+<div class="komp-desc">K4: Lage zur Ebene deuten · K5: Eckpunkte aus der gegebenen Ecke und den Kantenlängen bestimmen</div>
 
 <div class="tg" style="margin-top:12px;"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">BK2.2</span><span class="td dm">★★</span></div>
-    <div class="tq">Zeichne den Würfel aus dem Beispiel (vordere Ecke (2&thinsp;|&thinsp;1&thinsp;|&thinsp;0)) im Schrägbild ab: x-Achse waagerecht, y-Achse unter 45° mit halber Länge, z-Achse senkrecht. Markiere die Startecke und beschrifte sie.</div>
+    <div class="tq">Zeichne den Würfel aus dem Beispiel (die Ecke, die O am nächsten liegt, bei (2&thinsp;|&thinsp;1&thinsp;|&thinsp;0)) im Schrägbild ab: x-Achse waagerecht, y-Achse unter 45° mit halber Länge, z-Achse senkrecht. Markiere diese Ecke und beschrifte sie.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta">
-    <div class="ip"><strong>Kontrolle deiner Zeichnung:</strong> Gehe vom Ursprung 2 nach rechts (x), dann 1 schräg (y, also 1 Kästchen rechts und ein halbes hoch), dort liegt die Startecke (2|1|0). Von ihr aus baust du den Würfel: 5 weiter in x, 5 schräg in y, 5 senkrecht in z.</div>
+    <div class="ip"><strong>Kontrolle deiner Zeichnung:</strong> Gehe vom Ursprung 2 nach rechts (x), dann 1 schräg (y, also 1 Kästchen rechts und ein halbes hoch), dort liegt die Ecke, die O am nächsten liegt, bei (2|1|0). Von ihr aus baust du den Würfel: 5 weiter in x, 5 schräg in y, 5 senkrecht in z.</div>
     <div class="ip" style="margin-top:6px;">Achte darauf, dass die <em>verdeckten</em> Kanten (von der hinteren unteren Ecke aus) gestrichelt gezeichnet werden.</div>
   </div>
 </div>
@@ -12192,6 +12205,19 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div>
 <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
 <div class="komp-desc">K3: reale Situation ins Koordinatensystem übersetzen · K4/K5: Eckpunkte bestimmen</div>
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK2.4</span><span class="td dm">★★</span></div>
+    <div class="tq">Stelle das ausgeschnittene <strong>Quadrat</strong> (Seitenlänge 3) senkrecht in die gelbe xz-Ebene — eine Ecke in O, eine Seite entlang der x-Achse, die andere entlang der z-Achse. Gib die vier Eckpunkte an und begründe, warum bei allen y = 0 gilt.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">(0|0|0), (3|0|0), (3|0|3), (0|0|3)</div>
+    <div class="ip" style="margin-top:6px;">Weil das Quadrat ganz in der xz-Ebene liegt, hat kein Punkt einen Abstand in y-Richtung — also gilt y = 0 für alle vier Ecken.</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+<div class="komp-desc">K1: Lage einer Figur in einer Wand-Ebene begründen · K4: Eckpunkte angeben</div>
 
 <!-- ─────────────── STUFE 3 ─────────────── -->
 <div class="section-label" style="margin-top:26px;">0.3 Schnittebenen zeichnen und beschreiben</div>
@@ -12327,6 +12353,20 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div>
 <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k3">K3</span></div>
 <div class="komp-desc">K3: zusammengesetzten Körper modellieren · K2: Spiegelung räumlich deuten</div>
+<div class="tg" style="margin-top:12px;"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">BK4.4</span><span class="td dm">★★</span></div>
+    <div class="tq">Lege das <strong>Rechteck</strong> (Seiten 4 und 2) flach auf den Boden mit den Ecken (1|1|0), (5|1|0), (5|3|0), (1|3|0). Bestimme den Mittelpunkt des Rechtecks (Schnittpunkt der Diagonalen). Spiegle das Rechteck anschließend an der roten yz-Ebene und gib die vier Ecken des Spiegelbildes an.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Mittelpunkt = Mitte einer Diagonale, z.&nbsp;B. von (1|1|0) bis (5|3|0): \( M = (3\,|\,2\,|\,0) \).</div>
+    <div class="ip" style="margin-top:6px;">Spiegelung an der yz-Ebene (x → −x):</div>
+    <div class="ip" style="font-family:'DM Serif Display',serif; font-size:14px; line-height:1.9;">(−1|1|0), (−5|1|0), (−5|3|0), (−1|3|0)</div>
+  </div>
+</div>
+<div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K2: Spiegelung und Mittelpunkt an einer Figur deuten · K5: Koordinaten berechnen</div>
 
 <!-- ─────────────── STUFE 5 ─────────────── -->
 <div class="section-label" style="margin-top:26px;">0.5 Figuren zu einer Pyramide aufrichten</div>
