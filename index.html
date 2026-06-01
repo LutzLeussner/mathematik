@@ -22891,5 +22891,27 @@ window.addEventListener('load',function(){
   window.addEventListener('hashchange', routeHash);
 })();
 </script>
+
+<!-- Zurueck-zum-Lehrerbereich (nur im Lehrer-Modus sichtbar) -->
+<div id="lehrerBack" style="display:none;position:fixed;left:16px;bottom:16px;z-index:9999;">
+  <button type="button" onclick="history.back()" title="Zurueck zum Lehrerbereich"
+    style="font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:13px;font-weight:600;color:#fff;background:#5b6e2e;border:none;border-radius:20px;padding:9px 16px;box-shadow:0 4px 14px rgba(44,42,38,.25);cursor:pointer;">← Lehrerbereich</button>
+</div>
+<script>
+/* Zurueck-Brücke zum Lehrerbereich. Erscheint NUR, wenn diese Seite aus dem
+   internen Lehrerbereich aufgerufen wurde (Marker ?v=lehrer). Der Knopf nutzt
+   history.back(), springt also in denselben Tab zurueck — es ist KEINE Adresse
+   des Lehrerbereichs gespeichert. Normale Besucher sehen nichts. */
+(function(){
+  try{
+    var params = new URLSearchParams(window.location.search);
+    if(params.get('v') === 'lehrer'){ sessionStorage.setItem('view_lehrer','1'); }
+    if(sessionStorage.getItem('view_lehrer') === '1' && window.history.length > 1){
+      var el = document.getElementById('lehrerBack');
+      if(el) el.style.display = 'block';
+    }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
