@@ -1,0 +1,44 @@
+rules_version = '2';
+
+// =====================================================================
+//  Sicherheitsregeln für das Matheportal (Prototyp)
+//  - Schüler dürfen NUR ihre eigenen Ergebnisse lesen/schreiben.
+//  - Lehrer (E-Mail in der Allowlist) dürfen ALLES lesen und löschen.
+//  Eintragen in: Firebase Console -> Firestore Database -> Regeln
+// =====================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Lehrer-Allowlist: hier deine Lehrer-E-Mail(s) eintragen ---
+    function istLehrer() {
+      return request.auth != null
+        && request.auth.token.email in [
+          'lehrer@matheportal.local'
+          // , 'weitere.lehrkraft@matheportal.local'
+        ];
+    }
+
+    // Prüft, ob der angemeldete Schüler zu dieser Matrikelnummer gehört.
+    // Login-E-Mail = <matrikel>@schueler.matheportal.local
+    function gehoertMir(matrikel) {
+      return request.auth != null
+        && request.auth.token.email == matrikel + '@schueler.matheportal.local';
+    }
+
+    match /ergebnisse/{docId} {
+      allow read: if istLehrer()
+        || (request.auth != null && gehoertMir(resource.data.matrikel));
+
+      allow create, update: if istLehrer()
+        || (request.auth != null && gehoertMir(request.resource.data.matrikel));
+
+      allow delete: if istLehrer();
+    }
+
+    // Alles andere standardmäßig sperren.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

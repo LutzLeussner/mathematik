@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matheportal · Lehrerbereich</title>
+<style>
+  :root{
+    --gruen:#2e7d5b; --gruen-hell:#e7f2ec; --gruen-dunkel:#1f5a40;
+    --rot:#c0392b; --gelb:#b9821a; --gelb-hell:#fdf4e2;
+    --grau:#5b6770; --grau-hell:#f5f7f8; --rand:#dfe5e8; --text:#22303a;
+  }
+  *{box-sizing:border-box}
+  body{font-family:"Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;color:var(--text);margin:0;background:#fbfcfc;line-height:1.5}
+  header{background:var(--gruen-dunkel);color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  header h1{font-size:1.15rem;margin:0;font-weight:600}
+  header button{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.45);padding:6px 12px;border-radius:7px;cursor:pointer;font-size:.85rem}
+  main{max-width:1000px;margin:0 auto;padding:24px 18px 60px}
+  .karte{background:#fff;border:1px solid var(--rand);border-radius:14px;padding:22px 24px;margin-bottom:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  h2{color:var(--gruen-dunkel);margin:0 0 14px;font-size:1.05rem}
+  label{display:block;font-size:.84rem;color:var(--grau);margin:12px 0 5px;font-weight:600}
+  input[type=text],input[type=password]{width:100%;padding:10px 12px;border:1.5px solid var(--rand);border-radius:9px;font-size:.98rem}
+  input:focus{outline:none;border-color:var(--gruen)}
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .row>div{flex:1;min-width:160px}
+  button.haupt{background:var(--gruen);color:#fff;border:0;padding:11px 20px;border-radius:9px;font-weight:600;cursor:pointer;margin-top:8px}
+  button.haupt:hover{background:var(--gruen-dunkel)}
+  button.haupt:disabled{opacity:.5;cursor:default}
+  .meld{font-size:.88rem;margin-top:10px;min-height:1em}
+  .meld.ok{color:var(--gruen-dunkel)} .meld.err{color:var(--rot)}
+  #loginWrap{max-width:420px;margin:8vh auto;padding:0 18px}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  th,td{border:1px solid var(--rand);padding:8px 10px;text-align:center}
+  th{background:var(--grau-hell);color:var(--grau);font-weight:600}
+  td.matrikel{text-align:left;font-weight:600;color:var(--gruen-dunkel);white-space:nowrap}
+  .zelle-geloest{background:var(--gruen-hell);color:var(--gruen-dunkel);font-weight:600}
+  .zelle-loesung{background:var(--gelb-hell);color:var(--gelb)}
+  .zelle-leer{color:#aab4ba}
+  .legende{font-size:.82rem;color:var(--grau);margin-top:12px;display:flex;gap:18px;flex-wrap:wrap}
+  .legende span{display:inline-flex;align-items:center;gap:6px}
+  .punkt{width:13px;height:13px;border-radius:3px;display:inline-block;border:1px solid var(--rand)}
+  .hidden{display:none}
+  .hinweisbox{background:var(--gelb-hell);border:1px solid #eed9af;color:#7a5712;padding:10px 14px;border-radius:9px;font-size:.85rem;margin-bottom:18px}
+  .liste{margin-top:14px;font-size:.86rem;color:var(--grau)}
+  .liste code{background:var(--grau-hell);padding:2px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="loginWrap">
+  <div class="karte">
+    <h2>Lehrerbereich — Anmeldung</h2>
+    <form id="loginForm" autocomplete="off">
+      <label for="email">Lehrer-E-Mail</label>
+      <input type="text" id="email" placeholder="lehrer@matheportal.local" required>
+      <label for="pw">Passwort</label>
+      <input type="password" id="pw" required>
+      <button class="haupt" type="submit" id="loginBtn" style="width:100%">Anmelden</button>
+      <div class="meld" id="loginMeld"></div>
+    </form>
+    <div class="hinweisbox hidden" id="demoHinweis" style="margin-top:16px">
+      <b>Firebase ist noch nicht eingerichtet.</b> Der Lehrerbereich benötigt eine echte
+      Firebase-Verbindung (Anlegen von Konten, Auswertung). Bitte zuerst die Konfiguration
+      in dieser Datei und in <code>prototyp_analytische_geometrie.html</code> eintragen.
+      Anleitung: <code>SETUP_Firebase_Anleitung.md</code>.
+    </div>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="appWrap" class="hidden">
+  <header>
+    <h1>Matheportal · Lehrerbereich</h1>
+    <button id="logoutBtn">Abmelden</button>
+  </header>
+  <main>
+
+    <div class="karte">
+      <h2>Schüler-Konto anlegen</h2>
+      <div class="hinweisbox">
+        Vergib pseudonyme <b>Matrikelnummern</b> (keine Klarnamen). Die Zuordnung
+        Matrikelnummer → Schülername führst du getrennt (offline). So bleiben in der
+        Datenbank keine personenbezogenen Klarnamen gespeichert.
+      </div>
+      <div class="row">
+        <div>
+          <label for="nMatrikel">Matrikelnummer</label>
+          <input type="text" id="nMatrikel" inputmode="numeric" placeholder="z. B. 100423">
+        </div>
+        <div>
+          <label for="nPin">Start-PIN / Passwort</label>
+          <input type="text" id="nPin" placeholder="mind. 6 Zeichen">
+        </div>
+      </div>
+      <button class="haupt" id="anlegenBtn">Konto anlegen</button>
+      <div class="meld" id="anlegenMeld"></div>
+      <div class="liste">Anmeldung der Schüler später unter
+        <code>prototyp_analytische_geometrie.html</code> mit Matrikelnummer + PIN.</div>
+    </div>
+
+    <div class="karte">
+      <h2>Auswertung</h2>
+      <button class="haupt" id="ladenBtn">Daten aktualisieren</button>
+      <div class="meld" id="ladenMeld"></div>
+      <div id="tabelleWrap" style="overflow-x:auto;margin-top:14px"></div>
+      <div class="legende">
+        <span><span class="punkt" style="background:var(--gruen-hell)"></span> gelöst (Zahl = benötigte Versuche)</span>
+        <span><span class="punkt" style="background:var(--gelb-hell)"></span> Lösung gezeigt (3 Fehlversuche)</span>
+        <span><span class="punkt" style="background:#fff"></span> noch nicht bearbeitet</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="portal/firebase-config.js"></script>
+<script type="module">
+/* ====================================================================
+   FIREBASE-KONFIGURATION
+   Wird zentral aus portal/firebase-config.js gelesen (window.FIREBASE_CONFIG).
+   Du musst die Zugangsdaten also NUR dort eintragen, nicht hier.
+==================================================================== */
+const firebaseConfig = window.FIREBASE_CONFIG || { apiKey: "DEIN_API_KEY" };
+const EMAIL_DOMAIN = window.PORTAL_EMAIL_DOMAIN || "@schueler.matheportal.local";
+const DEMO = !firebaseConfig.apiKey || firebaseConfig.apiKey.indexOf("DEIN_") === 0;
+
+const $ = s=>document.querySelector(s);
+
+if (DEMO){
+  $("#demoHinweis").classList.remove("hidden");
+}
+
+let app, auth, db, F={};
+if (!DEMO){
+  const { initializeApp, deleteApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+  const { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } =
+    await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+  const { getFirestore, collection, getDocs } =
+    await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app); db = getFirestore(app);
+  F = { initializeApp, deleteApp, getAuth, signInWithEmailAndPassword, signOut,
+        createUserWithEmailAndPassword, collection, getDocs };
+}
+
+/* ---------- Login ---------- */
+$("#loginForm").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const m=$("#loginMeld"); m.className="meld"; m.textContent="";
+  if(DEMO){ m.className="meld err"; m.textContent="Bitte zuerst Firebase einrichten (siehe Hinweis)."; return; }
+  const btn=$("#loginBtn"); btn.disabled=true; btn.textContent="Anmelden …";
+  try{
+    await F.signInWithEmailAndPassword(auth, $("#email").value.trim(), $("#pw").value);
+    $("#loginWrap").classList.add("hidden"); $("#appWrap").classList.remove("hidden");
+    ladeDaten();
+  }catch(err){
+    m.className="meld err"; m.textContent = (err.code||"").includes("invalid-credential")
+      ? "E-Mail oder Passwort falsch." : (err.message||"Anmeldung fehlgeschlagen.");
+  }finally{ btn.disabled=false; btn.textContent="Anmelden"; }
+});
+$("#logoutBtn").addEventListener("click", async ()=>{ if(!DEMO) await F.signOut(auth); location.reload(); });
+
+/* ---------- Schüler-Konto anlegen (Zweit-App, damit Lehrer angemeldet bleibt) ---------- */
+$("#anlegenBtn").addEventListener("click", async ()=>{
+  const m=$("#anlegenMeld"); m.className="meld"; m.textContent="";
+  const matrikel=$("#nMatrikel").value.trim(), pin=$("#nPin").value;
+  if(!matrikel||pin.length<6){ m.className="meld err"; m.textContent="Matrikelnummer angeben, PIN mind. 6 Zeichen."; return; }
+  const btn=$("#anlegenBtn"); btn.disabled=true; btn.textContent="Lege an …";
+  try{
+    const sec = F.initializeApp(firebaseConfig, "sek-"+Date.now());
+    const secAuth = F.getAuth(sec);
+    await F.createUserWithEmailAndPassword(secAuth, matrikel.toLowerCase()+EMAIL_DOMAIN, pin);
+    await F.signOut(secAuth);
+    await F.deleteApp(sec);
+    m.className="meld ok"; m.textContent=`Konto für Matrikel ${matrikel} angelegt. PIN: ${pin}`;
+    $("#nMatrikel").value=""; $("#nPin").value="";
+  }catch(err){
+    m.className="meld err";
+    m.textContent = (err.code||"").includes("email-already-in-use")
+      ? "Diese Matrikelnummer existiert bereits." : (err.message||"Anlegen fehlgeschlagen.");
+  }finally{ btn.disabled=false; btn.textContent="Konto anlegen"; }
+});
+
+/* ---------- Auswertung laden ---------- */
+$("#ladenBtn").addEventListener("click", ladeDaten);
+
+async function ladeDaten(){
+  const m=$("#ladenMeld"); m.className="meld"; m.textContent="Lade …";
+  try{
+    const snap = await F.getDocs(F.collection(db,"ergebnisse"));
+    const daten=[]; snap.forEach(d=>daten.push(d.data()));
+    baueTabelle(daten);
+    m.className="meld ok"; m.textContent = `${daten.length} Datensätze geladen (${new Date().toLocaleTimeString("de-DE")}).`;
+  }catch(err){
+    m.className="meld err"; m.textContent = "Fehler beim Laden: " + (err.message||err);
+  }
+}
+
+function baueTabelle(daten){
+  // Aufgaben-Spalten aus den Daten ableiten (sortiert nach ID)
+  const aufgIds=[...new Set(daten.map(d=>d.aufgabeId))].sort();
+  const titel={}; daten.forEach(d=>titel[d.aufgabeId]=d.aufgabeTitel||d.aufgabeId);
+  const matrikeln=[...new Set(daten.map(d=>d.matrikel))].sort();
+  // Lookup
+  const map={}; daten.forEach(d=>{ map[d.matrikel+"|"+d.aufgabeId]=d; });
+
+  if(matrikeln.length===0){ $("#tabelleWrap").innerHTML="<p style='color:#888'>Noch keine Schülerdaten vorhanden.</p>"; return; }
+
+  let html="<table><thead><tr><th>Matrikel</th>";
+  aufgIds.forEach((id,i)=>html+=`<th title="${titel[id]}">Aufg. ${i+1}</th>`);
+  html+="<th>gelöst</th></tr></thead><tbody>";
+  matrikeln.forEach(mat=>{
+    let geloest=0;
+    let row=`<tr><td class="matrikel">${mat}</td>`;
+    aufgIds.forEach(id=>{
+      const e=map[mat+"|"+id];
+      if(!e){ row+=`<td class="zelle-leer">–</td>`; }
+      else if(e.geloest){ geloest++; row+=`<td class="zelle-geloest">✓ ${e.versuche}</td>`; }
+      else if(e.loesungAngezeigt){ row+=`<td class="zelle-loesung">Lösung</td>`; }
+      else { row+=`<td>${e.versuche} V.</td>`; }
+    });
+    row+=`<td><b>${geloest}/${aufgIds.length}</b></td></tr>`;
+    html+=row;
+  });
+  html+="</tbody></table>";
+  $("#tabelleWrap").innerHTML=html;
+}
+</script>
+</body>
+</html>
