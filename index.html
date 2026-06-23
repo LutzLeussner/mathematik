@@ -21439,6 +21439,55 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
       <div class="ta"><strong>Lösung:</strong> Ja, denn \(\vec{a} = 2 \cdot \vec{b}\). Der Vektor \(\vec{a}\) ist das 2-fache von \(\vec{b}\), daher sind sie kollinear.</div>
   </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">B</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · B · ★ / ★★</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Betrag anwenden — Figuren prüfen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Längen über den Betrag berechnen und vergleichen: Ist ein Dreieck gleichseitig, ein Rechteck ein Quadrat, ein Quader ein Würfel? Die rechten Winkel sind jeweils gegeben — zu prüfen sind nur die <em>Seitenlängen</em>.</div>
+    </div>
+  </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">B1.1</span><span class="td de">★</span></div>
+          <div class="tq">Ein Dreieck hat die Eckpunkte \(A(0|0|0)\), \(B(1|1|0)\) und \(C(1|0|1)\). Prüfe, ob es gleichseitig ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Seitenlängen über den Betrag der Verbindungsvektoren: \(|\vec{AB}|=\sqrt{1^2+1^2+0^2}=\sqrt{2}\), \(|\vec{AC}|=\sqrt{1^2+0^2+1^2}=\sqrt{2}\), \(|\vec{BC}|=\sqrt{0^2+(-1)^2+1^2}=\sqrt{2}\). Alle drei Seiten sind gleich lang → das Dreieck ist <strong>gleichseitig</strong>.</div>
+    </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">B1.2</span><span class="td de">★</span></div>
+          <div class="tq">Ein Dreieck hat die Eckpunkte \(P(0|0|0)\), \(Q(2|0|0)\) und \(R(0|2|0)\). Prüfe, ob es gleichseitig ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> \(|\vec{PQ}|=2\), \(|\vec{PR}|=2\), \(|\vec{QR}|=\sqrt{(-2)^2+2^2+0^2}=\sqrt{8}=2\sqrt{2}\approx 2{,}83\). Zwei Seiten sind gleich lang, eine ist länger → <strong>nicht gleichseitig</strong> (nur gleichschenklig).</div>
+    </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">B1.3</span><span class="td dm">★★</span></div>
+          <div class="tq">Ein Rechteck \(ABCD\) hat die Seitenvektoren \(\vec{AB}=\begin{pmatrix}2\\1\\2\end{pmatrix}\) und \(\vec{AD}=\begin{pmatrix}1\\-2\\0\end{pmatrix}\); die Seiten stehen senkrecht aufeinander (gegeben). Prüfe, ob es ein Quadrat ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Da die Winkel schon rechte Winkel sind, ist nur zu prüfen, ob zwei benachbarte Seiten gleich lang sind. \(|\vec{AB}|=\sqrt{4+1+4}=3\), \(|\vec{AD}|=\sqrt{1+4+0}=\sqrt{5}\approx 2{,}24\). Die Seiten sind verschieden lang → <strong>kein Quadrat</strong> (es bleibt ein Rechteck).</div>
+    </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">B1.4</span><span class="td dm">★★</span></div>
+          <div class="tq">Von einem Quader gehen von der Ecke \(A\) die drei Kanten \(\vec{AB}=\begin{pmatrix}2\\2\\1\end{pmatrix}\), \(\vec{AD}=\begin{pmatrix}-2\\1\\2\end{pmatrix}\) und \(\vec{AE}=\begin{pmatrix}1\\-2\\2\end{pmatrix}\) aus; die Kanten stehen paarweise senkrecht (gegeben). Prüfe, ob der Quader ein Würfel ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Ein Würfel liegt vor, wenn alle drei Kanten gleich lang sind. \(|\vec{AB}|=\sqrt{4+4+1}=3\), \(|\vec{AD}|=\sqrt{4+1+4}=3\), \(|\vec{AE}|=\sqrt{1+4+4}=3\). Alle Kanten sind gleich lang → der Quader ist ein <strong>Würfel</strong> (Kantenlänge 3).</div>
+    </div>
+
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">II</div>
     <div style="flex:1">
