@@ -59,12 +59,12 @@ window.PortalAuth = {
 
 /* ---------------------------------------------------------- Login-Leiste */
 const STYLE = `
-.pa-bar{position:fixed;top:12px;right:14px;z-index:9999;font-family:"Avenir Next","Avenir","Segoe UI",system-ui,sans-serif}
+.pa-bar{position:fixed;bottom:14px;right:14px;z-index:9999;font-family:"Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end}
 .pa-pill{display:flex;align-items:center;gap:10px;background:#2e7d5b;color:#fff;border-radius:24px;padding:7px 8px 7px 14px;box-shadow:0 2px 8px rgba(0,0,0,.18);font-size:.86rem}
 .pa-pill .pa-name{font-weight:600;white-space:nowrap}
 .pa-pill button{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:16px;padding:5px 12px;cursor:pointer;font-size:.82rem;font-weight:600}
 .pa-pill button:hover{background:rgba(255,255,255,.3)}
-.pa-form{margin-top:8px;background:#fff;border:1px solid #dfe5e8;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.16);padding:14px;width:230px}
+.pa-form{margin-bottom:8px;background:#fff;border:1px solid #dfe5e8;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.16);padding:14px;width:230px}
 .pa-form.pa-hidden{display:none}
 .pa-form label{display:block;font-size:.74rem;color:#5b6770;font-weight:600;margin:6px 0 3px}
 .pa-form input{width:100%;padding:8px 10px;border:1.5px solid #dfe5e8;border-radius:8px;font-size:.92rem}
@@ -80,15 +80,15 @@ let bar, form, errBox;
 function baueLeiste() {
   const st = document.createElement("style"); st.textContent = STYLE; document.head.appendChild(st);
   bar = el(`<div class="pa-bar">
-    <div class="pa-pill"><span class="pa-name">Nicht angemeldet</span>
-      <button class="pa-toggle">Anmelden</button></div>
     <div class="pa-form pa-hidden">
       <label>Matrikelnummer</label><input type="text" class="pa-mat" inputmode="numeric" placeholder="z. B. 100423">
       <label>PIN / Passwort</label><input type="password" class="pa-pin">
       <button class="pa-go">Anmelden</button>
       <div class="pa-err"></div>
       ${DEMO ? '<div class="pa-demo"><b>Demo-Modus.</b> Beliebige Eingabe; es wird nichts gespeichert.</div>' : ''}
-    </div></div>`);
+    </div>
+    <div class="pa-pill"><span class="pa-name">Nicht angemeldet</span>
+      <button class="pa-toggle">Anmelden</button></div></div>`);
   document.body.appendChild(bar);
   form = bar.querySelector(".pa-form"); errBox = bar.querySelector(".pa-err");
   bar.querySelector(".pa-toggle").addEventListener("click", onToggle);
