@@ -95,8 +95,34 @@
       </div>
       <button class="haupt" id="anlegenBtn">Konto anlegen</button>
       <div class="meld" id="anlegenMeld"></div>
-      <div class="liste">Anmeldung der Schüler später unter
-        <code>prototyp_analytische_geometrie.html</code> mit Matrikelnummer + PIN.</div>
+
+      <div style="border-top:1px solid var(--rand);margin-top:18px;padding-top:16px">
+        <h2 style="font-size:.98rem">Mehrere Konten automatisch erzeugen</h2>
+        <div class="row">
+          <div>
+            <label for="bAnzahl">Anzahl</label>
+            <input type="text" id="bAnzahl" inputmode="numeric" placeholder="z. B. 25">
+          </div>
+          <div>
+            <label for="bPraefix">Präfix (optional)</label>
+            <input type="text" id="bPraefix" placeholder="z. B. 11a">
+          </div>
+        </div>
+        <div class="liste">Mit Präfix entstehen <code>11a-01, 11a-02, …</code>; ohne Präfix zufällige 6-stellige Nummern. PINs werden automatisch erzeugt.</div>
+        <button class="haupt" id="bulkBtn">Konten erzeugen</button>
+        <div class="meld" id="bulkMeld"></div>
+      </div>
+
+      <div class="liste" style="margin-top:14px">Anmeldung der Schüler im Portal (Vektoren-Tab) mit Matrikelnummer + PIN.</div>
+    </div>
+
+    <div class="karte">
+      <h2>Angelegte Konten <span style="font-weight:400;font-size:.8rem;color:var(--grau)">— PINs nur für dich sichtbar</span></h2>
+      <div class="hinweisbox">Firebase speichert PINs verschlüsselt und gibt sie nicht zurück. Diese Liste hält die PINs zusätzlich in einer nur für dich lesbaren Sammlung. Es erscheinen nur Konten, die mit dieser Version angelegt wurden.</div>
+      <button class="haupt" id="kontenBtn">Konten-Liste laden</button>
+      <button class="haupt" id="csvBtn" style="background:#fff;color:var(--gruen-dunkel);border:1.5px solid var(--gruen)">Als CSV herunterladen</button>
+      <div class="meld" id="kontenMeld"></div>
+      <div id="kontenWrap" style="overflow-x:auto;margin-top:14px"></div>
     </div>
 
     <div class="karte">
@@ -136,12 +162,12 @@ if (!DEMO){
   const { initializeApp, deleteApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
   const { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } =
     await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
-  const { getFirestore, collection, getDocs } =
+  const { getFirestore, collection, getDocs, doc, setDoc, serverTimestamp } =
     await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
   app = initializeApp(firebaseConfig);
   auth = getAuth(app); db = getFirestore(app);
   F = { initializeApp, deleteApp, getAuth, signInWithEmailAndPassword, signOut,
-        createUserWithEmailAndPassword, collection, getDocs };
+        createUserWithEmailAndPassword, collection, getDocs, doc, setDoc, serverTimestamp };
 }
 
 /* ---------- Login ---------- */
@@ -153,7 +179,7 @@ $("#loginForm").addEventListener("submit", async e=>{
   try{
     await F.signInWithEmailAndPassword(auth, $("#email").value.trim(), $("#pw").value);
     $("#loginWrap").classList.add("hidden"); $("#appWrap").classList.remove("hidden");
-    ladeDaten();
+    ladeDaten(); ladeKonten();
   }catch(err){
     m.className="meld err"; m.textContent = (err.code||"").includes("invalid-credential")
       ? "E-Mail oder Passwort falsch." : (err.message||"Anmeldung fehlgeschlagen.");
@@ -161,7 +187,17 @@ $("#loginForm").addEventListener("submit", async e=>{
 });
 $("#logoutBtn").addEventListener("click", async ()=>{ if(!DEMO) await F.signOut(auth); location.reload(); });
 
-/* ---------- Schüler-Konto anlegen (Zweit-App, damit Lehrer angemeldet bleibt) ---------- */
+/* ---------- Helfer ---------- */
+let kontenCache = [];
+function randPin(){ return String(Math.floor(100000 + Math.random()*900000)); } // 6 Ziffern
+async function createUser(secAuth, matrikel, pin){
+  await F.createUserWithEmailAndPassword(secAuth, matrikel.toLowerCase()+EMAIL_DOMAIN, pin);
+}
+async function writeKonto(matrikel, pin){
+  await F.setDoc(F.doc(db,"schueler",matrikel), { matrikel, pin, angelegt: F.serverTimestamp() }, { merge:true });
+}
+
+/* ---------- Einzelnes Konto anlegen (Zweit-App, damit Lehrer angemeldet bleibt) ---------- */
 $("#anlegenBtn").addEventListener("click", async ()=>{
   const m=$("#anlegenMeld"); m.className="meld"; m.textContent="";
   const matrikel=$("#nMatrikel").value.trim(), pin=$("#nPin").value;
@@ -170,17 +206,93 @@ $("#anlegenBtn").addEventListener("click", async ()=>{
   try{
     const sec = F.initializeApp(firebaseConfig, "sek-"+Date.now());
     const secAuth = F.getAuth(sec);
-    await F.createUserWithEmailAndPassword(secAuth, matrikel.toLowerCase()+EMAIL_DOMAIN, pin);
-    await F.signOut(secAuth);
-    await F.deleteApp(sec);
-    m.className="meld ok"; m.textContent=`Konto für Matrikel ${matrikel} angelegt. PIN: ${pin}`;
+    await createUser(secAuth, matrikel, pin);
+    await F.signOut(secAuth); await F.deleteApp(sec);
+    let zusatz="";
+    try{ await writeKonto(matrikel, pin); }catch(e){ zusatz=" (PIN-Liste nicht gespeichert — Firestore-Regeln für 'schueler' veröffentlichen)"; }
+    m.className="meld ok"; m.textContent=`Konto für Matrikel ${matrikel} angelegt. PIN: ${pin}`+zusatz;
     $("#nMatrikel").value=""; $("#nPin").value="";
+    ladeKonten();
   }catch(err){
     m.className="meld err";
     m.textContent = (err.code||"").includes("email-already-in-use")
       ? "Diese Matrikelnummer existiert bereits." : (err.message||"Anlegen fehlgeschlagen.");
   }finally{ btn.disabled=false; btn.textContent="Konto anlegen"; }
 });
+
+/* ---------- Mehrere Konten automatisch erzeugen ---------- */
+$("#bulkBtn").addEventListener("click", async ()=>{
+  const m=$("#bulkMeld"); m.className="meld"; m.textContent="";
+  const n=parseInt($("#bAnzahl").value.trim(),10);
+  const prefix=$("#bPraefix").value.trim();
+  if(!n || n<1 || n>200){ m.className="meld err"; m.textContent="Bitte eine Anzahl zwischen 1 und 200 angeben."; return; }
+  const btn=$("#bulkBtn"); btn.disabled=true;
+  const vorhanden = new Set(kontenCache.map(k=>String(k.matrikel)));
+  const sec = F.initializeApp(firebaseConfig, "sek-bulk-"+Date.now());
+  const secAuth = F.getAuth(sec);
+  const erzeugt=[]; let uebersprungen=0;
+  try{
+    let idx=1, gemacht=0, schutz=0;
+    while(gemacht < n && schutz < n*20){
+      schutz++;
+      let matrikel = prefix ? (prefix + "-" + String(idx).padStart(2,"0")) : randPin();
+      idx++;
+      if(vorhanden.has(matrikel)){ uebersprungen++; continue; }
+      const pin = randPin();
+      m.className="meld"; m.textContent=`Erzeuge Konto ${gemacht+1} von ${n} …`;
+      try{
+        await createUser(secAuth, matrikel, pin);
+        await writeKonto(matrikel, pin);
+        vorhanden.add(matrikel); erzeugt.push({matrikel,pin}); gemacht++;
+      }catch(err){
+        if((err.code||"").includes("email-already-in-use")){ vorhanden.add(matrikel); uebersprungen++; continue; }
+        throw err;
+      }
+    }
+    await F.signOut(secAuth); await F.deleteApp(sec);
+    m.className="meld ok"; m.textContent=`${erzeugt.length} Konten erzeugt${uebersprungen?` (${uebersprungen} übersprungen, schon vorhanden)`:""}.`;
+    $("#bAnzahl").value="";
+    ladeKonten();
+  }catch(err){
+    try{ await F.deleteApp(sec); }catch(e){}
+    m.className="meld err";
+    m.textContent = (err.code||"").includes("permission")
+      ? "Abbruch: Firestore-Regeln für 'schueler' noch nicht veröffentlicht."
+      : "Abbruch: " + (err.message||err);
+  }finally{ btn.disabled=false; }
+});
+
+/* ---------- Angelegte Konten laden / CSV ---------- */
+$("#kontenBtn").addEventListener("click", ladeKonten);
+$("#csvBtn").addEventListener("click", ()=>{
+  if(!kontenCache.length){ $("#kontenMeld").className="meld err"; $("#kontenMeld").textContent="Keine Konten zum Export."; return; }
+  const rows=[["Matrikelnummer","PIN"]].concat(kontenCache.map(k=>[k.matrikel,k.pin||""]));
+  const csv=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(";")).join("\r\n");
+  const blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="schueler_konten.csv"; a.click();
+});
+async function ladeKonten(){
+  const m=$("#kontenMeld"); m.className="meld"; m.textContent="Lade …";
+  try{
+    const snap = await F.getDocs(F.collection(db,"schueler"));
+    kontenCache=[]; snap.forEach(d=>kontenCache.push(d.data()));
+    kontenCache.sort((a,b)=> String(a.matrikel).localeCompare(String(b.matrikel), "de", {numeric:true}));
+    baueKonten();
+    m.className="meld ok"; m.textContent=`${kontenCache.length} Konten in der Liste.`;
+  }catch(err){
+    m.className="meld err"; m.textContent="Fehler beim Laden: " + (err.message||err);
+  }
+}
+function baueKonten(){
+  if(!kontenCache.length){ $("#kontenWrap").innerHTML="<p style='color:#888'>Noch keine Konten in der Liste.</p>"; return; }
+  let html="<table><thead><tr><th>Matrikelnummer</th><th>PIN</th><th>angelegt</th></tr></thead><tbody>";
+  kontenCache.forEach(k=>{
+    let dt=""; try{ if(k.angelegt&&k.angelegt.seconds) dt=new Date(k.angelegt.seconds*1000).toLocaleString("de-DE"); }catch(e){}
+    html+=`<tr><td class="matrikel">${k.matrikel}</td><td>${k.pin||"–"}</td><td>${dt}</td></tr>`;
+  });
+  html+="</tbody></table>";
+  $("#kontenWrap").innerHTML=html;
+}
 
 /* ---------- Auswertung laden ---------- */
 $("#ladenBtn").addEventListener("click", ladeDaten);
