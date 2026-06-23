@@ -20932,7 +20932,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         </li>
         <li class="gi">
           <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Linearkombinationen bilden und einen Vektor als Linearkombination anderer darstellen (LGS)</span>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Linearkombinationen geometrisch deuten und bei bekannten Vektoren und Skalaren berechnen</span>
         </li>
       </ul>
     </div>
@@ -21353,7 +21353,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <div class="section-label">6. Linearkombinationen</div>
   <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
     <strong style="color:#8a7a30">Kernidee:</strong>
-    Eine <strong>Linearkombination</strong> ist eine <em>Summe von skalierten Vektoren</em>. Sie verallgemeinert die Kollinearität (ein Vielfaches eines Vektors) zur Summe mehrerer Vielfacher verschiedener Vektoren. Die Leitfrage lautet: <em>„Lässt sich \(\vec{c}\) aus \(\vec{a}\) und \(\vec{b}\) zusammensetzen?"</em> — und das Werkzeug dafür ist immer dasselbe: das <strong>lineare Gleichungssystem</strong> aus Klasse 9/10.
+    Eine <strong>Linearkombination</strong> ist eine <em>Summe von skalierten Vektoren</em>. Sie verallgemeinert die Kollinearität (ein Vielfaches eines Vektors) zur Summe mehrerer Vielfacher verschiedener Vektoren. In diesem Abschnitt geht es um die <strong>geometrische Bedeutung</strong> einer Linearkombination und um das <strong>Berechnen</strong> bei bekannten Vektoren und Skalaren.
   </div>
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Definition und Schreibweise</span></div>
@@ -21377,19 +21377,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
   </div>
-<div class="bsp">
-    <div class="bsp-label">Beispielaufgabe 2: Vektor als Linearkombination darstellen</div>
-    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind \(\vec{a} = \begin{pmatrix}1\\2\\1\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}3\\0\\2\end{pmatrix}\), \(\vec{c} = \begin{pmatrix}5\\4\\4\end{pmatrix}\). Bestimme Koeffizienten \(r, s\), so dass \(\vec{c} = r\vec{a} + s\vec{b}\) gilt — falls dies möglich ist.</div>
-    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-    <div class="bsp-a">
-      <strong>Lösung:</strong>
-      <div class="ip" style="margin-top:8px;"><strong>① Ansatz komponentenweise.</strong> Aus \(r\vec{a} + s\vec{b} = \vec{c}\) folgen <em>drei</em> Gleichungen für die <em>zwei</em> Unbekannten \(r, s\) — ein \(3\times 2\)-LGS:</div>
-      <div class="ip">(I) \(\;r + 3s = 5\)<br>(II) \(2r + 0s = 4\)<br>(III) \(\;r + 2s = 4\)</div>
-      <div class="ip"><strong>② Lösen.</strong> Aus (II): \(r = 2\). In (I): \(2 + 3s = 5 \Rightarrow s = 1\). Probe in (III): \(2 + 2\cdot 1 = 4\) ✓ — die dritte Gleichung ist verträglich, das LGS hat die eindeutige Lösung \(r=2,\ s=1\).</div>
-      <div class="ip"><strong>③ Antwort:</strong> \(\vec{c} = 2\vec{a} + 1\vec{b}\). Damit ist \(\vec{c}\) als Linearkombination von \(\vec{a}\) und \(\vec{b}\) darstellbar.</div>
-      <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Pflichtprobe bei 3×2-LGS:</em> Weil drei Gleichungen für nur zwei Unbekannte gegeben sind, prüfst du immer alle drei. Ist die dritte Gleichung <em>nicht</em> verträglich, hat das LGS keine Lösung — der Vektor \(\vec{c}\) liegt dann nicht in der von \(\vec{a}, \vec{b}\) aufgespannten Ebene durch den Ursprung.</em></div>
-    </div>
-  </div>
+
   <div class="section-label">Aufgaben zu Vektoren</div>
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">I</div>
@@ -21506,6 +21494,47 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="komp-desc">K6: Vektorbegriffe fachsprachlich erklären · K4: Geometrische Bedeutung der Vektorrechnung beschreiben</div>
       </div>
     </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.11</span><span class="td de">★</span></div>
+          <div class="tq">Gib drei verschiedene Vektoren an, die kollinear zu \(\vec{a}=\begin{pmatrix}2\\-1\\3\end{pmatrix}\) sind.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Jedes Vielfache von \(\vec{a}\) ist kollinear zu \(\vec{a}\). Zum Beispiel \(2\vec{a}=\begin{pmatrix}4\\-2\\6\end{pmatrix}\), \(-\vec{a}=\begin{pmatrix}-2\\1\\-3\end{pmatrix}\) und \(\tfrac{1}{2}\vec{a}=\begin{pmatrix}1\\-0{,}5\\1{,}5\end{pmatrix}\).</div>
+    </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.12</span><span class="td dm">★★</span></div>
+          <div class="tq">Prüfe, ob \(\vec{a}=\begin{pmatrix}3\\-6\\9\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}-1\\2\\-3\end{pmatrix}\) kollinear sind.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Suche \(r\) mit \(\vec{a}=r\,\vec{b}\). Aus der 1. Komponente: \(3=r\cdot(-1)\Rightarrow r=-3\). Probe: \(-3\cdot\begin{pmatrix}-1\\2\\-3\end{pmatrix}=\begin{pmatrix}3\\-6\\9\end{pmatrix}=\vec{a}\) ✓. Also <strong>kollinear</strong> mit \(\vec{a}=-3\,\vec{b}\).</div>
+    </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.13</span><span class="td dm">★★</span></div>
+          <div class="tq">Prüfe, ob \(\vec{u}=\begin{pmatrix}2\\4\\1\end{pmatrix}\) und \(\vec{v}=\begin{pmatrix}6\\12\\2\end{pmatrix}\) kollinear sind.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Verhältnis der Komponenten prüfen: \(\tfrac{6}{2}=3\), \(\tfrac{12}{4}=3\), aber \(\tfrac{2}{1}=2\). Die Verhältnisse sind <em>nicht</em> alle gleich, also ist \(\vec{v}\) kein Vielfaches von \(\vec{u}\) → <strong>nicht kollinear</strong>.</div>
+    </div>
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.14</span><span class="td dm">★★</span></div>
+          <div class="tq">Bestimme \(t\) so, dass \(\begin{pmatrix}t\\6\\-4\end{pmatrix}\) kollinear zu \(\vec{a}=\begin{pmatrix}2\\-3\\2\end{pmatrix}\) ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Ansatz \(\begin{pmatrix}t\\6\\-4\end{pmatrix}=r\,\vec{a}\). Aus der 2. Komponente: \(6=r\cdot(-3)\Rightarrow r=-2\). Probe 3. Komponente: \(-2\cdot 2=-4\) ✓. Aus der 1. Komponente: \(t=r\cdot 2=-2\cdot 2=-4\). Also \(t=-4\).</div>
+    </div>
+
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">V3</div>
     <div style="flex:1">
@@ -21570,9 +21599,9 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">L</div>
     <div style="flex:1">
-      <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L · ★ bis ★★★</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen — berechnen und darstellen</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Erst direktes Berechnen einer Linearkombination, dann die Umkehrfrage: einen gegebenen Vektor als LK anderer darstellen — gelöst über das LGS aus Klasse 9/10. <strong>Alle Aufgaben ohne CAS lösbar.</strong></div>
+      <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L · ★ Grundlagen</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen — berechnen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Direktes Berechnen von Linearkombinationen bei bekannten Vektoren und Skalaren.</div>
     </div>
   </div>
 <div class="tg">
@@ -21625,53 +21654,9 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="ip"><strong>Lösung:</strong> \(-\vec{a}=\begin{pmatrix}-1\\-1\\0\end{pmatrix}\), \(2\vec{b}=\begin{pmatrix}0\\2\\2\end{pmatrix}\), \(3\vec{c}=\begin{pmatrix}3\\0\\-3\end{pmatrix}\). Summe: \(\vec{w}=\begin{pmatrix}2\\1\\-1\end{pmatrix}\).</div>
       </div>
     </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.5</span><span class="td dm">★★</span></div>
-          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}7\\4\\6\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\). Bestimme \(r\) und \(s\) und überprüfe das Ergebnis.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① 3×2-LGS aus \(r\vec{a}+s\vec{b}=\vec{c}\):</strong></div>
-        <div class="ip">(I) \(\;r + 3s = 7\) &nbsp; (II) \(2r + 0s = 4\) &nbsp; (III) \(\;r + 2s = 6\).</div>
-        <div class="ip"><strong>② Lösen:</strong> Aus (II): \(r=2\). In (I): \(2+3s=7 \Rightarrow s=\tfrac{5}{3}\). In (III) prüfen: \(2 + 2\cdot\tfrac{5}{3} = 2 + \tfrac{10}{3} = \tfrac{16}{3} \neq 6\). <em>(III) ist nicht verträglich.</em></div>
-        <div class="ip"><strong>③ Antwort:</strong> Das LGS hat <em>keine Lösung</em>. \(\vec{c}\) lässt sich <em>nicht</em> als Linearkombination von \(\vec{a}\) und \(\vec{b}\) darstellen — \(\vec{c}\) liegt nicht in der von \(\vec{a},\vec{b}\) durch den Ursprung aufgespannten Ebene.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Bei 3×2-LGS musst du <em>immer</em> alle drei Gleichungen prüfen — die ersten zwei liefern einen Kandidaten für \(r,s\), die dritte entscheidet, ob er passt.</em></div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.6</span><span class="td dm">★★</span></div>
-          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}4\\6\\5\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}+t\vec{d}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}1\\2\\0\end{pmatrix}\), \(\vec{d}=\begin{pmatrix}1\\1\\1\end{pmatrix}\). Bestimme alle drei Koeffizienten.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{a}+s\vec{b}+t\vec{d}=\vec{c}\):</strong></div>
-        <div class="ip">(I) \(\;r + s + t = 4\) &nbsp; (II) \(0r + 2s + t = 6\) &nbsp; (III) \(0r + 0s + t = 5\).</div>
-        <div class="ip"><strong>② Lösen von unten nach oben (Stufenform).</strong> Aus (III): \(t=5\). In (II): \(2s + 5 = 6 \Rightarrow s = \tfrac{1}{2}\). In (I): \(r + \tfrac{1}{2} + 5 = 4 \Rightarrow r = -\tfrac{3}{2}\).</div>
-        <div class="ip"><strong>③ Antwort:</strong> \(\vec{c} = -\tfrac{3}{2}\vec{a} + \tfrac{1}{2}\vec{b} + 5\vec{d}\). Probe: \(-\tfrac{3}{2}\begin{pmatrix}1\\0\\0\end{pmatrix} + \tfrac{1}{2}\begin{pmatrix}1\\2\\0\end{pmatrix} + 5\begin{pmatrix}1\\1\\1\end{pmatrix} = \begin{pmatrix}4\\6\\5\end{pmatrix}\) ✓.</div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.7</span><span class="td dh">★★★</span></div>
-          <div class="tq">Sachkontext. Ein Lieferdrohne kann nur drei Standard-Flüge ausführen: \(\vec{f}_1=\begin{pmatrix}3\\0\\1\end{pmatrix}\) (Ost+Steigen), \(\vec{f}_2=\begin{pmatrix}0\\4\\1\end{pmatrix}\) (Nord+Steigen), \(\vec{f}_3=\begin{pmatrix}0\\0\\-2\end{pmatrix}\) (Sinken). Wie oft (Koeffizienten \(r, s, t \in \mathbb{R}\)) muss sie jeden Flug ausführen, um den Verschiebungsvektor \(\vec{z}=\begin{pmatrix}6\\8\\1\end{pmatrix}\) zu erreichen? Interpretiere das Ergebnis im Sachkontext.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{f}_1 + s\vec{f}_2 + t\vec{f}_3 = \vec{z}\):</strong></div>
-        <div class="ip">(I) \(3r + 0s + 0t = 6\) &nbsp; (II) \(0r + 4s + 0t = 8\) &nbsp; (III) \(\;r + s - 2t = 1\).</div>
-        <div class="ip"><strong>② Lösen.</strong> (I): \(r=2\). (II): \(s=2\). (III): \(2 + 2 - 2t = 1 \Rightarrow -2t = -3 \Rightarrow t = \tfrac{3}{2}\).</div>
-        <div class="ip"><strong>③ Antwort:</strong> Die Drohne führt den Ost-Flug 2-mal, den Nord-Flug 2-mal und den Sink-Flug 1,5-mal aus.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Interpretation:</em> Ein nicht-ganzzahliger Koeffizient (\(t=1{,}5\)) bedeutet, dass die Drohne den Sink-Flug nicht ganzzahlig oft ausführen kann — die geforderte Endposition ist mit ganzen Flügen nicht exakt erreichbar. Praktisch müsste man entweder den letzten Sink-Flug nur „halb" fliegen (z. B. nur 1,5 m statt 2 m sinken) oder die geforderte Position leicht anpassen. Mathematisch ist die Linearkombination eindeutig — die Diskretisierung ist ein Modellierungsproblem oberhalb der Mathematik.</em></div>
-      </div>
-    </div>
+
+
+
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">L2</div>
     <div style="flex:1">
@@ -21773,67 +21758,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Folgerung:</em> Geometrisch heißt das: Bild und Urbild liegen vom Streckzentrum aus gesehen auf derselben Strahlrichtung. Die Linearkombination ändert nur die <em>Länge</em>, nicht die <em>Richtung</em> im \(\vec{a}, \vec{b}\)-System.</em></div>
       </div>
     </div>
-  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
-    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">L3</div>
-    <div style="flex:1">
-      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L3 · ★ bis ★★★ · K1 + K6</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Beschreiben und Erläutern — Ansatz lesen, Vorgehen erklären, Aufgabe rekonstruieren</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Beschreiben, erläutern, rekonstruieren — trainiert <strong>K1 (Argumentieren)</strong> und <strong>K6 (Kommunizieren)</strong>, die in reiner Rechen-Übung nicht aktiviert werden.</div>
-    </div>
-  </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L3.1</span><span class="td de">★</span></div>
-          <div class="tq"><strong>Ansatz benennen.</strong> Im Folgenden ist der Ansatz \(\vec{c} = r\vec{a} + s\vec{b}\) gegeben (mit den drei konkreten Vektoren \(\vec{a},\vec{b},\vec{c}\) als bekannt vorausgesetzt). Welche <em>geometrische Frage</em> wird mit diesem Ansatz untersucht? Welches Ergebnis bedeutet welche geometrische Aussage?</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong></div>
-        <div class="ip"><strong>Geometrische Frage:</strong> Lässt sich der Vektor \(\vec{c}\) <em>aus den Vektoren \(\vec{a}\) und \(\vec{b}\) zusammensetzen</em> — durch Skalierung und Addition? Anders formuliert: Liegt \(\vec{c}\) in der von \(\vec{a}\) und \(\vec{b}\) durch den Ursprung aufgespannten Ebene?</div>
-        <div class="ip"><strong>Bedeutung der drei LGS-Lösungsfälle</strong> (aus dem 3×2-LGS, das aus der Vektorgleichung entsteht):</div>
-        <div class="ip">• <em>Eindeutige Lösung \((r,s)\) gefunden</em> → \(\vec{c}\) ist als LK darstellbar, liegt also in der Ebene durch \(\vec{a},\vec{b}\).</div>
-        <div class="ip">• <em>Keine Lösung</em> (dritte Gleichung verträglich nicht erfüllbar) → \(\vec{c}\) liegt <em>nicht</em> in dieser Ebene.</div>
-        <div class="ip">• <em>Unendlich viele Lösungen</em> → kann nur passieren, wenn \(\vec{a}\) und \(\vec{b}\) selbst kollinear sind und \(\vec{c}\) in derselben Geraden liegt.</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K6: Ansatz in geometrische Sprache übersetzen · K1: Drei Fallunterscheidungen argumentativ darstellen</div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L3.2</span><span class="td dm">★★</span></div>
-          <div class="tq"><strong>Lösungsweg erläutern.</strong> Gegeben ist der folgende Lösungsweg: \[\vec{c} = \begin{pmatrix}5\\4\\4\end{pmatrix},\; \vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix},\; \vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\] Setze \(r\vec{a}+s\vec{b}=\vec{c}\). Aus den ersten beiden Komponenten folgt \(r+3s=5\) und \(2r=4\), also \(r=2\) und \(s=1\). Setze in die dritte Komponente ein: \(r+2s = 2+2 = 4\) ✓. — Erläutere in drei Sätzen: <em>Was wird hier berechnet, welche geometrische Situation liegt vor, und was bedeutet das Ergebnis \(r=2,\,s=1\)?</em></div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung (Erläuterung in drei Sätzen):</strong></div>
-        <div class="ip">(1) <strong>Was berechnet wird:</strong> Es werden die zwei Koeffizienten \(r\) und \(s\) bestimmt, mit denen sich der Vektor \(\vec{c}\) als Linearkombination der Vektoren \(\vec{a}\) und \(\vec{b}\) schreiben lässt — also \(\vec{c}=r\vec{a}+s\vec{b}\).</div>
-        <div class="ip">(2) <strong>Geometrische Situation:</strong> Die Frage „Lässt sich \(\vec{c}\) so darstellen?" entspricht der geometrischen Frage, ob \(\vec{c}\) in der von \(\vec{a}\) und \(\vec{b}\) durch den Ursprung aufgespannten Ebene liegt. Da die dritte Gleichung mit den aus den ersten beiden Gleichungen gefundenen Werten konsistent ist, ist die Antwort „ja".</div>
-        <div class="ip">(3) <strong>Bedeutung des Ergebnisses \(r=2,\,s=1\):</strong> Geometrisch heißt das: Man erreicht \(\vec{c}\) vom Ursprung aus durch <em>zweimaliges Abtragen</em> des Vektors \(\vec{a}\) und einmaliges Anhängen von \(\vec{b}\). Die Probe in der dritten Komponente bestätigt, dass die ersten beiden gefundenen Werte auch für die dritte Dimension passen — sonst wäre \(\vec{c}\) nicht in der Ebene.</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K6: Lösungsweg in eigenen Worten beschreiben · K1: Den Pflichtschritt „Probe in der dritten Gleichung" argumentativ begründen</div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L3.3</span><span class="td dh">★★★</span></div>
-          <div class="tq"><strong>Aufgabe rekonstruieren.</strong> Gegeben sind zwei Lösungsschritte einer Aufgabe: (1) Ansatz: \(\vec{OP} = \tfrac{1}{2}\vec{OA} + \tfrac{1}{2}\vec{OB}\) mit \(A(2|6|0)\) und \(B(8|2|4)\). (2) Daraus folgt \(P(5|4|2)\). Formuliere eine passende Aufgabenstellung in einem räumlichen Sachkontext deiner Wahl, die genau diese beiden Schritte als Lösungsbeginn (Ansatz + erstes Ergebnis) hat. Begründe in einem Satz, warum dein Sachkontext geometrisch zur Lösung passt.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösungs-Vorschlag (Beispiel-Aufgabenstellung):</strong></div>
-        <div class="ip" style="background:#f4f3f0;padding:10px;border-radius:6px;"><em>„In einer Lagerhalle sind zwei Sensoren an den Positionen \(A(2|6|0)\) und \(B(8|2|4)\) montiert (Koordinaten in Metern, gemessen vom Halleneck \(O\)). Ein Roboter soll genau in der Mitte zwischen den beiden Sensoren positioniert werden, weil dort die Signalstärke beider Sensoren am ausgeglichensten ist. Berechne die Position \(P\) des Roboters."</em></div>
-        <div class="ip"><strong>Begründung des Sachkontexts:</strong> Der vorgegebene Ansatz \(\vec{OP}=\tfrac{1}{2}\vec{OA}+\tfrac{1}{2}\vec{OB}\) ist genau die Mittelpunkt-Formel für die Strecke \(\overline{AB}\). Jede Aufgabe, in der „der Mittelpunkt zwischen zwei gegebenen Punkten gesucht wird" (in jedem räumlichen Kontext: zwei Sender, zwei Sterne, zwei Eckpunkte einer Halle, …), passt zu diesem Lösungsweg. Ergebnis \(P(5|4|2)\) ist der koordinatenweise Mittelwert von \(A\) und \(B\).</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Weitere passende Sachkontexte:</em> Mittelpunkt zwischen zwei Wegpunkten einer Drohne, Schwerpunkt von zwei gleichen Massen, Treffpunkt zweier Wanderer, die sich von beiden Ecken aus mit gleicher Geschwindigkeit aufeinander zu bewegen, …</em></div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K6: Aufgabe sprachlich konstruieren · K3: Mathematischen Ansatz in einen Sachkontext übersetzen · K1: Kontext-Wahl begründen</div>
-      </div>
-    </div>
+  
+
+
+
   <div class="section-label">7. Skalarprodukt, Orthogonalität und Winkel</div>
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das Skalarprodukt</span></div>
