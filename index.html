@@ -235,6 +235,15 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
   /* Stack the color block grids */
   .main div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
 }
+
+/* ── Präsentationsmodus (Smartboard, 16:9 · per Knopf umschaltbar) ── */
+body.presi{zoom:1.4;}                 /* deutliche Vergrößerung – skaliert Layout, Formeln, SVGs gleichmäßig */
+body.presi{--ink:#111111;--ink-soft:#26241f;--ink-muted:#544f47;--border:#cfc9c0;}  /* starke Kontraste */
+body.presi .ip{color:var(--ink-soft);font-weight:450}
+body.presi .topnav-btn,body.presi .ptb,body.presi .tn{font-weight:600}
+body.presi .topnav-btn.on,body.presi .ptb.on{border-bottom-width:3px}
+body.presi #presi-toggle{background:var(--kiku);color:#fff;border-color:var(--kiku)}
+@media print{body.presi{zoom:1}}
 </style>
 </head>
 <body>
@@ -249,6 +258,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
         <div style="font-size:11px;color:var(--ink-muted);font-weight:400;margin-top:1px">Mittel- &amp; Oberstufe · Mecklenburg-Vorpommern</div>
       </div>
     </div>
+    <button id="presi-toggle" onclick="togglePresi()" title="Präsentationsmodus für das Smartboard ein- und ausschalten" style="flex-shrink:0;margin-left:auto;padding:9px 16px;font-size:14px;font-weight:600;color:var(--kiku);background:var(--kiku-bg);border:1px solid var(--kiku-light);border-radius:20px;cursor:pointer;font-family:var(--sans);display:inline-flex;align-items:center;gap:7px;transition:all .2s"><span aria-hidden="true" style="font-size:15px">📺</span><span id="presi-label">Präsentation</span></button>
   </div>
   <nav class="topnav" id="main-topnav">
     <button class="topnav-btn on" onclick="show(0)" id="tnb-home">Start</button>
@@ -24595,6 +24605,15 @@ window.addEventListener('load',function(){
     document.querySelectorAll('iframe[data-src]').forEach(loadIframe);
   }
 })();
+</script>
+<script>
+function togglePresi(){
+  var on=document.body.classList.toggle('presi');
+  var l=document.getElementById('presi-label');
+  if(l)l.textContent=on?'Präsentation: an':'Präsentation';
+  try{localStorage.setItem('presiMode',on?'1':'0');}catch(e){}
+}
+try{if(localStorage.getItem('presiMode')==='1'){document.body.classList.add('presi');var _pl=document.getElementById('presi-label');if(_pl)_pl.textContent='Präsentation: an';}}catch(e){}
 </script>
 </body>
 </html>
