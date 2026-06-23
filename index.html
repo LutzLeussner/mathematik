@@ -249,6 +249,13 @@ body.presi #presi-toggle{background:var(--kiku);color:#fff;border-color:var(--ki
 #k12-vek .card{border-left:5px solid var(--fukagawa);background:#f7f6f2}
 #k12-vek .card:has(.ci-g){border-left-color:var(--kiku)}
 #k12-vek .bsp{border-left:5px solid var(--kiku)}
+
+/* ── Präsentationsmodus: Karten als Akkordeon (nur Vektoren-Tab) ── */
+body.presi #k12-vek .card:has(> .card-head) > .card-body{display:none}
+body.presi #k12-vek .card.cardopen > .card-body{display:block}
+body.presi #k12-vek .card:has(> .card-head) > .card-head{cursor:pointer;user-select:none}
+body.presi #k12-vek .card:has(> .card-head) > .card-head::after{content:"\25B8";margin-left:auto;color:var(--ink-muted);font-size:.8em}
+body.presi #k12-vek .card.cardopen > .card-head::after{content:"\25BE"}
 </style>
 </head>
 <body>
@@ -24619,6 +24626,16 @@ function togglePresi(){
   try{localStorage.setItem('presiMode',on?'1':'0');}catch(e){}
 }
 try{if(localStorage.getItem('presiMode')==='1'){document.body.classList.add('presi');var _pl=document.getElementById('presi-label');if(_pl)_pl.textContent='Präsentation: an';}}catch(e){}
+</script>
+<script>
+/* Akkordeon nur im Praesentationsmodus: Klick auf Karten-Kopf klappt Karte auf/zu */
+document.addEventListener('click',function(e){
+  if(!document.body.classList.contains('presi'))return;
+  var h=e.target.closest('.card-head');
+  if(!h||!h.closest('#k12-vek'))return;
+  var c=h.parentElement;
+  if(c&&c.classList.contains('card'))c.classList.toggle('cardopen');
+});
 </script>
 </body>
 </html>
