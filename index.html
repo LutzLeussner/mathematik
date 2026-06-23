@@ -20866,7 +20866,8 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 <div class="panel" id="p12">
 
 <div class="tab-band" id="k12-tabs" style="display:none">
-  <button class="ptb on" onclick="showK12Tab('k12-vek',this)">Vektoren</button>
+  <button class="ptb on" onclick="showK12Tab('k12-raum',this)">3D-Koordinaten</button>
+  <button class="ptb" onclick="showK12Tab('k12-vek',this)">Vektoren</button>
   <button class="ptb" onclick="showK12Tab('k12-gerade',this)">Geraden</button>
   <button class="ptb" onclick="showK12Tab('k12-ebenen',this)">Ebenen</button>
   <button class="ptb" onclick="showK12Tab('k12-sto',this)">Stochastik Q</button>
@@ -20888,80 +20889,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
 
 
-<div class="subpanel on" id="k12-vek">
-  <div class="card">
-    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
-    <div class="card-body">
-      <div class="ip">Vektoren sind das Werkzeug der analytischen Geometrie: Mit ihnen beschreibst du Verschiebungen, Kräfte und Richtungen im Raum. Du lernst Rechenoperationen (Skalarprodukt) und ihre geometrische Bedeutung.</div>
-      <div class="hint"><strong>Voraussetzung:</strong> Koordinatensystem im Raum (Klasse 10), Satz des Pythagoras in 3D.</div>
-    </div>
-  </div>
-
-  <!-- Lehrkraft-Notiz · Werkzeug-Entscheidung (Hybrid-Ordnung) -->
-  <div class="ip" style="background:#ecf1f4;border-radius:10px;padding:12px 16px;border-left:4px solid #8a9da7;margin-bottom:14px;font-size:13px;">
-    <strong style="color:#4d6470">Werkzeug in diesem Tab: Skizze geht vor.</strong>
-    Der Vektorbegriff wird hier <em>handgezeichnet</em> aufgebaut — Pfeile im Heft, Schrägbild auf Papier.
-    Erst dann verifiziert ein Applet die Rechnung. Hintergrund: In der GK-Klausur MV ist
-    GeoGebra 3D <em>nicht</em> zugelassen; was am Klausurtag mental und auf Papier verfügbar sein soll,
-    muss im Unterricht auch primär dort aufgebaut werden. Vertiefung:
-    <a href="Aufsatz_WerkzeugentscheidungGeoGebra3D.html" style="color:#4d6470;text-decoration:underline;">Werkzeugentscheidung GeoGebra 3D</a>.
-  </div>
-
-  <!-- Header -->
-  <div class="section-label">Analytische Geometrie Teil 1: Vektoren und Matrizen</div>
-
-  <div class="card" style="background:linear-gradient(135deg,#6b4fa0,#553c85);color:#fff;border:none;margin-bottom:18px;">
-    <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-      <div>
-        <div style="font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em">🧭 Vektoren-Tutor</div>
-        <div style="font-size:12px;opacity:0.85;line-height:1.5">Interaktives Quiz und Lernpfad zu Vektoren, Skalarprodukt, Orthogonalität und Anwendungen.</div>
-      </div>
-      <a href="tutor-vektoren.html" style="background:#fff;color:#6b4fa0;border:none;border-radius:var(--radius-xs);padding:10px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;white-space:nowrap;display:inline-block;transition:opacity .2s">Tutor starten →</a>
-    </div>
-  </div>
-
-  <!-- Learning Objectives -->
-  <div class="card">
-    <div class="card-head">
-      <div class="ci ci-g">✓</div>
-      <span class="card-title">Lernziele · Vektoren</span>
-    </div>
-    <div class="card-body">
-      <ul class="gl">
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Punkte und Figuren im 3D-Koordinatensystem darstellen und interpretieren</span>
-        </li>
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Vektoren als Verschiebungen verstehen und Ortsvektoren nutzen</span>
-        </li>
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Vektoroperationen (Addition, Skalarmultiplikation) durchführen</span>
-        </li>
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Betrag eines Vektors berechnen</span>
-        </li>
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Skalarprodukt anwenden und Winkel zwischen Vektoren berechnen</span>
-        </li>
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Kollinearität von Vektoren erkennen und nutzen</span>
-        </li>
-        <li class="gi">
-          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Linearkombinationen geometrisch deuten und bei bekannten Vektoren und Skalaren berechnen</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 1. 3D Coordinate Systems -->
-  <div class="section-label">1. Punkte und Körper im 3D-Koordinatensystem (3 Std.)</div>
+<div class="subpanel on" id="k12-raum">
+  <div class="card"><div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div><div class="card-body"><div class="ip">Bevor du mit Vektoren rechnest, musst du Punkte und Körper sicher im räumlichen Koordinatensystem darstellen und ablesen können. Dieser Bereich baut dein räumliches Vorstellungsvermögen auf — die Grundlage für alles Weitere in der analytischen Geometrie.</div></div></div>
+<!-- 1. 3D Coordinate Systems -->
+  <div class="section-label">Punkte und Körper im 3D-Koordinatensystem</div>
 
   <!-- Phase 4.4: Schrägbild-Konvention + körperhafte Erkundung -->
   <div class="card" style="background:#f7f3e2;border-left:4px solid #c8b55e;margin-bottom:14px;">
@@ -21232,8 +21163,83 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Die Schnittfläche enthält zwei gegenüberliegende Würfelkanten (in \(y\)-Richtung von \((4|0|0)\) nach \((4|4|0)\) und in \(y\)-Richtung von \((0|0|4)\) nach \((0|4|4)\)) — eine sogenannte „Diagonalebene" des Würfels.</div>
     </div>
   </div>
-    <!-- 2. Einstieg (2D, mit Grafik): Punkt, Ortsvektor, freier Vektor -->
-  <div class="section-label">2. Einstieg: Punkt, Ortsvektor und freier Vektor</div>
+    
+</div>
+
+<div class="subpanel" id="k12-vek">
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+    <div class="card-body">
+      <div class="ip">Vektoren sind das Werkzeug der analytischen Geometrie: Mit ihnen beschreibst du Verschiebungen, Kräfte und Richtungen im Raum. Du lernst Rechenoperationen (Skalarprodukt) und ihre geometrische Bedeutung.</div>
+      <div class="hint"><strong>Voraussetzung:</strong> Koordinatensystem im Raum (Klasse 10), Satz des Pythagoras in 3D.</div>
+    </div>
+  </div>
+
+  <!-- Lehrkraft-Notiz · Werkzeug-Entscheidung (Hybrid-Ordnung) -->
+  <div class="ip" style="background:#ecf1f4;border-radius:10px;padding:12px 16px;border-left:4px solid #8a9da7;margin-bottom:14px;font-size:13px;">
+    <strong style="color:#4d6470">Werkzeug in diesem Tab: Skizze geht vor.</strong>
+    Der Vektorbegriff wird hier <em>handgezeichnet</em> aufgebaut — Pfeile im Heft, Schrägbild auf Papier.
+    Erst dann verifiziert ein Applet die Rechnung. Hintergrund: In der GK-Klausur MV ist
+    GeoGebra 3D <em>nicht</em> zugelassen; was am Klausurtag mental und auf Papier verfügbar sein soll,
+    muss im Unterricht auch primär dort aufgebaut werden. Vertiefung:
+    <a href="Aufsatz_WerkzeugentscheidungGeoGebra3D.html" style="color:#4d6470;text-decoration:underline;">Werkzeugentscheidung GeoGebra 3D</a>.
+  </div>
+
+  <!-- Header -->
+  <div class="section-label">Analytische Geometrie Teil 1: Vektoren und Matrizen</div>
+
+  <div class="card" style="background:linear-gradient(135deg,#6b4fa0,#553c85);color:#fff;border:none;margin-bottom:18px;">
+    <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em">🧭 Vektoren-Tutor</div>
+        <div style="font-size:12px;opacity:0.85;line-height:1.5">Interaktives Quiz und Lernpfad zu Vektoren, Skalarprodukt, Orthogonalität und Anwendungen.</div>
+      </div>
+      <a href="tutor-vektoren.html" style="background:#fff;color:#6b4fa0;border:none;border-radius:var(--radius-xs);padding:10px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;white-space:nowrap;display:inline-block;transition:opacity .2s">Tutor starten →</a>
+    </div>
+  </div>
+
+  <!-- Learning Objectives -->
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-g">✓</div>
+      <span class="card-title">Lernziele · Vektoren</span>
+    </div>
+    <div class="card-body">
+      <ul class="gl">
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Punkte und Figuren im 3D-Koordinatensystem darstellen und interpretieren</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Vektoren als Verschiebungen verstehen und Ortsvektoren nutzen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Vektoroperationen (Addition, Skalarmultiplikation) durchführen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Betrag eines Vektors berechnen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Skalarprodukt anwenden und Winkel zwischen Vektoren berechnen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Kollinearität von Vektoren erkennen und nutzen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Linearkombinationen geometrisch deuten und bei bekannten Vektoren und Skalaren berechnen</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. Einstieg (2D, mit Grafik): Punkt, Ortsvektor, freier Vektor -->
+  <div class="section-label">1. Einstieg: Punkt, Ortsvektor und freier Vektor</div>
   <div class="card" style="background:#fff8e6;border-left:4px solid #c8b55e;margin-bottom:14px;">
     <div class="card-head"><div class="ci ci-i" style="background:#c8b55e;color:#fff;">2D</div><span class="card-title" style="color:#8a7a30">Drei Objekte, gleiche Zahlen — und doch verschieden</span></div>
     <div class="card-body">
@@ -21254,7 +21260,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     zwischen beiden Welten. <span style="color:#8a7a30;font-weight:600">Genau diese Verwechslung ist
     in MV-Klausuren der häufigste Anfängerfehler.</span>
   </div>
-  <div class="section-label">3. Was ist ein Vektor?</div>
+  <div class="section-label">2. Was ist ein Vektor?</div>
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vektor, Ortsvektor, Verbindungsvektor</span></div>
     <div class="card-body">
@@ -21296,7 +21302,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </details>
     </div>
   </div>
-  <div class="section-label">4. Betrag eines Vektors</div>
+  <div class="section-label">3. Betrag eines Vektors</div>
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Betrag (Länge) eines Vektors</span></div>
     <div class="card-body">
@@ -21314,7 +21320,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip">Betrag: \(|\vec{AB}| = \sqrt{3^2 + 3^2 + (-2)^2} = \sqrt{9 + 9 + 4} = \sqrt{22} \approx 4{,}69\)</div>
     </div>
   </div>
-  <div class="section-label">5. Vektoroperationen und Kollinearität</div>
+  <div class="section-label">4. Vektoroperationen und Kollinearität</div>
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Addition und Skalarmultiplikation</span></div>
     <div class="card-body">
@@ -21337,7 +21343,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip" style="margin-top: 10px;">Das heißt: Alle Komponenten des einen Vektors sind proportional zu denen des anderen. Kollineare Vektoren zeigen in die gleiche oder die entgegengesetzte Richtung.</div>
     </div>
   </div>
-  <div class="section-label">6. Linearkombinationen</div>
+  <div class="section-label">5. Linearkombinationen</div>
   <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
     <strong style="color:#8a7a30">Kernidee:</strong>
     Eine <strong>Linearkombination</strong> ist eine <em>Summe von skalierten Vektoren</em>. Sie verallgemeinert die Kollinearität (ein Vielfaches eines Vektors) zur Summe mehrerer Vielfacher verschiedener Vektoren. In diesem Abschnitt geht es um die <strong>geometrische Bedeutung</strong> einer Linearkombination und um das <strong>Berechnen</strong> bei bekannten Vektoren und Skalaren.
@@ -21835,7 +21841,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
 
 
-  <div class="section-label">7. Skalarprodukt, Orthogonalität und Winkel</div>
+  <div class="section-label">6. Skalarprodukt, Orthogonalität und Winkel</div>
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das Skalarprodukt</span></div>
     <div class="card-body">
@@ -24014,7 +24020,7 @@ function showK11Tab(id, btn) {
 }
 
 function showK12Tab(id, btn) {
-  ['k12-vek','k12-gerade','k12-ebenen','k12-sto'].forEach(function(sid) {
+  ['k12-raum','k12-vek','k12-gerade','k12-ebenen','k12-sto'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
