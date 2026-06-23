@@ -20870,7 +20870,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <div class="card">
     <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
     <div class="card-body">
-      <div class="ip">Vektoren sind das Werkzeug der analytischen Geometrie: Mit ihnen beschreibst du Verschiebungen, Kräfte und Richtungen im Raum. Du lernst Rechenoperationen (Skalarprodukt, Kreuzprodukt) und ihre geometrische Bedeutung.</div>
+      <div class="ip">Vektoren sind das Werkzeug der analytischen Geometrie: Mit ihnen beschreibst du Verschiebungen, Kräfte und Richtungen im Raum. Du lernst Rechenoperationen (Skalarprodukt) und ihre geometrische Bedeutung.</div>
       <div class="hint"><strong>Voraussetzung:</strong> Koordinatensystem im Raum (Klasse 10), Satz des Pythagoras in 3D.</div>
     </div>
   </div>
@@ -20920,7 +20920,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         </li>
         <li class="gi">
           <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Betrag und Einheitsvektor berechnen</span>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Betrag eines Vektors berechnen</span>
         </li>
         <li class="gi">
           <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
@@ -21210,36 +21210,40 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Die Schnittfläche enthält zwei gegenüberliegende Würfelkanten (in \(y\)-Richtung von \((4|0|0)\) nach \((4|4|0)\) und in \(y\)-Richtung von \((0|0|4)\) nach \((0|4|4)\)) — eine sogenannte „Diagonalebene" des Würfels.</div>
     </div>
   </div>
-  <!-- 2. Vector Concept -->
-  <div class="section-label">2. Vektorbegriff und Ortsvektoren (2 Std.)</div>
-
-  <!-- Kernidee-Box: Punkt · Ortsvektor · freier Vektor -->
+    <!-- 2. Einstieg (2D, mit Grafik): Punkt, Ortsvektor, freier Vektor -->
+  <div class="section-label">2. Einstieg: Punkt, Ortsvektor und freier Vektor</div>
+  <div class="card" style="background:#fff8e6;border-left:4px solid #c8b55e;margin-bottom:14px;">
+    <div class="card-head"><div class="ci ci-i" style="background:#c8b55e;color:#fff;">2D</div><span class="card-title" style="color:#8a7a30">Drei Objekte, gleiche Zahlen — und doch verschieden</span></div>
+    <div class="card-body">
+      <div class="ip">Wir starten in der Ebene, weil sich der Unterschied dort <em>zeichnen</em> lässt. Betrachte den <strong>Punkt</strong> \(P(3|2)\), den <strong>Ortsvektor</strong> \(\vec{OP}\) und einen <strong>freien Vektor</strong> \(\vec{a}=\begin{pmatrix}3\\2\end{pmatrix}\). Alle drei tragen die Zahlen \(3\) und \(2\) — aber sie sind nicht dasselbe:</div>
+      <svg style="display:block;margin:14px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;background:#f9f9f9;" width="440" height="300" viewBox="0 0 440 300"><defs><marker id="eg" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#5b6e2e"/></marker><marker id="er" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#c75c3a"/></marker><marker id="eax" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#333"/></marker></defs><line x1="60" y1="31.6" x2="60" y2="250" stroke="#eee" stroke-width="1"/><line x1="102" y1="31.6" x2="102" y2="250" stroke="#eee" stroke-width="1"/><line x1="144" y1="31.6" x2="144" y2="250" stroke="#eee" stroke-width="1"/><line x1="186" y1="31.6" x2="186" y2="250" stroke="#eee" stroke-width="1"/><line x1="228" y1="31.6" x2="228" y2="250" stroke="#eee" stroke-width="1"/><line x1="270" y1="31.6" x2="270" y2="250" stroke="#eee" stroke-width="1"/><line x1="312" y1="31.6" x2="312" y2="250" stroke="#eee" stroke-width="1"/><line x1="354" y1="31.6" x2="354" y2="250" stroke="#eee" stroke-width="1"/><line x1="396" y1="31.6" x2="396" y2="250" stroke="#eee" stroke-width="1"/><line x1="60" y1="250" x2="404.4" y2="250" stroke="#eee" stroke-width="1"/><line x1="60" y1="208" x2="404.4" y2="208" stroke="#eee" stroke-width="1"/><line x1="60" y1="166" x2="404.4" y2="166" stroke="#eee" stroke-width="1"/><line x1="60" y1="124" x2="404.4" y2="124" stroke="#eee" stroke-width="1"/><line x1="60" y1="82" x2="404.4" y2="82" stroke="#eee" stroke-width="1"/><line x1="60" y1="40" x2="404.4" y2="40" stroke="#eee" stroke-width="1"/><line x1="35" y1="250" x2="412.8" y2="250" stroke="#333" stroke-width="1.6" marker-end="url(#eax)"/><line x1="60" y1="260" x2="60" y2="23.2" stroke="#333" stroke-width="1.6" marker-end="url(#eax)"/><text x="418.8" y="255" font-size="15" font-weight="bold" fill="#333">x</text><text x="46" y="19.2" font-size="15" font-weight="bold" fill="#333">y</text><line x1="102" y1="246" x2="102" y2="254" stroke="#777" stroke-width="1"/><text x="102" y="266" font-size="11" fill="#666" text-anchor="middle">1</text><line x1="144" y1="246" x2="144" y2="254" stroke="#777" stroke-width="1"/><text x="144" y="266" font-size="11" fill="#666" text-anchor="middle">2</text><line x1="186" y1="246" x2="186" y2="254" stroke="#777" stroke-width="1"/><text x="186" y="266" font-size="11" fill="#666" text-anchor="middle">3</text><line x1="228" y1="246" x2="228" y2="254" stroke="#777" stroke-width="1"/><text x="228" y="266" font-size="11" fill="#666" text-anchor="middle">4</text><line x1="270" y1="246" x2="270" y2="254" stroke="#777" stroke-width="1"/><text x="270" y="266" font-size="11" fill="#666" text-anchor="middle">5</text><line x1="312" y1="246" x2="312" y2="254" stroke="#777" stroke-width="1"/><text x="312" y="266" font-size="11" fill="#666" text-anchor="middle">6</text><line x1="354" y1="246" x2="354" y2="254" stroke="#777" stroke-width="1"/><text x="354" y="266" font-size="11" fill="#666" text-anchor="middle">7</text><line x1="396" y1="246" x2="396" y2="254" stroke="#777" stroke-width="1"/><text x="396" y="266" font-size="11" fill="#666" text-anchor="middle">8</text><line x1="56" y1="208" x2="64" y2="208" stroke="#777" stroke-width="1"/><text x="51" y="212" font-size="11" fill="#666" text-anchor="end">1</text><line x1="56" y1="166" x2="64" y2="166" stroke="#777" stroke-width="1"/><text x="51" y="170" font-size="11" fill="#666" text-anchor="end">2</text><line x1="56" y1="124" x2="64" y2="124" stroke="#777" stroke-width="1"/><text x="51" y="128" font-size="11" fill="#666" text-anchor="end">3</text><line x1="56" y1="82" x2="64" y2="82" stroke="#777" stroke-width="1"/><text x="51" y="86" font-size="11" fill="#666" text-anchor="end">4</text><line x1="56" y1="40" x2="64" y2="40" stroke="#777" stroke-width="1"/><text x="51" y="44" font-size="11" fill="#666" text-anchor="end">5</text><circle cx="60" cy="250" r="2.6" fill="#000"/><text x="47" y="265" font-size="12" font-weight="bold" fill="#333">O</text><line x1="60" y1="250" x2="186" y2="166" stroke="#5b6e2e" stroke-width="2.6" marker-end="url(#eg)"/><line x1="270" y1="208" x2="396" y2="124" stroke="#c75c3a" stroke-width="2.6" marker-end="url(#er)"/><circle cx="270" cy="208" r="3" fill="#c75c3a"/><text x="266" y="224" font-size="12" font-weight="bold" fill="#c75c3a">R</text><circle cx="186" cy="166" r="5" fill="#222" stroke="#fff" stroke-width="1.2"/><rect x="178" y="143" width="64" height="16" fill="#fffcf6" fill-opacity="0.9" rx="3" stroke="#999" stroke-opacity="0.4"/><text x="182" y="155" font-size="11" font-weight="bold" fill="#222">P(3|2)</text><rect x="89.0" y="213.0" width="92" height="16" fill="#fffcf6" fill-opacity="0.92" rx="3" stroke="#5b6e2e" stroke-opacity="0.3"/><text x="135.0" y="224.0" font-size="11" font-weight="bold" fill="#5b6e2e" text-anchor="middle">OP (Ortsvektor)</text><rect x="307.0" y="143.0" width="98" height="16" fill="#fffcf6" fill-opacity="0.92" rx="3" stroke="#c75c3a" stroke-opacity="0.3"/><text x="356.0" y="155.0" font-size="11" font-weight="bold" fill="#c75c3a" text-anchor="middle">a (freier Vektor)</text></svg>
+      <div class="ip" style="margin-top:10px;"><strong>Der Punkt \(P\)</strong> markiert einen festen <em>Ort</em>. <strong>Der Ortsvektor \(\vec{OP}\)</strong> ist der eine Pfeil vom Ursprung \(O\) zu diesem Ort. <strong>Der freie Vektor \(\vec{a}\)</strong> ist eine <em>Verschiebung</em> — derselbe Pfeil darf überall ansetzen (hier beim Aufpunkt \(R\)); seine Komponenten bleiben \(\begin{pmatrix}3\\2\end{pmatrix}\).</div>
+      <div class="hint"><strong>Der Test — alles um \(\vec{v}=\begin{pmatrix}1\\0\end{pmatrix}\) verschieben:</strong> Der Punkt wandert nach \(P'(4|2)\), der Ortsvektor wird zu \(\vec{OP'}=\begin{pmatrix}4\\2\end{pmatrix}\) — beide ändern sich. Der freie Vektor behält seine Komponenten \(\begin{pmatrix}3\\2\end{pmatrix}\); nur sein Aufpunkt rückt mit. <strong>Genau dieses unterschiedliche Verhalten</strong> unterscheidet die drei Begriffe — nicht die Zahlen. (Die räumliche Variante übst du in Block&nbsp;V3.)</div>
+    </div>
+  </div>
+  <!-- Kernidee-Box: Punkt, Ortsvektor, freier Vektor -->
   <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
     <strong style="color:#8a7a30">Kernidee:</strong>
     Drei Dinge können dieselben Koordinaten haben und sind trotzdem <em>nicht dasselbe</em>:
     der <strong>Punkt</strong> \(P=(2|1|3)\) bezeichnet einen <em>Ort</em>, der <strong>Ortsvektor</strong>
     \(\vec{OP}\) ist der einzige Pfeil vom Ursprung zu diesem Ort, der <strong>freie Vektor</strong>
-    \(\vec{v}=\bigl({\scriptstyle 2\atop\scriptstyle 1}{\scriptstyle\atop\scriptstyle 3}\bigr)\) beschreibt eine <em>Verschiebung</em> ohne festen Anfangspunkt.
+    \(\vec{v}\) beschreibt eine <em>Verschiebung</em> ohne festen Anfangspunkt.
     Punkte werden <em>nicht</em> addiert, Vektoren <em>schon</em> — und der Ortsvektor ist die Brücke
     zwischen beiden Welten. <span style="color:#8a7a30;font-weight:600">Genau diese Verwechslung ist
     in MV-Klausuren der häufigste Anfängerfehler.</span>
   </div>
-
+  <div class="section-label">3. Was ist ein Vektor?</div>
   <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Was ist ein Vektor?</span>
-    </div>
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vektor, Ortsvektor, Verbindungsvektor</span></div>
     <div class="card-body">
-      <div class="ip">Ein <strong>Vektor</strong> beschreibt eine Verschiebung im Raum. Er hat eine Richtung und eine Länge (Betrag), aber keinen festen Ausgangspunkt.</div>
+      <div class="ip">Ein <strong>Vektor</strong> beschreibt eine <strong>Verschiebung</strong>: eine Richtung zusammen mit einer Länge, aber ohne festen Ausgangspunkt. Alle Pfeile mit gleicher Länge und gleicher Richtung stellen <em>denselben</em> Vektor dar — der Vektor ist die ganze <em>Klasse</em> dieser Pfeile.</div>
+      <div class="ip" style="margin-top:8px;">Derselbe freie Vektor kann je nach Sachzusammenhang eine <em>Verschiebung</em>, eine <em>Kraft</em> oder eine <em>Geschwindigkeit</em> modellieren — drei Kontexte, eine Struktur.</div>
       <div class="hint"><strong>Merke:</strong> Der Vektor von Punkt \(A = (a_1|a_2|a_3)\) zu Punkt \(B = (b_1|b_2|b_3)\) ist: \(\vec{AB} = \begin{pmatrix} b_1 - a_1 \\ b_2 - a_2 \\ b_3 - a_3 \end{pmatrix}\)</div>
-      <div class="ip" style="margin-top: 10px;">Der <strong>Ortsvektor</strong> eines Punktes \(P = (p_1|p_2|p_3)\) ist der Vektor vom Ursprung zu diesem Punkt: \(\vec{OP} = \begin{pmatrix} p_1 \\ p_2 \\ p_3 \end{pmatrix}\)</div>
+      <div class="ip" style="margin-top: 10px;">Der <strong>Ortsvektor</strong> eines Punktes \(P = (p_1|p_2|p_3)\) ist der Vektor vom Ursprung zu diesem Punkt: \(\vec{OP} = \begin{pmatrix} p_1 \\ p_2 \\ p_3 \end{pmatrix}\). <strong>Verbindungsvektor</strong> \(\vec{AB}\) und <strong>Verschiebungsvektor</strong> sind nur andere Namen für freie Vektoren.</div>
       <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vorsicht — typischer Fehler:</strong> Schüler schreiben oft \(P=\vec{OP}\) oder rechnen \(A+B\) (Punkt plus Punkt). Beides ist sinnlos. Erlaubt sind nur Vektor + Vektor, Punkt + Vektor (= neuer Punkt), Punkt − Punkt (= Vektor).</div>
     </div>
   </div>
-
-  <!-- Brücken-Card · Conceptual Change: Punkt vs. Vektor -->
-  <div class="card" style="background:#f4f3f0;border-left:4px solid #6b6864;margin-top:10px;">
+<div class="card" style="background:#f4f3f0;border-left:4px solid #6b6864;margin-top:10px;">
     <div class="card-head">
       <div class="ci ci-i" style="background:#6b6864;color:#fff;">?</div>
       <span class="card-title" style="color:#3d3a36">Wer hat recht — Anna oder Bert?</span>
@@ -21270,9 +21274,34 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </details>
     </div>
   </div>
-
-  <!-- Vector Addition Diagram -->
-  <svg width="320" height="240" viewBox="0 0 320 240" style="display: block; margin: 15px auto; border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
+  <div class="section-label">4. Betrag eines Vektors</div>
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Betrag (Länge) eines Vektors</span></div>
+    <div class="card-body">
+      <div class="ip">Der <strong>Betrag</strong> (die <strong>Länge</strong>) eines Vektors \(\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}\) ist der Abstand zwischen Anfangs- und Endpunkt — berechnet mit dem Satz des Pythagoras im Raum:</div>
+      <div class="hint"><strong>Formel:</strong> \(|\vec{v}| = \sqrt{v_1^2 + v_2^2 + v_3^2}\)</div>
+    </div>
+  </div>
+<div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 1: Vektor zwischen zwei Punkten</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind die Punkte \(A = (2|1|3)\) und \(B = (5|4|1)\). Berechne den Vektor \(\vec{AB}\) und seinen Betrag.</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top: 8px;">\(\vec{AB} = \begin{pmatrix} 5-2 \\ 4-1 \\ 1-3 \end{pmatrix} = \begin{pmatrix} 3 \\ 3 \\ -2 \end{pmatrix}\)</div>
+      <div class="ip">Betrag: \(|\vec{AB}| = \sqrt{3^2 + 3^2 + (-2)^2} = \sqrt{9 + 9 + 4} = \sqrt{22} \approx 4{,}69\)</div>
+    </div>
+  </div>
+  <div class="section-label">5. Vektoroperationen und Kollinearität</div>
+  <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Addition und Skalarmultiplikation</span></div>
+    <div class="card-body">
+      <div class="two-col">
+        <div><div class="ip"><strong>Addition:</strong></div><div class="hint">\(\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} = \begin{pmatrix} a_1+b_1 \\ a_2+b_2 \\ a_3+b_3 \end{pmatrix}\)</div></div>
+        <div><div class="ip"><strong>Skalarmultiplikation:</strong></div><div class="hint">\(r \cdot \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix} = \begin{pmatrix} r \cdot v_1 \\ r \cdot v_2 \\ r \cdot v_3 \end{pmatrix}\)</div></div>
+      </div>
+      <div class="it" style="margin-top: 15px;">Bei der Skalarmultiplikation wird jede Komponente mit dem Skalar \(r\) multipliziert. Das ändert die Länge und — bei \(r < 0\) — die Richtung. Geometrisch heißt Addition: <em>Pfeil an Pfeil hängen</em>.</div>
+      <svg width="320" height="240" viewBox="0 0 320 240" style="display: block; margin: 15px auto; border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
     <text x="10" y="220" font-size="12" font-weight="bold">Vektoraddition: \(\vec{a} + \vec{b} = \vec{c}\)</text>
 
     <!-- Grid -->
@@ -21311,121 +21340,32 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </marker>
     </defs>
   </svg>
-
-  <!-- 3. Vector Magnitude and Unit Vector -->
-  <div class="section-label">3. Betrag und Einheitsvektor (2 Std.)</div>
-
-  <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Betrag eines Vektors</span>
-    </div>
-    <div class="card-body">
-      <div class="ip">Der <strong>Betrag</strong> (oder die <strong>Länge</strong>) eines Vektors \(\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}\) wird berechnet mit:</div>
-      <div class="hint"><strong>Formel:</strong> \(|\vec{v}| = \sqrt{v_1^2 + v_2^2 + v_3^2}\)</div>
-      <div class="ip" style="margin-top: 10px;">Ein <strong>Einheitsvektor</strong> hat den Betrag 1. Den Einheitsvektor in Richtung von \(\vec{v}\) erhältst du durch:</div>
-      <div class="hint"><strong>Formel:</strong> \(\vec{e}_v = \frac{1}{|\vec{v}|} \cdot \vec{v} = \frac{\vec{v}}{|\vec{v}|}\)</div>
     </div>
   </div>
-
-  <!-- 4. Vector Operations -->
-  <div class="section-label">4. Vektoroperationen: Addition und Skalarmultiplikation (2 Std.)</div>
-
   <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Vektoroperationen</span>
-    </div>
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Kollinearität von Vektoren</span></div>
     <div class="card-body">
-      <div class="two-col">
-        <div>
-          <div class="ip"><strong>Addition:</strong></div>
-          <div class="hint">\(\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} = \begin{pmatrix} a_1+b_1 \\ a_2+b_2 \\ a_3+b_3 \end{pmatrix}\)</div>
-        </div>
-        <div>
-          <div class="ip"><strong>Skalarmultiplikation:</strong></div>
-          <div class="hint">\(r \cdot \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix} = \begin{pmatrix} r \cdot v_1 \\ r \cdot v_2 \\ r \cdot v_3 \end{pmatrix}\)</div>
-        </div>
-      </div>
-      <div class="it" style="margin-top: 15px;">Bei der Skalarmultiplikation wird jede Komponente mit dem Skalar \(r\) multipliziert. Das ändert die Länge und ggf. die Richtung (wenn \(r < 0\)).</div>
+      <div class="ip">Zwei Vektoren \(\vec{a}\) und \(\vec{b}\) sind <strong>kollinear</strong> (parallel), wenn der eine ein <em>Vielfaches</em> des anderen ist:</div>
+      <div class="hint"><strong>Merkregel:</strong> \(\vec{b} = r \cdot \vec{a}\) für ein \(r \in \mathbb{R}\). (Der Nullvektor gilt als kollinear zu jedem Vektor.)</div>
+      <div class="ip" style="margin-top: 10px;">Das heißt: Alle Komponenten des einen Vektors sind proportional zu denen des anderen. Kollineare Vektoren zeigen in die gleiche oder die entgegengesetzte Richtung.</div>
     </div>
   </div>
-
-  <!-- 5. Scalar Product -->
-  <div class="section-label">5. Skalarprodukt und Winkelberechnung (2 Std.)</div>
-
-  <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Das Skalarprodukt</span>
-    </div>
-    <div class="card-body">
-      <div class="ip">Das <strong>Skalarprodukt</strong> zweier Vektoren \(\vec{a}\) und \(\vec{b}\) ist eine Zahl (ein Skalar):</div>
-      <div class="hint"><strong>Definition:</strong> \(\vec{a} \cdot \vec{b} = a_1 \cdot b_1 + a_2 \cdot b_2 + a_3 \cdot b_3\)</div>
-      <div class="ip" style="margin-top: 10px;">Mit dem Skalarprodukt kannst du den <strong>Winkel</strong> zwischen zwei Vektoren berechnen:</div>
-      <div class="hint"><strong>Winkelformel:</strong> \(\cos(\alpha) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\) &nbsp; \(\Rightarrow\) &nbsp; \(\alpha = \arccos\left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\right)\)</div>
-      <div class="it" style="margin-top: 10px;"><strong>Wichtig:</strong> Wenn \(\vec{a} \cdot \vec{b} = 0\), dann sind die Vektoren senkrecht (orthogonal) zueinander.</div>
-    </div>
-  </div>
-
-  <!-- 6. Collinearity -->
-  <div class="section-label">6. Kollinearität (1 Std.)</div>
-
-  <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Kollinearität von Vektoren</span>
-    </div>
-    <div class="card-body">
-      <div class="ip">Zwei Vektoren \(\vec{a}\) und \(\vec{b}\) sind <strong>kollinear</strong> (oder parallel), wenn der eine ein Vielfaches des anderen ist:</div>
-      <div class="hint"><strong>Merkregel:</strong> \(\vec{b} = r \cdot \vec{a}\) für ein \(r \in \mathbb{R}\)</div>
-      <div class="ip" style="margin-top: 10px;">Das heißt: Alle Komponenten des einen Vektors sind proportional zu denen des anderen Vektors.</div>
-      <div class="it">Kollineare Vektoren zeigen in die gleiche oder entgegengesetzte Richtung.</div>
-    </div>
-  </div>
-
-  <!-- 7. Linearkombinationen -->
-  <div class="section-label">7. Linearkombinationen (2 Std.)</div>
-
-  <!-- Kernidee-Box: LK verallgemeinert Kollinearität -->
+  <div class="section-label">6. Linearkombinationen</div>
   <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
     <strong style="color:#8a7a30">Kernidee:</strong>
-    Eine <strong>Linearkombination</strong> ist eine <em>Summe von skalierten Vektoren</em>.
-    Sie verallgemeinert die Kollinearität (ein Vielfaches eines Vektors) zur Summe mehrerer Vielfache
-    verschiedener Vektoren. Mit der Linearkombination beantwortest du Fragen wie:
-    <em>„Lässt sich der Vektor \(\vec{c}\) aus \(\vec{a}\) und \(\vec{b}\) zusammensetzen?"</em> — und das
-    Werkzeug dafür ist immer dasselbe: das <strong>lineare Gleichungssystem</strong> aus Klasse 9/10.
+    Eine <strong>Linearkombination</strong> ist eine <em>Summe von skalierten Vektoren</em>. Sie verallgemeinert die Kollinearität (ein Vielfaches eines Vektors) zur Summe mehrerer Vielfacher verschiedener Vektoren. Die Leitfrage lautet: <em>„Lässt sich \(\vec{c}\) aus \(\vec{a}\) und \(\vec{b}\) zusammensetzen?"</em> — und das Werkzeug dafür ist immer dasselbe: das <strong>lineare Gleichungssystem</strong> aus Klasse 9/10.
   </div>
-
   <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Definition und Schreibweise</span>
-    </div>
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Definition und Schreibweise</span></div>
     <div class="card-body">
       <div class="ip">Eine <strong>Linearkombination</strong> der Vektoren \(\vec{a}, \vec{b}, \vec{c}\) mit den Skalaren \(r, s, t \in \mathbb{R}\) ist der Vektor</div>
       <div class="hint">\[\vec{w} \;=\; r\cdot \vec{a} \;+\; s\cdot \vec{b} \;+\; t\cdot \vec{c}.\]</div>
-      <div class="ip" style="margin-top: 10px;">Die Zahlen \(r, s, t\) heißen <em>Koeffizienten</em> der Linearkombination. Es können auch mehr oder weniger als drei Summanden sein. Beispiele:</div>
-      <div class="ip">• Ein Summand: \(\vec{w} = r\cdot \vec{a}\) — das ist genau die <em>Kollinearität</em> aus Abschnitt 6.</div>
-      <div class="ip">• Zwei Summanden: \(\vec{w} = r\cdot \vec{a} + s\cdot \vec{b}\) — alle so erzeugbaren Vektoren bilden anschaulich <em>eine ganze Ebene</em> (sofern \(\vec{a}\) und \(\vec{b}\) nicht selbst kollinear sind).</div>
-      <div class="ip">• Drei Summanden im Raum: \(\vec{w} = r\vec{a} + s\vec{b} + t\vec{c}\) — drei „passend gewählte" Vektoren erreichen jeden Punkt des Raumes.</div>
+      <div class="ip" style="margin-top: 10px;">Die Zahlen \(r, s, t\) heißen <em>Koeffizienten</em>. Es können mehr oder weniger als drei Summanden sein. Ein einziger Summand \(\vec{w}=r\cdot\vec{a}\) ist genau die <em>Kollinearität</em> aus Abschnitt 5.</div>
+      <div class="ip">Geometrisch ist eine Linearkombination: <strong>erst skalieren, dann hintereinanderlegen</strong> (Pfeil an Pfeil). Skalierung mit \(r\) streckt oder staucht (negatives \(r\) kehrt die Richtung um).</div>
+      <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vorsicht — Sonderfälle:</strong> Wird ein Koeffizient \(=0\), fällt der zugehörige Vektor weg. Sind alle Koeffizienten \(=0\), ist das Ergebnis der <em>Nullvektor</em> \(\vec{0}\).</div>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div class="ci ci-i">i</div>
-      <span class="card-title">Geometrische Bedeutung</span>
-    </div>
-    <div class="card-body">
-      <div class="ip">Skalierung mit \(r\) <em>streckt</em> oder <em>staucht</em> einen Vektor (negatives \(r\) kehrt seine Richtung um). Die Addition zweier Vektoren <em>setzt sie hintereinander</em> (Pfeil an Pfeil). Eine Linearkombination ist also: <strong>erst skalieren, dann hintereinanderlegen</strong>.</div>
-      <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vorsicht — Sonderfälle:</strong>
-        Wird ein Koeffizient \(=0\), fällt der zugehörige Vektor weg — die LK wird kürzer. Sind alle Koeffizienten \(=0\), ist das Ergebnis der <em>Nullvektor</em> \(\vec{0}\). Sind \(\vec{a}\) und \(\vec{b}\) selbst kollinear, erreichst du mit \(r\vec{a}+s\vec{b}\) nur eine <em>Gerade</em>, keine Ebene — denn \(\vec{b}\) liefert nichts Neues hinzu.</div>
-    </div>
-  </div>
-
-  <!-- Beispielaufgabe 1: direkt einsetzen -->
-  <div class="bsp">
+<div class="bsp">
     <div class="bsp-label">Beispielaufgabe 1: Linearkombination berechnen</div>
     <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind \(\vec{a} = \begin{pmatrix}2\\1\\0\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}-1\\3\\2\end{pmatrix}\). Berechne die Linearkombination \(\vec{w} = 3\vec{a} - 2\vec{b}\).</div>
     <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
@@ -21437,9 +21377,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
   </div>
-
-  <!-- Beispielaufgabe 2: LK darstellen via LGS -->
-  <div class="bsp">
+<div class="bsp">
     <div class="bsp-label">Beispielaufgabe 2: Vektor als Linearkombination darstellen</div>
     <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind \(\vec{a} = \begin{pmatrix}1\\2\\1\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}3\\0\\2\end{pmatrix}\), \(\vec{c} = \begin{pmatrix}5\\4\\4\end{pmatrix}\). Bestimme Koeffizienten \(r, s\), so dass \(\vec{c} = r\vec{a} + s\vec{b}\) gilt — falls dies möglich ist.</div>
     <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
@@ -21452,9 +21390,475 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Pflichtprobe bei 3×2-LGS:</em> Weil drei Gleichungen für nur zwei Unbekannte gegeben sind, prüfst du immer alle drei. Ist die dritte Gleichung <em>nicht</em> verträglich, hat das LGS keine Lösung — der Vektor \(\vec{c}\) liegt dann nicht in der von \(\vec{a}, \vec{b}\) aufgespannten Ebene durch den Ursprung.</em></div>
     </div>
   </div>
-
-  <!-- Interactive Calculator -->
+  <div class="section-label">Aufgaben zu Vektoren</div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">I</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · I · ★ Grundlagen</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Vektoren ablesen und rechnen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Ortsvektoren, Vektoraddition, Skalarmultiplikation, Betrag — reproduktiv.</div>
+    </div>
+  </div>
+<div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt">
+          <span class="tn">V1.1</span>
+          <span class="td de">★</span>
+        </div>
+        <div class="tq">Bestimme den Ortsvektor für den Punkt \(P = (4|-2|3)\).</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> \(\vec{OP} = \begin{pmatrix} 4 \\ -2 \\ 3 \end{pmatrix}\)</div>
+  </div>
+<div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt">
+          <span class="tn">V1.2</span>
+          <span class="td de">★</span>
+        </div>
+        <div class="tq">Berechne \(2 \cdot \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix}\)</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> \(\begin{pmatrix} 4 \\ -2 \\ 6 \end{pmatrix}\)</div>
+  </div>
+<div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt">
+          <span class="tn">V1.3</span>
+          <span class="td dm">★★</span>
+        </div>
+        <div class="tq">Berechne \(\begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix} + \begin{pmatrix} 3 \\ -1 \\ 4 \end{pmatrix}\) und den Betrag der Summe.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Summe: \(\begin{pmatrix} 4 \\ 1 \\ 6 \end{pmatrix}\), Betrag: \(\sqrt{16+1+36} = \sqrt{53} \approx 7{,}28\)</div>
+  </div>
+<div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt">
+          <span class="tn">V1.4</span>
+          <span class="td dm">★★</span>
+        </div>
+        <div class="tq">Sind die Vektoren \(\vec{a} = \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}\) und \(\vec{b} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}\) kollinear? Begründe.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+      </div>
+      <div class="ta"><strong>Lösung:</strong> Ja, denn \(\vec{a} = 2 \cdot \vec{b}\). Der Vektor \(\vec{a}\) ist das 2-fache von \(\vec{b}\), daher sind sie kollinear.</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">II</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · II · ★★ / ★★★ Vertiefung</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Verschiebung, Mittelpunkt, Kollinearität, Begriffe</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Vektoren als Werkzeug: Verschiebungen bestimmen, Mittelpunkte berechnen, Kollinearität prüfen, Begriffe sauber unterscheiden.</div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.1</span><span class="td dm">&#9733;&#9733;</span></div>
+          <div class="tq">Der Vektor \(\vec{v}\) verschiebt \(P(1|3|2)\) nach \(Q(4|1|5)\). Bestimme \(\vec{v}\) und seinen Betrag.</div>
+          <div class="tk-toggle">&#8964;</div>
+        </div>
+      </div>
+      <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{v} = \begin{pmatrix} 3 \\ -2 \\ 3 \end{pmatrix}\), \(|\vec{v}| = \sqrt{9+4+9} = \sqrt{22} \approx 4{,}69\)</div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.3</span><span class="td dm">&#9733;&#9733;</span></div>
+          <div class="tq">Bestimme den Mittelpunkt \(M\) der Strecke \(\overline{BC}\) mit \(B(1|1|0)\) und \(C(1|0|1)\).</div>
+          <div class="tk-toggle">&#8964;</div>
+        </div>
+      </div>
+      <div class="ta"><strong>L&ouml;sung:</strong> \(M = \frac{1}{2}(B+C) = (1|0{,}5|0{,}5)\)</div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.5</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
+          <div class="tq">Weise rechnerisch nach, dass \(\vec{a} = \begin{pmatrix} 1 \\ -4 \\ 2 \end{pmatrix}\) und \(\vec{b} = \begin{pmatrix} -2 \\ 3 \\ 0 \end{pmatrix}\) nicht kollinear sind. Gib einen Vektor an, der gleich lang wie \(\vec{a}\) aber nicht kollinear zu \(\vec{a}\) ist.</div>
+          <div class="tk-toggle">&#8964;</div>
+        </div>
+      </div>
+      <div class="ta"><strong>L&ouml;sung:</strong> Kollinear, falls \(\vec{b} = \lambda\vec{a}\). Aus 1. Komp.: \(\lambda = -2\). Aber: \(3 \ne -4 \cdot (-2) = 8\) &rarr; Widerspruch, <strong>nicht kollinear</strong>.<br>
+        \(|\vec{a}| = \sqrt{1+16+4} = \sqrt{21}\). Z.B. \(\vec{c} = \begin{pmatrix} \sqrt{21} \\ 0 \\ 0 \end{pmatrix}\) hat \(|\vec{c}| = \sqrt{21}\), ist aber nicht kollinear zu \(\vec{a}\).</div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V2.8</span><span class="td dm">★★</span></div>
+          <div class="tq">Erläutere den Unterschied zwischen dem Ortsvektor eines Punktes und einem Verbindungsvektor zwischen zwei Punkten. Beschreibe, wie man aus den Ortsvektoren \(\vec{OA}\) und \(\vec{OB}\) den Verbindungsvektor \(\vec{AB}\) berechnet, und begründe die Formel.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Ortsvektor:</strong> Zeigt vom Ursprung O zum Punkt (z. B. \(\vec{OA}\)) — beschreibt die absolute Position.</div>
+        <div class="ip"><strong>Verbindungsvektor:</strong> Zeigt von einem Punkt zum anderen (z. B. \(\vec{AB}\)) — beschreibt die Verschiebung.</div>
+        <div class="ip"><strong>Formel:</strong> \(\vec{AB} = \vec{OB} - \vec{OA}\). Man kommt von A nach B, indem man zuerst zurück zum Ursprung geht (\(-\vec{OA}\)) und dann zu B (\(+\vec{OB}\)).</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
+        <div class="komp-desc">K6: Vektorbegriffe fachsprachlich erklären · K4: Geometrische Bedeutung der Vektorrechnung beschreiben</div>
+      </div>
+    </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">V3</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · V3 · ★ bis ★★★ · Variation Theory</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Drei-Vektoren-Konfrontation im Raum — Punkt, Ortsvektor, freier Vektor</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Die räumliche Vertiefung des Einstiegs: drei Objekte mit identischen Koordinaten werden gemeinsam verschoben und zeigen drei verschiedene Verhaltensweisen.</div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V3.1</span><span class="td de">★</span></div>
+          <div class="tq">Gegeben sind der <strong>Punkt</strong> \(P(3|2|1)\), der <strong>Ortsvektor</strong> \(\vec{OP}\) und ein <strong>freier Vektor</strong> \(\vec{a}=\begin{pmatrix}3\\2\\1\end{pmatrix}\), angetragen beim Aufpunkt \(Q(5|1|2)\). Verschiebe die <em>ganze Konfiguration</em> um \(\vec{v}=\begin{pmatrix}1\\0\\0\end{pmatrix}\). Gib die neuen Koordinaten an: (a) für den Punkt \(P\), (b) für den Ortsvektor \(\vec{OP}\), (c) für den freien Vektor \(\vec{a}\) (Anfangspunkt + Komponenten).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong></div>
+        <div class="ip"><strong>(a) Punkt \(P\):</strong> Der Ort verschiebt sich um \(\vec{v}\). Neuer Punkt: \(P'(3+1\,|\,2+0\,|\,1+0) = P'(4|2|1)\).</div>
+        <div class="ip"><strong>(b) Ortsvektor \(\vec{OP}\):</strong> Wenn der Ursprung mitverschoben wird, behält der Ortsvektor seine Komponenten (er zeigt vom verschobenen Ursprung \(O'\) zum verschobenen Punkt \(P'\)). Wenn der Ursprung <em>fest</em> bleibt, ergibt sich ein neuer Ortsvektor \(\vec{OP'} = \begin{pmatrix}4\\2\\1\end{pmatrix}\) — die Komponenten haben sich um \(\vec{v}\) geändert. <em>(MV-Standard: Ursprung fest.)</em></div>
+        <div class="ip"><strong>(c) Freier Vektor \(\vec{a}\):</strong> Der Anfangspunkt wandert mit, von \(Q(5|1|2)\) nach \(Q'(6|1|2)\). Die <em>Komponenten</em> ändern sich <strong>nicht</strong> — der Vektor ist weiterhin \(\vec{a}=\begin{pmatrix}3\\2\\1\end{pmatrix}\). Ein freier Vektor lebt von seinem <em>Verbindungs-Verhalten</em>, nicht von seinem Standort.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Drei Objekte mit identischen Startkoordinaten verhalten sich unter Verschiebung verschieden. Genau das ist der Sinn der Unterscheidung.</em></div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V3.2</span><span class="td dm">★★</span></div>
+          <div class="tq">Erstelle eine Tabelle mit drei Zeilen für <em>Punkt</em>, <em>Ortsvektor</em> und <em>freier Vektor</em> und den Spalten „vorher", „nachher", „Regel". Trage die Werte aus V3.1 ein und formuliere für jedes der drei Objekte die <strong>Regel</strong>, nach der es sich unter einer beliebigen Verschiebung \(\vec{v}\) verändert.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Tabelle (Werte aus V3.1, Verschiebung \(\vec{v}=(1,0,0)\)):</strong></div>
+        <div class="ip" style="font-family:monospace;font-size:13px;background:#f4f3f0;padding:10px;border-radius:6px;">Objekt        | vorher          | nachher           | Regel<br>────────────────────────────────────────────────────────────────<br>Punkt P       | (3|2|1)         | (4|2|1)           | Koordinaten + v<br>Ortsvektor    | OP = (3,2,1)    | OP' = (4,2,1)     | Komponenten + v<br>freier Vektor | a = (3,2,1) @ Q | a = (3,2,1) @ Q' | Komponenten unverändert; Aufpunkt + v</div>
+        <div class="ip"><strong>Verhaltensregeln (allgemein):</strong></div>
+        <div class="ip">• <strong>Punkt \(P\):</strong> Bei einer Verschiebung um \(\vec{v}\) addieren sich die Komponenten von \(\vec{v}\) zu den Koordinaten von \(P\). Der Ort ändert sich.</div>
+        <div class="ip">• <strong>Ortsvektor \(\vec{OP}\):</strong> Bei festem Ursprung gilt \(\vec{OP'} = \vec{OP} + \vec{v}\) — die Komponenten ändern sich genau wie die Koordinaten des Punktes (Punkt und Ortsvektor verhalten sich gleich, weil sie an den Ursprung gebunden sind).</div>
+        <div class="ip">• <strong>Freier Vektor \(\vec{a}\):</strong> Die <em>Komponenten</em> ändern sich <strong>nie</strong>, egal wie oft oder wohin verschoben wird. Was wandert, ist nur der Aufpunkt (Anfangspunkt). Ein freier Vektor ist <em>standortunabhängig</em>.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Merksatz:</em> „Punkt und Ortsvektor bewegen sich — der freie Vektor bewegt sich nicht, sondern wird nur woanders gezeigt."</em></div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">V3.3</span><span class="td dh">★★★</span></div>
+          <div class="tq">Konstruiere eine kurze Klausuraufgabe, in der ein <em>Punkt</em>, ein <em>Ortsvektor</em> und ein <em>freier Vektor</em> jeweils dieselben Koordinaten haben, aber unterschiedliche Rollen spielen müssen. Erkläre dann in vier Sätzen, warum eine Schülerin oder ein Schüler an dieser Aufgabe scheitern würde, der die drei Begriffe <em>nicht</em> unterscheidet.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Konstruktions-Beispiel:</strong></div>
+        <div class="ip" style="background:#f4f3f0;padding:10px;border-radius:6px;"><em>Gegeben sind \(P(2|1|3)\) und der Vektor \(\vec{a}=\begin{pmatrix}2\\1\\3\end{pmatrix}\). (a) Berechne den Verbindungsvektor von \(P\) zum Punkt, der durch \(\vec{a}\) entsteht, wenn \(\vec{a}\) am Ursprung angetragen wird. (b) Bestimme den Endpunkt, wenn \(\vec{a}\) am Punkt \(P\) angetragen wird. (c) Welche Beziehung besteht zwischen \(P\) und dem Ortsvektor \(\vec{OP}\)?</em></div>
+        <div class="ip"><strong>Lösung der konstruierten Aufgabe:</strong> (a) \(\vec{a}\) am Ursprung angetragen endet bei \((2|1|3) = P\) — der Verbindungsvektor von \(P\) zu sich selbst ist \(\vec{0}\). (b) Endpunkt: \(P + \vec{a} = (4|2|6)\). (c) \(\vec{OP} = \vec{a}\) als Spaltenvektor, aber \(P\) ist ein Punkt und \(\vec{OP}\) ein Vektor — gleiche Koordinaten, verschiedene Objekte.</div>
+        <div class="ip"><strong>Warum Schüler scheitern, die nicht unterscheiden:</strong></div>
+        <div class="ip">(1) In (a) würden sie sehen „\(P\) und \(\vec{a}\) sind dasselbe" und den Sinn der Aufgabe nicht verstehen — sie würden eine triviale Antwort als unsinnig empfinden, statt sie als Pointe zu erkennen.</div>
+        <div class="ip">(2) In (b) würden sie versucht sein, \(P + \vec{a}\) mit \(P + P\) oder \(\vec{a} + \vec{a}\) zu verwechseln — beides ist eine Falle, weil die einen Operation für Punkte sinnlos, die andere mathematisch korrekt, aber konzeptionell anders ist.</div>
+        <div class="ip">(3) In (c) würden sie sagen „\(P = \vec{OP}\)" — und damit den Unterschied zwischen einem Ort und der gerichteten Bewegung dorthin verwischen. In Klausur-Aufgaben mit Verschiebungen, Schnitten und Abbildungen führt diese Verwischung systematisch zu falschen Rechnungen.</div>
+        <div class="ip">(4) Die Kette aus (1)–(3) zeigt: Die Begriffe sind nicht namentliche Variationen desselben, sondern bezeichnen drei verschiedene Welten — Geometrie der Lagen (Punkte), gerichtete Verbindungen vom Ursprung (Ortsvektoren), standortfreie Verschiebungen (freie Vektoren). Wer das nicht trennt, kann die Begriffe nicht zur Klausurzeit benutzen.</div>
+      </div>
+    </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">L</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L · ★ bis ★★★</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen — berechnen und darstellen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Erst direktes Berechnen einer Linearkombination, dann die Umkehrfrage: einen gegebenen Vektor als LK anderer darstellen — gelöst über das LGS aus Klasse 9/10. <strong>Alle Aufgaben ohne CAS lösbar.</strong></div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.1</span><span class="td de">★</span></div>
+          <div class="tq">Berechne die Linearkombination \(\vec{w} = 2\vec{a} + 3\vec{b}\) mit \(\vec{a} = \begin{pmatrix}1\\0\\2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}-1\\2\\1\end{pmatrix}\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> Skalieren — \(2\vec{a}=\begin{pmatrix}2\\0\\4\end{pmatrix}\), \(3\vec{b}=\begin{pmatrix}-3\\6\\3\end{pmatrix}\). Komponentenweise addieren — \(\vec{w}=\begin{pmatrix}-1\\6\\7\end{pmatrix}\).</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.2</span><span class="td de">★</span></div>
+          <div class="tq">Berechne \(\vec{w} = \vec{a} - 2\vec{b}\) mit \(\vec{a} = \begin{pmatrix}4\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\2\\0\end{pmatrix}\). (Hinweis: Subtraktion ist eine Linearkombination mit Koeffizient \(-1\) bzw. \(-2\).)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> \(\vec{w} = 1\cdot\vec{a} + (-2)\cdot\vec{b} = \begin{pmatrix}4\\-1\\3\end{pmatrix} + \begin{pmatrix}-2\\-4\\0\end{pmatrix} = \begin{pmatrix}2\\-5\\3\end{pmatrix}\).</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.3</span><span class="td de">★</span></div>
+          <div class="tq">Schreibe den Vektor \(\vec{c} = \begin{pmatrix}3\\-2\\5\end{pmatrix}\) als Linearkombination der drei Einheitsvektoren \(\vec{e}_1 = \begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{e}_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}\), \(\vec{e}_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> Die Koeffizienten lassen sich direkt ablesen — sie sind die Komponenten von \(\vec{c}\):</div>
+        <div class="ip">\(\vec{c} = 3\cdot\vec{e}_1 + (-2)\cdot\vec{e}_2 + 5\cdot\vec{e}_3\).</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Mit \(\vec{e}_1, \vec{e}_2, \vec{e}_3\) kannst du <em>jeden</em> Vektor des Raumes als LK darstellen — die Koeffizienten sind einfach seine drei Koordinaten.</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.4</span><span class="td de">★</span></div>
+          <div class="tq">Berechne \(\vec{w} = -\vec{a} + 2\vec{b} + 3\vec{c}\) mit \(\vec{a}=\begin{pmatrix}1\\1\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}0\\1\\1\end{pmatrix}\), \(\vec{c}=\begin{pmatrix}1\\0\\-1\end{pmatrix}\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> \(-\vec{a}=\begin{pmatrix}-1\\-1\\0\end{pmatrix}\), \(2\vec{b}=\begin{pmatrix}0\\2\\2\end{pmatrix}\), \(3\vec{c}=\begin{pmatrix}3\\0\\-3\end{pmatrix}\). Summe: \(\vec{w}=\begin{pmatrix}2\\1\\-1\end{pmatrix}\).</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.5</span><span class="td dm">★★</span></div>
+          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}7\\4\\6\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\). Bestimme \(r\) und \(s\) und überprüfe das Ergebnis.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① 3×2-LGS aus \(r\vec{a}+s\vec{b}=\vec{c}\):</strong></div>
+        <div class="ip">(I) \(\;r + 3s = 7\) &nbsp; (II) \(2r + 0s = 4\) &nbsp; (III) \(\;r + 2s = 6\).</div>
+        <div class="ip"><strong>② Lösen:</strong> Aus (II): \(r=2\). In (I): \(2+3s=7 \Rightarrow s=\tfrac{5}{3}\). In (III) prüfen: \(2 + 2\cdot\tfrac{5}{3} = 2 + \tfrac{10}{3} = \tfrac{16}{3} \neq 6\). <em>(III) ist nicht verträglich.</em></div>
+        <div class="ip"><strong>③ Antwort:</strong> Das LGS hat <em>keine Lösung</em>. \(\vec{c}\) lässt sich <em>nicht</em> als Linearkombination von \(\vec{a}\) und \(\vec{b}\) darstellen — \(\vec{c}\) liegt nicht in der von \(\vec{a},\vec{b}\) durch den Ursprung aufgespannten Ebene.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Bei 3×2-LGS musst du <em>immer</em> alle drei Gleichungen prüfen — die ersten zwei liefern einen Kandidaten für \(r,s\), die dritte entscheidet, ob er passt.</em></div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.6</span><span class="td dm">★★</span></div>
+          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}4\\6\\5\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}+t\vec{d}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}1\\2\\0\end{pmatrix}\), \(\vec{d}=\begin{pmatrix}1\\1\\1\end{pmatrix}\). Bestimme alle drei Koeffizienten.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{a}+s\vec{b}+t\vec{d}=\vec{c}\):</strong></div>
+        <div class="ip">(I) \(\;r + s + t = 4\) &nbsp; (II) \(0r + 2s + t = 6\) &nbsp; (III) \(0r + 0s + t = 5\).</div>
+        <div class="ip"><strong>② Lösen von unten nach oben (Stufenform).</strong> Aus (III): \(t=5\). In (II): \(2s + 5 = 6 \Rightarrow s = \tfrac{1}{2}\). In (I): \(r + \tfrac{1}{2} + 5 = 4 \Rightarrow r = -\tfrac{3}{2}\).</div>
+        <div class="ip"><strong>③ Antwort:</strong> \(\vec{c} = -\tfrac{3}{2}\vec{a} + \tfrac{1}{2}\vec{b} + 5\vec{d}\). Probe: \(-\tfrac{3}{2}\begin{pmatrix}1\\0\\0\end{pmatrix} + \tfrac{1}{2}\begin{pmatrix}1\\2\\0\end{pmatrix} + 5\begin{pmatrix}1\\1\\1\end{pmatrix} = \begin{pmatrix}4\\6\\5\end{pmatrix}\) ✓.</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.7</span><span class="td dh">★★★</span></div>
+          <div class="tq">Sachkontext. Ein Lieferdrohne kann nur drei Standard-Flüge ausführen: \(\vec{f}_1=\begin{pmatrix}3\\0\\1\end{pmatrix}\) (Ost+Steigen), \(\vec{f}_2=\begin{pmatrix}0\\4\\1\end{pmatrix}\) (Nord+Steigen), \(\vec{f}_3=\begin{pmatrix}0\\0\\-2\end{pmatrix}\) (Sinken). Wie oft (Koeffizienten \(r, s, t \in \mathbb{R}\)) muss sie jeden Flug ausführen, um den Verschiebungsvektor \(\vec{z}=\begin{pmatrix}6\\8\\1\end{pmatrix}\) zu erreichen? Interpretiere das Ergebnis im Sachkontext.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{f}_1 + s\vec{f}_2 + t\vec{f}_3 = \vec{z}\):</strong></div>
+        <div class="ip">(I) \(3r + 0s + 0t = 6\) &nbsp; (II) \(0r + 4s + 0t = 8\) &nbsp; (III) \(\;r + s - 2t = 1\).</div>
+        <div class="ip"><strong>② Lösen.</strong> (I): \(r=2\). (II): \(s=2\). (III): \(2 + 2 - 2t = 1 \Rightarrow -2t = -3 \Rightarrow t = \tfrac{3}{2}\).</div>
+        <div class="ip"><strong>③ Antwort:</strong> Die Drohne führt den Ost-Flug 2-mal, den Nord-Flug 2-mal und den Sink-Flug 1,5-mal aus.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Interpretation:</em> Ein nicht-ganzzahliger Koeffizient (\(t=1{,}5\)) bedeutet, dass die Drohne den Sink-Flug nicht ganzzahlig oft ausführen kann — die geforderte Endposition ist mit ganzen Flügen nicht exakt erreichbar. Praktisch müsste man entweder den letzten Sink-Flug nur „halb" fliegen (z. B. nur 1,5 m statt 2 m sinken) oder die geforderte Position leicht anpassen. Mathematisch ist die Linearkombination eindeutig — die Diskretisierung ist ein Modellierungsproblem oberhalb der Mathematik.</em></div>
+      </div>
+    </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">L2</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L2 · ★ bis ★★★ · IQB-Aufgabenstil</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen in geometrischen Figuren</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Anschauliche Anwendung: Wege in Vielecken als Linearkombination der Kantenvektoren beschreiben, und eine gegebene Linearkombination im Rahmen einer Abbildung interpretieren. Aufgaben ab L2.3 im <em>IQB-Aufgabenstil</em> mit Teilaufgaben, Operatoren und BE-Verteilung.</div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L2.1</span><span class="td de">★</span></div>
+          <div class="tq">Gegeben ist das Parallelogramm \(ABCD\) mit \(\vec{a}=\vec{AB}\) und \(\vec{b}=\vec{AD}\). Drücke die Vektoren \(\vec{AC}\), \(\vec{BD}\) und \(\vec{DB}\) jeweils als Linearkombination von \(\vec{a}\) und \(\vec{b}\) aus.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="270" viewBox="0 0 420 270"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,200.0 280.0,200.0 340.0,70.0 140.0,70.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="85.0" y1="200.0" x2="270.0" y2="200.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="180.0" y="218.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.1" y1="195.5" x2="135.8" y2="79.1" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="122.7" y="144.9" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">b&#x20D7;</text><circle cx="80.0" cy="200.0" r="3.5" fill="#222"/><text x="64.0" y="208.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="280.0" cy="200.0" r="3.5" fill="#222"/><text x="288.0" y="208.0" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="340.0" cy="70.0" r="3.5" fill="#222"/><text x="348.0" y="66.0" font-size="14" font-weight="bold" fill="#222">C</text><circle cx="140.0" cy="70.0" r="3.5" fill="#222"/><text x="124.0" y="66.0" font-size="14" font-weight="bold" fill="#222">D</text></svg></div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> Im Parallelogramm gilt \(\vec{DC} = \vec{AB} = \vec{a}\) (parallele Seiten gleich lang und gleichgerichtet).</div>
+        <div class="ip">\(\vec{AC} = \vec{AB} + \vec{BC} = \vec{a} + \vec{b}\) (denn \(\vec{BC} = \vec{AD} = \vec{b}\)).</div>
+        <div class="ip">\(\vec{BD} = \vec{BA} + \vec{AD} = -\vec{a} + \vec{b}\).</div>
+        <div class="ip">\(\vec{DB} = -\vec{BD} = \vec{a} - \vec{b}\).</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Merke:</em> Eine Diagonale \(\vec{AC}\) ist die Summe der beiden Seitenvektoren, die andere Diagonale \(\vec{BD}\) ist deren Differenz. Das Vorzeichen hängt nur an der Richtung — \(\vec{DB}\) ist die umgekehrte Diagonale, also Vorzeichen kippen.</em></div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L2.2</span><span class="td dm">★★</span></div>
+          <div class="tq">Im Parallelogramm \(ABCD\) ist \(M\) der Schnittpunkt der beiden Diagonalen. Sei \(\vec{a}=\vec{AB}\) und \(\vec{b}=\vec{AD}\). Drücke \(\vec{AM}\) als Linearkombination von \(\vec{a}\) und \(\vec{b}\) aus. Zeige außerdem rechnerisch, dass \(M\) zugleich Mittelpunkt der Diagonale \(\overline{BD}\) ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="270" viewBox="0 0 420 270"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,200.0 280.0,200.0 340.0,70.0 140.0,70.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="80.0" y1="200.0" x2="340.0" y2="70.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="280.0" y1="200.0" x2="140.0" y2="70.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="85.0" y1="200.0" x2="270.0" y2="200.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="180.0" y="218.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.1" y1="195.5" x2="135.8" y2="79.1" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="122.7" y="144.9" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">b&#x20D7;</text><circle cx="210.0" cy="135.0" r="5" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="220.0" y="140.0" font-size="14" font-weight="bold" fill="#8a7a30">M</text><circle cx="80.0" cy="200.0" r="3.5" fill="#222"/><text x="64.0" y="208.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="280.0" cy="200.0" r="3.5" fill="#222"/><text x="288.0" y="208.0" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="340.0" cy="70.0" r="3.5" fill="#222"/><text x="348.0" y="66.0" font-size="14" font-weight="bold" fill="#222">C</text><circle cx="140.0" cy="70.0" r="3.5" fill="#222"/><text x="124.0" y="66.0" font-size="14" font-weight="bold" fill="#222">D</text></svg></div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① \(M\) als Mittelpunkt von \(\overline{AC}\):</strong> \(\vec{AM} = \tfrac{1}{2}\vec{AC} = \tfrac{1}{2}(\vec{a}+\vec{b}) = \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{b}\).</div>
+        <div class="ip"><strong>② Prüfung \(M\) auch Mittelpunkt von \(\overline{BD}\)?</strong> Mittelpunkt von \(\overline{BD}\) erreicht man von \(A\) aus über \(\vec{AB}+\tfrac{1}{2}\vec{BD} = \vec{a} + \tfrac{1}{2}(\vec{b}-\vec{a}) = \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{b}\). Das ist derselbe Vektor wie \(\vec{AM}\) ✓.</div>
+        <div class="ip"><strong>Schluss:</strong> Beide Diagonalen werden in \(M\) <em>halbiert</em>. \(M\) ist also Mittelpunkt jeder Diagonale — eine klassische Eigenschaft des Parallelogramms.</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L2.3</span><span class="td dm">★★</span></div>
+          <div class="tq">Gegeben ist ein regelmäßiges Sechseck \(ABCDEF\) mit Mittelpunkt \(M\). Es sei \(\vec{u}=\vec{MA}\) und \(\vec{v}=\vec{MB}\).<br><br><strong>a)</strong> Stellen Sie die Vektoren \(\vec{MC},\ \vec{MD},\ \vec{ME},\ \vec{MF}\) jeweils als Linearkombination von \(\vec{u}\) und \(\vec{v}\) dar. <em>(4 BE)</em><br><strong>b)</strong> Begründen Sie damit die Identität \(\vec{MA} + \vec{MB} + \vec{MC} + \vec{MD} + \vec{ME} + \vec{MF} = \vec{0}\). <em>(2 BE)</em></div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="280" viewBox="0 0 420 280"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="300.0,140.0 255.0,62.1 165.0,62.1 120.0,140.0 165.0,217.9 255.0,217.9" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><circle cx="210.0" cy="140.0" r="4" fill="#8a7a30"/><text x="196.0" y="145.0" font-size="14" font-weight="bold" fill="#8a7a30">M</text><line x1="215.0" y1="140.0" x2="290.0" y2="140.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="259.5" y="156.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">u&#x20D7;</text><line x1="212.5" y1="135.7" x2="250.0" y2="70.7" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="245.1" y="107.1" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">v&#x20D7;</text><circle cx="300.0" cy="140.0" r="3.5" fill="#222"/><text x="312.0" y="145.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="255.0" cy="62.1" r="3.5" fill="#222"/><text x="263.0" y="52.1" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="165.0" cy="62.1" r="3.5" fill="#222"/><text x="149.0" y="52.1" font-size="14" font-weight="bold" fill="#222">C</text><circle cx="120.0" cy="140.0" r="3.5" fill="#222"/><text x="98.0" y="145.0" font-size="14" font-weight="bold" fill="#222">D</text><circle cx="165.0" cy="217.9" r="3.5" fill="#222"/><text x="149.0" y="235.9" font-size="14" font-weight="bold" fill="#222">E</text><circle cx="255.0" cy="217.9" r="3.5" fill="#222"/><text x="261.0" y="235.9" font-size="14" font-weight="bold" fill="#222">F</text></svg></div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Erwartungshorizont (6 BE)</strong></div>
+        <div class="ip"><strong>a) Eckvektoren als Linearkombination (4 BE).</strong> Im regelmäßigen Sechseck haben die sechs Eckvektoren denselben Betrag und sind durch jeweils 60° gedreht. Aus der Sechsecksgeometrie (vgl. Skizze: \(M\) liegt zwischen \(A\) und \(D\), denn \(\vec{MD}=-\vec{MA}\)):</div>
+        <div class="ip">\(\vec{MC} = \vec{v} - \vec{u}\) <em>(1 BE — Hinweis: aus der Sechsecks-Identität \(\vec{MA}+\vec{MC}=\vec{MB}\), d. h. \(\vec{u}+\vec{MC}=\vec{v}\))</em>.</div>
+        <div class="ip">\(\vec{MD} = -\vec{u}\) <em>(1 BE — \(D\) gegenüber \(A\))</em>.</div>
+        <div class="ip">\(\vec{ME} = -\vec{v}\) <em>(1 BE — \(E\) gegenüber \(B\))</em>.</div>
+        <div class="ip">\(\vec{MF} = -\vec{MC} = \vec{u} - \vec{v}\) <em>(1 BE — \(F\) gegenüber \(C\))</em>.</div>
+        <div class="ip"><strong>b) Summe der Eckvektoren (2 BE).</strong> Setze die Darstellungen aus a) ein:</div>
+        <div class="ip">\(\sum = \vec{u} + \vec{v} + (\vec{v}-\vec{u}) + (-\vec{u}) + (-\vec{v}) + (\vec{u}-\vec{v}) = 0\cdot\vec{u} + 0\cdot\vec{v} = \vec{0}\) <em>(1 BE Rechnung, 1 BE Interpretation: jeweils paarweise gegenüberliegende Eckvektoren heben sich auf — Symmetrie des Sechsecks)</em>.</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L2.4</span><span class="td dh">★★★</span></div>
+          <div class="tq">Im Dreieck \(ABC\) ist \(S\) der Schwerpunkt (Schnittpunkt der Seitenhalbierenden). Sei \(\vec{a}=\vec{AB}\) und \(\vec{c}=\vec{AC}\).<br><br><strong>a)</strong> Drücken Sie \(\vec{AS}\) als Linearkombination von \(\vec{a}\) und \(\vec{c}\) aus. <em>(3 BE)</em><br><strong>b)</strong> Begründen Sie geometrisch, warum die beiden Koeffizienten in der Linearkombination aus a) gleich groß sein müssen. <em>(2 BE)</em><br><strong>c)</strong> Berechnen Sie die Koordinaten von \(S\) für \(A(1|2|0)\), \(B(4|5|0)\), \(C(2|3|6)\). <em>(2 BE)</em></div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="280" viewBox="0 0 420 280"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,210.0 310.0,220.0 180.0,60.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="80.0" y1="210.0" x2="245.0" y2="140.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="310.0" y1="220.0" x2="130.0" y2="135.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="180.0" y1="60.0" x2="195.0" y2="215.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><circle cx="245.0" cy="140.0" r="2.5" fill="#666"/><circle cx="130.0" cy="135.0" r="2.5" fill="#666"/><circle cx="195.0" cy="215.0" r="2.5" fill="#666"/><line x1="85.0" y1="210.2" x2="300.0" y2="219.6" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="207.2" y="203.5" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.8" y1="205.8" x2="174.5" y2="68.3" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="141.6" y="146.8" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">c&#x20D7;</text><circle cx="190.0" cy="163.3" r="5" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="199.0" y="168.3" font-size="14" font-weight="bold" fill="#8a7a30">S</text><circle cx="80.0" cy="210.0" r="3.5" fill="#222"/><text x="64.0" y="218.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="310.0" cy="220.0" r="3.5" fill="#222"/><text x="318.0" y="228.0" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="180.0" cy="60.0" r="3.5" fill="#222"/><text x="176.0" y="52.0" font-size="14" font-weight="bold" fill="#222">C</text></svg></div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Erwartungshorizont (7 BE)</strong></div>
+        <div class="ip"><strong>a) \(\vec{AS}\) als LK (3 BE).</strong> \(S\) ist Schnittpunkt der drei Seitenhalbierenden und teilt jede im Verhältnis 2:1 (von der Ecke aus gemessen). Insbesondere liegt \(S\) auf der Seitenhalbierenden von \(A\) zum Mittelpunkt \(M_a\) von \(\overline{BC}\) — und zwar bei \(\tfrac{2}{3}\) der Strecke.</div>
+        <div class="ip">Mittelpunkt von \(\overline{BC}\): \(M_a = A + \tfrac{1}{2}(\vec{AB}+\vec{AC}) = A + \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{c}\), also \(\vec{AM_a} = \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{c}\) <em>(1 BE)</em>.</div>
+        <div class="ip">\(\vec{AS} = \tfrac{2}{3}\,\vec{AM_a} = \tfrac{2}{3}\left(\tfrac{1}{2}\vec{a}+\tfrac{1}{2}\vec{c}\right) = \tfrac{1}{3}\vec{a} + \tfrac{1}{3}\vec{c}\) <em>(2 BE)</em>.</div>
+        <div class="ip"><strong>b) Gleichheit der Koeffizienten (2 BE).</strong> Würde die Aufgabe stattdessen \(\vec{c}\) und \(\vec{b}=\vec{BC}\) verwenden, müsste \(S\) genauso bei \(\tfrac{2}{3}\) der Seitenhalbierenden von \(B\) zum Mittelpunkt von \(\overline{AC}\) liegen. Der Schwerpunkt behandelt also alle drei Ecken gleichberechtigt — die Konstruktion ist symmetrisch unter Vertauschung der Ecken. Wären \(\vec{a}\) und \(\vec{c}\) verschieden gewichtet, bevorzugte die LK eine der drei Ecken, was der Symmetrie widerspräche. Also müssen die Koeffizienten gleich groß sein.</div>
+        <div class="ip"><strong>c) Konkrete Koordinaten (2 BE).</strong></div>
+        <div class="ip">\(\vec{a} = B-A = \begin{pmatrix}3\\3\\0\end{pmatrix}\), \(\vec{c} = C-A = \begin{pmatrix}1\\1\\6\end{pmatrix}\). Damit</div>
+        <div class="ip">\(\vec{AS} = \tfrac{1}{3}\begin{pmatrix}3\\3\\0\end{pmatrix} + \tfrac{1}{3}\begin{pmatrix}1\\1\\6\end{pmatrix} = \begin{pmatrix}4/3\\4/3\\2\end{pmatrix}\).</div>
+        <div class="ip">\(S = A + \vec{AS} = \begin{pmatrix}1\\2\\0\end{pmatrix} + \begin{pmatrix}4/3\\4/3\\2\end{pmatrix} = \begin{pmatrix}7/3\\10/3\\2\end{pmatrix}\) <em>(2 BE — 1 für die Komponentenrechnung, 1 für die Endkoordinaten)</em>.</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L2.5</span><span class="td dh">★★★</span></div>
+          <div class="tq">Gegeben ist das Parallelogramm \(OABC\) mit \(\vec{a}=\vec{OA}\) und \(\vec{b}=\vec{OC}\). Der Punkt \(P\) im Parallelogramm hat die Darstellung \(\vec{OP}=\tfrac{2}{3}\vec{a}+\tfrac{1}{2}\vec{b}\). Eine <em>zentrische Streckung</em> mit Zentrum \(O\) und Faktor \(k=2\) bildet jeden Punkt \(P\) auf einen Punkt \(P'\) ab gemäß \(\vec{OP'}=k\cdot \vec{OP}\).<br><br><strong>a)</strong> Berechnen Sie die Linearkombination, die \(\vec{OP'}\) beschreibt. <em>(2 BE)</em><br><strong>b)</strong> Beschreiben Sie geometrisch, was die Linearkombination \(3\vec{a}+2\vec{b}\) für die Lage eines Punktes in Bezug auf das Parallelogramm bedeutet. <em>(2 BE)</em><br><strong>c)</strong> Begründen Sie: Eine zentrische Streckung mit Zentrum \(O\) und Faktor \(k\) erhält das <em>Verhältnis</em> der Koeffizienten einer Linearkombination. <em>(2 BE)</em></div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="460" height="270" viewBox="0 0 460 270"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,220.0 220.0,220.0 280.0,100.0 140.0,100.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="85.0" y1="220.0" x2="210.0" y2="220.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="150.0" y="238.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.2" y1="215.5" x2="135.5" y2="108.9" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="122.5" y="170.3" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">b&#x20D7;</text><line x1="84.5" y1="217.8" x2="194.3" y2="164.4" stroke="#c8b55e" stroke-width="1.8" marker-end="url(#ah2c)"/><line x1="207.8" y1="157.8" x2="317.7" y2="104.4" stroke="#c8b55e" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.75" marker-end="url(#ah2c)"/><circle cx="203.3" cy="160.0" r="4" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="211.3" y="165.0" font-size="13" font-weight="bold" fill="#8a7a30">P</text><circle cx="326.7" cy="100.0" r="4" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="334.7" y="105.0" font-size="13" font-weight="bold" fill="#8a7a30">P'</text><circle cx="80.0" cy="220.0" r="3.5" fill="#222"/><text x="64.0" y="228.0" font-size="13" font-weight="bold" fill="#222">O</text><circle cx="220.0" cy="220.0" r="3.5" fill="#222"/><text x="208.0" y="238.0" font-size="13" font-weight="bold" fill="#222">A</text><circle cx="280.0" cy="100.0" r="3.5" fill="#222"/><text x="288.0" y="96.0" font-size="13" font-weight="bold" fill="#222">B</text><circle cx="140.0" cy="100.0" r="3.5" fill="#222"/><text x="124.0" y="96.0" font-size="13" font-weight="bold" fill="#222">C</text><text x="445.0" y="30.0" font-size="13" font-style="italic" fill="#555" text-anchor="end">k = 2</text></svg></div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Erwartungshorizont (6 BE)</strong></div>
+        <div class="ip"><strong>a) \(\vec{OP'}\) berechnen (2 BE).</strong></div>
+        <div class="ip">\(\vec{OP'} = 2\cdot \vec{OP} = 2\left(\tfrac{2}{3}\vec{a}+\tfrac{1}{2}\vec{b}\right) = \tfrac{4}{3}\vec{a} + 1\cdot \vec{b}\) <em>(1 BE Ansatz, 1 BE Endergebnis)</em>.</div>
+        <div class="ip"><strong>b) Geometrische Interpretation von \(3\vec{a}+2\vec{b}\) (2 BE).</strong> Im \(\vec{a}, \vec{b}\)-System hat der Punkt die <em>Koeffizienten</em> 3 und 2. Geometrisch bedeutet das: vom Ursprung \(O\) aus dreimal so weit in Richtung \(\vec{a}\) wie eine Kantenlänge des Parallelogramms (also \(3\) Kantenlängen entlang \(OA\)), und davon ausgehend zweimal so weit in Richtung \(\vec{b}\) (\(2\) Kantenlängen entlang \(OC\)). Der Punkt liegt damit deutlich <em>außerhalb</em> des Parallelogramms (für „im Parallelogramm" müssten beide Koeffizienten zwischen 0 und 1 liegen).</div>
+        <div class="ip"><strong>c) Verhältnis-Erhaltung (2 BE).</strong> Sei \(\vec{OP} = r\vec{a} + s\vec{b}\). Dann ist nach Definition der zentrischen Streckung</div>
+        <div class="ip">\(\vec{OP'} = k\cdot \vec{OP} = k\cdot (r\vec{a} + s\vec{b}) = (kr)\vec{a} + (ks)\vec{b}\) <em>(1 BE)</em>.</div>
+        <div class="ip">Das Verhältnis der neuen Koeffizienten ist also \(\dfrac{kr}{ks} = \dfrac{r}{s}\) (für \(k\neq 0,\ s\neq 0\)) — gleich dem ursprünglichen Verhältnis. Die Streckung skaliert beide Koeffizienten <em>gleich</em>, deshalb ändert sich das Verhältnis nicht. <em>(1 BE)</em></div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Folgerung:</em> Geometrisch heißt das: Bild und Urbild liegen vom Streckzentrum aus gesehen auf derselben Strahlrichtung. Die Linearkombination ändert nur die <em>Länge</em>, nicht die <em>Richtung</em> im \(\vec{a}, \vec{b}\)-System.</em></div>
+      </div>
+    </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">L3</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L3 · ★ bis ★★★ · K1 + K6</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Beschreiben und Erläutern — Ansatz lesen, Vorgehen erklären, Aufgabe rekonstruieren</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Beschreiben, erläutern, rekonstruieren — trainiert <strong>K1 (Argumentieren)</strong> und <strong>K6 (Kommunizieren)</strong>, die in reiner Rechen-Übung nicht aktiviert werden.</div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L3.1</span><span class="td de">★</span></div>
+          <div class="tq"><strong>Ansatz benennen.</strong> Im Folgenden ist der Ansatz \(\vec{c} = r\vec{a} + s\vec{b}\) gegeben (mit den drei konkreten Vektoren \(\vec{a},\vec{b},\vec{c}\) als bekannt vorausgesetzt). Welche <em>geometrische Frage</em> wird mit diesem Ansatz untersucht? Welches Ergebnis bedeutet welche geometrische Aussage?</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong></div>
+        <div class="ip"><strong>Geometrische Frage:</strong> Lässt sich der Vektor \(\vec{c}\) <em>aus den Vektoren \(\vec{a}\) und \(\vec{b}\) zusammensetzen</em> — durch Skalierung und Addition? Anders formuliert: Liegt \(\vec{c}\) in der von \(\vec{a}\) und \(\vec{b}\) durch den Ursprung aufgespannten Ebene?</div>
+        <div class="ip"><strong>Bedeutung der drei LGS-Lösungsfälle</strong> (aus dem 3×2-LGS, das aus der Vektorgleichung entsteht):</div>
+        <div class="ip">• <em>Eindeutige Lösung \((r,s)\) gefunden</em> → \(\vec{c}\) ist als LK darstellbar, liegt also in der Ebene durch \(\vec{a},\vec{b}\).</div>
+        <div class="ip">• <em>Keine Lösung</em> (dritte Gleichung verträglich nicht erfüllbar) → \(\vec{c}\) liegt <em>nicht</em> in dieser Ebene.</div>
+        <div class="ip">• <em>Unendlich viele Lösungen</em> → kann nur passieren, wenn \(\vec{a}\) und \(\vec{b}\) selbst kollinear sind und \(\vec{c}\) in derselben Geraden liegt.</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K6: Ansatz in geometrische Sprache übersetzen · K1: Drei Fallunterscheidungen argumentativ darstellen</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L3.2</span><span class="td dm">★★</span></div>
+          <div class="tq"><strong>Lösungsweg erläutern.</strong> Gegeben ist der folgende Lösungsweg: \[\vec{c} = \begin{pmatrix}5\\4\\4\end{pmatrix},\; \vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix},\; \vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\] Setze \(r\vec{a}+s\vec{b}=\vec{c}\). Aus den ersten beiden Komponenten folgt \(r+3s=5\) und \(2r=4\), also \(r=2\) und \(s=1\). Setze in die dritte Komponente ein: \(r+2s = 2+2 = 4\) ✓. — Erläutere in drei Sätzen: <em>Was wird hier berechnet, welche geometrische Situation liegt vor, und was bedeutet das Ergebnis \(r=2,\,s=1\)?</em></div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung (Erläuterung in drei Sätzen):</strong></div>
+        <div class="ip">(1) <strong>Was berechnet wird:</strong> Es werden die zwei Koeffizienten \(r\) und \(s\) bestimmt, mit denen sich der Vektor \(\vec{c}\) als Linearkombination der Vektoren \(\vec{a}\) und \(\vec{b}\) schreiben lässt — also \(\vec{c}=r\vec{a}+s\vec{b}\).</div>
+        <div class="ip">(2) <strong>Geometrische Situation:</strong> Die Frage „Lässt sich \(\vec{c}\) so darstellen?" entspricht der geometrischen Frage, ob \(\vec{c}\) in der von \(\vec{a}\) und \(\vec{b}\) durch den Ursprung aufgespannten Ebene liegt. Da die dritte Gleichung mit den aus den ersten beiden Gleichungen gefundenen Werten konsistent ist, ist die Antwort „ja".</div>
+        <div class="ip">(3) <strong>Bedeutung des Ergebnisses \(r=2,\,s=1\):</strong> Geometrisch heißt das: Man erreicht \(\vec{c}\) vom Ursprung aus durch <em>zweimaliges Abtragen</em> des Vektors \(\vec{a}\) und einmaliges Anhängen von \(\vec{b}\). Die Probe in der dritten Komponente bestätigt, dass die ersten beiden gefundenen Werte auch für die dritte Dimension passen — sonst wäre \(\vec{c}\) nicht in der Ebene.</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K6: Lösungsweg in eigenen Worten beschreiben · K1: Den Pflichtschritt „Probe in der dritten Gleichung" argumentativ begründen</div>
+      </div>
+    </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L3.3</span><span class="td dh">★★★</span></div>
+          <div class="tq"><strong>Aufgabe rekonstruieren.</strong> Gegeben sind zwei Lösungsschritte einer Aufgabe: (1) Ansatz: \(\vec{OP} = \tfrac{1}{2}\vec{OA} + \tfrac{1}{2}\vec{OB}\) mit \(A(2|6|0)\) und \(B(8|2|4)\). (2) Daraus folgt \(P(5|4|2)\). Formuliere eine passende Aufgabenstellung in einem räumlichen Sachkontext deiner Wahl, die genau diese beiden Schritte als Lösungsbeginn (Ansatz + erstes Ergebnis) hat. Begründe in einem Satz, warum dein Sachkontext geometrisch zur Lösung passt.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösungs-Vorschlag (Beispiel-Aufgabenstellung):</strong></div>
+        <div class="ip" style="background:#f4f3f0;padding:10px;border-radius:6px;"><em>„In einer Lagerhalle sind zwei Sensoren an den Positionen \(A(2|6|0)\) und \(B(8|2|4)\) montiert (Koordinaten in Metern, gemessen vom Halleneck \(O\)). Ein Roboter soll genau in der Mitte zwischen den beiden Sensoren positioniert werden, weil dort die Signalstärke beider Sensoren am ausgeglichensten ist. Berechne die Position \(P\) des Roboters."</em></div>
+        <div class="ip"><strong>Begründung des Sachkontexts:</strong> Der vorgegebene Ansatz \(\vec{OP}=\tfrac{1}{2}\vec{OA}+\tfrac{1}{2}\vec{OB}\) ist genau die Mittelpunkt-Formel für die Strecke \(\overline{AB}\). Jede Aufgabe, in der „der Mittelpunkt zwischen zwei gegebenen Punkten gesucht wird" (in jedem räumlichen Kontext: zwei Sender, zwei Sterne, zwei Eckpunkte einer Halle, …), passt zu diesem Lösungsweg. Ergebnis \(P(5|4|2)\) ist der koordinatenweise Mittelwert von \(A\) und \(B\).</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Weitere passende Sachkontexte:</em> Mittelpunkt zwischen zwei Wegpunkten einer Drohne, Schwerpunkt von zwei gleichen Massen, Treffpunkt zweier Wanderer, die sich von beiden Ecken aus mit gleicher Geschwindigkeit aufeinander zu bewegen, …</em></div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K6: Aufgabe sprachlich konstruieren · K3: Mathematischen Ansatz in einen Sachkontext übersetzen · K1: Kontext-Wahl begründen</div>
+      </div>
+    </div>
+  <div class="section-label">7. Skalarprodukt, Orthogonalität und Winkel</div>
   <div class="card">
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das Skalarprodukt</span></div>
+    <div class="card-body">
+      <div class="ip">Das <strong>Skalarprodukt</strong> zweier Vektoren \(\vec{a}\) und \(\vec{b}\) ist eine Zahl (ein Skalar):</div>
+      <div class="hint"><strong>Definition:</strong> \(\vec{a} \cdot \vec{b} = a_1 \cdot b_1 + a_2 \cdot b_2 + a_3 \cdot b_3\)</div>
+      <div class="ip" style="margin-top: 10px;">Damit berechnest du den <strong>Winkel</strong> zwischen zwei Vektoren:</div>
+      <div class="hint"><strong>Winkelformel:</strong> \(\cos(\alpha) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\) &nbsp; \(\Rightarrow\) &nbsp; \(\alpha = \arccos\left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\right)\)</div>
+      <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Orthogonalität:</strong> Für \(\vec{a}\neq\vec{0}\) und \(\vec{b}\neq\vec{0}\) gilt: \(\vec{a} \cdot \vec{b} = 0 \;\Leftrightarrow\; \vec{a}\) und \(\vec{b}\) stehen <strong>senkrecht</strong> (orthogonal) zueinander.</div>
+    </div>
+  </div>
+<div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 2: Skalarprodukt und Winkel</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Berechne den Winkel zwischen \(\vec{u} = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\) und \(\vec{v} = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\)</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top: 8px;">\(\vec{u} \cdot \vec{v} = 1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 = 1\)</div>
+      <div class="ip">\(|\vec{u}| = \sqrt{1^2 + 0^2 + 1^2} = \sqrt{2}\)</div>
+      <div class="ip">\(|\vec{v}| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}\)</div>
+      <div class="ip">\(\cos(\alpha) = \frac{1}{\sqrt{2} \cdot \sqrt{2}} = \frac{1}{2}\) &nbsp; \(\Rightarrow\) &nbsp; \(\alpha = 60°\)</div>
+    </div>
+  </div>
+  <div class="it" style="margin-top:14px;"><strong>Hinweis zum Rechner:</strong> Rechne erst von Hand — nutze den Rechner nur zur Kontrolle. In der GK-Klausur MV steht kein solches Werkzeug zur Verfügung.</div>
+<div class="card">
     <div class="card-head">
       <div class="ci ci-i">i</div>
       <span class="card-title">Interaktiver 3D-Vektorrechner</span>
@@ -21484,118 +21888,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
   </div>
-
-  <!-- Worked Examples -->
-  <div class="section-label">Beispielaufgaben</div>
-
-  <div class="bsp">
-    <div class="bsp-label">Beispielaufgabe 1: Vektor zwischen zwei Punkten</div>
-    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind die Punkte \(A = (2|1|3)\) und \(B = (5|4|1)\). Berechne den Vektor \(\vec{AB}\) und seinen Betrag.</div>
-    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-    <div class="bsp-a">
-      <strong>Lösung:</strong>
-      <div class="ip" style="margin-top: 8px;">\(\vec{AB} = \begin{pmatrix} 5-2 \\ 4-1 \\ 1-3 \end{pmatrix} = \begin{pmatrix} 3 \\ 3 \\ -2 \end{pmatrix}\)</div>
-      <div class="ip">Betrag: \(|\vec{AB}| = \sqrt{3^2 + 3^2 + (-2)^2} = \sqrt{9 + 9 + 4} = \sqrt{22} \approx 4{,}69\)</div>
-    </div>
-  </div>
-
-  <div class="bsp">
-    <div class="bsp-label">Beispielaufgabe 2: Skalarprodukt und Winkel</div>
-    <div class="bsp-q"><strong>Aufgabe:</strong> Berechne den Winkel zwischen \(\vec{u} = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\) und \(\vec{v} = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\)</div>
-    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-    <div class="bsp-a">
-      <strong>Lösung:</strong>
-      <div class="ip" style="margin-top: 8px;">\(\vec{u} \cdot \vec{v} = 1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 = 1\)</div>
-      <div class="ip">\(|\vec{u}| = \sqrt{1^2 + 0^2 + 1^2} = \sqrt{2}\)</div>
-      <div class="ip">\(|\vec{v}| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}\)</div>
-      <div class="ip">\(\cos(\alpha) = \frac{1}{\sqrt{2} \cdot \sqrt{2}} = \frac{1}{2}\) &nbsp; \(\Rightarrow\) &nbsp; \(\alpha = 60°\)</div>
-    </div>
-  </div>
-
-  <!-- Exercises -->
-  <div class="section-label">Übungsaufgaben</div>
-
-  <!-- Block I · Grundlagen (fukagawa) -->
-  <div style="display:flex;align-items:center;gap:18px;margin:24px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
-    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">I</div>
+  <div class="section-label">Aufgaben zum Skalarprodukt</div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">S</div>
     <div style="flex:1">
-      <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · I · ★ Grundlagen</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Vektoren ablesen und rechnen</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Ortsvektoren, Vektoraddition, Skalarmultiplikation, Betrag — reproduktiv.</div>
+      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · S · ★★ / ★★★</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Skalarprodukt — Orthogonalität und Winkel</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Orthogonalität nachweisen, Winkel berechnen, Skalarprodukt in Sachzusammenhängen und Parameteraufgaben anwenden.</div>
     </div>
   </div>
-
-  <div class="tg">
-    <div class="tk">
-      <div class="tk-top" onclick="togTask(this)">
-        <div class="tkt">
-          <span class="tn">V1.1</span>
-          <span class="td de">★</span>
-        </div>
-        <div class="tq">Bestimme den Ortsvektor für den Punkt \(P = (4|-2|3)\).</div>
-        <div class="tk-toggle">⌄</div>
-      </div>
-      </div>
-      <div class="ta"><strong>Lösung:</strong> \(\vec{OP} = \begin{pmatrix} 4 \\ -2 \\ 3 \end{pmatrix}\)</div>
-  </div>
-
-  <div class="tg">
-    <div class="tk">
-      <div class="tk-top" onclick="togTask(this)">
-        <div class="tkt">
-          <span class="tn">V1.2</span>
-          <span class="td de">★</span>
-        </div>
-        <div class="tq">Berechne \(2 \cdot \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix}\)</div>
-        <div class="tk-toggle">⌄</div>
-      </div>
-      </div>
-      <div class="ta"><strong>Lösung:</strong> \(\begin{pmatrix} 4 \\ -2 \\ 6 \end{pmatrix}\)</div>
-  </div>
-
-  <div class="tg">
-    <div class="tk">
-      <div class="tk-top" onclick="togTask(this)">
-        <div class="tkt">
-          <span class="tn">V1.3</span>
-          <span class="td dm">★★</span>
-        </div>
-        <div class="tq">Berechne \(\begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix} + \begin{pmatrix} 3 \\ -1 \\ 4 \end{pmatrix}\) und den Betrag der Summe.</div>
-        <div class="tk-toggle">⌄</div>
-      </div>
-      </div>
-      <div class="ta"><strong>Lösung:</strong> Summe: \(\begin{pmatrix} 4 \\ 1 \\ 6 \end{pmatrix}\), Betrag: \(\sqrt{16+1+36} = \sqrt{53} \approx 7{,}28\)</div>
-  </div>
-
-  <div class="tg">
-    <div class="tk">
-      <div class="tk-top" onclick="togTask(this)">
-        <div class="tkt">
-          <span class="tn">V1.4</span>
-          <span class="td dm">★★</span>
-        </div>
-        <div class="tq">Sind die Vektoren \(\vec{a} = \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}\) und \(\vec{b} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}\) kollinear? Begründe.</div>
-        <div class="tk-toggle">⌄</div>
-      </div>
-      </div>
-      <div class="ta"><strong>Lösung:</strong> Ja, denn \(\vec{a} = 2 \cdot \vec{b}\). Der Vektor \(\vec{a}\) ist das 2-fache von \(\vec{b}\), daher sind sie kollinear.</div>
-  </div>
-
-  <div class="tg">
-    <div class="tk">
-      <div class="tk-top" onclick="togTask(this)">
-        <div class="tkt">
-          <span class="tn">V1.5</span>
-          <span class="td dm">★★</span>
-        </div>
-        <div class="tq">Gegeben sind \(\vec{p} = \begin{pmatrix} 2 \\ 1 \\ -1 \end{pmatrix}\) und \(\vec{q} = \begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix}\). Berechne einen Einheitsvektor in Richtung von \(\vec{p}\).</div>
-        <div class="tk-toggle">⌄</div>
-      </div>
-      </div>
-      <div class="ta"><strong>Lösung:</strong> \(|\vec{p}| = \sqrt{4+1+1} = \sqrt{6}\), daher \(\vec{e}_p = \frac{1}{\sqrt{6}} \begin{pmatrix} 2 \\ 1 \\ -1 \end{pmatrix} = \begin{pmatrix} \frac{2}{\sqrt{6}} \\ \frac{1}{\sqrt{6}} \\ \frac{-1}{\sqrt{6}} \end{pmatrix}\)</div>
-  </div>
-
-  <div class="tg">
+<div class="tg">
     <div class="tk">
       <div class="tk-top" onclick="togTask(this)">
         <div class="tkt">
@@ -21608,30 +21910,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
       <div class="ta"><strong>Lösung (Beispiel):</strong> \(\vec{m} = \begin{pmatrix} 1 \\ 0 \\ -2 \end{pmatrix}\), denn \(\vec{n} \cdot \vec{m} = 2 \cdot 1 + 3 \cdot 0 + 1 \cdot (-2) = 0\). Es gibt viele weitere Lösungen.</div>
   </div>
-
-
-    <!-- Block II · Anwendung & Vertiefung (sango) -->
-    <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">II</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · II · ★★ / ★★★ Vertiefung</div>
-        <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Skalarprodukt, Winkel, Kollinearität — anwenden</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Vektoren als Werkzeug für geometrische Fragen: Orthogonalität, Schnittwinkel, Parallelität in Sachzusammenhängen.</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.1</span><span class="td dm">&#9733;&#9733;</span></div>
-          <div class="tq">Der Vektor \(\vec{v}\) verschiebt \(P(1|3|2)\) nach \(Q(4|1|5)\). Bestimme \(\vec{v}\) und seinen Betrag.</div>
-          <div class="tk-toggle">&#8964;</div>
-        </div>
-      </div>
-      <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{v} = \begin{pmatrix} 3 \\ -2 \\ 3 \end{pmatrix}\), \(|\vec{v}| = \sqrt{9+4+9} = \sqrt{22} \approx 4{,}69\)</div>
-    </div>
-
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">V2.2</span><span class="td dm">&#9733;&#9733;</span></div>
@@ -21641,19 +21920,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
       <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{a} \cdot \vec{b} = 2 + 0 - 2 = 0\). Skalarprodukt ist null &rarr; senkrecht.</div>
     </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.3</span><span class="td dm">&#9733;&#9733;</span></div>
-          <div class="tq">Bestimme den Mittelpunkt \(M\) der Strecke \(\overline{BC}\) mit \(B(1|1|0)\) und \(C(1|0|1)\).</div>
-          <div class="tk-toggle">&#8964;</div>
-        </div>
-      </div>
-      <div class="ta"><strong>L&ouml;sung:</strong> \(M = \frac{1}{2}(B+C) = (1|0{,}5|0{,}5)\)</div>
-    </div>
-
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">V2.4</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
@@ -21664,20 +21931,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{AD} = \vec{BC} = \begin{pmatrix} 0 \\ 2 \\ 2 \end{pmatrix}\) &rarr; \(D(1|2|2)\).<br>
         \(\cos\alpha = \frac{\vec{AB}\cdot\vec{AD}}{|\vec{AB}||\vec{AD}|} = \frac{4}{\sqrt{8}\sqrt{8}} = 0{,}5\) &rarr; \(\alpha = 60&deg;\)</div>
     </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.5</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
-          <div class="tq">Weise rechnerisch nach, dass \(\vec{a} = \begin{pmatrix} 1 \\ -4 \\ 2 \end{pmatrix}\) und \(\vec{b} = \begin{pmatrix} -2 \\ 3 \\ 0 \end{pmatrix}\) nicht kollinear sind. Gib einen Vektor an, der gleich lang wie \(\vec{a}\) aber nicht kollinear zu \(\vec{a}\) ist.</div>
-          <div class="tk-toggle">&#8964;</div>
-        </div>
-      </div>
-      <div class="ta"><strong>L&ouml;sung:</strong> Kollinear, falls \(\vec{b} = \lambda\vec{a}\). Aus 1. Komp.: \(\lambda = -2\). Aber: \(3 \ne -4 \cdot (-2) = 8\) &rarr; Widerspruch, <strong>nicht kollinear</strong>.<br>
-        \(|\vec{a}| = \sqrt{1+16+4} = \sqrt{21}\). Z.B. \(\vec{c} = \begin{pmatrix} \sqrt{21} \\ 0 \\ 0 \end{pmatrix}\) hat \(|\vec{c}| = \sqrt{21}\), ist aber nicht kollinear zu \(\vec{a}\).</div>
-    </div>
-
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">V2.6</span><span class="td dm">★★</span></div>
@@ -21693,8 +21947,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="komp-desc">K3: Realsituation als Vektorproblem modellieren · K5: Betrag und Winkel berechnen</div>
       </div>
     </div>
-
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">V2.7</span><span class="td dm">★★</span></div>
@@ -21711,24 +21964,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="komp-desc">K1: Orthogonalitätskriterium aus Winkelformel herleiten · K5: Skalarprodukt und Winkelformel verknüpfen</div>
       </div>
     </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.8</span><span class="td dm">★★</span></div>
-          <div class="tq">Erläutere den Unterschied zwischen dem Ortsvektor eines Punktes und einem Verbindungsvektor zwischen zwei Punkten. Beschreibe, wie man aus den Ortsvektoren \(\vec{OA}\) und \(\vec{OB}\) den Verbindungsvektor \(\vec{AB}\) berechnet, und begründe die Formel.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Ortsvektor:</strong> Zeigt vom Ursprung O zum Punkt (z. B. \(\vec{OA}\)) — beschreibt die absolute Position.</div>
-        <div class="ip"><strong>Verbindungsvektor:</strong> Zeigt von einem Punkt zum anderen (z. B. \(\vec{AB}\)) — beschreibt die Verschiebung.</div>
-        <div class="ip"><strong>Formel:</strong> \(\vec{AB} = \vec{OB} - \vec{OA}\). Man kommt von A nach B, indem man zuerst zurück zum Ursprung geht (\(-\vec{OA}\)) und dann zu B (\(+\vec{OB}\)).</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
-        <div class="komp-desc">K6: Vektorbegriffe fachsprachlich erklären · K4: Geometrische Bedeutung der Vektorrechnung beschreiben</div>
-      </div>
-    </div>
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">V2.9</span><span class="td dm">★★</span></div>
@@ -21746,7 +21982,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="komp-desc">K5: Geometrische Bedingung mit Skalarprodukt übersetzen · K1: „Keine Lösung" als Ergebnis begründen</div>
       </div>
     </div>
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">V2.10</span><span class="td dh">★★★</span></div>
@@ -21764,351 +22000,6 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="komp-desc">K5: Tangens-Argument im rechtwinkligen Dreieck nutzen · K3: Modellierung Strömung→Vektor · K4: Beide Lösungen im Sachkontext interpretieren</div>
       </div>
     </div>
-
-
-    <!-- Sub-Block V3 · Drei-Vektoren-Konfrontation nach Variation Theory (Konzept 1 aus Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie) -->
-    <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c8b55e;line-height:1;font-weight:400;min-width:36px;text-align:center">V3</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · V3 · ★ bis ★★★ · Variation Theory</div>
-        <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Drei-Vektoren-Konfrontation — Punkt, Ortsvektor, freier Vektor</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Drei Objekte mit identischen Koordinaten werden gemeinsam verschoben — und zeigen drei verschiedene Verhaltensweisen. Genau dieser Unterschied im Verhalten ist die Variation, an der sich der Begriff lernen lässt. Konzept aus <a href="Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie.html" style="color:#8a7a30;text-decoration:underline;">Aufgabenkonzepte für die analytische Geometrie</a> (Konzept 1).</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V3.1</span><span class="td de">★</span></div>
-          <div class="tq">Gegeben sind der <strong>Punkt</strong> \(P(3|2|1)\), der <strong>Ortsvektor</strong> \(\vec{OP}\) und ein <strong>freier Vektor</strong> \(\vec{a}=\begin{pmatrix}3\\2\\1\end{pmatrix}\), angetragen beim Aufpunkt \(Q(5|1|2)\). Verschiebe die <em>ganze Konfiguration</em> um \(\vec{v}=\begin{pmatrix}1\\0\\0\end{pmatrix}\). Gib die neuen Koordinaten an: (a) für den Punkt \(P\), (b) für den Ortsvektor \(\vec{OP}\), (c) für den freien Vektor \(\vec{a}\) (Anfangspunkt + Komponenten).</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong></div>
-        <div class="ip"><strong>(a) Punkt \(P\):</strong> Der Ort verschiebt sich um \(\vec{v}\). Neuer Punkt: \(P'(3+1\,|\,2+0\,|\,1+0) = P'(4|2|1)\).</div>
-        <div class="ip"><strong>(b) Ortsvektor \(\vec{OP}\):</strong> Wenn der Ursprung mitverschoben wird, behält der Ortsvektor seine Komponenten (er zeigt vom verschobenen Ursprung \(O'\) zum verschobenen Punkt \(P'\)). Wenn der Ursprung <em>fest</em> bleibt, ergibt sich ein neuer Ortsvektor \(\vec{OP'} = \begin{pmatrix}4\\2\\1\end{pmatrix}\) — die Komponenten haben sich um \(\vec{v}\) geändert. <em>(MV-Standard: Ursprung fest.)</em></div>
-        <div class="ip"><strong>(c) Freier Vektor \(\vec{a}\):</strong> Der Anfangspunkt wandert mit, von \(Q(5|1|2)\) nach \(Q'(6|1|2)\). Die <em>Komponenten</em> ändern sich <strong>nicht</strong> — der Vektor ist weiterhin \(\vec{a}=\begin{pmatrix}3\\2\\1\end{pmatrix}\). Ein freier Vektor lebt von seinem <em>Verbindungs-Verhalten</em>, nicht von seinem Standort.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Drei Objekte mit identischen Startkoordinaten verhalten sich unter Verschiebung verschieden. Genau das ist der Sinn der Unterscheidung.</em></div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V3.2</span><span class="td dm">★★</span></div>
-          <div class="tq">Erstelle eine Tabelle mit drei Zeilen für <em>Punkt</em>, <em>Ortsvektor</em> und <em>freier Vektor</em> und den Spalten „vorher", „nachher", „Regel". Trage die Werte aus V3.1 ein und formuliere für jedes der drei Objekte die <strong>Regel</strong>, nach der es sich unter einer beliebigen Verschiebung \(\vec{v}\) verändert.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Tabelle (Werte aus V3.1, Verschiebung \(\vec{v}=(1,0,0)\)):</strong></div>
-        <div class="ip" style="font-family:monospace;font-size:13px;background:#f4f3f0;padding:10px;border-radius:6px;">Objekt        | vorher          | nachher           | Regel<br>────────────────────────────────────────────────────────────────<br>Punkt P       | (3|2|1)         | (4|2|1)           | Koordinaten + v<br>Ortsvektor    | OP = (3,2,1)    | OP' = (4,2,1)     | Komponenten + v<br>freier Vektor | a = (3,2,1) @ Q | a = (3,2,1) @ Q' | Komponenten unverändert; Aufpunkt + v</div>
-        <div class="ip"><strong>Verhaltensregeln (allgemein):</strong></div>
-        <div class="ip">• <strong>Punkt \(P\):</strong> Bei einer Verschiebung um \(\vec{v}\) addieren sich die Komponenten von \(\vec{v}\) zu den Koordinaten von \(P\). Der Ort ändert sich.</div>
-        <div class="ip">• <strong>Ortsvektor \(\vec{OP}\):</strong> Bei festem Ursprung gilt \(\vec{OP'} = \vec{OP} + \vec{v}\) — die Komponenten ändern sich genau wie die Koordinaten des Punktes (Punkt und Ortsvektor verhalten sich gleich, weil sie an den Ursprung gebunden sind).</div>
-        <div class="ip">• <strong>Freier Vektor \(\vec{a}\):</strong> Die <em>Komponenten</em> ändern sich <strong>nie</strong>, egal wie oft oder wohin verschoben wird. Was wandert, ist nur der Aufpunkt (Anfangspunkt). Ein freier Vektor ist <em>standortunabhängig</em>.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Merksatz:</em> „Punkt und Ortsvektor bewegen sich — der freie Vektor bewegt sich nicht, sondern wird nur woanders gezeigt."</em></div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V3.3</span><span class="td dh">★★★</span></div>
-          <div class="tq">Konstruiere eine kurze Klausuraufgabe, in der ein <em>Punkt</em>, ein <em>Ortsvektor</em> und ein <em>freier Vektor</em> jeweils dieselben Koordinaten haben, aber unterschiedliche Rollen spielen müssen. Erkläre dann in vier Sätzen, warum eine Schülerin oder ein Schüler an dieser Aufgabe scheitern würde, der die drei Begriffe <em>nicht</em> unterscheidet.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Konstruktions-Beispiel:</strong></div>
-        <div class="ip" style="background:#f4f3f0;padding:10px;border-radius:6px;"><em>Gegeben sind \(P(2|1|3)\) und der Vektor \(\vec{a}=\begin{pmatrix}2\\1\\3\end{pmatrix}\). (a) Berechne den Verbindungsvektor von \(P\) zum Punkt, der durch \(\vec{a}\) entsteht, wenn \(\vec{a}\) am Ursprung angetragen wird. (b) Bestimme den Endpunkt, wenn \(\vec{a}\) am Punkt \(P\) angetragen wird. (c) Welche Beziehung besteht zwischen \(P\) und dem Ortsvektor \(\vec{OP}\)?</em></div>
-        <div class="ip"><strong>Lösung der konstruierten Aufgabe:</strong> (a) \(\vec{a}\) am Ursprung angetragen endet bei \((2|1|3) = P\) — der Verbindungsvektor von \(P\) zu sich selbst ist \(\vec{0}\). (b) Endpunkt: \(P + \vec{a} = (4|2|6)\). (c) \(\vec{OP} = \vec{a}\) als Spaltenvektor, aber \(P\) ist ein Punkt und \(\vec{OP}\) ein Vektor — gleiche Koordinaten, verschiedene Objekte.</div>
-        <div class="ip"><strong>Warum Schüler scheitern, die nicht unterscheiden:</strong></div>
-        <div class="ip">(1) In (a) würden sie sehen „\(P\) und \(\vec{a}\) sind dasselbe" und den Sinn der Aufgabe nicht verstehen — sie würden eine triviale Antwort als unsinnig empfinden, statt sie als Pointe zu erkennen.</div>
-        <div class="ip">(2) In (b) würden sie versucht sein, \(P + \vec{a}\) mit \(P + P\) oder \(\vec{a} + \vec{a}\) zu verwechseln — beides ist eine Falle, weil die einen Operation für Punkte sinnlos, die andere mathematisch korrekt, aber konzeptionell anders ist.</div>
-        <div class="ip">(3) In (c) würden sie sagen „\(P = \vec{OP}\)" — und damit den Unterschied zwischen einem Ort und der gerichteten Bewegung dorthin verwischen. In Klausur-Aufgaben mit Verschiebungen, Schnitten und Abbildungen führt diese Verwischung systematisch zu falschen Rechnungen.</div>
-        <div class="ip">(4) Die Kette aus (1)–(3) zeigt: Die Begriffe sind nicht namentliche Variationen desselben, sondern bezeichnen drei verschiedene Welten — Geometrie der Lagen (Punkte), gerichtete Verbindungen vom Ursprung (Ortsvektoren), standortfreie Verschiebungen (freie Vektoren). Wer das nicht trennt, kann die Begriffe nicht zur Klausurzeit benutzen.</div>
-      </div>
-    </div>
-
-    <!-- Block III · Linearkombinationen (mushikuri-gelb · Hauptkonzept) -->
-    <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">L</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L · ★ bis ★★★</div>
-        <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen — berechnen und darstellen</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Erst direktes Berechnen einer Linearkombination, dann die Umkehrfrage: einen gegebenen Vektor als LK anderer darstellen — gelöst über das LGS aus Klasse 9/10. <strong>Alle Aufgaben ohne CAS lösbar.</strong></div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.1</span><span class="td de">★</span></div>
-          <div class="tq">Berechne die Linearkombination \(\vec{w} = 2\vec{a} + 3\vec{b}\) mit \(\vec{a} = \begin{pmatrix}1\\0\\2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}-1\\2\\1\end{pmatrix}\).</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong> Skalieren — \(2\vec{a}=\begin{pmatrix}2\\0\\4\end{pmatrix}\), \(3\vec{b}=\begin{pmatrix}-3\\6\\3\end{pmatrix}\). Komponentenweise addieren — \(\vec{w}=\begin{pmatrix}-1\\6\\7\end{pmatrix}\).</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.2</span><span class="td de">★</span></div>
-          <div class="tq">Berechne \(\vec{w} = \vec{a} - 2\vec{b}\) mit \(\vec{a} = \begin{pmatrix}4\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\2\\0\end{pmatrix}\). (Hinweis: Subtraktion ist eine Linearkombination mit Koeffizient \(-1\) bzw. \(-2\).)</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong> \(\vec{w} = 1\cdot\vec{a} + (-2)\cdot\vec{b} = \begin{pmatrix}4\\-1\\3\end{pmatrix} + \begin{pmatrix}-2\\-4\\0\end{pmatrix} = \begin{pmatrix}2\\-5\\3\end{pmatrix}\).</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.3</span><span class="td de">★</span></div>
-          <div class="tq">Schreibe den Vektor \(\vec{c} = \begin{pmatrix}3\\-2\\5\end{pmatrix}\) als Linearkombination der drei Einheitsvektoren \(\vec{e}_1 = \begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{e}_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}\), \(\vec{e}_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}\).</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong> Die Koeffizienten lassen sich direkt ablesen — sie sind die Komponenten von \(\vec{c}\):</div>
-        <div class="ip">\(\vec{c} = 3\cdot\vec{e}_1 + (-2)\cdot\vec{e}_2 + 5\cdot\vec{e}_3\).</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Mit \(\vec{e}_1, \vec{e}_2, \vec{e}_3\) kannst du <em>jeden</em> Vektor des Raumes als LK darstellen — die Koeffizienten sind einfach seine drei Koordinaten.</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.4</span><span class="td de">★</span></div>
-          <div class="tq">Berechne \(\vec{w} = -\vec{a} + 2\vec{b} + 3\vec{c}\) mit \(\vec{a}=\begin{pmatrix}1\\1\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}0\\1\\1\end{pmatrix}\), \(\vec{c}=\begin{pmatrix}1\\0\\-1\end{pmatrix}\).</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong> \(-\vec{a}=\begin{pmatrix}-1\\-1\\0\end{pmatrix}\), \(2\vec{b}=\begin{pmatrix}0\\2\\2\end{pmatrix}\), \(3\vec{c}=\begin{pmatrix}3\\0\\-3\end{pmatrix}\). Summe: \(\vec{w}=\begin{pmatrix}2\\1\\-1\end{pmatrix}\).</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.5</span><span class="td dm">★★</span></div>
-          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}7\\4\\6\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\). Bestimme \(r\) und \(s\) und überprüfe das Ergebnis.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① 3×2-LGS aus \(r\vec{a}+s\vec{b}=\vec{c}\):</strong></div>
-        <div class="ip">(I) \(\;r + 3s = 7\) &nbsp; (II) \(2r + 0s = 4\) &nbsp; (III) \(\;r + 2s = 6\).</div>
-        <div class="ip"><strong>② Lösen:</strong> Aus (II): \(r=2\). In (I): \(2+3s=7 \Rightarrow s=\tfrac{5}{3}\). In (III) prüfen: \(2 + 2\cdot\tfrac{5}{3} = 2 + \tfrac{10}{3} = \tfrac{16}{3} \neq 6\). <em>(III) ist nicht verträglich.</em></div>
-        <div class="ip"><strong>③ Antwort:</strong> Das LGS hat <em>keine Lösung</em>. \(\vec{c}\) lässt sich <em>nicht</em> als Linearkombination von \(\vec{a}\) und \(\vec{b}\) darstellen — \(\vec{c}\) liegt nicht in der von \(\vec{a},\vec{b}\) durch den Ursprung aufgespannten Ebene.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Bei 3×2-LGS musst du <em>immer</em> alle drei Gleichungen prüfen — die ersten zwei liefern einen Kandidaten für \(r,s\), die dritte entscheidet, ob er passt.</em></div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.6</span><span class="td dm">★★</span></div>
-          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}4\\6\\5\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}+t\vec{d}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}1\\2\\0\end{pmatrix}\), \(\vec{d}=\begin{pmatrix}1\\1\\1\end{pmatrix}\). Bestimme alle drei Koeffizienten.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{a}+s\vec{b}+t\vec{d}=\vec{c}\):</strong></div>
-        <div class="ip">(I) \(\;r + s + t = 4\) &nbsp; (II) \(0r + 2s + t = 6\) &nbsp; (III) \(0r + 0s + t = 5\).</div>
-        <div class="ip"><strong>② Lösen von unten nach oben (Stufenform).</strong> Aus (III): \(t=5\). In (II): \(2s + 5 = 6 \Rightarrow s = \tfrac{1}{2}\). In (I): \(r + \tfrac{1}{2} + 5 = 4 \Rightarrow r = -\tfrac{3}{2}\).</div>
-        <div class="ip"><strong>③ Antwort:</strong> \(\vec{c} = -\tfrac{3}{2}\vec{a} + \tfrac{1}{2}\vec{b} + 5\vec{d}\). Probe: \(-\tfrac{3}{2}\begin{pmatrix}1\\0\\0\end{pmatrix} + \tfrac{1}{2}\begin{pmatrix}1\\2\\0\end{pmatrix} + 5\begin{pmatrix}1\\1\\1\end{pmatrix} = \begin{pmatrix}4\\6\\5\end{pmatrix}\) ✓.</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L1.7</span><span class="td dh">★★★</span></div>
-          <div class="tq">Sachkontext. Ein Lieferdrohne kann nur drei Standard-Flüge ausführen: \(\vec{f}_1=\begin{pmatrix}3\\0\\1\end{pmatrix}\) (Ost+Steigen), \(\vec{f}_2=\begin{pmatrix}0\\4\\1\end{pmatrix}\) (Nord+Steigen), \(\vec{f}_3=\begin{pmatrix}0\\0\\-2\end{pmatrix}\) (Sinken). Wie oft (Koeffizienten \(r, s, t \in \mathbb{R}\)) muss sie jeden Flug ausführen, um den Verschiebungsvektor \(\vec{z}=\begin{pmatrix}6\\8\\1\end{pmatrix}\) zu erreichen? Interpretiere das Ergebnis im Sachkontext.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{f}_1 + s\vec{f}_2 + t\vec{f}_3 = \vec{z}\):</strong></div>
-        <div class="ip">(I) \(3r + 0s + 0t = 6\) &nbsp; (II) \(0r + 4s + 0t = 8\) &nbsp; (III) \(\;r + s - 2t = 1\).</div>
-        <div class="ip"><strong>② Lösen.</strong> (I): \(r=2\). (II): \(s=2\). (III): \(2 + 2 - 2t = 1 \Rightarrow -2t = -3 \Rightarrow t = \tfrac{3}{2}\).</div>
-        <div class="ip"><strong>③ Antwort:</strong> Die Drohne führt den Ost-Flug 2-mal, den Nord-Flug 2-mal und den Sink-Flug 1,5-mal aus.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Interpretation:</em> Ein nicht-ganzzahliger Koeffizient (\(t=1{,}5\)) bedeutet, dass die Drohne den Sink-Flug nicht ganzzahlig oft ausführen kann — die geforderte Endposition ist mit ganzen Flügen nicht exakt erreichbar. Praktisch müsste man entweder den letzten Sink-Flug nur „halb" fliegen (z. B. nur 1,5 m statt 2 m sinken) oder die geforderte Position leicht anpassen. Mathematisch ist die Linearkombination eindeutig — die Diskretisierung ist ein Modellierungsproblem oberhalb der Mathematik.</em></div>
-      </div>
-    </div>
-
-    <!-- Sub-Block L2 · Linearkombinationen in geometrischen Figuren (IQB-Aufgabenstil) -->
-    <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#8a9da7;line-height:1;font-weight:400;min-width:36px;text-align:center">L2</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L2 · ★ bis ★★★ · IQB-Aufgabenstil</div>
-        <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen in geometrischen Figuren</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Anschauliche Anwendung: Wege in Vielecken als Linearkombination der Kantenvektoren beschreiben, und umgekehrt eine gegebene Linearkombination im Rahmen einer Abbildung interpretieren. Die Aufgaben ab L2.3 sind im <em>IQB-Aufgabenstil</em> formuliert — mit Teilaufgaben, Operatoren und BE-Verteilung.</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L2.1</span><span class="td de">★</span></div>
-          <div class="tq">Gegeben ist das Parallelogramm \(ABCD\) mit \(\vec{a}=\vec{AB}\) und \(\vec{b}=\vec{AD}\). Drücke die Vektoren \(\vec{AC}\), \(\vec{BD}\) und \(\vec{DB}\) jeweils als Linearkombination von \(\vec{a}\) und \(\vec{b}\) aus.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="270" viewBox="0 0 420 270"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,200.0 280.0,200.0 340.0,70.0 140.0,70.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="85.0" y1="200.0" x2="270.0" y2="200.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="180.0" y="218.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.1" y1="195.5" x2="135.8" y2="79.1" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="122.7" y="144.9" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">b&#x20D7;</text><circle cx="80.0" cy="200.0" r="3.5" fill="#222"/><text x="64.0" y="208.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="280.0" cy="200.0" r="3.5" fill="#222"/><text x="288.0" y="208.0" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="340.0" cy="70.0" r="3.5" fill="#222"/><text x="348.0" y="66.0" font-size="14" font-weight="bold" fill="#222">C</text><circle cx="140.0" cy="70.0" r="3.5" fill="#222"/><text x="124.0" y="66.0" font-size="14" font-weight="bold" fill="#222">D</text></svg></div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong> Im Parallelogramm gilt \(\vec{DC} = \vec{AB} = \vec{a}\) (parallele Seiten gleich lang und gleichgerichtet).</div>
-        <div class="ip">\(\vec{AC} = \vec{AB} + \vec{BC} = \vec{a} + \vec{b}\) (denn \(\vec{BC} = \vec{AD} = \vec{b}\)).</div>
-        <div class="ip">\(\vec{BD} = \vec{BA} + \vec{AD} = -\vec{a} + \vec{b}\).</div>
-        <div class="ip">\(\vec{DB} = -\vec{BD} = \vec{a} - \vec{b}\).</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Merke:</em> Eine Diagonale \(\vec{AC}\) ist die Summe der beiden Seitenvektoren, die andere Diagonale \(\vec{BD}\) ist deren Differenz. Das Vorzeichen hängt nur an der Richtung — \(\vec{DB}\) ist die umgekehrte Diagonale, also Vorzeichen kippen.</em></div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L2.2</span><span class="td dm">★★</span></div>
-          <div class="tq">Im Parallelogramm \(ABCD\) ist \(M\) der Schnittpunkt der beiden Diagonalen. Sei \(\vec{a}=\vec{AB}\) und \(\vec{b}=\vec{AD}\). Drücke \(\vec{AM}\) als Linearkombination von \(\vec{a}\) und \(\vec{b}\) aus. Zeige außerdem rechnerisch, dass \(M\) zugleich Mittelpunkt der Diagonale \(\overline{BD}\) ist.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="270" viewBox="0 0 420 270"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,200.0 280.0,200.0 340.0,70.0 140.0,70.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="80.0" y1="200.0" x2="340.0" y2="70.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="280.0" y1="200.0" x2="140.0" y2="70.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="85.0" y1="200.0" x2="270.0" y2="200.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="180.0" y="218.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.1" y1="195.5" x2="135.8" y2="79.1" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="122.7" y="144.9" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">b&#x20D7;</text><circle cx="210.0" cy="135.0" r="5" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="220.0" y="140.0" font-size="14" font-weight="bold" fill="#8a7a30">M</text><circle cx="80.0" cy="200.0" r="3.5" fill="#222"/><text x="64.0" y="208.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="280.0" cy="200.0" r="3.5" fill="#222"/><text x="288.0" y="208.0" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="340.0" cy="70.0" r="3.5" fill="#222"/><text x="348.0" y="66.0" font-size="14" font-weight="bold" fill="#222">C</text><circle cx="140.0" cy="70.0" r="3.5" fill="#222"/><text x="124.0" y="66.0" font-size="14" font-weight="bold" fill="#222">D</text></svg></div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① \(M\) als Mittelpunkt von \(\overline{AC}\):</strong> \(\vec{AM} = \tfrac{1}{2}\vec{AC} = \tfrac{1}{2}(\vec{a}+\vec{b}) = \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{b}\).</div>
-        <div class="ip"><strong>② Prüfung \(M\) auch Mittelpunkt von \(\overline{BD}\)?</strong> Mittelpunkt von \(\overline{BD}\) erreicht man von \(A\) aus über \(\vec{AB}+\tfrac{1}{2}\vec{BD} = \vec{a} + \tfrac{1}{2}(\vec{b}-\vec{a}) = \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{b}\). Das ist derselbe Vektor wie \(\vec{AM}\) ✓.</div>
-        <div class="ip"><strong>Schluss:</strong> Beide Diagonalen werden in \(M\) <em>halbiert</em>. \(M\) ist also Mittelpunkt jeder Diagonale — eine klassische Eigenschaft des Parallelogramms.</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L2.3</span><span class="td dm">★★</span></div>
-          <div class="tq">Gegeben ist ein regelmäßiges Sechseck \(ABCDEF\) mit Mittelpunkt \(M\). Es sei \(\vec{u}=\vec{MA}\) und \(\vec{v}=\vec{MB}\).<br><br><strong>a)</strong> Stellen Sie die Vektoren \(\vec{MC},\ \vec{MD},\ \vec{ME},\ \vec{MF}\) jeweils als Linearkombination von \(\vec{u}\) und \(\vec{v}\) dar. <em>(4 BE)</em><br><strong>b)</strong> Begründen Sie damit die Identität \(\vec{MA} + \vec{MB} + \vec{MC} + \vec{MD} + \vec{ME} + \vec{MF} = \vec{0}\). <em>(2 BE)</em></div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="280" viewBox="0 0 420 280"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="300.0,140.0 255.0,62.1 165.0,62.1 120.0,140.0 165.0,217.9 255.0,217.9" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><circle cx="210.0" cy="140.0" r="4" fill="#8a7a30"/><text x="196.0" y="145.0" font-size="14" font-weight="bold" fill="#8a7a30">M</text><line x1="215.0" y1="140.0" x2="290.0" y2="140.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="259.5" y="156.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">u&#x20D7;</text><line x1="212.5" y1="135.7" x2="250.0" y2="70.7" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="245.1" y="107.1" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">v&#x20D7;</text><circle cx="300.0" cy="140.0" r="3.5" fill="#222"/><text x="312.0" y="145.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="255.0" cy="62.1" r="3.5" fill="#222"/><text x="263.0" y="52.1" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="165.0" cy="62.1" r="3.5" fill="#222"/><text x="149.0" y="52.1" font-size="14" font-weight="bold" fill="#222">C</text><circle cx="120.0" cy="140.0" r="3.5" fill="#222"/><text x="98.0" y="145.0" font-size="14" font-weight="bold" fill="#222">D</text><circle cx="165.0" cy="217.9" r="3.5" fill="#222"/><text x="149.0" y="235.9" font-size="14" font-weight="bold" fill="#222">E</text><circle cx="255.0" cy="217.9" r="3.5" fill="#222"/><text x="261.0" y="235.9" font-size="14" font-weight="bold" fill="#222">F</text></svg></div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Erwartungshorizont (6 BE)</strong></div>
-        <div class="ip"><strong>a) Eckvektoren als Linearkombination (4 BE).</strong> Im regelmäßigen Sechseck haben die sechs Eckvektoren denselben Betrag und sind durch jeweils 60° gedreht. Aus der Sechsecksgeometrie (vgl. Skizze: \(M\) liegt zwischen \(A\) und \(D\), denn \(\vec{MD}=-\vec{MA}\)):</div>
-        <div class="ip">\(\vec{MC} = \vec{v} - \vec{u}\) <em>(1 BE — Hinweis: aus der Sechsecks-Identität \(\vec{MA}+\vec{MC}=\vec{MB}\), d. h. \(\vec{u}+\vec{MC}=\vec{v}\))</em>.</div>
-        <div class="ip">\(\vec{MD} = -\vec{u}\) <em>(1 BE — \(D\) gegenüber \(A\))</em>.</div>
-        <div class="ip">\(\vec{ME} = -\vec{v}\) <em>(1 BE — \(E\) gegenüber \(B\))</em>.</div>
-        <div class="ip">\(\vec{MF} = -\vec{MC} = \vec{u} - \vec{v}\) <em>(1 BE — \(F\) gegenüber \(C\))</em>.</div>
-        <div class="ip"><strong>b) Summe der Eckvektoren (2 BE).</strong> Setze die Darstellungen aus a) ein:</div>
-        <div class="ip">\(\sum = \vec{u} + \vec{v} + (\vec{v}-\vec{u}) + (-\vec{u}) + (-\vec{v}) + (\vec{u}-\vec{v}) = 0\cdot\vec{u} + 0\cdot\vec{v} = \vec{0}\) <em>(1 BE Rechnung, 1 BE Interpretation: jeweils paarweise gegenüberliegende Eckvektoren heben sich auf — Symmetrie des Sechsecks)</em>.</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L2.4</span><span class="td dh">★★★</span></div>
-          <div class="tq">Im Dreieck \(ABC\) ist \(S\) der Schwerpunkt (Schnittpunkt der Seitenhalbierenden). Sei \(\vec{a}=\vec{AB}\) und \(\vec{c}=\vec{AC}\).<br><br><strong>a)</strong> Drücken Sie \(\vec{AS}\) als Linearkombination von \(\vec{a}\) und \(\vec{c}\) aus. <em>(3 BE)</em><br><strong>b)</strong> Begründen Sie geometrisch, warum die beiden Koeffizienten in der Linearkombination aus a) gleich groß sein müssen. <em>(2 BE)</em><br><strong>c)</strong> Berechnen Sie die Koordinaten von \(S\) für \(A(1|2|0)\), \(B(4|5|0)\), \(C(2|3|6)\). <em>(2 BE)</em></div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="420" height="280" viewBox="0 0 420 280"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,210.0 310.0,220.0 180.0,60.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="80.0" y1="210.0" x2="245.0" y2="140.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="310.0" y1="220.0" x2="130.0" y2="135.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><line x1="180.0" y1="60.0" x2="195.0" y2="215.0" stroke="#999" stroke-width="1.2" stroke-dasharray="5 3"/><circle cx="245.0" cy="140.0" r="2.5" fill="#666"/><circle cx="130.0" cy="135.0" r="2.5" fill="#666"/><circle cx="195.0" cy="215.0" r="2.5" fill="#666"/><line x1="85.0" y1="210.2" x2="300.0" y2="219.6" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="207.2" y="203.5" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.8" y1="205.8" x2="174.5" y2="68.3" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="141.6" y="146.8" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">c&#x20D7;</text><circle cx="190.0" cy="163.3" r="5" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="199.0" y="168.3" font-size="14" font-weight="bold" fill="#8a7a30">S</text><circle cx="80.0" cy="210.0" r="3.5" fill="#222"/><text x="64.0" y="218.0" font-size="14" font-weight="bold" fill="#222">A</text><circle cx="310.0" cy="220.0" r="3.5" fill="#222"/><text x="318.0" y="228.0" font-size="14" font-weight="bold" fill="#222">B</text><circle cx="180.0" cy="60.0" r="3.5" fill="#222"/><text x="176.0" y="52.0" font-size="14" font-weight="bold" fill="#222">C</text></svg></div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Erwartungshorizont (7 BE)</strong></div>
-        <div class="ip"><strong>a) \(\vec{AS}\) als LK (3 BE).</strong> \(S\) ist Schnittpunkt der drei Seitenhalbierenden und teilt jede im Verhältnis 2:1 (von der Ecke aus gemessen). Insbesondere liegt \(S\) auf der Seitenhalbierenden von \(A\) zum Mittelpunkt \(M_a\) von \(\overline{BC}\) — und zwar bei \(\tfrac{2}{3}\) der Strecke.</div>
-        <div class="ip">Mittelpunkt von \(\overline{BC}\): \(M_a = A + \tfrac{1}{2}(\vec{AB}+\vec{AC}) = A + \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{c}\), also \(\vec{AM_a} = \tfrac{1}{2}\vec{a} + \tfrac{1}{2}\vec{c}\) <em>(1 BE)</em>.</div>
-        <div class="ip">\(\vec{AS} = \tfrac{2}{3}\,\vec{AM_a} = \tfrac{2}{3}\left(\tfrac{1}{2}\vec{a}+\tfrac{1}{2}\vec{c}\right) = \tfrac{1}{3}\vec{a} + \tfrac{1}{3}\vec{c}\) <em>(2 BE)</em>.</div>
-        <div class="ip"><strong>b) Gleichheit der Koeffizienten (2 BE).</strong> Würde die Aufgabe stattdessen \(\vec{c}\) und \(\vec{b}=\vec{BC}\) verwenden, müsste \(S\) genauso bei \(\tfrac{2}{3}\) der Seitenhalbierenden von \(B\) zum Mittelpunkt von \(\overline{AC}\) liegen. Der Schwerpunkt behandelt also alle drei Ecken gleichberechtigt — die Konstruktion ist symmetrisch unter Vertauschung der Ecken. Wären \(\vec{a}\) und \(\vec{c}\) verschieden gewichtet, bevorzugte die LK eine der drei Ecken, was der Symmetrie widerspräche. Also müssen die Koeffizienten gleich groß sein.</div>
-        <div class="ip"><strong>c) Konkrete Koordinaten (2 BE).</strong></div>
-        <div class="ip">\(\vec{a} = B-A = \begin{pmatrix}3\\3\\0\end{pmatrix}\), \(\vec{c} = C-A = \begin{pmatrix}1\\1\\6\end{pmatrix}\). Damit</div>
-        <div class="ip">\(\vec{AS} = \tfrac{1}{3}\begin{pmatrix}3\\3\\0\end{pmatrix} + \tfrac{1}{3}\begin{pmatrix}1\\1\\6\end{pmatrix} = \begin{pmatrix}4/3\\4/3\\2\end{pmatrix}\).</div>
-        <div class="ip">\(S = A + \vec{AS} = \begin{pmatrix}1\\2\\0\end{pmatrix} + \begin{pmatrix}4/3\\4/3\\2\end{pmatrix} = \begin{pmatrix}7/3\\10/3\\2\end{pmatrix}\) <em>(2 BE — 1 für die Komponentenrechnung, 1 für die Endkoordinaten)</em>.</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L2.5</span><span class="td dh">★★★</span></div>
-          <div class="tq">Gegeben ist das Parallelogramm \(OABC\) mit \(\vec{a}=\vec{OA}\) und \(\vec{b}=\vec{OC}\). Der Punkt \(P\) im Parallelogramm hat die Darstellung \(\vec{OP}=\tfrac{2}{3}\vec{a}+\tfrac{1}{2}\vec{b}\). Eine <em>zentrische Streckung</em> mit Zentrum \(O\) und Faktor \(k=2\) bildet jeden Punkt \(P\) auf einen Punkt \(P'\) ab gemäß \(\vec{OP'}=k\cdot \vec{OP}\).<br><br><strong>a)</strong> Berechnen Sie die Linearkombination, die \(\vec{OP'}\) beschreibt. <em>(2 BE)</em><br><strong>b)</strong> Beschreiben Sie geometrisch, was die Linearkombination \(3\vec{a}+2\vec{b}\) für die Lage eines Punktes in Bezug auf das Parallelogramm bedeutet. <em>(2 BE)</em><br><strong>c)</strong> Begründen Sie: Eine zentrische Streckung mit Zentrum \(O\) und Faktor \(k\) erhält das <em>Verhältnis</em> der Koeffizienten einer Linearkombination. <em>(2 BE)</em></div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-        <div style="padding:0 24px 16px;"><svg style="display:block;margin:10px auto;max-width:100%;border:1px solid #ddd;border-radius:6px;" width="460" height="270" viewBox="0 0 460 270"><defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#c75c3a"/></marker><marker id="ah2b" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#5b6e2e"/></marker><marker id="ah2c" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto"><polygon points="0 0, 9 3, 0 6" fill="#8a7a30"/></marker></defs><rect width="100%" height="100%" fill="#f9f9f9"/><polygon points="80.0,220.0 220.0,220.0 280.0,100.0 140.0,100.0" fill="#ecf1f4" fill-opacity="0.4" stroke="#4d6470" stroke-width="1.8"/><line x1="85.0" y1="220.0" x2="210.0" y2="220.0" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#ah2b)"/><text x="150.0" y="238.0" font-size="14" font-weight="bold" fill="#5b6e2e" text-anchor="middle">a&#x20D7;</text><line x1="82.2" y1="215.5" x2="135.5" y2="108.9" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#ah2)"/><text x="122.5" y="170.3" font-size="14" font-weight="bold" fill="#c75c3a" text-anchor="middle">b&#x20D7;</text><line x1="84.5" y1="217.8" x2="194.3" y2="164.4" stroke="#c8b55e" stroke-width="1.8" marker-end="url(#ah2c)"/><line x1="207.8" y1="157.8" x2="317.7" y2="104.4" stroke="#c8b55e" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.75" marker-end="url(#ah2c)"/><circle cx="203.3" cy="160.0" r="4" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="211.3" y="165.0" font-size="13" font-weight="bold" fill="#8a7a30">P</text><circle cx="326.7" cy="100.0" r="4" fill="#c8b55e" stroke="#fff" stroke-width="1.5"/><text x="334.7" y="105.0" font-size="13" font-weight="bold" fill="#8a7a30">P'</text><circle cx="80.0" cy="220.0" r="3.5" fill="#222"/><text x="64.0" y="228.0" font-size="13" font-weight="bold" fill="#222">O</text><circle cx="220.0" cy="220.0" r="3.5" fill="#222"/><text x="208.0" y="238.0" font-size="13" font-weight="bold" fill="#222">A</text><circle cx="280.0" cy="100.0" r="3.5" fill="#222"/><text x="288.0" y="96.0" font-size="13" font-weight="bold" fill="#222">B</text><circle cx="140.0" cy="100.0" r="3.5" fill="#222"/><text x="124.0" y="96.0" font-size="13" font-weight="bold" fill="#222">C</text><text x="445.0" y="30.0" font-size="13" font-style="italic" fill="#555" text-anchor="end">k = 2</text></svg></div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Erwartungshorizont (6 BE)</strong></div>
-        <div class="ip"><strong>a) \(\vec{OP'}\) berechnen (2 BE).</strong></div>
-        <div class="ip">\(\vec{OP'} = 2\cdot \vec{OP} = 2\left(\tfrac{2}{3}\vec{a}+\tfrac{1}{2}\vec{b}\right) = \tfrac{4}{3}\vec{a} + 1\cdot \vec{b}\) <em>(1 BE Ansatz, 1 BE Endergebnis)</em>.</div>
-        <div class="ip"><strong>b) Geometrische Interpretation von \(3\vec{a}+2\vec{b}\) (2 BE).</strong> Im \(\vec{a}, \vec{b}\)-System hat der Punkt die <em>Koeffizienten</em> 3 und 2. Geometrisch bedeutet das: vom Ursprung \(O\) aus dreimal so weit in Richtung \(\vec{a}\) wie eine Kantenlänge des Parallelogramms (also \(3\) Kantenlängen entlang \(OA\)), und davon ausgehend zweimal so weit in Richtung \(\vec{b}\) (\(2\) Kantenlängen entlang \(OC\)). Der Punkt liegt damit deutlich <em>außerhalb</em> des Parallelogramms (für „im Parallelogramm" müssten beide Koeffizienten zwischen 0 und 1 liegen).</div>
-        <div class="ip"><strong>c) Verhältnis-Erhaltung (2 BE).</strong> Sei \(\vec{OP} = r\vec{a} + s\vec{b}\). Dann ist nach Definition der zentrischen Streckung</div>
-        <div class="ip">\(\vec{OP'} = k\cdot \vec{OP} = k\cdot (r\vec{a} + s\vec{b}) = (kr)\vec{a} + (ks)\vec{b}\) <em>(1 BE)</em>.</div>
-        <div class="ip">Das Verhältnis der neuen Koeffizienten ist also \(\dfrac{kr}{ks} = \dfrac{r}{s}\) (für \(k\neq 0,\ s\neq 0\)) — gleich dem ursprünglichen Verhältnis. Die Streckung skaliert beide Koeffizienten <em>gleich</em>, deshalb ändert sich das Verhältnis nicht. <em>(1 BE)</em></div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Folgerung:</em> Geometrisch heißt das: Bild und Urbild liegen vom Streckzentrum aus gesehen auf derselben Strahlrichtung. Die Linearkombination ändert nur die <em>Länge</em>, nicht die <em>Richtung</em> im \(\vec{a}, \vec{b}\)-System.</em></div>
-      </div>
-    </div>
-
-    <!-- Sub-Block L3 · Beschreibungs- und Erläuterungsaufgaben (Konzept 2 aus Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie) -->
-    <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#5b6e2e;line-height:1;font-weight:400;min-width:36px;text-align:center">L3</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L3 · ★ bis ★★★ · K1 + K6</div>
-        <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Beschreiben und Erläutern — Ansatz lesen, Vorgehen erklären, Aufgabe rekonstruieren</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Eine eigenständige Aufgabenklasse, die in IQB-Aufgabenpools und in den B-Teilen der MV-GK-Klausuren regelmäßig vorkommt: ein gegebener Lösungsansatz wird in Worten erklärt, ein Verfahren ohne konkrete Zahlen beschrieben, oder aus einer Lösung die zugehörige Aufgabe rekonstruiert. Trainiert <strong>K1 (Argumentieren)</strong> und <strong>K6 (Kommunizieren)</strong> — Kompetenzen, die in der reinen Rechen-Übung nicht aktiviert werden. Konzept aus <a href="Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie.html" style="color:#3e4d1f;text-decoration:underline;">Aufgabenkonzepte für die analytische Geometrie</a> (Konzept 2).</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L3.1</span><span class="td de">★</span></div>
-          <div class="tq"><strong>Ansatz benennen.</strong> Im Folgenden ist der Ansatz \(\vec{c} = r\vec{a} + s\vec{b}\) gegeben (mit den drei konkreten Vektoren \(\vec{a},\vec{b},\vec{c}\) als bekannt vorausgesetzt). Welche <em>geometrische Frage</em> wird mit diesem Ansatz untersucht? Welches Ergebnis bedeutet welche geometrische Aussage?</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung:</strong></div>
-        <div class="ip"><strong>Geometrische Frage:</strong> Lässt sich der Vektor \(\vec{c}\) <em>aus den Vektoren \(\vec{a}\) und \(\vec{b}\) zusammensetzen</em> — durch Skalierung und Addition? Anders formuliert: Liegt \(\vec{c}\) in der von \(\vec{a}\) und \(\vec{b}\) durch den Ursprung aufgespannten Ebene?</div>
-        <div class="ip"><strong>Bedeutung der drei LGS-Lösungsfälle</strong> (aus dem 3×2-LGS, das aus der Vektorgleichung entsteht):</div>
-        <div class="ip">• <em>Eindeutige Lösung \((r,s)\) gefunden</em> → \(\vec{c}\) ist als LK darstellbar, liegt also in der Ebene durch \(\vec{a},\vec{b}\).</div>
-        <div class="ip">• <em>Keine Lösung</em> (dritte Gleichung verträglich nicht erfüllbar) → \(\vec{c}\) liegt <em>nicht</em> in dieser Ebene.</div>
-        <div class="ip">• <em>Unendlich viele Lösungen</em> → kann nur passieren, wenn \(\vec{a}\) und \(\vec{b}\) selbst kollinear sind und \(\vec{c}\) in derselben Geraden liegt.</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K6: Ansatz in geometrische Sprache übersetzen · K1: Drei Fallunterscheidungen argumentativ darstellen</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L3.2</span><span class="td dm">★★</span></div>
-          <div class="tq"><strong>Lösungsweg erläutern.</strong> Gegeben ist der folgende Lösungsweg: \[\vec{c} = \begin{pmatrix}5\\4\\4\end{pmatrix},\; \vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix},\; \vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\] Setze \(r\vec{a}+s\vec{b}=\vec{c}\). Aus den ersten beiden Komponenten folgt \(r+3s=5\) und \(2r=4\), also \(r=2\) und \(s=1\). Setze in die dritte Komponente ein: \(r+2s = 2+2 = 4\) ✓. — Erläutere in drei Sätzen: <em>Was wird hier berechnet, welche geometrische Situation liegt vor, und was bedeutet das Ergebnis \(r=2,\,s=1\)?</em></div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösung (Erläuterung in drei Sätzen):</strong></div>
-        <div class="ip">(1) <strong>Was berechnet wird:</strong> Es werden die zwei Koeffizienten \(r\) und \(s\) bestimmt, mit denen sich der Vektor \(\vec{c}\) als Linearkombination der Vektoren \(\vec{a}\) und \(\vec{b}\) schreiben lässt — also \(\vec{c}=r\vec{a}+s\vec{b}\).</div>
-        <div class="ip">(2) <strong>Geometrische Situation:</strong> Die Frage „Lässt sich \(\vec{c}\) so darstellen?" entspricht der geometrischen Frage, ob \(\vec{c}\) in der von \(\vec{a}\) und \(\vec{b}\) durch den Ursprung aufgespannten Ebene liegt. Da die dritte Gleichung mit den aus den ersten beiden Gleichungen gefundenen Werten konsistent ist, ist die Antwort „ja".</div>
-        <div class="ip">(3) <strong>Bedeutung des Ergebnisses \(r=2,\,s=1\):</strong> Geometrisch heißt das: Man erreicht \(\vec{c}\) vom Ursprung aus durch <em>zweimaliges Abtragen</em> des Vektors \(\vec{a}\) und einmaliges Anhängen von \(\vec{b}\). Die Probe in der dritten Komponente bestätigt, dass die ersten beiden gefundenen Werte auch für die dritte Dimension passen — sonst wäre \(\vec{c}\) nicht in der Ebene.</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K6: Lösungsweg in eigenen Worten beschreiben · K1: Den Pflichtschritt „Probe in der dritten Gleichung" argumentativ begründen</div>
-      </div>
-    </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">L3.3</span><span class="td dh">★★★</span></div>
-          <div class="tq"><strong>Aufgabe rekonstruieren.</strong> Gegeben sind zwei Lösungsschritte einer Aufgabe: (1) Ansatz: \(\vec{OP} = \tfrac{1}{2}\vec{OA} + \tfrac{1}{2}\vec{OB}\) mit \(A(2|6|0)\) und \(B(8|2|4)\). (2) Daraus folgt \(P(5|4|2)\). Formuliere eine passende Aufgabenstellung in einem räumlichen Sachkontext deiner Wahl, die genau diese beiden Schritte als Lösungsbeginn (Ansatz + erstes Ergebnis) hat. Begründe in einem Satz, warum dein Sachkontext geometrisch zur Lösung passt.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Lösungs-Vorschlag (Beispiel-Aufgabenstellung):</strong></div>
-        <div class="ip" style="background:#f4f3f0;padding:10px;border-radius:6px;"><em>„In einer Lagerhalle sind zwei Sensoren an den Positionen \(A(2|6|0)\) und \(B(8|2|4)\) montiert (Koordinaten in Metern, gemessen vom Halleneck \(O\)). Ein Roboter soll genau in der Mitte zwischen den beiden Sensoren positioniert werden, weil dort die Signalstärke beider Sensoren am ausgeglichensten ist. Berechne die Position \(P\) des Roboters."</em></div>
-        <div class="ip"><strong>Begründung des Sachkontexts:</strong> Der vorgegebene Ansatz \(\vec{OP}=\tfrac{1}{2}\vec{OA}+\tfrac{1}{2}\vec{OB}\) ist genau die Mittelpunkt-Formel für die Strecke \(\overline{AB}\). Jede Aufgabe, in der „der Mittelpunkt zwischen zwei gegebenen Punkten gesucht wird" (in jedem räumlichen Kontext: zwei Sender, zwei Sterne, zwei Eckpunkte einer Halle, …), passt zu diesem Lösungsweg. Ergebnis \(P(5|4|2)\) ist der koordinatenweise Mittelwert von \(A\) und \(B\).</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Weitere passende Sachkontexte:</em> Mittelpunkt zwischen zwei Wegpunkten einer Drohne, Schwerpunkt von zwei gleichen Massen, Treffpunkt zweier Wanderer, die sich von beiden Ecken aus mit gleicher Geschwindigkeit aufeinander zu bewegen, …</em></div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K6: Aufgabe sprachlich konstruieren · K3: Mathematischen Ansatz in einen Sachkontext übersetzen · K1: Kontext-Wahl begründen</div>
-      </div>
-    </div>
-
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
@@ -22116,17 +22007,15 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
       <ol>
         <li>Berechne \(\vec{a} + \vec{b}\) und \(\vec{a} \cdot \vec{b}\) für \(\vec{a} = \begin{pmatrix}2\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\4\\-2\end{pmatrix}\).</li>
-        <li>Erkläre den Unterschied zwischen Ortsvektor und freiem Vektor.</li>
+        <li>Erkläre den Unterschied zwischen Punkt, Ortsvektor und freiem Vektor.</li>
         <li>Was sagt das Skalarprodukt über den Winkel zwischen zwei Vektoren aus? Wann sind zwei Vektoren orthogonal?</li>
-        <li>Berechne das Kreuzprodukt \(\vec{a} \times \vec{b}\) und erkläre seine geometrische Bedeutung.</li>
         <li>Stelle den Vektor \(\vec{c}=\begin{pmatrix}2\\3\\1\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) von \(\vec{a}=\begin{pmatrix}1\\1\\0\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}0\\1\\1\end{pmatrix}\) dar — falls möglich.</li>
       </ol>
-      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Vektoren“.
-      </p>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Wenn du bei einer Frage unsicher bist, lies den passenden Abschnitt noch einmal.</p>
     </div>
   </div>
 </div>
+
 
 </div>
 
