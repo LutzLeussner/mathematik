@@ -83,6 +83,7 @@
         Matrikelnummer → Schülername führst du getrennt (offline). So bleiben in der
         Datenbank keine personenbezogenen Klarnamen gespeichert.
       </div>
+      <datalist id="gruppenListe"></datalist>
       <div class="row">
         <div>
           <label for="nMatrikel">Matrikelnummer</label>
@@ -91,6 +92,10 @@
         <div>
           <label for="nPin">Start-PIN / Passwort</label>
           <input type="text" id="nPin" placeholder="mind. 6 Zeichen">
+        </div>
+        <div>
+          <label for="nGruppe">Gruppe (optional)</label>
+          <input type="text" id="nGruppe" placeholder="z. B. 11a" list="gruppenListe">
         </div>
       </div>
       <button class="haupt" id="anlegenBtn">Konto anlegen</button>
@@ -107,8 +112,12 @@
             <label for="bPraefix">Präfix (optional)</label>
             <input type="text" id="bPraefix" placeholder="z. B. 11a">
           </div>
+          <div>
+            <label for="bGruppe">Gruppe (optional)</label>
+            <input type="text" id="bGruppe" placeholder="z. B. 11a" list="gruppenListe">
+          </div>
         </div>
-        <div class="liste">Mit Präfix entstehen <code>11a-01, 11a-02, …</code>; ohne Präfix zufällige 6-stellige Nummern. PINs werden automatisch erzeugt.</div>
+        <div class="liste">Mit Präfix entstehen <code>11a-01, 11a-02, …</code>; ohne Präfix zufällige 6-stellige Nummern. PINs werden automatisch erzeugt. Ohne Gruppe wird das Präfix als Gruppe verwendet.</div>
         <button class="haupt" id="bulkBtn">Konten erzeugen</button>
         <div class="meld" id="bulkMeld"></div>
       </div>
@@ -122,6 +131,8 @@
       <button class="haupt" id="kontenBtn">Konten-Liste laden</button>
       <button class="haupt" id="csvBtn" style="background:#fff;color:var(--gruen-dunkel);border:1.5px solid var(--gruen)">Als CSV herunterladen</button>
       <div class="meld" id="kontenMeld"></div>
+      <div style="margin-top:12px"><label style="font-size:.84rem;color:var(--grau);font-weight:600;margin-right:6px">Gruppe filtern:</label>
+        <select id="kontenGruppeFilter" style="padding:7px 10px;border:1.5px solid var(--rand);border-radius:8px;font-size:.92rem"></select></div>
       <div id="kontenWrap" style="overflow-x:auto;margin-top:14px"></div>
     </div>
 
@@ -129,6 +140,8 @@
       <h2>Auswertung</h2>
       <button class="haupt" id="ladenBtn">Daten aktualisieren</button>
       <div class="meld" id="ladenMeld"></div>
+      <div style="margin-top:12px"><label style="font-size:.84rem;color:var(--grau);font-weight:600;margin-right:6px">Gruppe filtern:</label>
+        <select id="dataGruppeFilter" style="padding:7px 10px;border:1.5px solid var(--rand);border-radius:8px;font-size:.92rem"></select></div>
       <div id="tabelleWrap" style="overflow-x:auto;margin-top:14px"></div>
       <div class="legende">
         <span><span class="punkt" style="background:var(--gruen-hell)"></span> gelöst (Zahl = benötigte Versuche)</span>
@@ -193,8 +206,27 @@ function randPin(){ return String(Math.floor(100000 + Math.random()*900000)); } 
 async function createUser(secAuth, matrikel, pin){
   await F.createUserWithEmailAndPassword(secAuth, matrikel.toLowerCase()+EMAIL_DOMAIN, pin);
 }
-async function writeKonto(matrikel, pin){
-  await F.setDoc(F.doc(db,"schueler",matrikel), { matrikel, pin, angelegt: F.serverTimestamp() }, { merge:true });
+async function writeKonto(matrikel, pin, gruppe){
+  await F.setDoc(F.doc(db,"schueler",matrikel), { matrikel, pin, gruppe: gruppe||"", angelegt: F.serverTimestamp() }, { merge:true });
+}
+async function updateGruppe(matrikel, gruppe){
+  try{
+    await F.setDoc(F.doc(db,"schueler",matrikel), { gruppe }, { merge:true });
+    const k=kontenCache.find(x=>String(x.matrikel)===String(matrikel)); if(k)k.gruppe=gruppe;
+    fuelleGruppenFilter();
+  }catch(e){ alert("Gruppe speichern fehlgeschlagen: "+(e.message||e)); }
+}
+function alleGruppen(){ return [...new Set(kontenCache.map(k=>(k.gruppe||"").trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"de",{numeric:true})); }
+function fuelleGruppenFilter(){
+  const gr=alleGruppen();
+  // Datalist für Eingabe-Autovervollständigung
+  const dl=document.getElementById("gruppenListe"); if(dl) dl.innerHTML=gr.map(g=>`<option value="${g}">`).join("");
+  // Filter-Selects (Auswahl beibehalten)
+  ["#kontenGruppeFilter","#dataGruppeFilter"].forEach(sel=>{
+    const el=$(sel); if(!el) return; const cur=el.value;
+    el.innerHTML='<option value="">Alle Gruppen</option><option value="__leer__">(ohne Gruppe)</option>'+gr.map(g=>`<option value="${g}">${g}</option>`).join("");
+    el.value=[...el.options].some(o=>o.value===cur)?cur:"";
+  });
 }
 
 /* ---------- Einzelnes Konto anlegen (Zweit-App, damit Lehrer angemeldet bleibt) ---------- */
@@ -209,7 +241,7 @@ $("#anlegenBtn").addEventListener("click", async ()=>{
     await createUser(secAuth, matrikel, pin);
     await F.signOut(secAuth); await F.deleteApp(sec);
     let zusatz="";
-    try{ await writeKonto(matrikel, pin); }catch(e){ zusatz=" (PIN-Liste nicht gespeichert — Firestore-Regeln für 'schueler' veröffentlichen)"; }
+    try{ await writeKonto(matrikel, pin, $("#nGruppe").value.trim()); }catch(e){ zusatz=" (PIN-Liste nicht gespeichert — Firestore-Regeln für 'schueler' veröffentlichen)"; }
     m.className="meld ok"; m.textContent=`Konto für Matrikel ${matrikel} angelegt. PIN: ${pin}`+zusatz;
     $("#nMatrikel").value=""; $("#nPin").value="";
     ladeKonten();
@@ -225,6 +257,7 @@ $("#bulkBtn").addEventListener("click", async ()=>{
   const m=$("#bulkMeld"); m.className="meld"; m.textContent="";
   const n=parseInt($("#bAnzahl").value.trim(),10);
   const prefix=$("#bPraefix").value.trim();
+  const gruppe=($("#bGruppe").value.trim())||prefix;
   if(!n || n<1 || n>200){ m.className="meld err"; m.textContent="Bitte eine Anzahl zwischen 1 und 200 angeben."; return; }
   const btn=$("#bulkBtn"); btn.disabled=true;
   const vorhanden = new Set(kontenCache.map(k=>String(k.matrikel)));
@@ -242,7 +275,7 @@ $("#bulkBtn").addEventListener("click", async ()=>{
       m.className="meld"; m.textContent=`Erzeuge Konto ${gemacht+1} von ${n} …`;
       try{
         await createUser(secAuth, matrikel, pin);
-        await writeKonto(matrikel, pin);
+        await writeKonto(matrikel, pin, gruppe);
         vorhanden.add(matrikel); erzeugt.push({matrikel,pin}); gemacht++;
       }catch(err){
         if((err.code||"").includes("email-already-in-use")){ vorhanden.add(matrikel); uebersprungen++; continue; }
@@ -263,10 +296,13 @@ $("#bulkBtn").addEventListener("click", async ()=>{
 });
 
 /* ---------- Angelegte Konten laden / CSV ---------- */
+let datenCache=[];
 $("#kontenBtn").addEventListener("click", ladeKonten);
+$("#kontenGruppeFilter").addEventListener("change", baueKonten);
+$("#dataGruppeFilter").addEventListener("change", ()=>baueTabelle(datenCache));
 $("#csvBtn").addEventListener("click", ()=>{
   if(!kontenCache.length){ $("#kontenMeld").className="meld err"; $("#kontenMeld").textContent="Keine Konten zum Export."; return; }
-  const rows=[["Matrikelnummer","PIN"]].concat(kontenCache.map(k=>[k.matrikel,k.pin||""]));
+  const rows=[["Matrikelnummer","PIN","Gruppe"]].concat(kontenCache.map(k=>[k.matrikel,k.pin||"",k.gruppe||""]));
   const csv=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(";")).join("\r\n");
   const blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="schueler_konten.csv"; a.click();
@@ -277,6 +313,7 @@ async function ladeKonten(){
     const snap = await F.getDocs(F.collection(db,"schueler"));
     kontenCache=[]; snap.forEach(d=>kontenCache.push(d.data()));
     kontenCache.sort((a,b)=> String(a.matrikel).localeCompare(String(b.matrikel), "de", {numeric:true}));
+    fuelleGruppenFilter();
     baueKonten();
     m.className="meld ok"; m.textContent=`${kontenCache.length} Konten in der Liste.`;
   }catch(err){
@@ -285,13 +322,19 @@ async function ladeKonten(){
 }
 function baueKonten(){
   if(!kontenCache.length){ $("#kontenWrap").innerHTML="<p style='color:#888'>Noch keine Konten in der Liste.</p>"; return; }
-  let html="<table><thead><tr><th>Matrikelnummer</th><th>PIN</th><th>angelegt</th></tr></thead><tbody>";
-  kontenCache.forEach(k=>{
+  const fil=($("#kontenGruppeFilter")&&$("#kontenGruppeFilter").value)||"";
+  const liste=kontenCache.filter(k=> !fil ? true : (fil==="__leer__" ? !(k.gruppe||"").trim() : (k.gruppe||"")===fil));
+  let html="<table><thead><tr><th>Matrikelnummer</th><th>PIN</th><th>Gruppe</th><th>angelegt</th></tr></thead><tbody>";
+  liste.forEach(k=>{
     let dt=""; try{ if(k.angelegt&&k.angelegt.seconds) dt=new Date(k.angelegt.seconds*1000).toLocaleString("de-DE"); }catch(e){}
-    html+=`<tr><td class="matrikel">${k.matrikel}</td><td>${k.pin||"–"}</td><td>${dt}</td></tr>`;
+    const g=(k.gruppe||"").replace(/"/g,"&quot;");
+    html+=`<tr><td class="matrikel">${k.matrikel}</td><td>${k.pin||"–"}</td>`+
+          `<td><input class="gr-edit" data-mat="${k.matrikel}" value="${g}" placeholder="—" list="gruppenListe" style="width:104px;padding:4px 7px;border:1px solid var(--rand);border-radius:6px;font-size:.86rem"></td>`+
+          `<td>${dt}</td></tr>`;
   });
   html+="</tbody></table>";
-  $("#kontenWrap").innerHTML=html;
+  const w=$("#kontenWrap"); w.innerHTML=html;
+  w.querySelectorAll(".gr-edit").forEach(inp=>inp.addEventListener("change",()=>updateGruppe(inp.dataset.mat, inp.value.trim())));
 }
 
 /* ---------- Auswertung laden ---------- */
@@ -301,30 +344,41 @@ async function ladeDaten(){
   const m=$("#ladenMeld"); m.className="meld"; m.textContent="Lade …";
   try{
     const snap = await F.getDocs(F.collection(db,"ergebnisse"));
-    const daten=[]; snap.forEach(d=>daten.push(d.data()));
-    baueTabelle(daten);
-    m.className="meld ok"; m.textContent = `${daten.length} Datensätze geladen (${new Date().toLocaleTimeString("de-DE")}).`;
+    datenCache=[]; snap.forEach(d=>datenCache.push(d.data()));
+    if(!kontenCache.length){ try{ const ks=await F.getDocs(F.collection(db,"schueler")); kontenCache=[]; ks.forEach(d=>kontenCache.push(d.data())); fuelleGruppenFilter(); }catch(e){} }
+    baueTabelle(datenCache);
+    m.className="meld ok"; m.textContent = `${datenCache.length} Datensätze geladen (${new Date().toLocaleTimeString("de-DE")}).`;
   }catch(err){
     m.className="meld err"; m.textContent = "Fehler beim Laden: " + (err.message||err);
   }
 }
 
 function baueTabelle(daten){
+  daten=daten||[];
   // Aufgaben-Spalten aus den Daten ableiten (sortiert nach ID)
   const aufgIds=[...new Set(daten.map(d=>d.aufgabeId))].sort();
   const titel={}; daten.forEach(d=>titel[d.aufgabeId]=d.aufgabeTitel||d.aufgabeId);
-  const matrikeln=[...new Set(daten.map(d=>d.matrikel))].sort();
+  // Matrikel -> Gruppe aus der Konten-Liste
+  const grpOf={}; kontenCache.forEach(k=>grpOf[String(k.matrikel)]=(k.gruppe||"").trim());
+  let matrikeln=[...new Set(daten.map(d=>d.matrikel))];
+  // Gruppenfilter
+  const fil=($("#dataGruppeFilter")&&$("#dataGruppeFilter").value)||"";
+  if(fil) matrikeln=matrikeln.filter(m=> fil==="__leer__" ? !grpOf[String(m)] : grpOf[String(m)]===fil);
+  // nach Gruppe, dann Matrikel sortieren
+  matrikeln.sort((a,b)=>{ const ga=grpOf[String(a)], gb=grpOf[String(b)];
+    if(!!ga !== !!gb) return ga ? -1 : 1;   // Schüler mit Gruppe zuerst, ohne Gruppe ans Ende
+    return (ga||"").localeCompare(gb||"","de",{numeric:true}) || String(a).localeCompare(String(b),"de",{numeric:true}); });
   // Lookup
   const map={}; daten.forEach(d=>{ map[d.matrikel+"|"+d.aufgabeId]=d; });
 
-  if(matrikeln.length===0){ $("#tabelleWrap").innerHTML="<p style='color:#888'>Noch keine Schülerdaten vorhanden.</p>"; return; }
+  if(matrikeln.length===0){ $("#tabelleWrap").innerHTML="<p style='color:#888'>Keine Schülerdaten für diese Auswahl.</p>"; return; }
 
-  let html="<table><thead><tr><th>Matrikel</th>";
+  let html="<table><thead><tr><th>Gruppe</th><th>Matrikel</th>";
   aufgIds.forEach((id,i)=>html+=`<th title="${titel[id]}">Aufg. ${i+1}</th>`);
   html+="<th>gelöst</th></tr></thead><tbody>";
   matrikeln.forEach(mat=>{
     let geloest=0;
-    let row=`<tr><td class="matrikel">${mat}</td>`;
+    let row=`<tr><td>${grpOf[String(mat)]||"–"}</td><td class="matrikel">${mat}</td>`;
     aufgIds.forEach(id=>{
       const e=map[mat+"|"+id];
       if(!e){ row+=`<td class="zelle-leer">–</td>`; }
