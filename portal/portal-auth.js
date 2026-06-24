@@ -60,6 +60,7 @@ window.PortalAuth = {
 /* ---------------------------------------------------------- Login-Leiste */
 const STYLE = `
 .pa-bar{position:fixed;bottom:14px;right:14px;z-index:9999;font-family:"Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end}
+body.presi .pa-bar{display:none}
 .pa-pill{display:flex;align-items:center;gap:10px;background:#2e7d5b;color:#fff;border-radius:24px;padding:7px 8px 7px 14px;box-shadow:0 2px 8px rgba(0,0,0,.18);font-size:.86rem}
 .pa-pill .pa-name{font-weight:600;white-space:nowrap}
 .pa-pill button{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:16px;padding:5px 12px;cursor:pointer;font-size:.82rem;font-weight:600}

@@ -237,7 +237,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 }
 
 /* ── Präsentationsmodus (Smartboard, 16:9 · per Knopf umschaltbar) ── */
-body.presi{zoom:1.4;}                 /* deutliche Vergrößerung – skaliert Layout, Formeln, SVGs gleichmäßig */
+body.presi{zoom:1.3;}                 /* Vergrößerung fürs Smartboard (etwas reduziert) */
+body.presi .topnav{display:none}      /* Klassen-/Themenmenü im Präsentationsmodus ausblenden */
 body.presi{--ink:#111111;--ink-soft:#26241f;--ink-muted:#544f47;--border:#cfc9c0;}  /* starke Kontraste */
 body.presi .ip{color:var(--ink-soft);font-weight:450}
 body.presi .topnav-btn,body.presi .ptb,body.presi .tn{font-weight:600}
