@@ -57,13 +57,12 @@ const CSS = `
 .pu .pu-sb button.b-ok{color:var(--success,#5b6e2e)}.pu .pu-sb button.b-teil{color:#9a8327}.pu .pu-sb button.b-no{color:var(--error,#c75c3a)}
 .pu .pu-sb button.pu-aktiv{background:var(--kiku-bg,#f3f5ec);border-color:var(--kiku,#5b6e2e)}
 .pu .pu-hinweis-anmeldung{font-size:.82rem;color:var(--ink-muted,#a09a92);margin-top:10px}
-/* Klick-Aufklappen deaktiviert (Normalmodus): Chevron aus, kein Pointer */
-.tk-top.pu-toggleoff{cursor:default}
-.tk-top.pu-toggleoff .tk-toggle{display:none}
-/* Präsentationsmodus: Eingabe-/Interaktionsschicht ausblenden, Aufgabe per Klick auf-/zuklappbar */
-body.presi .pu{display:none!important}
-body.presi .tk-top.pu-toggleoff{cursor:pointer}
-body.presi .tk-top.pu-toggleoff .tk-toggle{display:block}
+/* Aufgabe auf-/zuklappbar: Eingabe-/Kontroll-Schicht (.pu) ist standardmäßig eingeklappt */
+.tk-top.pu-toggleoff{cursor:pointer}
+.tg .pu{display:none}
+.tg.pu-open .pu{display:block}
+/* Präsentationsmodus: Eingabe-/Kontroll-Schicht immer aus; Klick zeigt die Musterlösung */
+body.presi .tg .pu{display:none!important}
 `;
 
 function injectCss() { const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); }
@@ -256,13 +255,20 @@ async function save(aufgabeId, spec, daten) {
   catch (e) { console.warn("Speichern fehlgeschlagen:", e); }
 }
 
-// Im Präsentationsmodus: Klick auf den Aufgabenkopf blendet die Musterlösung (.ta) ein/aus
+// Klick auf den Aufgabenkopf:
+//  - Normalmodus: klappt die Eingabe-/Kontroll-Schicht (.pu) auf/zu
+//  - Präsentationsmodus: blendet die Musterlösung (.ta) ein/aus
 document.addEventListener("click", (e) => {
-  if (!document.body.classList.contains("presi")) return;
   const top = e.target.closest(".tk-top.pu-toggleoff");
   if (!top) return;
   const tg = top.closest(".tg"); if (!tg) return;
-  const ta = tg.querySelector(".ta"); if (ta) ta.classList.toggle("on");
+  const tog = top.querySelector(".tk-toggle");
+  if (document.body.classList.contains("presi")) {
+    const ta = tg.querySelector(".ta"); if (ta) ta.classList.toggle("on");
+  } else {
+    tg.classList.toggle("pu-open");
+  }
+  if (tog) tog.classList.toggle("open");
 });
 
 injectCss();
