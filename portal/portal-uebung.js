@@ -19,40 +19,44 @@
 const SPECS = window.PORTAL_SPECS || {};
 
 const CSS = `
-.pu{margin-top:12px;border-top:1px dashed #d4ddd7;padding-top:12px}
-.pu .pu-feld{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:8px 0}
-.pu .pu-lab{font-size:.84rem;color:#5b6770;font-weight:600;min-width:92px}
-.pu .pu-vek{display:inline-flex;align-items:center;gap:6px}
-.pu .pu-vek .pu-kl{font-size:2rem;color:#9aa6ac;line-height:1}
-.pu .pu-vek .pu-sp{display:flex;flex-direction:column;gap:5px}
-.pu input.pu-num{width:74px;padding:7px 8px;border:1.5px solid #dfe5e8;border-radius:7px;font-size:.98rem;text-align:center;font-family:inherit}
-.pu input.pu-num:focus{outline:none;border-color:#2e7d5b}
-.pu .pu-jn{display:flex;gap:9px}
-.pu .pu-jn button{border:1.5px solid #dfe5e8;background:#fff;border-radius:9px;padding:7px 20px;cursor:pointer;font-weight:600;color:#5b6770;font-family:inherit;font-size:.95rem}
-.pu .pu-jn button.pu-aktiv{border-color:#2e7d5b;background:#e7f2ec;color:#1f5a40}
-.pu .pu-akt{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
-.pu .pu-btn{background:#2e7d5b;color:#fff;border:0;padding:9px 20px;border-radius:9px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.92rem}
-.pu .pu-btn:hover{background:#1f5a40}
+.pu{margin-top:16px;padding-top:14px;border-top:1px solid var(--border-light,#f0ece6);font-family:var(--sans,'Inter',system-ui,sans-serif)}
+.pu .pu-feld{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0}
+.pu .pu-lab{font-size:.95rem;color:var(--ink-soft,#6b6560);min-width:104px}
+.pu .pu-vek{display:inline-flex;align-items:stretch}
+.pu .pu-mat{position:relative;display:flex;flex-direction:column;gap:7px;padding:7px 17px}
+.pu .pu-mat::before,.pu .pu-mat::after{content:"";position:absolute;top:1px;bottom:1px;width:11px;border:2.5px solid var(--ink-muted,#a09a92)}
+.pu .pu-mat::before{left:0;border-right:0;border-radius:18px 0 0 18px}
+.pu .pu-mat::after{right:0;border-left:0;border-radius:0 18px 18px 0}
+.pu input.pu-num{width:62px;padding:7px 6px;border:1px solid var(--border,#e8e4de);border-radius:var(--radius-xs,8px);font:inherit;font-size:1.05rem;text-align:center;background:var(--bg-card,#fff);color:var(--ink,#2c2c2c)}
+.pu input.pu-num:focus{outline:none;border-color:var(--kiku,#5b6e2e);box-shadow:0 0 0 3px var(--kiku-light,#e8edda)}
+.pu .pu-jn{display:flex;gap:10px}
+.pu .pu-jn button{border:1px solid var(--border,#e8e4de);background:var(--bg-card,#fff);border-radius:999px;padding:8px 24px;cursor:pointer;color:var(--ink-soft,#6b6560);font:inherit;font-weight:600;font-size:.95rem;transition:all var(--transition,.2s)}
+.pu .pu-jn button:hover{border-color:var(--kiku,#5b6e2e)}
+.pu .pu-jn button.pu-aktiv{border-color:var(--kiku,#5b6e2e);background:var(--kiku-bg,#f3f5ec);color:var(--kiku,#5b6e2e)}
+.pu .pu-akt{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
+.pu .pu-btn{background:var(--kiku,#5b6e2e);color:#fff;border:0;padding:10px 26px;border-radius:999px;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;transition:all var(--transition,.2s)}
+.pu .pu-btn:hover{filter:brightness(1.08)}
 .pu .pu-btn:disabled{opacity:.5}
-.pu .pu-btn2{background:#fff;color:#1f5a40;border:1.5px solid #2e7d5b;padding:8px 16px;border-radius:9px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
-.pu .pu-btn2:hover{background:#e7f2ec}
+.pu .pu-btn2{background:var(--kiku-bg,#f3f5ec);color:var(--kiku,#5b6e2e);border:1px solid var(--kiku-light,#e8edda);padding:9px 18px;border-radius:999px;font:inherit;font-weight:600;font-size:.92rem;cursor:pointer;transition:all var(--transition,.2s)}
+.pu .pu-btn2:hover{background:var(--kiku-light,#e8edda)}
 .pu .pu-btn2:disabled{opacity:.45;cursor:default}
-.pu .pu-info{font-size:.84rem;color:#5b6770}
-.pu .pu-rm{margin-top:10px;font-weight:600}
-.pu .pu-rm.ok{color:#1f5a40}.pu .pu-rm.no{color:#c0392b}
-.pu .pu-hint{margin-top:10px;border-left:4px solid #b9821a;background:#fdf4e2;padding:10px 14px;border-radius:0 8px 8px 0;font-size:.94rem;color:#22303a}
-.pu .pu-hint b{color:#b9821a}
-.pu .pu-status{display:inline-block;font-size:.74rem;padding:2px 9px;border-radius:20px;font-weight:600;margin-left:8px}
-.pu .pu-st-offen{background:#f5f7f8;color:#5b6770}
-.pu .pu-st-ok{background:#e7f2ec;color:#1f5a40}
-.pu .pu-st-loes{background:#fdf4e2;color:#b9821a}
-.pu .pu-sb{margin-top:10px}
-.pu .pu-sb .pu-q{font-size:.9rem;color:#5b6770;margin-bottom:6px}
-.pu .pu-sb .pu-row{display:flex;gap:9px;flex-wrap:wrap}
-.pu .pu-sb button{border:1.5px solid #dfe5e8;background:#fff;border-radius:9px;padding:7px 15px;cursor:pointer;font-weight:600;font-size:.88rem;font-family:inherit}
-.pu .pu-sb button.b-ok{color:#1f5a40}.pu .pu-sb button.b-teil{color:#b9821a}.pu .pu-sb button.b-no{color:#c0392b}
-.pu .pu-sb button.pu-aktiv{background:#f5f7f8;border-color:#5b6770}
-.pu-hinweis-anmeldung{font-size:.78rem;color:#8a9499;margin-top:8px}
+.pu .pu-info{font-size:.9rem;color:var(--ink-muted,#a09a92)}
+.pu .pu-rm{margin-top:12px;font-weight:600;font-size:1rem}
+.pu .pu-rm.ok{color:var(--success,#5b6e2e)}.pu .pu-rm.no{color:var(--error,#c75c3a)}
+.pu .pu-hint{margin-top:12px;border-left:3px solid var(--mushikuri,#c8b55e);background:var(--mushikuri-light,#f7f3e2);padding:14px 18px;border-radius:var(--radius-sm,14px);font-size:1rem;line-height:1.65;color:var(--ink-soft,#6b6560)}
+.pu .pu-hint b{color:#9a8327}
+.pu .pu-status{display:inline-block;font-size:.72rem;letter-spacing:.02em;padding:3px 11px;border-radius:999px;font-weight:600;margin-left:10px;vertical-align:middle}
+.pu .pu-st-offen{background:var(--border-light,#f0ece6);color:var(--ink-muted,#a09a92)}
+.pu .pu-st-ok{background:var(--success-bg,#e8edda);color:var(--success,#5b6e2e)}
+.pu .pu-st-loes{background:var(--mushikuri-light,#f7f3e2);color:#9a8327}
+.pu .pu-sb{margin-top:12px}
+.pu .pu-sb .pu-q{font-size:.95rem;color:var(--ink-soft,#6b6560);margin-bottom:8px}
+.pu .pu-sb .pu-row{display:flex;gap:10px;flex-wrap:wrap}
+.pu .pu-sb button{border:1px solid var(--border,#e8e4de);background:var(--bg-card,#fff);border-radius:999px;padding:8px 17px;cursor:pointer;font:inherit;font-weight:600;font-size:.9rem;transition:all var(--transition,.2s)}
+.pu .pu-sb button:hover{border-color:var(--ink-muted,#a09a92)}
+.pu .pu-sb button.b-ok{color:var(--success,#5b6e2e)}.pu .pu-sb button.b-teil{color:#9a8327}.pu .pu-sb button.b-no{color:var(--error,#c75c3a)}
+.pu .pu-sb button.pu-aktiv{background:var(--kiku-bg,#f3f5ec);border-color:var(--kiku,#5b6e2e)}
+.pu .pu-hinweis-anmeldung{font-size:.82rem;color:var(--ink-muted,#a09a92);margin-top:10px}
 `;
 
 function injectCss() { const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); }
@@ -143,11 +147,11 @@ function feldEl(fd, fi) {
   }
   const lab = fd.label || "Vektor";
   return elFrom(`<div class="pu-feld"><span class="pu-lab">${lab}</span>
-    <span class="pu-vek"><span class="pu-kl">(</span><span class="pu-sp">
+    <span class="pu-vek"><span class="pu-mat">
       <input class="pu-num" data-fi="${fi}" data-k="0" inputmode="decimal" placeholder="?">
       <input class="pu-num" data-fi="${fi}" data-k="1" inputmode="decimal" placeholder="?">
       <input class="pu-num" data-fi="${fi}" data-k="2" inputmode="decimal" placeholder="?">
-    </span><span class="pu-kl">)</span></span></div>`);
+    </span></span></div>`);
 }
 
 function gefuellt(spec, tg, box) {
@@ -245,6 +249,7 @@ async function save(aufgabeId, spec, daten) {
   catch (e) { console.warn("Speichern fehlgeschlagen:", e); }
 }
 
+injectCss();
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", enhanceAll);
 else enhanceAll();
 window.PortalUebung = { enhanceAll };
