@@ -82,7 +82,7 @@ function baueLeiste() {
   const st = document.createElement("style"); st.textContent = STYLE; document.head.appendChild(st);
   bar = el(`<div class="pa-bar">
     <div class="pa-form pa-hidden">
-      <label>Matrikelnummer</label><input type="text" class="pa-mat" inputmode="numeric" placeholder="z. B. 100423">
+      <label>Matrikelnummer</label><input type="text" class="pa-mat" inputmode="text" autocomplete="off" autocapitalize="off" placeholder="z. B. 100423">
       <label>PIN / Passwort</label><input type="password" class="pa-pin">
       <button class="pa-go">Anmelden</button>
       <div class="pa-err"></div>

@@ -67,7 +67,7 @@ body.presi .tg .pu{display:none!important}
 
 function injectCss() { const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s); }
 function typeset(node) { if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([node]).catch(() => {}); }
-function num(s) { if (s == null) return NaN; return parseFloat(String(s).replace(",", ".").replace(/\s/g, "")); }
+function num(s) { if (s == null) return NaN; return parseFloat(String(s).replace(/[−–—]/g, "-").replace(",", ".").replace(/\s/g, "")); }
 function elFrom(html) { const t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstChild; }
 
 const ST = new WeakMap(); // tg -> Zustand
@@ -149,14 +149,14 @@ function feldEl(fd, fi) {
   }
   if (fd.typ === "zahl") {
     return elFrom(`<div class="pu-feld"><span class="pu-lab">${fd.label || "Ergebnis"}</span>
-      <input class="pu-num" data-fi="${fi}" data-k="0" inputmode="decimal" placeholder="?"></div>`);
+      <input class="pu-num" data-fi="${fi}" data-k="0" inputmode="text" autocomplete="off" autocapitalize="off" placeholder="?"></div>`);
   }
   const lab = fd.label || "Vektor";
   return elFrom(`<div class="pu-feld"><span class="pu-lab">${lab}</span>
     <span class="pu-vek"><span class="pu-mat">
-      <input class="pu-num" data-fi="${fi}" data-k="0" inputmode="decimal" placeholder="?">
-      <input class="pu-num" data-fi="${fi}" data-k="1" inputmode="decimal" placeholder="?">
-      <input class="pu-num" data-fi="${fi}" data-k="2" inputmode="decimal" placeholder="?">
+      <input class="pu-num" data-fi="${fi}" data-k="0" inputmode="text" autocomplete="off" autocapitalize="off" placeholder="?">
+      <input class="pu-num" data-fi="${fi}" data-k="1" inputmode="text" autocomplete="off" autocapitalize="off" placeholder="?">
+      <input class="pu-num" data-fi="${fi}" data-k="2" inputmode="text" autocomplete="off" autocapitalize="off" placeholder="?">
     </span></span></div>`);
 }
 
