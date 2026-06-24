@@ -24579,12 +24579,22 @@ window.addEventListener('load',function(){
 })();
 </script>
 <script>
-function togglePresi(){
-  var on=document.body.classList.toggle('presi');
+function setPresi(on){
+  document.body.classList.toggle('presi', on);
   var l=document.getElementById('presi-label');
   if(l)l.textContent=on?'Präsentation: an':'Präsentation';
   try{localStorage.setItem('presiMode',on?'1':'0');}catch(e){}
 }
+function fsRequest(){var el=document.documentElement;var rq=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(rq){try{var p=rq.call(el);if(p&&p.catch)p.catch(function(){});}catch(e){}}}
+function fsExit(){var ex=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;var fe=document.fullscreenElement||document.webkitFullscreenElement;if(ex&&fe){try{ex.call(document);}catch(e){}}}
+function togglePresi(){
+  var on=!document.body.classList.contains('presi');
+  setPresi(on);
+  if(on){fsRequest();}else{fsExit();}
+}
+function _onFsChange(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&document.body.classList.contains('presi'))setPresi(false);}
+document.addEventListener('fullscreenchange',_onFsChange);
+document.addEventListener('webkitfullscreenchange',_onFsChange);
 try{if(localStorage.getItem('presiMode')==='1'){document.body.classList.add('presi');var _pl=document.getElementById('presi-label');if(_pl)_pl.textContent='Präsentation: an';}}catch(e){}
 </script>
 <script>
