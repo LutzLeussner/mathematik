@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RootCamp · Corporate Identity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wurzelgruen:#5b6e2e; --wurzel-light:#e8edda; --wurzel-bg:#f3f5ec;
+    --koralle:#c75c3a; --koralle-light:#fceee9;
+    --nebelblau:#8a9da7; --nebel-light:#ecf1f4;
+    --lagerfeuer:#c8b55e; --lager-light:#f7f3e2;
+    --pergament:#fffcf6; --karte:#ffffff;
+    --tinte:#2c2c2c; --tinte-soft:#6b6560; --tinte-muted:#a09a92;
+    --rand:#e8e4de; --rand-light:#f0ece6;
+    --radius:24px; --radius-sm:14px; --radius-xs:8px;
+    --shadow:0 4px 20px rgba(44,42,38,.07); --shadow-sm:0 1px 3px rgba(44,42,38,.05);
+    --serif:'DM Serif Display',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--pergament);color:var(--tinte);font-family:var(--sans);line-height:1.65;font-size:17px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 90px}
+  /* Cover */
+  .cover{background:var(--wurzelgruen);color:#fff;padding:64px 40px 56px;border-radius:0 0 var(--radius) var(--radius);text-align:center;margin-bottom:48px}
+  .logo-svg{width:min(420px,82%);height:auto;display:block;margin:0 auto}
+  .cover .claim{font-size:1.15rem;color:rgba(255,255,255,.85);margin-top:22px;font-style:italic}
+  .cover .kicker{letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:rgba(255,255,255,.7);margin-top:30px;font-weight:600}
+  /* Sections */
+  section{margin:46px 0}
+  h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;color:var(--wurzelgruen);margin:0 0 6px}
+  h2 .nr{color:var(--tinte-muted);font-size:1.1rem;font-family:var(--sans);font-weight:700;margin-right:12px}
+  .lead{color:var(--tinte-soft);margin:0 0 22px;max-width:60ch}
+  p{max-width:64ch}
+  .karte{background:var(--karte);border:1px solid var(--rand);border-radius:var(--radius-sm);padding:24px 26px;box-shadow:var(--shadow-sm)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  /* Farben */
+  .farben{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:640px){.farben{grid-template-columns:1fr 1fr}}
+  .swatch{border:1px solid var(--rand);border-radius:var(--radius-sm);overflow:hidden;background:#fff}
+  .swatch .farbe{height:88px}
+  .swatch .info{padding:11px 14px}
+  .swatch .name{font-weight:700;font-size:.95rem}
+  .swatch .hex{color:var(--tinte-muted);font-size:.82rem;font-variant-numeric:tabular-nums;text-transform:uppercase}
+  .swatch .rolle{color:var(--tinte-soft);font-size:.8rem;margin-top:3px}
+  /* Typo */
+  .typo-serif{font-family:var(--serif);font-size:2.6rem;line-height:1.1;margin:4px 0}
+  .typo-sans{font-family:var(--sans);font-size:1.05rem}
+  .typo-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-muted);font-weight:700;margin-bottom:6px}
+  .glyphs{font-family:var(--serif);font-size:2rem;color:var(--wurzelgruen);letter-spacing:.1em}
+  /* Claims */
+  .claims{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .claims li{background:var(--wurzel-bg);border-left:3px solid var(--wurzelgruen);border-radius:0 var(--radius-xs) var(--radius-xs) 0;padding:12px 16px;font-family:var(--serif);font-size:1.15rem;color:var(--tinte)}
+  .claims li.fav::after{content:" ★ Empfehlung";font-family:var(--sans);font-size:.7rem;color:var(--wurzelgruen);font-weight:700;letter-spacing:.08em;vertical-align:middle}
+  /* Tonalität */
+  .ton{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rand);border-radius:var(--radius-sm);overflow:hidden}
+  @media(max-width:640px){.ton{grid-template-columns:1fr}}
+  .ton .so,.ton .nicht{padding:18px 20px}
+  .ton .so{background:var(--wurzel-bg)} .ton .nicht{background:var(--koralle-light)}
+  .ton h4{margin:0 0 10px;font-size:.95rem}
+  .ton .so h4{color:var(--wurzelgruen)} .ton .nicht h4{color:var(--koralle)}
+  .ton ul{margin:0;padding-left:18px;font-size:.92rem;color:var(--tinte-soft)} .ton li{margin:5px 0}
+  /* Anwendung */
+  .mock-header{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--rand);border-radius:var(--radius-sm);padding:16px 20px}
+  .sig{width:46px;height:46px;flex:0 0 auto}
+  .mock-header .titel{font-family:var(--serif);font-size:1.5rem;line-height:1}
+  .mock-header .sub{font-size:.8rem;color:var(--tinte-soft);margin-top:3px}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .btn{border:0;border-radius:999px;padding:11px 24px;font:inherit;font-weight:600;cursor:default}
+  .btn-pri{background:var(--wurzelgruen);color:#fff}
+  .btn-sek{background:var(--wurzel-bg);color:var(--wurzelgruen);border:1px solid var(--wurzel-light)}
+  .favicon{width:44px;height:44px;background:var(--wurzelgruen);border-radius:11px;display:inline-flex;align-items:center;justify-content:center}
+  .donts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  @media(max-width:640px){.donts{grid-template-columns:1fr}}
+  .dont{font-size:.88rem;color:var(--tinte-soft);background:#fff;border:1px solid var(--rand);border-radius:var(--radius-xs);padding:12px 14px}
+  .dont b{color:var(--koralle)}
+  .foot{margin-top:60px;text-align:center;color:var(--tinte-muted);font-size:.82rem}
+  code{background:var(--wurzel-bg);padding:2px 7px;border-radius:5px;font-size:.85em}
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover">
+  <svg class="logo-svg" viewBox="0 0 440 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RootCamp Logo">
+    <!-- Wurzelzeichen, dessen Querbalken über das Wort läuft -->
+    <path d="M14 60 L30 60 L46 84 L70 20 L430 20" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="78" y="74" font-family="DM Serif Display, Georgia, serif" font-size="54" fill="#ffffff">RootCamp</text>
+  </svg>
+  <div class="claim">Wo Mathe Wurzeln schlägt.</div>
+  <div class="kicker">Corporate Identity · Markenhandbuch</div>
+</div>
+
+<div class="wrap">
+
+  <!-- MARKE -->
+  <section>
+    <h2><span class="nr">01</span>Die Marke</h2>
+    <p class="lead">RootCamp ist das digitale Trainingslager für Mathematik der Klassen 7–12 in Mecklenburg-Vorpommern — ein Ort, an dem Schülerinnen und Schüler übend ein tragfähiges Fundament aufbauen.</p>
+    <div class="karte">
+      <p style="margin-top:0"><b>Der Name.</b> <b>Root</b> ist die <b>Wurzel</b> (√) — das mathematische Symbol und zugleich das Bild für <i>Grundlagen, die tragen</i>. <b>Camp</b> steht fürs Trainingslager: üben, wiederholen, stärker werden. Zusammen: <b>Mathe von Grund auf, Schritt für Schritt.</b></p>
+      <p style="margin-bottom:0"><b>Haltung.</b> Ermutigend statt einschüchternd. Fehler sind Teil des Wegs. Klar, bodenständig, geduldig — wie ein guter Trainer.</p>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section>
+    <h2><span class="nr">02</span>Logo</h2>
+    <p class="lead">Das Wurzelzeichen ist das Herz der Marke: Sein Querbalken (Vinculum) zieht sich über das ganze Wort — die Marke steht buchstäblich „unter der Wurzel".</p>
+    <div class="karte" style="text-align:center;background:var(--wurzel-bg)">
+      <svg style="width:min(360px,80%);height:auto" viewBox="0 0 440 96" xmlns="http://www.w3.org/2000/svg" aria-label="RootCamp">
+        <path d="M14 60 L30 60 L46 84 L70 20 L430 20" fill="none" stroke="#5b6e2e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="78" y="74" font-family="DM Serif Display, Georgia, serif" font-size="54" fill="#2c2c2c">RootCamp</text>
+      </svg>
+    </div>
+    <div class="grid2" style="margin-top:18px">
+      <div class="karte" style="text-align:center">
+        <div class="typo-label">Signet (Favicon, App)</div>
+        <svg style="width:84px;height:84px" viewBox="0 0 100 100" aria-label="RootCamp Signet">
+          <rect width="100" height="100" rx="24" fill="#5b6e2e"/>
+          <path d="M22 56 L34 56 L46 74 L62 30 L82 30" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p style="font-size:.85rem;color:var(--tinte-soft);margin:10px auto 0">Nur das <b>√</b> im grünen Quadrat — für Favicon, Profilbild, kleine Flächen.</p>
+      </div>
+      <div class="karte">
+        <div class="typo-label">Regeln</div>
+        <ul style="margin:0;padding-left:18px;font-size:.9rem;color:var(--tinte-soft)">
+          <li>Schutzraum: rundherum mind. die Höhe des „R" frei lassen.</li>
+          <li>Mindestbreite Volllogo: ca. 120 px / 32 mm.</li>
+          <li>Farben: Wurzelgrün auf hellem Grund, Weiß auf Wurzelgrün.</li>
+          <li>Der Querbalken endet immer bündig über dem letzten Buchstaben.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="donts">
+      <div class="dont"><b>Nicht</b> verzerren oder den Querbalken weglassen.</div>
+      <div class="dont"><b>Nicht</b> auf unruhigen Fotos ohne Fläche platzieren.</div>
+      <div class="dont"><b>Nicht</b> in Fremdfarben (nur Palette unten).</div>
+      <div class="dont"><b>Nicht</b> die Wortmarke in einer anderen Schrift setzen.</div>
+    </div>
+  </section>
+
+  <!-- FARBEN -->
+  <section>
+    <h2><span class="nr">03</span>Farben</h2>
+    <p class="lead">Eine warme, ruhige Palette nach traditionellen Naturtönen — Wurzelgrün führt, Pergament trägt, drei Akzente setzen Signale.</p>
+    <div class="farben">
+      <div class="swatch"><div class="farbe" style="background:#5b6e2e"></div><div class="info"><div class="name">Wurzelgrün</div><div class="hex">#5B6E2E</div><div class="rolle">Primär · Logo, Buttons, Links</div></div></div>
+      <div class="swatch"><div class="farbe" style="background:#fffcf6;border-bottom:1px solid var(--rand)"></div><div class="info"><div class="name">Pergament</div><div class="hex">#FFFCF6</div><div class="rolle">Hintergrund</div></div></div>
+      <div class="swatch"><div class="farbe" style="background:#2c2c2c"></div><div class="info"><div class="name">Tinte</div><div class="hex">#2C2C2C</div><div class="rolle">Text</div></div></div>
+      <div class="swatch"><div class="farbe" style="background:#c75c3a"></div><div class="info"><div class="name">Koralle</div><div class="hex">#C75C3A</div><div class="rolle">Signal · Fehler, Hervorhebung</div></div></div>
+      <div class="swatch"><div class="farbe" style="background:#c8b55e"></div><div class="info"><div class="name">Lagerfeuer</div><div class="hex">#C8B55E</div><div class="rolle">Warmer Akzent · Hinweise</div></div></div>
+      <div class="swatch"><div class="farbe" style="background:#8a9da7"></div><div class="info"><div class="name">Nebelblau</div><div class="hex">#8A9DA7</div><div class="rolle">Sekundär · ruhige Akzente</div></div></div>
+    </div>
+    <p style="font-size:.85rem;color:var(--tinte-muted);margin-top:14px">Helle Abtönungen für Flächen: Wurzelgrün-Hell <code>#E8EDDA</code>, Lagerfeuer-Hell <code>#F7F3E2</code>, Koralle-Hell <code>#FCEEE9</code>.</p>
+  </section>
+
+  <!-- TYPOGRAFIE -->
+  <section>
+    <h2><span class="nr">04</span>Typografie</h2>
+    <p class="lead">Zwei Schriften, klare Aufgaben: eine charaktervolle Serifenschrift für Überschriften, eine ruhige Grotesk für alles andere.</p>
+    <div class="grid2">
+      <div class="karte">
+        <div class="typo-label">Display · Überschriften & Wortmarke</div>
+        <div class="typo-serif">DM Serif Display</div>
+        <div class="glyphs">A a R √ x² 7 12</div>
+        <p style="font-size:.85rem;color:var(--tinte-soft);margin-bottom:0">Für Titel, Sektionsköpfe, große Zahlen. Sparsam und groß einsetzen.</p>
+      </div>
+      <div class="karte">
+        <div class="typo-label">Text & Oberfläche</div>
+        <div class="typo-sans" style="font-size:1.5rem;font-weight:600">Inter</div>
+        <p class="typo-sans" style="margin:8px 0 0">Fließtext, Aufgaben, Buttons, Tabellen. Gewichte 400/500/600/700. Gut lesbar am Smartboard und auf dem Handy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TONALITÄT -->
+  <section>
+    <h2><span class="nr">05</span>Tonalität</h2>
+    <p class="lead">RootCamp spricht Schülerinnen und Schüler direkt mit „du" an — wie ein geduldiger Trainer, der zutraut statt vorführt.</p>
+    <div class="ton">
+      <div class="so">
+        <h4>So klingt RootCamp</h4>
+        <ul>
+          <li>„Fast! Schau nochmal auf das Vorzeichen."</li>
+          <li>klar, kurz, ermutigend</li>
+          <li>Fehler als Lernschritt</li>
+          <li>„du", konkret, ein Gedanke pro Satz</li>
+        </ul>
+      </div>
+      <div class="nicht">
+        <h4>So nicht</h4>
+        <ul>
+          <li>„Falsch." (ohne Hilfe)</li>
+          <li>überladen mit Fachjargon</li>
+          <li>belehrend oder spöttisch</li>
+          <li>lange Schachtelsätze</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLAIMS -->
+  <section>
+    <h2><span class="nr">06</span>Claim &amp; Tagline</h2>
+    <p class="lead">Der Claim transportiert die Doppelbedeutung Wurzel + Fundament. Frische Vorschläge zur Auswahl:</p>
+    <ul class="claims">
+      <li class="fav">Wo Mathe Wurzeln schlägt.</li>
+      <li>Schlag Wurzeln in Mathe.</li>
+      <li>Mathe von Grund auf.</li>
+      <li>Grundlagen, die tragen.</li>
+      <li>Dein Trainingslager für Mathe.</li>
+      <li>Üben, bis es Wurzeln schlägt.</li>
+      <li>Stark in Mathe — von der Wurzel an.</li>
+    </ul>
+  </section>
+
+  <!-- ANWENDUNG -->
+  <section>
+    <h2><span class="nr">07</span>Anwendung</h2>
+    <p class="lead">So sieht RootCamp in der Praxis aus — Kopfzeile, Buttons, Signet.</p>
+    <div class="mock-header" style="margin-bottom:16px">
+      <svg class="sig" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#5b6e2e"/><path d="M22 56 L34 56 L46 74 L62 30 L82 30" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div class="titel">RootCamp</div>
+        <div class="sub">Mathematik · Klasse 7–12 · Mecklenburg-Vorpommern</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="karte">
+        <div class="typo-label">Buttons</div>
+        <div class="btnrow">
+          <button class="btn btn-pri">Antwort prüfen</button>
+          <button class="btn btn-sek">Hinweis anzeigen</button>
+        </div>
+      </div>
+      <div class="karte">
+        <div class="typo-label">Signet / Favicon</div>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:6px">
+          <span class="favicon"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><path d="M22 56 L34 56 L46 74 L62 30 L82 30" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="font-size:.85rem;color:var(--tinte-soft)">rootcamp.de · rootcamp.schule</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">RootCamp — Corporate Identity · Stand Juni 2026 · Schriften: DM Serif Display &amp; Inter</div>
+</div>
+</body>
+</html>
