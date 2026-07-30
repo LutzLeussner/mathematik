@@ -15408,6 +15408,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+    <!-- Kernidee-Box: Ableitung an einer Stelle ist eine ZAHL -->
+    <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+      <strong style="color:#8a7a30">Kernidee:</strong>
+      \(f'(x_0)\) ist <strong>immer eine Zahl</strong> — die momentane Änderungsrate von \(f\) an der <em>einen</em> Stelle \(x_0\).
+      Sie entsteht <strong>immer</strong> als Grenzwert mittlerer Änderungsraten über Intervalle, die sich auf \(x_0\) zusammenziehen.
+      Geometrisch ist sie die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).
+      Die <strong>Ableitungsfunktion</strong> \(f'\) ist etwas anderes: Sie ordnet jeder Stelle \(x\) diese Zahl zu.
+      Wer beides gleichsetzt, kann \(f'(2)\) berechnen, aber nicht sagen, was das Ergebnis bedeutet.
+    </div>
+
     <div class="section-label">Ableitungen</div>
 
     <div class="card" style="background:linear-gradient(135deg,#1a6fbf,#1555a0);color:#fff;border:none;margin-bottom:18px;">
@@ -15456,31 +15466,84 @@ window.addEventListener('resize',function(){updateSimulator();});
             <span class="card-title">Grundvorstellungen der Ableitung</span>
         </div>
         <div class="card-body">
-            <div class="ip">Die Ableitung ist nicht nur eine Rechenvorschrift — sie hat mehrere <strong>Bedeutungen</strong>, die du kennen musst:</div>
+            <div class="ip">Die Ableitung ist nicht nur eine Rechenvorschrift — sie hat vier <strong>Bedeutungen</strong>. Zwei davon knüpfen an Situationen aus der Welt an (<em>primär</em>), zwei an mathematische Objekte (<em>sekundär</em>). Du brauchst beide Sorten: die primären, um eine Sachaufgabe überhaupt zu deuten, die sekundären, um sie zu rechnen.</div>
             <div style="display:grid;gap:10px;margin-top:12px">
                 <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
-                    <strong>1. Momentane Änderungsrate</strong><br>
-                    f'(x₀) gibt an, wie schnell sich f an der Stelle x₀ ändert.<br>
-                    <em>Beispiel:</em> Die Geschwindigkeit v(t) = s'(t) ist die momentane Änderungsrate des Weges.
+                    <strong>1. Momentane Änderungsrate</strong> <span style="font-size:11px;font-weight:700;color:#5b6e2e;background:#e3ebd6;border-radius:10px;padding:1px 8px;margin-left:4px">primär</span><br>
+                    \(f'(x_0)\) gibt an, wie schnell sich \(f\) an der Stelle \(x_0\) ändert.<br>
+                    <em>Beispiel:</em> Die Geschwindigkeit \(v(t) = s'(t)\) ist die momentane Änderungsrate des Weges.
+                </div>
+                <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
+                    <strong>2. Verstärkungsfaktor</strong> <span style="font-size:11px;font-weight:700;color:#5b6e2e;background:#e3ebd6;border-radius:10px;padding:1px 8px;margin-left:4px">primär</span><br>
+                    Ändert sich \(x\) um eine kleine Einheit, ändert sich \(f(x)\) um etwa \(f'(x_0)\) Einheiten.<br>
+                    <em>Beispiel:</em> „Pro Grad mehr dehnt sich die Stange um 0,024 mm" — das ist \(f'(T)\).
                 </div>
                 <div style="background:#eef3f5;border-left:3px solid #8a9da7;padding:10px 12px;border-radius:2px">
-                    <strong>2. Tangentensteigung</strong><br>
-                    f'(x₀) ist die Steigung der Tangente an den Graphen von f im Punkt (x₀ | f(x₀)).<br>
-                    <em>Geometrisch:</em> Die Sekante „kippt" in die Tangente, wenn h → 0.
+                    <strong>3. Tangentensteigung</strong> <span style="font-size:11px;font-weight:700;color:#5f7883;background:#dee7ec;border-radius:10px;padding:1px 8px;margin-left:4px">sekundär</span><br>
+                    \(f'(x_0)\) ist die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).<br>
+                    <em>Geometrisch:</em> Die Sekante „kippt" in die Tangente, wenn \(h \to 0\).
                 </div>
-                <div style="background:#fdf6ee;border-left:3px solid #c8b55e;padding:10px 12px;border-radius:2px">
-                    <strong>3. Verstärkungsfaktor</strong><br>
-                    Wenn x sich um eine kleine Einheit ändert, ändert sich f(x) um etwa f'(x₀) Einheiten.<br>
-                    <em>Beispiel:</em> „Pro Grad mehr dehnt sich die Stange um 0,024 mm" — das ist f'(T).
-                </div>
-                <div style="background:#faf0ee;border-left:3px solid #c75c3a;padding:10px 12px;border-radius:2px">
-                    <strong>4. Lokale lineare Approximation</strong><br>
-                    In der Nähe von x₀ kann man f durch eine Gerade annähern: f(x) ≈ f(x₀) + f'(x₀) · (x − x₀).<br>
-                    <em>Anwendung:</em> Näherungsrechnung, Fehlerabschätzung, Linearisierung.
+                <div style="background:#eef3f5;border-left:3px solid #8a9da7;padding:10px 12px;border-radius:2px">
+                    <strong>4. Lokale lineare Näherung</strong> <span style="font-size:11px;font-weight:700;color:#5f7883;background:#dee7ec;border-radius:10px;padding:1px 8px;margin-left:4px">sekundär</span><br>
+                    In der Nähe von \(x_0\) lässt sich \(f\) durch eine Gerade ersetzen: \(f(x) \approx f(x_0) + f'(x_0) \cdot (x - x_0)\).<br>
+                    <em>Das ist die Tangente als Rechenwerkzeug</em> — und zugleich die Begründung dafür, warum Vorstellung 2 nur „etwa" sagt.
                 </div>
             </div>
-            <div class="hint" style="margin-top:12px"><strong>Wichtig:</strong> Die ersten drei Vorstellungen solltest du dir gut einprägen — sie helfen dir, Aufgaben im Sachkontext zu lösen. Die vierte Vorstellung vertieft dein Verständnis und wird in weiterführenden Kursen wichtig.</div>
+            <div class="hint" style="margin-top:12px"><strong>Wie die vier zusammenhängen:</strong> Es sind nicht vier Dinge, sondern <strong>eine</strong> Zahl in vier Beleuchtungen. 1 und 2 sagen dasselbe in verschiedenen Worten — 1 als Rate („pro Zeiteinheit"), 2 als Wirkung eines Schrittes. 3 ist das Bild dazu, 4 macht aus dem Bild eine Formel. Wenn du in einer Aufgabe nicht weiterkommst, wechsle die Beleuchtung.</div>
         </div>
+    </div>
+
+    <!-- Phase 1.5: Conceptual Change — Schuelerperspektive und Fachperspektive gegenueberstellen -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Was viele zuerst denken — und was gilt</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Die folgenden Sätze hört man in fast jedem Kurs. Sie sind nicht dumm — sie sind der naheliegende erste Zugriff. Aber sie tragen nicht weit. Lies beide Spalten nebeneinander und prüfe, welche Formulierung du selbst im Kopf hast.</div>
+            <div style="overflow-x:auto;margin-top:12px">
+              <table style="border-collapse:collapse;width:100%;font-size:14.5px">
+                <tr>
+                  <th style="text-align:left;padding:8px 12px;border:1px solid var(--border);background:#faf0ee;width:44%">Erster Zugriff</th>
+                  <th style="text-align:left;padding:8px 12px;border:1px solid var(--border);background:#f0f4e8">Was tatsächlich gilt</th>
+                </tr>
+                <tr>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">„Ableiten heißt: Exponent nach vorn, dann eins weniger."</td>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">Das ist eine <em>Regel</em>, nicht die Bedeutung. Die Potenzregel ist nur eine Abkürzung für den Grenzwert, den man sonst jedes Mal neu bilden müsste.</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">„\(f'\) ist einfach die neue Funktion, die man ausrechnet."</td>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">\(f'\) ist eine Funktion, \(f'(x_0)\) ist eine <strong>Zahl</strong>. Erst diese Zahl lässt sich deuten — als Rate, als Steigung. Wer nur \(f'\) sieht, kann rechnen, aber nicht antworten.</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">„Die Tangente berührt den Graphen und schneidet ihn nicht."</td>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">Die Tangente darf den Graphen durchaus schneiden — bei \(f(x)=x^3\) tut sie das im Ursprung. Entscheidend ist nur die <em>Steigung</em> an der Berührstelle, nicht die Lage im Großen.</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">„Wenn \(f'(x_0)=0\) ist, liegt dort ein Hoch- oder Tiefpunkt."</td>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">\(f'(x_0)=0\) heißt nur: die Tangente ist waagerecht. Bei \(f(x)=x^3\) ist \(f'(0)=0\), und trotzdem gibt es dort kein Extremum, sondern einen Sattelpunkt.</td>
+                </tr>
+              </table>
+            </div>
+            <div class="hint" style="margin-top:12px"><strong>Warum das hier steht:</strong> Diese Vorstellungen verschwinden nicht dadurch, dass man die richtige Definition liest. Sie verschwinden erst, wenn man den <em>Unterschied</em> zwischen beiden Spalten selbst bemerkt hat. Genau dafür ist die Tabelle da.</div>
+        </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">D1.0</span><span class="td dm">★★</span></div>
+          <div class="tq">Anna sagt: „\(f'(2)\) ist die Ableitung von \(f\)." Bert sagt: „Nein, \(f'\) ist die Ableitung von \(f\); \(f'(2)\) ist eine einzelne Zahl." Wer hat recht? Formuliere einen Satz, der beide Aussagen sauber trennt, und gib für \(f(x)=x^2\) an, was \(f'\) und was \(f'(2)\) ist.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">Bert hat recht. Sauber getrennt: <strong>\(f'\) ist die Ableitungsfunktion</strong> von \(f\) — sie ordnet jeder Stelle \(x\) eine Zahl zu. <strong>\(f'(2)\) ist der Wert dieser Funktion an der Stelle 2</strong> — eine einzelne Zahl, nämlich die momentane Änderungsrate von \(f\) bei \(x=2\).</div>
+        <div class="ip">Für \(f(x)=x^2\): \(f'(x)=2x\) ist die Ableitungsfunktion, \(f'(2)=4\) ist die Zahl. Geometrisch: Die Tangente an die Normalparabel im Punkt \((2\,|\,4)\) hat die Steigung 4.</div>
+        <div class="ip"><em>Warum das zählt:</em> In einer Sachaufgabe wird nie nach \(f'\) gefragt, sondern immer nach einem Wert an einer bestimmten Stelle — und der ist zu deuten, nicht nur zu berechnen.</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K6: Fachbegriffe präzise unterscheiden und verwenden · K1: Eine Behauptung prüfen und begründet entscheiden</div>
+      </div>
     </div>
 
     <!-- Interaktive Visualisierung: Sekante → Tangente (D14, T1, T2) -->
@@ -15602,12 +15665,12 @@ window.addEventListener('resize',function(){updateSimulator();});
 
             <div class="ip" style="margin-top:10px"><strong>Differenzenquotient (Sekantensteigung):</strong></div>
             \[\frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 8px;">Das ist die <strong>mittlere Änderungsrate</strong> zwischen x₀ und x₀ + h — also die Steigung der Sekante durch die Punkte P und Q.</div>
+            <div class="ip" style="margin-top: 8px;">Das ist die <strong>mittlere Änderungsrate</strong> von \(f\) auf dem Intervall \([x_0;\, x_0+h]\) — also die Steigung der Sekante durch die Punkte \(P(x_0 \,|\, f(x_0))\) und \(Q(x_0+h \,|\, f(x_0+h))\). Sie hängt <strong>immer von zwei Stellen</strong> ab, nie von einer allein.</div>
 
             <div class="ip" style="margin-top: 15px;"><strong>Differentialquotient (Tangentensteigung):</strong></div>
             \[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 8px;">Wenn h immer kleiner wird, nähert sich die Sekante der Tangente an. Der Grenzwert des Differenzenquotienten ist die <strong>momentane Änderungsrate</strong> — die Ableitung f'(x₀).</div>
-            <div class="hint" style="margin-top:10px"><strong>Zusammenfassung:</strong> Die Ableitung f'(x₀) beschreibt, wie schnell sich f an der Stelle x₀ ändert. Geometrisch ist sie die Steigung der Tangente.</div>
+            <div class="ip" style="margin-top: 8px;">Wenn \(h\) immer kleiner wird, zieht sich das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Der Grenzwert des Differenzenquotienten ist die <strong>momentane Änderungsrate</strong> — die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
+            <div class="hint" style="margin-top:10px"><strong>Der entscheidende Schritt</strong> ist der Übergang \(h \to 0\): Aus einer Aussage über ein <em>Intervall</em> wird eine Aussage über eine <em>Stelle</em>. Alles, was danach kommt — Ableitungsregeln, Extrema, Wendepunkte — steht auf diesem einen Schritt.</div>
         </div>
     </div>
 
@@ -15677,8 +15740,9 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div style="background: #eef3f5; border-left: 3px solid #8a9da7; padding: 10px 12px; margin: 10px 0; border-radius: 2px;">
                 • Wenn \(f'(x) > 0\) auf einem Intervall → \(f\) ist <strong>streng monoton wachsend</strong> dort<br>
                 • Wenn \(f'(x) < 0\) auf einem Intervall → \(f\) ist <strong>streng monoton fallend</strong> dort<br>
-                • Wenn \(f'(x) = 0\) → mögliches <strong>Extremum</strong> (Hochpunkt oder Tiefpunkt)
+                • Wenn \(f'(x_0) = 0\) → waagerechte Tangente, also <strong>mögliches</strong> Extremum
             </div>
+            <div class="hint" style="margin-top:10px"><strong>Vorsicht — typischer Fehler:</strong> \(f'(x_0)=0\) allein genügt <strong>nie</strong>. Bei \(f(x)=x^3\) ist \(f'(0)=0\), aber \(f\) steigt links und rechts von 0 weiter — dort liegt ein <em>Sattelpunkt</em>, kein Extremum. Erst ein <strong>Vorzeichenwechsel von \(f'\)</strong> entscheidet: von + nach − ergibt einen Hochpunkt, von − nach + einen Tiefpunkt. Bleibt das Vorzeichen gleich, ist es keins von beidem.</div>
         </div>
     </div>
 
@@ -15690,9 +15754,9 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="card-body">
             <div class="ip"><strong>Die zweite Ableitung</strong> \(f''(x)\) beschreibt die Krümmung:</div>
             <div style="background: #eef3f5; border-left: 3px solid #8a9da7; padding: 10px 12px; margin: 10px 0; border-radius: 2px;">
-                • Wenn \(f''(x) > 0\) → Graph ist <strong>konkav (linkskrümm)</strong> – wie ∪<br>
-                • Wenn \(f''(x) < 0\) → Graph ist <strong>konvex (rechtskrümm)</strong> – wie ∩<br>
-                • Wenn \(f''(x) = 0\) → möglicher <strong>Wendepunkt</strong>
+                • Wenn \(f''(x) > 0\) → Graph ist <strong>linksgekrümmt (konvex)</strong> – wie ∪<br>
+                • Wenn \(f''(x) < 0\) → Graph ist <strong>rechtsgekrümmt (konkav)</strong> – wie ∩<br>
+                • Wenn \(f''(x) = 0\) → möglicher <strong>Wendepunkt</strong> (nur <em>möglich</em> — es muss ein Vorzeichenwechsel von \(f''\) hinzukommen)
             </div>
         </div>
     </div>
@@ -15721,7 +15785,14 @@ window.addEventListener('resize',function(){updateSimulator();});
 
     <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
 
-    <div class="section-label">D2.1 · Ableitungsturm: Potenz- und Summenregel</div>
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">A</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · A</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Ableitungsturm: Potenz- und Summenregel</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Regeln sicher anwenden — reproduktives Üben, bis die Rechnung sitzt.</div>
+      </div>
+    </div>
     <div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
@@ -15793,7 +15864,14 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <div class="section-label">D2.2 · Ableitungsturm: Besondere Funktionen</div>
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">B</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · B</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Ableitungsturm: Besondere Funktionen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">e-Funktion, Logarithmus, Sinus und Kosinus — dieselben Regeln, neue Bausteine.</div>
+      </div>
+    </div>
     <div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
@@ -15865,7 +15943,15 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <div class="tg">
+        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c8b55e;line-height:1;font-weight:400;min-width:44px;text-align:center">C</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · C</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Kombinieren, deuten, begründen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Mehrere Regeln in einer Aufgabe, waagerechte Tangenten, Monotonie, Sachkontext und Begründung — hier wird die Ableitung benutzt, nicht nur gebildet.</div>
+      </div>
+    </div>
+<div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
@@ -16028,13 +16114,13 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
-            <span class="card-title">Sekantensteigung und lokale Änderungsrate</span>
+            <span class="card-title">Sekantensteigung und momentane Änderungsrate</span>
         </div>
         <div class="card-body">
             <div class="ip"><strong>Sekantensteigung (mittlere Änderungsrate):</strong></div>
             \[m_S = \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 12px;">Die Sekante verbindet zwei Punkte auf dem Graphen. Ihre Steigung beschreibt die mittlere Änderungsrate im Intervall.</div>
-            <div class="ip" style="margin-top: 15px;"><strong>Lokale Änderungsrate (Tangentensteigung):</strong></div>
+            <div class="ip" style="margin-top: 12px;">Die Sekante verbindet zwei Punkte auf dem Graphen. Ihre Steigung beschreibt die mittlere Änderungsrate auf dem Intervall \([x_0;\, x_0+h]\) — sie sagt nichts darüber, was <em>innerhalb</em> des Intervalls passiert.</div>
+            <div class="ip" style="margin-top: 15px;"><strong>Momentane Änderungsrate (Tangentensteigung):</strong></div>
             \[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]
             <div class="hint"><strong>Merke:</strong> Die Ableitung \(f'(x_0)\) ist der Grenzwert der Sekantensteigungen. Sie beschreibt die momentane Änderungsrate an der Stelle \(x_0\).</div>
         </div>
@@ -16122,7 +16208,8 @@ window.addEventListener('resize',function(){updateSimulator();});
             \[t(x) = f'(x_0) \cdot (x - x_0) + f(x_0)\]
             <div class="ip" style="margin-top: 12px;"><strong>Neigungswinkel</strong> der Tangente:</div>
             \[\alpha = \arctan(f'(x_0))\]
-            <div class="hint"><strong>Merke:</strong> Der Neigungswinkel wird in der Regel in Grad angegeben. Nutze den Taschenrechner im DEG-Modus. Ein positiver Winkel bedeutet steigende, ein negativer fallende Tangente.</div>
+            <div class="hint"><strong>Merke:</strong> Der Neigungswinkel wird in Grad angegeben — Taschenrechner im DEG-Modus. Der \(\arctan\) liefert <strong>immer</strong> einen Wert zwischen \(-90°\) und \(90°\): positiv bei steigender, negativ bei fallender Tangente. Wir verwenden im Portal durchgehend diesen Wert.</div>
+            <div class="hint" style="margin-top:10px"><strong>Vorsicht — zwei Zählweisen:</strong> Manche Bücher messen den Winkel stattdessen gegen den Uhrzeigersinn von der positiven \(x\)-Achse aus; dann liegt er zwischen \(0°\) und \(180°\), und eine fallende Tangente bekommt einen <em>stumpfen</em> Winkel. Beide Angaben beschreiben dieselbe Gerade: \(\alpha_{\text{stumpf}} = \alpha_{\arctan} + 180°\). Gib in einer Klausur an, welche Zählweise du benutzt.</div>
         </div>
     </div>
 
@@ -16192,7 +16279,14 @@ window.addEventListener('resize',function(){updateSimulator();});
 
     <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
 
-    <div class="section-label">T1 · Sekantensteigungen berechnen</div>
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">A</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · A</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Sekantensteigungen berechnen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Mittlere Änderungsrate auf einem Intervall — und der Blick darauf, wohin die Werte wandern, wenn das Intervall schrumpft.</div>
+      </div>
+    </div>
     <div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
@@ -16253,7 +16347,15 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <div class="tg">
+        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">B</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · B</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Tangentengleichung und Neigungswinkel</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Von der Stelle zur Geraden: Tangente aufstellen, waagerechte Tangenten finden, Winkel bestimmen.</div>
+      </div>
+    </div>
+<div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
@@ -16266,6 +16368,27 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="ta">
                 <strong>Lösung:</strong> \(f(2) = 4 + 6 - 1 = 9\), \(f'(x) = 2x + 3\), \(f'(2) = 7\)<br>
                 Tangente: \(t(x) = 7(x - 2) + 9 = 7x - 5\)
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">T3</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Bestimme die Tangentengleichung an \(f(x) = -x^2 + 4x\) an der Stelle \(x_0 = 3\) und gib den Neigungswinkel an. Erkläre das Vorzeichen des Winkels.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f(3) = -9 + 12 = 3\), \(f'(x) = -2x + 4\), \(f'(3) = -2\)<br>
+                Tangente: \(t(x) = -2(x - 3) + 3 = -2x + 9\)<br>
+                Neigungswinkel: \(\alpha = \arctan(-2) \approx -63{,}4°\)<br>
+                <div class="ip" style="margin-top:8px">Das Vorzeichen ist negativ, weil die Tangente <strong>fällt</strong>: Pro Schritt nach rechts geht es zwei Einheiten nach unten. Der \(\arctan\) liefert für negative Steigungen stets Werte zwischen \(-90°\) und \(0°\). In der Zählweise gegen die positive \(x\)-Achse wäre derselbe Winkel \(116{,}6°\).</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K5: Tangentengleichung und Neigungswinkel berechnen · K6: Das Vorzeichen des Winkels fachsprachlich deuten</div>
             </div>
         </div>
     </div>
@@ -16321,7 +16444,15 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <div class="tg">
+        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c75c3a;line-height:1;font-weight:400;min-width:44px;text-align:center">C</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#c75c3a;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · C</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Zusammenhänge erklären</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Kein Rechenweg, sondern ein Satz: Warum gehören Steigung und Winkel zusammen, und warum reicht eine Bedingung allein nie?</div>
+      </div>
+    </div>
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">T7</span><span class="td dm">★★</span></div>
@@ -16332,7 +16463,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="ta">
         <div class="ip">Die Steigung \(m\) einer Tangente ist der Tangens des Neigungswinkels: \(m = \tan(\alpha)\).</div>
         <div class="ip">Bei \(m = 1\) gilt \(\alpha = \arctan(1) = 45°\), weil ein gleichschenkliges rechtwinkliges Dreieck entsteht (Gegenkathete = Ankathete).</div>
-        <div class="ip">Bei negativer Steigung (\(m < 0\)) ist der Winkel stumpf (\(\alpha > 90°\)), weil die Tangente von links oben nach rechts unten fällt.</div>
+        <div class="ip">Bei negativer Steigung (\(m < 0\)) liefert der \(\arctan\) einen <strong>negativen</strong> Winkel, etwa \(\arctan(-1) = -45°\): Die Tangente fällt von links oben nach rechts unten. Misst man stattdessen gegen den Uhrzeigersinn von der positiven \(x\)-Achse aus, ist derselbe Winkel stumpf — hier \(135°\). Beide Angaben meinen dieselbe Gerade und unterscheiden sich um \(180°\).</div>
         <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
         <div class="komp-desc">K6: Zusammenhang Steigung ↔ Winkel fachsprachlich erklären · K4: Geometrische und algebraische Darstellung verknüpfen</div>
       </div>
@@ -16367,7 +16498,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <li>Berechne den Neigungswinkel der Tangente, wenn \(f'(x_0) = 1\).</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Tangenten und Ableitungsbegriff“.
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Sekantensteigung und momentane Änderungsrate“.
       </p>
     </div>
   </div>
@@ -17091,7 +17222,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             </div>
             <div class="ta">
                 <strong>Lösung:</strong> \(f'(x) = e^x - 1 = 0\) → \(x = 0\)<br>
-                \(f''(x) = e^x > 0\) (überall) → überall konkav, Tiefpunkt bei \((0, 1)\)<br>
+                \(f''(x) = e^x > 0\) (überall) → überall linksgekrümmt (konvex), Tiefpunkt bei \((0 \,|\, 1)\)<br>
                 \(\lim_{x \to -\infty} f(x) = +\infty\); \(\lim_{x \to +\infty} f(x) = +\infty\)<br>
                 Keine Wendepunkte (Krümmung ändert sich nicht)
             </div>
@@ -17404,8 +17535,8 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip">\(f''(x) > 0\) bedeutet: Der Graph ist linksgekrümmt (konvex von unten) — die Steigung nimmt zu.</div>
-        <div class="ip">\(f''(x) < 0\) bedeutet: Der Graph ist rechtsgekrümmt (konkav von oben) — die Steigung nimmt ab.</div>
+        <div class="ip">\(f''(x) > 0\) bedeutet: Der Graph ist linksgekrümmt (konvex) — die Steigung nimmt zu.</div>
+        <div class="ip">\(f''(x) < 0\) bedeutet: Der Graph ist rechtsgekrümmt (konkav) — die Steigung nimmt ab.</div>
         <div class="ip">An einem Wendepunkt wechselt die Krümmungsrichtung. Das bedeutet: \(f''\) wechselt das Vorzeichen. Der Graph geht von „Schüssel" zu „Hügel" über (oder umgekehrt).</div>
         <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
         <div class="komp-desc">K6: Zusammenhang Ableitung ↔ Krümmung erläutern · K4: Graph und Formel verbinden</div>
