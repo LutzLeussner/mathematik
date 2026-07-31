@@ -16642,214 +16642,426 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
 
     <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
-
     <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
       <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">A</div>
       <div style="flex:1">
         <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · A</div>
-        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Sekantensteigungen berechnen</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Mittlere Änderungsrate auf einem Intervall — und der Blick darauf, wohin die Werte wandern, wenn das Intervall schrumpft.</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Mittlere und lokale Änderungsrate</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Der Unterschied zwischen einer Aussage über ein Intervall und einer Aussage über eine Stelle — erst innermathematisch, dann im Sachzusammenhang.</div>
       </div>
     </div>
+
     <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T1a</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Berechne die Sekantensteigung von \(f(x) = x^2\) im Intervall \([1;\, 4]\).</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(m_S = \frac{f(4) - f(1)}{4 - 1} = \frac{16 - 1}{3} = 5\)
-            </div>
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.1</span><span class="td de">★</span></div>
+          <div class="tq">Berechne jeweils die mittlere Änderungsrate.<br>
+          <strong>a)</strong> \(f(x)=x^2\) auf dem Intervall \([1;\,4]\) &#160;·&#160;
+          <strong>b)</strong> \(f(x)=x^3\) auf dem Intervall \([1;\,3]\)</div>
+          <div class="tk-toggle">⌄</div>
         </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T1b</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Berechne die Sekantensteigung von \(f(x) = x^3\) im Intervall \([1;\, 3]\).</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(m_S = \frac{f(3) - f(1)}{3 - 1} = \frac{27 - 1}{2} = 13\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T1c</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Berechne die mittlere Änderungsrate von \(f(x) = \sqrt{x}\) im Intervall \([1;\, 9]\) und deute das Ergebnis geometrisch.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(m_S = \frac{f(9) - f(1)}{9 - 1} = \frac{3 - 1}{8} = \frac{1}{4} = 0{,}25\)<br>
-                Geometrisch: Die Sekante durch \((1\,|\,1)\) und \((9\,|\,3)\) hat die Steigung \(0{,}25\) — die Funktion wächst im Durchschnitt nur um \(0{,}25\) Einheiten pro x-Einheit.
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T1d</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Berechne für \(f(x) = x^2\) die Sekantensteigungen in den Intervallen \([2;\, 2{,}1]\), \([2;\, 2{,}01]\) und \([2;\, 2{,}001]\). Welchem Wert nähern sich die Steigungen? Begründe.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong><br>
-                \([2;\, 2{,}1]\): \(m_S = \frac{4{,}41 - 4}{0{,}1} = 4{,}1\)<br>
-                \([2;\, 2{,}01]\): \(m_S = \frac{4{,}0401 - 4}{0{,}01} = 4{,}01\)<br>
-                \([2;\, 2{,}001]\): \(m_S = \frac{4{,}004001 - 4}{0{,}001} = 4{,}001\)<br><br>
-                Die Werte nähern sich \(4\) — das ist die <strong>Tangentensteigung</strong> \(f'(2) = 2 \cdot 2 = 4\). Der Grenzübergang \(h \to 0\) führt von der Sekanten- zur Tangentensteigung.
-            </div>
-        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> \(\dfrac{f(4)-f(1)}{4-1} = \dfrac{16-1}{3} = 5\)</div>
+        <div class="ip"><strong>b)</strong> \(\dfrac{f(3)-f(1)}{3-1} = \dfrac{27-1}{2} = 13\)</div>
+        <div class="ip"><em>Bezug:</em> Beide Zahlen sind zugleich die Steigung der Sekante durch die zugehörigen Punkte des Graphen.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K5: Den Differenzenquotienten sicher berechnen</div>
+      </div>
     </div>
 
-        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.2</span><span class="td dm">★★</span></div>
+          <div class="tq">Berechne die mittlere Änderungsrate von \(f(x)=\sqrt{x}\) auf dem Intervall \([1;\,9]\) und deute das Ergebnis geometrisch.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(\dfrac{f(9)-f(1)}{9-1} = \dfrac{3-1}{8} = \dfrac{1}{4} = 0{,}25\)</div>
+        <div class="ip"><strong>Geometrisch:</strong> Die Sekante durch \((1\,|\,1)\) und \((9\,|\,3)\) hat die Steigung \(0{,}25\). Die Funktion wächst auf diesem Intervall im Durchschnitt um \(0{,}25\) Einheiten pro \(x\)-Einheit.</div>
+        <div class="ip"><em>Achtung:</em> Über das Verhalten <em>innerhalb</em> des Intervalls sagt dieser Wert nichts. Bei \(x=1\) ist der Graph deutlich steiler, bei \(x=9\) deutlich flacher.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+        <div class="komp-desc">K5: Differenzenquotient berechnen · K4: Zwischen Rechnung und Graph wechseln</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.3</span><span class="td dm">★★</span></div>
+          <div class="tq">Berechne für \(f(x)=x^2\) die mittleren Änderungsraten auf den Intervallen \([2;\,2{,}1]\), \([2;\,2{,}01]\) und \([2;\,2{,}001]\). Gib an, welchem Wert sich die Ergebnisse nähern, und begründe, was dieser Wert bedeutet.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\([2;\,2{,}1]\): \(\dfrac{4{,}41-4}{0{,}1} = 4{,}1\) &#160;·&#160; \([2;\,2{,}01]\): \(\dfrac{4{,}0401-4}{0{,}01} = 4{,}01\) &#160;·&#160; \([2;\,2{,}001]\): \(\dfrac{4{,}004001-4}{0{,}001} = 4{,}001\)</div>
+        <div class="ip">Die Werte nähern sich \(4\). Das ist die <strong>lokale Änderungsrate</strong> an der Stelle \(x_0=2\), also \(f'(2)=2\cdot 2=4\).</div>
+        <div class="ip"><em>Bedeutung:</em> Aus einer Aussage über ein Intervall ist eine Aussage über eine einzelne Stelle geworden. Geometrisch kippt die Sekante dabei in die Tangente.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K5: Grenzübergang numerisch nachvollziehen · K1: Das Ergebnis begründen</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.4</span><span class="td de">★</span></div>
+          <div class="tq">Ein Glas Wasser wird aus dem Kühlschrank genommen und erwärmt sich. Seine Temperatur in °C nach \(t\) Minuten wird beschrieben durch
+          \[T(t) = 22 - 16\,e^{-0{,}02\,t}\]
+          Berechne die Werte der folgenden Terme und interpretiere sie jeweils im Sachzusammenhang.<br>
+          <strong>(1)</strong> \(T'(30)\) &#160;·&#160; <strong>(2)</strong> \(\dfrac{T(30)-T(0)}{30-0}\)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>(1)</strong> \(T'(t) = 0{,}32\,e^{-0{,}02\,t}\), also \(T'(30) = 0{,}32\cdot e^{-0{,}6} \approx 0{,}18\).<br>
+        <em>Deutung:</em> 30 Minuten nach dem Herausnehmen steigt die Temperatur mit etwa \(0{,}18\) °C pro Minute — das ist die <strong>lokale Änderungsrate</strong> in diesem Augenblick.</div>
+        <div class="ip"><strong>(2)</strong> \(T(0) = 6\), \(T(30) \approx 13{,}22\), also \(\dfrac{13{,}22-6}{30} \approx 0{,}24\).<br>
+        <em>Deutung:</em> In den ersten 30 Minuten stieg die Temperatur im Durchschnitt um etwa \(0{,}24\) °C pro Minute — das ist die <strong>mittlere Änderungsrate</strong> auf diesem Zeitraum.</div>
+        <div class="ip"><strong>Der Vergleich ist die eigentliche Aussage:</strong> \(0{,}24 > 0{,}18\). Das Wasser erwärmte sich anfangs schneller als nach 30 Minuten — je näher die Temperatur an die Raumtemperatur kommt, desto langsamer steigt sie. Der Durchschnittswert liegt deshalb über dem Momentanwert am Ende des Zeitraums.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span></div>
+        <div class="komp-desc">K5: Ableitung und Differenzenquotient berechnen · K6: Beide Werte mit Einheit deuten · K3: Das Modell auf die Sachsituation beziehen</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.5</span><span class="td dm">★★</span></div>
+          <div class="tq">In einer Regentonne wird der Wasserstand gemessen. Die Wassermenge in Litern nach \(t\) Stunden wird modelliert durch
+          \[w(t) = 60 - 48\,e^{-0{,}25\,t}\]
+          Gib für jeden der folgenden Terme die Bedeutung im Sachzusammenhang an — <strong>mit Einheit</strong> — und berechne seinen Wert.<br>
+          <strong>(I)</strong> \(w(5)-w(2)\) &#160;·&#160; <strong>(II)</strong> \(\dfrac{w(5)-w(2)}{3}\)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(w(2) \approx 30{,}89\) Liter, \(w(5) \approx 46{,}25\) Liter.</div>
+        <div class="ip"><strong>(I)</strong> \(w(5)-w(2) \approx 15{,}36\) <strong>Liter</strong>.<br>
+        <em>Bedeutung:</em> Zwischen der 2. und der 5. Stunde ist die Wassermenge um etwa 15,4 Liter <em>gewachsen</em>. Das ist eine Menge, keine Rate.</div>
+        <div class="ip"><strong>(II)</strong> \(\dfrac{w(5)-w(2)}{3} \approx 5{,}12\) <strong>Liter pro Stunde</strong>.<br>
+        <em>Bedeutung:</em> In diesem Zeitraum kamen im Durchschnitt etwa 5,1 Liter pro Stunde hinzu. Das ist die mittlere Änderungsrate.</div>
+        <div class="ip"><strong>Worauf es ankommt:</strong> Die beiden Terme unterscheiden sich nur durch die Division — aber die Einheit wechselt von Litern zu Litern pro Stunde, und damit die Art der Aussage. Wer die Einheit weglässt, kann beide nicht auseinanderhalten.</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K6: Terme im Sachzusammenhang deuten · K3: Modell und Situation verknüpfen · K5: Werte korrekt berechnen</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.6</span><span class="td dm">★★</span></div>
+          <div class="tq">Ein Hang wird von der Bergstation bis zum Tal durch
+          \[h(x) = 900 - 0{,}15\,x - 0{,}0005\,x^2 \qquad (0 \le x \le 300)\]
+          beschrieben; \(x\) ist die waagerechte Entfernung, \(h\) die Höhe, beides in Metern.<br>
+          <strong>a)</strong> Ermittle das durchschnittliche Gefälle des Hangs in Prozent.<br>
+          <strong>b)</strong> Ermittle das größte Gefälle in Prozent.<br>
+          <strong>c)</strong> Ordne den Hang mithilfe der Tabelle einem Schwierigkeitsgrad zu und beurteile, welche der beiden Angaben dafür maßgeblich sein sollte.
+          <div style="margin-top:10px;font-size:.92rem">
+            <table style="border-collapse:collapse">
+              <tr><td style="border:1px solid var(--border);padding:5px 12px">leicht</td><td style="border:1px solid var(--border);padding:5px 12px">bis 25 %</td></tr>
+              <tr><td style="border:1px solid var(--border);padding:5px 12px">mittel</td><td style="border:1px solid var(--border);padding:5px 12px">bis 40 %</td></tr>
+              <tr><td style="border:1px solid var(--border);padding:5px 12px">schwer</td><td style="border:1px solid var(--border);padding:5px 12px">mehr als 40 %</td></tr>
+            </table>
+          </div></div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> \(h(0)=900\), \(h(300)=900-45-45=810\). Höhenunterschied 90 m auf 300 m waagerecht:
+        \(\dfrac{900-810}{300} = 0{,}30\), also <strong>30 %</strong> durchschnittliches Gefälle. Das ist die mittlere Änderungsrate, als Prozentwert geschrieben.</div>
+        <div class="ip"><strong>b)</strong> \(h'(x) = -0{,}15 - 0{,}001\,x\). Da \(h'\) auf \([0;300]\) fällt, ist der Betrag am rechten Rand am größten:
+        \(h'(300) = -0{,}45\), also <strong>45 %</strong> größtes Gefälle — am Hangende. Das ist eine lokale Änderungsrate.</div>
+        <div class="ip"><strong>c)</strong> Nach dem Durchschnitt wäre der Hang <em>mittel</em>, nach der steilsten Stelle <em>schwer</em>. Maßgeblich muss die steilste Stelle sein: Dort entscheidet sich, ob jemand die Abfahrt bewältigt. Ein Durchschnitt kann eine gefährlich steile Passage verdecken.</div>
+        <div class="ip"><em>Genau das ist der Unterschied zwischen den beiden Begriffen:</em> Die mittlere Änderungsrate beschreibt den Hang als Ganzes, die lokale beschreibt eine Stelle. Für eine Sicherheitsfrage ist die Stelle relevant.</div>
+        <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K3: Ein Modell auf eine Entscheidungsfrage anwenden · K5: Mittlere und lokale Änderungsrate berechnen · K1: Die Wahl des Kriteriums begründen</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T2.7</span><span class="td dm">★★</span></div>
+          <div class="tq">Die Kosten für die Produktion von \(x\) Tonnen eines Stoffes betragen \(K(x)\) Tausend Euro mit
+          \[K(x) = 0{,}1\,x^3 - 1{,}2\,x^2 + 6\,x + 20 \qquad (0 \le x \le 10)\]
+          Berechne \(K'(4)\) und interpretiere den Wert im Sachzusammenhang.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(K'(x) = 0{,}3\,x^2 - 2{,}4\,x + 6\), also \(K'(4) = 4{,}8 - 9{,}6 + 6 = 1{,}2\).</div>
+        <div class="ip"><strong>Deutung:</strong> Bei einer Produktion von 4 Tonnen betragen die Kosten für eine <em>zusätzlich</em> produzierte Tonne etwa 1,2 Tausend Euro, also rund 1200 €. Das ist die lokale Änderungsrate der Kosten an der Stelle \(x=4\).</div>
+        <div class="ip"><em>Warum „etwa"?</em> \(K'(4)\) gilt exakt nur für den Augenblick. Rechnet man nach, ergibt \(K(5)-K(4) = 1{,}3\) — nah an 1,2, aber nicht gleich, weil sich die Kostenrate innerhalb der fünften Tonne selbst noch ändert.</div>
+        <div class="ip"><em>Zum Weiterdenken:</em> \(K'\) nimmt bei \(x=4\) seinen kleinsten Wert an. An dieser Stelle ist die Produktion einer zusätzlichen Tonne am günstigsten.</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K6: Einen Ableitungswert im Sachzusammenhang deuten · K3: Ökonomischen Kontext mathematisch fassen · K5: Ableitung berechnen</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
       <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">B</div>
       <div style="flex:1">
         <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · B</div>
         <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Tangentengleichung und Neigungswinkel</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Von der Stelle zur Geraden: Tangente aufstellen, waagerechte Tangenten finden, Winkel bestimmen.</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Von der Stelle zur Geraden: ablesen, aufstellen, waagerechte Tangenten finden, Winkel bestimmen.</div>
       </div>
     </div>
-<div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T2</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Bestimme die Gleichung der Tangente an \(f(x) = x^2 + 3x - 1\) an der Stelle \(x_0 = 2\).</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f(2) = 4 + 6 - 1 = 9\), \(f'(x) = 2x + 3\), \(f'(2) = 7\)<br>
-                Tangente: \(t(x) = 7(x - 2) + 9 = 7x - 5\)
-            </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T3.1</span><span class="td de">★</span></div>
+          <div class="tq">Die Abbildung zeigt den Graphen von \(f(x) = \tfrac{1}{2}x^2\) und die Tangente \(t\) im Punkt \(P(4\,|\,8)\).
+          Gib anhand der Abbildung eine Gleichung von \(t\) an und bestätige die abgelesene Steigung durch Rechnung.</div>
+          <div class="tk-toggle">⌄</div>
         </div>
+        <div style="display:flex;justify-content:center;margin:14px 0 4px">
+          <div style="max-width:440px;width:100%">
+                <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph der Funktion f mit f(x)=0,5x hoch 2 und der Tangente t im Punkt P(4|8)">
+                <defs><marker id="tapf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/></marker></defs>
+                <rect x="0" y="0" width="460" height="380" fill="#fff"/>
+                <line x1="66.3" y1="340.0" x2="66.3" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="117.1" y1="340.0" x2="117.1" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="167.8" y1="340.0" x2="167.8" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="218.6" y1="340.0" x2="218.6" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="269.4" y1="340.0" x2="269.4" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="320.2" y1="340.0" x2="320.2" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="370.9" y1="340.0" x2="370.9" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="421.7" y1="340.0" x2="421.7" y2="16.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="327.0" x2="442.0" y2="327.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="283.8" x2="442.0" y2="283.8" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="240.6" x2="442.0" y2="240.6" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="197.4" x2="442.0" y2="197.4" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="154.2" x2="442.0" y2="154.2" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="111.0" x2="442.0" y2="111.0" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="67.8" x2="442.0" y2="67.8" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="24.6" x2="442.0" y2="24.6" stroke="#eef1f2" stroke-width="1"/>
+                <line x1="46.0" y1="283.8" x2="442.0" y2="283.8" stroke="#333" stroke-width="1.6" marker-end="url(#tapf)"/>
+                <line x1="117.1" y1="340.0" x2="117.1" y2="16.0" stroke="#333" stroke-width="1.6" marker-end="url(#tapf)"/>
+                <text x="438.0" y="272.8" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#555">x</text>
+                <text x="128.1" y="29.0" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#555">y</text>
+                <line x1="66.3" y1="279.8" x2="66.3" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="66.3" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">-1</text>
+                <line x1="167.8" y1="279.8" x2="167.8" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="167.8" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">1</text>
+                <line x1="218.6" y1="279.8" x2="218.6" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="218.6" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">2</text>
+                <line x1="269.4" y1="279.8" x2="269.4" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="269.4" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">3</text>
+                <line x1="320.2" y1="279.8" x2="320.2" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="320.2" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">4</text>
+                <line x1="370.9" y1="279.8" x2="370.9" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="370.9" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">5</text>
+                <line x1="421.7" y1="279.8" x2="421.7" y2="287.8" stroke="#333" stroke-width="1.4"/>
+                <text x="421.7" y="302.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">6</text>
+                <line x1="113.1" y1="327.0" x2="121.1" y2="327.0" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="331.0" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">-2</text>
+                <line x1="113.1" y1="240.6" x2="121.1" y2="240.6" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="244.6" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">2</text>
+                <line x1="113.1" y1="197.4" x2="121.1" y2="197.4" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="201.4" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">4</text>
+                <line x1="113.1" y1="154.2" x2="121.1" y2="154.2" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="158.2" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">6</text>
+                <line x1="113.1" y1="111.0" x2="121.1" y2="111.0" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="115.0" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">8</text>
+                <line x1="113.1" y1="67.8" x2="121.1" y2="67.8" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="71.8" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">10</text>
+                <line x1="113.1" y1="24.6" x2="121.1" y2="24.6" stroke="#333" stroke-width="1.4"/>
+                <text x="108.1" y="28.6" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#555">12</text>
+                <text x="109.1" y="301.8" text-anchor="end" font-family="Inter,sans-serif" font-size="13" fill="#9aa6ac">O</text>
+                <line x1="185.6" y1="340.0" x2="373.5" y2="20.3" stroke="#c75c3a" stroke-width="2.4"/>
+                <polyline points="46.0,262.7 47.0,263.3 48.0,263.9 49.0,264.4 50.1,265.0 51.1,265.6 52.1,266.1 53.1,266.7 54.1,267.2 55.1,267.8 56.2,268.3 57.2,268.8 58.2,269.3 59.2,269.8 60.2,270.3 61.2,270.8 62.2,271.2 63.3,271.7 64.3,272.2 65.3,272.6 66.3,273.0 67.3,273.5 68.3,273.9 69.4,274.3 70.4,274.7 71.4,275.1 72.4,275.5 73.4,275.9 74.4,276.2 75.4,276.6 76.5,276.9 77.5,277.3 78.5,277.6 79.5,277.9 80.5,278.2 81.5,278.5 82.6,278.8 83.6,279.1 84.6,279.4 85.6,279.7 86.6,280.0 87.6,280.2 88.6,280.5 89.7,280.7 90.7,280.9 91.7,281.1 92.7,281.4 93.7,281.6 94.7,281.7 95.8,281.9 96.8,282.1 97.8,282.3 98.8,282.4 99.8,282.6 100.8,282.7 101.8,282.9 102.9,283.0 103.9,283.1 104.9,283.2 105.9,283.3 106.9,283.4 107.9,283.5 109.0,283.6 110.0,283.6 111.0,283.7 112.0,283.7 113.0,283.8 114.0,283.8 115.0,283.8 116.1,283.8 117.1,283.8 118.1,283.8 119.1,283.8 120.1,283.8 121.1,283.8 122.2,283.7 123.2,283.7 124.2,283.6 125.2,283.6 126.2,283.5 127.2,283.4 128.2,283.3 129.3,283.2 130.3,283.1 131.3,283.0 132.3,282.9 133.3,282.7 134.3,282.6 135.4,282.4 136.4,282.3 137.4,282.1 138.4,281.9 139.4,281.7 140.4,281.6 141.4,281.4 142.5,281.1 143.5,280.9 144.5,280.7 145.5,280.5 146.5,280.2 147.5,280.0 148.6,279.7 149.6,279.4 150.6,279.1 151.6,278.8 152.6,278.5 153.6,278.2 154.6,277.9 155.7,277.6 156.7,277.3 157.7,276.9 158.7,276.6 159.7,276.2 160.7,275.9 161.8,275.5 162.8,275.1 163.8,274.7 164.8,274.3 165.8,273.9 166.8,273.5 167.8,273.0 168.9,272.6 169.9,272.2 170.9,271.7 171.9,271.2 172.9,270.8 173.9,270.3 175.0,269.8 176.0,269.3 177.0,268.8 178.0,268.3 179.0,267.8 180.0,267.2 181.0,266.7 182.1,266.1 183.1,265.6 184.1,265.0 185.1,264.4 186.1,263.9 187.1,263.3 188.2,262.7 189.2,262.1 190.2,261.4 191.2,260.8 192.2,260.2 193.2,259.5 194.2,258.9 195.3,258.2 196.3,257.6 197.3,256.9 198.3,256.2 199.3,255.5 200.3,254.8 201.4,254.1 202.4,253.4 203.4,252.6 204.4,251.9 205.4,251.1 206.4,250.4 207.4,249.6 208.5,248.8 209.5,248.1 210.5,247.3 211.5,246.5 212.5,245.7 213.5,244.9 214.6,244.0 215.6,243.2 216.6,242.4 217.6,241.5 218.6,240.6 219.6,239.8 220.6,238.9 221.7,238.0 222.7,237.1 223.7,236.2 224.7,235.3 225.7,234.4 226.7,233.5 227.8,232.5 228.8,231.6 229.8,230.6 230.8,229.6 231.8,228.7 232.8,227.7 233.8,226.7 234.9,225.7 235.9,224.7 236.9,223.7 237.9,222.7 238.9,221.6 239.9,220.6 241.0,219.5 242.0,218.5 243.0,217.4 244.0,216.3 245.0,215.3 246.0,214.2 247.0,213.1 248.1,212.0 249.1,210.8 250.1,209.7 251.1,208.6 252.1,207.4 253.1,206.3 254.2,205.1 255.2,203.9 256.2,202.8 257.2,201.6 258.2,200.4 259.2,199.2 260.2,198.0 261.3,196.7 262.3,195.5 263.3,194.3 264.3,193.0 265.3,191.8 266.3,190.5 267.4,189.2 268.4,187.9 269.4,186.6 270.4,185.3 271.4,184.0 272.4,182.7 273.4,181.4 274.5,180.1 275.5,178.7 276.5,177.4 277.5,176.0 278.5,174.6 279.5,173.2 280.6,171.9 281.6,170.5 282.6,169.1 283.6,167.6 284.6,166.2 285.6,164.8 286.6,163.4 287.7,161.9 288.7,160.5 289.7,159.0 290.7,157.5 291.7,156.0 292.7,154.5 293.8,153.0 294.8,151.5 295.8,150.0 296.8,148.5 297.8,147.0 298.8,145.4 299.8,143.9 300.9,142.3 301.9,140.7 302.9,139.2 303.9,137.6 304.9,136.0 305.9,134.4 307.0,132.8 308.0,131.2 309.0,129.5 310.0,127.9 311.0,126.2 312.0,124.6 313.0,122.9 314.1,121.3 315.1,119.6 316.1,117.9 317.1,116.2 318.1,114.5 319.1,112.8 320.2,111.0 321.2,109.3 322.2,107.6 323.2,105.8 324.2,104.1 325.2,102.3 326.2,100.5 327.3,98.7 328.3,96.9 329.3,95.1 330.3,93.3 331.3,91.5 332.3,89.7 333.4,87.8 334.4,86.0 335.4,84.1 336.4,82.3 337.4,80.4 338.4,78.5 339.4,76.6 340.5,74.8 341.5,72.8 342.5,70.9 343.5,69.0 344.5,67.1 345.5,65.1 346.6,63.2 347.6,61.2 348.6,59.3 349.6,57.3 350.6,55.3 351.6,53.3 352.6,51.3 353.7,49.3 354.7,47.3 355.7,45.3 356.7,43.2 357.7,41.2 358.7,39.1 359.8,37.1 360.8,35.0 361.8,32.9 362.8,30.8 363.8,28.7 364.8,26.6 365.8,24.5 366.9,22.4 367.9,20.3 368.9,18.1 369.9,16.0 370.9,13.8 371.9,11.7 373.0,9.5 374.0,7.3" fill="none" stroke="#5b6e2e" stroke-width="2.6"/>
+                <circle cx="320.2" cy="111.0" r="5" fill="#c75c3a"/>
+                <rect x="328.2" y="87.0" width="66" height="19" fill="#fff" fill-opacity="0.88"/>
+                <text x="331.2" y="101.0" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#c75c3a">P(4 | 8)</text>
+                <rect x="51.1" y="37.6" width="74" height="20" fill="#fff" fill-opacity="0.9"/>
+                <text x="56.2" y="52.6" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#5b6e2e">f</text>
+                <text x="69.2" y="52.6" font-family="Inter,sans-serif" font-size="13" fill="#5b6e2e">(x) = ½x²</text>
+                <text x="378.5" y="22.3" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#c75c3a">t</text>
+                </svg>
+          </div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Ablesen:</strong> \(t\) verläuft durch \((2\,|\,0)\) und \((4\,|\,8)\). Steigung \(m = \dfrac{8-0}{4-2} = 4\); der \(y\)-Achsenabschnitt ist \(-8\). Also \(t(x) = 4x - 8\).</div>
+        <div class="ip"><strong>Bestätigung:</strong> \(f'(x) = x\), also \(f'(4) = 4\) — dieselbe Steigung. Und \(t(4) = 16-8 = 8 = f(4)\), die Gerade berührt den Graphen also tatsächlich in \(P\).</div>
+        <div class="ip"><em>Worauf es ankommt:</em> Die Tangentensteigung lässt sich <strong>ablesen</strong>, nicht nur berechnen. In Prüfungen ist genau das eine eigene Teilaufgabe.</div>
+        <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K4: Aus einer Abbildung eine Geradengleichung gewinnen · K5: Das Ergebnis rechnerisch bestätigen</div>
+      </div>
     </div>
 
     <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T3</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Bestimme die Tangentengleichung an \(f(x) = -x^2 + 4x\) an der Stelle \(x_0 = 3\) und gib den Neigungswinkel an. Erkläre das Vorzeichen des Winkels.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f(3) = -9 + 12 = 3\), \(f'(x) = -2x + 4\), \(f'(3) = -2\)<br>
-                Tangente: \(t(x) = -2(x - 3) + 3 = -2x + 9\)<br>
-                Neigungswinkel: \(\alpha = \arctan(-2) \approx -63{,}4°\)<br>
-                <div class="ip" style="margin-top:8px">Das Vorzeichen ist negativ, weil die Tangente <strong>fällt</strong>: Pro Schritt nach rechts geht es zwei Einheiten nach unten. Der \(\arctan\) liefert für negative Steigungen stets Werte zwischen \(-90°\) und \(0°\). In der Zählweise gegen die positive \(x\)-Achse wäre derselbe Winkel \(116{,}6°\).</div>
-                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
-                <div class="komp-desc">K5: Tangentengleichung und Neigungswinkel berechnen · K6: Das Vorzeichen des Winkels fachsprachlich deuten</div>
-            </div>
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T3.2</span><span class="td de">★</span></div>
+          <div class="tq">Bestimme rechnerisch eine Gleichung der Tangente an den Graphen von \(f(x) = x^2 + 3x - 1\) an der Stelle \(x_0 = 2\).</div>
+          <div class="tk-toggle">⌄</div>
         </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(f(2) = 4+6-1 = 9\), \(f'(x) = 2x+3\), \(f'(2) = 7\)</div>
+        <div class="ip">\(t(x) = 7\,(x-2) + 9 = 7x - 5\)</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K5: Tangentengleichung nach dem Standardverfahren aufstellen</div>
+      </div>
     </div>
 
     <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T4</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Bestimme die Stellen, an denen \(f(x) = x^3 - 6x^2 + 9x\) die Tangentensteigung \(m = 0\) besitzt.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = 3x^2 - 12x + 9 = 3(x-1)(x-3) = 0\)<br>
-                Die Stellen mit waagerechter Tangente sind \(x = 1\) und \(x = 3\).
-            </div>
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T3.3</span><span class="td dm">★★</span></div>
+          <div class="tq">Bestimme rechnerisch eine Gleichung der Tangente an den Graphen von \(f(x) = -x^2 + 4x\) an der Stelle \(x_0 = 3\) und gib den Neigungswinkel an. Erkläre das Vorzeichen des Winkels.</div>
+          <div class="tk-toggle">⌄</div>
         </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(f(3) = -9+12 = 3\), \(f'(x) = -2x+4\), \(f'(3) = -2\)</div>
+        <div class="ip">\(t(x) = -2\,(x-3) + 3 = -2x + 9\)</div>
+        <div class="ip">\(\alpha = \arctan(-2) \approx -63{,}4°\)</div>
+        <div class="ip">Das Vorzeichen ist negativ, weil die Tangente <strong>fällt</strong>: pro Schritt nach rechts geht es zwei Einheiten nach unten. Der \(\arctan\) liefert für negative Steigungen stets Werte zwischen \(-90°\) und \(0°\). In der Zählweise gegen die positive \(x\)-Achse wäre derselbe Winkel \(116{,}6°\).</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K5: Tangentengleichung und Neigungswinkel berechnen · K6: Das Vorzeichen des Winkels deuten</div>
+      </div>
     </div>
 
     <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T5</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Bestimme den Neigungswinkel der Tangente an \(f(x) = \frac{1}{2}x^2 - 3x + 4\) im Punkt \(P(4 \,|\, f(4))\). Runde auf ganze Grad.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = x - 3\), \(f'(4) = 1\)<br>
-                \(\alpha = \arctan(1) = 45°\)
-            </div>
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T3.4</span><span class="td dm">★★</span></div>
+          <div class="tq">Bestimme rechnerisch die Stellen, an denen der Graph von \(f(x) = x^3 - 6x^2 + 9x\) eine waagerechte Tangente besitzt.</div>
+          <div class="tk-toggle">⌄</div>
         </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(f'(x) = 3x^2 - 12x + 9 = 3\,(x-1)(x-3) = 0\)</div>
+        <div class="ip">Waagerechte Tangenten liegen bei \(x = 1\) und \(x = 3\).</div>
+        <div class="ip"><em>Achtung:</em> „Waagerechte Tangente" heißt nur \(f'(x_0)=0\). Ob dort ein Hoch-, Tief- oder Sattelpunkt liegt, ist damit noch nicht entschieden.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K5: Nullstellen der Ableitung bestimmen · K6: Die Aussage korrekt eingrenzen</div>
+      </div>
     </div>
 
     <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">T6</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Die Tangente an \(f(x) = e^x\) in einem Punkt \(P\) hat den Neigungswinkel \(\alpha = 63{,}4°\). Bestimme die Koordinaten von \(P\).</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = e^x = \tan(63{,}4°) \approx 2\), also \(x = \ln(2) \approx 0{,}693\).<br>
-                \(P \approx (0{,}693 \,|\, 2)\)
-            </div>
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T3.5</span><span class="td dm">★★</span></div>
+          <div class="tq">Berechne den Neigungswinkel der Tangente an den Graphen von \(f(x) = \tfrac{1}{2}x^2 - 3x + 4\) im Punkt \(P(4\,|\,f(4))\). Runde auf ganze Grad.</div>
+          <div class="tk-toggle">⌄</div>
         </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(f'(x) = x - 3\), also \(f'(4) = 1\)</div>
+        <div class="ip">\(\alpha = \arctan(1) = 45°\)</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K5: Neigungswinkel aus der Ableitung berechnen</div>
+      </div>
     </div>
 
-        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T3.6</span><span class="td dh">★★★</span></div>
+          <div class="tq">Die Tangente an den Graphen von \(f(x) = e^x\) in einem Punkt \(P\) hat den Neigungswinkel \(\alpha = 63{,}4°\). Bestimme die Koordinaten von \(P\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(f'(x) = e^x = \tan(63{,}4°) \approx 2\), also \(x = \ln(2) \approx 0{,}693\).</div>
+        <div class="ip">\(f(\ln 2) = e^{\ln 2} = 2\), also \(P \approx (0{,}693 \,|\, 2)\).</div>
+        <div class="ip"><em>Laufrichtung:</em> Hier ist der Winkel gegeben und die Stelle gesucht. Diese Umkehrung kommt in Prüfungen regelmäßig vor — meist als zweite Hälfte einer Aufgabe, deren erste Hälfte vorwärts lief.</div>
+        <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K2: Eine Bedingung nach der gesuchten Größe auflösen · K5: Umkehrfunktionen sicher anwenden</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
       <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c75c3a;line-height:1;font-weight:400;min-width:44px;text-align:center">C</div>
       <div style="flex:1">
         <div style="font-size:11px;font-weight:700;color:#c75c3a;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · C</div>
-        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Zusammenhänge erklären</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Kein Rechenweg, sondern ein Satz: Warum gehören Steigung und Winkel zusammen, und warum reicht eine Bedingung allein nie?</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Begründen und verallgemeinern</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Kein Rechenweg, sondern ein Argument — und Aussagen, die für jede Stelle gelten sollen.</div>
       </div>
     </div>
-<div class="tg">
+
+    <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T7</span><span class="td dm">★★</span></div>
-          <div class="tq">Erläutere den Zusammenhang zwischen Tangentensteigung und Neigungswinkel. Beschreibe, warum eine Steigung von \(m = 1\) genau einem Winkel von \(45°\) entspricht, und erkläre, was bei negativer Steigung mit dem Winkel passiert.</div>
+          <div class="tkt"><span class="tn">T4.1</span><span class="td dm">★★</span></div>
+          <div class="tq">Erläutere den Zusammenhang zwischen Tangentensteigung und Neigungswinkel. Begründe, warum eine Steigung von \(m = 1\) genau einem Winkel von \(45°\) entspricht, und erkläre, was bei negativer Steigung mit dem Winkel geschieht.</div>
           <div class="tk-toggle">⌄</div>
         </div>
       </div>
       <div class="ta">
         <div class="ip">Die Steigung \(m\) einer Tangente ist der Tangens des Neigungswinkels: \(m = \tan(\alpha)\).</div>
-        <div class="ip">Bei \(m = 1\) gilt \(\alpha = \arctan(1) = 45°\), weil ein gleichschenkliges rechtwinkliges Dreieck entsteht (Gegenkathete = Ankathete).</div>
-        <div class="ip">Bei negativer Steigung (\(m < 0\)) liefert der \(\arctan\) einen <strong>negativen</strong> Winkel, etwa \(\arctan(-1) = -45°\): Die Tangente fällt von links oben nach rechts unten. Misst man stattdessen gegen den Uhrzeigersinn von der positiven \(x\)-Achse aus, ist derselbe Winkel stumpf — hier \(135°\). Beide Angaben meinen dieselbe Gerade und unterscheiden sich um \(180°\).</div>
+        <div class="ip">Bei \(m = 1\) gilt \(\alpha = \arctan(1) = 45°\), weil das Steigungsdreieck dann gleichschenklig-rechtwinklig ist — Gegenkathete und Ankathete sind gleich lang.</div>
+        <div class="ip">Bei negativer Steigung liefert der \(\arctan\) einen negativen Winkel, etwa \(\arctan(-1) = -45°\). Misst man stattdessen gegen den Uhrzeigersinn von der positiven \(x\)-Achse aus, ist derselbe Winkel stumpf — hier \(135°\). Beide Angaben meinen dieselbe Gerade.</div>
         <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
-        <div class="komp-desc">K6: Zusammenhang Steigung ↔ Winkel fachsprachlich erklären · K4: Geometrische und algebraische Darstellung verknüpfen</div>
+        <div class="komp-desc">K6: Zusammenhang Steigung und Winkel fachsprachlich erklären · K4: Geometrische und algebraische Darstellung verknüpfen</div>
       </div>
     </div>
 
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T8</span><span class="td dm">★★</span></div>
-          <div class="tq">Begründe: Wenn zwei Funktionen \(f\) und \(g\) im Punkt \(P(x_0\,|\,y_0)\) dieselbe Tangente haben, dann gelten dort zwei Bedingungen gleichzeitig. Nenne diese und erkläre, warum beide nötig sind.</div>
+          <div class="tkt"><span class="tn">T4.2</span><span class="td dm">★★</span></div>
+          <div class="tq">Begründe: Wenn die Graphen zweier Funktionen \(f\) und \(g\) im Punkt \(P(x_0\,|\,y_0)\) dieselbe Tangente haben, dann gelten dort zwei Bedingungen gleichzeitig. Nenne diese und erkläre, warum beide nötig sind.</div>
           <div class="tk-toggle">⌄</div>
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>Bedingung 1:</strong> \(f(x_0) = g(x_0)\) — die Graphen müssen durch denselben Punkt gehen (sonst verschiedene Tangentenpunkte).</div>
-        <div class="ip"><strong>Bedingung 2:</strong> \(f'(x_0) = g'(x_0)\) — die Steigungen müssen übereinstimmen (sonst verschiedene Richtungen).</div>
-        <div class="ip">Nur der Funktionswert gleich → selber Punkt, aber verschiedene Tangentenrichtungen. Nur die Steigung gleich → parallele Tangenten an verschiedenen Stellen.</div>
+        <div class="ip"><strong>Bedingung 1:</strong> \(f(x_0) = g(x_0)\) — beide Graphen müssen durch denselben Punkt gehen.</div>
+        <div class="ip"><strong>Bedingung 2:</strong> \(f'(x_0) = g'(x_0)\) — die Steigungen müssen dort übereinstimmen.</div>
+        <div class="ip">Nur der Funktionswert gleich: derselbe Punkt, aber verschiedene Richtungen — die Graphen kreuzen sich. Nur die Steigung gleich: parallele Tangenten an verschiedenen Stellen.</div>
+        <div class="ip"><em>Anwendung:</em> Genau diese beiden Bedingungen prüft man, wenn ein Bahn- oder Straßenabschnitt „ohne Knick" an einen anderen anschließen soll.</div>
         <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
-        <div class="komp-desc">K1: Notwendigkeit beider Bedingungen begründen · K6: Fachbegriffe korrekt verwenden</div>
+        <div class="komp-desc">K1: Die Notwendigkeit beider Bedingungen begründen · K6: Fachbegriffe korrekt verwenden</div>
       </div>
     </div>
 
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T4.3</span><span class="td dh">★★★</span></div>
+          <div class="tq">Gegeben ist die Funktion \(f\) mit \(f(x) = \tfrac{1}{2}x^2\). Weise nach, dass für <strong>jeden</strong> Wert \(u \in \mathbb{R}\) die Tangente an den Graphen von \(f\) im Punkt \((u\,|\,f(u))\) die \(y\)-Achse im Punkt \((0\,|\,-f(u))\) schneidet.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(f'(x) = x\), also \(f'(u) = u\).</div>
+        <div class="ip">Tangente an der Stelle \(u\):
+        \[t(x) = f'(u)\,(x-u) + f(u) = u\,(x-u) + \tfrac{1}{2}u^2 = u\,x - u^2 + \tfrac{1}{2}u^2 = u\,x - \tfrac{1}{2}u^2\]</div>
+        <div class="ip">Schnitt mit der \(y\)-Achse, also \(x = 0\):
+        \[t(0) = -\tfrac{1}{2}u^2 = -f(u)\]
+        Das gilt für jedes \(u \in \mathbb{R}\), womit die Behauptung gezeigt ist.</div>
+        <div class="ip"><em>Worauf es ankommt:</em> Es wird nicht an einer Stelle gerechnet, sondern an einer <strong>allgemeinen</strong> Stelle \(u\). Das Ergebnis ist keine Zahl, sondern eine Aussage über unendlich viele Tangenten auf einmal. Dieser Aufgabentyp ist im hilfsmittelfreien Teil der Prüfung der anspruchsvollste.</div>
+        <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K1: Eine allgemeine Aussage vollständig nachweisen · K5: Mit einem Parameter statt mit Zahlen rechnen · K6: Das Ergebnis korrekt formulieren</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T4.4</span><span class="td dh">★★★</span></div>
+          <div class="tq">Gegeben sind die Funktion \(f\) mit \(f(x) = \sqrt{x}\) für \(x \ge 0\) und die Gerade \(g\) mit \(y = \tfrac{1}{2}x\).
+          Betrachtet wird das Intervall, das von den \(x\)-Koordinaten der beiden Schnittpunkte von \(G_f\) und \(g\) begrenzt wird.
+          In diesem Intervall gibt es eine Stelle, an der die lokale Änderungsrate von \(f\) mit der mittleren Änderungsrate von \(f\) auf diesem Intervall übereinstimmt. Bestimme diese Stelle.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Schnittstellen:</strong> \(\sqrt{x} = \tfrac{1}{2}x\). Quadrieren liefert \(x = \tfrac{1}{4}x^2\), also \(x^2 - 4x = 0\) und damit \(x = 0\) oder \(x = 4\). Das Intervall ist \([0;\,4]\).</div>
+        <div class="ip"><strong>Mittlere Änderungsrate auf \([0;\,4]\):</strong>
+        \(\dfrac{f(4)-f(0)}{4-0} = \dfrac{2-0}{4} = \dfrac{1}{2}\) — das ist genau die Steigung von \(g\), denn \(g\) verbindet die beiden Schnittpunkte.</div>
+        <div class="ip"><strong>Gesuchte Stelle:</strong> \(f'(x) = \dfrac{1}{2\sqrt{x}} = \dfrac{1}{2}\) &#160;⇔&#160; \(2\sqrt{x} = 2\) &#160;⇔&#160; \(x = 1\).</div>
+        <div class="ip">An der Stelle \(x = 1\) ist die Tangente an \(G_f\) parallel zu \(g\). Der Berührpunkt ist \((1\,|\,1)\).</div>
+        <div class="ip"><em>Die Einsicht dahinter:</em> Die Gerade \(g\) <strong>ist</strong> die Sekante über dem Intervall. Die Aufgabe sagt also: Es gibt eine Stelle, an der die Tangente dieselbe Steigung hat wie die Sekante. Anschaulich ist das plausibel — irgendwo zwischen den beiden Schnittpunkten muss der Graph genauso steil verlaufen wie die Verbindungsgerade.</div>
+        <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K2: Eine Bedingung in eine lösbare Gleichung übersetzen · K5: Wurzelfunktion ableiten und Gleichung lösen · K1: Den Zusammenhang zwischen Sekante und Tangente begründen</div>
+      </div>
+    </div>
 
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
