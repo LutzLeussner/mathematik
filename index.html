@@ -15392,7 +15392,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
-        <div class="ip">Stell dir vor, du fährst Auto und blickst auf den Tacho: Er zeigt dir nicht, wie weit du insgesamt gefahren bist, sondern <strong>wie schnell du dich gerade jetzt bewegst</strong>. Genau das macht die Ableitung — sie misst die <em>momentane Änderungsrate</em> einer Größe.</div>
+        <div class="ip">Stell dir vor, du fährst Auto und blickst auf den Tacho: Er zeigt dir nicht, wie weit du insgesamt gefahren bist, sondern <strong>wie schnell du dich gerade jetzt bewegst</strong>. Genau das macht die Ableitung — sie misst die <em>lokale Änderungsrate</em> einer Größe.</div>
         <div class="ip" style="margin-top:10px">Ob Geschwindigkeit, Wachstum einer Population oder die Steigung einer Straße — immer wenn wir wissen wollen, <strong>wie schnell sich etwas ändert</strong>, brauchen wir die Ableitung. Sie ist das zentrale Werkzeug der Analysis.</div>
       </div>
     </div>
@@ -15411,11 +15411,17 @@ window.addEventListener('resize',function(){updateSimulator();});
     <!-- Kernidee-Box: Ableitung an einer Stelle ist eine ZAHL -->
     <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
       <strong style="color:#8a7a30">Kernidee:</strong>
-      \(f'(x_0)\) ist <strong>immer eine Zahl</strong> — die momentane Änderungsrate von \(f\) an der <em>einen</em> Stelle \(x_0\).
+      \(f'(x_0)\) ist <strong>immer eine Zahl</strong> — die lokale Änderungsrate von \(f\) an der <em>einen</em> Stelle \(x_0\).
       Sie entsteht <strong>immer</strong> als Grenzwert mittlerer Änderungsraten über Intervalle, die sich auf \(x_0\) zusammenziehen.
       Geometrisch ist sie die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).
       Die <strong>Ableitungsfunktion</strong> \(f'\) ist etwas anderes: Sie ordnet jeder Stelle \(x\) diese Zahl zu.
       Wer beides gleichsetzt, kann \(f'(2)\) berechnen, aber nicht sagen, was das Ergebnis bedeutet.
+    </div>
+
+    <div style="font-size:.86rem;color:#5b6770;margin:-6px 0 14px;padding-left:2px">
+      <strong>Zur Sprache:</strong> Viele Schulbücher sagen <em>momentane</em> Änderungsrate. Gemeint ist dasselbe.
+      Der Rahmenplan Mecklenburg-Vorpommern und die Bildungsstandards sagen <em>lokale</em> Änderungsrate — dieser Begriff wird hier durchgehend verwendet.
+      „Momentan" passt nur dort, wo die Zeit die unabhängige Größe ist; „lokal" passt immer.
     </div>
 
     <div class="section-label">Ableitungen</div>
@@ -15439,7 +15445,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <ul class="gl">
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann die Ableitung als momentane Änderungsrate und als Tangentensteigung deuten</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann die Ableitung als lokale Änderungsrate und als Tangentensteigung deuten und beide Deutungen ineinander übersetzen</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
@@ -15469,9 +15475,9 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="ip">Die Ableitung ist nicht nur eine Rechenvorschrift — sie hat vier <strong>Bedeutungen</strong>. Zwei davon knüpfen an Situationen aus der Welt an (<em>primär</em>), zwei an mathematische Objekte (<em>sekundär</em>). Du brauchst beide Sorten: die primären, um eine Sachaufgabe überhaupt zu deuten, die sekundären, um sie zu rechnen.</div>
             <div style="display:grid;gap:10px;margin-top:12px">
                 <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
-                    <strong>1. Momentane Änderungsrate</strong> <span style="font-size:11px;font-weight:700;color:#5b6e2e;background:#e3ebd6;border-radius:10px;padding:1px 8px;margin-left:4px">primär</span><br>
+                    <strong>1. Lokale Änderungsrate</strong> <span style="font-size:11px;font-weight:700;color:#5b6e2e;background:#e3ebd6;border-radius:10px;padding:1px 8px;margin-left:4px">primär</span><br>
                     \(f'(x_0)\) gibt an, wie schnell sich \(f\) an der Stelle \(x_0\) ändert.<br>
-                    <em>Beispiel:</em> Die Geschwindigkeit \(v(t) = s'(t)\) ist die momentane Änderungsrate des Weges.
+                    <em>Beispiel:</em> Die Geschwindigkeit \(v(t) = s'(t)\) ist die lokale Änderungsrate des Weges.
                 </div>
                 <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
                     <strong>2. Verstärkungsfaktor</strong> <span style="font-size:11px;font-weight:700;color:#5b6e2e;background:#e3ebd6;border-radius:10px;padding:1px 8px;margin-left:4px">primär</span><br>
@@ -15538,7 +15544,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip">Bert hat recht. Sauber getrennt: <strong>\(f'\) ist die Ableitungsfunktion</strong> von \(f\) — sie ordnet jeder Stelle \(x\) eine Zahl zu. <strong>\(f'(2)\) ist der Wert dieser Funktion an der Stelle 2</strong> — eine einzelne Zahl, nämlich die momentane Änderungsrate von \(f\) bei \(x=2\).</div>
+        <div class="ip">Bert hat recht. Sauber getrennt: <strong>\(f'\) ist die Ableitungsfunktion</strong> von \(f\) — sie ordnet jeder Stelle \(x\) eine Zahl zu. <strong>\(f'(2)\) ist der Wert dieser Funktion an der Stelle 2</strong> — eine einzelne Zahl, nämlich die lokale Änderungsrate von \(f\) bei \(x=2\).</div>
         <div class="ip">Für \(f(x)=x^2\): \(f'(x)=2x\) ist die Ableitungsfunktion, \(f'(2)=4\) ist die Zahl. Geometrisch: Die Tangente an die Normalparabel im Punkt \((2\,|\,4)\) hat die Steigung 4.</div>
         <div class="ip"><em>Warum das zählt:</em> In einer Sachaufgabe wird nie nach \(f'\) gefragt, sondern immer nach einem Wert an einer bestimmten Stelle — und der ist zu deuten, nicht nur zu berechnen.</div>
         <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
@@ -15669,7 +15675,7 @@ window.addEventListener('resize',function(){updateSimulator();});
 
             <div class="ip" style="margin-top: 15px;"><strong>Differentialquotient (Tangentensteigung):</strong></div>
             \[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 8px;">Wenn \(h\) immer kleiner wird, zieht sich das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Der Grenzwert des Differenzenquotienten ist die <strong>momentane Änderungsrate</strong> — die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
+            <div class="ip" style="margin-top: 8px;">Wenn \(h\) immer kleiner wird, zieht sich das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Der Grenzwert des Differenzenquotienten ist die <strong>lokale Änderungsrate</strong> — die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
             <div class="hint" style="margin-top:10px"><strong>Der entscheidende Schritt</strong> ist der Übergang \(h \to 0\): Aus einer Aussage über ein <em>Intervall</em> wird eine Aussage über eine <em>Stelle</em>. Alles, was danach kommt — Ableitungsregeln, Extrema, Wendepunkte — steht auf diesem einen Schritt.</div>
         </div>
     </div>
@@ -16114,15 +16120,15 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
-            <span class="card-title">Sekantensteigung und momentane Änderungsrate</span>
+            <span class="card-title">Sekantensteigung und lokale Änderungsrate</span>
         </div>
         <div class="card-body">
             <div class="ip"><strong>Sekantensteigung (mittlere Änderungsrate):</strong></div>
             \[m_S = \frac{f(x_0 + h) - f(x_0)}{h}\]
             <div class="ip" style="margin-top: 12px;">Die Sekante verbindet zwei Punkte auf dem Graphen. Ihre Steigung beschreibt die mittlere Änderungsrate auf dem Intervall \([x_0;\, x_0+h]\) — sie sagt nichts darüber, was <em>innerhalb</em> des Intervalls passiert.</div>
-            <div class="ip" style="margin-top: 15px;"><strong>Momentane Änderungsrate (Tangentensteigung):</strong></div>
+            <div class="ip" style="margin-top: 15px;"><strong>Lokale Änderungsrate (Tangentensteigung):</strong></div>
             \[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="hint"><strong>Merke:</strong> Die Ableitung \(f'(x_0)\) ist der Grenzwert der Sekantensteigungen. Sie beschreibt die momentane Änderungsrate an der Stelle \(x_0\).</div>
+            <div class="hint"><strong>Merke:</strong> Die Ableitung \(f'(x_0)\) ist der Grenzwert der Sekantensteigungen. Sie beschreibt die lokale Änderungsrate an der Stelle \(x_0\).</div>
         </div>
     </div>
 
@@ -16498,7 +16504,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <li>Berechne den Neigungswinkel der Tangente, wenn \(f'(x_0) = 1\).</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Sekantensteigung und momentane Änderungsrate“.
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Sekantensteigung und lokale Änderungsrate“.
       </p>
     </div>
   </div>
