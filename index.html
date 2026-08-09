@@ -15018,8 +15018,8 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 <div class="tab-band" id="k11-tabs" style="display:none">
   <button class="ptb on" onclick="showK11Tab('k11-grenz',this)">Grenzwerte</button>
-  <button class="ptb" onclick="showK11Tab('k11-ableit',this)">Ableitungen</button>
-  <button class="ptb" onclick="showK11Tab('k11-tangenten',this)">Tangenten</button>
+  <button class="ptb" onclick="showK11Tab('k11-tangenten',this)">Tangente &amp; Änderungsrate</button>
+  <button class="ptb" onclick="showK11Tab('k11-ableit',this)">Ableitungsregeln</button>
   <button class="ptb" onclick="showK11Tab('k11-grafabl',this)">Graf. Ableiten</button>
   <button class="ptb" onclick="showK11Tab('k11-kurven',this)">Kurvendiskussion</button>
   <button class="ptb" onclick="showK11Tab('k11-anwend',this)">Anwendungen</button>
@@ -15047,8 +15047,8 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
-        <div class="ip">Grenzwerte beschreiben, welchem Wert sich eine Funktion annähert – für \(x \to \infty\) oder an einer bestimmten Stelle. Sie bilden das Fundament für die Ableitung und sind zentral für das Verständnis von Stetigkeit.</div>
-        <div class="hint"><strong>Voraussetzung:</strong> Funktionsbegriff, rationale Funktionen, Verhalten für große \(x\)-Werte einschätzen können.</div>
+        <div class="ip">Grenzwerte beschreiben, welchem Wert sich eine Funktion annähert, wenn \(x\) über alle Grenzen wächst — das <strong>Verhalten im Unendlichen</strong>. Zusammen mit dem anschaulichen Stetigkeitsbegriff ist das ein kurzes, eigenständiges Thema: Es geht hier nicht um Rechenverfahren, sondern um ein Bild davon, was „Annäherung“ bedeutet.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Funktionsbegriff, Verhalten rationaler Funktionen für große \(x\)-Werte einschätzen können.</div>
       </div>
     </div>
 
@@ -15063,7 +15063,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <ul class="gl">
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den anschaulichen Grenzwertbegriff bei Folgen erklären</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den anschaulichen Grenzwertbegriff erklären und das Verhalten einer Funktion im Unendlichen beschreiben</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
@@ -15079,9 +15079,9 @@ window.addEventListener('resize',function(){updateSimulator();});
             <span class="card-title">Anschaulicher Grenzwertbegriff</span>
         </div>
         <div class="card-body">
-            <div class="ip">Eine <strong>Folge</strong> ist eine Funktion mit Definitionsbereich ℕ. Wir schreiben sie als \((a_n)\) oder \(a_1, a_2, a_3, \ldots\)</div>
-            <div class="hint"><strong>Merke:</strong> Eine Folge hat einen <strong>Grenzwert</strong> \(g\), wenn sich die Werte \(a_n\) der Zahl \(g\) immer mehr nähern, je größer \(n\) wird. Wir schreiben: \(\lim_{n \to \infty} a_n = g\)</div>
-            <div class="ip" style="margin-top: 12px;">Beispiel: \(a_n = \frac{1}{n}\) hat den Grenzwert 0, denn \(\lim_{n \to \infty} \frac{1}{n} = 0\)</div>
+            <div class="ip">Viele Funktionen nähern sich für sehr große \(x\)-Werte einem festen Wert an. Dieses Verhalten beschreibt der <strong>Grenzwert</strong>.</div>
+            <div class="hint"><strong>Merke:</strong> Eine Funktion \(f\) hat für \(x \to \infty\) den <strong>Grenzwert</strong> \(g\), wenn sich die Funktionswerte \(f(x)\) der Zahl \(g\) immer mehr nähern, je größer \(x\) wird. Wir schreiben: \(\lim_{x \to \infty} f(x) = g\)</div>
+            <div class="ip" style="margin-top: 12px;">Beispiel: \(f(x) = \frac{1}{x}\) hat für \(x \to \infty\) den Grenzwert 0, denn die Funktionswerte werden beliebig klein: \(\lim_{x \to \infty} \frac{1}{x} = 0\)</div>
         </div>
     </div>
 
@@ -15119,36 +15119,8 @@ window.addEventListener('resize',function(){updateSimulator();});
               <div class="ip"><strong>Beobachtung:</strong> Die Funktionswerte nähern sich immer mehr der Zahl 3 an. Also: \(\displaystyle\lim_{x \to \infty} \frac{3x+1}{x} = 3\).</div>
             </div>
 
-            <div class="bsp" style="margin-top:14px">
-              <div class="bsp-label">Beispiel: \(g(x) = \dfrac{x^2 - 1}{x - 1}\) für \(x \to 1\)</div>
-              <div class="bsp-q">Hier ist \(g(1)\) nicht definiert (Nenner = 0). Nähere dich der Stelle von beiden Seiten:</div>
-              <div style="overflow-x:auto;margin:12px 0">
-                <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
-                  <tr style="background:var(--sango-light)">
-                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">\(x\)</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">0,9</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">0,99</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">0,999</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">1,001</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">1,01</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">1,1</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">\(g(x)\)</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">1,9</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">1,99</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">1,999</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">2,001</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">2,01</td>
-                    <td style="padding:8px 12px;border:1px solid var(--border);">2,1</td>
-                  </tr>
-                </table>
-              </div>
-              <div class="ip"><strong>Beobachtung:</strong> Von links und rechts nähern sich die Werte der 2 an. Also: \(\displaystyle\lim_{x \to 1} \frac{x^2-1}{x-1} = 2\).</div>
-              <div class="ip" style="margin-top:6px"><em>Algebraische Bestätigung:</em> \(\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1\), und \(1+1 = 2\) ✓</div>
-            </div>
 
-            <div class="hint" style="margin-top:14px"><strong>Tipp für den Taschenrechner:</strong> Nutze die TABLE-Funktion (oder tippe die Werte einzeln ein). Wähle Zehnerpotenzen: \(x = 1,\; 10,\; 100,\; 1\,000,\; \ldots\) für \(x \to \infty\), oder immer kleinere Abstände zur Stelle: \(x_0 \pm 0{,}1,\; \pm 0{,}01,\; \pm 0{,}001,\; \ldots\) für Stellengrenzwerte.</div>
+            <div class="hint" style="margin-top:14px"><strong>Tipp für den Taschenrechner:</strong> Nutze die TABLE-Funktion (oder tippe die Werte einzeln ein). Wähle Zehnerpotenzen: \(x = 1,\; 10,\; 100,\; 1\,000,\; \ldots\) für \(x \to \infty\).</div>
         </div>
     </div>
 
@@ -15267,31 +15239,20 @@ window.addEventListener('resize',function(){updateSimulator();});
     })();
     </script>
 
-    <div class="bsp">
-        <div class="bsp-label">Beispielaufgabe 1: Grenzwert einer Folge</div>
-        <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme \(\lim_{n \to \infty} \frac{2n + 3}{n + 1}\)</div>
-        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-        <div class="bsp-a">
-            <strong>Lösung:</strong> Teile Zähler und Nenner durch die höchste Potenz von \(n\) (hier \(n\)):<br>
-            \[\lim_{n \to \infty} \frac{2n + 3}{n + 1} = \lim_{n \to \infty} \frac{2 + \frac{3}{n}}{1 + \frac{1}{n}} = \frac{2 + 0}{1 + 0} = 2\]
-            Die Folge nähert sich also dem Grenzwert 2.
-        </div>
-    </div>
-
     <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
 
     <div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
-                    <span class="tn">D1.1</span>
+                    <span class="tn">G1.1</span>
                     <span class="td de">★</span>
                 </div>
-                <div class="tq">Bestimme \(\lim_{n \to \infty} \frac{n}{n^2 + 1}\)</div>
+                <div class="tq">Bestimme \(\lim_{x \to \infty} \frac{x}{x^2 + 1}\) mit einer Wertetabelle (z. B. \(x = 10,\; 100,\; 1\,000\)) und gib den Grenzwert an</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-                <strong>Lösung:</strong> Dividiere durch \(n^2\): \(\lim_{n \to \infty} \frac{\frac{1}{n}}{1 + \frac{1}{n^2}} = \frac{0}{1} = 0\)
+                <strong>Lösung:</strong> Wertetabelle: \(f(10) \approx 0{,}099\); \(f(100) \approx 0{,}01\); \(f(1\,000) \approx 0{,}001\) — die Werte werden beliebig klein. Also \(\lim_{x \to \infty} \frac{x}{x^2 + 1} = 0\). (Bestätigung durch Dividieren von Zähler und Nenner durch \(x^2\): \(\frac{\frac{1}{x}}{1 + \frac{1}{x^2}} \to \frac{0}{1} = 0\))
             </div>
         </div>
     </div>
@@ -15300,7 +15261,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
-                    <span class="tn">D1.2</span>
+                    <span class="tn">G1.2</span>
                     <span class="td de">★</span>
                 </div>
                 <div class="tq">Gib den Grenzwert an: \(\lim_{x \to \infty} \frac{3x^2}{x^2 + x}\)</div>
@@ -15316,47 +15277,14 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
-                    <span class="tn">D1.3</span>
+                    <span class="tn">G1.3</span>
                     <span class="td dm">★★</span>
                 </div>
-                <div class="tq">Untersuche die Stetigkeit von \(f(x) = \begin{cases} x + 1 & x \leq 2 \\ 5 - x & x > 2 \end{cases}\) bei \(x = 2\)</div>
+                <div class="tq">Betrachte den rechten Graphen oben („stückweise definiert“). Begründe anschaulich, warum die Funktion an der Stelle \(x = 1\) nicht stetig ist — und erkläre, warum man dort keine eindeutige Tangente anlegen kann</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-                <strong>Lösung:</strong> \(f(2) = 3\); \(\lim_{x \to 2^-} f(x) = 3\); \(\lim_{x \to 2^+} f(x) = 3\) → Die Funktion ist stetig bei \(x = 2\)
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D1.4</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Bestimme \(a\) so, dass \(f(x) = \begin{cases} ax + 1 & x < 1 \\ x^2 & x \geq 1 \end{cases}\) stetig ist</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Für Stetigkeit: \(\lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x)\)<br>
-                \(a \cdot 1 + 1 = 1^2\) → \(a + 1 = 1\) → \(a = 0\)
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D1.5</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Zeige, dass \(f(x) = \frac{\sin(x)}{x}\) eine Sprungstelle bei \(x = 0\) hat (zusätzliche Bedingung: \(f(0) = 0\))</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Es ist bekannt, dass \(\lim_{x \to 0} \frac{\sin(x)}{x} = 1\). Da \(f(0) = 0\) und der Grenzwert = 1, ist \(f\) unstetig bei 0. (Hinweis: Wenn man die Definition ändert zu \(f(0) = 1\), wird sie stetig!)
+                <strong>Lösung:</strong> An der Stelle \(x = 1\) springt der Graph: Von links kommend enden die Werte bei 1,5 (offener Kreis), der tatsächliche Funktionswert liegt aber bei 0,5. Beim Zeichnen muss man den Stift absetzen — die Funktion ist dort nicht stetig. Eine Tangente soll sich an den Graphen „anschmiegen“; an einer Sprungstelle gibt es aber keine einheitliche Richtung des Graphen, also auch keine eindeutige Tangente und keine Tangentensteigung.
             </div>
         </div>
     </div>
@@ -15373,7 +15301,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <li>Warum ist Stetigkeit eine Voraussetzung für die Ableitung? Was passiert an einer Sprungstelle?</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Stetigkeit und Grenzwerte“.
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Stetigkeit — anschaulich“.
       </p>
     </div>
   </div>
@@ -15382,18 +15310,18 @@ window.addEventListener('resize',function(){updateSimulator();});
 </div>
 
 <!-- ============================================================================
-     SECTION 2: ABLEITUNGEN
+     SECTION 2: TANGENTE UND ÄNDERUNGSRATE
      ============================================================================ -->
 
 
 
-<div class="subpanel" id="k11-ableit">
+<div class="subpanel" id="k11-tangenten">
     <!-- Sinnstiftung (D19): Warum Ableitung? -->
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
         <div class="ip">Stell dir vor, du fährst Auto und blickst auf den Tacho: Er zeigt dir nicht, wie weit du insgesamt gefahren bist, sondern <strong>wie schnell du dich gerade jetzt bewegst</strong>. Genau das macht die Ableitung — sie misst die <em>lokale Änderungsrate</em> einer Größe.</div>
-        <div class="ip" style="margin-top:10px">Ob Geschwindigkeit, Wachstum einer Population oder die Steigung einer Straße — immer wenn wir wissen wollen, <strong>wie schnell sich etwas ändert</strong>, brauchen wir die Ableitung. Sie ist das zentrale Werkzeug der Analysis.</div>
+        <div class="ip" style="margin-top:10px">In diesem Tab baust du den Begriff auf: von der mittleren Änderungsrate über die Sekante zur Tangente — und damit zur Ableitung an einer Stelle. Außerdem lernst du, Tangentengleichungen aufzustellen und den Neigungswinkel aus der Steigung zu berechnen.</div>
       </div>
     </div>
 
@@ -15424,22 +15352,12 @@ window.addEventListener('resize',function(){updateSimulator();});
       „Momentan" passt nur dort, wo die Zeit die unabhängige Größe ist; „lokal" passt immer.
     </div>
 
-    <div class="section-label">Ableitungen</div>
-
-    <div class="card" style="background:linear-gradient(135deg,#1a6fbf,#1555a0);color:#fff;border:none;margin-bottom:18px;">
-      <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-        <div>
-          <div style="font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em">Ableitungen-Tutor</div>
-          <div style="font-size:12px;opacity:0.85;line-height:1.5">Interaktives Quiz und Lernpfad zu Ableitungsregeln, Tangenten, grafischem Ableiten und Anwendungen.</div>
-        </div>
-        <a href="tutor-ableitungen.html" style="background:#fff;color:#1a6fbf;border:none;border-radius:var(--radius-xs);padding:10px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;white-space:nowrap;display:inline-block;transition:opacity .2s">Tutor starten →</a>
-      </div>
-    </div>
+    <div class="section-label">Tangente und Änderungsrate</div>
 
     <div class="card">
         <div class="card-head">
             <div class="ci ci-g">✓</div>
-            <span class="card-title">Lernziele · Ableitungen</span>
+            <span class="card-title">Lernziele · Tangente und Änderungsrate</span>
         </div>
         <div class="card-body">
             <ul class="gl">
@@ -15449,15 +15367,15 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann Ableitungen verschiedener Funktionen berechnen</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich verstehe den Übergang von der Sekantensteigung zur Tangentensteigung</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich wende Ableitungsregeln sicher an (Potenz-, Faktor-, Summen-, Produkt-, Kettenregel)</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann eine Tangentengleichung an einer gegebenen Stelle aufstellen</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne den Zusammenhang zwischen Ableitung und Monotonie bzw. Krümmung</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den Neigungswinkel einer Tangente bestimmen</span>
                 </li>
             </ul>
         </div>
@@ -15682,6 +15600,78 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 
     <!-- ═══ Funktionenlupe: lokale Linearität (Kirsch 1979, Tall, Elschenbroich) ═══ -->
+    <div class="bsp">
+        <div class="bsp-label">Beispielaufgabe: Sekantensteigung</div>
+        <div class="bsp-q"><strong>Aufgabe:</strong> Berechne die mittlere Änderungsrate von \(f(x) = x^2\) im Intervall \([1;\, 3]\).</div>
+        <!-- Graph: f(x)=x² mit Sekante durch (1,1) und (3,9) -->
+        <div style="display:flex;justify-content:center;margin:16px 0 12px">
+            <canvas id="cvSekante1" width="380" height="320" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:380px;height:320px"></canvas>
+        </div>
+        <script>
+        (function(){
+            var c=document.getElementById('cvSekante1'),ctx=c.getContext('2d');
+            var dpr=window.devicePixelRatio||1,cssW=380,cssH=320;
+            c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
+            ctx.scale(dpr,dpr);var W=cssW,H=cssH;
+            var xMin=-0.8,xMax=4.2,yMin=-1.5,yMax=11;
+            function tx(x){return(x-xMin)/(xMax-xMin)*W;}
+            function ty(y){return H-(y-yMin)/(yMax-yMin)*H;}
+            /* grid */
+            ctx.strokeStyle='#e8e4dd';ctx.lineWidth=0.5;
+            for(var gx=Math.ceil(xMin);gx<=Math.floor(xMax);gx++){ctx.beginPath();ctx.moveTo(tx(gx),0);ctx.lineTo(tx(gx),H);ctx.stroke();}
+            for(var gy=Math.ceil(yMin);gy<=Math.floor(yMax);gy++){ctx.beginPath();ctx.moveTo(0,ty(gy));ctx.lineTo(W,ty(gy));ctx.stroke();}
+            /* axes */
+            ctx.strokeStyle='#999';ctx.lineWidth=1.2;
+            ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
+            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
+            for(var lx=Math.ceil(xMin);lx<=Math.floor(xMax);lx++){if(lx!==0)ctx.fillText(lx,tx(lx),ty(0)+4);}
+            ctx.textAlign='right';ctx.textBaseline='middle';
+            for(var ly=Math.ceil(yMin);ly<=Math.floor(yMax);ly+=2){if(ly!==0)ctx.fillText(ly,tx(0)-5,ty(ly));}
+            /* f(x) = x² */
+            ctx.strokeStyle='#5b6e2e';ctx.lineWidth=2.5;ctx.beginPath();
+            for(var px=0;px<=W;px++){var x=xMin+px/W*(xMax-xMin),y=x*x;if(px===0)ctx.moveTo(px,ty(y));else ctx.lineTo(px,ty(y));}
+            ctx.stroke();
+            /* Sekante durch (1,1) und (3,9): m=4, y=4x-3 */
+            ctx.strokeStyle='#8a9da7';ctx.lineWidth=2;ctx.setLineDash([7,4]);ctx.beginPath();
+            ctx.moveTo(tx(0),ty(-3));ctx.lineTo(tx(xMax),ty(4*xMax-3));ctx.stroke();ctx.setLineDash([]);
+            /* Δx und Δy Markierungen */
+            ctx.strokeStyle='#c75c3a';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);
+            ctx.beginPath();ctx.moveTo(tx(1),ty(1));ctx.lineTo(tx(3),ty(1));ctx.stroke();
+            ctx.beginPath();ctx.moveTo(tx(3),ty(1));ctx.lineTo(tx(3),ty(9));ctx.stroke();ctx.setLineDash([]);
+            /* Labels für Δx und Δy */
+            ctx.fillStyle='#c75c3a';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
+            ctx.fillText('\u0394x = 2',tx(2),ty(1)+5);
+            ctx.textAlign='left';ctx.textBaseline='middle';
+            ctx.fillText('\u0394y = 8',tx(3)+6,ty(5));
+            /* Punkte */
+            ctx.fillStyle='#5b6e2e';ctx.beginPath();ctx.arc(tx(1),ty(1),5,0,2*Math.PI);ctx.fill();
+            ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(tx(1),ty(1),2,0,2*Math.PI);ctx.fill();
+            ctx.fillStyle='#5b6e2e';ctx.beginPath();ctx.arc(tx(3),ty(9),5,0,2*Math.PI);ctx.fill();
+            ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(tx(3),ty(9),2,0,2*Math.PI);ctx.fill();
+            /* Punkt-Labels */
+            ctx.fillStyle='#333';ctx.font='11px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';
+            ctx.fillText('(1 | 1)',tx(1)+7,ty(1)-2);
+            ctx.fillText('(3 | 9)',tx(3)+7,ty(9)-2);
+            /* legend */
+            ctx.font='bold 11px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='top';
+            ctx.fillStyle='#5b6e2e';ctx.fillText('f(x) = x\u00B2',8,8);
+            ctx.fillStyle='#8a9da7';ctx.fillText('Sekante: m\u209B = 4',8,23);
+        })();
+        </script>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+            <strong>Lösung:</strong><br>
+            Punkte: \(P(1 \,|\, 1)\) und \(Q(3 \,|\, 9)\)<br>
+            \(m_S = \frac{f(3) - f(1)}{3 - 1} = \frac{9 - 1}{2} = \frac{8}{2} = 4\)<br><br>
+            Die Sekante (blau gestrichelt) verbindet die beiden Punkte. Die Steigung 4 entspricht der <strong>mittleren Änderungsrate</strong> von \(f\) im Intervall \([1;\, 3]\): Im Durchschnitt steigt \(f\) dort um 4 Einheiten pro x-Einheit.
+        </div>
+    </div>
+
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -16038,536 +16028,13 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
-    <!-- Sachkontext-Einstiegsbeispiel (D3, D4, D12): Grundvorstellungen anwenden -->
-    <div class="bsp">
-        <div class="bsp-label">Einstiegsbeispiel: Ableitung im Sachkontext</div>
-        <div class="bsp-q"><strong>Aufgabe:</strong> Ein Heißluftballon steigt auf. Seine Höhe (in Metern) nach t Minuten wird beschrieben durch:<br>
-        \[h(t) = -t^3 + 6t^2 \quad (0 \le t \le 6)\]
-        <strong>a)</strong> Berechne die mittlere Steiggeschwindigkeit zwischen t = 1 und t = 3.<br>
-        <strong>b)</strong> Bestimme die momentane Steiggeschwindigkeit zum Zeitpunkt t = 2.<br>
-        <strong>c)</strong> Interpretiere das Ergebnis von b) als Verstärkungsfaktor.</div>
-        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-        <div class="bsp-a">
-            <strong>a) Mittlere Steiggeschwindigkeit</strong> (= Differenzenquotient):<br>
-            \[\frac{h(3) - h(1)}{3 - 1} = \frac{(-27 + 54) - (-1 + 6)}{2} = \frac{27 - 5}{2} = \frac{22}{2} = 11 \text{ m/min}\]
-            <div class="ip" style="margin-top:8px"><strong>b) Momentane Steiggeschwindigkeit</strong> (= Ableitung):<br>
-            \[h'(t) = -3t^2 + 12t\]
-            \[h'(2) = -3 \cdot 4 + 12 \cdot 2 = -12 + 24 = 12 \text{ m/min}\]</div>
-            <div class="ip" style="margin-top:8px"><strong>c) Interpretation als Verstärkungsfaktor:</strong><br>
-            h'(2) = 12 bedeutet: Zum Zeitpunkt t = 2 min steigt der Ballon mit 12 m/min. Wenn eine weitere Minute vergeht, nimmt die Höhe um <em>etwa</em> 12 m zu. Das „etwa" ist wichtig, weil die Steiggeschwindigkeit sich selbst ändert (die Funktion ist nicht linear).</div>
-            <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
-            <div class="komp-desc">K3: Ableitung als Geschwindigkeit im Sachkontext · K5: Differenzenquotient und Ableitung berechnen · K6: Ergebnis im Kontext interpretieren</div>
-        </div>
-    </div>
-
-    <!-- Jetzt die Formalisierung: Ableitungsregeln (D18: Merksatz NACH Verständnis) -->
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">i</div>
-            <span class="card-title">Ableitungsregeln</span>
-        </div>
-        <div class="card-body">
-            <div class="ip">Nachdem du verstanden hast, <em>was</em> die Ableitung bedeutet, lernst du jetzt, <em>wie</em> man sie berechnet — ohne jedes Mal den Grenzwert bilden zu müssen:</div>
-            <div style="background: #f9f9f9; padding: 12px; border-radius: 3px; margin: 10px 0;">
-                <strong>Potenzregel:</strong> Wenn \(f(x) = x^n\), dann \(f'(x) = n \cdot x^{n-1}\)<br><br>
-                <strong>Faktorregel:</strong> \((c \cdot f(x))' = c \cdot f'(x)\)<br><br>
-                <strong>Summenregel:</strong> \((f(x) + g(x))' = f'(x) + g'(x)\)<br><br>
-                <strong>Produktregel:</strong> \((f(x) \cdot g(x))' = f'(x) \cdot g(x) + f(x) \cdot g'(x)\)<br><br>
-                <strong>Kettenregel:</strong> \((f(g(x)))' = f'(g(x)) \cdot g'(x)\)
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">i</div>
-            <span class="card-title">Wichtige Ableitungen</span>
-        </div>
-        <div class="card-body">
-            <div style="background: #f9f9f9; padding: 12px; border-radius: 3px;">
-                \(f(x) = e^x \Rightarrow f'(x) = e^x\)<br>
-                \(f(x) = \ln(x) \Rightarrow f'(x) = \frac{1}{x}\)<br>
-                \(f(x) = \sin(x) \Rightarrow f'(x) = \cos(x)\)<br>
-                \(f(x) = \cos(x) \Rightarrow f'(x) = -\sin(x)\)<br>
-                \(f(x) = a^x \Rightarrow f'(x) = a^x \cdot \ln(a)\)
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">i</div>
-            <span class="card-title">Monotonie und erste Ableitung</span>
-        </div>
-        <div class="card-body">
-            <div class="ip"><strong>Zusammenhang:</strong> Die erste Ableitung verrät uns, ob die Funktion wächst oder fällt:</div>
-            <div style="background: #eef3f5; border-left: 3px solid #8a9da7; padding: 10px 12px; margin: 10px 0; border-radius: 2px;">
-                • Wenn \(f'(x) > 0\) auf einem Intervall → \(f\) ist <strong>streng monoton wachsend</strong> dort<br>
-                • Wenn \(f'(x) < 0\) auf einem Intervall → \(f\) ist <strong>streng monoton fallend</strong> dort<br>
-                • Wenn \(f'(x_0) = 0\) → waagerechte Tangente, also <strong>mögliches</strong> Extremum
-            </div>
-            <div class="hint" style="margin-top:10px"><strong>Vorsicht — typischer Fehler:</strong> \(f'(x_0)=0\) allein genügt <strong>nie</strong>. Bei \(f(x)=x^3\) ist \(f'(0)=0\), aber \(f\) steigt links und rechts von 0 weiter — dort liegt ein <em>Sattelpunkt</em>, kein Extremum. Erst ein <strong>Vorzeichenwechsel von \(f'\)</strong> entscheidet: von + nach − ergibt einen Hochpunkt, von − nach + einen Tiefpunkt. Bleibt das Vorzeichen gleich, ist es keins von beidem.</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">i</div>
-            <span class="card-title">Krümmung und zweite Ableitung</span>
-        </div>
-        <div class="card-body">
-            <div class="ip"><strong>Die zweite Ableitung</strong> \(f''(x)\) beschreibt die Krümmung:</div>
-            <div style="background: #eef3f5; border-left: 3px solid #8a9da7; padding: 10px 12px; margin: 10px 0; border-radius: 2px;">
-                • Wenn \(f''(x) > 0\) → Graph ist <strong>linksgekrümmt (konvex)</strong> – wie ∪<br>
-                • Wenn \(f''(x) < 0\) → Graph ist <strong>rechtsgekrümmt (konkav)</strong> – wie ∩<br>
-                • Wenn \(f''(x) = 0\) → möglicher <strong>Wendepunkt</strong> (nur <em>möglich</em> — es muss ein Vorzeichenwechsel von \(f''\) hinzukommen)
-            </div>
-        </div>
-    </div>
-
-    <div class="bsp">
-        <div class="bsp-label">Beispielaufgabe 1: Ableitung mit Potenzregel</div>
-        <div class="bsp-q"><strong>Aufgabe:</strong> Leite \(f(x) = 3x^4 - 2x^2 + 5x - 7\) ab</div>
-        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-        <div class="bsp-a">
-            <strong>Lösung:</strong> Wende die Potenzregel auf jeden Term an:<br>
-            \[f'(x) = 3 \cdot 4x^3 - 2 \cdot 2x^1 + 5 \cdot 1 - 0 = 12x^3 - 4x + 5\]
-        </div>
-    </div>
-
-    <div class="bsp">
-        <div class="bsp-label">Beispielaufgabe 2: Produktregel</div>
-        <div class="bsp-q"><strong>Aufgabe:</strong> Leite \(f(x) = (x^2 + 1) \cdot e^x\) ab</div>
-        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-        <div class="bsp-a">
-            <strong>Lösung:</strong> Produktregel: \((u \cdot v)' = u' \cdot v + u \cdot v'\)<br>
-            \(u = x^2 + 1 \Rightarrow u' = 2x\)<br>
-            \(v = e^x \Rightarrow v' = e^x\)<br>
-            \[f'(x) = 2x \cdot e^x + (x^2 + 1) \cdot e^x = e^x(2x + x^2 + 1) = e^x(x^2 + 2x + 1)\]
-        </div>
-    </div>
-
-    <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
-
-    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">A</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · A</div>
-        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Ableitungsturm: Potenz- und Summenregel</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Regeln sicher anwenden — reproduktives Üben, bis die Rechnung sitzt.</div>
-      </div>
-    </div>
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.1a</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = 5x^3\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = 15x^2\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.1b</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = x^3 - 2x^2 + 3x\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = 3x^2 - 4x + 3\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.1c</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = \frac{1}{4}x^4 - \frac{2}{3}x^3 + x^2 - 7\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = x^3 - 2x^2 + 2x\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.1d</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = 3\sqrt{x} + \frac{4}{x}\). Schreibe zuerst in Potenzschreibweise um.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Umschreiben: \(f(x) = 3x^{\frac{1}{2}} + 4x^{-1}\)<br>
-                \(f'(x) = 3 \cdot \frac{1}{2}x^{-\frac{1}{2}} + 4 \cdot (-1)x^{-2} = \frac{3}{2\sqrt{x}} - \frac{4}{x^2}\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.1e</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = (2x - 1)^2 + \frac{x^3 - 8}{x^2}\). Vereinfache zuerst.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Vereinfachen: \((2x-1)^2 = 4x^2 - 4x + 1\) und \(\frac{x^3-8}{x^2} = x - 8x^{-2}\)<br>
-                Also \(f(x) = 4x^2 - 4x + 1 + x - 8x^{-2} = 4x^2 - 3x + 1 + (-8x^{-2})\)<br>
-                \(f'(x) = 8x - 3 + 16x^{-3} = 8x - 3 + \frac{16}{x^3}\)
-            </div>
-        </div>
-    </div>
-
-    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">B</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · B</div>
-        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Ableitungsturm: Besondere Funktionen</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">e-Funktion, Logarithmus, Sinus und Kosinus — dieselben Regeln, neue Bausteine.</div>
-      </div>
-    </div>
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.2a</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = \sin(x) + e^x\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = \cos(x) + e^x\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.2b</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = 3e^x - 2\cos(x) + 4\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = 3e^x + 2\sin(x)\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.2c</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = 2\ln(x) + \frac{5}{x} - x^2\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = \frac{2}{x} + (-5)x^{-2} - 2x = \frac{2}{x} - \frac{5}{x^2} - 2x\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.2d</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Leite ab und bestimme \(f'(0)\): \(f(x) = x^2 \cdot e^x - \sin(x)\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Produktregel für \(x^2 \cdot e^x\):<br>
-                \(f'(x) = 2x \cdot e^x + x^2 \cdot e^x - \cos(x) = e^x(x^2 + 2x) - \cos(x)\)<br>
-                \(f'(0) = e^0 \cdot (0 + 0) - \cos(0) = 0 - 1 = -1\)
-            </div>
-        </div>
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.2e</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = e^x \cdot \sin(x)\) und zeige, dass \(f'(x) = e^x(\sin(x) + \cos(x))\) gilt.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Produktregel: \(u = e^x,\; u' = e^x,\; v = \sin(x),\; v' = \cos(x)\)<br>
-                \(f'(x) = e^x \cdot \sin(x) + e^x \cdot \cos(x) = e^x(\sin(x) + \cos(x))\) ✓
-            </div>
-        </div>
-    </div>
-
-        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
-      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c8b55e;line-height:1;font-weight:400;min-width:44px;text-align:center">C</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · C</div>
-        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Kombinieren, deuten, begründen</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Mehrere Regeln in einer Aufgabe, waagerechte Tangenten, Monotonie, Sachkontext und Begründung — hier wird die Ableitung benutzt, nicht nur gebildet.</div>
-      </div>
-    </div>
-<div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.3</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = x \cdot \ln(x)\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Produktregel: \(f'(x) = 1 \cdot \ln(x) + x \cdot \frac{1}{x} = \ln(x) + 1\)
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.4</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Bestimme die Stellen mit waagerechten Tangenten für \(f(x) = x^3 - 3x^2\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = 3x^2 - 6x = 0\) → \(3x(x - 2) = 0\) → \(x = 0\) oder \(x = 2\)
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.5</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Leite ab: \(f(x) = (x^2 + 2x)^3\) (Kettenregel)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> Kettenregel: \(f'(x) = 3(x^2 + 2x)^2 \cdot (2x + 2) = 6(x + 1)(x^2 + 2x)^2\)
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">D2.6</span>
-                    <span class="td dh">★★★</span>
-                </div>
-                <div class="tq">Bestimme Monotoniebereiche für \(f(x) = \frac{1}{3}x^3 - 2x^2 + 3x\)</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <strong>Lösung:</strong> \(f'(x) = x^2 - 4x + 3 = (x-1)(x-3)\)<br>
-                \(f'(x) > 0\) für \(x < 1\) oder \(x > 3\) → wachsend<br>
-                \(f'(x) < 0\) für \(1 < x < 3\) → fallend
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">D2.7</span><span class="td dm">★★</span></div>
-          <div class="tq">Die Länge einer Metallstange bei Temperatur \(T\) (in °C) wird durch \(\ell(T) = 2{,}000 + 0{,}000\,024\,T\) (in Metern) modelliert. Bestimme die Ableitung \(\ell'(T)\) und erläutere deren Bedeutung im Sachkontext.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip">\(\ell'(T) = 0{,}000\,024\) (konstant).</div>
-        <div class="ip"><strong>Bedeutung:</strong> Pro Grad Celsius Temperaturerhöhung dehnt sich die Stange um 0,024 mm. Die konstante Ableitung zeigt, dass die Ausdehnung gleichmäßig (linear) verläuft.</div>
-        <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K3: Ableitung im physikalischen Kontext interpretieren · K6: Bedeutung fachsprachlich erläutern · K5: Ableitung berechnen</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">D2.8</span><span class="td dm">★★</span></div>
-          <div class="tq">Begründe, warum die Ableitung einer konstanten Funktion \(f(x) = c\) stets null ist. Nutze den Differenzenquotienten als Ausgangspunkt.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip">Der Differenzenquotient lautet \(\frac{f(x+h) - f(x)}{h} = \frac{c - c}{h} = \frac{0}{h} = 0\) für alle \(h \ne 0\).</div>
-        <div class="ip">Der Grenzwert für \(h \to 0\) ist ebenfalls 0. Also: \(f'(x) = 0\).</div>
-        <div class="ip"><strong>Anschaulich:</strong> Eine Konstante ändert sich nie — ihre Änderungsrate ist daher überall null.</div>
-        <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K1: Ableitungsregel aus dem Differenzenquotienten herleiten · K5: Grenzwertbildung formal durchführen</div>
-      </div>
-    </div>
-
-
-
-<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
-  <div class="card-body">
-    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
-    <div class="ip">
-      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
-      <ol>
-        <li>Bestimme die Ableitung von \(f(x) = 3x^4 - 2x^2 + 5x - 7\). Welche Regeln wendest du an?</li>
-        <li>Erkläre, warum die Ableitung einer Konstante Null ist. Was bedeutet das geometrisch?</li>
-        <li>Berechne \(f'(2)\) für \(f(x) = x^3 - 6x\). Was sagt dir das Vorzeichen über den Graphen?</li>
-      </ol>
-      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Ableitungsregeln“.
-      </p>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<!-- ============================================================================
-     SECTION 2b: TANGENTEN
-     ============================================================================ -->
-
-
-
-<div class="subpanel" id="k11-tangenten">
-    <div class="card">
-      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
-      <div class="card-body">
-        <div class="ip">Die Tangente berührt den Graphen einer Funktion in genau einem Punkt und hat dort dieselbe Steigung. Du lernst, Tangentengleichungen aufzustellen und den Neigungswinkel aus der Steigung zu berechnen.</div>
-        <div class="hint"><strong>Voraussetzung:</strong> Ableitungsregeln sicher anwenden, Geradengleichung \(y = mx + n\).</div>
-      </div>
-    </div>
-
-    <div class="section-label">Tangenten und Neigungswinkel</div>
-
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-g">✓</div>
-            <span class="card-title">Lernziele · Tangenten</span>
-        </div>
-        <div class="card-body">
-            <ul class="gl">
-                <li class="gi">
-                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich verstehe den Übergang von Sekantensteigung zur Tangentensteigung</span>
-                </li>
-                <li class="gi">
-                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann eine Tangentengleichung an einer gegebenen Stelle aufstellen</span>
-                </li>
-                <li class="gi">
-                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den Neigungswinkel einer Tangente bestimmen</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">i</div>
-            <span class="card-title">Sekantensteigung und lokale Änderungsrate</span>
-        </div>
-        <div class="card-body">
-            <div class="ip"><strong>Sekantensteigung (mittlere Änderungsrate):</strong></div>
-            \[m_S = \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 12px;">Die Sekante verbindet zwei Punkte auf dem Graphen. Ihre Steigung beschreibt die mittlere Änderungsrate auf dem Intervall \([x_0;\, x_0+h]\) — sie sagt nichts darüber, was <em>innerhalb</em> des Intervalls passiert.</div>
-            <div class="ip" style="margin-top: 15px;"><strong>Lokale Änderungsrate (Tangentensteigung):</strong></div>
-            \[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="hint"><strong>Merke:</strong> Die Ableitung \(f'(x_0)\) ist der Grenzwert der Sekantensteigungen. Sie beschreibt die lokale Änderungsrate an der Stelle \(x_0\).</div>
-        </div>
-    </div>
-
-    <div class="bsp">
-        <div class="bsp-label">Beispielaufgabe: Sekantensteigung</div>
-        <div class="bsp-q"><strong>Aufgabe:</strong> Berechne die mittlere Änderungsrate von \(f(x) = x^2\) im Intervall \([1;\, 3]\).</div>
-        <!-- Graph: f(x)=x² mit Sekante durch (1,1) und (3,9) -->
-        <div style="display:flex;justify-content:center;margin:16px 0 12px">
-            <canvas id="cvSekante1" width="380" height="320" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:380px;height:320px"></canvas>
-        </div>
-        <script>
-        (function(){
-            var c=document.getElementById('cvSekante1'),ctx=c.getContext('2d');
-            var dpr=window.devicePixelRatio||1,cssW=380,cssH=320;
-            c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
-            ctx.scale(dpr,dpr);var W=cssW,H=cssH;
-            var xMin=-0.8,xMax=4.2,yMin=-1.5,yMax=11;
-            function tx(x){return(x-xMin)/(xMax-xMin)*W;}
-            function ty(y){return H-(y-yMin)/(yMax-yMin)*H;}
-            /* grid */
-            ctx.strokeStyle='#e8e4dd';ctx.lineWidth=0.5;
-            for(var gx=Math.ceil(xMin);gx<=Math.floor(xMax);gx++){ctx.beginPath();ctx.moveTo(tx(gx),0);ctx.lineTo(tx(gx),H);ctx.stroke();}
-            for(var gy=Math.ceil(yMin);gy<=Math.floor(yMax);gy++){ctx.beginPath();ctx.moveTo(0,ty(gy));ctx.lineTo(W,ty(gy));ctx.stroke();}
-            /* axes */
-            ctx.strokeStyle='#999';ctx.lineWidth=1.2;
-            ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
-            ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
-            var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
-            ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
-            ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
-            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
-            ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
-            for(var lx=Math.ceil(xMin);lx<=Math.floor(xMax);lx++){if(lx!==0)ctx.fillText(lx,tx(lx),ty(0)+4);}
-            ctx.textAlign='right';ctx.textBaseline='middle';
-            for(var ly=Math.ceil(yMin);ly<=Math.floor(yMax);ly+=2){if(ly!==0)ctx.fillText(ly,tx(0)-5,ty(ly));}
-            /* f(x) = x² */
-            ctx.strokeStyle='#5b6e2e';ctx.lineWidth=2.5;ctx.beginPath();
-            for(var px=0;px<=W;px++){var x=xMin+px/W*(xMax-xMin),y=x*x;if(px===0)ctx.moveTo(px,ty(y));else ctx.lineTo(px,ty(y));}
-            ctx.stroke();
-            /* Sekante durch (1,1) und (3,9): m=4, y=4x-3 */
-            ctx.strokeStyle='#8a9da7';ctx.lineWidth=2;ctx.setLineDash([7,4]);ctx.beginPath();
-            ctx.moveTo(tx(0),ty(-3));ctx.lineTo(tx(xMax),ty(4*xMax-3));ctx.stroke();ctx.setLineDash([]);
-            /* Δx und Δy Markierungen */
-            ctx.strokeStyle='#c75c3a';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);
-            ctx.beginPath();ctx.moveTo(tx(1),ty(1));ctx.lineTo(tx(3),ty(1));ctx.stroke();
-            ctx.beginPath();ctx.moveTo(tx(3),ty(1));ctx.lineTo(tx(3),ty(9));ctx.stroke();ctx.setLineDash([]);
-            /* Labels für Δx und Δy */
-            ctx.fillStyle='#c75c3a';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='center';ctx.textBaseline='top';
-            ctx.fillText('\u0394x = 2',tx(2),ty(1)+5);
-            ctx.textAlign='left';ctx.textBaseline='middle';
-            ctx.fillText('\u0394y = 8',tx(3)+6,ty(5));
-            /* Punkte */
-            ctx.fillStyle='#5b6e2e';ctx.beginPath();ctx.arc(tx(1),ty(1),5,0,2*Math.PI);ctx.fill();
-            ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(tx(1),ty(1),2,0,2*Math.PI);ctx.fill();
-            ctx.fillStyle='#5b6e2e';ctx.beginPath();ctx.arc(tx(3),ty(9),5,0,2*Math.PI);ctx.fill();
-            ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(tx(3),ty(9),2,0,2*Math.PI);ctx.fill();
-            /* Punkt-Labels */
-            ctx.fillStyle='#333';ctx.font='11px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';
-            ctx.fillText('(1 | 1)',tx(1)+7,ty(1)-2);
-            ctx.fillText('(3 | 9)',tx(3)+7,ty(9)-2);
-            /* legend */
-            ctx.font='bold 11px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='top';
-            ctx.fillStyle='#5b6e2e';ctx.fillText('f(x) = x\u00B2',8,8);
-            ctx.fillStyle='#8a9da7';ctx.fillText('Sekante: m\u209B = 4',8,23);
-        })();
-        </script>
-        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-        <div class="bsp-a">
-            <strong>Lösung:</strong><br>
-            Punkte: \(P(1 \,|\, 1)\) und \(Q(3 \,|\, 9)\)<br>
-            \(m_S = \frac{f(3) - f(1)}{3 - 1} = \frac{9 - 1}{2} = \frac{8}{2} = 4\)<br><br>
-            Die Sekante (blau gestrichelt) verbindet die beiden Punkte. Die Steigung 4 entspricht der <strong>mittleren Änderungsrate</strong> von \(f\) im Intervall \([1;\, 3]\): Im Durchschnitt steigt \(f\) dort um 4 Einheiten pro x-Einheit.
-        </div>
-    </div>
-
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
             <span class="card-title">Tangentengleichung und Neigungswinkel</span>
         </div>
         <div class="card-body">
+            <div class="hint" style="margin-bottom:12px"><strong>Hinweis:</strong> Zum Rechnen brauchst du hier erste Ableitungen wie \((x^2)' = 2x\) oder \((x^3)' = 3x^2\). Die Ableitungsregeln werden im nächsten Tab systematisch eingeführt — nimm diese beiden Fälle als Vorgriff einfach mit.</div>
             <div class="ip"><strong>Tangentengleichung</strong> an der Stelle \(x_0\):</div>
             \[t(x) = f'(x_0) \cdot (x - x_0) + f(x_0)\]
             <div class="ip" style="margin-top: 12px;"><strong>Neigungswinkel</strong> der Tangente:</div>
@@ -16627,9 +16094,9 @@ window.addEventListener('resize',function(){updateSimulator();});
             ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(tx(1),ty(-1),2,0,2*Math.PI);ctx.fill();
             /* legend */
             ctx.font='bold 12px Inter,sans-serif';
-            ctx.fillStyle='#5b6e2e';ctx.textAlign='left';ctx.textBaseline='top';ctx.fillText('f(x) = x\u00B3 \u2212 2x',12,12);
-            ctx.fillStyle='#c75c3a';ctx.fillText('t(x) = x \u2212 2',12,28);
-            ctx.font='11px Inter,sans-serif';ctx.fillStyle='#666';ctx.fillText('Berührpunkt (1 | \u22121)',12,46);
+            ctx.fillStyle='#5b6e2e';ctx.textAlign='left';ctx.textBaseline='top';ctx.fillText('f(x) = x³ − 2x',12,12);
+            ctx.fillStyle='#c75c3a';ctx.fillText('t(x) = x − 2',12,28);
+            ctx.font='11px Inter,sans-serif';ctx.fillStyle='#666';ctx.fillText('Berührpunkt (1 | −1)',12,46);
         })();
         </script>
         <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
@@ -17074,7 +16541,431 @@ window.addEventListener('resize',function(){updateSimulator();});
         <li>Berechne den Neigungswinkel der Tangente, wenn \(f'(x_0) = 1\).</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Sekantensteigung und lokale Änderungsrate“.
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Differenzenquotient und Differentialquotient“.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ============================================================================
+     SECTION 2b: ABLEITUNGSREGELN
+     ============================================================================ -->
+
+
+
+<div class="subpanel" id="k11-ableit">
+    <!-- Sinnstiftung: Vom Begriff zum Kalkül -->
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Im Tab „Tangente &amp; Änderungsrate“ hast du verstanden, <strong>was</strong> die Ableitung ist: die lokale Änderungsrate, geometrisch die Tangentensteigung. Jetzt lernst du, <strong>wie</strong> man sie schnell berechnet — mit Ableitungsregeln statt Wertetabelle und Grenzwert.</div>
+        <div class="ip" style="margin-top:10px">Die Regeln sind das Handwerkszeug für alles, was folgt: Extrema und Wendepunkte berechnen, Tangentengleichungen aufstellen, Sachprobleme lösen.</div>
+      </div>
+    </div>
+
+    <!-- Vorwissen aktivieren (D15) -->
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das brauchst du</span></div>
+      <div class="card-body">
+        <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
+          <strong>Aus dem Tab „Tangente &amp; Änderungsrate“:</strong> \(f'(x_0)\) ist eine Zahl — die lokale Änderungsrate an der Stelle \(x_0\); die Ableitungsfunktion \(f'\) ordnet jeder Stelle diese Zahl zu.<br>
+          <strong>Aus Klasse 10:</strong> Potenzgesetze.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Ableitungsregeln</div>
+
+    <div class="card" style="background:linear-gradient(135deg,#1a6fbf,#1555a0);color:#fff;border:none;margin-bottom:18px;">
+      <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em">Ableitungen-Tutor</div>
+          <div style="font-size:12px;opacity:0.85;line-height:1.5">Interaktives Quiz und Lernpfad zu Ableitungsregeln, Tangenten, grafischem Ableiten und Anwendungen.</div>
+        </div>
+        <a href="tutor-ableitungen.html" style="background:#fff;color:#1a6fbf;border:none;border-radius:var(--radius-xs);padding:10px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;white-space:nowrap;display:inline-block;transition:opacity .2s">Tutor starten →</a>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-g">✓</div>
+            <span class="card-title">Lernziele · Ableitungsregeln</span>
+        </div>
+        <div class="card-body">
+            <ul class="gl">
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann Ableitungen verschiedener Funktionen berechnen</span>
+                </li>
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich wende Ableitungsregeln sicher an (Potenz-, Faktor-, Summen-, Produkt-, Kettenregel)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Jetzt die Formalisierung: Ableitungsregeln (D18: Merksatz NACH Verständnis) -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Ableitungsregeln</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Nachdem du verstanden hast, <em>was</em> die Ableitung bedeutet, lernst du jetzt, <em>wie</em> man sie berechnet — ohne jedes Mal den Grenzwert bilden zu müssen:</div>
+            <div style="background: #f9f9f9; padding: 12px; border-radius: 3px; margin: 10px 0;">
+                <strong>Potenzregel:</strong> Wenn \(f(x) = x^n\), dann \(f'(x) = n \cdot x^{n-1}\)<br><br>
+                <strong>Faktorregel:</strong> \((c \cdot f(x))' = c \cdot f'(x)\)<br><br>
+                <strong>Summenregel:</strong> \((f(x) + g(x))' = f'(x) + g'(x)\)<br><br>
+                <strong>Produktregel:</strong> \((f(x) \cdot g(x))' = f'(x) \cdot g(x) + f(x) \cdot g'(x)\)<br><br>
+                <strong>Kettenregel:</strong> \((f(g(x)))' = f'(g(x)) \cdot g'(x)\)
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Wichtige Ableitungen</span>
+        </div>
+        <div class="card-body">
+            <div style="background: #f9f9f9; padding: 12px; border-radius: 3px;">
+                \(f(x) = e^x \Rightarrow f'(x) = e^x\)<br>
+                \(f(x) = \ln(x) \Rightarrow f'(x) = \frac{1}{x}\)<br>
+                \(f(x) = \sin(x) \Rightarrow f'(x) = \cos(x)\)<br>
+                \(f(x) = \cos(x) \Rightarrow f'(x) = -\sin(x)\)<br>
+                \(f(x) = a^x \Rightarrow f'(x) = a^x \cdot \ln(a)\)
+            </div>
+        </div>
+    </div>
+
+    <!-- Sachkontext-Einstiegsbeispiel (D3, D4, D12): Grundvorstellungen anwenden -->
+    <div class="bsp">
+        <div class="bsp-label">Beispiel: Ableitung im Sachkontext</div>
+        <div class="bsp-q"><strong>Aufgabe:</strong> Ein Heißluftballon steigt auf. Seine Höhe (in Metern) nach t Minuten wird beschrieben durch:<br>
+        \[h(t) = -t^3 + 6t^2 \quad (0 \le t \le 6)\]
+        <strong>a)</strong> Berechne die mittlere Steiggeschwindigkeit zwischen t = 1 und t = 3.<br>
+        <strong>b)</strong> Bestimme die momentane Steiggeschwindigkeit zum Zeitpunkt t = 2.<br>
+        <strong>c)</strong> Interpretiere das Ergebnis von b) als Verstärkungsfaktor.</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+            <strong>a) Mittlere Steiggeschwindigkeit</strong> (= Differenzenquotient):<br>
+            \[\frac{h(3) - h(1)}{3 - 1} = \frac{(-27 + 54) - (-1 + 6)}{2} = \frac{27 - 5}{2} = \frac{22}{2} = 11 \text{ m/min}\]
+            <div class="ip" style="margin-top:8px"><strong>b) Momentane Steiggeschwindigkeit</strong> (= Ableitung):<br>
+            \[h'(t) = -3t^2 + 12t\]
+            \[h'(2) = -3 \cdot 4 + 12 \cdot 2 = -12 + 24 = 12 \text{ m/min}\]</div>
+            <div class="ip" style="margin-top:8px"><strong>c) Interpretation als Verstärkungsfaktor:</strong><br>
+            h'(2) = 12 bedeutet: Zum Zeitpunkt t = 2 min steigt der Ballon mit 12 m/min. Wenn eine weitere Minute vergeht, nimmt die Höhe um <em>etwa</em> 12 m zu. Das „etwa" ist wichtig, weil die Steiggeschwindigkeit sich selbst ändert (die Funktion ist nicht linear).</div>
+            <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+            <div class="komp-desc">K3: Ableitung als Geschwindigkeit im Sachkontext · K5: Differenzenquotient und Ableitung berechnen · K6: Ergebnis im Kontext interpretieren</div>
+        </div>
+    </div>
+
+    <div class="bsp">
+        <div class="bsp-label">Beispielaufgabe 1: Ableitung mit Potenzregel</div>
+        <div class="bsp-q"><strong>Aufgabe:</strong> Leite \(f(x) = 3x^4 - 2x^2 + 5x - 7\) ab</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+            <strong>Lösung:</strong> Wende die Potenzregel auf jeden Term an:<br>
+            \[f'(x) = 3 \cdot 4x^3 - 2 \cdot 2x^1 + 5 \cdot 1 - 0 = 12x^3 - 4x + 5\]
+        </div>
+    </div>
+
+    <div class="bsp">
+        <div class="bsp-label">Beispielaufgabe 2: Produktregel</div>
+        <div class="bsp-q"><strong>Aufgabe:</strong> Leite \(f(x) = (x^2 + 1) \cdot e^x\) ab</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+            <strong>Lösung:</strong> Produktregel: \((u \cdot v)' = u' \cdot v + u \cdot v'\)<br>
+            \(u = x^2 + 1 \Rightarrow u' = 2x\)<br>
+            \(v = e^x \Rightarrow v' = e^x\)<br>
+            \[f'(x) = 2x \cdot e^x + (x^2 + 1) \cdot e^x = e^x(2x + x^2 + 1) = e^x(x^2 + 2x + 1)\]
+        </div>
+    </div>
+
+    <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
+
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">A</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · A</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Ableitungsturm: Potenz- und Summenregel</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Regeln sicher anwenden — reproduktives Üben, bis die Rechnung sitzt.</div>
+      </div>
+    </div>
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.1a</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = 5x^3\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = 15x^2\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.1b</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = x^3 - 2x^2 + 3x\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = 3x^2 - 4x + 3\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.1c</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = \frac{1}{4}x^4 - \frac{2}{3}x^3 + x^2 - 7\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = x^3 - 2x^2 + 2x\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.1d</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = 3\sqrt{x} + \frac{4}{x}\). Schreibe zuerst in Potenzschreibweise um.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> Umschreiben: \(f(x) = 3x^{\frac{1}{2}} + 4x^{-1}\)<br>
+                \(f'(x) = 3 \cdot \frac{1}{2}x^{-\frac{1}{2}} + 4 \cdot (-1)x^{-2} = \frac{3}{2\sqrt{x}} - \frac{4}{x^2}\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.1e</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = (2x - 1)^2 + \frac{x^3 - 8}{x^2}\). Vereinfache zuerst.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> Vereinfachen: \((2x-1)^2 = 4x^2 - 4x + 1\) und \(\frac{x^3-8}{x^2} = x - 8x^{-2}\)<br>
+                Also \(f(x) = 4x^2 - 4x + 1 + x - 8x^{-2} = 4x^2 - 3x + 1 + (-8x^{-2})\)<br>
+                \(f'(x) = 8x - 3 + 16x^{-3} = 8x - 3 + \frac{16}{x^3}\)
+            </div>
+        </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">B</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · B</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Ableitungsturm: Besondere Funktionen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">e-Funktion, Logarithmus, Sinus und Kosinus — dieselben Regeln, neue Bausteine.</div>
+      </div>
+    </div>
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.2a</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = \sin(x) + e^x\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = \cos(x) + e^x\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.2b</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = 3e^x - 2\cos(x) + 4\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = 3e^x + 2\sin(x)\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.2c</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = 2\ln(x) + \frac{5}{x} - x^2\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = \frac{2}{x} + (-5)x^{-2} - 2x = \frac{2}{x} - \frac{5}{x^2} - 2x\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.2d</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Leite ab und bestimme \(f'(0)\): \(f(x) = x^2 \cdot e^x - \sin(x)\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> Produktregel für \(x^2 \cdot e^x\):<br>
+                \(f'(x) = 2x \cdot e^x + x^2 \cdot e^x - \cos(x) = e^x(x^2 + 2x) - \cos(x)\)<br>
+                \(f'(0) = e^0 \cdot (0 + 0) - \cos(0) = 0 - 1 = -1\)
+            </div>
+        </div>
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.2e</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = e^x \cdot \sin(x)\) und zeige, dass \(f'(x) = e^x(\sin(x) + \cos(x))\) gilt.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> Produktregel: \(u = e^x,\; u' = e^x,\; v = \sin(x),\; v' = \cos(x)\)<br>
+                \(f'(x) = e^x \cdot \sin(x) + e^x \cdot \cos(x) = e^x(\sin(x) + \cos(x))\) ✓
+            </div>
+        </div>
+    </div>
+
+        <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c8b55e;line-height:1;font-weight:400;min-width:44px;text-align:center">C</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · C</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Kombinieren, deuten, begründen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Mehrere Regeln in einer Aufgabe, waagerechte Tangenten, Monotonie, Sachkontext und Begründung — hier wird die Ableitung benutzt, nicht nur gebildet.</div>
+      </div>
+    </div>
+<div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.3</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = x \cdot \ln(x)\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> Produktregel: \(f'(x) = 1 \cdot \ln(x) + x \cdot \frac{1}{x} = \ln(x) + 1\)
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.4</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Bestimme die Stellen mit waagerechten Tangenten für \(f(x) = x^3 - 3x^2\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = 3x^2 - 6x = 0\) → \(3x(x - 2) = 0\) → \(x = 0\) oder \(x = 2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.5</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq">Leite ab: \(f(x) = (x^2 + 2x)^3\) (Kettenregel)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> Kettenregel: \(f'(x) = 3(x^2 + 2x)^2 \cdot (2x + 2) = 6(x + 1)(x^2 + 2x)^2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">D2.6</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq">Bestimme Monotoniebereiche für \(f(x) = \frac{1}{3}x^3 - 2x^2 + 3x\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <strong>Lösung:</strong> \(f'(x) = x^2 - 4x + 3 = (x-1)(x-3)\)<br>
+                \(f'(x) > 0\) für \(x < 1\) oder \(x > 3\) → wachsend<br>
+                \(f'(x) < 0\) für \(1 < x < 3\) → fallend
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">D2.7</span><span class="td dm">★★</span></div>
+          <div class="tq">Die Länge einer Metallstange bei Temperatur \(T\) (in °C) wird durch \(\ell(T) = 2{,}000 + 0{,}000\,024\,T\) (in Metern) modelliert. Bestimme die Ableitung \(\ell'(T)\) und erläutere deren Bedeutung im Sachkontext.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(\ell'(T) = 0{,}000\,024\) (konstant).</div>
+        <div class="ip"><strong>Bedeutung:</strong> Pro Grad Celsius Temperaturerhöhung dehnt sich die Stange um 0,024 mm. Die konstante Ableitung zeigt, dass die Ausdehnung gleichmäßig (linear) verläuft.</div>
+        <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K3: Ableitung im physikalischen Kontext interpretieren · K6: Bedeutung fachsprachlich erläutern · K5: Ableitung berechnen</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">D2.8</span><span class="td dm">★★</span></div>
+          <div class="tq">Begründe, warum die Ableitung einer konstanten Funktion \(f(x) = c\) stets null ist. Nutze den Differenzenquotienten als Ausgangspunkt.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">Der Differenzenquotient lautet \(\frac{f(x+h) - f(x)}{h} = \frac{c - c}{h} = \frac{0}{h} = 0\) für alle \(h \ne 0\).</div>
+        <div class="ip">Der Grenzwert für \(h \to 0\) ist ebenfalls 0. Also: \(f'(x) = 0\).</div>
+        <div class="ip"><strong>Anschaulich:</strong> Eine Konstante ändert sich nie — ihre Änderungsrate ist daher überall null.</div>
+        <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K1: Ableitungsregel aus dem Differenzenquotienten herleiten · K5: Grenzwertbildung formal durchführen</div>
+      </div>
+    </div>
+
+
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Bestimme die Ableitung von \(f(x) = 3x^4 - 2x^2 + 5x - 7\). Welche Regeln wendest du an?</li>
+        <li>Erkläre, warum die Ableitung einer Konstante Null ist. Was bedeutet das geometrisch?</li>
+        <li>Berechne \(f'(2)\) für \(f(x) = x^3 - 6x\). Was sagt dir das Vorzeichen über den Graphen?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Ableitungsregeln“.
       </p>
     </div>
   </div>
@@ -17093,7 +16984,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
         <div class="ip">Grafisches Ableiten heißt: Vom Graphen von \(f\) den Graphen von \(f'\) skizzieren – ohne zu rechnen. Du erkennst Zusammenhänge zwischen Steigung, Nullstellen der Ableitung und Extremstellen der Funktion.</div>
-        <div class="hint"><strong>Voraussetzung:</strong> Ableitungsbegriff als Steigung der Tangente, Monotonie und Extremstellen.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Ableitungsbegriff als Steigung der Tangente (Tab „Tangente &amp; Änderungsrate“).</div>
       </div>
     </div>
 
@@ -17108,6 +16999,10 @@ window.addEventListener('resize',function(){updateSimulator();});
             <ul class="gl">
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kenne den Zusammenhang zwischen Monotonie und dem Vorzeichen der ersten Ableitung</span>
+                </li>
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
                     <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann aus dem Graphen von \(f\) den Graphen von \(f'\) qualitativ skizzieren</span>
                 </li>
                 <li class="gi">
@@ -17119,6 +17014,22 @@ window.addEventListener('resize',function(){updateSimulator();});
                     <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann von einem gegebenen \(f'\)-Graphen auf Eigenschaften von \(f\) schließen</span>
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Monotonie und erste Ableitung</span>
+        </div>
+        <div class="card-body">
+            <div class="ip"><strong>Zusammenhang:</strong> Die erste Ableitung verrät uns, ob die Funktion wächst oder fällt:</div>
+            <div style="background: #eef3f5; border-left: 3px solid #8a9da7; padding: 10px 12px; margin: 10px 0; border-radius: 2px;">
+                • Wenn \(f'(x) > 0\) auf einem Intervall → \(f\) ist <strong>streng monoton wachsend</strong> dort<br>
+                • Wenn \(f'(x) < 0\) auf einem Intervall → \(f\) ist <strong>streng monoton fallend</strong> dort<br>
+                • Wenn \(f'(x_0) = 0\) → waagerechte Tangente, also <strong>mögliches</strong> Extremum
+            </div>
+            <div class="hint" style="margin-top:10px"><strong>Vorsicht — typischer Fehler:</strong> \(f'(x_0)=0\) allein genügt <strong>nie</strong>. Bei \(f(x)=x^3\) ist \(f'(0)=0\), aber \(f\) steigt links und rechts von 0 weiter — dort liegt ein <em>Sattelpunkt</em>, kein Extremum. Erst ein <strong>Vorzeichenwechsel von \(f'\)</strong> entscheidet: von + nach − ergibt einen Hochpunkt, von − nach + einen Tiefpunkt. Bleibt das Vorzeichen gleich, ist es keins von beidem.</div>
         </div>
     </div>
 
@@ -17587,6 +17498,21 @@ window.addEventListener('resize',function(){updateSimulator();});
                 <li><strong>Wendepunkte:</strong> Löse \(f''(x) = 0\), prüfe auf Vorzeichenwechsel von \(f''\)</li>
                 <li><strong>Wertebereich:</strong> Welche \(y\)-Werte nimmt die Funktion an?</li>
             </ol>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Krümmung und zweite Ableitung</span>
+        </div>
+        <div class="card-body">
+            <div class="ip"><strong>Die zweite Ableitung</strong> \(f''(x)\) beschreibt die Krümmung:</div>
+            <div style="background: #eef3f5; border-left: 3px solid #8a9da7; padding: 10px 12px; margin: 10px 0; border-radius: 2px;">
+                • Wenn \(f''(x) > 0\) → Graph ist <strong>linksgekrümmt (konvex)</strong> – wie ∪<br>
+                • Wenn \(f''(x) < 0\) → Graph ist <strong>rechtsgekrümmt (konkav)</strong> – wie ∩<br>
+                • Wenn \(f''(x) = 0\) → möglicher <strong>Wendepunkt</strong> (nur <em>möglich</em> — es muss ein Vorzeichenwechsel von \(f''\) hinzukommen)
+            </div>
         </div>
     </div>
 
@@ -18088,7 +18014,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">D3.9</span><span class="td dm">★★</span></div>
+          <div class="tkt"><span class="tn">D3.13</span><span class="td dm">★★</span></div>
           <div class="tq">Begründe: Wenn \(f''(x_0) = 0\) und \(f'(x_0) = 0\) gilt, liegt nicht zwingend ein Sattelpunkt vor. Gib ein Gegenbeispiel an und erkläre, welche zusätzliche Bedingung nötig ist.</div>
           <div class="tk-toggle">⌄</div>
         </div>
@@ -18105,7 +18031,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">D3.10</span><span class="td dm">★★</span></div>
+          <div class="tkt"><span class="tn">D3.14</span><span class="td dm">★★</span></div>
           <div class="tq">Beschreibe den Zusammenhang zwischen dem Vorzeichen der zweiten Ableitung \(f''(x)\) und der Krümmung des Graphen von \(f\). Erkläre, warum an einem Wendepunkt ein Vorzeichenwechsel von \(f''\) stattfindet.</div>
           <div class="tk-toggle">⌄</div>
         </div>
@@ -24668,7 +24594,7 @@ function showK10Tab(id, btn) {
 }
 
 function showK11Tab(id, btn) {
-  ['k11-grenz','k11-ableit','k11-tangenten','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-esin','k11-flaechen','k11-pflicht'].forEach(function(sid) {
+  ['k11-grenz','k11-tangenten','k11-ableit','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-esin','k11-flaechen','k11-pflicht'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
