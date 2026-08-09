@@ -15052,6 +15052,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: anschaulicher Grenzwertbegriff und Wertetabelle (45 min), Stetigkeit anschaulich (45 min), dazu die Aufgaben G1.1–G1.3.</div>
+        </div>
+    </div>
+
     <div class="section-label">Grenzwerte und Stetigkeit</div>
 
     <div class="card">
@@ -15352,6 +15362,22 @@ window.addEventListener('resize',function(){updateSimulator();});
       „Momentan" passt nur dort, wo die Zeit die unabhängige Größe ist; „lokal" passt immer.
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab umfasst 4 Unterrichtseinheiten:</div>
+            <ul style="margin:10px 0 4px 20px;list-style:none;padding:0">
+                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-1" onclick="var e=document.getElementById('einheit-k11-tangenten-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Änderungsraten und Grundvorstellungen</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-2" onclick="var e=document.getElementById('einheit-k11-tangenten-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Von der Sekante zur Tangente</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-3" onclick="var e=document.getElementById('einheit-k11-tangenten-3');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 3 · Die Funktionenlupe</a> <span style="color:var(--ink-muted);font-size:13px">· 45 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-4" onclick="var e=document.getElementById('einheit-k11-tangenten-4');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 4 · Tangentengleichung und Neigungswinkel</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+            </ul>
+        </div>
+    </div>
+
     <div class="section-label">Tangente und Änderungsrate</div>
 
     <div class="card">
@@ -15384,6 +15410,13 @@ window.addEventListener('resize',function(){updateSimulator();});
     <!-- ===== GRUNDVORSTELLUNGEN DER ABLEITUNG (Roth, Kap. 3) ===== -->
     <!-- Phase 1: Von der mittleren zur momentanen Änderungsrate (D12, D13, D16) -->
 
+<div class="einheit-marker" id="einheit-k11-tangenten-1" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Änderungsraten und Grundvorstellungen</div>
+  </div>
+</div>
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -15471,6 +15504,13 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
 
     <!-- Interaktive Visualisierung: Sekante → Tangente (D14, T1, T2) -->
+<div class="einheit-marker" id="einheit-k11-tangenten-2" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 2 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Von der Sekante zur Tangente</div>
+  </div>
+</div>
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -15672,6 +15712,13 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
+<div class="einheit-marker" id="einheit-k11-tangenten-3" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 3 · 45 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Die Funktionenlupe</div>
+  </div>
+</div>
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -16028,6 +16075,13 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+<div class="einheit-marker" id="einheit-k11-tangenten-4" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 4 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Tangentengleichung und Neigungswinkel</div>
+  </div>
+</div>
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -16576,6 +16630,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: Regeln und Beispiele erarbeiten (45 min), anschließend den Ableitungsturm üben (45 min).</div>
+        </div>
+    </div>
+
     <div class="section-label">Ableitungsregeln</div>
 
     <div class="card" style="background:linear-gradient(135deg,#1a6fbf,#1555a0);color:#fff;border:none;margin-bottom:18px;">
@@ -16986,6 +17050,16 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="ip">Grafisches Ableiten heißt: Vom Graphen von \(f\) den Graphen von \(f'\) skizzieren – ohne zu rechnen. Du erkennst Zusammenhänge zwischen Steigung, Nullstellen der Ableitung und Extremstellen der Funktion.</div>
         <div class="hint"><strong>Voraussetzung:</strong> Ableitungsbegriff als Steigung der Tangente (Tab „Tangente &amp; Änderungsrate“).</div>
       </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: Monotonie-Zusammenhang und beide Übersetzungsrichtungen erarbeiten (45 min), anschließend die Aufgaben GA1–GA7 (45 min).</div>
+        </div>
     </div>
 
     <div class="section-label">Grafisches Ableiten</div>
@@ -17444,6 +17518,20 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab umfasst 2 Unterrichtseinheiten:</div>
+            <ul style="margin:10px 0 4px 20px;list-style:none;padding:0">
+                <li style="margin:5px 0"><a href="#einheit-k11-kurven-1" onclick="var e=document.getElementById('einheit-k11-kurven-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Vom Rezept zu den Extrema</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-kurven-2" onclick="var e=document.getElementById('einheit-k11-kurven-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Wendepunkte, Sattelpunkte und Sachkontexte</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+            </ul>
+        </div>
+    </div>
+
     <div class="section-label">Kurvendiskussion</div>
 
     <div class="card" style="background:linear-gradient(135deg,#1a7a3c,#15662e);color:#fff;border:none;margin-bottom:18px;">
@@ -17483,6 +17571,13 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
+<div class="einheit-marker" id="einheit-k11-kurven-1" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Vom Rezept zu den Extrema</div>
+  </div>
+</div>
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -17534,6 +17629,13 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
+<div class="einheit-marker" id="einheit-k11-kurven-2" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 2 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Wendepunkte, Sattelpunkte und Sachkontexte</div>
+  </div>
+</div>
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -18081,6 +18183,22 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab umfasst 4 Unterrichtseinheiten:</div>
+            <ul style="margin:10px 0 4px 20px;list-style:none;padding:0">
+                <li style="margin:5px 0"><a href="#einheit-k11-anwend-1" onclick="var e=document.getElementById('einheit-k11-anwend-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Rekonstruktion von Funktionen</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-anwend-2" onclick="var e=document.getElementById('einheit-k11-anwend-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Extremwertaufgaben</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min + Übungszeit</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-anwend-3" onclick="var e=document.getElementById('einheit-k11-anwend-3');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 3 · Funktionenscharen</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-anwend-4" onclick="var e=document.getElementById('einheit-k11-anwend-4');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 4 · Figuren unter Funktionsgraphen</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+            </ul>
+        </div>
+    </div>
+
     <div class="section-label">Anwendungen der Differentialrechnung</div>
 
     <div class="card" style="background:linear-gradient(135deg,#b45309,#8a3e06);color:#fff;border:none;margin-bottom:18px;">
@@ -18119,7 +18237,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <!-- ═══════════════════════════════════════════════
          1. REKONSTRUKTION VON FUNKTIONEN
     ════════════════════════════════════════════════ -->
-    <div class="section-label" style="margin-top:28px">1 · Rekonstruktion von Funktionen</div>
+    <div class="section-label" id="einheit-k11-anwend-1" style="margin-top:28px">1 · Rekonstruktion von Funktionen</div>
 
     <div class="card">
         <div class="card-head">
@@ -18222,7 +18340,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <!-- ═══════════════════════════════════════════════
          2. EXTREMWERTAUFGABEN
     ════════════════════════════════════════════════ -->
-    <div class="section-label" style="margin-top:28px">2 · Extremwertaufgaben</div>
+    <div class="section-label" id="einheit-k11-anwend-2" style="margin-top:28px">2 · Extremwertaufgaben</div>
 
     <div class="card">
         <div class="card-head">
@@ -18439,7 +18557,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <!-- ═══════════════════════════════════════════════
          3. FUNKTIONENSCHAREN
     ════════════════════════════════════════════════ -->
-    <div class="section-label" style="margin-top:28px">3 · Funktionenscharen</div>
+    <div class="section-label" id="einheit-k11-anwend-3" style="margin-top:28px">3 · Funktionenscharen</div>
 
     <div class="card">
         <div class="card-head">
@@ -18596,7 +18714,7 @@ ight)\). Setze \(x = \sqrt{a}\), also \(a = x^2\):<br>
     <!-- ═══════════════════════════════════════════════
          4. FIGUREN UNTER FUNKTIONSGRAPHEN
     ════════════════════════════════════════════════ -->
-    <div class="section-label" style="margin-top:28px">4 · Figuren unter Funktionsgraphen</div>
+    <div class="section-label" id="einheit-k11-anwend-4" style="margin-top:28px">4 · Figuren unter Funktionsgraphen</div>
 
     <div class="card">
         <div class="card-head">
@@ -18948,6 +19066,27 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab umfasst 2 Unterrichtseinheiten:</div>
+            <ul style="margin:10px 0 4px 20px;list-style:none;padding:0">
+                <li style="margin:5px 0"><a href="#einheit-k11-stamm-1" onclick="var e=document.getElementById('einheit-k11-stamm-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Vom Ableiten zum Integrieren</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-stamm-2" onclick="var e=document.getElementById('einheit-k11-stamm-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Anfangswertproblem und besondere Stammfunktionen</a> <span style="color:var(--ink-muted);font-size:13px">· 45 min</span></li>
+            </ul>
+        </div>
+    </div>
+
+<div class="einheit-marker" id="einheit-k11-stamm-1" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Vom Ableiten zum Integrieren</div>
+  </div>
+</div>
     <div class="section-label">Hinführung – Differenzieren rückwärts</div>
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vom Ableiten zum Integrieren</span></div>
@@ -19008,6 +19147,13 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
           <div class="komp-desc">K5: Integrationsregeln anwenden · K1: Probe durch Ableitung</div>
         </div>
       </div>
+<div class="einheit-marker" id="einheit-k11-stamm-2" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 2 · 45 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Anfangswertproblem und besondere Stammfunktionen</div>
+  </div>
+</div>
       <div class="card">
         <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Anfangswertproblem</span></div>
         <div class="card-body">
@@ -19146,6 +19292,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <!-- ── BESTÄNDE ──────────────────────────────────────────────── -->
 
   <div class="subpanel" id="k11-bestand">
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Zwischenschritt ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: vom Graphen zum Bestand, mit der Brücke zum bestimmten Integral.</div>
+        </div>
+    </div>
+
     <div class="section-label" id="zwischenschritt-bestaende">Zwischenschritt · Bestände – vom Graphen zum Integral</div>
     <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);margin-bottom:14px;">
       <div class="card-body">
@@ -19350,6 +19506,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
     <div class="hint" style="margin-bottom:14px;"><strong>Das brauchst du:</strong> Bestimmtes Integral als Flächenbilanz, Stammfunktionen, Zusammenhang zwischen Funktion und Ableitung.</div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: Grundidee erarbeiten, anschließend die Aufgaben.</div>
+        </div>
+    </div>
 
     <div class="section-label">Vom Graphen von f zum Graphen von F</div>
     <div class="card">
@@ -19791,6 +19957,28 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
   <div class="subpanel" id="k11-hauptsatz">
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab umfasst 3 Unterrichtseinheiten:</div>
+            <ul style="margin:10px 0 4px 20px;list-style:none;padding:0">
+                <li style="margin:5px 0"><a href="#einheit-k11-hauptsatz-1" onclick="var e=document.getElementById('einheit-k11-hauptsatz-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Der Hauptsatz und erste Beispiele</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-hauptsatz-2" onclick="var e=document.getElementById('einheit-k11-hauptsatz-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Flächenbilanz und tatsächlicher Flächeninhalt</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-hauptsatz-3" onclick="var e=document.getElementById('einheit-k11-hauptsatz-3');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 3 · Integralwerte begründen — ohne Rechnung</a> <span style="color:var(--ink-muted);font-size:13px">· 45 min</span></li>
+            </ul>
+        </div>
+    </div>
+
+<div class="einheit-marker" id="einheit-k11-hauptsatz-1" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Der Hauptsatz und erste Beispiele</div>
+  </div>
+</div>
     <div class="section-label">Hauptsatz der Differential- und Integralrechnung</div>
 
     <!-- Karte 0: Worum geht es? -->
@@ -19882,6 +20070,13 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     </div>
 
     <!-- Karte 2: Flächenbilanz vs. tatsächlicher Flächeninhalt -->
+<div class="einheit-marker" id="einheit-k11-hauptsatz-2" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 2 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Flächenbilanz und tatsächlicher Flächeninhalt</div>
+  </div>
+</div>
     <div class="section-label">Flächenbilanz und tatsächlicher Flächeninhalt</div>
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Flächenbilanz vs. tatsächlicher Flächeninhalt</span></div>
@@ -20038,6 +20233,13 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     </div>
 
     <!-- Karte 4: Begründen ohne Rechnung -->
+<div class="einheit-marker" id="einheit-k11-hauptsatz-3" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 3 · 45 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Integralwerte begründen — ohne Rechnung</div>
+  </div>
+</div>
     <div class="section-label">Integralwerte begründen – ohne Rechnung</div>
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Integralwerte begründen</span></div>
@@ -20367,6 +20569,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
 
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt; die Aufgaben-Bereiche I–IV tragen eine weitere Übungsstunde (45–90 min).</div>
+        </div>
+    </div>
 
     <div class="section-label">Stammfunktionen wiederholt — kompakt</div>
     <div class="card">
@@ -20834,6 +21046,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <strong>Das brauchst du:</strong> Schnittstellen zweier Funktionen rechnerisch bestimmen · Stammfunktion bilden · Hauptsatz der Integralrechnung sicher anwenden.
     </div>
 
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: Differenzfunktion als Idee, Beispiel, erste Aufgaben; der Aufgabenpool trägt eine weitere Übungsstunde.</div>
+        </div>
+    </div>
+
     <div class="section-label">Fläche zwischen zwei Graphen</div>
 
     <!-- Theorie + Rezept -->
@@ -21145,6 +21367,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="ip">In der schriftlichen Mathematikprüfung am Ende der Qualifikationsphase erwarten dich <strong>komplexe Pflichtaufgaben</strong> aus der Analysis: Eine Funktion wird vorgegeben — du untersuchst sie schrittweise auf Nullstellen, Extrema, Wendestellen, berechnest Tangenten und Flächeninhalte und deutest die Ergebnisse im Sachkontext. Mehrere Bereiche werden also <em>verzahnt</em>: Differential- und Integralrechnung greifen ineinander.</div>
         <div class="hint"><strong>In diesem Tab:</strong> zwei vollständige Pflichtaufgaben mit jeweils 7–8 Teilaufgaben. Eine ganzrationale Funktion 3. Grades und eine Funktion mit e-Anteil. Beide haben einen Sachkontext und enden mit einer Reflexionsaufgabe. Lösungen ausführlich, mit Zwischenschritten.</div>
       </div>
+    </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">⏱</div>
+            <span class="card-title">Unterrichtsfahrplan</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Kein fester Stundenzuschnitt: Die komplexen Aufgaben sind für Übungs- und Klausurvorbereitungsstunden gedacht — pro Aufgabe 20–40 min einplanen.</div>
+        </div>
     </div>
 
     <div class="card">
