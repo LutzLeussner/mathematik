@@ -25472,5 +25472,54 @@ document.addEventListener('click',function(e){
   if(c&&c.classList.contains('card'))c.classList.toggle('cardopen');
 });
 </script>
+
+<script>
+/* ── Deep-Link Hash-Router ──────────────────────────────────
+   Erlaubt die direkte Verlinkung auf einen Themen-Tab von aussen, z. B.
+   .../index.html#k11-hauptsatz  -> oeffnet Klasse 11 und den Tab "Hauptsatz".
+   Greift bei Erstaufruf mit Hash und bei jeder Hash-Aenderung. Nutzt die
+   bereits global definierten Funktionen show() und showKxxTab(). */
+(function(){
+  var tabFns = {7:'showK7Tab',8:'showK8Tab',9:'showK9Tab',10:'showK10Tab',11:'showK11Tab',12:'showK12Tab'};
+  function routeHash(){
+    var h = (window.location.hash || '').replace(/^#/,'');
+    var m = h.match(/^k(\d+)-/);
+    if(!m) return;
+    var grade = parseInt(m[1],10);
+    var fn = window[tabFns[grade]];
+    if(typeof window.show === 'function') window.show(grade);
+    if(typeof fn === 'function'){
+      var btn = document.querySelector('#k'+grade+'-tabs .ptb[onclick*="'+h+'"]')
+             || document.querySelector('[onclick*="'+h+'"]');
+      fn(h, btn || undefined);
+    }
+  }
+  if(document.readyState !== 'loading') routeHash();
+  else document.addEventListener('DOMContentLoaded', routeHash);
+  window.addEventListener('hashchange', routeHash);
+})();
+</script>
+
+<!-- Zurueck-zum-Lehrerbereich (nur im Lehrer-Modus sichtbar) -->
+<div id="lehrerBack" style="display:none;position:fixed;left:16px;bottom:16px;z-index:9999;">
+  <button type="button" onclick="history.back()" title="Zurueck zum Lehrerbereich"
+    style="font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:13px;font-weight:600;color:#fff;background:#5b6e2e;border:none;border-radius:20px;padding:9px 16px;box-shadow:0 4px 14px rgba(44,42,38,.25);cursor:pointer;">← Lehrerbereich</button>
+</div>
+<script>
+/* Zurueck-Brücke zum Lehrerbereich. Erscheint NUR, wenn diese Seite aus dem
+   internen Lehrerbereich aufgerufen wurde (Marker ?v=lehrer). Der Knopf nutzt
+   history.back(), springt also in denselben Tab zurueck — es ist KEINE Adresse
+   des Lehrerbereichs gespeichert. Normale Besucher sehen nichts. */
+(function(){
+  try{
+    var params = new URLSearchParams(window.location.search);
+    if(params.get('v') === 'lehrer'){ sessionStorage.setItem('view_lehrer','1'); }
+    if(sessionStorage.getItem('view_lehrer') === '1' && window.history.length > 1){
+      var el = document.getElementById('lehrerBack');
+      if(el) el.style.display = 'block';
+    }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
