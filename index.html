@@ -25034,7 +25034,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
-        <div class="ip">Stochastik in der Oberstufe verbindet Wahrscheinlichkeitsrechnung mit Statistik: Binomialverteilung, bedingte Wahrscheinlichkeit, Normalverteilung und Hypothesentests bilden die Grundlage für datengestützte Entscheidungen.</div>
+        <div class="ip">Stochastik in der Oberstufe verbindet Wahrscheinlichkeitsrechnung mit Statistik: Baumdiagramm und Vierfeldertafel, bedingte Wahrscheinlichkeit, Erwartungswert und Binomialverteilung bilden die Grundlage für datengestützte Entscheidungen.</div>
         <div class="hint"><strong>Voraussetzung:</strong> Grundlagen der Wahrscheinlichkeitsrechnung (Klasse 10), Baumdiagramme, Kombinatorik.</div>
       </div>
     </div>
@@ -25043,7 +25043,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
         <div>
           <div style="font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em">🎲 Stochastik-Tutor</div>
-          <div style="font-size:12px;opacity:0.85;line-height:1.5">Interaktives Quiz und Lernpfad zu Binomialverteilung, bedingter Wahrscheinlichkeit, Baumdiagrammen und Hypothesentests.</div>
+          <div style="font-size:12px;opacity:0.85;line-height:1.5">Interaktives Quiz und Lernpfad zu Binomialverteilung, bedingter Wahrscheinlichkeit, Baumdiagrammen und Vierfeldertafeln.</div>
         </div>
         <a href="tutor-stochastik.html" style="background:#fff;color:#c2185b;border:none;border-radius:var(--radius-xs);padding:10px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;white-space:nowrap;display:inline-block;transition:opacity .2s">Tutor starten →</a>
       </div>
@@ -25231,13 +25231,16 @@ P(Bio ∩ ¬Chemie) = 30/200 = 0,15
         <div class="bsp-q">In einer Schulklasse sind 60% Mädchen. Von den Mädchen spielen 40% Fußball, von den Jungen 60%. Ein Kind spielt Fußball. Mit welcher Wahrscheinlichkeit ist es ein Mädchen?</div>
         <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
         <div class="bsp-a">
-Gegeben: P(M) = 0,6, P(J) = 0,4, P(F|M) = 0,4, P(F|J) = 0,6<br>
-Gesucht: P(M|F)<br>
-<br>
-Mit Formel von Bayes:<br>
-P(F) = P(F|M)·P(M) + P(F|J)·P(J) = 0,4·0,6 + 0,6·0,4 = 0,24 + 0,24 = 0,48<br>
-<br>
-P(M|F) = P(F|M)·P(M) / P(F) = (0,4·0,6) / 0,48 = 0,24 / 0,48 = 0,5 = 50%
+<div class="ip"><strong>① Vierfeldertafel mit absoluten Zahlen füllen.</strong> Rechne mit einer gedachten Klasse von 100 Kindern — dann werden aus Prozenten Anzahlen.</div>
+<div class="ip">60 % Mädchen → 60 Mädchen, also 40 Jungen. Von den 60 Mädchen spielen 40 % Fußball → 24. Von den 40 Jungen spielen 60 % Fußball → 24.</div>
+<div class="ip" style="font-family:monospace;font-size:13px;background:#f4f3f0;padding:10px;border-radius:6px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fußball | kein Fußball | Summe<br>
+Mädchen&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;60<br>
+Jungen&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;40<br>
+Summe&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;48&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 100</div>
+<div class="ip"><strong>② Die Bedingung einschränken.</strong> „Ein Kind spielt Fußball" heißt: Wir schauen nur noch auf die Fußball-Spalte. Dort stehen 48 Kinder, davon 24 Mädchen.</div>
+<div class="ip"><strong>③ Ergebnis.</strong> \(P(M|F) = \dfrac{24}{48} = 0{,}5 = 50\,\%\).</div>
+<div class="ip" style="font-style:italic;color:var(--ink-muted);">Bemerkenswert: Obwohl es deutlich mehr Mädchen als Jungen gibt, ist unter den Fußballspielern genau die Hälfte weiblich — die höhere Fußballquote der Jungen gleicht ihre kleinere Zahl exakt aus.</div>
         </div>
     </div>
 
@@ -25572,18 +25575,24 @@ P(X ≥ 4) = 0,4096 + 0,32768 = 0,73728 ≈ 73,73%
                     <span class="tn">SQ1.7</span>
                     <span class="td dh">★★★</span>
                 </div>
-                <div class="tq">In einem Land sind 2% der Bevölkerung infiziert. Ein Test hat eine Sensitivität von 99% (zeigt Infektion korrekt an) und eine Spezifität von 97% (zeigt Nicht-Infektion korrekt an). Wenn der Test positiv ist, wie wahrscheinlich ist es, dass man wirklich infiziert ist? (Bayes-Problem)</div>
+                <div class="tq">In einem Land sind 2% der Bevölkerung infiziert. Ein Test hat eine Sensitivität von 99% (zeigt Infektion korrekt an) und eine Spezifität von 97% (zeigt Nicht-Infektion korrekt an). Wenn der Test positiv ist, wie wahrscheinlich ist es, dass man wirklich infiziert ist? Rechne mit einer gedachten Bevölkerung von 10 000 Personen und stelle eine Vierfeldertafel auf.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-I = infiziert, I⁻ = nicht infiziert, ⊕ = Test positiv<br>
-P(I) = 0,02, P(I⁻) = 0,98<br>
-P(⊕|I) = 0,99 (Sensitivität), P(⊕|I⁻) = 0,03 (1 - Spezifität)<br>
-<br>
-P(⊕) = P(⊕|I)·P(I) + P(⊕|I⁻)·P(I⁻)<br>
-     = 0,99·0,02 + 0,03·0,98 = 0,0198 + 0,0294 = 0,0492<br>
-<br>
-P(I|⊕) = P(⊕|I)·P(I) / P(⊕) = (0,99·0,02) / 0,0492 = 0,0198 / 0,0492 ≈ 0,4024 ≈ 40,24%
+<div class="ip"><strong>① Die vier Felder mit Anzahlen füllen</strong> (10 000 Personen).</div>
+<div class="ip">Infiziert: 2 % von 10 000 = <strong>200</strong>, nicht infiziert: <strong>9 800</strong>.<br>
+Von den 200 Infizierten zeigt der Test bei 99 % richtig an → <strong>198</strong> positiv, 2 negativ.<br>
+Von den 9 800 Gesunden zeigt der Test bei 97 % richtig an → 9 506 negativ, also <strong>294</strong> falsch positiv.</div>
+<div class="ip" style="font-family:monospace;font-size:13px;background:#f4f3f0;padding:10px;border-radius:6px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Test + | Test − | Summe<br>
+infiziert&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;198&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;200<br>
+gesund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;294&nbsp;&nbsp;| 9 506&nbsp;&nbsp;| 9 800<br>
+Summe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;492&nbsp;&nbsp;| 9 508&nbsp;&nbsp;|10 000</div>
+<div class="ip"><strong>② Auf die positiv Getesteten einschränken.</strong> Insgesamt 492 Personen haben ein positives Ergebnis, davon sind 198 tatsächlich infiziert.</div>
+<div class="ip"><strong>③ Ergebnis.</strong> \(P(\text{infiziert} \mid \text{Test}+) = \dfrac{198}{492} \approx 0{,}402 = 40{,}2\,\%\).</div>
+<div class="ip" style="font-style:italic;color:var(--ink-muted);">Trotz eines sehr guten Tests ist also nicht einmal jedes zweite positive Ergebnis richtig. Der Grund steht in der Tafel: Die 9 800 Gesunden sind so zahlreich, dass ihre 3 % Fehlerquote mehr falsch Positive erzeugt als es überhaupt Infizierte gibt.</div>
+<div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+<div class="komp-desc">K3: Medizinischen Kontext als Vierfeldertafel modellieren · K4: Ergebnis im Sachzusammenhang deuten · K5: Bedingte Wahrscheinlichkeit aus Anzahlen bestimmen</div>
             </div>
         </div>
     </div>
@@ -25718,42 +25727,33 @@ Der Kaufpreis sollte mindestens 2,15€ betragen, damit die Lotterie kostendecke
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">SQ4</div>
     <div style="flex:1">
       <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · SQ4 · ★★ Begründen</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Vergleichen und begründen</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Aufgaben ohne Rechenschwerpunkt: Verfahren gegeneinander abgrenzen und Ergebnisse deuten.</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Begründen und interpretieren</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Ein Ergebnis nicht nur ausrechnen, sondern erklären, warum es so ausfällt — und es allgemeinverständlich deuten.</div>
     </div>
   </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">SQ2.6</span><span class="td dm">★★</span></div>
-          <div class="tq">Erläutere den Unterschied zwischen der Binomialverteilung und der Normalverteilung. Beschreibe, unter welchen Bedingungen die Normalverteilung als Näherung für die Binomialverteilung verwendet werden kann (Faustregel von Laplace).</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>Binomialverteilung:</strong> Diskrete Verteilung für die Anzahl der Erfolge bei \(n\) unabhängigen Versuchen mit Erfolgswahrscheinlichkeit \(p\).</div>
-        <div class="ip"><strong>Normalverteilung:</strong> Stetige, glockenförmige Verteilung mit Parametern \(\mu\) (Erwartungswert) und \(\sigma\) (Standardabweichung).</div>
-        <div class="ip"><strong>Faustregel:</strong> Die Näherung ist brauchbar, wenn \(\sigma = \sqrt{np(1-p)} > 3\), also \(np(1-p) > 9\). Dann gilt: \(P(X \le k) \approx \Phi\!\left(\frac{k + 0{,}5 - np}{\sqrt{np(1-p)}}\right)\) (mit Stetigkeitskorrektur).</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
-        <div class="komp-desc">K6: Verteilungstypen vergleichen und Anwendungsbedingung beschreiben · K4: Zusammenhang diskret ↔ stetig herstellen</div>
-      </div>
-    </div>
-
-    <div class="tg">
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">SQ2.7</span><span class="td dm">★★</span></div>
-          <div class="tq">Begründe mithilfe des Satzes von Bayes, warum ein positiver Test bei einer seltenen Krankheit (z. B. 0,1 % Prävalenz) trotz hoher Testgenauigkeit (99 %) häufig ein falsch-positives Ergebnis ist. Berechne den positiven Vorhersagewert.</div>
+          <div class="tq">Eine Krankheit tritt bei 0,1 % der Bevölkerung auf. Ein Test erkennt sowohl Kranke als auch Gesunde jeweils mit einer Sicherheit von 99 % richtig. Stelle eine Vierfeldertafel für 100 000 Personen auf und bestimme, wie groß der Anteil der tatsächlich Erkrankten unter allen positiv Getesteten ist. Begründe damit, warum ein positives Ergebnis hier trotz des guten Tests meist ein Fehlalarm ist.</div>
           <div class="tk-toggle">⌄</div>
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>Gegeben:</strong> \(P(K) = 0{,}001\), Sensitivität \(P(+|K) = 0{,}99\), Spezifität \(P(-|\overline{K}) = 0{,}99\).</div>
-        <div class="ip"><strong>Bayes:</strong> \(P(K|+) = \frac{P(+|K) \cdot P(K)}{P(+|K) \cdot P(K) + P(+|\overline{K}) \cdot P(\overline{K})}\)</div>
-        <div class="ip">\(= \frac{0{,}99 \cdot 0{,}001}{0{,}99 \cdot 0{,}001 + 0{,}01 \cdot 0{,}999} = \frac{0{,}00099}{0{,}00099 + 0{,}00999} \approx 0{,}09 = 9\%\)</div>
-        <div class="ip"><strong>Begründung:</strong> Bei seltenen Krankheiten gibt es unter 1000 Personen ca. 1 Erkrankten (korrekt positiv) aber ca. 10 Gesunde mit falsch-positivem Ergebnis. Die Falsch-Positiven überwiegen deutlich.</div>
+        <div class="ip"><strong>① Anzahlen bestimmen.</strong> 0,1 % von 100 000 sind <strong>100</strong> Erkrankte, also <strong>99 900</strong> Gesunde.</div>
+        <div class="ip">Von den 100 Erkrankten erkennt der Test 99 % → <strong>99</strong> positiv.<br>
+        Von den 99 900 Gesunden erkennt der Test 99 % richtig als gesund → 1 % irrt sich, das sind <strong>999</strong> falsch positive Ergebnisse.</div>
+        <div class="ip" style="font-family:monospace;font-size:13px;background:#f4f3f0;padding:10px;border-radius:6px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Test + | Test − |&nbsp; Summe<br>
+krank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100<br>
+gesund&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;999&nbsp;&nbsp;| 98 901 |&nbsp; 99 900<br>
+Summe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 098&nbsp;| 98 902 | 100 000</div>
+        <div class="ip"><strong>② Auf die positiv Getesteten einschränken.</strong> Von den 1 098 positiven Ergebnissen sind nur 99 richtig.</div>
+        <div class="ip"><strong>③ Ergebnis.</strong> Der Anteil beträgt \(\dfrac{99}{1\,098} \approx 0{,}09 = 9\,\%\) — rund neun von hundert positiv Getesteten sind tatsächlich krank.</div>
+        <div class="ip"><strong>④ Begründung.</strong> Entscheidend ist nicht die Testgüte, sondern das Größenverhältnis der beiden Gruppen. Weil es 999-mal so viele Gesunde wie Kranke gibt, erzeugt selbst eine Fehlerquote von nur 1 % unter den Gesunden zehnmal mehr positive Ergebnisse, als es überhaupt Kranke gibt.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);">In der Vierfeldertafel steht das Ergebnis buchstäblich nebeneinander: 99 gegen 999. Genau diese Gegenüberstellung geht verloren, wenn man nur mit Wahrscheinlichkeiten rechnet.</div>
         <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div>
-        <div class="komp-desc">K1: Paradoxon mit Bayes erklären · K3: Medizinischen Kontext modellieren · K6: Ergebnis allgemeinverständlich interpretieren</div>
+        <div class="komp-desc">K1: Das Ergebnis aus dem Größenverhältnis begründen · K3: Medizinischen Kontext als Vierfeldertafel modellieren · K6: Ergebnis allgemeinverständlich interpretieren</div>
       </div>
     </div>
 
