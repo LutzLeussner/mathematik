@@ -21734,6 +21734,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 <div class="tab-band" id="k12-tabs" style="display:none">
   <button class="ptb on" onclick="showK12Tab('k12-raum',this)">3D-Koordinaten</button>
   <button class="ptb" onclick="showK12Tab('k12-vek',this)">Vektoren</button>
+  <button class="ptb" onclick="showK12Tab('k12-skalar',this)">Skalarprodukt &amp; Winkel</button>
   <button class="ptb" onclick="showK12Tab('k12-gerade',this)">Geraden</button>
   <button class="ptb" onclick="showK12Tab('k12-ebenen',this)">Ebenen</button>
   <button class="ptb" onclick="showK12Tab('k12-sto',this)">Stochastik Q</button>
@@ -22661,30 +22662,8 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
 
 
-  <div class="section-label">6. Skalarprodukt, Orthogonalität und Winkel</div>
-  <div class="card">
-    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das Skalarprodukt</span></div>
-    <div class="card-body">
-      <div class="ip">Das <strong>Skalarprodukt</strong> zweier Vektoren \(\vec{a}\) und \(\vec{b}\) ist eine Zahl (ein Skalar):</div>
-      <div class="hint"><strong>Definition:</strong> \(\vec{a} \cdot \vec{b} = a_1 \cdot b_1 + a_2 \cdot b_2 + a_3 \cdot b_3\)</div>
-      <div class="ip" style="margin-top: 10px;">Damit berechnest du den <strong>Winkel</strong> zwischen zwei Vektoren:</div>
-      <div class="hint"><strong>Winkelformel:</strong> \(\cos(\alpha) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\) &nbsp; \(\Rightarrow\) &nbsp; \(\alpha = \arccos\left(\frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\right)\)</div>
-      <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Orthogonalität:</strong> Für \(\vec{a}\neq\vec{0}\) und \(\vec{b}\neq\vec{0}\) gilt: \(\vec{a} \cdot \vec{b} = 0 \;\Leftrightarrow\; \vec{a}\) und \(\vec{b}\) stehen <strong>senkrecht</strong> (orthogonal) zueinander.</div>
-    </div>
-  </div>
-<div class="bsp">
-    <div class="bsp-label">Beispielaufgabe 2: Skalarprodukt und Winkel</div>
-    <div class="bsp-q"><strong>Aufgabe:</strong> Berechne den Winkel zwischen \(\vec{u} = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\) und \(\vec{v} = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\)</div>
-    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
-    <div class="bsp-a">
-      <strong>Lösung:</strong>
-      <div class="ip" style="margin-top: 8px;">\(\vec{u} \cdot \vec{v} = 1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 = 1\)</div>
-      <div class="ip">\(|\vec{u}| = \sqrt{1^2 + 0^2 + 1^2} = \sqrt{2}\)</div>
-      <div class="ip">\(|\vec{v}| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}\)</div>
-      <div class="ip">\(\cos(\alpha) = \frac{1}{\sqrt{2} \cdot \sqrt{2}} = \frac{1}{2}\) &nbsp; \(\Rightarrow\) &nbsp; \(\alpha = 60°\)</div>
-    </div>
-  </div>
-  <div class="it" style="margin-top:14px;"><strong>Hinweis zum Rechner:</strong> Rechne erst von Hand — nutze den Rechner nur zur Kontrolle. In der GK-Klausur MV steht kein solches Werkzeug zur Verfügung.</div>
+  <div class="section-label">6. Rechnerkontrolle</div>
+  <div class="it" style="margin-top:14px;"><strong>Hinweis zum Rechner:</strong> Rechne erst von Hand — nutze den Rechner nur zur Kontrolle. In der GK-Klausur MV steht kein solches Werkzeug zur Verfügung. Das <strong>Skalarprodukt</strong> und die <strong>Winkelberechnung</strong> lernst du im eigenen Tab <em>Skalarprodukt &amp; Winkel</em>.</div>
 <div class="card">
     <div class="card-head">
       <div class="ci ci-i">i</div>
@@ -22715,132 +22694,15 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </div>
     </div>
   </div>
-  <div class="section-label">Aufgaben zum Skalarprodukt</div>
-  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
-    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">S</div>
-    <div style="flex:1">
-      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · S · ★★ / ★★★</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Skalarprodukt — Orthogonalität und Winkel</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Orthogonalität nachweisen, Winkel berechnen, Skalarprodukt in Sachzusammenhängen und Parameteraufgaben anwenden.</div>
-    </div>
-  </div>
-<div class="tg">
-    <div class="tk">
-      <div class="tk-top" onclick="togTask(this)">
-        <div class="tkt">
-          <span class="tn">V1.6</span>
-          <span class="td dm">★★</span>
-        </div>
-        <div class="tq">Bestimme einen Vektor, der senkrecht auf \(\vec{n} = \begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix}\) steht. (Hinweis: Das Skalarprodukt muss 0 sein.)</div>
-        <div class="tk-toggle">⌄</div>
-      </div>
-      </div>
-      <div class="ta"><strong>Lösung (Beispiel):</strong> \(\vec{m} = \begin{pmatrix} 1 \\ 0 \\ -2 \end{pmatrix}\), denn \(\vec{n} \cdot \vec{m} = 2 \cdot 1 + 3 \cdot 0 + 1 \cdot (-2) = 0\). Es gibt viele weitere Lösungen.</div>
-  </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.2</span><span class="td dm">&#9733;&#9733;</span></div>
-          <div class="tq">Weise nach, dass \(\vec{a} = \begin{pmatrix} 1 \\ 0 \\ -2 \end{pmatrix}\) und \(\vec{b} = \begin{pmatrix} 2 \\ 5 \\ 1 \end{pmatrix}\) senkrecht zueinander stehen.</div>
-          <div class="tk-toggle">&#8964;</div>
-        </div>
-      </div>
-      <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{a} \cdot \vec{b} = 2 + 0 - 2 = 0\). Skalarprodukt ist null &rarr; senkrecht.</div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.4</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
-          <div class="tq"><strong>a)</strong> Skizziere die drei gegebenen Punkte \(A, B, C\) im Schrägbild und ergänze \(D\) so, dass ein Parallelogramm entsteht.<br><strong>b)</strong> \(ABCD\) mit \(A(1|0|0)\), \(B(3|2|0)\), \(C(3|4|2)\) soll ein Parallelogramm sein. Bestimme \(D\) und den Winkel \(\angle DAB\).</div>
-          <div class="tk-toggle">&#8964;</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>a) Skizze.</strong> Aus der Skizze wird anschaulich klar, dass \(\vec{AD}=\vec{BC}\) gelten muss (gegenüberliegende Seiten parallel und gleich lang). Daraus folgen \(D\) und der Winkel \(\angle DAB\).</div><strong>b) L&ouml;sung:</strong> \(\vec{AD} = \vec{BC} = \begin{pmatrix} 0 \\ 2 \\ 2 \end{pmatrix}\) &rarr; \(D(1|2|2)\).<br>
-        \(\cos\alpha = \frac{\vec{AB}\cdot\vec{AD}}{|\vec{AB}||\vec{AD}|} = \frac{4}{\sqrt{8}\sqrt{8}} = 0{,}5\) &rarr; \(\alpha = 60&deg;\)</div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.6</span><span class="td dm">★★</span></div>
-          <div class="tq"><strong>a)</strong> Skizziere die Situation: den Weg \(\vec{AB}\), seine Projektion auf den Erdboden (xy-Ebene) und die Höhe — als rechtwinkliges Dreieck in der senkrechten Ebene.<br><strong>b)</strong> Ein Kran hebt eine Last vom Punkt \(A(0|0|0)\) zum Punkt \(B(8|6|12)\) (Koordinaten in Metern). Bestimme die Gesamtlänge des Weges und den Winkel, den der Weg mit dem Erdboden (xy-Ebene) einschließt.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>a) Skizze.</strong> Die Skizze zeigt ein rechtwinkliges Dreieck: Ankathete = Bodenprojektion (10 m), Gegenkathete = Höhe (12 m), Hypotenuse = Weg \(\vec{AB}\). Daran liest du ab, dass der Steigungswinkel über \(\tan\alpha=\tfrac{12}{10}\) bestimmt wird.</div>
-        <div class="ip"><strong>b) Rechnung.</strong></div>
-        <div class="ip">\(\vec{AB} = \begin{pmatrix} 8 \\ 6 \\ 12 \end{pmatrix}\), \(|\vec{AB}| = \sqrt{64 + 36 + 144} = \sqrt{244} \approx 15{,}6\) m.</div>
-        <div class="ip">Projektion auf die xy-Ebene: \(\vec{AB}_{xy} = \begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix}\), \(|\vec{AB}_{xy}| = \sqrt{100} = 10\) m.</div>
-        <div class="ip">Steigungswinkel: \(\tan(\alpha) = \frac{12}{10} = 1{,}2 \;\Rightarrow\; \alpha \approx 50{,}2°\).</div>
-        <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K3: Realsituation als Vektorproblem modellieren · K5: Betrag und Winkel berechnen</div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.7</span><span class="td dm">★★</span></div>
-          <div class="tq">Begründe: Wenn \(\vec{a} \cdot \vec{b} = 0\) und \(\vec{a} \ne \vec{0}\) sowie \(\vec{b} \ne \vec{0}\), dann stehen \(\vec{a}\) und \(\vec{b}\) senkrecht aufeinander. Erkläre den Zusammenhang mithilfe der Winkelformel.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip">Die Winkelformel lautet: \(\cos(\alpha) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}\).</div>
-        <div class="ip">Da \(\vec{a} \ne \vec{0}\) und \(\vec{b} \ne \vec{0}\), sind beide Beträge positiv: \(|\vec{a}| \cdot |\vec{b}| > 0\).</div>
-        <div class="ip">Aus \(\vec{a} \cdot \vec{b} = 0\) folgt \(\cos(\alpha) = \frac{0}{|\vec{a}| \cdot |\vec{b}|} = 0\), also \(\alpha = 90°\).</div>
-        <div class="ip">Damit stehen die Vektoren senkrecht aufeinander. \(\square\)</div>
-        <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K1: Orthogonalitätskriterium aus Winkelformel herleiten · K5: Skalarprodukt und Winkelformel verknüpfen</div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.9</span><span class="td dm">★★</span></div>
-          <div class="tq"><strong>Parameteraufgabe — Senkrechtheit suchen.</strong> Gegeben sind die Punkte \(P(2|0|3)\) und \(Q_a(6|a|-1)\) mit \(a\in\mathbb{R}\). Bestimme alle Werte von \(a\), für die das Dreieck \(OPQ_a\) einen <strong>rechten Winkel in \(P\)</strong> hat. <em>(Vorgehen: geometrische Bedingung in eine Skalarprodukt-Gleichung übersetzen, dann nach \(a\) auflösen.)</em></div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>① Geometrische Bedingung übersetzen.</strong> Rechter Winkel in \(P\) bedeutet: \(\vec{PO}\perp\vec{PQ}_a\), also \(\vec{PO}\cdot \vec{PQ}_a = 0\).</div>
-        <div class="ip"><strong>② Vektoren berechnen.</strong> \(\vec{PO} = -\vec{OP} = \begin{pmatrix}-2\\0\\-3\end{pmatrix}\), \(\vec{PQ}_a = \vec{OQ}_a - \vec{OP} = \begin{pmatrix}4\\a\\-4\end{pmatrix}\).</div>
-        <div class="ip"><strong>③ Skalarprodukt aufstellen und nach \(a\) auflösen:</strong> \(\vec{PO}\cdot\vec{PQ}_a = (-2)\cdot 4 + 0\cdot a + (-3)\cdot(-4) = -8 + 0 + 12 = 4\). Diese Summe ist <em>unabhängig von \(a\)</em> und gleich \(4\), nie gleich \(0\).</div>
-        <div class="ip"><strong>④ Antwort:</strong> Es gibt <em>keinen</em> Wert von \(a\), für den \(OPQ_a\) einen rechten Winkel in \(P\) hat — egal wie \(a\) gewählt wird, der Winkel ist nicht rechtwinklig.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Parameteraufgaben können <em>keine Lösung</em> haben — das ist mathematisch eine sinnvolle Antwort, kein „Rechenfehler". Hier liegt es daran, dass die \(a\)-Komponente von \(\vec{PO}\) gleich \(0\) ist; \(a\) hat im Skalarprodukt mit \(\vec{PO}\) keinen Hebel.</em></div>
-        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K5: Geometrische Bedingung mit Skalarprodukt übersetzen · K1: „Keine Lösung" als Ergebnis begründen</div>
-      </div>
-    </div>
-<div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">V2.10</span><span class="td dh">★★★</span></div>
-          <div class="tq"><strong>a)</strong> Skizziere das Geschwindigkeitsdreieck: \(\vec{v}_S\) nach Osten, \(\vec{v}_W\) nach Norden und die tatsächliche Richtung \(\vec{v}_S+\vec{v}_W\) als Hypotenuse mit dem Abweichungswinkel \(30°\).<br><strong>b)</strong> <strong>Parameteraufgabe — Modellieren mit Strömung.</strong> Ein Schiff fährt mit dem Geschwindigkeitsvektor \(\vec{v}_S = \begin{pmatrix}12\\0\\0\end{pmatrix}\) km/h (Richtung Osten). Eine Querströmung wirkt mit \(\vec{v}_W = \begin{pmatrix}0\\k\\0\end{pmatrix}\) km/h (\(k\in\mathbb{R}\), Richtung Norden). Die <em>tatsächliche</em> Bewegungsrichtung des Schiffes ist \(\vec{v}_S+\vec{v}_W\). Bestimme den Wert von \(k\), für den das Schiff um genau \(30°\) von seiner Soll-Richtung (Osten) abweicht.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>a) Skizze.</strong> Die Skizze macht das rechtwinklige Dreieck sichtbar: \(\vec{v}_S\) (Ankathete), \(\vec{v}_W\) (Gegenkathete), \(\vec{v}_S+\vec{v}_W\) (Hypotenuse). Der Winkel zwischen \(\vec{v}_S\) und der Hypotenuse ist die gesuchte Abweichung — daher \(\tan(30°)=\tfrac{|k|}{12}\).</div>
-        <div class="ip"><strong>b) Rechnung.</strong></div>
-        <div class="ip"><strong>① Geometrische Bedingung übersetzen.</strong> Der Winkel zwischen Soll-Richtung \(\vec{v}_S\) und tatsächlicher Richtung \(\vec{v}_S+\vec{v}_W\) soll \(30°\) sein. Da \(\vec{v}_S\) waagerecht (Ost) und \(\vec{v}_W\) senkrecht dazu (Nord), bildet \(\vec{v}_S+\vec{v}_W\) im rechten Dreieck Hypotenuse, \(\vec{v}_S\) Ankathete, \(\vec{v}_W\) Gegenkathete. Also: \(\tan(30°) = \dfrac{|\vec{v}_W|}{|\vec{v}_S|} = \dfrac{|k|}{12}\).</div>
-        <div class="ip"><strong>② Nach \(k\) auflösen:</strong> \(|k| = 12\cdot\tan(30°) = 12\cdot\tfrac{1}{\sqrt{3}} = \tfrac{12}{\sqrt{3}} = 4\sqrt{3}\approx 6{,}93\).</div>
-        <div class="ip"><strong>③ Antwort:</strong> \(k = +4\sqrt{3}\,\text{km/h}\) (Abdrift nach Norden) oder \(k = -4\sqrt{3}\,\text{km/h}\) (Abdrift nach Süden) — beide ergeben \(30°\) Abweichung von Osten.</div>
-        <div class="ip"><strong>Probe</strong> (für \(k=+4\sqrt{3}\)): \(\vec{v}_S+\vec{v}_W=(12,4\sqrt{3},0)\). Winkel zur x-Achse: \(\tan\alpha = \tfrac{4\sqrt{3}}{12} = \tfrac{\sqrt{3}}{3} = \tan 30°\) ✓.</div>
-        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Parameteraufgaben können <em>mehrere</em> Lösungen haben — hier durch das Vorzeichen, das die Aufgabenstellung („Abweichung um \(30°\)") nicht festlegt. Im Sachkontext bedeutet das, dass beide physikalisch möglichen Querströmungen (von Norden und von Süden) die geforderte Wirkung haben.</em></div>
-        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span></div>
-        <div class="komp-desc">K5: Tangens-Argument im rechtwinkligen Dreieck nutzen · K3: Modellierung Strömung→Vektor · K4: Beide Lösungen im Sachkontext interpretieren</div>
-      </div>
-    </div>
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
     <div class="ip">
       <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
       <ol>
-        <li>Berechne \(\vec{a} + \vec{b}\) und \(\vec{a} \cdot \vec{b}\) für \(\vec{a} = \begin{pmatrix}2\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\4\\-2\end{pmatrix}\).</li>
+        <li>Berechne \(\vec{a} + \vec{b}\) und \(3\vec{a}\) für \(\vec{a} = \begin{pmatrix}2\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\4\\-2\end{pmatrix}\).</li>
         <li>Erkläre den Unterschied zwischen Punkt, Ortsvektor und freiem Vektor.</li>
-        <li>Was sagt das Skalarprodukt über den Winkel zwischen zwei Vektoren aus? Wann sind zwei Vektoren orthogonal?</li>
+        <li>Bestimme den Betrag von \(\vec{a}\) und gib an, was dieser Wert geometrisch bedeutet.</li>
         <li>Stelle den Vektor \(\vec{c}=\begin{pmatrix}2\\3\\1\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) von \(\vec{a}=\begin{pmatrix}1\\1\\0\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}0\\1\\1\end{pmatrix}\) dar — falls möglich.</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Wenn du bei einer Frage unsicher bist, lies den passenden Abschnitt noch einmal.</p>
@@ -22855,6 +22717,937 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
 
 
+
+<!-- ============================================================
+     TAB: Skalarprodukt & Winkel  (k12-skalar)
+     Didaktische Position: Aufsatz_Skalarprodukt_Didaktik.html (Werkstattbericht II.6)
+     Doppeleinfuehrung mit Uebersetzung als Lerngegenstand ·
+     Orthogonalitaet vor Winkelformel · vier Begriffspaare sprachlich trennen
+     ============================================================ -->
+<div class="subpanel" id="k12-skalar">
+
+  <div class="section-label">Analytische Geometrie Teil 2: Skalarprodukt und Winkel</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-g">✓</div>
+      <span class="card-title">Lernziele · Skalarprodukt &amp; Winkel</span>
+    </div>
+    <div class="card-body">
+      <ul class="gl">
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Beide Formen des Skalarprodukts angeben und ihre unterschiedliche Funktion erläutern</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Das Skalarprodukt koordinatenweise berechnen und sein Vorzeichen geometrisch deuten</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Die Gleichwertigkeit beider Formen mit dem Kosinussatz begründen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Mit dem Orthogonalitätskriterium prüfen, konstruieren und Normalenvektoren bestimmen</span>
+        </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Winkel zwischen Vektoren berechnen und vom Schnittwinkel zweier Geraden unterscheiden</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);">
+    <div class="card-body">
+      <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
+      <div class="ip">Ein Regal soll senkrecht an der Wand sitzen. Eine Solarzelle steht am besten möglichst genau zur Sonne. Ein Roboterarm greift zu, wenn zwei Richtungen im richtigen Winkel zueinander stehen. All diesen Fragen ist dasselbe gemeinsam: Man kennt zwei Richtungen als Zahlen und möchte wissen, <strong>wie sie zueinander liegen</strong>.</div>
+      <div class="ip">Bisher konntest du Vektoren addieren, strecken und ihre Länge bestimmen. Was du noch nicht kannst: aus zwei Vektoren den <strong>Winkel</strong> zwischen ihnen herauslesen. Genau das leistet das Skalarprodukt — eine Rechenoperation, die aus zwei Vektoren eine einzelne Zahl macht. Und diese Zahl verrät die Lage der beiden Vektoren zueinander.</div>
+      <div class="ip">Die wichtigste Frage dieses Abschnitts ist dabei die einfachste: <em>Wann stehen zwei Vektoren senkrecht aufeinander?</em> Aus ihr folgt fast alles, was du später bei Geraden und Ebenen brauchst.</div>
+    </div>
+  </div>
+
+  <div class="hint"><strong>Das brauchst du:</strong> Vektoren in Spaltenschreibweise, Betrag eines Vektors \(|\vec{a}| = \sqrt{a_1^2+a_2^2+a_3^2}\), Verbindungsvektor \(\vec{AB} = \vec{OB} - \vec{OA}\) (alles aus dem Tab <em>Vektoren</em>), Kosinus und Arkuskosinus am Taschenrechner, Kosinussatz aus Klasse 10.</div>
+
+  <div class="section-label">1. Der Winkelmesser — eine Zahl für die Lage (1 Std.)</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-i">i</div>
+      <span class="card-title">Zuerst mit Bleistift: drei Lagen zeichnen</span>
+    </div>
+    <div class="card-body">
+      <div class="ip"><strong>Bevor du weiterliest, nimm Papier.</strong> Zeichne ein Koordinatensystem und darin den Vektor \(\vec{a} = \begin{pmatrix}4\\1\end{pmatrix}\) als Pfeil vom Ursprung aus. Trage dann nacheinander drei verschiedene Vektoren \(\vec{b}\) ein, ebenfalls vom Ursprung aus:</div>
+      <div class="ip">(1) einen, der <em>ungefähr in dieselbe Richtung</em> zeigt wie \(\vec{a}\) &nbsp;·&nbsp; (2) einen, der <em>senkrecht</em> auf \(\vec{a}\) steht &nbsp;·&nbsp; (3) einen, der <em>ungefähr entgegengesetzt</em> zeigt.</div>
+      <div class="ip">Rechne für jeden deiner drei Vektoren die Zahl \(a_1\cdot b_1 + a_2\cdot b_2\) aus — also erste Komponente mal erste, zweite mal zweite, dann addieren. Notiere die drei Zahlen neben deinen drei Skizzen.</div>
+      <div class="it">Vermutung, bevor du weiterliest: Was haben die drei Zahlen mit den drei Lagen zu tun? Schreibe deine Vermutung auf.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-i">i</div>
+      <span class="card-title">Dann am Bildschirm: die Vermutung prüfen</span>
+    </div>
+    <div class="card-body">
+      <div class="ip"><strong>Ziehe die Spitze des roten Vektors \(\vec{b}\) mit der Maus.</strong> Der grüne Vektor \(\vec{a}\) bleibt fest. Beobachte, wie sich die Zahl unten verändert — und bei welcher Lage sie <strong>null</strong> wird.</div>
+      <div style="text-align:center;margin:14px 0;">
+        <canvas id="cvSkalarWinkelmesser" style="max-width:100%;border-radius:8px;cursor:grab;touch-action:none;"></canvas>
+      </div>
+      <div id="spReadout" style="max-width:560px;margin:0 auto;padding:12px 16px;background:var(--kiku-bg);border-radius:8px;font-size:15px;line-height:1.9;"></div>
+      <div class="hint" style="margin-top:12px;"><strong>Aufgabe nach der Beobachtung:</strong> Halte in deinem Heft <em>drei</em> Lagen als beschriftete Skizze fest — eine mit positiver Zahl, eine mit null, eine mit negativer Zahl. Schreibe unter jede Skizze in einem Satz, wie die beiden Vektoren zueinander liegen.</div>
+      <div class="it" style="margin-top:10px;"><strong>Und ohne Bildschirm?</strong> Am Klausurtag steht dir kein Applet zur Verfügung. Prüfe deshalb an deinen eigenen drei Skizzen von oben nach, ob die Regel auch dort stimmt — allein durch Rechnen.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-t">★</div>
+      <span class="card-title">Die Grundvorstellung: Skalarprodukt als Winkelmesser</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Die Zahl, die du berechnet hast, heißt <strong>Skalarprodukt</strong>. Sie misst, <em>wie sehr zwei Vektoren in dieselbe Richtung zeigen</em>:</div>
+      <div class="hint">
+        <strong>\(\vec{a}\cdot\vec{b} &gt; 0\)</strong> &nbsp;→&nbsp; die Vektoren zeigen eher in dieselbe Richtung, der Winkel ist <strong>spitz</strong> (kleiner als \(90°\)).<br>
+        <strong>\(\vec{a}\cdot\vec{b} = 0\)</strong> &nbsp;→&nbsp; die Vektoren stehen <strong>senkrecht</strong> aufeinander, der Winkel ist genau \(90°\).<br>
+        <strong>\(\vec{a}\cdot\vec{b} &lt; 0\)</strong> &nbsp;→&nbsp; die Vektoren zeigen eher gegeneinander, der Winkel ist <strong>stumpf</strong> (größer als \(90°\)).
+      </div>
+      <div class="it">Diese drei Zeilen sind die wichtigste Merkhilfe des ganzen Abschnitts. Mit ihnen kannst du jedes Rechenergebnis sofort auf Plausibilität prüfen — auch dann, wenn der Taschenrechner den Winkel ausgerechnet hat.</div>
+    </div>
+  </div>
+  <div class="section-label">2. Zwei Definitionen, ein Objekt (1 Std.)</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-i">i</div>
+      <span class="card-title">Das Skalarprodukt in zwei Gestalten</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Das Skalarprodukt tritt in der Mathematik in <strong>zwei Formen</strong> auf. Beide beschreiben dasselbe Objekt, aber sie leisten Verschiedenes: Die eine sagt dir, was die Zahl <em>bedeutet</em>, die andere sagt dir, wie du sie <em>ausrechnest</em>. Du brauchst beide.</div>
+
+      <div class="two-col" style="margin-top:14px;">
+        <div style="background:var(--mushikuri-light);border-left:4px solid var(--mushikuri);border-radius:8px;padding:14px 16px;">
+          <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.12em;text-transform:uppercase">Geometrische Form</div>
+          <div style="font-size:15px;font-weight:700;color:var(--ink);margin:4px 0 8px">Sie liefert die Bedeutung</div>
+          <div class="ip">\[\vec{a}\cdot\vec{b} \;=\; |\vec{a}|\cdot|\vec{b}|\cdot\cos\alpha\]</div>
+          <div class="ip" style="font-size:14px;">Dabei ist \(\alpha\) der von \(\vec{a}\) und \(\vec{b}\) <em>eingeschlossene Winkel</em>. Länge mal Länge mal Kosinus des Winkels. Diese Form erklärt, warum die Zahl bei \(90°\) verschwindet: \(\cos 90° = 0\).</div>
+        </div>
+        <div style="background:var(--fukagawa-light);border-left:4px solid var(--fukagawa);border-radius:8px;padding:14px 16px;">
+          <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.12em;text-transform:uppercase">Koordinatenweise Form</div>
+          <div style="font-size:15px;font-weight:700;color:var(--ink);margin:4px 0 8px">Sie liefert das Werkzeug</div>
+          <div class="ip">\[\vec{a}\cdot\vec{b} \;=\; a_1b_1 + a_2b_2 + a_3b_3\]</div>
+          <div class="ip" style="font-size:14px;">Dabei sind \(a_1, a_2, a_3\) die Komponenten von \(\vec{a}\) und \(b_1, b_2, b_3\) die von \(\vec{b}\). Paarweise multiplizieren, dann addieren. Im 2D-Fall fällt der dritte Summand weg: \(a_1b_1 + a_2b_2\).</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin:16px 0 6px;padding:12px 16px;background:#fff;border:2px dashed var(--kiku);border-radius:8px;">
+        <div style="font-size:11px;font-weight:700;color:var(--kiku);letter-spacing:.12em;text-transform:uppercase">Übersetzung</div>
+        <div style="font-size:15px;color:var(--ink);margin-top:4px;">\(|\vec{a}|\cdot|\vec{b}|\cdot\cos\alpha \;\; \Longleftrightarrow \;\; a_1b_1 + a_2b_2 + a_3b_3\)</div>
+        <div style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Dass diese beiden Ausdrücke <em>dasselbe</em> sind, ist nicht selbstverständlich — es wird im nächsten Abschnitt bewiesen.</div>
+      </div>
+
+      <div class="it" style="margin-top:12px;"><strong>Achtung — beide Formen liefern eine Zahl, keinen Vektor.</strong> Das Ergebnis eines Skalarprodukts ist immer ein <em>Skalar</em>, also eine gewöhnliche Zahl ohne Pfeil. Daher der Name.</div>
+
+      <div class="hint" style="margin-top:12px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Bedingung für die geometrische Form:</strong> Ein Winkel zwischen zwei Vektoren ist nur dann definiert, wenn beide Vektoren eine Richtung haben — also nur für \(\vec{a}\neq\vec{0}\) und \(\vec{b}\neq\vec{0}\). Die koordinatenweise Form funktioniert dagegen immer; für den Nullvektor liefert sie \(\vec{a}\cdot\vec{0} = 0\), ohne dass dabei ein Winkel im Spiel wäre.</div>
+    </div>
+  </div>
+
+  <div class="section-label">3. Die Übersetzung: warum beide Formen dasselbe liefern (1 Std.)</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-g">✓</div>
+      <span class="card-title">Beweis der Gleichwertigkeit (2D-Fall)</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Die beiden Formen sehen völlig verschieden aus — links Längen und ein Kosinus, rechts nur Produkte und Summen von Koordinaten. Dass sie trotzdem immer denselben Wert liefern, lässt sich mit einem Satz aus Klasse 10 zeigen: dem <strong>Kosinussatz</strong>.</div>
+
+      <div class="ip" style="margin-top:10px;"><strong>① Das Dreieck aufbauen.</strong> Trage \(\vec{a}\) und \(\vec{b}\) vom selben Punkt aus an. Sie schließen den Winkel \(\alpha\) ein. Die Verbindung ihrer Spitzen ist der Vektor \(\vec{b}-\vec{a}\). So entsteht ein Dreieck mit den Seitenlängen \(|\vec{a}|\), \(|\vec{b}|\) und \(|\vec{b}-\vec{a}|\), wobei \(\alpha\) der Winkel zwischen den beiden erstgenannten Seiten ist.</div>
+
+      <div style="text-align:center;margin:14px 0;">
+        <canvas id="cvSkalarBeweis" style="max-width:100%;border-radius:8px;"></canvas>
+      </div>
+
+      <div class="ip"><strong>② Kosinussatz anwenden.</strong> Die dem Winkel \(\alpha\) gegenüberliegende Seite ist \(|\vec{b}-\vec{a}|\):</div>
+      <div class="hint">\[|\vec{b}-\vec{a}|^2 \;=\; |\vec{a}|^2 + |\vec{b}|^2 - 2\,|\vec{a}|\,|\vec{b}|\cos\alpha\]</div>
+
+      <div class="ip"><strong>③ Die linke Seite in Koordinaten ausrechnen.</strong> Mit \(\vec{a} = \begin{pmatrix}a_1\\a_2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}b_1\\b_2\end{pmatrix}\) ist \(\vec{b}-\vec{a} = \begin{pmatrix}b_1-a_1\\b_2-a_2\end{pmatrix}\), also</div>
+      <div class="hint">\[|\vec{b}-\vec{a}|^2 = (b_1-a_1)^2 + (b_2-a_2)^2 = b_1^2 - 2a_1b_1 + a_1^2 + b_2^2 - 2a_2b_2 + a_2^2.\]</div>
+
+      <div class="ip"><strong>④ Die rechte Seite in Koordinaten ausrechnen.</strong> Es ist \(|\vec{a}|^2 = a_1^2+a_2^2\) und \(|\vec{b}|^2 = b_1^2+b_2^2\), also</div>
+      <div class="hint">\[|\vec{a}|^2 + |\vec{b}|^2 - 2\,|\vec{a}|\,|\vec{b}|\cos\alpha = a_1^2+a_2^2+b_1^2+b_2^2 - 2\,|\vec{a}|\,|\vec{b}|\cos\alpha.\]</div>
+
+      <div class="ip"><strong>⑤ Gleichsetzen und kürzen.</strong> Beide Ausdrücke sind gleich. Die vier Quadrate \(a_1^2, a_2^2, b_1^2, b_2^2\) stehen auf beiden Seiten und fallen weg. Übrig bleibt</div>
+      <div class="hint">\[-2a_1b_1 - 2a_2b_2 \;=\; -2\,|\vec{a}|\,|\vec{b}|\cos\alpha.\]</div>
+
+      <div class="ip"><strong>⑥ Durch \(-2\) teilen.</strong> Damit ist die Behauptung gezeigt:</div>
+      <div class="hint" style="background:var(--kiku-bg);border-left:3px solid var(--kiku);">\[a_1b_1 + a_2b_2 \;=\; |\vec{a}|\,|\vec{b}|\cos\alpha \qquad \square\]</div>
+
+      <div class="it" style="margin-top:10px;">Im Raum läuft der Beweis genauso — es kommt lediglich überall der dritte Summand \(a_3b_3\) beziehungsweise \(a_3^2\) und \(b_3^2\) hinzu. An der Argumentation ändert sich nichts.</div>
+
+      <div class="hint" style="margin-top:12px;background:var(--mushikuri-light);border-left:3px solid var(--mushikuri);"><strong style="color:#8a7a30">Worauf es hier ankommt:</strong> Nicht auf die Rechnung, sondern auf die Geste. Zwei Ausdrücke, die wie zwei verschiedene Dinge aussehen, entpuppen sich über einen Satz aus der Mittelstufe als dasselbe. Ab jetzt darfst du frei zwischen beiden Formen wechseln — und genau dieser Wechsel ist es, was du in diesem Abschnitt lernst.</div>
+    </div>
+  </div>
+  <div class="section-label">4. Vier Begriffspaare, die du auseinanderhalten musst (1 Std.)</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-t">★</div>
+      <span class="card-title">Nachschlagekarte — Sprache beim Skalarprodukt</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Beim Skalarprodukt liegen vier Begriffspaare dicht beieinander, die in Klausuren regelmäßig durcheinandergeraten. Schlag diese Karte vor jeder Arbeit noch einmal auf.</div>
+
+      <div class="two-col" style="margin-top:12px;">
+        <div style="background:var(--mushikuri-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#8a7a30;font-size:14px;">Orthogonalität</div>
+          <div class="ip" style="font-size:14px;">Eine <em>geometrische Lage</em>: Zwei Vektoren stehen senkrecht aufeinander. Schreibweise \(\vec{a}\perp\vec{b}\). Aussage über den Raum.</div>
+        </div>
+        <div style="background:var(--fukagawa-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#4d6470;font-size:14px;">Skalarprodukt-Null</div>
+          <div class="ip" style="font-size:14px;">Eine <em>algebraische Bedingung</em>: Die Rechnung liefert den Wert \(0\). Schreibweise \(\vec{a}\cdot\vec{b}=0\). Aussage über ein Rechenergebnis.</div>
+        </div>
+      </div>
+      <div class="it" style="margin:6px 0 14px;">Beide bedeuten dasselbe — aber sie sagen es in verschiedenen Sprachen. <strong>Die Skalarprodukt-Null ist die algebraische Form der Orthogonalität.</strong></div>
+
+      <div class="two-col">
+        <div style="background:var(--mushikuri-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#8a7a30;font-size:14px;">Skalar</div>
+          <div class="ip" style="font-size:14px;">Eine <em>Zahl</em>. Kein Pfeil darüber. Zum Beispiel das Ergebnis \(\vec{a}\cdot\vec{b}=7\) oder der Koeffizient \(r\) in \(r\cdot\vec{a}\).</div>
+        </div>
+        <div style="background:var(--fukagawa-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#4d6470;font-size:14px;">Vektor</div>
+          <div class="ip" style="font-size:14px;">Ein <em>Spaltentupel</em> mit Komponenten. Pfeil darüber. Hat Richtung und Länge, lässt sich addieren und strecken.</div>
+        </div>
+      </div>
+      <div class="it" style="margin:6px 0 14px;">Prüfe bei jedem Zwischenergebnis: <em>Zahl oder Vektor?</em> Der Pfeil ist keine Verzierung — er entscheidet, was das Objekt ist.</div>
+
+      <div class="two-col">
+        <div style="background:var(--mushikuri-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#8a7a30;font-size:14px;">Skalarprodukt</div>
+          <div class="ip" style="font-size:14px;">Verknüpft <em>zwei Vektoren</em> zu einer <em>Zahl</em>: \(\vec{a}\cdot\vec{b}\). Eigene Rechenregel — paarweise multiplizieren und addieren.</div>
+        </div>
+        <div style="background:var(--fukagawa-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#4d6470;font-size:14px;">Multiplikation</div>
+          <div class="ip" style="font-size:14px;">Verknüpft <em>zwei Zahlen</em> zu einer Zahl (\(2\cdot 3\)) oder eine <em>Zahl mit einem Vektor</em> zu einem Vektor (\(2\cdot\vec{a}\)).</div>
+        </div>
+      </div>
+      <div class="it" style="margin:6px 0 14px;">Derselbe Malpunkt steht für drei verschiedene Operationen — \(2\cdot 3\), \(2\cdot\vec{a}\) und \(\vec{a}\cdot\vec{b}\). <strong>Woran du sie unterscheidest, sind allein die Pfeile über den Operanden.</strong> Wer die Pfeile wegzulassen beginnt, verliert die Lesart.</div>
+
+      <div class="two-col">
+        <div style="background:var(--mushikuri-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#8a7a30;font-size:14px;">Winkel zwischen Vektoren</div>
+          <div class="ip" style="font-size:14px;">Liegt zwischen \(0°\) und \(180°\). Kann stumpf sein. In der Formel steht das Skalarprodukt <em>ohne</em> Betragsstriche im Zähler.</div>
+        </div>
+        <div style="background:var(--fukagawa-light);border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;color:#4d6470;font-size:14px;">Winkel zwischen Geraden</div>
+          <div class="ip" style="font-size:14px;">Wird stets als <em>spitzer</em> Winkel angegeben, liegt zwischen \(0°\) und \(90°\). In der Formel steht der <em>Betrag</em> des Skalarprodukts im Zähler.</div>
+        </div>
+      </div>
+      <div class="ip" style="margin-top:6px;font-size:14px;"><strong>Vorgriff:</strong> Ein <em>Richtungsvektor</em> einer Geraden ist ein Vektor, der längs der Geraden zeigt und damit ihre Richtung angibt. Ausführlich lernst du ihn im Tab <em>Geraden</em> kennen; hier genügt diese Vorstellung.</div>
+      <div class="it" style="margin-top:6px;">Eine Gerade hat keine ausgezeichnete Richtung — ihr Richtungsvektor könnte genauso gut in die Gegenrichtung zeigen. Deshalb einigt man sich beim Geradenwinkel auf den spitzen Winkel. Diese Unterscheidung wird in Abschnitt 6 gerechnet.</div>
+    </div>
+  </div>
+
+  <div class="section-label">5. Orthogonalität — senkrecht ohne Winkel zu rechnen (2 Std.)</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-t">★</div>
+      <span class="card-title">Das Orthogonalitätskriterium</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Von allen Anwendungen des Skalarprodukts ist diese die wichtigste — und zugleich die einfachste, weil keine Wurzel und kein Taschenrechner nötig sind:</div>
+      <div class="hint" style="background:var(--kiku-bg);border-left:3px solid var(--kiku);">
+        <strong>Orthogonalitätskriterium.</strong> Für zwei Vektoren \(\vec{a}\neq\vec{0}\) und \(\vec{b}\neq\vec{0}\) gilt:
+        \[\vec{a}\perp\vec{b} \quad\Longleftrightarrow\quad \vec{a}\cdot\vec{b} = 0.\]
+      </div>
+      <div class="ip"><strong>Warum die Bedingung \(\vec{a}\neq\vec{0}\), \(\vec{b}\neq\vec{0}\) dabeisteht:</strong> Der Nullvektor hat keine Richtung. Zwischen ihm und einem anderen Vektor lässt sich gar kein Winkel angeben — obwohl das Skalarprodukt rechnerisch null ergibt. Ohne diese Bedingung wäre die Aussage also nicht sauber.</div>
+      <div class="ip" style="margin-top:10px;"><strong>Begründung des Kriteriums.</strong> Nach der geometrischen Form ist \(\vec{a}\cdot\vec{b} = |\vec{a}|\,|\vec{b}|\cos\alpha\). Weil beide Vektoren vom Nullvektor verschieden sind, ist \(|\vec{a}|\,|\vec{b}| &gt; 0\). Das Produkt wird deshalb genau dann null, wenn \(\cos\alpha = 0\) ist — und das ist im Bereich \(0°\le\alpha\le 180°\) nur bei \(\alpha = 90°\) der Fall. \(\square\)</div>
+      <div class="it" style="margin-top:10px;">Beachte den Doppelpfeil \(\Longleftrightarrow\): Das Kriterium funktioniert in <em>beide</em> Richtungen. Du kannst damit prüfen, <em>ob</em> zwei gegebene Vektoren senkrecht stehen — und du kannst es als Gleichung nutzen, um einen gesuchten Vektor zu <em>finden</em>.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-i">i</div>
+      <span class="card-title">Drei Aufgabentypen zur Orthogonalität</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">In Klausuren begegnet dir das Kriterium in drei Ausprägungen, die aufeinander aufbauen:</div>
+      <div class="ip"><strong>① Testen.</strong> Zwei Vektoren sind gegeben, gefragt ist, ob sie senkrecht stehen. Du rechnest das Skalarprodukt aus und vergleichst mit null. Reine Rechenarbeit, hilfsmittelfrei machbar.</div>
+      <div class="ip"><strong>② Konstruieren.</strong> Ein Vektor ist gegeben, gesucht ist ein zweiter, der senkrecht darauf steht. Jetzt wird die Bedingung \(\vec{a}\cdot\vec{b}=0\) zu einer <em>Gleichung</em> in den unbekannten Komponenten von \(\vec{b}\). Weil eine Gleichung für drei Unbekannte nicht ausreicht, darfst du zwei Komponenten frei wählen — und erhältst unendlich viele Lösungen.</div>
+      <div class="ip"><strong>③ Normalenvektor bestimmen.</strong> Zwei Vektoren sind gegeben, gesucht ist ein dritter, der auf <em>beiden</em> senkrecht steht. Nun sind es zwei Bedingungen: \(\vec{n}\cdot\vec{u}=0\) und \(\vec{n}\cdot\vec{v}=0\) — ein lineares Gleichungssystem. Dieser Typ ist die Vorbereitung auf die Ebenen.</div>
+      <div class="hint" style="margin-top:10px;background:var(--mushikuri-light);border-left:3px solid var(--mushikuri);"><strong style="color:#8a7a30">Der Sprung von ① zu ②</strong> ist größer, als er aussieht. Bei ① wird eine Bedingung <em>geprüft</em>, bei ② wird sie <em>gelöst</em>. Das ist ein Perspektivwechsel: Aus der Frage „Stimmt das?" wird die Frage „Für welche Vektoren stimmt das?". Wenn du bei ② ins Stocken gerätst, liegt es meist an diesem Wechsel — nicht an der Rechnung.</div>
+    </div>
+  </div>
+
+  <div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 1: Skalarprodukt berechnen und deuten</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind \(\vec{a} = \begin{pmatrix}1\\4\\-2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}3\\-1\\2\end{pmatrix}\). Berechne \(\vec{a}\cdot\vec{b}\) und gib an, ob der von \(\vec{a}\) und \(\vec{b}\) eingeschlossene Winkel spitz, recht oder stumpf ist. Fertige zuvor eine Skizze der beiden Vektoren an — eine grobe Handskizze genügt.</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top:8px;"><strong>① Skizze.</strong> Beide Vektoren vom Ursprung aus antragen. \(\vec{a}\) zeigt vor allem nach oben (große zweite Komponente), \(\vec{b}\) vor allem nach rechts und in der zweiten Komponente nach unten. Der eingeschlossene Winkel wirkt bereits in der Skizze größer als \(90°\).</div>
+      <div class="ip"><strong>② Paarweise multiplizieren.</strong> Die drei Produkte zunächst stehen lassen:
+        \(\vec{a}\cdot\vec{b} = 1\cdot 3 \;+\; 4\cdot(-1) \;+\; (-2)\cdot 2\).</div>
+      <div class="ip"><strong>③ Addieren.</strong> \(\vec{a}\cdot\vec{b} = 3 - 4 - 4 = -5\).</div>
+      <div class="ip"><strong>④ Deuten.</strong> Das Skalarprodukt ist <em>negativ</em>. Nach der Grundvorstellung aus Abschnitt 1 bedeutet das: Die Vektoren zeigen eher gegeneinander, der eingeschlossene Winkel ist <strong>stumpf</strong>, also größer als \(90°\). Die Skizze bestätigt das.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Beachte: Das Ergebnis \(-5\) ist eine <em>Zahl</em>, kein Vektor. Ein Pfeil darüber wäre falsch.</div>
+    </div>
+  </div>
+
+  <div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 2: Orthogonalität testen und einen senkrechten Vektor konstruieren</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben ist \(\vec{a} = \begin{pmatrix}2\\-3\\6\end{pmatrix}\).<br>
+      (a) Prüfe, ob \(\vec{b} = \begin{pmatrix}3\\4\\1\end{pmatrix}\) senkrecht auf \(\vec{a}\) steht.<br>
+      (b) Bestimme einen vom Nullvektor verschiedenen Vektor \(\vec{c}\), der senkrecht auf \(\vec{a}\) steht.</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top:8px;"><strong>(a) Testen.</strong> \(\vec{a}\cdot\vec{b} = 2\cdot 3 + (-3)\cdot 4 + 6\cdot 1 = 6 - 12 + 6 = 0\).</div>
+      <div class="ip">Beide Vektoren sind vom Nullvektor verschieden, also gilt nach dem Orthogonalitätskriterium \(\vec{a}\perp\vec{b}\) — die Vektoren stehen senkrecht aufeinander.</div>
+      <div class="ip" style="margin-top:10px;"><strong>(b) Konstruieren.</strong> Gesucht ist \(\vec{c} = \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix}\neq\vec{0}\) mit \(\vec{a}\cdot\vec{c} = 0\), also mit</div>
+      <div class="ip">\(2c_1 - 3c_2 + 6c_3 = 0.\)</div>
+      <div class="ip">Das ist <em>eine</em> Gleichung für <em>drei</em> Unbekannte. Zwei Komponenten dürfen also frei gewählt werden. Wähle etwa \(c_1 = 3\) und \(c_2 = 2\); dann folgt \(6 - 6 + 6c_3 = 0\), also \(c_3 = 0\).</div>
+      <div class="ip"><strong>Ergebnis:</strong> \(\vec{c} = \begin{pmatrix}3\\2\\0\end{pmatrix}\). <strong>Probe:</strong> \(2\cdot 3 + (-3)\cdot 2 + 6\cdot 0 = 6-6+0 = 0\) ✓</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Es gibt unendlich viele richtige Antworten — jede andere Wahl der beiden freien Komponenten liefert einen weiteren senkrechten Vektor. „Senkrecht sein" ist eben eine Lage-Eigenschaft und kennzeichnet keinen einzelnen Vektor.</div>
+    </div>
+  </div>
+  <div class="section-label">6. Die Winkelformel — wenn der genaue Winkel gefragt ist (2 Std.)</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-t">★</div>
+      <span class="card-title">Vom Kriterium zur Formel</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Das Orthogonalitätskriterium beantwortet nur eine Ja-Nein-Frage: senkrecht oder nicht. Soll der Winkel <em>genau</em> bestimmt werden, stellt man die geometrische Form nach \(\cos\alpha\) um. Aus \(\vec{a}\cdot\vec{b} = |\vec{a}|\,|\vec{b}|\cos\alpha\) wird durch Division:</div>
+      <div class="hint" style="background:var(--kiku-bg);border-left:3px solid var(--kiku);">
+        <strong>Winkel zwischen zwei Vektoren.</strong> Für \(\vec{a}\neq\vec{0}\) und \(\vec{b}\neq\vec{0}\) gilt
+        \[\cos\alpha = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|} \qquad\Longrightarrow\qquad \alpha = \arccos\!\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right),\qquad 0°\le\alpha\le 180°.\]
+      </div>
+      <div class="ip">Die Bedingung \(\vec{a}\neq\vec{0}\), \(\vec{b}\neq\vec{0}\) ist hier zwingend — sonst stünde im Nenner eine Null.</div>
+      <div class="ip" style="margin-top:10px;"><strong>Das Orthogonalitätskriterium ist ein Sonderfall dieser Formel.</strong> Setzt du \(\vec{a}\cdot\vec{b}=0\) ein, ergibt sich \(\cos\alpha = 0\) und damit \(\alpha = 90°\). Du lernst hier also nichts Neues, sondern verallgemeinerst das Bekannte: Statt „null oder nicht null" fragst du jetzt nach dem genauen Wert.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-a">!</div>
+      <span class="card-title">Zwei Stolperstellen</span>
+    </div>
+    <div class="card-body">
+      <div class="hint" style="background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">① Das Vorzeichen nicht verlieren.</strong> Ist \(\vec{a}\cdot\vec{b}\) negativ, so ist auch \(\cos\alpha\) negativ und der Winkel <em>stumpf</em>. Rechne das Minuszeichen unbedingt mit — wer es unterwegs verliert, erhält statt \(120°\) das Ergebnis \(60°\) und merkt den Fehler nicht.</div>
+      <div class="ip" style="margin-top:10px;"><strong>Deshalb vor der Rechnung immer erst schätzen:</strong> Skalarprodukt positiv → spitzer Winkel erwartet · null → \(90°\) · negativ → stumpfer Winkel erwartet. Kostet zehn Sekunden und deckt Vorzeichenfehler sofort auf.</div>
+      <div class="hint" style="margin-top:14px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">② Vektoren oder Geraden?</strong> Beim Winkel zwischen zwei <em>Geraden</em> gilt eine andere Konvention. Eine Gerade hat keine bevorzugte Richtung — ihr Richtungsvektor dürfte genauso gut andersherum zeigen. Deshalb wird der Geradenwinkel stets als <em>spitzer</em> Winkel angegeben, und in der Formel stehen Betragsstriche im Zähler:
+        \[\cos\alpha = \frac{\bigl|\vec{u}\cdot\vec{v}\bigr|}{|\vec{u}|\cdot|\vec{v}|},\qquad 0°\le\alpha\le 90°.\]</div>
+      <div class="ip" style="margin-top:10px;">Achte in der Aufgabenstellung also genau darauf, wonach gefragt ist: „Winkel zwischen den Vektoren \(\vec{a}\) und \(\vec{b}\)" — ohne Betragsstriche, Ergebnis bis \(180°\) möglich. „Schnittwinkel der Geraden \(g\) und \(h\)" — mit Betragsstrichen, Ergebnis höchstens \(90°\).</div>
+    </div>
+  </div>
+
+  <div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 3: Winkel zwischen zwei Vektoren berechnen</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Berechne den Winkel \(\alpha\), den die Vektoren \(\vec{a} = \begin{pmatrix}1\\0\\1\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\1\\0\end{pmatrix}\) einschließen.</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top:8px;"><strong>① Vorhersage.</strong> Beide Vektoren haben nur nichtnegative Komponenten, das Skalarprodukt wird also positiv ausfallen — zu erwarten ist ein spitzer Winkel.</div>
+      <div class="ip"><strong>② Skalarprodukt.</strong> \(\vec{a}\cdot\vec{b} = 1\cdot 1 + 0\cdot 1 + 1\cdot 0 = 1\).</div>
+      <div class="ip"><strong>③ Beträge.</strong> \(|\vec{a}| = \sqrt{1^2+0^2+1^2} = \sqrt{2}\) und \(|\vec{b}| = \sqrt{1^2+1^2+0^2} = \sqrt{2}\).</div>
+      <div class="ip"><strong>④ Einsetzen.</strong> \(\cos\alpha = \dfrac{1}{\sqrt{2}\cdot\sqrt{2}} = \dfrac{1}{2}\).</div>
+      <div class="ip"><strong>⑤ Winkel bestimmen.</strong> \(\alpha = \arccos\left(\tfrac{1}{2}\right) = 60°\).</div>
+      <div class="ip"><strong>⑥ Kontrolle.</strong> \(60° &lt; 90°\) — der Winkel ist spitz, wie in ① vorhergesagt. ✓</div>
+    </div>
+  </div>
+
+  <div class="section-label">Übungsaufgaben</div>
+
+  <div style="display:flex;align-items:center;gap:18px;margin:24px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">SP1</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · SP1 · ★ Grundlagen</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Skalarprodukt berechnen und deuten</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Die Rechenregel anwenden und das Vorzeichen des Ergebnisses lesen — hilfsmittelfrei.</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP1.1</span><span class="td de">★</span></div>
+        <div class="tq">Berechne das Skalarprodukt \(\vec{a}\cdot\vec{b}\) für \(\vec{a} = \begin{pmatrix}3\\-1\\2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}4\\5\\1\end{pmatrix}\).</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>Lösung:</strong> \(\vec{a}\cdot\vec{b} = 3\cdot 4 + (-1)\cdot 5 + 2\cdot 1 = 12 - 5 + 2 = 9\).</div>
+      <div class="ip">Das Ergebnis ist eine Zahl, kein Vektor.</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+      <div class="komp-desc">K5: Rechenregel des Skalarprodukts korrekt anwenden</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP1.2</span><span class="td de">★</span></div>
+        <div class="tq">Berechne \(\vec{a}\cdot\vec{b}\) für \(\vec{a} = \begin{pmatrix}4\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}-3\\4\end{pmatrix}\). Gib an, wie die beiden Vektoren zueinander liegen.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>Lösung:</strong> Im zweidimensionalen Fall fällt der dritte Summand weg: \(\vec{a}\cdot\vec{b} = 4\cdot(-3) + 3\cdot 4 = -12 + 12 = 0\).</div>
+      <div class="ip">Beide Vektoren sind vom Nullvektor verschieden, das Skalarprodukt ist null — die Vektoren stehen also <strong>senkrecht</strong> aufeinander: \(\vec{a}\perp\vec{b}\).</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+      <div class="komp-desc">K5: Rechenregel im 2D-Fall anwenden · K4: Rechenergebnis geometrisch deuten</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP1.3</span><span class="td de">★</span></div>
+        <div class="tq">Gib für jedes der drei Vektorpaare <em>ohne</em> Berechnung des Winkels an, ob der eingeschlossene Winkel spitz, recht oder stumpf ist. Begründe jeweils in einem Satz.<br>
+          (a) \(\vec{a} = \begin{pmatrix}1\\2\\2\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}2\\1\\1\end{pmatrix}\) &nbsp;·&nbsp;
+          (b) \(\vec{a} = \begin{pmatrix}1\\0\\-1\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}2\\3\\2\end{pmatrix}\) &nbsp;·&nbsp;
+          (c) \(\vec{a} = \begin{pmatrix}2\\1\\0\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}-3\\1\\4\end{pmatrix}\)</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>(a)</strong> \(\vec{a}\cdot\vec{b} = 1\cdot 2 + 2\cdot 1 + 2\cdot 1 = 2+2+2 = 6 &gt; 0\) → der Winkel ist <strong>spitz</strong>, denn ein positives Skalarprodukt bedeutet \(\cos\alpha &gt; 0\), also \(\alpha &lt; 90°\).</div>
+      <div class="ip"><strong>(b)</strong> \(\vec{a}\cdot\vec{b} = 1\cdot 2 + 0\cdot 3 + (-1)\cdot 2 = 2+0-2 = 0\) → der Winkel ist <strong>recht</strong>, die Vektoren stehen senkrecht aufeinander.</div>
+      <div class="ip"><strong>(c)</strong> \(\vec{a}\cdot\vec{b} = 2\cdot(-3) + 1\cdot 1 + 0\cdot 4 = -6+1+0 = -5 &lt; 0\) → der Winkel ist <strong>stumpf</strong>, denn ein negatives Skalarprodukt bedeutet \(\cos\alpha &lt; 0\), also \(\alpha &gt; 90°\).</div>
+      <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+      <div class="komp-desc">K4: Vorzeichen als geometrische Information lesen · K5: Skalarprodukt sicher berechnen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP1.4</span><span class="td dm">★★</span></div>
+        <div class="tq"><strong>a)</strong> Skizziere in einem ebenen Koordinatensystem die Vektoren \(\vec{a} = \begin{pmatrix}4\\1\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}-1\\4\end{pmatrix}\) vom Ursprung aus.<br><strong>b)</strong> Berechne \(\vec{a}\cdot\vec{b}\) und erläutere, ob deine Skizze zum Rechenergebnis passt.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>a) Skizze.</strong> \(\vec{a}\) zeigt flach nach rechts oben, \(\vec{b}\) steil nach links oben. Der eingeschlossene Winkel sieht wie ein rechter Winkel aus.</div>
+      <div class="ip"><strong>b) Rechnung.</strong> \(\vec{a}\cdot\vec{b} = 4\cdot(-1) + 1\cdot 4 = -4 + 4 = 0\).</div>
+      <div class="ip"><strong>Vergleich.</strong> Das Skalarprodukt ist null, die Vektoren stehen also tatsächlich exakt senkrecht aufeinander. Die Skizze bestätigt das Rechenergebnis — sie kann es aber nicht beweisen, denn ein Auge unterscheidet \(90°\) nicht sicher von \(88°\). Die Rechnung entscheidet.</div>
+      <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+      <div class="komp-desc">K4: Zwischen Skizze und Rechnung wechseln · K6: Reichweite einer Skizze beurteilen</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">SP2</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · SP2 · ★★ / ★★★ Orthogonalität</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Testen · konstruieren · Normalenvektor</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Die Bedingung \(\vec{a}\cdot\vec{b}=0\) erst prüfen, dann als Gleichung lösen — der Weg zu den Ebenen.</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP2.1</span><span class="td dm">★★</span></div>
+        <div class="tq">Weise nach, dass \(\vec{a} = \begin{pmatrix}1\\0\\-2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}2\\5\\1\end{pmatrix}\) senkrecht aufeinander stehen.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>Lösung:</strong> \(\vec{a}\cdot\vec{b} = 1\cdot 2 + 0\cdot 5 + (-2)\cdot 1 = 2 + 0 - 2 = 0\).</div>
+      <div class="ip">Es ist \(\vec{a}\neq\vec{0}\) und \(\vec{b}\neq\vec{0}\); nach dem Orthogonalitätskriterium folgt aus \(\vec{a}\cdot\vec{b}=0\) also \(\vec{a}\perp\vec{b}\).</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+      <div class="komp-desc">K5: Orthogonalitätstest durchführen · K1: Nachweis vollständig führen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP2.2</span><span class="td dm">★★</span></div>
+        <div class="tq">Gegeben ist \(\vec{a} = \begin{pmatrix}2\\3\\1\end{pmatrix}\). Bestimme <strong>zwei verschiedene</strong> Vektoren \(\vec{b}_1\) und \(\vec{b}_2\), die beide vom Nullvektor verschieden sind und senkrecht auf \(\vec{a}\) stehen. Erläutere, warum es unendlich viele solche Vektoren gibt.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Bedingung aufstellen.</strong> Gesucht sind Vektoren \(\vec{b} = \begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}\neq\vec{0}\) mit \(\vec{a}\cdot\vec{b} = 0\), also mit \(2b_1 + 3b_2 + b_3 = 0\).</div>
+      <div class="ip"><strong>② Frei wählen.</strong> Eine Gleichung, drei Unbekannte — zwei Komponenten dürfen frei gewählt werden, die dritte ergibt sich.</div>
+      <div class="ip">Wahl \(b_1 = 1,\; b_2 = 0\): \(\;2 + 0 + b_3 = 0 \Rightarrow b_3 = -2\), also \(\vec{b}_1 = \begin{pmatrix}1\\0\\-2\end{pmatrix}\). <strong>Probe:</strong> \(2\cdot 1 + 3\cdot 0 + 1\cdot(-2) = 0\) ✓</div>
+      <div class="ip">Wahl \(b_1 = 0,\; b_2 = 1\): \(\;0 + 3 + b_3 = 0 \Rightarrow b_3 = -3\), also \(\vec{b}_2 = \begin{pmatrix}0\\1\\-3\end{pmatrix}\). <strong>Probe:</strong> \(2\cdot 0 + 3\cdot 1 + 1\cdot(-3) = 0\) ✓</div>
+      <div class="ip"><strong>③ Begründung.</strong> Jede Wahl von \(b_1\) und \(b_2\) liefert genau ein passendes \(b_3\) und damit einen weiteren senkrechten Vektor. Da für \(b_1\) und \(b_2\) unendlich viele Zahlenpaare zur Verfügung stehen, gibt es unendlich viele Lösungen. Anschaulich: Alle zu \(\vec{a}\) senkrechten Vektoren bilden eine ganze Ebene durch den Ursprung — nicht einen einzelnen Vektor.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Beachte den Perspektivwechsel gegenüber SP2.1: Dort wurde die Bedingung <em>geprüft</em>, hier wird sie <em>gelöst</em>.</div>
+      <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+      <div class="komp-desc">K2: Bedingung als Gleichung lösen statt testen · K5: Lösungsmenge bestimmen · K1: Unendlichkeit der Lösungsmenge begründen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP2.3</span><span class="td dm">★★</span></div>
+        <div class="tq">Gegeben sind \(\vec{a} = \begin{pmatrix}2\\-1\\t\end{pmatrix}\) mit \(t\in\mathbb{R}\) und \(\vec{b} = \begin{pmatrix}3\\4\\1\end{pmatrix}\). Bestimme den Wert von \(t\), für den \(\vec{a}\) und \(\vec{b}\) senkrecht aufeinander stehen.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Bedingung übersetzen.</strong> Senkrecht bedeutet \(\vec{a}\cdot\vec{b} = 0\).</div>
+      <div class="ip"><strong>② Skalarprodukt mit dem Parameter aufstellen.</strong> \(\vec{a}\cdot\vec{b} = 2\cdot 3 + (-1)\cdot 4 + t\cdot 1 = 6 - 4 + t = 2 + t\).</div>
+      <div class="ip"><strong>③ Gleichung lösen.</strong> \(2 + t = 0 \Rightarrow t = -2\).</div>
+      <div class="ip"><strong>④ Probe.</strong> Für \(t=-2\) ist \(\vec{a} = \begin{pmatrix}2\\-1\\-2\end{pmatrix}\) und \(\vec{a}\cdot\vec{b} = 6 - 4 - 2 = 0\) ✓. Außerdem ist \(\vec{a}\neq\vec{0}\), also gilt tatsächlich \(\vec{a}\perp\vec{b}\).</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k2">K2</span></div>
+      <div class="komp-desc">K5: Geometrische Bedingung in eine Gleichung übersetzen · K2: Parametergleichung lösen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP2.4</span><span class="td dh">★★★</span></div>
+        <div class="tq">Gegeben sind \(\vec{u} = \begin{pmatrix}1\\2\\0\end{pmatrix}\) und \(\vec{v} = \begin{pmatrix}0\\1\\3\end{pmatrix}\). Bestimme einen Vektor \(\vec{n}\neq\vec{0}\), der auf \(\vec{u}\) <em>und</em> auf \(\vec{v}\) senkrecht steht.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Zwei Bedingungen aufstellen.</strong> Mit \(\vec{n} = \begin{pmatrix}n_1\\n_2\\n_3\end{pmatrix}\) muss gelten:</div>
+      <div class="ip">(I) \(\;\vec{n}\cdot\vec{u} = n_1 + 2n_2 = 0\) &nbsp;&nbsp;&nbsp; (II) \(\;\vec{n}\cdot\vec{v} = n_2 + 3n_3 = 0\)</div>
+      <div class="ip"><strong>② Eine Komponente frei wählen.</strong> Zwei Gleichungen für drei Unbekannte — eine Komponente bleibt frei. Setze \(n_3 = 1\).</div>
+      <div class="ip">Aus (II): \(n_2 + 3 = 0 \Rightarrow n_2 = -3\). &nbsp; Aus (I): \(n_1 + 2\cdot(-3) = 0 \Rightarrow n_1 = 6\).</div>
+      <div class="ip"><strong>③ Ergebnis.</strong> \(\vec{n} = \begin{pmatrix}6\\-3\\1\end{pmatrix}\).</div>
+      <div class="ip"><strong>④ Probe.</strong> \(\vec{n}\cdot\vec{u} = 6\cdot 1 + (-3)\cdot 2 + 1\cdot 0 = 6-6+0 = 0\) ✓ &nbsp;·&nbsp; \(\vec{n}\cdot\vec{v} = 6\cdot 0 + (-3)\cdot 1 + 1\cdot 3 = 0-3+3 = 0\) ✓</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Jedes Vielfache von \(\vec{n}\) ist ebenfalls eine Lösung — etwa \(\begin{pmatrix}12\\-6\\2\end{pmatrix}\). Ein solcher Vektor heißt <em>Normalenvektor</em> der von \(\vec{u}\) und \(\vec{v}\) aufgespannten Ebene. Du wirst ihm im Tab <em>Ebenen</em> wiederbegegnen.</div>
+      <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+      <div class="komp-desc">K2: Gleichungssystem aus zwei Bedingungen lösen · K5: Skalarprodukt zweifach ansetzen · K4: Ergebnis als Normalenvektor deuten</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP2.5</span><span class="td dh">★★★</span></div>
+        <div class="tq"><strong>Parameteraufgabe.</strong> Gegeben sind der Koordinatenursprung \(O(0|0|0)\), der Punkt \(P(2|0|3)\) und die Punkte \(Q_a(6|a|-1)\) mit \(a\in\mathbb{R}\).<br><strong>a)</strong> Skizziere die Lage von \(O\), \(P\) und einem Punkt \(Q_a\) deiner Wahl im Schrägbild.<br><strong>b)</strong> Bestimme alle Werte von \(a\), für die das Dreieck \(OPQ_a\) bei \(P\) einen rechten Winkel hat.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>a) Skizze.</strong> \(O\) im Ursprung, \(P\) im Raum, \(Q_a\) je nach Wahl von \(a\) auf einer zur \(y\)-Achse parallelen Geraden. Die Skizze zeigt: Nur die \(y\)-Koordinate von \(Q_a\) verändert sich.</div>
+      <div class="ip"><strong>b) ① Geometrische Bedingung übersetzen.</strong> Ein rechter Winkel bei \(P\) bedeutet, dass die beiden von \(P\) ausgehenden Dreiecksseiten senkrecht aufeinander stehen: \(\vec{PO}\perp\vec{PQ_a}\), also \(\vec{PO}\cdot\vec{PQ_a} = 0\).</div>
+      <div class="ip"><strong>② Vektoren berechnen.</strong> \(\vec{PO} = -\vec{OP} = \begin{pmatrix}-2\\0\\-3\end{pmatrix}\) und \(\vec{PQ_a} = \vec{OQ_a} - \vec{OP} = \begin{pmatrix}4\\a\\-4\end{pmatrix}\).</div>
+      <div class="ip"><strong>③ Skalarprodukt aufstellen.</strong> \(\vec{PO}\cdot\vec{PQ_a} = (-2)\cdot 4 + 0\cdot a + (-3)\cdot(-4) = -8 + 0 + 12 = 4\).</div>
+      <div class="ip"><strong>④ Gleichung untersuchen.</strong> Der Parameter \(a\) fällt heraus, weil er nur mit der zweiten Komponente von \(\vec{PO}\) multipliziert wird — und die ist null. Das Skalarprodukt hat also für <em>jedes</em> \(a\) den Wert \(4\) und wird nie null.</div>
+      <div class="ip"><strong>⑤ Antwort.</strong> Es gibt <em>keinen</em> Wert von \(a\), für den das Dreieck \(OPQ_a\) bei \(P\) einen rechten Winkel hat.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">„Keine Lösung" ist hier eine vollwertige mathematische Antwort, kein Zeichen für einen Rechenfehler. Prüfe in solchen Fällen aber immer nach, <em>warum</em> der Parameter herausfällt — das ist der eigentliche Erkenntnisgewinn.</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+      <div class="komp-desc">K5: Geometrische Bedingung mit dem Skalarprodukt übersetzen · K1: „Keine Lösung" als Ergebnis begründen</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">SP3</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · SP3 · ★★ / ★★★ Winkelberechnung</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Winkel bestimmen — auch im Sachzusammenhang</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Die Winkelformel anwenden, das Vorzeichen deuten und zwischen Vektor- und Geradenwinkel unterscheiden.</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP3.1</span><span class="td dm">★★</span></div>
+        <div class="tq">Berechne den Winkel \(\alpha\), den die Vektoren \(\vec{a} = \begin{pmatrix}2\\2\\1\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}0\\3\\4\end{pmatrix}\) einschließen. Runde auf eine Nachkommastelle.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Vorhersage.</strong> Alle Komponenten sind nichtnegativ, das Skalarprodukt wird positiv — erwartet wird ein spitzer Winkel.</div>
+      <div class="ip"><strong>② Skalarprodukt.</strong> \(\vec{a}\cdot\vec{b} = 2\cdot 0 + 2\cdot 3 + 1\cdot 4 = 0 + 6 + 4 = 10\).</div>
+      <div class="ip"><strong>③ Beträge.</strong> \(|\vec{a}| = \sqrt{4+4+1} = \sqrt{9} = 3\) &nbsp;·&nbsp; \(|\vec{b}| = \sqrt{0+9+16} = \sqrt{25} = 5\).</div>
+      <div class="ip"><strong>④ Winkelformel.</strong> \(\cos\alpha = \dfrac{10}{3\cdot 5} = \dfrac{10}{15} = \dfrac{2}{3}\).</div>
+      <div class="ip"><strong>⑤ Ergebnis.</strong> \(\alpha = \arccos\left(\tfrac{2}{3}\right) \approx 48{,}2°\) — spitz, wie vorhergesagt ✓</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+      <div class="komp-desc">K5: Winkelformel vollständig anwenden und das Ergebnis plausibilisieren</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP3.2</span><span class="td dm">★★</span></div>
+        <div class="tq"><strong>a)</strong> Skizziere die Punkte \(A(1|0|0)\), \(B(3|2|0)\) und \(C(3|4|2)\) im Schrägbild und ergänze \(D\) so, dass ein Parallelogramm \(ABCD\) entsteht.<br><strong>b)</strong> Bestimme die Koordinaten von \(D\) sowie den Innenwinkel \(\alpha = \angle DAB\) des Parallelogramms bei der Ecke \(A\).</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>a) Skizze.</strong> An der Skizze wird anschaulich klar, dass \(\vec{AD} = \vec{BC}\) gelten muss: Im Parallelogramm sind gegenüberliegende Seiten parallel und gleich lang.</div>
+      <div class="ip"><strong>b) ① Punkt \(D\) bestimmen.</strong> \(\vec{BC} = \begin{pmatrix}3-3\\4-2\\2-0\end{pmatrix} = \begin{pmatrix}0\\2\\2\end{pmatrix}\), damit \(\vec{OD} = \vec{OA} + \vec{AD} = \begin{pmatrix}1\\0\\0\end{pmatrix} + \begin{pmatrix}0\\2\\2\end{pmatrix} = \begin{pmatrix}1\\2\\2\end{pmatrix}\), also \(D(1|2|2)\).</div>
+      <div class="ip"><strong>② Die beiden Seitenvektoren bei \(A\).</strong> \(\vec{AB} = \begin{pmatrix}2\\2\\0\end{pmatrix}\) und \(\vec{AD} = \begin{pmatrix}0\\2\\2\end{pmatrix}\). Der gesuchte Winkel \(\alpha = \angle DAB\) ist der von diesen beiden Vektoren eingeschlossene Winkel.</div>
+      <div class="ip"><strong>③ Skalarprodukt und Beträge.</strong> \(\vec{AB}\cdot\vec{AD} = 2\cdot 0 + 2\cdot 2 + 0\cdot 2 = 4\) &nbsp;·&nbsp; \(|\vec{AB}| = \sqrt{4+4+0} = \sqrt{8}\) &nbsp;·&nbsp; \(|\vec{AD}| = \sqrt{0+4+4} = \sqrt{8}\).</div>
+      <div class="ip"><strong>④ Winkelformel.</strong> \(\cos\alpha = \dfrac{4}{\sqrt{8}\cdot\sqrt{8}} = \dfrac{4}{8} = 0{,}5 \;\Rightarrow\; \alpha = 60°\).</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Die übrigen Innenwinkel folgen daraus ohne weitere Rechnung: Im Parallelogramm ergänzen sich benachbarte Winkel zu \(180°\), der Winkel bei \(B\) beträgt also \(120°\).</div>
+      <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+      <div class="komp-desc">K5: Punkt über Vektorgleichheit und Winkel über Skalarprodukt bestimmen · K4: Eigenschaften des Parallelogramms nutzen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP3.3</span><span class="td dm">★★</span></div>
+        <div class="tq"><strong>a)</strong> Skizziere die Situation: den Weg \(\vec{AB}\), seinen Schatten auf dem Erdboden und die Höhe — als rechtwinkliges Dreieck.<br><strong>b)</strong> Ein Kran hebt eine Last geradlinig vom Punkt \(A(0|0|0)\) zum Punkt \(B(8|6|12)\); alle Koordinaten sind in Metern angegeben, die \(xy\)-Ebene stellt den Erdboden dar. Bestimme die Länge des zurückgelegten Weges sowie den Winkel \(\alpha\), den der Weg mit dem Erdboden einschließt. Runde beide Ergebnisse auf eine Nachkommastelle.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>a) Skizze.</strong> Das rechtwinklige Dreieck hat als Ankathete den Schatten am Boden, als Gegenkathete die Höhe und als Hypotenuse den Weg selbst. Der gesuchte Winkel liegt zwischen Weg und Schatten.</div>
+      <div class="ip"><strong>b) ① Weg als Vektor.</strong> \(\vec{AB} = \begin{pmatrix}8\\6\\12\end{pmatrix}\), Länge \(|\vec{AB}| = \sqrt{64+36+144} = \sqrt{244} \approx 15{,}6\) m.</div>
+      <div class="ip"><strong>② Die Richtung „am Boden entlang".</strong> Der Schatten des Weges auf dem Erdboden hat dieselben \(x\)- und \(y\)-Werte, aber keine Höhe: \(\vec{p} = \begin{pmatrix}8\\6\\0\end{pmatrix}\), also \(|\vec{p}| = \sqrt{64+36} = \sqrt{100} = 10\) m. Der gesuchte Winkel ist der von \(\vec{AB}\) und \(\vec{p}\) eingeschlossene Winkel.</div>
+      <div class="ip"><strong>③ Skalarprodukt.</strong> \(\vec{AB}\cdot\vec{p} = 8\cdot 8 + 6\cdot 6 + 12\cdot 0 = 64 + 36 + 0 = 100\).</div>
+      <div class="ip"><strong>④ Winkelformel.</strong> \(\cos\alpha = \dfrac{100}{\sqrt{244}\cdot 10} \approx \dfrac{100}{156{,}2} \approx 0{,}6402 \;\Rightarrow\; \alpha \approx 50{,}2°\).</div>
+      <div class="ip"><strong>⑤ Plausibilität.</strong> Das Skalarprodukt ist positiv, der Winkel also spitz — passend zu einem ansteigenden Weg. Zur Kontrolle lässt sich der Winkel hier auch am rechtwinkligen Dreieck aus a) bestimmen: \(\tan\alpha = \tfrac{12}{10} = 1{,}2\), ebenfalls \(\alpha\approx 50{,}2°\) ✓</div>
+      <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+      <div class="komp-desc">K3: Realsituation als Vektorproblem modellieren · K5: Winkel über das Skalarprodukt bestimmen und mit einem zweiten Weg kontrollieren</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP3.4</span><span class="td dh">★★★</span></div>
+        <div class="tq"><strong>a)</strong> Skizziere das Geschwindigkeitsdreieck: \(\vec{v}_S\) nach Osten, \(\vec{v}_W\) nach Norden und die tatsächliche Richtung \(\vec{v}_S+\vec{v}_W\) mit dem Abweichungswinkel \(30°\).<br><strong>b)</strong> <strong>Parameteraufgabe im Sachzusammenhang.</strong> Ein Schiff fährt mit dem Geschwindigkeitsvektor \(\vec{v}_S = \begin{pmatrix}12\\0\\0\end{pmatrix}\) (Angaben in km/h, \(x\)-Richtung = Osten, \(y\)-Richtung = Norden). Eine Querströmung wirkt mit \(\vec{v}_W = \begin{pmatrix}0\\k\\0\end{pmatrix}\), \(k\in\mathbb{R}\). Die tatsächliche Bewegungsrichtung ist \(\vec{v}_S + \vec{v}_W\). Bestimme alle Werte von \(k\), für die das Schiff um genau \(30°\) von der Soll-Richtung Osten abweicht.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>a) Skizze.</strong> \(\vec{v}_S\) waagerecht, \(\vec{v}_W\) senkrecht dazu, die Summe als Diagonale. Der Abweichungswinkel liegt zwischen \(\vec{v}_S\) und der Diagonalen.</div>
+      <div class="ip"><strong>b) ① Bedingung übersetzen.</strong> Der Winkel zwischen der Soll-Richtung \(\vec{v}_S\) und der tatsächlichen Richtung \(\vec{v}_S + \vec{v}_W = \begin{pmatrix}12\\k\\0\end{pmatrix}\) soll \(30°\) betragen.</div>
+      <div class="ip"><strong>② Winkelformel ansetzen.</strong> Skalarprodukt: \(\vec{v}_S\cdot(\vec{v}_S+\vec{v}_W) = 12\cdot 12 + 0\cdot k + 0\cdot 0 = 144\). Beträge: \(|\vec{v}_S| = 12\) und \(|\vec{v}_S+\vec{v}_W| = \sqrt{144+k^2}\). Damit</div>
+      <div class="ip">\(\cos 30° = \dfrac{144}{12\cdot\sqrt{144+k^2}} = \dfrac{12}{\sqrt{144+k^2}}\).</div>
+      <div class="ip"><strong>③ Nach \(k\) auflösen.</strong> Mit \(\cos 30° = \tfrac{\sqrt{3}}{2}\) folgt \(\sqrt{144+k^2} = \dfrac{12\cdot 2}{\sqrt{3}} = \dfrac{24}{\sqrt{3}} = 8\sqrt{3}\).</div>
+      <div class="ip">Quadrieren: \(144 + k^2 = 192 \;\Rightarrow\; k^2 = 48 \;\Rightarrow\; k = \pm\sqrt{48} = \pm 4\sqrt{3} \approx \pm 6{,}93\).</div>
+      <div class="ip"><strong>④ Probe für \(k = 4\sqrt{3}\).</strong> \(\sqrt{144+48} = \sqrt{192} \approx 13{,}86\) und \(\dfrac{12}{13{,}86} \approx 0{,}866 = \cos 30°\) ✓</div>
+      <div class="ip"><strong>⑤ Antwort im Sachzusammenhang.</strong> \(k \approx +6{,}93\) km/h bedeutet Abdrift nach Norden, \(k \approx -6{,}93\) km/h Abdrift nach Süden. Beide Strömungen führen zu einer Abweichung von \(30°\) — die Aufgabenstellung legt die Richtung der Abweichung nicht fest.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Beim Quadrieren entstehen grundsätzlich zwei Vorzeichen. Hier sind beide sachlich sinnvoll und gehören deshalb beide zur Antwort — anders als etwa bei einer Längenangabe, wo die negative Lösung zu verwerfen wäre.</div>
+      <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+      <div class="komp-desc">K3: Strömung als Vektoraddition modellieren · K5: Winkelformel nach einem Parameter auflösen · K4: Beide Lösungen im Sachzusammenhang deuten</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP3.5</span><span class="td dh">★★★</span></div>
+        <div class="tq">Gegeben sind \(\vec{a} = \begin{pmatrix}1\\2\\2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}-2\\-2\\1\end{pmatrix}\).<br>
+          (a) Berechne den Winkel zwischen den <em>Vektoren</em> \(\vec{a}\) und \(\vec{b}\).<br>
+          (b) Die Geraden \(g\) und \(h\) verlaufen in Richtung von \(\vec{a}\) beziehungsweise \(\vec{b}\) — die beiden Vektoren sind also ihre <em>Richtungsvektoren</em>. Berechne den Schnittwinkel der beiden <em>Geraden</em>.<br>
+          (c) Erläutere, warum die beiden Ergebnisse verschieden sind.<br>
+          Runde jeweils auf eine Nachkommastelle.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>Gemeinsame Vorarbeit.</strong> \(\vec{a}\cdot\vec{b} = 1\cdot(-2) + 2\cdot(-2) + 2\cdot 1 = -2 - 4 + 2 = -4\) &nbsp;·&nbsp; \(|\vec{a}| = \sqrt{1+4+4} = 3\) &nbsp;·&nbsp; \(|\vec{b}| = \sqrt{4+4+1} = 3\).</div>
+      <div class="ip"><strong>(a) Winkel zwischen den Vektoren.</strong> Ohne Betragsstriche: \(\cos\alpha = \dfrac{-4}{3\cdot 3} = -\dfrac{4}{9} \;\Rightarrow\; \alpha \approx 116{,}4°\). Das Skalarprodukt ist negativ, der Winkel also stumpf — passend.</div>
+      <div class="ip"><strong>(b) Schnittwinkel der Geraden.</strong> Mit Betragsstrichen: \(\cos\alpha = \dfrac{|-4|}{3\cdot 3} = \dfrac{4}{9} \;\Rightarrow\; \alpha \approx 63{,}6°\).</div>
+      <div class="ip"><strong>(c) Begründung.</strong> Ein Vektor hat eine feste Richtung, eine Gerade nicht: Statt \(\vec{b}\) könnte man ebenso gut \(-\vec{b}\) als Richtungsvektor derselben Geraden wählen — dann käme in (a) der Winkel \(63{,}6°\) heraus. Damit der Geradenwinkel eindeutig ist, hat man sich auf den spitzen der beiden Winkel geeinigt; die Betragsstriche in der Formel setzen genau diese Vereinbarung um.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Kontrolle: Die beiden Winkel ergänzen sich zu \(180°\), denn \(116{,}4° + 63{,}6° = 180°\). Sie sind Nebenwinkel.</div>
+      <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+      <div class="komp-desc">K6: Vektor- und Geradenwinkel sprachlich unterscheiden · K5: Beide Formeln korrekt anwenden · K1: Die Spitzwinkel-Konvention begründen</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">SP4</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · SP4 · ★★ / ★★★ Übersetzen und Reflektieren</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Zwischen den beiden Formen wechseln</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Aufgaben, die den Wechsel zwischen geometrischer und koordinatenweiser Form verlangen — der eigentliche Lerngegenstand dieses Tabs.</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP4.1</span><span class="td dh">★★★</span></div>
+        <div class="tq">Gegeben sind \(\vec{a} = \begin{pmatrix}2\\0\\0\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}3\\3\\0\end{pmatrix}\). Berechne \(\vec{a}\cdot\vec{b}\) auf <strong>beiden</strong> Wegen — zuerst koordinatenweise, dann geometrisch über Längen und eingeschlossenen Winkel. Vergleiche die Ergebnisse.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Koordinatenweise.</strong> \(\vec{a}\cdot\vec{b} = 2\cdot 3 + 0\cdot 3 + 0\cdot 0 = 6\).</div>
+      <div class="ip"><strong>② Geometrisch — Längen.</strong> \(|\vec{a}| = \sqrt{4+0+0} = 2\) &nbsp;·&nbsp; \(|\vec{b}| = \sqrt{9+9+0} = \sqrt{18} = 3\sqrt{2}\).</div>
+      <div class="ip"><strong>③ Geometrisch — Winkel.</strong> Beide Vektoren liegen in der \(xy\)-Ebene. \(\vec{a}\) zeigt genau in \(x\)-Richtung, \(\vec{b}\) hat gleich große \(x\)- und \(y\)-Komponenten und schließt daher mit der \(x\)-Achse den Winkel \(45°\) ein. Also ist \(\alpha = 45°\) und \(\cos 45° = \tfrac{\sqrt{2}}{2}\).</div>
+      <div class="ip"><strong>④ Geometrische Form einsetzen.</strong> \(|\vec{a}|\,|\vec{b}|\cos\alpha = 2\cdot 3\sqrt{2}\cdot\dfrac{\sqrt{2}}{2} = 3\sqrt{2}\cdot\sqrt{2} = 3\cdot 2 = 6\).</div>
+      <div class="ip"><strong>⑤ Vergleich.</strong> Beide Wege liefern \(6\) — wie es nach dem Beweis aus Abschnitt 3 sein muss. Der koordinatenweise Weg ist kürzer; der geometrische Weg zeigt, <em>woher</em> die Zahl kommt.</div>
+      <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+      <div class="komp-desc">K4: Zwischen geometrischer und algebraischer Darstellung wechseln · K5: Beide Formen sicher berechnen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP4.2</span><span class="td dm">★★</span></div>
+        <div class="tq">Von zwei Vektoren \(\vec{a}\) und \(\vec{b}\) ist bekannt: \(|\vec{a}| = 5\), \(|\vec{b}| = 4\) und \(\vec{a}\cdot\vec{b} = -10\). Die Koordinaten der Vektoren sind <em>nicht</em> gegeben. Bestimme den von ihnen eingeschlossenen Winkel und gib an, ob er spitz oder stumpf ist.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Vorhersage.</strong> Das Skalarprodukt ist negativ — der Winkel muss stumpf sein.</div>
+      <div class="ip"><strong>② Winkelformel.</strong> \(\cos\alpha = \dfrac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|} = \dfrac{-10}{5\cdot 4} = -0{,}5\).</div>
+      <div class="ip"><strong>③ Ergebnis.</strong> \(\alpha = \arccos(-0{,}5) = 120°\) — stumpf, wie vorhergesagt ✓</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Hier zeigt sich, wozu die geometrische Form gut ist: Ohne eine einzige Koordinate lässt sich der Winkel bestimmen. Die koordinatenweise Form wäre hier gar nicht anwendbar.</div>
+      <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+      <div class="komp-desc">K4: Die geometrische Form als eigenständiges Werkzeug nutzen · K5: Winkelformel ohne Koordinaten anwenden</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP4.3</span><span class="td dm">★★</span></div>
+        <div class="tq"><strong>Fehleraufgabe.</strong> Ein Schüler rechnet für \(\vec{a} = \begin{pmatrix}2\\-1\\5\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}3\\4\\1\end{pmatrix}\):<br>
+          \(\vec{a}\cdot\vec{b} = \begin{pmatrix}2\cdot 3\\(-1)\cdot 4\\5\cdot 1\end{pmatrix} = \begin{pmatrix}6\\-4\\5\end{pmatrix}\)<br>
+          Erkläre, worin der Fehler besteht, und gib das richtige Ergebnis an.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>Der Fehler.</strong> Der Schüler hat die Komponenten zwar richtig paarweise multipliziert, sie aber <em>nicht addiert</em> — und dadurch als Ergebnis einen Vektor stehen lassen. Das Skalarprodukt liefert jedoch stets einen <strong>Skalar</strong>, also eine einzelne Zahl. Genau daher kommt sein Name.</div>
+      <div class="ip"><strong>Woher der Fehler rührt.</strong> Die Erwartung dahinter ist nachvollziehbar: Bei allen bisher bekannten Rechnungen mit Vektoren — Addition, Subtraktion, Vervielfachen — kommt wieder ein Vektor heraus, die Spaltenform bleibt also erhalten. Der Schüler wendet eine Regel an, die für Vektoren bislang durchweg getragen hat. Das Skalarprodukt ist die erste Operation im Stoff, bei der sie nicht mehr gilt: Hier verlässt man die Vektoren und landet bei einer Zahl.</div>
+      <div class="ip"><strong>Richtige Rechnung.</strong> \(\vec{a}\cdot\vec{b} = 2\cdot 3 + (-1)\cdot 4 + 5\cdot 1 = 6 - 4 + 5 = 7\).</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Merkhilfe für die Selbstkontrolle: Steht am Ende einer Skalarprodukt-Rechnung noch ein Pfeil oder eine Klammer mit drei Zeilen, ist etwas schiefgegangen.</div>
+      <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+      <div class="komp-desc">K6: Skalar und Vektor sprachlich und notationell trennen · K1: Einen Fehler analysieren und begründet korrigieren</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP4.4</span><span class="td dm">★★</span></div>
+        <div class="tq">Begründe mithilfe der Winkelformel: Wenn \(\vec{a}\cdot\vec{b} = 0\) gilt und dabei \(\vec{a}\neq\vec{0}\) sowie \(\vec{b}\neq\vec{0}\) sind, dann stehen \(\vec{a}\) und \(\vec{b}\) senkrecht aufeinander. Erläutere außerdem, warum die beiden Zusatzbedingungen nicht weggelassen werden dürfen.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Formel notieren.</strong> \(\cos\alpha = \dfrac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\).</div>
+      <div class="ip"><strong>② Nenner untersuchen.</strong> Aus \(\vec{a}\neq\vec{0}\) folgt \(|\vec{a}| &gt; 0\), aus \(\vec{b}\neq\vec{0}\) folgt \(|\vec{b}| &gt; 0\). Also ist \(|\vec{a}|\cdot|\vec{b}| &gt; 0\) — der Bruch ist definiert und man darf durch den Nenner teilen.</div>
+      <div class="ip"><strong>③ Einsetzen.</strong> Mit \(\vec{a}\cdot\vec{b} = 0\) ergibt sich \(\cos\alpha = \dfrac{0}{|\vec{a}|\cdot|\vec{b}|} = 0\).</div>
+      <div class="ip"><strong>④ Winkel bestimmen.</strong> Im Bereich \(0°\le\alpha\le 180°\) ist \(\cos\alpha = 0\) genau für \(\alpha = 90°\). Also \(\vec{a}\perp\vec{b}\). \(\square\)</div>
+      <div class="ip"><strong>⑤ Warum die Zusatzbedingungen nötig sind.</strong> Wäre einer der beiden Vektoren der Nullvektor, stünde im Nenner eine Null und der Bruch wäre nicht definiert. Zudem hat der Nullvektor keine Richtung — zwischen ihm und einem anderen Vektor lässt sich gar kein Winkel angeben, obwohl das Skalarprodukt rechnerisch null ergibt.</div>
+      <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+      <div class="komp-desc">K1: Das Orthogonalitätskriterium aus der Winkelformel herleiten · K6: Voraussetzungen eines Satzes als notwendig erkennen</div>
+    </div>
+  </div>
+
+  <div class="tg">
+    <div class="tk">
+      <div class="tk-top" onclick="togTask(this)">
+        <div class="tkt"><span class="tn">SP4.5</span><span class="td dh">★★★</span></div>
+        <div class="tq">Für zwei <em>Zahlen</em> \(x\) und \(y\) gilt bekanntlich: Ist \(x\cdot y = 0\), so ist \(x = 0\) oder \(y = 0\). Untersuche, ob die entsprechende Aussage für Vektoren gilt: „Ist \(\vec{a}\cdot\vec{b} = 0\), so ist \(\vec{a} = \vec{0}\) oder \(\vec{b} = \vec{0}\)." Belege dein Ergebnis und erläutere, was dieser Unterschied über den Malpunkt aussagt.</div>
+        <div class="tk-toggle">⌄</div>
+      </div>
+    </div>
+    <div class="ta">
+      <div class="ip"><strong>① Aussage prüfen.</strong> Die Aussage ist <strong>falsch</strong>. Ein Gegenbeispiel genügt zur Widerlegung.</div>
+      <div class="ip"><strong>② Gegenbeispiel.</strong> \(\vec{a} = \begin{pmatrix}1\\1\\0\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\-1\\0\end{pmatrix}\). Beide sind offensichtlich vom Nullvektor verschieden, und dennoch gilt \(\vec{a}\cdot\vec{b} = 1\cdot 1 + 1\cdot(-1) + 0\cdot 0 = 1 - 1 + 0 = 0\).</div>
+      <div class="ip"><strong>③ Geometrische Erklärung.</strong> Die beiden Vektoren stehen senkrecht aufeinander. Genau das ist die zweite Möglichkeit, wie ein Skalarprodukt null werden kann — neben dem Fall, dass einer der Vektoren der Nullvektor ist.</div>
+      <div class="ip"><strong>④ Was das über den Malpunkt aussagt.</strong> Die Erwartung, dass sich Regeln der Zahlenmultiplikation übertragen lassen, ist keineswegs unvernünftig — sie trifft sogar überwiegend zu. Auch beim Skalarprodukt gilt \(\vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a}\), und man darf ebenso ausmultiplizieren: \(\vec{a}\cdot(\vec{b}+\vec{c}) = \vec{a}\cdot\vec{b} + \vec{a}\cdot\vec{c}\). Wer von Zahlen auf Vektoren überträgt, liegt in vielen Fällen also richtig.</div>
+      <div class="ip"><strong>⑤ Wo die Übertragung ihre Grenze hat.</strong> Genau an der hier untersuchten Regel. Bei Zahlen kann ein Produkt nur dann null werden, wenn ein Faktor null ist. Beim Skalarprodukt gibt es eine zweite Ursache: die <em>Lage</em> der beiden Vektoren zueinander. Diese eine Stelle musst du dir merken — nicht ein pauschales Verbot, von Zahlen auf Vektoren zu schließen.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);">Genau diese Eigenschaft macht das Skalarprodukt für die Geometrie erst brauchbar: Wäre sie nicht vorhanden, gäbe es kein Orthogonalitätskriterium.</div>
+      <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
+      <div class="komp-desc">K1: Eine Aussage durch ein Gegenbeispiel widerlegen · K6: Skalarprodukt und Multiplikation unterscheiden · K4: Die Bedeutung der Eigenschaft für die Geometrie erkennen</div>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:28px;">
+    <div class="card-body">
+      <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+      <div class="ip">
+        <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+        <ol>
+          <li>Berechne \(\vec{a}\cdot\vec{b}\) für \(\vec{a} = \begin{pmatrix}2\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\4\\-2\end{pmatrix}\) und gib an, ob der eingeschlossene Winkel spitz, recht oder stumpf ist.</li>
+          <li>Nenne beide Formen des Skalarprodukts und erläutere, wozu jede von ihnen gut ist.</li>
+          <li>Formuliere das Orthogonalitätskriterium vollständig — <em>mit</em> allen Voraussetzungen. Warum darf man sie nicht weglassen?</li>
+          <li>Bestimme einen vom Nullvektor verschiedenen Vektor, der senkrecht auf \(\begin{pmatrix}1\\-2\\3\end{pmatrix}\) steht, und mache die Probe.</li>
+          <li>Erkläre, worin sich der Winkel zwischen zwei Vektoren vom Schnittwinkel zweier Geraden unterscheidet.</li>
+        </ol>
+        <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+          Unsicher bei Frage 1 oder 2? Lies Abschnitt 1 und 2 noch einmal. Bei Frage 3 und 4 hilft Abschnitt 5, bei Frage 5 die Nachschlagekarte in Abschnitt 4 sowie die zweite Stolperstelle in Abschnitt 6.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var KIKU='#5b6e2e', SANGO='#c75c3a', GREY='#555', TICK='#666', GRID='#eee8de', MUSHI='#8a7a30';
+    function setup(cv, cssW, cssH){
+      var dpr = window.devicePixelRatio || 1, ctx = cv.getContext('2d');
+      cv.width = cssW*dpr; cv.height = cssH*dpr;
+      cv.style.width = cssW+'px'; cv.style.height = cssH+'px';
+      ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr,dpr);
+      ctx.fillStyle='#fff'; ctx.fillRect(0,0,cssW,cssH);
+      return ctx;
+    }
+    function head(ctx, x0, y0, x1, y1, col){
+      var a = Math.atan2(y1-y0, x1-x0), s = 9;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x1 - s*Math.cos(a - Math.PI/7), y1 - s*Math.sin(a - Math.PI/7));
+      ctx.lineTo(x1 - s*Math.cos(a + Math.PI/7), y1 - s*Math.sin(a + Math.PI/7));
+      ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+    }
+    function grid(ctx, cssW, cssH, ox, oy, u, xMin, xMax, yMin, yMax){
+      var i;
+      ctx.strokeStyle = GRID; ctx.lineWidth = 1;
+      for(i=xMin;i<=xMax;i++){ ctx.beginPath(); ctx.moveTo(ox+i*u, oy-yMax*u); ctx.lineTo(ox+i*u, oy-yMin*u); ctx.stroke(); }
+      for(i=yMin;i<=yMax;i++){ ctx.beginPath(); ctx.moveTo(ox+xMin*u, oy-i*u); ctx.lineTo(ox+xMax*u, oy-i*u); ctx.stroke(); }
+      ctx.strokeStyle = GREY; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(ox+xMin*u-6, oy); ctx.lineTo(ox+xMax*u+14, oy); ctx.stroke();
+      head(ctx, ox, oy, ox+xMax*u+14, oy, GREY);
+      ctx.beginPath(); ctx.moveTo(ox, oy-yMin*u+6); ctx.lineTo(ox, oy-yMax*u-14); ctx.stroke();
+      head(ctx, ox, oy, ox, oy-yMax*u-14, GREY);
+      ctx.fillStyle = TICK; ctx.font = '12px system-ui,sans-serif';
+      ctx.textAlign='center'; ctx.textBaseline='top';
+      for(i=xMin;i<=xMax;i++){ if(i===0) continue;
+        ctx.fillText(i, ox+i*u, oy+6);
+        ctx.beginPath(); ctx.moveTo(ox+i*u, oy-3); ctx.lineTo(ox+i*u, oy+3); ctx.stroke(); }
+      ctx.textAlign='right'; ctx.textBaseline='middle';
+      for(i=yMin;i<=yMax;i++){ if(i===0) continue;
+        ctx.fillText(i, ox-7, oy-i*u);
+        ctx.beginPath(); ctx.moveTo(ox-3, oy-i*u); ctx.lineTo(ox+3, oy-i*u); ctx.stroke(); }
+      ctx.fillStyle='#444'; ctx.font='bold 13px system-ui,sans-serif';
+      ctx.textAlign='left';  ctx.textBaseline='middle'; ctx.fillText('x', ox+xMax*u+18, oy-13);
+      ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('y', ox+15, oy-yMax*u-14);
+      ctx.fillStyle=TICK; ctx.font='12px system-ui,sans-serif';
+      ctx.textAlign='right'; ctx.textBaseline='top'; ctx.fillText('O', ox-7, oy+6);
+    }
+    function lbl(ctx, tokens, cx, cy, col, size){
+      ctx.font = 'bold '+size+'px system-ui,sans-serif';
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      var i, total = 0;
+      for(i=0;i<tokens.length;i++) total += ctx.measureText(tokens[i][0]).width;
+      var x = cx - total/2;
+      ctx.fillStyle = col; ctx.strokeStyle = col; ctx.lineWidth = 1.4;
+      for(i=0;i<tokens.length;i++){
+        var w = ctx.measureText(tokens[i][0]).width;
+        ctx.fillText(tokens[i][0], x, cy);
+        if(tokens[i][1]){
+          var ay = cy - size*0.62;
+          ctx.beginPath(); ctx.moveTo(x, ay); ctx.lineTo(x+w, ay); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(x+w, ay); ctx.lineTo(x+w-3.5, ay-2.5);
+          ctx.lineTo(x+w-3.5, ay+2.5); ctx.closePath(); ctx.fill();
+        }
+        x += w;
+      }
+    }
+    function vec(ctx, ox, oy, u, v, col, name){
+      var x1 = ox+v[0]*u, y1 = oy-v[1]*u;
+      ctx.strokeStyle = col; ctx.lineWidth = 3.5; ctx.lineCap='round';
+      ctx.beginPath(); ctx.moveTo(ox,oy); ctx.lineTo(x1,y1); ctx.stroke();
+      head(ctx, ox, oy, x1, y1, col);
+      var len = Math.sqrt(v[0]*v[0]+v[1]*v[1]) || 1;
+      var lx = x1 + (v[0]/len)*20, ly = y1 - (v[1]/len)*20;
+      lbl(ctx, [[name, true]], lx, ly, col, 15);
+      ctx.fillStyle = col; ctx.font = '12px system-ui,sans-serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('('+v[0]+' | '+v[1]+')', lx, ly+16);
+    }
+    function arc(ctx, ox, oy, a, b, r, col, label){
+      var aA = Math.atan2(-a[1], a[0]), aB = Math.atan2(-b[1], b[0]);
+      var d = aB - aA; while(d >  Math.PI) d -= 2*Math.PI; while(d < -Math.PI) d += 2*Math.PI;
+      ctx.strokeStyle = col; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(ox, oy, r, aA, aA+d, d < 0); ctx.stroke();
+      var m = aA + d/2;
+      ctx.fillStyle = col; ctx.font = 'bold 15px system-ui,sans-serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(label, ox + (r+18)*Math.cos(m), oy + (r+18)*Math.sin(m));
+    }
+
+    var cv1 = document.getElementById('cvSkalarWinkelmesser');
+    if(cv1){
+      var W=560, H=420, U=38, OX=250, OY=240, XMIN=-5, XMAX=7, YMIN=-4, YMAX=4;
+      var va=[4,1], vb=[-1,4];
+      var out = document.getElementById('spReadout');
+      function readout(dot){
+        var na = Math.sqrt(va[0]*va[0]+va[1]*va[1]);
+        var nb = Math.sqrt(vb[0]*vb[0]+vb[1]*vb[1]);
+        var deg = Math.acos(Math.max(-1, Math.min(1, dot/(na*nb))))*180/Math.PI;
+        var lage, farbe;
+        if(dot > 0){ lage='spitzer Winkel &mdash; die Vektoren zeigen eher in dieselbe Richtung'; farbe=KIKU; }
+        else if(dot < 0){ lage='stumpfer Winkel &mdash; die Vektoren zeigen eher gegeneinander'; farbe=SANGO; }
+        else { lage='rechter Winkel &mdash; die Vektoren stehen senkrecht aufeinander'; farbe=MUSHI; }
+        var t1 = va[0]+'·'+(vb[0]<0?'('+vb[0]+')':vb[0]);
+        var t2 = va[1]+'·'+(vb[1]<0?'('+vb[1]+')':vb[1]);
+        out.innerHTML =
+          '<div>Skalarprodukt: &nbsp;<strong style="color:'+KIKU+';border-top:1.5px solid '+KIKU+'">a</strong> · <strong style="color:'+SANGO+';border-top:1.5px solid '+SANGO+'">b</strong> = '
+            + t1 + ' + ' + t2 + ' = <strong style="color:'+farbe+';font-size:18px">' + dot + '</strong></div>'
+          + '<div>Winkel: &nbsp;α ≈ <strong>' + deg.toFixed(1).replace('.',',') + '°</strong></div>'
+          + '<div style="margin-top:4px;color:'+farbe+';font-weight:600">' + lage + '</div>';
+      }
+      function drawWM(){
+        var ctx = setup(cv1, W, H);
+        grid(ctx, W, H, OX, OY, U, XMIN, XMAX, YMIN, YMAX);
+        var dot = va[0]*vb[0] + va[1]*vb[1];
+        var col = dot > 0 ? KIKU : (dot < 0 ? SANGO : MUSHI);
+        arc(ctx, OX, OY, va, vb, 46, col, 'α');
+        vec(ctx, OX, OY, U, va, KIKU,  'a');
+        vec(ctx, OX, OY, U, vb, SANGO, 'b');
+        ctx.beginPath(); ctx.arc(OX+vb[0]*U, OY-vb[1]*U, 7, 0, 2*Math.PI);
+        ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle=SANGO; ctx.lineWidth=2.5; ctx.stroke();
+        ctx.fillStyle='#8a8580'; ctx.font='12px system-ui,sans-serif';
+        ctx.textAlign='left'; ctx.textBaseline='top';
+        ctx.fillText('Spitze von b ziehen', 12, 12);
+        if(out) readout(dot);
+      }
+      function pick(ev){
+        var r = cv1.getBoundingClientRect();
+        var mx = (ev.clientX - r.left) * (W / r.width);
+        var my = (ev.clientY - r.top)  * (H / r.height);
+        var gx = Math.round((mx - OX)/U), gy = Math.round((OY - my)/U);
+        gx = Math.max(XMIN, Math.min(XMAX, gx));
+        gy = Math.max(YMIN, Math.min(YMAX, gy));
+        if(gx === 0 && gy === 0) return;
+        vb = [gx, gy]; drawWM();
+      }
+      var drag = false;
+      cv1.addEventListener('pointerdown', function(e){ drag = true; cv1.setPointerCapture(e.pointerId); pick(e); e.preventDefault(); });
+      cv1.addEventListener('pointermove', function(e){ if(drag){ pick(e); e.preventDefault(); } });
+      cv1.addEventListener('pointerup',   function(){ drag = false; });
+      cv1.addEventListener('pointercancel', function(){ drag = false; });
+      drawWM();
+    }
+
+    var cv2 = document.getElementById('cvSkalarBeweis');
+    if(cv2){
+      var W2=560, H2=380, U2=44, OX2=140, OY2=290, X2MIN=-1, X2MAX=8, Y2MIN=-1, Y2MAX=5;
+      var ctx2 = setup(cv2, W2, H2);
+      grid(ctx2, W2, H2, OX2, OY2, U2, X2MIN, X2MAX, Y2MIN, Y2MAX);
+      var a2=[5,1], b2=[2,4];
+      var ax=OX2+a2[0]*U2, ay=OY2-a2[1]*U2, bx=OX2+b2[0]*U2, by=OY2-b2[1]*U2;
+      ctx2.strokeStyle=MUSHI; ctx2.lineWidth=3; ctx2.setLineDash([7,5]);
+      ctx2.beginPath(); ctx2.moveTo(ax,ay); ctx2.lineTo(bx,by); ctx2.stroke();
+      ctx2.setLineDash([]);
+      head(ctx2, ax, ay, bx, by, MUSHI);
+      arc(ctx2, OX2, OY2, a2, b2, 50, '#444', 'α');
+      vec(ctx2, OX2, OY2, U2, a2, KIKU,  'a');
+      vec(ctx2, OX2, OY2, U2, b2, SANGO, 'b');
+      lbl(ctx2, [['b', true], [' − ', false], ['a', true]], (ax+bx)/2 + 30, (ay+by)/2 - 12, MUSHI, 14);
+      ctx2.fillStyle='#8a8580'; ctx2.font='12px system-ui,sans-serif';
+      ctx2.textAlign='left'; ctx2.textBaseline='top';
+      ctx2.fillText('Dreieck mit den Seitenlängen |a|, |b| und |b − a|', 12, 12);
+      ctx2.fillText('Der Winkel α liegt der Seite |b − a| gegenüber.', 12, 30);
+    }
+  })();
+  </script>
+
+</div>
 
 <div class="subpanel" id="k12-gerade">
 
@@ -24840,7 +25633,7 @@ function showK11Tab(id, btn) {
 }
 
 function showK12Tab(id, btn) {
-  ['k12-raum','k12-vek','k12-gerade','k12-ebenen','k12-sto'].forEach(function(sid) {
+  ['k12-raum','k12-vek','k12-skalar','k12-gerade','k12-ebenen','k12-sto'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
