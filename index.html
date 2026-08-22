@@ -121,6 +121,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 @media(max-width:700px){
   .two-col,.two-col-3-2{grid-template-columns:1fr}
 }
+/* Mehrspaltige Aufgaben-/Fallraster (Wiederholung LGS) auf schmalen Schirmen untereinander */
+@media(max-width:820px){
+  .lgs-faelle{grid-template-columns:1fr!important}
+}
 
 /* ── Cards ────────────────────────────────────────────────── */
 .card{background:var(--bg-card);border:none;border-radius:var(--radius);margin-bottom:24px;overflow:hidden;transition:box-shadow var(--transition);box-shadow:var(--shadow-sm)}
@@ -331,7 +335,7 @@ body.presi #k12-vek .card.cardopen > .card-head::after{content:"\25BE"}
     <div onclick="show(8)" style="background:#e5f0f0;border-radius:var(--radius);padding:clamp(24px,4vw,40px);cursor:pointer;transition:transform .25s,box-shadow .25s;min-height:220px;display:flex;flex-direction:column;justify-content:space-between" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 30px rgba(100,160,160,.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
       <div>
         <div style="font-family:var(--serif);font-size:clamp(22px,3vw,30px);color:var(--ink);line-height:1.15;margin-bottom:16px">Klasse 8</div>
-        <div style="font-size:14px;color:var(--ink-soft);line-height:1.65;max-width:340px">Lineare Funktionen, Terme &amp; Gleichungen, Pythagoras, Ähnlichkeit und Wahrscheinlichkeit.</div>
+        <div style="font-size:14px;color:var(--ink-soft);line-height:1.65;max-width:340px">Lineare Funktionen, Terme &amp; Gleichungen, Pythagoras, Ähnlichkeit, Wahrscheinlichkeit und lineare Gleichungssysteme.</div>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:end;margin-top:20px">
         <div style="font-size:12px;color:var(--ink-muted);font-weight:500">Sek I</div>
@@ -341,7 +345,7 @@ body.presi #k12-vek .card.cardopen > .card-head::after{content:"\25BE"}
     <div onclick="show(9)" style="background:var(--mushikuri-light);border-radius:var(--radius);padding:clamp(24px,4vw,40px);cursor:pointer;transition:transform .25s,box-shadow .25s;min-height:220px;display:flex;flex-direction:column;justify-content:space-between" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 30px rgba(200,181,94,.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
       <div>
         <div style="font-family:var(--serif);font-size:clamp(22px,3vw,30px);color:var(--ink);line-height:1.15;margin-bottom:16px">Klasse 9</div>
-        <div style="font-size:14px;color:var(--ink-soft);line-height:1.65;max-width:340px">Potenzen &amp; Wurzeln, Lineare Gleichungssysteme, Quadratische Funktionen &amp; Gleichungen.</div>
+        <div style="font-size:14px;color:var(--ink-soft);line-height:1.65;max-width:340px">Wiederholung linearer Gleichungssysteme, Potenzen &amp; Wurzeln, Quadratische Funktionen &amp; Gleichungen.</div>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:end;margin-top:20px">
         <div style="font-size:12px;color:var(--ink-muted);font-weight:500">Sek I</div>
@@ -1746,6 +1750,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   <button class="ptb" onclick="showK8Tab('k8-pyth',this)">Pythagoras</button>
   <button class="ptb" onclick="showK8Tab('k8-aehn',this)">Ähnlichkeit &amp; Stereometrie</button>
   <button class="ptb" onclick="showK8Tab('k8-wahr',this)">Wahrscheinlichkeit</button>
+  <button class="ptb" onclick="showK8Tab('k8-lgs',this)">Gleichungssysteme</button>
 </div>
 <div style="background:#fff;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%">
   <span style="font-size:12px;font-weight:600;color:#666;white-space:nowrap">Klasse 8 · Lernziele:</span>
@@ -3385,6 +3390,196 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 
 </div><!-- end k8-wahr -->
 
+<!-- ── Lineare Gleichungssysteme ───────────────────────────────── -->
+<div class="subpanel" id="k8-lgs">
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Lineare Gleichungssysteme (LGS) bestehen aus mehreren linearen Gleichungen, die gleichzeitig erfüllt sein müssen. Du lernst verschiedene Verfahren kennen, um die Lösungen zu bestimmen — grafisch, durch Einsetzen, Gleichsetzen oder Addition. Außerdem untersuchst du, wann ein System eindeutig, gar nicht oder unendlich viele Lösungen hat.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Lineare Funktionen, Gleichungen umformen, Koordinatensystem.</div>
+  </div>
+</div>
+
+<!-- Lernziele LGS -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k8" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du löst ein LGS mit dem Einsetzungsverfahren</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k8" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du löst ein LGS mit dem Gleichsetzungsverfahren</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k8" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du löst ein LGS mit dem Additionsverfahren</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k8" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du interpretierst ein LGS grafisch als Schnittpunkt zweier Geraden</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k8" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du entscheidest, ob ein LGS eindeutig, nicht oder unendlich viele Lösungen hat</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k8" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du modellierst Sachaufgaben mithilfe eines LGS</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Erklärung: Was ist ein LGS? -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Was ist ein lineares Gleichungssystem?</span></div>
+  <div class="card-body">
+    <div class="ip">Ein lineares Gleichungssystem mit zwei Variablen besteht aus zwei Gleichungen der Form:</div>
+    <div class="ip">\[ \begin{cases} a_1 x + b_1 y = c_1 \\ a_2 x + b_2 y = c_2 \end{cases} \]</div>
+    <div class="ip">Gesucht ist ein Zahlenpaar \((x \mid y)\), das <strong>beide</strong> Gleichungen gleichzeitig erfüllt.</div>
+
+    <div class="it">Grafische Deutung</div>
+    <div class="ip">Jede lineare Gleichung beschreibt eine Gerade im Koordinatensystem. Die Lösung des LGS ist der <strong>Schnittpunkt</strong> beider Geraden:</div>
+    <div class="ip">• Genau ein Schnittpunkt → <strong>eindeutige Lösung</strong> (die Geraden schneiden sich).</div>
+    <div class="ip">• Kein Schnittpunkt → <strong>keine Lösung</strong> (die Geraden sind parallel).</div>
+    <div class="ip">• Unendlich viele Schnittpunkte → <strong>unendlich viele Lösungen</strong> (die Geraden sind identisch).</div>
+  </div>
+</div>
+
+<!-- Erklärung: Drei Lösungsverfahren -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lösungsverfahren im Überblick</span></div>
+  <div class="card-body">
+    <div class="it">1. Gleichsetzungsverfahren</div>
+    <div class="ip">Beide Gleichungen nach derselben Variablen auflösen und die rechten Seiten gleichsetzen.</div>
+
+    <div class="it">2. Einsetzungsverfahren</div>
+    <div class="ip">Eine Gleichung nach einer Variablen auflösen und den Ausdruck in die andere Gleichung einsetzen.</div>
+
+    <div class="it">3. Additionsverfahren</div>
+    <div class="ip">Die Gleichungen so multiplizieren und addieren/subtrahieren, dass eine Variable wegfällt.</div>
+
+    <div class="hint"><strong>Tipp:</strong> Alle drei Verfahren führen zum gleichen Ergebnis. Wähle das Verfahren, das bei der konkreten Aufgabe am einfachsten ist — etwa das Einsetzungsverfahren, wenn eine Variable bereits allein steht.</div>
+  </div>
+</div>
+
+<!-- Beispiel: Einsetzungsverfahren -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — Einsetzungsverfahren</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Löse das Gleichungssystem:</div>
+    <div class="ip">\[ \begin{cases} y = 2x - 1 \\ 3x + y = 9 \end{cases} \]</div>
+    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
+    <div class="bsp-body">
+      <div class="ip"><strong>Schritt 1:</strong> Gleichung (I) ist bereits nach \(y\) aufgelöst: \(y = 2x - 1\).</div>
+      <div class="ip"><strong>Schritt 2:</strong> In Gleichung (II) einsetzen:</div>
+      <div class="ip">\[ 3x + (2x - 1) = 9 \;\Rightarrow\; 5x - 1 = 9 \;\Rightarrow\; 5x = 10 \;\Rightarrow\; x = 2 \]</div>
+      <div class="ip"><strong>Schritt 3:</strong> Rückeinsetzen in (I): \(y = 2 \cdot 2 - 1 = 3\).</div>
+      <div class="ip"><strong>Probe:</strong> (I): \(3 = 2 \cdot 2 - 1 = 3\;\checkmark\) — (II): \(3 \cdot 2 + 3 = 9\;\checkmark\)</div>
+      <div class="ip"><strong>Lösung:</strong> \((x \mid y) = (2 \mid 3)\).</div>
+    </div>
+  </div>
+</div>
+
+<!-- Beispiel: Additionsverfahren -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★★</div><span class="card-title">Beispiel — Additionsverfahren</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Löse das Gleichungssystem mit dem Additionsverfahren:</div>
+    <div class="ip">\[ \begin{cases} 2x + 3y = 12 \\ 4x - 3y = 6 \end{cases} \]</div>
+    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
+    <div class="bsp-body">
+      <div class="ip"><strong>Schritt 1:</strong> Die \(y\)-Koeffizienten haben verschiedene Vorzeichen (\(+3y\) und \(-3y\)). Addiere die beiden Gleichungen:</div>
+      <div class="ip">\[ (2x + 3y) + (4x - 3y) = 12 + 6 \;\Rightarrow\; 6x = 18 \;\Rightarrow\; x = 3 \]</div>
+      <div class="ip"><strong>Schritt 2:</strong> Rückeinsetzen in (I): \(2 \cdot 3 + 3y = 12 \;\Rightarrow\; 3y = 6 \;\Rightarrow\; y = 2\).</div>
+      <div class="ip"><strong>Probe:</strong> (I): \(2 \cdot 3 + 3 \cdot 2 = 12\;\checkmark\) — (II): \(4 \cdot 3 - 3 \cdot 2 = 6\;\checkmark\)</div>
+      <div class="ip"><strong>Lösung:</strong> \((x \mid y) = (3 \mid 2)\).</div>
+    </div>
+  </div>
+</div>
+
+<!-- Erklärung: Lösbarkeit -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lösbarkeit eines LGS</span></div>
+  <div class="card-body">
+    <div class="ip">Beim Lösen eines LGS kann ein Widerspruch oder eine wahre Aussage ohne Variable entstehen:</div>
+    <div class="ip">• Widerspruch (z. B. \(0 = 5\)) → Das LGS hat <strong>keine Lösung</strong>. Die Geraden sind parallel.</div>
+    <div class="ip">• Wahre Aussage (z. B. \(0 = 0\)) → Das LGS hat <strong>unendlich viele Lösungen</strong>. Die Geraden sind identisch.</div>
+
+    <div class="it">Parameter und Lösbarkeit</div>
+    <div class="ip">Enthält ein LGS einen Parameter \(t\), kannst du untersuchen, für welche Werte von \(t\) das System eindeutig, nicht oder unendlich viele Lösungen besitzt. Dazu bringst du das System in eine Form, in der du den Koeffizienten vor einer Variablen gleich null setzen kannst.</div>
+  </div>
+</div>
+
+<!-- Aufgaben LGS -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgaben — Lineare Gleichungssysteme</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="task-list">
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>Löse das LGS mit einem Verfahren deiner Wahl: \(\;\begin{cases} x + y = 7 \\ x - y = 3 \end{cases}\)</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Additionsverfahren:</strong> Addiere beide Gleichungen:</div>
+          <div class="ip">\[ 2x = 10 \;\Rightarrow\; x = 5 \]</div>
+          <div class="ip">Rückeinsetzen: \(5 + y = 7 \;\Rightarrow\; y = 2\).</div>
+          <div class="ip"><strong>Lösung:</strong> \((x \mid y) = (5 \mid 2)\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Lösungsverfahren anwenden.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>Zwei Züge fahren von zwei Städten aufeinander zu. Stadt A und Stadt B liegen 360 km auseinander. Zug A fährt mit 80 km/h, Zug B mit 100 km/h. Ermittle den Zeitpunkt und den Ort der Begegnung.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Modellierung:</strong> Sei \(t\) die Zeit in Stunden nach dem Start. Zug A: \(s_A = 80t\). Zug B (von B aus): \(s_B = 360 - 100t\).</div>
+          <div class="ip"><strong>Gleichsetzen:</strong> \(80t = 360 - 100t \;\Rightarrow\; 180t = 360 \;\Rightarrow\; t = 2\,\text{h}\).</div>
+          <div class="ip"><strong>Ort:</strong> \(s_A = 80 \cdot 2 = 160\,\text{km}\) von Stadt A entfernt.</div>
+          <div class="ip">Die Züge treffen sich nach 2 Stunden, 160 km von Stadt A.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachsituation als LGS formulieren und lösen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>Ordne den Gleichungssystemen die passende grafische Darstellung zu (sich schneidende, parallele oder identische Geraden):<br>(a) \(\begin{cases} y = 2x+1 \\ y = 2x+3 \end{cases}\) &emsp; (b) \(\begin{cases} y = x+2 \\ y = -x+4 \end{cases}\) &emsp; (c) \(\begin{cases} 2y = 4x+6 \\ y = 2x+3 \end{cases}\)</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>(a)</strong> Gleiche Steigung (\(m = 2\)), verschiedene \(y\)-Achsenabschnitte → <strong>parallele Geraden</strong> → keine Lösung.</div>
+          <div class="ip"><strong>(b)</strong> Verschiedene Steigungen (\(m_1 = 1\), \(m_2 = -1\)) → <strong>Schnittpunkt</strong> → eindeutige Lösung. Schnitt bei \(x+2=-x+4 \Rightarrow x=1,\; y=3\).</div>
+          <div class="ip"><strong>(c)</strong> Gleichung (I) vereinfachen: \(y = 2x+3\) — identisch mit (II) → <strong>identische Geraden</strong> → unendlich viele Lösungen.</div>
+          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+          <div class="komp-desc">Darstellungen nutzen: Grafische Darstellungen zu Gleichungssystemen zuordnen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>In einer Bäckerei kosten 3 Brötchen und 2 Croissants zusammen 5,90 €. 5 Brötchen und 2 Croissants kosten 7,70 €. Bestimme die Einzelpreise.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Ansatz:</strong> \(b\) = Preis Brötchen, \(c\) = Preis Croissant.</div>
+          <div class="ip">\[ \begin{cases} 3b + 2c = 5{,}90 \\ 5b + 2c = 7{,}70 \end{cases} \]</div>
+          <div class="ip"><strong>Subtraktion (II) − (I):</strong> \(2b = 1{,}80 \;\Rightarrow\; b = 0{,}90\,€\).</div>
+          <div class="ip">Einsetzen: \(3 \cdot 0{,}90 + 2c = 5{,}90 \;\Rightarrow\; 2c = 3{,}20 \;\Rightarrow\; c = 1{,}60\,€\).</div>
+          <div class="ip"><strong>Ergebnis:</strong> Ein Brötchen kostet 0,90 €, ein Croissant 1,60 €.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachsituation in ein LGS übersetzen und interpretieren.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>Ermittle den Wert des Parameters \(t\), für den das Gleichungssystem \(\;\begin{cases} 2x + ty = 6 \\ 4x + 6y = 12 \end{cases}\;\) keine eindeutige Lösung besitzt. Entscheide für diesen Wert, ob es keine oder unendlich viele Lösungen gibt.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Ansatz:</strong> Multipliziere (I) mit 2: \(4x + 2ty = 12\). Vergleich mit (II): \(4x + 6y = 12\).</div>
+          <div class="ip">Keine eindeutige Lösung, wenn die Koeffizienten proportional sind: \(2t = 6 \;\Rightarrow\; t = 3\).</div>
+          <div class="ip">Für \(t = 3\): (I) wird \(2x + 3y = 6\) und (II) ist \(4x + 6y = 12 = 2 \cdot (2x+3y)\). Die Gleichungen sind identisch.</div>
+          <div class="ip"><strong>Ergebnis:</strong> Für \(t = 3\) hat das LGS <strong>unendlich viele Lösungen</strong>.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Zusammenhang zwischen Parametermert und Lösbarkeit begründen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>Diskutiere, welches Lösungsverfahren bei den folgenden Gleichungssystemen am effizientesten ist und begründe deine Wahl: (a) \(\begin{cases} y = 3x - 2 \\ 2x + y = 8 \end{cases}\) &emsp; (b) \(\begin{cases} 5x + 3y = 11 \\ 5x - 2y = 1 \end{cases}\)</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>(a) Einsetzungsverfahren</strong> — weil \(y\) in (I) bereits isoliert ist. Einsetzen in (II): \(2x + 3x - 2 = 8 \Rightarrow x = 2,\; y = 4\).</div>
+          <div class="ip"><strong>(b) Additionsverfahren</strong> (Subtraktion) — weil \(5x\) in beiden Gleichungen gleich ist. (I) − (II): \(5y = 10 \Rightarrow y = 2\), dann \(x = 1\).</div>
+          <div class="ip"><strong>Begründung:</strong> Das effizienteste Verfahren ist das, bei dem eine Variable mit möglichst wenig Umformung eliminiert wird.</div>
+          <div class="komp-wrap"><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Kommunizieren: Effizienz verschiedener Lösungsverfahren beurteilen und begründen.</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+</div><!-- end k8-lgs -->
+
 </div><!-- end p8 -->
 
 
@@ -3393,11 +3588,11 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 
 <!-- Klasse 9 Tab-Band -->
 <div class="tab-band" id="k9-tabs" style="display:none">
-  <button class="ptb on" onclick="showK9Tab('k9-pot',this)">Potenzen</button>
+  <button class="ptb on" onclick="showK9Tab('k9-lgswdh',this)">Wiederholung LGS</button>
+  <button class="ptb" onclick="showK9Tab('k9-pot',this)">Potenzen</button>
   <button class="ptb" onclick="showK9Tab('k9-potg',this)">Potenzgesetze</button>
   <button class="ptb" onclick="showK9Tab('k9-potf',this)">Potenzfunktionen</button>
   <button class="ptb" onclick="showK9Tab('k9-wurf',this)">Wurzelfunktionen</button>
-  <button class="ptb" onclick="showK9Tab('k9-lgs',this)">Gleichungssysteme</button>
   <button class="ptb" onclick="showK9Tab('k9-quad',this)">Quadr. Funkt. &amp; Gl.</button>
   <button class="ptb" onclick="showK9Tab('k9-stat',this)">Statistik</button>
 </div>
@@ -3408,8 +3603,961 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   <button onclick="resetGroupProgress('k9')" style="font-size:11px;color:var(--ink-muted);background:none;border:1px solid var(--border);border-radius:6px;padding:2px 10px;cursor:pointer">↺</button>
 </div>
 
+<!-- ── Wiederholung: Lineare Gleichungssysteme ─────────────────── -->
+<div class="subpanel on" id="k9-lgswdh">
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Lineare Gleichungssysteme hast du in Klasse 8 kennengelernt. Dieser Tab holt das Grundwissen zurück: Was bedeutet die Lösung eines Gleichungssystems <strong>grafisch</strong>, welche <strong>drei rechnerischen Verfahren</strong> gibt es, und wie übersetzt du eine <strong>Sachaufgabe</strong> in ein Gleichungssystem?</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Lineare Funktionen zeichnen und ablesen, Gleichungen äquivalent umformen, Koordinatensystem.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">⏱</div><span class="card-title">Unterrichtsfahrplan</span></div>
+  <div class="card-body">
+    <div class="ip">Dieser Tab begleitet die <strong>erste Doppelstunde (90 min)</strong> des Schuljahres: gemeinsame Beispiele zum grafischen Lösen und zu den drei Verfahren (ca. 40 min), anschließend Arbeitsphase mit dem Arbeitsblatt (ca. 40 min), zum Schluss Selbstkontrolle und Expertenaufgaben.</div>
+    <div class="hint"><strong>Pflicht im Arbeitsblatt:</strong> Aufgaben 1–3 (Teil A), Aufgaben 4–7 sowie zwei Sachaufgaben deiner Wahl aus Aufgabe 9. Die ★-Aufgaben 8 und 10 sind für alle, die früher fertig sind.</div>
+  </div>
+</div>
+<div class="section-label">1 · Grundwissen — Gleichungssysteme grafisch lösen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich deute die Lösung eines Gleichungssystems als Schnittpunkt zweier Geraden</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich entscheide an Steigung und y-Achsenabschnitt, ob ein System genau eine, keine oder unendlich viele Lösungen hat</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich löse ein Gleichungssystem mit dem Gleichsetzungsverfahren</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich löse ein Gleichungssystem mit dem Einsetzungsverfahren</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich löse ein Gleichungssystem mit dem Additionsverfahren</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich begründe, welches Verfahren bei einem gegebenen System am geschicktesten ist</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich übersetze eine Sachaufgabe in ein Gleichungssystem und beantworte sie mit einem Antwortsatz</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+  <strong style="color:#8a7a30">Kernidee:</strong> Ein lineares Gleichungssystem sucht ein Zahlenpaar \((x \mid y)\), das <strong>beide</strong> Gleichungen <strong>gleichzeitig</strong> erfüllt. Zeichnet man beide Gleichungen als Geraden, ist die Lösung genau der <strong>Schnittpunkt</strong> — und umgekehrt verrät die Lage der Geraden zueinander schon vor jeder Rechnung, wie viele Lösungen es gibt.
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — Ein Gleichungssystem grafisch lösen</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="ip"><strong>Aufgabe:</strong> Löse grafisch.</div>
+        <div class="ip">\[ \begin{array}{ll} \text{I} & 2x + y = 5 \\ \text{II} & x - y = -2 \end{array} \]</div>
+        <div class="ip"><strong>① Beide Gleichungen nach \(y\) auflösen</strong> — dann lassen sie sich als Geraden zeichnen:</div>
+        <div class="ip">\[ \text{I}:\; y = -2x + 5 \qquad \text{II}:\; y = x + 2 \]</div>
+        <div class="ip"><strong>② Beide Geraden zeichnen.</strong></div>
+        <div class="ip"><strong>③ Schnittpunkt ablesen:</strong> \(S(1 \mid 3)\), also \(L = \{(1;\,3)\}\).</div>
+        <div class="ip"><strong>④ Probe:</strong> \(2 \cdot 1 + 3 = 5\;\checkmark\) und \(1 - 3 = -2\;\checkmark\)</div>
+      </div>
+      <div><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Koordinatensystem mit den Geraden y = -2x + 5 und y = x + 2, Schnittpunkt S(1|3)">
+<defs><marker id="lgsah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="80.2" y1="36.0" x2="80.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="126.5" y1="36.0" x2="126.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="172.8" y1="36.0" x2="172.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="219.0" y1="36.0" x2="219.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="265.2" y1="36.0" x2="265.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="311.5" y1="36.0" x2="311.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="357.8" y1="36.0" x2="357.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="404.0" y1="36.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="406.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="359.8" x2="404.0" y2="359.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="313.5" x2="404.0" y2="313.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="267.2" x2="404.0" y2="267.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="221.0" x2="404.0" y2="221.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="174.8" x2="404.0" y2="174.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="128.5" x2="404.0" y2="128.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="82.2" x2="404.0" y2="82.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="404.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="195.9" y1="36.0" x2="380.9" y2="406.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<text x="362.1" y="352.5" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">I</text>
+<line x1="34.0" y1="406.0" x2="404.0" y2="36.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<text x="363.8" y="98.2" font-size="15" font-style="italic" font-weight="700" fill="#c75c3a" font-family="Georgia,serif">II</text>
+<line x1="34.0" y1="313.5" x2="418.0" y2="313.5" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah1)"/>
+<line x1="219.0" y1="406.0" x2="219.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah1)"/>
+<text x="420.0" y="304.5" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="229.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="309.5" x2="34.0" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="80.2" y1="309.5" x2="80.2" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="80.2" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="126.5" y1="309.5" x2="126.5" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="126.5" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="172.8" y1="309.5" x2="172.8" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="172.8" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="265.2" y1="309.5" x2="265.2" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="265.2" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="311.5" y1="309.5" x2="311.5" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="311.5" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="357.8" y1="309.5" x2="357.8" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="357.8" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="404.0" y1="309.5" x2="404.0" y2="317.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="404.0" y="332.5" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="215.0" y1="406.0" x2="223.0" y2="406.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="410.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="215.0" y1="359.8" x2="223.0" y2="359.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="363.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="215.0" y1="267.2" x2="223.0" y2="267.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="271.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="215.0" y1="221.0" x2="223.0" y2="221.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="225.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="215.0" y1="174.8" x2="223.0" y2="174.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="178.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="215.0" y1="128.5" x2="223.0" y2="128.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="132.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="215.0" y1="82.2" x2="223.0" y2="82.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="86.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">5</text>
+<line x1="215.0" y1="36.0" x2="223.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">6</text>
+<text x="210.0" y="332.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+<line x1="265.2" y1="174.8" x2="219.0" y2="174.8" stroke="#2c2c2c" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+<line x1="265.2" y1="174.8" x2="265.2" y2="313.5" stroke="#2c2c2c" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+<circle cx="265.2" cy="174.8" r="4.6" fill="#2c2c2c"/>
+<text x="275.2" y="165.8" font-size="13" font-weight="700" fill="#2c2c2c" font-family="Inter,system-ui,sans-serif">S(1|3)</text>
+</svg></div>
+    </div>
+    <div class="hint"><strong>Merke:</strong> Die Lösung ist der Schnittpunkt der beiden Geraden. Die Probe setzt die Werte in die <em>ursprünglichen</em> Gleichungen ein — nicht in die umgeformten.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Wie viele Lösungen kann es geben?</span></div>
+  <div class="card-body">
+    <div class="ip">Bevor du rechnest, lohnt der Blick auf <strong>Steigung</strong> und <strong>y-Achsenabschnitt</strong>: Sie entscheiden bereits über die Anzahl der Lösungen.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:16px 0" class="lgs-faelle">
+      <div style="background:var(--kiku-bg);border-radius:10px;padding:14px">
+        <svg viewBox="0 0 300 310" width="100%" style="max-width:300px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Zwei sich schneidende Geraden - genau eine Loesung">
+<defs><marker id="lgsah6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="300" height="310" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="64.0" y1="36.0" x2="64.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="94.0" y1="36.0" x2="94.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="124.0" y1="36.0" x2="124.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="154.0" y1="36.0" x2="154.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="184.0" y1="36.0" x2="184.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="214.0" y1="36.0" x2="214.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="244.0" y1="36.0" x2="244.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="274.0" y1="36.0" x2="274.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="276.0" x2="274.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="246.0" x2="274.0" y2="246.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="216.0" x2="274.0" y2="216.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="186.0" x2="274.0" y2="186.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="156.0" x2="274.0" y2="156.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="126.0" x2="274.0" y2="126.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="96.0" x2="274.0" y2="96.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="66.0" x2="274.0" y2="66.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="274.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="216.0" x2="214.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="154.0" y1="36.0" x2="274.0" y2="156.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<line x1="34.0" y1="156.0" x2="288.0" y2="156.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah6)"/>
+<line x1="154.0" y1="276.0" x2="154.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah6)"/>
+<text x="290.0" y="147.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="164.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="152.0" x2="34.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="64.0" y1="152.0" x2="64.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="64.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="94.0" y1="152.0" x2="94.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="94.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="124.0" y1="152.0" x2="124.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="124.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="184.0" y1="152.0" x2="184.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="184.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="214.0" y1="152.0" x2="214.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="214.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="244.0" y1="152.0" x2="244.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="244.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="274.0" y1="152.0" x2="274.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="274.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="150.0" y1="276.0" x2="158.0" y2="276.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="280.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="150.0" y1="246.0" x2="158.0" y2="246.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="250.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="150.0" y1="216.0" x2="158.0" y2="216.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="220.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="150.0" y1="186.0" x2="158.0" y2="186.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="190.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="150.0" y1="126.0" x2="158.0" y2="126.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="130.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="150.0" y1="96.0" x2="158.0" y2="96.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="100.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="150.0" y1="66.0" x2="158.0" y2="66.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="70.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="150.0" y1="36.0" x2="158.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="145.0" y="175.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+<line x1="184.0" y1="66.0" x2="154.0" y2="66.0" stroke="#2c2c2c" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+<line x1="184.0" y1="66.0" x2="184.0" y2="156.0" stroke="#2c2c2c" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+<circle cx="184.0" cy="66.0" r="4.6" fill="#2c2c2c"/>
+<text x="194.0" y="57.0" font-size="13" font-weight="700" fill="#2c2c2c" font-family="Inter,system-ui,sans-serif"></text>
+</svg>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-top:10px">Geraden schneiden sich</div>
+        <div style="font-size:14px;color:#5b6e2e;font-weight:600;margin-top:2px">genau eine Lösung</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;line-height:1.5">Verschiedene Steigungen. Die Rechnung endet mit einem Wert, z. B. \(x = 1\).</div>
+      </div>
+      <div style="background:#fceee9;border-radius:10px;padding:14px">
+        <svg viewBox="0 0 300 310" width="100%" style="max-width:300px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Zwei parallele Geraden - keine Loesung">
+<defs><marker id="lgsah7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="300" height="310" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="64.0" y1="36.0" x2="64.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="94.0" y1="36.0" x2="94.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="124.0" y1="36.0" x2="124.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="154.0" y1="36.0" x2="154.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="184.0" y1="36.0" x2="184.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="214.0" y1="36.0" x2="214.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="244.0" y1="36.0" x2="244.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="274.0" y1="36.0" x2="274.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="276.0" x2="274.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="246.0" x2="274.0" y2="246.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="216.0" x2="274.0" y2="216.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="186.0" x2="274.0" y2="186.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="156.0" x2="274.0" y2="156.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="126.0" x2="274.0" y2="126.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="96.0" x2="274.0" y2="96.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="66.0" x2="274.0" y2="66.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="274.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="216.0" x2="214.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="124.0" y1="276.0" x2="274.0" y2="126.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<line x1="34.0" y1="156.0" x2="288.0" y2="156.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah7)"/>
+<line x1="154.0" y1="276.0" x2="154.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah7)"/>
+<text x="290.0" y="147.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="164.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="152.0" x2="34.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="64.0" y1="152.0" x2="64.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="64.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="94.0" y1="152.0" x2="94.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="94.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="124.0" y1="152.0" x2="124.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="124.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="184.0" y1="152.0" x2="184.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="184.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="214.0" y1="152.0" x2="214.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="214.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="244.0" y1="152.0" x2="244.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="244.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="274.0" y1="152.0" x2="274.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="274.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="150.0" y1="276.0" x2="158.0" y2="276.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="280.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="150.0" y1="246.0" x2="158.0" y2="246.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="250.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="150.0" y1="216.0" x2="158.0" y2="216.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="220.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="150.0" y1="186.0" x2="158.0" y2="186.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="190.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="150.0" y1="126.0" x2="158.0" y2="126.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="130.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="150.0" y1="96.0" x2="158.0" y2="96.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="100.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="150.0" y1="66.0" x2="158.0" y2="66.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="70.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="150.0" y1="36.0" x2="158.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="145.0" y="175.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+</svg>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-top:10px">Geraden sind parallel</div>
+        <div style="font-size:14px;color:#c75c3a;font-weight:600;margin-top:2px">keine Lösung</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;line-height:1.5">Gleiche Steigung, verschiedene y-Achsenabschnitte. Die Rechnung endet mit einer <strong>falschen</strong> Aussage, z. B. \(2 = -3\).</div>
+      </div>
+      <div style="background:#f7f3e2;border-radius:10px;padding:14px">
+        <svg viewBox="0 0 300 310" width="100%" style="max-width:300px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Zwei identische Geraden - unendlich viele Loesungen">
+<defs><marker id="lgsah8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="300" height="310" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="64.0" y1="36.0" x2="64.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="94.0" y1="36.0" x2="94.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="124.0" y1="36.0" x2="124.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="154.0" y1="36.0" x2="154.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="184.0" y1="36.0" x2="184.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="214.0" y1="36.0" x2="214.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="244.0" y1="36.0" x2="244.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="274.0" y1="36.0" x2="274.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="276.0" x2="274.0" y2="276.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="246.0" x2="274.0" y2="246.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="216.0" x2="274.0" y2="216.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="186.0" x2="274.0" y2="186.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="156.0" x2="274.0" y2="156.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="126.0" x2="274.0" y2="126.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="96.0" x2="274.0" y2="96.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="66.0" x2="274.0" y2="66.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="274.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="216.0" x2="214.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="34.0" y1="216.0" x2="214.0" y2="36.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<line x1="34.0" y1="156.0" x2="288.0" y2="156.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah8)"/>
+<line x1="154.0" y1="276.0" x2="154.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah8)"/>
+<text x="290.0" y="147.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="164.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="152.0" x2="34.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="64.0" y1="152.0" x2="64.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="64.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="94.0" y1="152.0" x2="94.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="94.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="124.0" y1="152.0" x2="124.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="124.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="184.0" y1="152.0" x2="184.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="184.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="214.0" y1="152.0" x2="214.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="214.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="244.0" y1="152.0" x2="244.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="244.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="274.0" y1="152.0" x2="274.0" y2="160.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="274.0" y="175.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="150.0" y1="276.0" x2="158.0" y2="276.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="280.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="150.0" y1="246.0" x2="158.0" y2="246.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="250.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="150.0" y1="216.0" x2="158.0" y2="216.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="220.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="150.0" y1="186.0" x2="158.0" y2="186.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="190.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="150.0" y1="126.0" x2="158.0" y2="126.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="130.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="150.0" y1="96.0" x2="158.0" y2="96.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="100.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="150.0" y1="66.0" x2="158.0" y2="66.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="70.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="150.0" y1="36.0" x2="158.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="145.0" y="175.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+</svg>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-top:10px">Geraden sind identisch</div>
+        <div style="font-size:14px;color:#8a7a30;font-weight:600;margin-top:2px">unendlich viele Lösungen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:6px;line-height:1.5">Beide Gleichungen beschreiben dieselbe Gerade. Die Rechnung endet mit einer <strong>wahren</strong> Aussage, z. B. \(2 = 2\).</div>
+      </div>
+    </div>
+    <div class="hint"><strong>Vorsicht — typischer Fehler:</strong> „Keine Lösung“ und „Lösung ist 0“ sind <strong>nicht</strong> dasselbe. \(x = 0\) ist eine ganz normale Lösung; keine Lösung liegt erst vor, wenn die Variablen wegfallen und eine <em>falsche</em> Aussage übrig bleibt.</div>
+  </div>
+</div>
+<div class="section-label">2 · Die drei rechnerischen Lösungsverfahren</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Verfahren 1 — Gleichsetzungsverfahren</span></div>
+  <div class="card-body">
+    <div class="ip">\[ \begin{array}{ll} \text{I} & y = 2x + 1 \\ \text{II} & y = -x + 7 \end{array} \]</div>
+    <div class="ip" style="color:var(--ink-muted);font-style:italic">Beide Gleichungen sind nach \(y\) aufgelöst.</div>
+    <div class="bsp">
+      <div class="bsp-label">Rechnung</div>
+      <div class="ip">\[ \text{Gleichsetzen (I} = \text{II):}\quad 2x + 1 = -x + 7 \quad | + x \]</div>
+        <div class="ip">\[ 3x + 1 = 7 \quad | - 1 \]</div>
+        <div class="ip">\[ 3x = 6 \quad | : 3 \]</div>
+        <div class="ip">\[ x = 2 \]</div>
+        <div class="ip">\[ x \text{ in I:}\quad y = 2 \cdot 2 + 1 = 5 \]</div>
+      <div class="ip" style="font-weight:700;color:var(--kiku);margin-top:8px">\[ L = \{(2;\,5)\} \]</div>
+    </div>
+    <div class="hint"><strong>Wann ist das Verfahren geschickt?</strong> Beide Gleichungen sind nach <strong>derselben</strong> Variablen aufgelöst (\(y = \ldots\) und \(y = \ldots\)). Typisch, wenn zwei Geradengleichungen gegeben sind.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Verfahren 2 — Einsetzungsverfahren</span></div>
+  <div class="card-body">
+    <div class="ip">\[ \begin{array}{ll} \text{I} & y = 3x - 2 \\ \text{II} & 2x + y = 8 \end{array} \]</div>
+    <div class="ip" style="color:var(--ink-muted);font-style:italic">Eine Gleichung ist nach \(y\) aufgelöst.</div>
+    <div class="bsp">
+      <div class="bsp-label">Rechnung</div>
+      <div class="ip">\[ \text{I in II einsetzen:}\quad 2x + (3x - 2) = 8 \]</div>
+        <div class="ip">\[ 5x - 2 = 8 \quad | + 2 \]</div>
+        <div class="ip">\[ 5x = 10 \quad | : 5 \]</div>
+        <div class="ip">\[ x = 2 \]</div>
+        <div class="ip">\[ x \text{ in I:}\quad y = 3 \cdot 2 - 2 = 4 \]</div>
+      <div class="ip" style="font-weight:700;color:var(--kiku);margin-top:8px">\[ L = \{(2;\,4)\} \]</div>
+    </div>
+    <div class="hint"><strong>Wann ist das Verfahren geschickt?</strong> Eine Gleichung ist nach einer Variablen aufgelöst (oder leicht aufzulösen). Der Term wird in die andere Gleichung eingesetzt — <strong>Klammer nicht vergessen!</strong></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★★</div><span class="card-title">Verfahren 3 — Additionsverfahren (Elimination)</span></div>
+  <div class="card-body">
+    <div class="ip">\[ \begin{array}{ll} \text{I} & 3x + 2y = 12 \\ \text{II} & 5x - 2y = 4 \end{array} \]</div>
+    <div class="ip" style="color:var(--ink-muted);font-style:italic">\(+2y\) und \(-2y\) sind Gegenzahlen.</div>
+    <div class="bsp">
+      <div class="bsp-label">Rechnung</div>
+      <div class="ip">\[ \text{I} + \text{II addieren:}\quad 8x = 16 \quad | : 8 \]</div>
+        <div class="ip">\[ x = 2 \]</div>
+        <div class="ip">\[ x \text{ in I:}\quad 6 + 2y = 12 \]</div>
+        <div class="ip">\[ 2y = 6 \quad | : 2 \]</div>
+        <div class="ip">\[ y = 3 \]</div>
+      <div class="ip" style="font-weight:700;color:var(--kiku);margin-top:8px">\[ L = \{(2;\,3)\} \]</div>
+    </div>
+    <div class="hint"><strong>Wann ist das Verfahren geschickt?</strong> Vor einer Variablen stehen <strong>Gegenzahlen</strong> (\(+2y\) und \(-2y\)) — beim Addieren fällt sie weg. Gleiche Vorzeichen? Dann <strong>subtrahieren</strong>!</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Überblick — wann nehme ich welches Verfahren?</span></div>
+  <div class="card-body">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:14px" class="lgs-faelle">
+      <div style="background:var(--kiku-bg);border-radius:10px;padding:16px">
+        <div style="font-size:16px;font-weight:700;color:var(--ink)">Gleichsetzen</div>
+        <div style="font-size:14px;color:var(--kiku);font-weight:600;margin:6px 0">\(y = \ldots\) und \(y = \ldots\)</div>
+        <div style="font-size:13px;color:var(--ink-muted);line-height:1.55">Beide Gleichungen nach derselben Variablen aufgelöst.</div>
+        <div class="ip" style="font-size:14px;margin-top:8px">\[ \begin{array}{ll} \text{I} & y = 2x+1 \\ \text{II} & y = -x+7 \end{array} \]</div>
+        <div style="font-size:13px;color:var(--kiku);font-weight:600">→ rechte Seiten gleichsetzen</div>
+      </div>
+      <div style="background:#ecf1f4;border-radius:10px;padding:16px">
+        <div style="font-size:16px;font-weight:700;color:var(--ink)">Einsetzen</div>
+        <div style="font-size:14px;color:#5c7f92;font-weight:600;margin:6px 0">\(y = \ldots\) und \(ax + by = c\)</div>
+        <div style="font-size:13px;color:var(--ink-muted);line-height:1.55">Eine Gleichung ist nach einer Variablen aufgelöst.</div>
+        <div class="ip" style="font-size:14px;margin-top:8px">\[ \begin{array}{ll} \text{I} & y = 3x-2 \\ \text{II} & 2x+y = 8 \end{array} \]</div>
+        <div style="font-size:13px;color:#5c7f92;font-weight:600">→ Term einsetzen (Klammer!)</div>
+      </div>
+      <div style="background:#f7f3e2;border-radius:10px;padding:16px">
+        <div style="font-size:16px;font-weight:700;color:var(--ink)">Addieren</div>
+        <div style="font-size:14px;color:#8a7a30;font-weight:600;margin:6px 0">Gegenzahlen vor \(x\) oder \(y\)</div>
+        <div style="font-size:13px;color:var(--ink-muted);line-height:1.55">Beim Addieren fällt eine Variable weg.</div>
+        <div class="ip" style="font-size:14px;margin-top:8px">\[ \begin{array}{ll} \text{I} & 3x+2y = 12 \\ \text{II} & 5x-2y = 4 \end{array} \]</div>
+        <div style="font-size:13px;color:#8a7a30;font-weight:600">→ I + II bilden</div>
+      </div>
+    </div>
+    <div class="hint">Alle drei Wege führen zum selben Ergebnis — geschickt gewählt sparst du Zeit und Fehlerquellen.</div>
+  </div>
+</div>
+<div class="section-label">3 · Sachaufgaben</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — So löst du eine Sachaufgabe</span></div>
+  <div class="card-body">
+    <div class="ip" style="background:var(--kiku-bg);border-radius:8px;padding:12px 16px;font-size:15px">
+      <strong>①</strong> Variablen festlegen (mit Einheit) &nbsp;·&nbsp; <strong>②</strong> Gleichungen I und II aufstellen &nbsp;·&nbsp; <strong>③</strong> Gleichungssystem lösen &nbsp;·&nbsp; <strong>④</strong> Probe am Text &nbsp;·&nbsp; <strong>⑤</strong> Antwortsatz
+    </div>
+    <div class="bsp">
+      <div class="bsp-label">Aufgabe</div>
+      <div class="bsp-q">Im Kino zahlen 2 Erwachsene und 3 Kinder 19 €, 1 Erwachsener und 2 Kinder 11 €. Wie teuer sind die Karten?</div>
+      <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
+      <div class="bsp-body">
+        <div class="ip"><strong>① Variablen:</strong> \(e\) = Preis einer Erwachsenenkarte (€), \(k\) = Preis einer Kinderkarte (€).</div>
+        <div class="ip"><strong>② Gleichungen:</strong></div>
+        <div class="ip">\[ \begin{array}{ll} \text{I} & 2e + 3k = 19 \\ \text{II} & e + 2k = 11 \end{array} \]</div>
+        <div class="ip"><strong>③ Lösen</strong> (hier mit dem Einsetzungsverfahren): II nach \(e\) auflösen ergibt \(e = 11 - 2k\). Einsetzen in I:</div>
+        <div class="ip">\[ 2 \cdot (11 - 2k) + 3k = 19 \;\Rightarrow\; 22 - 4k + 3k = 19 \;\Rightarrow\; 22 - k = 19 \;\Rightarrow\; k = 3 \]</div>
+        <div class="ip">Rückeinsetzen: \(e = 11 - 2 \cdot 3 = 5\).</div>
+        <div class="ip"><strong>④ Probe am Text:</strong> \(2 \cdot 5 + 3 \cdot 3 = 19\;\checkmark\) und \(5 + 2 \cdot 3 = 11\;\checkmark\)</div>
+        <div class="ip"><strong>⑤ Antwortsatz:</strong> Eine Erwachsenenkarte kostet 5 €, eine Kinderkarte 3 €.</div>
+      </div>
+    </div>
+    <div class="hint"><strong>Merke:</strong> Ohne Schritt ① wird die Rechnung unleserlich, ohne Schritt ⑤ ist die Aufgabe nicht beantwortet. Beides zählt in der Klassenarbeit.</div>
+  </div>
+</div>
+<div class="section-label">4 · Aufgaben zum Arbeitsblatt</div>
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">G</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · G</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Grundwissen — grafisch deuten</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 1–3 des Arbeitsblatts · Zuordnen, ablesen und die Lösungsart erkennen — ohne aufwendige Rechnung</div>
+  </div>
+</div>
+<div class="tg">
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">1</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Ordne jedes der drei Gleichungssysteme dem passenden Koordinatensystem 1–3 zu. Begründe deine Zuordnung, zum Beispiel mit Steigung und y-Achsenabschnitt — du musst nichts rechnen.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>\[ \begin{array}{ll} \text{I} & y = x + 1 \\ \text{II} & y = -x + 3 \end{array} \]</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>\[ \begin{array}{ll} \text{I} & 2x + y = 1 \\ \text{II} & x - y = 2 \end{array} \]</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">c)</div><div>\[ \begin{array}{ll} \text{I} & y = \tfrac{1}{2}x + 1 \\ \text{II} & y = -x + 4 \end{array} \]</div></div></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px" class="lgs-faelle"><div><div style="font-size:12px;font-weight:700;color:var(--ink-muted);text-align:center;margin-bottom:4px">Koordinatensystem 1</div><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Koordinatensystem 1 mit zwei Geraden">
+<defs><marker id="lgsah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="80.2" y1="36.0" x2="80.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="126.5" y1="36.0" x2="126.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="172.8" y1="36.0" x2="172.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="219.0" y1="36.0" x2="219.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="265.2" y1="36.0" x2="265.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="311.5" y1="36.0" x2="311.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="357.8" y1="36.0" x2="357.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="404.0" y1="36.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="406.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="359.8" x2="404.0" y2="359.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="313.5" x2="404.0" y2="313.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="267.2" x2="404.0" y2="267.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="221.0" x2="404.0" y2="221.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="174.8" x2="404.0" y2="174.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="128.5" x2="404.0" y2="128.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="82.2" x2="404.0" y2="82.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="404.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="149.6" y1="36.0" x2="334.6" y2="406.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="126.5" y1="406.0" x2="404.0" y2="128.5" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<line x1="34.0" y1="221.0" x2="418.0" y2="221.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah2)"/>
+<line x1="219.0" y1="406.0" x2="219.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah2)"/>
+<text x="420.0" y="212.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="229.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="217.0" x2="34.0" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="80.2" y1="217.0" x2="80.2" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="80.2" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="126.5" y1="217.0" x2="126.5" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="126.5" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="172.8" y1="217.0" x2="172.8" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="172.8" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="265.2" y1="217.0" x2="265.2" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="265.2" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="311.5" y1="217.0" x2="311.5" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="311.5" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="357.8" y1="217.0" x2="357.8" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="357.8" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="404.0" y1="217.0" x2="404.0" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="404.0" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="215.0" y1="406.0" x2="223.0" y2="406.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="410.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="215.0" y1="359.8" x2="223.0" y2="359.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="363.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="215.0" y1="313.5" x2="223.0" y2="313.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="317.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="215.0" y1="267.2" x2="223.0" y2="267.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="271.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="215.0" y1="174.8" x2="223.0" y2="174.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="178.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="215.0" y1="128.5" x2="223.0" y2="128.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="132.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="215.0" y1="82.2" x2="223.0" y2="82.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="86.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="215.0" y1="36.0" x2="223.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="210.0" y="240.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+</svg></div><div><div style="font-size:12px;font-weight:700;color:var(--ink-muted);text-align:center;margin-bottom:4px">Koordinatensystem 2</div><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Koordinatensystem 2 mit zwei Geraden">
+<defs><marker id="lgsah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="80.2" y1="36.0" x2="80.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="126.5" y1="36.0" x2="126.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="172.8" y1="36.0" x2="172.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="219.0" y1="36.0" x2="219.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="265.2" y1="36.0" x2="265.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="311.5" y1="36.0" x2="311.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="357.8" y1="36.0" x2="357.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="404.0" y1="36.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="406.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="359.8" x2="404.0" y2="359.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="313.5" x2="404.0" y2="313.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="267.2" x2="404.0" y2="267.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="221.0" x2="404.0" y2="221.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="174.8" x2="404.0" y2="174.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="128.5" x2="404.0" y2="128.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="82.2" x2="404.0" y2="82.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="404.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="267.2" x2="404.0" y2="82.2" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="219.0" y1="36.0" x2="404.0" y2="221.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<line x1="34.0" y1="221.0" x2="418.0" y2="221.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah3)"/>
+<line x1="219.0" y1="406.0" x2="219.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah3)"/>
+<text x="420.0" y="212.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="229.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="217.0" x2="34.0" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="80.2" y1="217.0" x2="80.2" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="80.2" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="126.5" y1="217.0" x2="126.5" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="126.5" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="172.8" y1="217.0" x2="172.8" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="172.8" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="265.2" y1="217.0" x2="265.2" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="265.2" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="311.5" y1="217.0" x2="311.5" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="311.5" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="357.8" y1="217.0" x2="357.8" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="357.8" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="404.0" y1="217.0" x2="404.0" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="404.0" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="215.0" y1="406.0" x2="223.0" y2="406.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="410.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="215.0" y1="359.8" x2="223.0" y2="359.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="363.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="215.0" y1="313.5" x2="223.0" y2="313.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="317.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="215.0" y1="267.2" x2="223.0" y2="267.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="271.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="215.0" y1="174.8" x2="223.0" y2="174.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="178.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="215.0" y1="128.5" x2="223.0" y2="128.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="132.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="215.0" y1="82.2" x2="223.0" y2="82.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="86.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="215.0" y1="36.0" x2="223.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="210.0" y="240.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+</svg></div><div><div style="font-size:12px;font-weight:700;color:var(--ink-muted);text-align:center;margin-bottom:4px">Koordinatensystem 3</div><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Koordinatensystem 3 mit zwei Geraden">
+<defs><marker id="lgsah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="80.2" y1="36.0" x2="80.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="126.5" y1="36.0" x2="126.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="172.8" y1="36.0" x2="172.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="219.0" y1="36.0" x2="219.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="265.2" y1="36.0" x2="265.2" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="311.5" y1="36.0" x2="311.5" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="357.8" y1="36.0" x2="357.8" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="404.0" y1="36.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="406.0" x2="404.0" y2="406.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="359.8" x2="404.0" y2="359.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="313.5" x2="404.0" y2="313.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="267.2" x2="404.0" y2="267.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="221.0" x2="404.0" y2="221.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="174.8" x2="404.0" y2="174.8" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="128.5" x2="404.0" y2="128.5" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="82.2" x2="404.0" y2="82.2" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="404.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="359.8" x2="357.8" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="172.8" y1="36.0" x2="404.0" y2="267.2" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round"/>
+<line x1="34.0" y1="221.0" x2="418.0" y2="221.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah4)"/>
+<line x1="219.0" y1="406.0" x2="219.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah4)"/>
+<text x="420.0" y="212.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="229.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="217.0" x2="34.0" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="80.2" y1="217.0" x2="80.2" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="80.2" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="126.5" y1="217.0" x2="126.5" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="126.5" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="172.8" y1="217.0" x2="172.8" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="172.8" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="265.2" y1="217.0" x2="265.2" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="265.2" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="311.5" y1="217.0" x2="311.5" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="311.5" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="357.8" y1="217.0" x2="357.8" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="357.8" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="404.0" y1="217.0" x2="404.0" y2="225.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="404.0" y="240.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="215.0" y1="406.0" x2="223.0" y2="406.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="410.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="215.0" y1="359.8" x2="223.0" y2="359.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="363.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="215.0" y1="313.5" x2="223.0" y2="313.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="317.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="215.0" y1="267.2" x2="223.0" y2="267.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="271.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="215.0" y1="174.8" x2="223.0" y2="174.8" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="178.8" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="215.0" y1="128.5" x2="223.0" y2="128.5" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="132.5" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="215.0" y1="82.2" x2="223.0" y2="82.2" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="86.2" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="215.0" y1="36.0" x2="223.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="210.0" y="240.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+</svg></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a) → Koordinatensystem 3.</strong> Beide Gleichungen stehen schon in \(y\)-Form: Steigungen \(1\) und \(-1\), y-Achsenabschnitte \(1\) und \(3\). Schnittpunkt \((1 \mid 2)\).</div>
+          <div class="ip"><strong>b) → Koordinatensystem 1.</strong> Umgeformt: \(y = -2x + 1\) und \(y = x - 2\). Nur hier fällt eine Gerade steil (Steigung \(-2\)), und der Schnittpunkt \((1 \mid -1)\) liegt unterhalb der x-Achse.</div>
+          <div class="ip"><strong>c) → Koordinatensystem 2.</strong> Die Gerade mit Steigung \(\tfrac{1}{2}\) verläuft flach; y-Achsenabschnitte \(1\) und \(4\), Schnittpunkt \((2 \mid 2)\).</div>
+          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+          <div class="komp-desc">Darstellungen nutzen: Zwischen Gleichungsform und Graph wechseln, ohne zu rechnen.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">2</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Im Koordinatensystem siehst du die Gerade \(g\) mit dem Punkt \(P(2 \mid 1)\). Lies zunächst die Gleichung von \(g\) ab. Gib dann jeweils die Gleichung einer zweiten Geraden an, sodass gilt:<div style="margin-top:8px">a) Die Gerade verläuft durch \(A(0 \mid 3)\), und das Gleichungssystem aus \(g\) und der zweiten Geraden hat genau eine Lösung, nämlich \((2 \mid 1)\).</div><div>b) Die Gerade verläuft durch \(B(0 \mid -3)\), und das Gleichungssystem hat ebenfalls genau die Lösung \((2 \mid 1)\).</div><div>c) Die Gerade verläuft durch \(C(-4 \mid 0)\), und das Gleichungssystem hat keine Lösung.</div><div style="margin-top:12px;max-width:430px"><svg viewBox="0 0 430 366" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Gerade g mit den Punkten A(0|3), B(0|-3), C(-4|0) und P(2|1)">
+<defs><marker id="lgsah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="366" fill="#fffcf6"/>
+<line x1="34.0" y1="36.0" x2="34.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="71.0" y1="36.0" x2="71.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="108.0" y1="36.0" x2="108.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="145.0" y1="36.0" x2="145.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="182.0" y1="36.0" x2="182.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="219.0" y1="36.0" x2="219.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="256.0" y1="36.0" x2="256.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="293.0" y1="36.0" x2="293.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="330.0" y1="36.0" x2="330.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="367.0" y1="36.0" x2="367.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="404.0" y1="36.0" x2="404.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="332.0" x2="404.0" y2="332.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="295.0" x2="404.0" y2="295.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="258.0" x2="404.0" y2="258.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="221.0" x2="404.0" y2="221.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="184.0" x2="404.0" y2="184.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="147.0" x2="404.0" y2="147.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="110.0" x2="404.0" y2="110.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="73.0" x2="404.0" y2="73.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="404.0" y2="36.0" stroke="#e0ddd6" stroke-width="1"/>
+<line x1="108.0" y1="332.0" x2="404.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round"/>
+<text x="348.4" y="53.6" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">g</text>
+<line x1="34.0" y1="184.0" x2="418.0" y2="184.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah5)"/>
+<line x1="219.0" y1="332.0" x2="219.0" y2="22.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#lgsah5)"/>
+<text x="420.0" y="175.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">x</text>
+<text x="229.0" y="21.0" font-size="15" font-style="italic" fill="#2c2c2c" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="180.0" x2="34.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="34.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-5</text>
+<line x1="71.0" y1="180.0" x2="71.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="71.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="108.0" y1="180.0" x2="108.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="108.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="145.0" y1="180.0" x2="145.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="145.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="182.0" y1="180.0" x2="182.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="182.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="256.0" y1="180.0" x2="256.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="256.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="293.0" y1="180.0" x2="293.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="293.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="330.0" y1="180.0" x2="330.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="330.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="367.0" y1="180.0" x2="367.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="367.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">4</text>
+<line x1="404.0" y1="180.0" x2="404.0" y2="188.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="404.0" y="203.0" font-size="12" fill="#33312d" text-anchor="middle" font-family="Inter,system-ui,sans-serif">5</text>
+<line x1="215.0" y1="332.0" x2="223.0" y2="332.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="336.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-4</text>
+<line x1="215.0" y1="295.0" x2="223.0" y2="295.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="299.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-3</text>
+<line x1="215.0" y1="258.0" x2="223.0" y2="258.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="262.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-2</text>
+<line x1="215.0" y1="221.0" x2="223.0" y2="221.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="225.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">-1</text>
+<line x1="215.0" y1="147.0" x2="223.0" y2="147.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="151.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">1</text>
+<line x1="215.0" y1="110.0" x2="223.0" y2="110.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="114.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">2</text>
+<line x1="215.0" y1="73.0" x2="223.0" y2="73.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="77.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">3</text>
+<line x1="215.0" y1="36.0" x2="223.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.6"/>
+<text x="210.0" y="40.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">4</text>
+<text x="210.0" y="203.0" font-size="12" fill="#33312d" text-anchor="end" font-family="Inter,system-ui,sans-serif">0</text>
+<circle cx="219.0" cy="73.0" r="4.6" fill="#2c2c2c"/>
+<text x="233.0" y="67.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start" font-family="Inter,system-ui,sans-serif">A(0|3)</text>
+<circle cx="219.0" cy="295.0" r="4.6" fill="#2c2c2c"/>
+<text x="233.0" y="313.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start" font-family="Inter,system-ui,sans-serif">B(0|−3)</text>
+<circle cx="71.0" cy="184.0" r="4.6" fill="#2c2c2c"/>
+<text x="59.0" y="172.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="end" font-family="Inter,system-ui,sans-serif">C(−4|0)</text>
+<circle cx="293.0" cy="147.0" r="4.6" fill="#2c2c2c"/>
+<text x="307.0" y="141.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start" font-family="Inter,system-ui,sans-serif">P(2|1)</text>
+</svg></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>Zuerst \(g\) ablesen:</strong> y-Achsenabschnitt \(-1\), Steigung \(1\), also \(g:\; y = x - 1\).</div>
+          <div class="ip"><strong>a)</strong> Gesucht ist die Gerade durch \(A(0 \mid 3)\) und \(P(2 \mid 1)\). Steigung: \(m = \dfrac{1-3}{2-0} = -1\). Also \(y = -x + 3\).</div>
+          <div class="ip"><strong>b)</strong> Gerade durch \(B(0 \mid -3)\) und \(P(2 \mid 1)\). Steigung: \(m = \dfrac{1-(-3)}{2-0} = 2\). Also \(y = 2x - 3\).</div>
+          <div class="ip"><strong>c)</strong> Keine Lösung heißt <strong>parallel</strong> — also dieselbe Steigung wie \(g\), nämlich \(1\), aber ein anderer y-Achsenabschnitt. Durch \(C(-4 \mid 0)\): \(y = x + 4\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Geradengleichungen aus Bedingungen konstruieren.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">3</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Erkläre, welcher Lösungsweg zu welcher Lösungsart gehört (genau eine, keine, unendlich viele Lösungen) und wie die zugehörigen Geraden jeweils zueinander liegen.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">a)</div>\[ \begin{array}{ll} \text{I} & y = x + 2 \\ \text{II} & y = -x + 6 \end{array} \]\[ \begin{aligned} x + 2 &= -x + 6 \\ 2x &= 4 \\ x &= 2;\; y = 4 \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">b)</div>\[ \begin{array}{ll} \text{I} & y = x + 2 \\ \text{II} & y = x - 3 \end{array} \]\[ \begin{aligned} x + 2 &= x - 3 \\ 2 &= -3 \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">c)</div>\[ \begin{array}{ll} \text{I} & y = x + 2 \\ \text{II} & 2y - 2x = 4 \end{array} \]\[ \begin{aligned} x + 2 &= x + 2 \\ 2 &= 2 \end{aligned} \]</div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a)</strong> Die Rechnung liefert einen konkreten Wert \(x = 2\) — <strong>genau eine Lösung</strong> \((2 \mid 4)\). Die Geraden haben verschiedene Steigungen und <strong>schneiden sich</strong> in einem Punkt.</div>
+          <div class="ip"><strong>b)</strong> Die Variablen fallen weg, übrig bleibt \(2 = -3\) — eine <strong>falsche</strong> Aussage. Es gibt <strong>keine Lösung</strong>. Die Geraden haben dieselbe Steigung, aber verschiedene y-Achsenabschnitte, sind also <strong>parallel</strong>.</div>
+          <div class="ip"><strong>c)</strong> Formt man II um, erhält man \(y = x + 2\) — dieselbe Gleichung wie I. Die Variablen fallen weg, übrig bleibt \(2 = 2\), eine <strong>wahre</strong> Aussage: <strong>unendlich viele Lösungen</strong>. Die Geraden sind <strong>identisch</strong>.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Rechenausgang, Lösungsart und Lage der Geraden aufeinander beziehen.</div></div>
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#eef0e3;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">V</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · V</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Verfahren erkennen und anwenden</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 4–7 des Arbeitsblatts · Verfahren identifizieren, geschickt auswählen und sicher zu Ende rechnen</div>
+  </div>
+</div>
+<div class="tg">
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">4</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Entscheide jeweils, welches der drei Verfahren verwendet wurde, und begründe deine Antwort in einem Satz.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">a)</div>\[ \begin{array}{ll} \text{I} & y = x + 4 \\ \text{II} & y = 3x - 2 \end{array} \]\[ \begin{aligned} x + 4 &= 3x - 2 \\ 6 &= 2x \Rightarrow x = 3 \\ y &= 3 + 4 = 7 \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">b)</div>\[ \begin{array}{ll} \text{I} & 2x + 3y = 12 \\ \text{II} & 4x - 3y = 6 \end{array} \]\[ \begin{aligned} \text{I}+\text{II}:\; 6x &= 18 \Rightarrow x = 3 \\ 6 + 3y &= 12 \Rightarrow y = 2 \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">c)</div>\[ \begin{array}{ll} \text{I} & x = 2y - 1 \\ \text{II} & 3x + 4y = 17 \end{array} \]\[ \begin{aligned} 3(2y-1) + 4y &= 17 \\ 10y &= 20 \Rightarrow y = 2 \\ x &= 3 \end{aligned} \]</div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a) Gleichsetzungsverfahren</strong> — beide Gleichungen sind nach \(y\) aufgelöst und werden gleichgesetzt. \(L = \{(3;\,7)\}\)</div>
+          <div class="ip"><strong>b) Additionsverfahren</strong> — es wird \(\text{I} + \text{II}\) gebildet; \(+3y\) und \(-3y\) heben sich auf. \(L = \{(3;\,2)\}\)</div>
+          <div class="ip"><strong>c) Einsetzungsverfahren</strong> — I ist nach \(x\) aufgelöst und wird in II eingesetzt. \(L = \{(3;\,2)\}\)</div>
+          <div class="komp-wrap"><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Kommunizieren: Ein Verfahren an seiner Rechenspur erkennen und benennen.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">5</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Entscheide, welches Verfahren am schnellsten zur Lösung führt, und begründe deine Wahl — <strong>ohne zu lösen</strong>.<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">a)</div>\[ \begin{array}{ll} \text{I} & y = 4x - 3 \\ \text{II} & y = 2x + 5 \end{array} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">b)</div>\[ \begin{array}{ll} \text{I} & 3x + 4y = 17 \\ \text{II} & 5x - 4y = 7 \end{array} \]</div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a) Gleichsetzungsverfahren.</strong> Beide Gleichungen sind bereits nach \(y\) aufgelöst — Gleichsetzen liefert sofort eine Gleichung mit nur einer Variablen, ganz ohne Umformung. <em>(Zur Kontrolle: \(x = 4\), \(y = 13\).)</em></div>
+          <div class="ip"><strong>b) Additionsverfahren.</strong> \(+4y\) und \(-4y\) sind Gegenzahlen — beim Addieren fällt \(y\) ohne jede Vorbereitung weg. <em>(Zur Kontrolle: \(x = 3\), \(y = 2\).)</em></div>
+          <div class="komp-wrap"><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Kommunizieren: Verfahren an der Struktur des Systems begründet auswählen.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">6</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Setze die begonnenen Rechnungen fort und gib jeweils die Lösungsmenge an.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">a)</div>\[ \begin{array}{ll} \text{I} & y = 2x - 3 \\ \text{II} & y = -x + 6 \end{array} \]\[ \begin{aligned} 2x - 3 &= -x + 6 \\ 3x - 3 &= 6 \\ &\;\vdots \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">b)</div>\[ \begin{array}{ll} \text{I} & y = x + 2 \\ \text{II} & 3x + 2y = 19 \end{array} \]\[ \begin{aligned} 3x + 2(x+2) &= 19 \\ 3x + 2x + 4 &= 19 \\ &\;\vdots \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">c)</div>\[ \begin{array}{ll} \text{I} & 4x + 3y = 18 \\ \text{II} & 2x - 3y = 0 \end{array} \]\[ \begin{aligned} \text{I}+\text{II}:\; 6x &= 18 \\ &\;\vdots \end{aligned} \]</div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a)</strong> \(3x = 9 \Rightarrow x = 3\); Rückeinsetzen in I: \(y = 2 \cdot 3 - 3 = 3\). \(\;L = \{(3;\,3)\}\)</div>
+          <div class="ip"><strong>b)</strong> \(5x + 4 = 19 \Rightarrow 5x = 15 \Rightarrow x = 3\); Rückeinsetzen in I: \(y = 3 + 2 = 5\). \(\;L = \{(3;\,5)\}\)</div>
+          <div class="ip"><strong>c)</strong> \(x = 3\); Rückeinsetzen in II: \(2 \cdot 3 - 3y = 0 \Rightarrow y = 2\). \(\;L = \{(3;\,2)\}\)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Begonnene Lösungswege korrekt zu Ende führen.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">7</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Löse die drei Gleichungssysteme in deinem Heft. Wähle jeweils ein passendes Verfahren und gib die Lösungsmenge an.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">a)</div>\[ \begin{array}{ll} \text{I} & y = 4x \\ \text{II} & y = 2x + 1 \end{array} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">b)</div>\[ \begin{array}{ll} \text{I} & 3x + 2y = 11 \\ \text{II} & 5x - 2y = 13 \end{array} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">c)</div>\[ \begin{array}{ll} \text{I} & y = x - 5 \\ \text{II} & 2x + y = 1 \end{array} \]</div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a) Gleichsetzen</strong> (beide nach \(y\) aufgelöst): \(4x = 2x + 1 \Rightarrow 2x = 1 \Rightarrow x = \tfrac{1}{2}\); \(y = 4 \cdot \tfrac{1}{2} = 2\). \(\;L = \{(\tfrac{1}{2};\,2)\}\)</div>
+          <div class="ip"><strong>b) Addieren</strong> (\(+2y\) und \(-2y\) sind Gegenzahlen): \(8x = 24 \Rightarrow x = 3\); in I: \(9 + 2y = 11 \Rightarrow y = 1\). \(\;L = \{(3;\,1)\}\)</div>
+          <div class="ip"><strong>c) Einsetzen</strong> (I ist nach \(y\) aufgelöst): \(2x + (x - 5) = 1 \Rightarrow 3x = 6 \Rightarrow x = 2\); \(y = 2 - 5 = -3\). \(\;L = \{(2;\,-3)\}\)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Verfahren selbstständig wählen und vollständig durchrechnen.</div></div>
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c8b55e;line-height:1;font-weight:400;min-width:44px;text-align:center">S</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · S</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Sachaufgaben</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgabe 9 des Arbeitsblatts · Vom Text zum Gleichungssystem — mit Variablen, Probe und Antwortsatz</div>
+  </div>
+</div>
+<div class="tg">
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">9 a)</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Ein Rechteck hat den Umfang 28 cm; die Länge ist 4 cm größer als die Breite. Bestimme Länge und Breite.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>① Variablen:</strong> \(l\) = Länge (cm), \(b\) = Breite (cm).</div>
+          <div class="ip"><strong>② Gleichungen:</strong> \(\text{I}:\; 2l + 2b = 28\), \(\;\text{II}:\; l = b + 4\).</div>
+          <div class="ip"><strong>③ Lösen</strong> (Einsetzen von II in I): \(2(b+4) + 2b = 28 \Rightarrow 4b + 8 = 28 \Rightarrow 4b = 20 \Rightarrow b = 5\), also \(l = 9\).</div>
+          <div class="ip"><strong>④ Probe:</strong> \(2 \cdot 9 + 2 \cdot 5 = 28\;\checkmark\), und \(9 = 5 + 4\;\checkmark\)</div>
+          <div class="ip"><strong>⑤ Antwort:</strong> Das Rechteck ist 9 cm lang und 5 cm breit.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachsituation in ein Gleichungssystem übersetzen und im Kontext beantworten.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">9 b)</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Im Freibad zahlen 3 Erwachsene und 5 Kinder zusammen 27 €, 2 Erwachsene und 2 Kinder 14 €. Wie teuer sind die beiden Kartenarten?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>① Variablen:</strong> \(e\) = Preis Erwachsenenkarte (€), \(k\) = Preis Kinderkarte (€).</div>
+          <div class="ip"><strong>② Gleichungen:</strong> \(\text{I}:\; 3e + 5k = 27\), \(\;\text{II}:\; 2e + 2k = 14\).</div>
+          <div class="ip"><strong>③ Lösen:</strong> II vereinfachen (durch 2 teilen): \(e + k = 7\), also \(e = 7 - k\). Einsetzen in I: \(3(7-k) + 5k = 27 \Rightarrow 21 + 2k = 27 \Rightarrow k = 3\), also \(e = 4\).</div>
+          <div class="ip"><strong>④ Probe:</strong> \(3 \cdot 4 + 5 \cdot 3 = 27\;\checkmark\), \(2 \cdot 4 + 2 \cdot 3 = 14\;\checkmark\)</div>
+          <div class="ip"><strong>⑤ Antwort:</strong> Erwachsene zahlen 4 €, Kinder 3 €.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachsituation in ein Gleichungssystem übersetzen und im Kontext beantworten.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">9 c)</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Auf einem Bauernhof leben Kaninchen und Hühner: zusammen 12 Tiere mit 34 Beinen. Wie viele sind es von jeder Art?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>① Variablen:</strong> \(k\) = Anzahl Kaninchen, \(h\) = Anzahl Hühner.</div>
+          <div class="ip"><strong>② Gleichungen:</strong> \(\text{I}:\; k + h = 12\) (Tiere), \(\;\text{II}:\; 4k + 2h = 34\) (Beine).</div>
+          <div class="ip"><strong>③ Lösen:</strong> I nach \(h\) auflösen: \(h = 12 - k\). Einsetzen in II: \(4k + 2(12-k) = 34 \Rightarrow 2k + 24 = 34 \Rightarrow k = 5\), also \(h = 7\).</div>
+          <div class="ip"><strong>④ Probe:</strong> \(5 + 7 = 12\;\checkmark\), \(4 \cdot 5 + 2 \cdot 7 = 34\;\checkmark\)</div>
+          <div class="ip"><strong>⑤ Antwort:</strong> Es sind 5 Kaninchen und 7 Hühner.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachsituation in ein Gleichungssystem übersetzen und im Kontext beantworten.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">9 d)</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Im Sparschwein liegen 15 Münzen — nur 2-€- und 50-Cent-Münzen — im Wert von 16,50 €. Wie viele sind es von jeder Sorte?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>① Variablen:</strong> \(x\) = Anzahl 2-€-Münzen, \(y\) = Anzahl 50-Cent-Münzen.</div>
+          <div class="ip"><strong>② Gleichungen:</strong> \(\text{I}:\; x + y = 15\) (Anzahl), \(\;\text{II}:\; 2x + 0{,}5y = 16{,}5\) (Wert in €).</div>
+          <div class="ip"><strong>③ Lösen:</strong> I nach \(y\) auflösen: \(y = 15 - x\). Einsetzen in II: \(2x + 0{,}5(15-x) = 16{,}5 \Rightarrow 1{,}5x + 7{,}5 = 16{,}5 \Rightarrow x = 6\), also \(y = 9\).</div>
+          <div class="ip"><strong>④ Probe:</strong> \(6 + 9 = 15\;\checkmark\), \(6 \cdot 2 + 9 \cdot 0{,}5 = 12 + 4{,}5 = 16{,}5\;\checkmark\)</div>
+          <div class="ip"><strong>⑤ Antwort:</strong> Im Sparschwein sind sechs 2-€-Münzen und neun 50-Cent-Münzen.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachsituation in ein Gleichungssystem übersetzen und im Kontext beantworten.</div></div>
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c75c3a;line-height:1;font-weight:400;min-width:44px;text-align:center">E</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#c75c3a;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · E</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Expertenaufgaben ★</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 8 und 10 des Arbeitsblatts · Fehler analysieren, modellieren und das Modell beurteilen</div>
+  </div>
+</div>
+<div class="tg">
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">8 ★</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Finde in beiden Rechnungen den Fehler, erkläre ihn und führe die Rechnung richtig zu Ende.<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">a) Rechnung von Paul</div>\[ \begin{array}{ll} \text{I} & y = 2x - 3 \\ \text{II} & 4x - y = 9 \end{array} \]\[ \begin{aligned} 4x - 2x - 3 &= 9 \\ 2x - 3 &= 9 \\ 2x &= 12 \Rightarrow x = 6 \\ y &= 2 \cdot 6 - 3 = 9 \end{aligned} \]</div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted)">b) Rechnung von Mia</div>\[ \begin{array}{ll} \text{I} & 5x + 2y = 16 \\ \text{II} & 3x + 2y = 12 \end{array} \]\[ \begin{aligned} \text{I}+\text{II}:\; 8x &= 28 \Rightarrow x = 3{,}5 \\ 17{,}5 + 2y &= 16 \\ y &= -0{,}75 \end{aligned} \]</div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a) Fehler in der ersten Zeile: die Klammer fehlt.</strong> Beim Einsetzen von \(y = 2x-3\) in \(4x - y\) wird der <em>ganze</em> Term abgezogen, also \(4x - (2x - 3)\). Paul hat nur \(4x - 2x - 3\) gerechnet und damit das Vorzeichen der \(-3\) nicht mitgedreht.</div>
+          <div class="ip"><strong>Richtig:</strong> \(4x - (2x - 3) = 4x - 2x + 3 = 2x + 3\). Also \(2x + 3 = 9 \Rightarrow 2x = 6 \Rightarrow x = 3\); \(y = 2 \cdot 3 - 3 = 3\). \(\;L = \{(3;\,3)\}\)</div>
+          <div class="ip"><strong>b) Fehler: \(+2y\) und \(+2y\) sind keine Gegenzahlen.</strong> Beim <em>Addieren</em> fällt \(y\) deshalb nicht weg — Mia hat es trotzdem weggelassen. Bei <strong>gleichen</strong> Vorzeichen muss man <strong>subtrahieren</strong>.</div>
+          <div class="ip"><strong>Richtig:</strong> \(\text{I} - \text{II}:\; 2x = 4 \Rightarrow x = 2\); in I: \(10 + 2y = 16 \Rightarrow y = 3\). \(\;L = \{(2;\,3)\}\)</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Fehlerhafte Rechenwege analysieren, den Fehler benennen und korrigieren.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">10 ★</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq"><strong>Radtour mit Leihrädern.</strong> Zwei Anbieter:<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:10px 0" class="lgs-faelle"><div style="background:var(--kiku-bg);border-radius:8px;padding:10px 14px"><strong>RadFix</strong><br>5 € Grundpreis + 2 € je Stunde</div><div style="background:#ecf1f4;border-radius:8px;padding:10px 14px"><strong>VeloCity</strong><br>8 € Grundpreis + 1 € je Stunde</div></div><div>a) Stelle für beide Anbieter eine Kostengleichung auf (\(y\) in €, \(x\) in Stunden) und fasse sie zu einem Gleichungssystem zusammen.</div><div>b) Bestimme mit einem geeigneten Verfahren, bei welcher Ausleihdauer beide Anbieter gleich teuer sind.</div><div>c) Deine Familie weiß noch nicht, ob die Radtour 2 oder 5 Stunden dauert. Empfiehl begründet einen Anbieter.</div><div>d) Beurteile das Modell: Welche Annahmen stecken darin, wo stößt es in der Wirklichkeit an Grenzen? Nenne mindestens zwei Punkte.</div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>a)</strong> \(\text{I}:\; y = 2x + 5\) (RadFix), \(\;\text{II}:\; y = x + 8\) (VeloCity).</div>
+          <div class="ip"><strong>b) Gleichsetzen</strong> (beide sind nach \(y\) aufgelöst): \(2x + 5 = x + 8 \Rightarrow x = 3\), \(y = 11\). Bei <strong>3 Stunden</strong> kosten beide Anbieter 11 €.</div>
+          <div class="ip"><strong>c)</strong> 2 Stunden: RadFix \(2 \cdot 2 + 5 = 9\) €, VeloCity \(2 + 8 = 10\) € → RadFix ist günstiger. 5 Stunden: RadFix \(15\) €, VeloCity \(13\) € → VeloCity ist günstiger.</div>
+          <div class="ip">Allgemein: <strong>unter</strong> 3 Stunden RadFix, <strong>über</strong> 3 Stunden VeloCity. Ist die Dauer unsicher, spricht das Risiko einer längeren Tour für VeloCity — dort betragen die Mehrkosten bei 2 h höchstens 1 €, während die Ersparnis bei 5 h schon 2 € beträgt.</div>
+          <div class="ip"><strong>d) Grenzen des Modells</strong> (zwei genügen):</div>
+          <div class="ip">• Verleiher rechnen meist <strong>je angefangene Stunde</strong> ab — realistisch wäre eine Treppenfunktion, keine durchgehende Gerade.</div>
+          <div class="ip">• <strong>Tagespreise oder Rabatte</strong> für lange Ausleihen fehlen im Modell; ab einer gewissen Dauer wird es real nicht mehr linear teurer.</div>
+          <div class="ip">• Weitere Faktoren wie <strong>Kaution, Radqualität oder Entfernung zur Station</strong> bleiben unberücksichtigt, können die Entscheidung aber stärker beeinflussen als 1 € Preisunterschied.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Ein lineares Modell aufstellen, damit entscheiden und seine Reichweite kritisch beurteilen.</div></div>
+  </div>
+</div>
+
+</div><!-- end k9-lgswdh -->
+
 <!-- ── Potenzen & Wurzeln ──────────────────────────────────────── -->
-<div class="subpanel on" id="k9-pot">
+<div class="subpanel" id="k9-pot">
 
 <!-- ── Worum geht es ─────────────────────────────────────────── -->
 <div class="card">
@@ -5413,195 +6561,6 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 </div><!-- end k9-wurf -->
 
 
-<!-- ── Lineare Gleichungssysteme ───────────────────────────────── -->
-<div class="subpanel" id="k9-lgs">
-
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
-  <div class="card-body">
-    <div class="ip">Lineare Gleichungssysteme (LGS) bestehen aus mehreren linearen Gleichungen, die gleichzeitig erfüllt sein müssen. Du lernst verschiedene Verfahren kennen, um die Lösungen zu bestimmen — grafisch, durch Einsetzen, Gleichsetzen oder Addition. Außerdem untersuchst du, wann ein System eindeutig, gar nicht oder unendlich viele Lösungen hat.</div>
-    <div class="hint"><strong>Voraussetzung:</strong> Lineare Funktionen, Gleichungen umformen, Koordinatensystem.</div>
-  </div>
-</div>
-
-<!-- Lernziele LGS -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
-  <div class="card-body" style="padding:0">
-    <ul class="gl">
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du löst ein LGS mit dem Einsetzungsverfahren</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du löst ein LGS mit dem Gleichsetzungsverfahren</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du löst ein LGS mit dem Additionsverfahren</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du interpretierst ein LGS grafisch als Schnittpunkt zweier Geraden</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du entscheidest, ob ein LGS eindeutig, nicht oder unendlich viele Lösungen hat</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du modellierst Sachaufgaben mithilfe eines LGS</span></li>
-    </ul>
-  </div>
-</div>
-
-<!-- Erklärung: Was ist ein LGS? -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Was ist ein lineares Gleichungssystem?</span></div>
-  <div class="card-body">
-    <div class="ip">Ein lineares Gleichungssystem mit zwei Variablen besteht aus zwei Gleichungen der Form:</div>
-    <div class="ip">\[ \begin{cases} a_1 x + b_1 y = c_1 \\ a_2 x + b_2 y = c_2 \end{cases} \]</div>
-    <div class="ip">Gesucht ist ein Zahlenpaar \((x \mid y)\), das <strong>beide</strong> Gleichungen gleichzeitig erfüllt.</div>
-
-    <div class="it">Grafische Deutung</div>
-    <div class="ip">Jede lineare Gleichung beschreibt eine Gerade im Koordinatensystem. Die Lösung des LGS ist der <strong>Schnittpunkt</strong> beider Geraden:</div>
-    <div class="ip">• Genau ein Schnittpunkt → <strong>eindeutige Lösung</strong> (die Geraden schneiden sich).</div>
-    <div class="ip">• Kein Schnittpunkt → <strong>keine Lösung</strong> (die Geraden sind parallel).</div>
-    <div class="ip">• Unendlich viele Schnittpunkte → <strong>unendlich viele Lösungen</strong> (die Geraden sind identisch).</div>
-  </div>
-</div>
-
-<!-- Erklärung: Drei Lösungsverfahren -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lösungsverfahren im Überblick</span></div>
-  <div class="card-body">
-    <div class="it">1. Gleichsetzungsverfahren</div>
-    <div class="ip">Beide Gleichungen nach derselben Variablen auflösen und die rechten Seiten gleichsetzen.</div>
-
-    <div class="it">2. Einsetzungsverfahren</div>
-    <div class="ip">Eine Gleichung nach einer Variablen auflösen und den Ausdruck in die andere Gleichung einsetzen.</div>
-
-    <div class="it">3. Additionsverfahren</div>
-    <div class="ip">Die Gleichungen so multiplizieren und addieren/subtrahieren, dass eine Variable wegfällt.</div>
-
-    <div class="hint"><strong>Tipp:</strong> Alle drei Verfahren führen zum gleichen Ergebnis. Wähle das Verfahren, das bei der konkreten Aufgabe am einfachsten ist — etwa das Einsetzungsverfahren, wenn eine Variable bereits allein steht.</div>
-  </div>
-</div>
-
-<!-- Beispiel: Einsetzungsverfahren -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — Einsetzungsverfahren</span></div>
-  <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Löse das Gleichungssystem:</div>
-    <div class="ip">\[ \begin{cases} y = 2x - 1 \\ 3x + y = 9 \end{cases} \]</div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
-    <div class="bsp-body">
-      <div class="ip"><strong>Schritt 1:</strong> Gleichung (I) ist bereits nach \(y\) aufgelöst: \(y = 2x - 1\).</div>
-      <div class="ip"><strong>Schritt 2:</strong> In Gleichung (II) einsetzen:</div>
-      <div class="ip">\[ 3x + (2x - 1) = 9 \;\Rightarrow\; 5x - 1 = 9 \;\Rightarrow\; 5x = 10 \;\Rightarrow\; x = 2 \]</div>
-      <div class="ip"><strong>Schritt 3:</strong> Rückeinsetzen in (I): \(y = 2 \cdot 2 - 1 = 3\).</div>
-      <div class="ip"><strong>Probe:</strong> (I): \(3 = 2 \cdot 2 - 1 = 3\;\checkmark\) — (II): \(3 \cdot 2 + 3 = 9\;\checkmark\)</div>
-      <div class="ip"><strong>Lösung:</strong> \((x \mid y) = (2 \mid 3)\).</div>
-    </div>
-  </div>
-</div>
-
-<!-- Beispiel: Additionsverfahren -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-t">★★</div><span class="card-title">Beispiel — Additionsverfahren</span></div>
-  <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Löse das Gleichungssystem mit dem Additionsverfahren:</div>
-    <div class="ip">\[ \begin{cases} 2x + 3y = 12 \\ 4x - 3y = 6 \end{cases} \]</div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
-    <div class="bsp-body">
-      <div class="ip"><strong>Schritt 1:</strong> Die \(y\)-Koeffizienten haben verschiedene Vorzeichen (\(+3y\) und \(-3y\)). Addiere die beiden Gleichungen:</div>
-      <div class="ip">\[ (2x + 3y) + (4x - 3y) = 12 + 6 \;\Rightarrow\; 6x = 18 \;\Rightarrow\; x = 3 \]</div>
-      <div class="ip"><strong>Schritt 2:</strong> Rückeinsetzen in (I): \(2 \cdot 3 + 3y = 12 \;\Rightarrow\; 3y = 6 \;\Rightarrow\; y = 2\).</div>
-      <div class="ip"><strong>Probe:</strong> (I): \(2 \cdot 3 + 3 \cdot 2 = 12\;\checkmark\) — (II): \(4 \cdot 3 - 3 \cdot 2 = 6\;\checkmark\)</div>
-      <div class="ip"><strong>Lösung:</strong> \((x \mid y) = (3 \mid 2)\).</div>
-    </div>
-  </div>
-</div>
-
-<!-- Erklärung: Lösbarkeit -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lösbarkeit eines LGS</span></div>
-  <div class="card-body">
-    <div class="ip">Beim Lösen eines LGS kann ein Widerspruch oder eine wahre Aussage ohne Variable entstehen:</div>
-    <div class="ip">• Widerspruch (z. B. \(0 = 5\)) → Das LGS hat <strong>keine Lösung</strong>. Die Geraden sind parallel.</div>
-    <div class="ip">• Wahre Aussage (z. B. \(0 = 0\)) → Das LGS hat <strong>unendlich viele Lösungen</strong>. Die Geraden sind identisch.</div>
-
-    <div class="it">Parameter und Lösbarkeit</div>
-    <div class="ip">Enthält ein LGS einen Parameter \(t\), kannst du untersuchen, für welche Werte von \(t\) das System eindeutig, nicht oder unendlich viele Lösungen besitzt. Dazu bringst du das System in eine Form, in der du den Koeffizienten vor einer Variablen gleich null setzen kannst.</div>
-  </div>
-</div>
-
-<!-- Aufgaben LGS -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgaben — Lineare Gleichungssysteme</span></div>
-  <div class="card-body" style="padding:0">
-    <ul class="task-list">
-
-      <li class="task-item de" onclick="togTask(this)">
-        <div class="task-head"><span>Löse das LGS mit einem Verfahren deiner Wahl: \(\;\begin{cases} x + y = 7 \\ x - y = 3 \end{cases}\)</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Additionsverfahren:</strong> Addiere beide Gleichungen:</div>
-          <div class="ip">\[ 2x = 10 \;\Rightarrow\; x = 5 \]</div>
-          <div class="ip">Rückeinsetzen: \(5 + y = 7 \;\Rightarrow\; y = 2\).</div>
-          <div class="ip"><strong>Lösung:</strong> \((x \mid y) = (5 \mid 2)\).</div>
-          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-          <div class="komp-desc">Symbolisch-formales Arbeiten: Lösungsverfahren anwenden.</div>
-        </div>
-      </li>
-
-      <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Zwei Züge fahren von zwei Städten aufeinander zu. Stadt A und Stadt B liegen 360 km auseinander. Zug A fährt mit 80 km/h, Zug B mit 100 km/h. Ermittle den Zeitpunkt und den Ort der Begegnung.</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Modellierung:</strong> Sei \(t\) die Zeit in Stunden nach dem Start. Zug A: \(s_A = 80t\). Zug B (von B aus): \(s_B = 360 - 100t\).</div>
-          <div class="ip"><strong>Gleichsetzen:</strong> \(80t = 360 - 100t \;\Rightarrow\; 180t = 360 \;\Rightarrow\; t = 2\,\text{h}\).</div>
-          <div class="ip"><strong>Ort:</strong> \(s_A = 80 \cdot 2 = 160\,\text{km}\) von Stadt A entfernt.</div>
-          <div class="ip">Die Züge treffen sich nach 2 Stunden, 160 km von Stadt A.</div>
-          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
-          <div class="komp-desc">Modellieren: Sachsituation als LGS formulieren und lösen.</div>
-        </div>
-      </li>
-
-      <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Ordne den Gleichungssystemen die passende grafische Darstellung zu (sich schneidende, parallele oder identische Geraden):<br>(a) \(\begin{cases} y = 2x+1 \\ y = 2x+3 \end{cases}\) &emsp; (b) \(\begin{cases} y = x+2 \\ y = -x+4 \end{cases}\) &emsp; (c) \(\begin{cases} 2y = 4x+6 \\ y = 2x+3 \end{cases}\)</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>(a)</strong> Gleiche Steigung (\(m = 2\)), verschiedene \(y\)-Achsenabschnitte → <strong>parallele Geraden</strong> → keine Lösung.</div>
-          <div class="ip"><strong>(b)</strong> Verschiedene Steigungen (\(m_1 = 1\), \(m_2 = -1\)) → <strong>Schnittpunkt</strong> → eindeutige Lösung. Schnitt bei \(x+2=-x+4 \Rightarrow x=1,\; y=3\).</div>
-          <div class="ip"><strong>(c)</strong> Gleichung (I) vereinfachen: \(y = 2x+3\) — identisch mit (II) → <strong>identische Geraden</strong> → unendlich viele Lösungen.</div>
-          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
-          <div class="komp-desc">Darstellungen nutzen: Grafische Darstellungen zu Gleichungssystemen zuordnen.</div>
-        </div>
-      </li>
-
-      <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>In einer Bäckerei kosten 3 Brötchen und 2 Croissants zusammen 5,90 €. 5 Brötchen und 2 Croissants kosten 7,70 €. Bestimme die Einzelpreise.</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Ansatz:</strong> \(b\) = Preis Brötchen, \(c\) = Preis Croissant.</div>
-          <div class="ip">\[ \begin{cases} 3b + 2c = 5{,}90 \\ 5b + 2c = 7{,}70 \end{cases} \]</div>
-          <div class="ip"><strong>Subtraktion (II) − (I):</strong> \(2b = 1{,}80 \;\Rightarrow\; b = 0{,}90\,€\).</div>
-          <div class="ip">Einsetzen: \(3 \cdot 0{,}90 + 2c = 5{,}90 \;\Rightarrow\; 2c = 3{,}20 \;\Rightarrow\; c = 1{,}60\,€\).</div>
-          <div class="ip"><strong>Ergebnis:</strong> Ein Brötchen kostet 0,90 €, ein Croissant 1,60 €.</div>
-          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
-          <div class="komp-desc">Modellieren: Sachsituation in ein LGS übersetzen und interpretieren.</div>
-        </div>
-      </li>
-
-      <li class="task-item dh" onclick="togTask(this)">
-        <div class="task-head"><span>Ermittle den Wert des Parameters \(t\), für den das Gleichungssystem \(\;\begin{cases} 2x + ty = 6 \\ 4x + 6y = 12 \end{cases}\;\) keine eindeutige Lösung besitzt. Entscheide für diesen Wert, ob es keine oder unendlich viele Lösungen gibt.</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Ansatz:</strong> Multipliziere (I) mit 2: \(4x + 2ty = 12\). Vergleich mit (II): \(4x + 6y = 12\).</div>
-          <div class="ip">Keine eindeutige Lösung, wenn die Koeffizienten proportional sind: \(2t = 6 \;\Rightarrow\; t = 3\).</div>
-          <div class="ip">Für \(t = 3\): (I) wird \(2x + 3y = 6\) und (II) ist \(4x + 6y = 12 = 2 \cdot (2x+3y)\). Die Gleichungen sind identisch.</div>
-          <div class="ip"><strong>Ergebnis:</strong> Für \(t = 3\) hat das LGS <strong>unendlich viele Lösungen</strong>.</div>
-          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
-          <div class="komp-desc">Argumentieren: Zusammenhang zwischen Parametermert und Lösbarkeit begründen.</div>
-        </div>
-      </li>
-
-      <li class="task-item dh" onclick="togTask(this)">
-        <div class="task-head"><span>Diskutiere, welches Lösungsverfahren bei den folgenden Gleichungssystemen am effizientesten ist und begründe deine Wahl: (a) \(\begin{cases} y = 3x - 2 \\ 2x + y = 8 \end{cases}\) &emsp; (b) \(\begin{cases} 5x + 3y = 11 \\ 5x - 2y = 1 \end{cases}\)</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>(a) Einsetzungsverfahren</strong> — weil \(y\) in (I) bereits isoliert ist. Einsetzen in (II): \(2x + 3x - 2 = 8 \Rightarrow x = 2,\; y = 4\).</div>
-          <div class="ip"><strong>(b) Additionsverfahren</strong> (Subtraktion) — weil \(5x\) in beiden Gleichungen gleich ist. (I) − (II): \(5y = 10 \Rightarrow y = 2\), dann \(x = 1\).</div>
-          <div class="ip"><strong>Begründung:</strong> Das effizienteste Verfahren ist das, bei dem eine Variable mit möglichst wenig Umformung eliminiert wird.</div>
-          <div class="komp-wrap"><span class="kb kb-k6">K6</span></div>
-          <div class="komp-desc">Kommunizieren: Effizienz verschiedener Lösungsverfahren beurteilen und begründen.</div>
-        </div>
-      </li>
-
-    </ul>
-  </div>
-</div>
-
-</div><!-- end k9-lgs -->
 
 <!-- ── Quadratische Funktionen & Gleichungen (verschränkt) ──── -->
 <div class="subpanel" id="k9-quad">
@@ -26165,7 +27124,7 @@ function showK7Tab(id, btn) {
 }
 
 function showK8Tab(id, btn) {
-  ['k8-lin','k8-term','k8-pyth','k8-aehn','k8-wahr'].forEach(function(sid) {
+  ['k8-lin','k8-term','k8-pyth','k8-aehn','k8-wahr','k8-lgs'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
@@ -26179,7 +27138,7 @@ function showK8Tab(id, btn) {
 }
 
 function showK9Tab(id, btn) {
-  ['k9-pot','k9-lgs','k9-quad','k9-stat'].forEach(function(sid) {
+  ['k9-lgswdh','k9-pot','k9-potg','k9-potf','k9-wurf','k9-quad','k9-stat'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
