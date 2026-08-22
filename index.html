@@ -3589,6 +3589,11 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 <!-- Klasse 9 Tab-Band -->
 <div class="tab-band" id="k9-tabs" style="display:none">
   <button class="ptb on" onclick="showK9Tab('k9-lgswdh',this)">Wiederholung LGS</button>
+  <button class="ptb" onclick="showK9Tab('k9-lgsbed',this)">Bedingungen zählen</button>
+  <button class="ptb" onclick="showK9Tab('k9-lgs3u',this)">Drei Unbekannte</button>
+  <button class="ptb" onclick="showK9Tab('k9-lgsloes',this)">Lösbarkeit</button>
+  <button class="ptb" onclick="showK9Tab('k9-lgssach',this)">Sachaufgaben</button>
+  <button class="ptb" onclick="showK9Tab('k9-lgsmod',this)">Modellieren</button>
   <button class="ptb" onclick="showK9Tab('k9-pot',this)">Potenzen</button>
   <button class="ptb" onclick="showK9Tab('k9-potg',this)">Potenzgesetze</button>
   <button class="ptb" onclick="showK9Tab('k9-potf',this)">Potenzfunktionen</button>
@@ -4555,6 +4560,1440 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 </div>
 
 </div><!-- end k9-lgswdh -->
+
+<div class="subpanel" id="k9-lgsbed">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">In der Wiederholung hast du Gleichungssysteme <strong>gelöst</strong>. Jetzt drehen wir die Frage um: Wie viele Angaben braucht man überhaupt, damit etwas <strong>eindeutig festliegt</strong>? Diese Frage trägt die ganze Einheit — und sie erklärt am Ende, warum ein Gleichungssystem keine, genau eine oder unendlich viele Lösungen hat.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Lineare Funktionen (Klasse 8), Gleichungssysteme mit zwei Variablen lösen.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich deute einen gegebenen Punkt als <em>Bedingung</em> und die Zahlen im Ansatz als <em>Unbekannte</em></span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich bestimme die Gleichung einer Geraden durch zwei Punkte über ein Gleichungssystem</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich prüfe rechnerisch, ob ein weiterer Punkt auf einer Geraden liegt</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkläre, warum eine Bedingung zu wenig unendlich viele Lösungen bedeutet</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkläre, warum eine Bedingung zu viel meistens gar keine Lösung bedeutet</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">1 · Die Leitfrage</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">→</div><span class="card-title">Wie viele Punkte legen eine Gerade fest?</span></div>
+  <div class="card-body">
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px"><strong style="color:#8a7a30">Kernidee:</strong> Wir vergleichen immer <strong>zwei Zahlen</strong>: Wie viele <strong>Unbekannte</strong> suchen wir — und wie viele <strong>Bedingungen</strong> sind gegeben? Jeder gegebene Punkt liefert genau eine Gleichung, also eine Bedingung.</div>
+    <div class="ip">Eine Gerade hat den Ansatz \(y = m\cdot x + n\). Darin stecken <strong>zwei</strong> Unbekannte: die Steigung \(m\) und der \(y\)-Achsenabschnitt \(n\). Also brauchen wir zwei Bedingungen — und das heißt: zwei Punkte.</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="text-align:center"><div style="font-size:15px;font-weight:700;color:var(--ink)">1 Punkt</div><div style="font-size:14px;font-weight:700;color:#6b6560;margin-top:6px">unendlich viele Geraden</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:4px">eine Bedingung zu wenig</div></div></div><div><div style="text-align:center"><div style="font-size:15px;font-weight:700;color:var(--ink)">2 Punkte</div><div style="font-size:14px;font-weight:700;color:#5b6e2e;margin-top:6px">genau eine Gerade</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:4px">genau richtig</div></div></div><div><div style="text-align:center"><div style="font-size:15px;font-weight:700;color:var(--ink)">3 Punkte</div><div style="font-size:14px;font-weight:700;color:#c75c3a;margin-top:6px">meistens gar keine Gerade</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:4px">eine Bedingung zu viel</div></div></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-e">≡</div><span class="card-title">Beispiel 1 — Eine Bedingung reicht nicht</span></div>
+  <div class="card-body">
+    <div class="ip">Durch den Punkt \(P(2\mid 5)\) gehen <strong>unendlich viele</strong> Geraden. Eine einzige Bedingung legt nichts fest.</div>
+    <div class="ip"><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Viele Geraden durch den Punkt P(2|5)">
+<defs><marker id="vtah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="400.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="88.9" y1="400.0" x2="88.9" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="143.7" y1="400.0" x2="143.7" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="198.6" y1="400.0" x2="198.6" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="253.4" y1="400.0" x2="253.4" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="308.3" y1="400.0" x2="308.3" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="363.1" y1="400.0" x2="363.1" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="418.0" y1="400.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="400.0" x2="418.0" y2="400.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="359.6" x2="418.0" y2="359.6" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="319.1" x2="418.0" y2="319.1" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="278.7" x2="418.0" y2="278.7" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="238.2" x2="418.0" y2="238.2" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="197.8" x2="418.0" y2="197.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="157.3" x2="418.0" y2="157.3" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="116.9" x2="418.0" y2="116.9" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="76.4" x2="418.0" y2="76.4" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="359.6" x2="428.0" y2="359.6" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah1)"/>
+<line x1="88.9" y1="400.0" x2="88.9" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah1)"/>
+<text x="432.0" y="364.6" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="97.9" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="355.6" x2="34.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="143.7" y1="355.6" x2="143.7" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="143.7" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="198.6" y1="355.6" x2="198.6" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="198.6" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="253.4" y1="355.6" x2="253.4" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="253.4" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="308.3" y1="355.6" x2="308.3" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="308.3" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="363.1" y1="355.6" x2="363.1" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="363.1" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
+<line x1="418.0" y1="355.6" x2="418.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="418.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
+<line x1="84.9" y1="400.0" x2="92.9" y2="400.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="404.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="84.9" y1="319.1" x2="92.9" y2="319.1" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="323.1" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="84.9" y1="278.7" x2="92.9" y2="278.7" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="282.7" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="84.9" y1="238.2" x2="92.9" y2="238.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="242.2" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="84.9" y1="197.8" x2="92.9" y2="197.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="201.8" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="84.9" y1="157.3" x2="92.9" y2="157.3" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="161.3" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="84.9" y1="116.9" x2="92.9" y2="116.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="120.9" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="84.9" y1="76.4" x2="92.9" y2="76.4" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="80.4" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<line x1="84.9" y1="36.0" x2="92.9" y2="36.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="40.0" font-size="12.5" fill="#6b6560" text-anchor="end">8</text>
+<text x="80.9" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="34.0" y1="157.3" x2="418.0" y2="157.3" stroke="#8a9da7" stroke-width="2.0" stroke-dasharray="9 6" stroke-linecap="round" opacity="0.85"/>
+<line x1="34.0" y1="278.7" x2="363.1" y2="36.0" stroke="#8a9da7" stroke-width="2.0" stroke-dasharray="9 6" stroke-linecap="round" opacity="0.85"/>
+<line x1="34.0" y1="36.0" x2="418.0" y2="319.1" stroke="#8a9da7" stroke-width="2.0" stroke-dasharray="9 6" stroke-linecap="round" opacity="0.85"/>
+<line x1="104.5" y1="400.0" x2="245.6" y2="36.0" stroke="#8a9da7" stroke-width="2.0" stroke-dasharray="9 6" stroke-linecap="round" opacity="0.85"/>
+<line x1="34.0" y1="400.0" x2="280.9" y2="36.0" stroke="#5b6e2e" stroke-width="3.0" stroke-linecap="round" opacity="1.0"/>
+<circle cx="198.6" cy="157.3" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="211.6" y="141.3" font-size="13.5" font-weight="700" fill="#c75c3a">P(2|5)</text>
+</svg></div>
+    <div class="ip">Rechnerisch: Einsetzen von \(P\) in \(y = mx+n\) liefert nur \(5 = 2m + n\) — <strong>eine</strong> Gleichung mit <strong>zwei</strong> Unbekannten. Zu jedem \(m\) findet man ein passendes \(n\).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-c">✓</div><span class="card-title">Beispiel 2 — Zwei Punkte, ein Gleichungssystem</span></div>
+  <div class="card-body">
+    <div class="ip">Gesucht ist die Gerade durch \(P(2\mid 5)\) und \(Q(4\mid 9)\).</div>
+    <div class="ip"><strong>① Ansatz:</strong> \(y = m\cdot x + n\)</div>
+    <div class="ip"><strong>② Beide Punkte einsetzen:</strong> \[ \begin{array}{ll} \text{I} & 5 = 2m + n \\ \text{II} & 9 = 4m + n \end{array} \]</div>
+    <div class="ip"><strong>③ Lösen</strong> (Additionsverfahren, II − I): \(4 = 2m \Rightarrow m = 2\). Einsetzen in I: \(5 = 4 + n \Rightarrow n = 1\).</div>
+    <div class="ip"><strong>④ Probe:</strong> \(2\cdot 2 + 1 = 5\;\checkmark\), \(2\cdot 4 + 1 = 9\;\checkmark\)</div>
+    <div class="ip"><strong>⑤ Antwort:</strong> Die Gerade hat die Gleichung \(y = 2x + 1\).</div>
+    <div class="ip"><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Die Gerade durch P(2|5) und Q(4|9)">
+<defs><marker id="vtah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="400.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="88.9" y1="400.0" x2="88.9" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="143.7" y1="400.0" x2="143.7" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="198.6" y1="400.0" x2="198.6" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="253.4" y1="400.0" x2="253.4" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="308.3" y1="400.0" x2="308.3" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="363.1" y1="400.0" x2="363.1" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="418.0" y1="400.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="400.0" x2="418.0" y2="400.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="333.8" x2="418.0" y2="333.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="267.6" x2="418.0" y2="267.6" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="201.5" x2="418.0" y2="201.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="135.3" x2="418.0" y2="135.3" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="69.1" x2="418.0" y2="69.1" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="366.9" x2="428.0" y2="366.9" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah2)"/>
+<line x1="88.9" y1="400.0" x2="88.9" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah2)"/>
+<text x="432.0" y="371.9" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="97.9" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="362.9" x2="34.0" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="143.7" y1="362.9" x2="143.7" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="143.7" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="198.6" y1="362.9" x2="198.6" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="198.6" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="253.4" y1="362.9" x2="253.4" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="253.4" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="308.3" y1="362.9" x2="308.3" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="308.3" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="363.1" y1="362.9" x2="363.1" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="363.1" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
+<line x1="418.0" y1="362.9" x2="418.0" y2="370.9" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="418.0" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
+<line x1="84.9" y1="400.0" x2="92.9" y2="400.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="404.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="84.9" y1="333.8" x2="92.9" y2="333.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="337.8" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="84.9" y1="267.6" x2="92.9" y2="267.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="271.6" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="84.9" y1="201.5" x2="92.9" y2="201.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="205.5" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="84.9" y1="135.3" x2="92.9" y2="135.3" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="139.3" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<line x1="84.9" y1="69.1" x2="92.9" y2="69.1" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="73.1" font-size="12.5" fill="#6b6560" text-anchor="end">9</text>
+<text x="80.9" y="385.9" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="34.0" y1="400.0" x2="335.7" y2="36.0" stroke="#5b6e2e" stroke-width="3.0" stroke-linecap="round" opacity="1.0"/>
+<text x="121.8" y="285.1" font-size="13.5" font-weight="700" fill="#5b6e2e" text-anchor="middle">y = 2x + 1</text>
+<circle cx="198.6" cy="201.5" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="210.6" y="219.5" font-size="13.5" font-weight="700" fill="#c75c3a">P(2|5)</text>
+<circle cx="308.3" cy="69.1" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="246.3" y="75.1" font-size="13.5" font-weight="700" fill="#c75c3a">Q(4|9)</text>
+</svg></div>
+    <div class="hint"><strong>Warum nicht mit der Steigungsformel?</strong> Die geht hier auch. Der Ansatz über das Gleichungssystem hat aber den Vorteil, dass er später genauso für Parabeln funktioniert — dort gibt es keine Steigungsformel.</div>
+  </div>
+</div>
+
+<div class="section-label">2 · Eine Bedingung zu viel</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-a">!</div><span class="card-title">Beispiel 3 — Passen vier Punkte auf eine Gerade?</span></div>
+  <div class="card-body">
+    <div class="ip">Gegeben: \(A(1\mid 3)\), \(B(2\mid 5)\), \(C(3\mid 7)\), \(D(4\mid 10)\).</div>
+    <div class="ip">Aus \(A\) und \(B\) ergibt sich wie oben \(y = 2x + 1\). Jetzt prüfen wir die übrigen Punkte:</div>
+    <div class="ip">\(C\): \(2\cdot 3 + 1 = 7\) — stimmt mit \(y_C = 7\) überein \(\checkmark\)<br>\(D\): \(2\cdot 4 + 1 = 9\), aber \(y_D = 10\) — <strong>Widerspruch</strong></div>
+    <div class="ip"><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Vier Punkte, von denen einer nicht passt">
+<defs><marker id="vtah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="400.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="88.9" y1="400.0" x2="88.9" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="143.7" y1="400.0" x2="143.7" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="198.6" y1="400.0" x2="198.6" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="253.4" y1="400.0" x2="253.4" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="308.3" y1="400.0" x2="308.3" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="363.1" y1="400.0" x2="363.1" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="418.0" y1="400.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="400.0" x2="418.0" y2="400.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="344.0" x2="418.0" y2="344.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="288.0" x2="418.0" y2="288.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="232.0" x2="418.0" y2="232.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="176.0" x2="418.0" y2="176.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="120.0" x2="418.0" y2="120.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="64.0" x2="418.0" y2="64.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="372.0" x2="428.0" y2="372.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah3)"/>
+<line x1="88.9" y1="400.0" x2="88.9" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah3)"/>
+<text x="432.0" y="377.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="97.9" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="368.0" x2="34.0" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="143.7" y1="368.0" x2="143.7" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="143.7" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="198.6" y1="368.0" x2="198.6" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="198.6" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="253.4" y1="368.0" x2="253.4" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="253.4" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="308.3" y1="368.0" x2="308.3" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="308.3" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="363.1" y1="368.0" x2="363.1" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="363.1" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
+<line x1="418.0" y1="368.0" x2="418.0" y2="376.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="418.0" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
+<line x1="84.9" y1="400.0" x2="92.9" y2="400.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="404.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="84.9" y1="344.0" x2="92.9" y2="344.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="348.0" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="84.9" y1="288.0" x2="92.9" y2="288.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="292.0" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="84.9" y1="232.0" x2="92.9" y2="232.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="236.0" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="84.9" y1="176.0" x2="92.9" y2="176.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="180.0" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<line x1="84.9" y1="120.0" x2="92.9" y2="120.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="124.0" font-size="12.5" fill="#6b6560" text-anchor="end">9</text>
+<line x1="84.9" y1="64.0" x2="92.9" y2="64.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="80.9" y="68.0" font-size="12.5" fill="#6b6560" text-anchor="end">11</text>
+<text x="80.9" y="391.0" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="34.0" y1="400.0" x2="390.6" y2="36.0" stroke="#5b6e2e" stroke-width="3.0" stroke-linecap="round" opacity="1.0"/>
+<circle cx="143.7" cy="288.0" r="5" fill="#5b6e2e" stroke="#fffcf6" stroke-width="2"/>
+<circle cx="198.6" cy="232.0" r="5" fill="#5b6e2e" stroke="#fffcf6" stroke-width="2"/>
+<circle cx="253.4" cy="176.0" r="5" fill="#5b6e2e" stroke="#fffcf6" stroke-width="2"/>
+<line x1="308.3" y1="120.0" x2="308.3" y2="92.0" stroke="#c75c3a" stroke-width="1.6" stroke-dasharray="5 5"/>
+<circle cx="308.3" cy="120.0" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
+<circle cx="308.3" cy="92.0" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="292.3" y="79.0" font-size="13.5" font-weight="700" fill="#c75c3a">D(4|10)</text>
+<text x="182.1" y="338.4" font-size="13" fill="#5b6e2e" text-anchor="middle" font-weight="700">y = 2x + 1</text>
+</svg></div>
+<div class="ip" style="background:#fceee9;border-radius:10px;padding:14px 18px;border-left:4px solid #c75c3a;margin-bottom:14px"><strong style="color:#c75c3a">Wichtig:</strong> Vier Bedingungen bei zwei Unbekannten — das Gleichungssystem hat <strong>keine Lösung</strong>. Beachte aber: \(C\) hat gepasst. Eine zusätzliche Bedingung <em>kann</em> passen, sie <em>muss</em> aber nicht. Deshalb sagen wir „meistens keine Lösung" und nicht „nie".</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-s">≡</div><span class="card-title">Beispiel 4 — Dieselbe Frage, anders erzählt</span></div>
+  <div class="card-body">
+    <div class="ip">Statt „Liegen die Punkte auf einer Geraden?" kann man auch fragen: <strong>Schneiden sich drei Geraden in einem Punkt?</strong> Das ist wieder ein System mit drei Gleichungen und zwei Unbekannten \(x\) und \(y\).</div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:6px" class="lgs-faelle"><div><div style="text-align:center"><svg viewBox="0 0 340 330" width="100%" style="max-width:340px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Drei Geraden mit gemeinsamem Punkt">
+<defs><marker id="vtah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="340" height="330" fill="#fffcf6"/>
+<line x1="34.0" y1="290.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="76.0" y1="290.0" x2="76.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="118.0" y1="290.0" x2="118.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="160.0" y1="290.0" x2="160.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="202.0" y1="290.0" x2="202.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="244.0" y1="290.0" x2="244.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="286.0" y1="290.0" x2="286.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="328.0" y1="290.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="290.0" x2="328.0" y2="290.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="258.2" x2="328.0" y2="258.2" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="226.5" x2="328.0" y2="226.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="194.8" x2="328.0" y2="194.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="163.0" x2="328.0" y2="163.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="131.2" x2="328.0" y2="131.2" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="99.5" x2="328.0" y2="99.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="67.8" x2="328.0" y2="67.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="258.2" x2="338.0" y2="258.2" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah4)"/>
+<line x1="76.0" y1="290.0" x2="76.0" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah4)"/>
+<text x="342.0" y="263.2" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="85.0" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="254.2" x2="34.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="118.0" y1="254.2" x2="118.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="118.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="160.0" y1="254.2" x2="160.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="160.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="202.0" y1="254.2" x2="202.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="202.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="244.0" y1="254.2" x2="244.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="244.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="286.0" y1="254.2" x2="286.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="286.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
+<line x1="328.0" y1="254.2" x2="328.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="328.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
+<line x1="72.0" y1="290.0" x2="80.0" y2="290.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="294.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="72.0" y1="226.5" x2="80.0" y2="226.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="230.5" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="72.0" y1="194.8" x2="80.0" y2="194.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="198.8" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="72.0" y1="163.0" x2="80.0" y2="163.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="167.0" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="72.0" y1="131.2" x2="80.0" y2="131.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="135.2" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="72.0" y1="99.5" x2="80.0" y2="99.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="103.5" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="72.0" y1="67.8" x2="80.0" y2="67.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="71.8" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="72.0" y1="36.0" x2="80.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="40.0" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<text x="68.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="34.0" y1="258.2" x2="328.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
+<line x1="34.0" y1="67.8" x2="328.0" y2="290.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" opacity="1.0"/>
+<line x1="76.0" y1="290.0" x2="244.0" y2="36.0" stroke="#8a9da7" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
+<circle cx="160.0" cy="163.0" r="5.5" fill="#3d4a1e" stroke="#fffcf6" stroke-width="2"/>
+<text x="169.0" y="153.0" font-size="13.5" font-weight="700" fill="#3d4a1e">S(2|3)</text>
+</svg><div style="font-size:14px;font-weight:700;color:#5b6e2e;margin-top:8px">Ein gemeinsamer Punkt</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:3px">Das System hat genau eine Lösung.</div></div></div><div><div style="text-align:center"><svg viewBox="0 0 340 330" width="100%" style="max-width:340px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Drei Geraden bilden ein Dreieck">
+<defs><marker id="vtah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="340" height="330" fill="#fffcf6"/>
+<line x1="34.0" y1="290.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="76.0" y1="290.0" x2="76.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="118.0" y1="290.0" x2="118.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="160.0" y1="290.0" x2="160.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="202.0" y1="290.0" x2="202.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="244.0" y1="290.0" x2="244.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="286.0" y1="290.0" x2="286.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="328.0" y1="290.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="290.0" x2="328.0" y2="290.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="258.2" x2="328.0" y2="258.2" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="226.5" x2="328.0" y2="226.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="194.8" x2="328.0" y2="194.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="163.0" x2="328.0" y2="163.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="131.2" x2="328.0" y2="131.2" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="99.5" x2="328.0" y2="99.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="67.8" x2="328.0" y2="67.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="258.2" x2="338.0" y2="258.2" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah5)"/>
+<line x1="76.0" y1="290.0" x2="76.0" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah5)"/>
+<text x="342.0" y="263.2" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="85.0" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="254.2" x2="34.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="118.0" y1="254.2" x2="118.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="118.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="160.0" y1="254.2" x2="160.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="160.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="202.0" y1="254.2" x2="202.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="202.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="244.0" y1="254.2" x2="244.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="244.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="286.0" y1="254.2" x2="286.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="286.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
+<line x1="328.0" y1="254.2" x2="328.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="328.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
+<line x1="72.0" y1="290.0" x2="80.0" y2="290.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="294.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="72.0" y1="226.5" x2="80.0" y2="226.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="230.5" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="72.0" y1="194.8" x2="80.0" y2="194.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="198.8" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="72.0" y1="163.0" x2="80.0" y2="163.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="167.0" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="72.0" y1="131.2" x2="80.0" y2="131.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="135.2" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="72.0" y1="99.5" x2="80.0" y2="99.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="103.5" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="72.0" y1="67.8" x2="80.0" y2="67.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="71.8" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="72.0" y1="36.0" x2="80.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="68.0" y="40.0" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<text x="68.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="55.0" y1="290.0" x2="223.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
+<line x1="34.0" y1="36.0" x2="328.0" y2="258.2" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" opacity="1.0"/>
+<line x1="34.0" y1="258.2" x2="328.0" y2="36.0" stroke="#8a9da7" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
+<circle cx="160.0" cy="131.2" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
+<circle cx="118.0" cy="194.8" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
+<circle cx="181.0" cy="147.1" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
+</svg><div style="font-size:14px;font-weight:700;color:#c75c3a;margin-top:8px">Ein Dreieck</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:3px">Je zwei schneiden sich — aber nicht alle drei zugleich.</div></div></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">→</div><span class="card-title">Ausblick — und wenn es keine Gerade ist?</span></div>
+  <div class="card-body">
+    <div class="ip">Eine Parabel hat die Form \(y = a\cdot x^2 + b\cdot x + c\). Das sind <strong>drei</strong> Unbekannte: \(a\), \(b\) und \(c\).</div>
+    <div class="ip">Durch zwei Punkte gehen also noch beliebig viele Parabeln:</div>
+    <div class="ip"><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Drei Parabeln durch dieselben zwei Punkte">
+<defs><marker id="vtah6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="400.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="98.0" y1="400.0" x2="98.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="162.0" y1="400.0" x2="162.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="226.0" y1="400.0" x2="226.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="290.0" y1="400.0" x2="290.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="354.0" y1="400.0" x2="354.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="418.0" y1="400.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="400.0" x2="418.0" y2="400.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="319.1" x2="418.0" y2="319.1" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="238.2" x2="418.0" y2="238.2" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="157.3" x2="418.0" y2="157.3" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="76.4" x2="418.0" y2="76.4" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="359.6" x2="428.0" y2="359.6" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah6)"/>
+<line x1="98.0" y1="400.0" x2="98.0" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah6)"/>
+<text x="432.0" y="364.6" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="107.0" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="355.6" x2="34.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="162.0" y1="355.6" x2="162.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="162.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="226.0" y1="355.6" x2="226.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="226.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="290.0" y1="355.6" x2="290.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="290.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="354.0" y1="355.6" x2="354.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="354.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="418.0" y1="355.6" x2="418.0" y2="363.6" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="418.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
+<line x1="94.0" y1="400.0" x2="102.0" y2="400.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="90.0" y="404.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="94.0" y1="319.1" x2="102.0" y2="319.1" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="90.0" y="323.1" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="94.0" y1="238.2" x2="102.0" y2="238.2" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="90.0" y="242.2" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="94.0" y1="157.3" x2="102.0" y2="157.3" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="90.0" y="161.3" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="94.0" y1="76.4" x2="102.0" y2="76.4" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="90.0" y="80.4" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<text x="90.0" y="378.6" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<polyline points="34.0,116.9 36.4,122.9 38.8,128.8 41.2,134.6 43.6,140.2 46.0,145.8 48.4,151.2 50.8,156.6 53.2,161.8 55.6,166.9 58.0,171.9 60.4,176.7 62.8,181.5 65.2,186.1 67.6,190.7 70.0,195.1 72.4,199.4 74.8,203.6 77.2,207.7 79.6,211.6 82.0,215.5 84.4,219.2 86.8,222.8 89.2,226.3 91.6,229.7 94.0,233.0 96.4,236.2 98.8,239.2 101.2,242.2 103.6,245.0 106.0,247.7 108.4,250.3 110.8,252.8 113.2,255.2 115.6,257.4 118.0,259.6 120.4,261.6 122.8,263.5 125.2,265.3 127.6,267.0 130.0,268.6 132.4,270.0 134.8,271.4 137.2,272.6 139.6,273.7 142.0,274.7 144.4,275.6 146.8,276.4 149.2,277.0 151.6,277.6 154.0,278.0 156.4,278.4 158.8,278.6 161.2,278.7 163.6,278.6 166.0,278.5 168.4,278.3 170.8,277.9 173.2,277.4 175.6,276.8 178.0,276.1 180.4,275.3 182.8,274.4 185.2,273.4 187.6,272.2 190.0,270.9 192.4,269.5 194.8,268.0 197.2,266.4 199.6,264.7 202.0,262.9 204.4,260.9 206.8,258.8 209.2,256.7 211.6,254.4 214.0,252.0 216.4,249.4 218.8,246.8 221.2,244.1 223.6,241.2 226.0,238.2 228.4,235.1 230.8,231.9 233.2,228.6 235.6,225.2 238.0,221.6 240.4,218.0 242.8,214.2 245.2,210.3 247.6,206.3 250.0,202.2 252.4,198.0 254.8,193.6 257.2,189.2 259.6,184.6 262.0,179.9 264.4,175.1 266.8,170.2 269.2,165.2 271.6,160.1 274.0,154.8 276.4,149.4 278.8,144.0 281.2,138.4 283.6,132.7 286.0,126.8 288.4,120.9 290.8,114.9 293.2,108.7 295.6,102.4 298.0,96.0 300.4,89.5 302.8,82.9 305.2,76.2 307.6,69.3 310.0,62.4 312.4,55.3 314.8,48.1 317.2,40.8 319.6,33.4 322.0,25.9 324.4,18.2" fill="none" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<polyline points="65.2,416.7 67.6,412.1 70.0,407.7 72.4,403.2 74.8,398.9 77.2,394.6 79.6,390.3 82.0,386.1 84.4,382.0 86.8,377.9 89.2,373.8 91.6,369.9 94.0,366.0 96.4,362.1 98.8,358.3 101.2,354.6 103.6,350.9 106.0,347.2 108.4,343.7 110.8,340.1 113.2,336.7 115.6,333.3 118.0,329.9 120.4,326.6 122.8,323.4 125.2,320.2 127.6,317.1 130.0,314.1 132.4,311.1 134.8,308.1 137.2,305.2 139.6,302.4 142.0,299.6 144.4,296.9 146.8,294.2 149.2,291.6 151.6,289.1 154.0,286.6 156.4,284.1 158.8,281.8 161.2,279.4 163.6,277.2 166.0,275.0 168.4,272.8 170.8,270.7 173.2,268.7 175.6,266.7 178.0,264.8 180.4,262.9 182.8,261.1 185.2,259.3 187.6,257.6 190.0,256.0 192.4,254.4 194.8,252.9 197.2,251.4 199.6,250.0 202.0,248.6 204.4,247.4 206.8,246.1 209.2,244.9 211.6,243.8 214.0,242.7 216.4,241.7 218.8,240.8 221.2,239.9 223.6,239.0 226.0,238.2 228.4,237.5 230.8,236.8 233.2,236.2 235.6,235.6 238.0,235.1 240.4,234.7 242.8,234.3 245.2,234.0 247.6,233.7 250.0,233.5 252.4,233.3 254.8,233.2 257.2,233.2 259.6,233.2 262.0,233.2 264.4,233.4 266.8,233.5 269.2,233.8 271.6,234.1 274.0,234.4 276.4,234.8 278.8,235.3 281.2,235.8 283.6,236.4 286.0,237.0 288.4,237.7 290.8,238.5 293.2,239.3 295.6,240.1 298.0,241.1 300.4,242.0 302.8,243.1 305.2,244.2 307.6,245.3 310.0,246.5 312.4,247.8 314.8,249.1 317.2,250.5 319.6,251.9 322.0,253.4 324.4,254.9 326.8,256.5 329.2,258.2 331.6,259.9 334.0,261.7 336.4,263.5 338.8,265.4 341.2,267.3 343.6,269.3 346.0,271.4 348.4,273.5 350.8,275.7 353.2,277.9 355.6,280.2 358.0,282.5 360.4,284.9 362.8,287.4 365.2,289.9 367.6,292.5 370.0,295.1 372.4,297.8 374.8,300.5 377.2,303.3 379.6,306.2 382.0,309.1 384.4,312.0 386.8,315.1 389.2,318.2 391.6,321.3 394.0,324.5 396.4,327.7 398.8,331.0 401.2,334.4 403.6,337.8 406.0,341.3 408.4,344.8 410.8,348.4 413.2,352.1 415.6,355.8 418.0,359.6" fill="none" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<polyline points="34.0,298.9 36.4,299.3 38.8,299.6 41.2,299.9 43.6,300.2 46.0,300.4 48.4,300.7 50.8,300.8 53.2,301.0 55.6,301.1 58.0,301.3 60.4,301.3 62.8,301.4 65.2,301.4 67.6,301.4 70.0,301.4 72.4,301.3 74.8,301.2 77.2,301.1 79.6,301.0 82.0,300.8 84.4,300.6 86.8,300.3 89.2,300.1 91.6,299.8 94.0,299.5 96.4,299.1 98.8,298.8 101.2,298.4 103.6,297.9 106.0,297.5 108.4,297.0 110.8,296.5 113.2,295.9 115.6,295.3 118.0,294.7 120.4,294.1 122.8,293.5 125.2,292.8 127.6,292.0 130.0,291.3 132.4,290.5 134.8,289.7 137.2,288.9 139.6,288.0 142.0,287.2 144.4,286.2 146.8,285.3 149.2,284.3 151.6,283.3 154.0,282.3 156.4,281.2 158.8,280.2 161.2,279.0 163.6,277.9 166.0,276.7 168.4,275.5 170.8,274.3 173.2,273.0 175.6,271.8 178.0,270.5 180.4,269.1 182.8,267.7 185.2,266.3 187.6,264.9 190.0,263.5 192.4,262.0 194.8,260.5 197.2,258.9 199.6,257.4 202.0,255.8 204.4,254.1 206.8,252.5 209.2,250.8 211.6,249.1 214.0,247.3 216.4,245.6 218.8,243.8 221.2,242.0 223.6,240.1 226.0,238.2 228.4,236.3 230.8,234.4 233.2,232.4 235.6,230.4 238.0,228.4 240.4,226.3 242.8,224.3 245.2,222.1 247.6,220.0 250.0,217.8 252.4,215.6 254.8,213.4 257.2,211.2 259.6,208.9 262.0,206.6 264.4,204.2 266.8,201.9 269.2,199.5 271.6,197.1 274.0,194.6 276.4,192.1 278.8,189.6 281.2,187.1 283.6,184.5 286.0,181.9 288.4,179.3 290.8,176.7 293.2,174.0 295.6,171.3 298.0,168.6 300.4,165.8 302.8,163.0 305.2,160.2 307.6,157.3 310.0,154.5 312.4,151.5 314.8,148.6 317.2,145.6 319.6,142.7 322.0,139.6 324.4,136.6 326.8,133.5 329.2,130.4 331.6,127.3 334.0,124.1 336.4,120.9 338.8,117.7 341.2,114.5 343.6,111.2 346.0,107.9 348.4,104.6 350.8,101.2 353.2,97.8 355.6,94.4 358.0,90.9 360.4,87.5 362.8,84.0 365.2,80.4 367.6,76.9 370.0,73.3 372.4,69.7 374.8,66.0 377.2,62.4 379.6,58.6 382.0,54.9 384.4,51.2 386.8,47.4 389.2,43.6 391.6,39.7 394.0,35.8 396.4,31.9 398.8,28.0 401.2,24.1 403.6,20.1 406.0,16.1" fill="none" stroke="#8a9da7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<circle cx="162.0" cy="278.7" r="5.5" fill="#3d4a1e" stroke="#fffcf6" stroke-width="2"/>
+<text x="104.0" y="294.7" font-size="13.5" font-weight="700" fill="#3d4a1e">A(1|2)</text>
+<circle cx="226.0" cy="238.2" r="5.5" fill="#3d4a1e" stroke="#fffcf6" stroke-width="2"/>
+<text x="236.0" y="228.2" font-size="13.5" font-weight="700" fill="#3d4a1e">B(2|3)</text>
+</svg></div>
+    <div class="hint"><strong>Deine Vermutung:</strong> Wie viele Punkte braucht man wohl, um eine Parabel festzulegen? Im nächsten Tab rechnen wir es nach.</div>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">G</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · G</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Grundwissen — Gerade aus zwei Punkten</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 1–3 · Ansatz aufstellen, Gleichungssystem lösen, Punkte prüfen</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">1</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Bestimme jeweils die Gleichung der Geraden durch die beiden Punkte. Setze beide Punkte in den Ansatz \(y = m\cdot x + n\) ein, stelle das Gleichungssystem auf und löse es.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>\(A(1\mid 4)\),  \(B(3\mid 10)\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>\(C(0\mid 2)\),  \(D(4\mid 0)\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">c)</div><div>\(E(-2\mid 1)\),  \(F(2\mid 9)\)</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> I: \(4 = m + n\), II: \(10 = 3m + n\). II − I: \(6 = 2m \Rightarrow m = 3\), also \(n = 1\): \(y = 3x + 1\).</div>
+    <div class="ip"><strong>b)</strong> \(C\) liegt auf der \(y\)-Achse, also sofort \(n = 2\). Aus \(0 = 4m + 2\) folgt \(m = -\tfrac{1}{2}\): \(y = -\tfrac{1}{2}x + 2\).</div>
+    <div class="ip"><strong>c)</strong> I: \(1 = -2m + n\), II: \(9 = 2m + n\). I + II: \(10 = 2n \Rightarrow n = 5\), also \(m = 2\): \(y = 2x + 5\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Mit symbolischen Elementen umgehen: Ansatz aufstellen und ein Gleichungssystem mit zwei Variablen sicher lösen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">2</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Die Gerade \(g\) geht durch \(P(1\mid 1)\) und \(Q(4\mid 7)\). Prüfe für jeden Punkt, ob er auf \(g\) liegt, und begründe deine Antwort.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>\(R(2\mid 3)\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>\(S(5\mid 10)\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">c)</div><div>\(T(-1\mid -3)\)</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip">Zuerst \(g\) bestimmen: I: \(1 = m + n\), II: \(7 = 4m + n\). II − I: \(6 = 3m \Rightarrow m = 2\), \(n = -1\). Also \(g:\; y = 2x - 1\).</div>
+    <div class="ip"><strong>a)</strong> \(2\cdot 2 - 1 = 3 = y_R\) — \(R\) liegt auf \(g\).</div>
+    <div class="ip"><strong>b)</strong> \(2\cdot 5 - 1 = 9\), aber \(y_S = 10\) — \(S\) liegt <strong>nicht</strong> auf \(g\).</div>
+    <div class="ip"><strong>c)</strong> \(2\cdot(-1) - 1 = -3 = y_T\) — \(T\) liegt auf \(g\).</div>
+    <div class="ip"><em>Beachte:</em> \(g\) muss nur einmal bestimmt werden — danach ist jede Prüfung nur noch ein Einsetzen.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: eine Behauptung durch Einsetzen prüfen und das Ergebnis begründet formulieren.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">3</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Jana soll die Gerade durch \(G(3\mid 1)\) und \(H(3\mid 6)\) bestimmen. Sie setzt ein und erhält \(1 = 3m + n\) und \(6 = 3m + n\). Erkläre, warum sie keine Lösung findet, und beschreibe, wie die Verbindung von \(G\) und \(H\) aussieht.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip">Subtrahiert man die beiden Gleichungen, bleibt \(5 = 0\) — eine falsche Aussage. Das System hat <strong>keine Lösung</strong>.</div>
+    <div class="ip">Der Grund liegt nicht an Janas Rechnung, sondern am <strong>Ansatz</strong>: \(G\) und \(H\) haben dieselbe \(x\)-Koordinate. Ihre Verbindung ist die <strong>senkrechte</strong> Gerade \(x = 3\).</div>
+    <div class="ip">Eine senkrechte Gerade lässt sich nicht in der Form \(y = mx + n\) schreiben — zu \(x = 3\) gehört nicht ein \(y\)-Wert, sondern unendlich viele. Der Ansatz passt hier also gar nicht.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Argumentieren und kommunizieren: die Grenze eines Ansatzes erkennen und den Sonderfall fachsprachlich beschreiben.</div></div>
+  </div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#eef1e6;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">B</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · B</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Bedingungen zählen und prüfen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 4–7 · Überbestimmte Situationen erkennen und deuten</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">4</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Bestimme die Gerade durch die ersten beiden Punkte und prüfe, ob die übrigen ebenfalls darauf liegen. Gib an, welche Punkte nicht passen.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>\(A(0\mid 1)\), \(B(2\mid 5)\), \(C(3\mid 7)\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>\(D(1\mid 2)\), \(E(3\mid 8)\), \(F(5\mid 13)\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">c)</div><div>\(G(-1\mid 4)\), \(H(1\mid 0)\), \(I(3\mid -4)\), \(J(4\mid -6)\)</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> \(y = 2x + 1\). \(C\): \(2\cdot3+1 = 7\;\checkmark\) — alle drei liegen auf einer Geraden.</div>
+    <div class="ip"><strong>b)</strong> \(y = 3x - 1\). \(F\): \(3\cdot5-1 = 14 \neq 13\) — \(F\) passt <strong>nicht</strong>.</div>
+    <div class="ip"><strong>c)</strong> \(y = -2x + 2\). \(I\): \(-6+2 = -4\;\checkmark\), \(J\): \(-8+2 = -6\;\checkmark\) — alle vier liegen auf einer Geraden.</div>
+    <div class="ip"><em>Deutung:</em> In a) und c) sind die zusätzlichen Bedingungen <em>verträglich</em>, in b) nicht. Überzählige Bedingungen führen also nicht zwangsläufig zum Widerspruch.</div>
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span></div>
+          <div class="komp-desc">Probleme lösen: ein überbestimmtes System systematisch prüfen und die Verträglichkeit der Bedingungen beurteilen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">5</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Untersuche, ob sich die drei Geraden in einem gemeinsamen Punkt schneiden. Fertige zuerst eine Skizze an.<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>\(g: y = x + 1\)<br>\(h: y = -x + 5\)<br>\(k: y = 2x - 1\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>\(g: y = 2x\)<br>\(h: y = -x + 6\)<br>\(k: y = x + 1\)</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> \(g \cap h\): \(x+1 = -x+5 \Rightarrow x = 2\), \(y = 3\). Probe in \(k\): \(2\cdot2-1 = 3\;\checkmark\) — alle drei gehen durch \(S(2\mid 3)\).</div>
+    <div class="ip"><strong>b)</strong> \(g \cap h\): \(2x = -x+6 \Rightarrow x = 2\), \(y = 4\). Probe in \(k\): \(2+1 = 3 \neq 4\) — kein gemeinsamer Punkt. Die drei Geraden bilden ein <strong>Dreieck</strong> mit den Ecken \((2\mid 4)\), \((1\mid 2)\) und \((2{,}5\mid 3{,}5)\).</div>
+          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+          <div class="komp-desc">Darstellungen verwenden: zwischen Gleichungssystem und Geradenbild wechseln und die Lösungsart geometrisch deuten.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">6</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Die Punkte \(A(1\mid 3)\), \(B(4\mid 9)\) und \(C(6\mid c)\) sollen alle auf einer Geraden liegen. Bestimme \(c\) und erkläre, warum es dafür nur eine einzige Möglichkeit gibt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip">Aus \(A\) und \(B\): I: \(3 = m + n\), II: \(9 = 4m + n\). II − I: \(6 = 3m \Rightarrow m = 2\), \(n = 1\), also \(y = 2x+1\).</div>
+    <div class="ip">Einsetzen von \(x = 6\): \(c = 2\cdot 6 + 1 = 13\).</div>
+    <div class="ip"><strong>Warum nur eine Möglichkeit?</strong> \(A\) und \(B\) sind bereits zwei Bedingungen und legen die Gerade vollständig fest. Für \(C\) bleibt keine Freiheit mehr — der \(y\)-Wert an der Stelle \(x = 6\) steht damit schon fest.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Modellieren und argumentieren: eine fehlende Größe aus der Festgelegtheit heraus bestimmen und die Eindeutigkeit begründen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">7</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Anna sagt: „Je mehr Punkte ich kenne, desto genauer kenne ich die Gerade." Bert sagt: „Ab zwei Punkten bringen weitere Punkte gar nichts mehr — sie können höchstens Ärger machen." Wer hat recht? Begründe.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Bert hat recht</strong> — allerdings lohnt es sich, Annas Satz genau anzusehen.</div>
+    <div class="ip">Zwei Punkte legen die Gerade bereits <strong>vollständig</strong> fest. Ein dritter Punkt macht sie nicht „genauer": Entweder er passt — dann liefert er keine neue Information — oder er passt nicht, dann hat das System <strong>keine Lösung</strong>. Das ist der „Ärger", den Bert meint.</div>
+    <div class="ip">Annas Vorstellung stammt aus dem Messen: Wenn Punkte aus einem Experiment kommen und leicht ungenau sind, helfen mehr Messpunkte tatsächlich, eine gut passende Gerade zu finden. Dann sucht man aber keine Gerade, die durch <em>alle</em> Punkte geht, sondern eine, die möglichst gut passt — eine andere Fragestellung.</div>
+    <div class="ip"><em>Merke:</em> Mehr Bedingungen als Unbekannte schränken ein oder führen zum Widerspruch. Sie vergrößern die Lösungsmenge nie.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Argumentieren und kommunizieren: zwei Positionen prüfen, belegen und die Reichweite der eigenen Aussage abgrenzen.</div></div>
+  </div>
+</div><!-- end k9-lgsbed -->
+
+<div class="subpanel" id="k9-lgs3u">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Im Tab <em>Bedingungen zählen</em> blieb eine Frage offen: Eine Parabel \(y = a x^2 + b x + c\) hat <strong>drei</strong> Unbekannte — wie viele Punkte braucht sie? Die Antwort liegt nahe: drei. Damit landen wir bei einem Gleichungssystem mit <strong>drei Gleichungen und drei Unbekannten</strong>.</div>
+    <div class="ip">Die gute Nachricht: Du brauchst dafür <strong>kein neues Verfahren</strong>. Du kennst bereits alles, was nötig ist.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Additions- und Einsetzungsverfahren bei zwei Variablen, Ansatz über Bedingungen (Tab <em>Bedingungen zählen</em>).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich führe ein System mit drei Unbekannten durch Elimination auf ein System mit zwei Unbekannten zurück</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich begründe, welche Variable ich zuerst eliminiere und aus welchem Gleichungspaar</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich schreibe meinen Rechenweg so auf, dass jeder Schritt nachvollziehbar ist</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich bestimme die Gleichung einer Parabel durch drei gegebene Punkte</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich überprüfe meine Lösung durch Einsetzen in alle drei Ausgangsgleichungen</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">1 · Die Grundidee</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">→</div><span class="card-title">Zurückführen statt neu lernen</span></div>
+  <div class="card-body">
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px"><strong style="color:#8a7a30">Kernidee:</strong> Ein System mit drei Unbekannten wird gelöst, indem man <strong>eine Variable aus zwei verschiedenen Gleichungspaaren entfernt</strong>. Übrig bleibt ein System mit zwei Unbekannten — und das kannst du schon lösen.</div>
+    <div class="ip">Dieses Vorgehen heißt <strong>systematisches Eliminieren</strong>. Der entscheidende Schritt ist nicht das Rechnen, sondern die <strong>Planung</strong>: Welche Variable nehme ich zuerst weg, und aus welchen Gleichungen?</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="text-align:center;padding:6px"><div style="font-size:26px;font-weight:700;color:#8a9da7">3 × 3</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">drei Gleichungen,<br>drei Unbekannte</div></div></div><div><div style="text-align:center;padding:6px"><div style="font-size:26px;font-weight:700;color:#5b6e2e">→</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">eine Variable<br>eliminieren</div></div></div><div><div style="text-align:center;padding:6px"><div style="font-size:26px;font-weight:700;color:#5b6e2e">2 × 2</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">das kennst du<br>aus Klasse 8</div></div></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-c">✓</div><span class="card-title">Beispiel 1 — Schritt für Schritt</span></div>
+  <div class="card-body">
+    <div class="ip">\[ \begin{array}{ll} \text{I} & 2x + y - z = 3 \\ \text{II} & x - y + 2z = 5 \\ \text{III} & 3x + 2y + z = 10 \end{array} \]</div>
+    <div class="ip"><strong>① Plan fassen.</strong> In I steht \(+y\), in II steht \(-y\) — diese beiden lassen sich ohne Erweitern addieren. Wir eliminieren also \(y\).</div>
+    <div class="ip"><strong>② Erste Elimination</strong> (I + II): \((2x + y - z) + (x - y + 2z) = 3 + 5\), also \(\;3x + z = 8\).  &nbsp;(*)</div>
+    <div class="ip"><strong>③ Zweite Elimination.</strong> Jetzt \(y\) auch aus einem zweiten Paar entfernen — hier III − 2·I: \((3x + 2y + z) - 2(2x + y - z) = 10 - 6\), also \(\;-x + 3z = 4\).  &nbsp;(**)</div>
+    <div class="ip"><strong>④ Das 2×2-System lösen.</strong> Aus (**): \(x = 3z - 4\). Einsetzen in (*): \(3(3z-4) + z = 8 \Rightarrow 10z = 20 \Rightarrow z = 2\), damit \(x = 2\).</div>
+    <div class="ip"><strong>⑤ Rückwärts einsetzen.</strong> \(y\) aus I: \(y = 3 - 2x + z = 3 - 4 + 2 = 1\).</div>
+    <div class="ip"><strong>⑥ Probe in allen drei Gleichungen:</strong><br>I: \(4 + 1 - 2 = 3\;\checkmark\) &nbsp; II: \(2 - 1 + 4 = 5\;\checkmark\) &nbsp; III: \(6 + 2 + 2 = 10\;\checkmark\)</div>
+    <div class="ip"><strong>Lösung:</strong> \(x = 2\), \(y = 1\), \(z = 2\).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-h">§</div><span class="card-title">So findest du deinen Eliminationsplan</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>① Suche Gegenzahlen.</strong> Steht dieselbe Variable einmal mit \(+\) und einmal mit \(-\) und gleichem Betrag, ist sie der beste Kandidat — dann genügt Addieren.</div>
+    <div class="ip"><strong>② Suche eine Variable mit Koeffizient 1.</strong> Sie lässt sich leicht isolieren und einsetzen.</div>
+    <div class="ip"><strong>③ Achte auf die Zahlen.</strong> Wähle den Weg, bei dem du möglichst wenig erweitern musst — das spart Brüche.</div>
+    <div class="ip"><strong>④ Zweimal dieselbe Variable.</strong> Wichtig: Du musst <em>dieselbe</em> Variable aus <em>zwei verschiedenen</em> Gleichungspaaren entfernen. Sonst entsteht kein 2×2-System.</div>
+    <div class="hint"><strong>Schreibweise:</strong> Nummeriere deine Gleichungen mit I, II, III und schreibe an jeden Schritt dazu, was du getan hast — etwa „III − 2·I". Nur so ist dein Weg nachvollziehbar, und nur so findest du selbst einen Fehler wieder.</div>
+  </div>
+</div>
+
+<div class="section-label">2 · Die Parabel durch drei Punkte</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel 2 — Rekonstruktion</span></div>
+  <div class="card-body">
+    <div class="ip">Gesucht ist die Parabel durch \(A(1\mid 2)\), \(B(2\mid 3)\) und \(C(3\mid 6)\).</div>
+    <div class="ip"><strong>① Ansatz:</strong> \(y = a x^2 + b x + c\) — drei Unbekannte, also brauchen wir drei Bedingungen. Genau drei Punkte sind gegeben.</div>
+    <div class="ip"><strong>② Punkte einsetzen:</strong> \[ \begin{array}{lrl} \text{I} & a + b + c &= 2 \\ \text{II} & 4a + 2b + c &= 3 \\ \text{III} & 9a + 3b + c &= 6 \end{array} \]</div>
+    <div class="ip"><strong>③ Eliminieren.</strong> \(c\) hat überall den Koeffizienten 1 — ideal. II − I: \(3a + b = 1\). III − II: \(5a + b = 3\).</div>
+    <div class="ip"><strong>④ 2×2-System lösen.</strong> Subtrahieren: \(2a = 2 \Rightarrow a = 1\), damit \(b = 1 - 3 = -2\).</div>
+    <div class="ip"><strong>⑤ Rückwärts:</strong> \(c = 2 - a - b = 2 - 1 + 2 = 3\).</div>
+    <div class="ip"><strong>⑥ Probe:</strong> \(f(1) = 1-2+3 = 2\;\checkmark\), \(f(2) = 4-4+3 = 3\;\checkmark\), \(f(3) = 9-6+3 = 6\;\checkmark\)</div>
+    <div class="ip"><strong>Antwort:</strong> Die Parabel hat die Gleichung \(y = x^2 - 2x + 3\).</div>
+    <div class="ip"><svg viewBox="0 0 430 440" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Parabel durch die drei Punkte A, B und C">
+<defs><marker id="vtah7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="440" fill="#fffcf6"/>
+<line x1="34.0" y1="400.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="110.8" y1="400.0" x2="110.8" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="187.6" y1="400.0" x2="187.6" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="264.4" y1="400.0" x2="264.4" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="341.2" y1="400.0" x2="341.2" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="418.0" y1="400.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="400.0" x2="418.0" y2="400.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="354.5" x2="418.0" y2="354.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="309.0" x2="418.0" y2="309.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="263.5" x2="418.0" y2="263.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="218.0" x2="418.0" y2="218.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="172.5" x2="418.0" y2="172.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="127.0" x2="418.0" y2="127.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="81.5" x2="418.0" y2="81.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="36.0" x2="418.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="354.5" x2="428.0" y2="354.5" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah7)"/>
+<line x1="110.8" y1="400.0" x2="110.8" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah7)"/>
+<text x="432.0" y="359.5" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="119.8" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="34.0" y1="350.5" x2="34.0" y2="358.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="34.0" y="373.5" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
+<line x1="187.6" y1="350.5" x2="187.6" y2="358.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="187.6" y="373.5" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
+<line x1="264.4" y1="350.5" x2="264.4" y2="358.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="264.4" y="373.5" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
+<line x1="341.2" y1="350.5" x2="341.2" y2="358.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="341.2" y="373.5" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
+<line x1="418.0" y1="350.5" x2="418.0" y2="358.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="418.0" y="373.5" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="106.8" y1="400.0" x2="114.8" y2="400.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="404.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
+<line x1="106.8" y1="309.0" x2="114.8" y2="309.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="313.0" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
+<line x1="106.8" y1="263.5" x2="114.8" y2="263.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="267.5" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="106.8" y1="218.0" x2="114.8" y2="218.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="222.0" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
+<line x1="106.8" y1="172.5" x2="114.8" y2="172.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="176.5" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="106.8" y1="127.0" x2="114.8" y2="127.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="131.0" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
+<line x1="106.8" y1="81.5" x2="114.8" y2="81.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="85.5" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="106.8" y1="36.0" x2="114.8" y2="36.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="102.8" y="40.0" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
+<text x="102.8" y="373.5" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<polyline points="34.0,81.5 36.4,87.1 38.8,92.7 41.2,98.2 43.6,103.5 46.0,108.8 48.4,114.0 50.8,119.1 53.2,124.2 55.6,129.1 58.0,133.9 60.4,138.7 62.8,143.4 65.2,147.9 67.6,152.4 70.0,156.8 72.4,161.1 74.8,165.3 77.2,169.5 79.6,173.5 82.0,177.5 84.4,181.3 86.8,185.1 89.2,188.8 91.6,192.4 94.0,195.9 96.4,199.3 98.8,202.7 101.2,205.9 103.6,209.1 106.0,212.1 108.4,215.1 110.8,218.0 113.2,220.8 115.6,223.5 118.0,226.1 120.4,228.7 122.8,231.1 125.2,233.5 127.6,235.7 130.0,237.9 132.4,240.0 134.8,242.0 137.2,243.9 139.6,245.7 142.0,247.5 144.4,249.1 146.8,250.7 149.2,252.1 151.6,253.5 154.0,254.8 156.4,256.0 158.8,257.1 161.2,258.1 163.6,259.1 166.0,259.9 168.4,260.7 170.8,261.3 173.2,261.9 175.6,262.4 178.0,262.8 180.4,263.1 182.8,263.3 185.2,263.5 187.6,263.5 190.0,263.5 192.4,263.3 194.8,263.1 197.2,262.8 199.6,262.4 202.0,261.9 204.4,261.3 206.8,260.7 209.2,259.9 211.6,259.1 214.0,258.1 216.4,257.1 218.8,256.0 221.2,254.8 223.6,253.5 226.0,252.1 228.4,250.7 230.8,249.1 233.2,247.5 235.6,245.7 238.0,243.9 240.4,242.0 242.8,240.0 245.2,237.9 247.6,235.7 250.0,233.5 252.4,231.1 254.8,228.7 257.2,226.1 259.6,223.5 262.0,220.8 264.4,218.0 266.8,215.1 269.2,212.1 271.6,209.1 274.0,205.9 276.4,202.7 278.8,199.3 281.2,195.9 283.6,192.4 286.0,188.8 288.4,185.1 290.8,181.3 293.2,177.5 295.6,173.5 298.0,169.5 300.4,165.3 302.8,161.1 305.2,156.8 307.6,152.4 310.0,147.9 312.4,143.4 314.8,138.7 317.2,133.9 319.6,129.1 322.0,124.2 324.4,119.1 326.8,114.0 329.2,108.8 331.6,103.5 334.0,98.2 336.4,92.7 338.8,87.1 341.2,81.5 343.6,75.8 346.0,69.9 348.4,64.0 350.8,58.0 353.2,52.0 355.6,45.8 358.0,39.5 360.4,33.2 362.8,26.7 365.2,20.2 367.6,13.6" fill="none" stroke="#5b6e2e" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<circle cx="187.6" cy="263.5" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="129.6" y="281.5" font-size="13.5" font-weight="700" fill="#c75c3a">A(1|2)</text>
+<circle cx="264.4" cy="218.0" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="274.4" y="236.0" font-size="13.5" font-weight="700" fill="#c75c3a">B(2|3)</text>
+<circle cx="341.2" cy="81.5" r="5.5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="325.2" y="67.5" font-size="13.5" font-weight="700" fill="#c75c3a">C(3|6)</text>
+<text x="118.5" y="99.7" font-size="13.5" fill="#5b6e2e" text-anchor="start" font-weight="700">y = x² − 2x + 3</text>
+</svg></div>
+    <div class="hint"><strong>Blick voraus:</strong> Genau dieses Verfahren brauchst du im nächsten Thema wieder, wenn du zu einem Brückenbogen oder einer Wurfbahn die Funktionsgleichung suchst.</div>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#eef1e6;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">V</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · V</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Verfahren — systematisch eliminieren</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 1–3 · Eliminationsplan fassen, sauber protokollieren, Probe machen</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">1</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Löse das Gleichungssystem. Schreibe zu jedem Schritt dazu, was du tust, und mache am Ende die Probe in allen drei Gleichungen.\[ \begin{array}{ll} \text{I} & x + y + z = 6 \\ \text{II} & x - y + z = 2 \\ \text{III} & 2x + y - z = 1 \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Plan:</strong> In I steht \(+y\), in II steht \(-y\) — Gegenzahlen. Wir eliminieren \(y\).</div>
+    <div class="ip"><strong>I − II:</strong> \(2y = 4 \Rightarrow y = 2\). Hier fallen sogar \(x\) und \(z\) mit weg — ein Glücksfall.</div>
+    <div class="ip"><strong>I + III:</strong> \(3x + 2y = 7\). Mit \(y = 2\): \(3x = 3 \Rightarrow x = 1\).</div>
+    <div class="ip"><strong>Rückwärts in I:</strong> \(z = 6 - 1 - 2 = 3\).</div>
+    <div class="ip"><strong>Probe:</strong> I: \(1+2+3 = 6\;\checkmark\) &nbsp; II: \(1-2+3 = 2\;\checkmark\) &nbsp; III: \(2+2-3 = 1\;\checkmark\)</div>
+    <div class="ip"><strong>Lösung:</strong> \(x = 1\), \(y = 2\), \(z = 3\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Mit symbolischen Elementen umgehen: ein 3×3-System durch Elimination auf ein bekanntes 2×2-System zurückführen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">2</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Löse das Gleichungssystem. Hier musst du vor dem Addieren erweitern — überlege dir zuerst, welche Variable am wenigsten Arbeit macht.\[ \begin{array}{ll} \text{I} & x + 2y + z = 9 \\ \text{II} & 2x - y + 3z = 12 \\ \text{III} & 3x + y - 2z = -3 \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Plan:</strong> \(y\) steht in II mit \(-1\) und in III mit \(+1\) — Gegenzahlen ohne Erweitern. Für das zweite Paar erweitern wir II.</div>
+    <div class="ip"><strong>II + III:</strong> \(5x + z = 9\).  (*)</div>
+    <div class="ip"><strong>I + 2·II:</strong> \((x + 2y + z) + (4x - 2y + 6z) = 9 + 24\), also \(5x + 7z = 33\).  (**)</div>
+    <div class="ip"><strong>(**) − (*):</strong> \(6z = 24 \Rightarrow z = 4\), damit aus (*): \(5x = 5 \Rightarrow x = 1\).</div>
+    <div class="ip"><strong>Rückwärts in I:</strong> \(2y = 9 - 1 - 4 = 4 \Rightarrow y = 2\).</div>
+    <div class="ip"><strong>Probe:</strong> I: \(1+4+4 = 9\;\checkmark\) &nbsp; II: \(2-2+12 = 12\;\checkmark\) &nbsp; III: \(3+2-8 = -3\;\checkmark\)</div>
+    <div class="ip"><strong>Lösung:</strong> \(x = 1\), \(y = 2\), \(z = 4\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k2">K2</span></div>
+          <div class="komp-desc">Symbolisch arbeiten und Probleme lösen: einen günstigen Eliminationsweg wählen und das System vollständig abarbeiten.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">3</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Tom will das System aus Aufgabe 2 lösen und beginnt damit, \(x\) zu eliminieren: Er rechnet II − 2·I und III − 3·I. Führe seinen Weg zu Ende und vergleiche ihn mit dem Weg über \(y\). Beurteile, welcher Weg günstiger ist und woran man das vorher erkennen kann.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Toms Weg:</strong> II − 2·I: \((2x - y + 3z) - (2x + 4y + 2z) = 12 - 18\), also \(-5y + z = -6\).</div>
+    <div class="ip">III − 3·I: \((3x + y - 2z) - (3x + 6y + 3z) = -3 - 27\), also \(-5y - 5z = -30\), gekürzt \(y + z = 6\).</div>
+    <div class="ip">Aus \(y + z = 6\) folgt \(y = 6 - z\). Einsetzen: \(-5(6-z) + z = -6 \Rightarrow -30 + 6z = -6 \Rightarrow z = 4\), damit \(y = 2\) und aus I \(x = 1\). <strong>Gleiche Lösung</strong> — Toms Weg funktioniert.</div>
+    <div class="ip"><strong>Vergleich:</strong> Beide Wege führen zum Ziel. Toms Weg braucht zwei Erweiterungen (mit 2 und mit 3) und erzeugt größere Zahlen; der Weg über \(y\) kommt mit einer einzigen Erweiterung aus, weil II und III bei \(y\) schon Gegenzahlen haben.</div>
+    <div class="ip"><strong>Woran erkennt man das vorher?</strong> Man sucht vor dem Rechnen die Variable, bei der bereits Gegenzahlen oder Koeffizienten \(1\) stehen. Das ist keine Frage des Geschmacks, sondern spart Rechenschritte und damit Fehlerquellen.</div>
+    <div class="ip"><em>Wichtig:</em> „Günstiger" heißt nicht „richtiger". Ein umständlicher Weg ist nicht falsch — er dauert nur länger.</div>
+          <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k2">K2</span></div>
+          <div class="komp-desc">Kommunizieren und Probleme lösen: zwei Lösungswege vergleichen und die Verfahrenswahl begründen (Rahmenplan K6).</div></div>
+  </div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c8b55e;line-height:1;font-weight:400;min-width:44px;text-align:center">R</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · R</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Rekonstruktion — die Parabel durch drei Punkte</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 4–6 · Aus Bedingungen eine Funktionsgleichung gewinnen</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">4</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Bestimme die Gleichung der Parabel \(y = a x^2 + b x + c\) durch die Punkte \(A(0\mid 1)\), \(B(1\mid 0)\) und \(C(2\mid 3)\). Mache die Probe.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Einsetzen:</strong> \[ \begin{array}{lrl} \text{I} & c &= 1 \\ \text{II} & a + b + c &= 0 \\ \text{III} & 4a + 2b + c &= 3 \end{array} \]</div>
+    <div class="ip"><strong>Glücksfall:</strong> \(A\) liegt auf der \(y\)-Achse, deshalb liefert I sofort \(c = 1\).</div>
+    <div class="ip">Einsetzen in II und III: \(a + b = -1\) und \(4a + 2b = 2\), also \(2a + b = 1\).</div>
+    <div class="ip">Subtrahieren: \(a = 2\), damit \(b = -3\).</div>
+    <div class="ip"><strong>Probe:</strong> \(f(x) = 2x^2 - 3x + 1\): \(f(0) = 1\;\checkmark\), \(f(1) = 2-3+1 = 0\;\checkmark\), \(f(2) = 8-6+1 = 3\;\checkmark\)</div>
+    <div class="ip"><strong>Antwort:</strong> \(y = 2x^2 - 3x + 1\).</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Modellieren und symbolisch arbeiten: Bedingungen in ein Gleichungssystem übersetzen und die Funktionsgleichung bestimmen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">5</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Bestimme die Parabel durch \(D(-1\mid 6)\), \(E(1\mid 0)\) und \(F(2\mid 3)\). Vergleiche dein Ergebnis mit Aufgabe 4 — was fällt auf, und wie erklärst du es?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Einsetzen:</strong> \[ \begin{array}{lrl} \text{I} & a - b + c &= 6 \\ \text{II} & a + b + c &= 0 \\ \text{III} & 4a + 2b + c &= 3 \end{array} \]</div>
+    <div class="ip"><strong>II − I:</strong> \(2b = -6 \Rightarrow b = -3\).</div>
+    <div class="ip">Einsetzen in II: \(a + c = 3\). Einsetzen in III: \(4a + c = 9\). Subtrahieren: \(3a = 6 \Rightarrow a = 2\), damit \(c = 1\).</div>
+    <div class="ip"><strong>Ergebnis:</strong> \(y = 2x^2 - 3x + 1\) — <strong>dieselbe Parabel wie in Aufgabe 4</strong>.</div>
+    <div class="ip"><strong>Erklärung:</strong> Auch \(D(-1\mid 6)\) liegt auf dieser Parabel: \(f(-1) = 2 + 3 + 1 = 6\;\checkmark\). Die Punkte aus beiden Aufgaben stammen also von <em>einer</em> Parabel — nur wurden unterschiedliche drei davon ausgewählt.</div>
+    <div class="ip"><em>Das ist die Kernaussage der Einheit:</em> Drei Bedingungen legen die Parabel fest. Welche drei Punkte man nimmt, spielt keine Rolle — solange es drei verschiedene sind, die zu derselben Parabel gehören.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Argumentieren und modellieren: die Eindeutigkeit der Rekonstruktion an einem Beispiel erkennen und begründen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">6</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Lena behauptet: „Für eine Parabel brauche ich immer genau drei Punkte." Nimm Stellung. Überlege dabei auch, was passiert, wenn zwei der drei Punkte dieselbe \(x\)-Koordinate haben.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Im Kern hat Lena recht:</strong> Der Ansatz \(y = ax^2+bx+c\) hat drei Unbekannte, also braucht man drei Bedingungen. Mit zwei Punkten gibt es unendlich viele Parabeln, mit vier Punkten meistens gar keine.</div>
+    <div class="ip"><strong>Aber es gibt Ausnahmen.</strong> Haben zwei Punkte dieselbe \(x\)-Koordinate, aber verschiedene \(y\)-Werte — etwa \(P(2\mid 1)\) und \(Q(2\mid 5)\) — so entstehen zwei Gleichungen mit derselben linken Seite \(4a + 2b + c\), aber verschiedenen rechten Seiten. Das ergibt einen <strong>Widerspruch</strong>: keine Lösung.</div>
+    <div class="ip">Der Grund ist derselbe wie bei der senkrechten Geraden: Zu einer Stelle \(x\) gehört bei einer Funktion immer nur <em>ein</em> Funktionswert.</div>
+    <div class="ip"><strong>Und noch ein Fall:</strong> Liegen die drei Punkte auf einer <em>Geraden</em> — etwa \((0\mid 0)\), \((1\mid 1)\), \((2\mid 2)\) — so ergibt sich \(a = 0\). Das System ist lösbar, die „Parabel" ist aber in Wahrheit eine Gerade.</div>
+    <div class="ip"><strong>Genauer formuliert:</strong> Drei Punkte mit <em>paarweise verschiedenen</em> \(x\)-Koordinaten legen genau eine Funktion der Form \(y = ax^2+bx+c\) fest — ob deren Graph wirklich eine Parabel ist, hängt davon ab, ob \(a \neq 0\) herauskommt.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Argumentieren und kommunizieren: eine allgemeine Aussage prüfen, Sonderfälle finden und die Aussage präzisieren.</div></div>
+  </div>
+</div><!-- end k9-lgs3u -->
+
+<div class="subpanel" id="k9-lgsloes">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Aus der Wiederholung kennst du die drei Fälle bei zwei Unbekannten: genau eine Lösung, keine Lösung, unendlich viele. Bei zwei Variablen konntest du sie am Bild ablesen — zwei Geraden schneiden sich, sind parallel oder identisch.</div>
+    <div class="ip">Bei <strong>drei</strong> Unbekannten fällt diese Anschauung weg. Die drei Fälle gibt es aber weiterhin — und du erkennst sie jetzt <strong>an der Rechnung</strong>. Genau das verlangt der Rahmenplan unter „Betrachtungen zur Lösbarkeit".</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Systematisches Eliminieren (Tab <em>Drei Unbekannte</em>), die drei Lösungsfälle aus der Wiederholung.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne an der Rechnung, welcher der drei Lösungsfälle vorliegt</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich unterscheide sicher zwischen einer falschen Aussage (0 = 5) und einer wahren Aussage (0 = 0)</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich deute die Lösungsfälle mit dem Bild der Bedingungen: zu wenig, genau richtig, zu viel</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne, wenn eine Gleichung keine neue Information liefert</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich stelle ein System in Stufenform dar und lese die Lösungsart daran ab</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">1 · Die drei Fälle an der Rechnung erkennen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">→</div><span class="card-title">Woran du den Fall erkennst</span></div>
+  <div class="card-body">
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px"><strong style="color:#8a7a30">Kernidee:</strong> Beim Eliminieren fallen irgendwann alle Variablen weg. Was dann übrig bleibt, entscheidet: eine <strong>falsche</strong> Aussage bedeutet <em>keine Lösung</em>, eine <strong>wahre</strong> Aussage bedeutet <em>unendlich viele</em> Lösungen. Bleiben alle Variablen bestimmbar, gibt es <em>genau eine</em> Lösung.</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="text-align:center;padding:4px"><div style="font-size:14px;font-weight:700;color:var(--ink)">Alle Variablen bestimmbar</div><div style="font-size:15px;font-weight:700;color:#5b6e2e;margin-top:8px">genau eine Lösung</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">Bedingungen und Unbekannte passen zusammen</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:14px;font-weight:700;color:var(--ink)">Es bleibt z. B. 0 = 5</div><div style="font-size:15px;font-weight:700;color:#c75c3a;margin-top:8px">keine Lösung</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">die Bedingungen widersprechen sich</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:14px;font-weight:700;color:var(--ink)">Es bleibt z. B. 0 = 0</div><div style="font-size:15px;font-weight:700;color:#8a9da7;margin-top:8px">unendlich viele Lösungen</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">eine Bedingung war überflüssig</div></div></div></div>
+<div class="ip" style="background:#fceee9;border-radius:10px;padding:14px 18px;border-left:4px solid #c75c3a;margin-bottom:14px"><strong style="color:#c75c3a">Der häufigste Fehler:</strong> Bei \(0 = 0\) wird oft „keine Lösung" notiert, weil die Variablen verschwunden sind. Genau umgekehrt: \(0 = 0\) ist eine <strong>wahre</strong> Aussage — sie ist immer erfüllt, also gibt es <strong>unendlich viele</strong> Lösungen. Prüfe dich selbst mit der Frage: <em>Stimmt die Zeile, die übrig bleibt?</em></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-a">!</div><span class="card-title">Beispiel 1 — Die Bedingungen widersprechen sich</span></div>
+  <div class="card-body">
+    <div class="ip">\[ \begin{array}{ll} \text{I} & x + y + z = 3 \\ \text{II} & 2x + 2y + 2z = 7 \\ \text{III} & x - y = 0 \end{array} \]</div>
+    <div class="ip"><strong>Beobachtung:</strong> Die linke Seite von II ist genau das Doppelte von I. Wäre II verträglich, müsste rechts \(2 \cdot 3 = 6\) stehen — dort steht aber 7.</div>
+    <div class="ip"><strong>Rechnung:</strong> II − 2·I liefert \(0 = 7 - 6 = 1\), also \(0 = 1\) — eine <strong>falsche</strong> Aussage.</div>
+    <div class="ip"><strong>Ergebnis:</strong> Das System hat <strong>keine Lösung</strong>. Die Bedingungen I und II schließen einander aus: Dieselbe Summe kann nicht gleichzeitig 3 und 3,5 sein.</div>
+    <div class="ip"><em>Im Bild der Bedingungen:</em> Hier ist nicht „eine Bedingung zu viel" das Problem, sondern dass zwei Bedingungen einander direkt widersprechen.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-e">≡</div><span class="card-title">Beispiel 2 — Eine Bedingung ohne neue Information</span></div>
+  <div class="card-body">
+    <div class="ip">\[ \begin{array}{ll} \text{I} & x + y + z = 4 \\ \text{II} & x - y + z = 2 \\ \text{III} & 2x + 2z = 6 \end{array} \]</div>
+    <div class="ip"><strong>I − II:</strong> \(2y = 2 \Rightarrow y = 1\).</div>
+    <div class="ip"><strong>I + II:</strong> \(2x + 2z = 6\) — das ist genau Gleichung III. III bringt also <strong>nichts Neues</strong>.</div>
+    <div class="ip"><strong>III − (I + II):</strong> \(0 = 0\) — eine <strong>wahre</strong> Aussage.</div>
+    <div class="ip"><strong>Ergebnis:</strong> <strong>Unendlich viele Lösungen</strong>. Sicher ist nur \(y = 1\) und \(x + z = 3\). Für \(x\) darf man frei wählen, \(z\) ergibt sich dann: etwa \((0\mid 1\mid 3)\), \((1\mid 1\mid 2)\), \((2{,}5\mid 1\mid 0{,}5)\) …</div>
+    <div class="ip"><strong>Probe</strong> mit \((1\mid 1\mid 2)\): I: \(1+1+2 = 4\;\checkmark\), II: \(1-1+2 = 2\;\checkmark\), III: \(2+4 = 6\;\checkmark\)</div>
+    <div class="hint"><strong>Erkennungszeichen:</strong> Wir hatten drei Gleichungen und drei Unbekannte — trotzdem reicht es nicht. Entscheidend ist nicht die <em>Anzahl</em> der Bedingungen, sondern ob jede wirklich <strong>neue</strong> Information liefert.</div>
+  </div>
+</div>
+
+<div class="section-label">2 · Stufenform</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★★</div><span class="card-title">Ordnung ins Protokoll bringen</span></div>
+  <div class="card-body">
+    <div class="ip">Beim Eliminieren entsteht Schritt für Schritt ein System, in dem jede Zeile eine Variable weniger enthält. Schreibt man es so untereinander, spricht man von der <strong>Stufenform</strong>:</div>
+    <div class="ip">\[ \begin{array}{rrrcr} x &+\; y &+\; z &=& 6 \\ &\;\;\; y &+\; 2z &=& 8 \\ &&\;\;\; 3z &=& 9 \end{array} \]</div>
+    <div class="ip">Von unten nach oben lässt sich jetzt alles ablesen: \(z = 3\), dann \(y = 8 - 6 = 2\), dann \(x = 6 - 2 - 3 = 1\). Dieses Vorgehen heißt <strong>Rückwärtseinsetzen</strong>.</div>
+    <div class="ip"><strong>Der eigentliche Vorteil:</strong> An der letzten Zeile siehst du sofort, welcher Fall vorliegt.</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="text-align:center;padding:4px"><div style="font-size:15px;font-weight:700;color:#5b6e2e">3z = 9</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">genau eine Lösung</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:15px;font-weight:700;color:#c75c3a">0 = 5</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">keine Lösung</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:15px;font-weight:700;color:#8a9da7">0 = 0</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">unendlich viele Lösungen</div></div></div></div>
+    <div class="hint"><strong>Für Schnelle:</strong> Dieses geordnete Vorgehen heißt <em>Gaußsches Verfahren</em> und ist in der Oberstufe das Standardverfahren. Du kannst es hier schon üben — verlangt wird es in Klasse 9 aber nicht.</div>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#eef1e6;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">L</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · L</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Lösbarkeit beurteilen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 1–4 · Den Fall an der Rechnung erkennen und im Sachbild deuten</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">1</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Beim Lösen bleibt am Ende die angegebene Zeile übrig. Gib jeweils an, wie viele Lösungen das System hat, und begründe in einem Satz.<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>\(0 = 0\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>\(0 = -4\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">c)</div><div>\(2z = 6\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">d)</div><div>\(0 \cdot z = 0\)</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> Wahre Aussage — <strong>unendlich viele</strong> Lösungen. Eine Bedingung lieferte keine neue Information.</div>
+    <div class="ip"><strong>b)</strong> Falsche Aussage — <strong>keine Lösung</strong>. Die Bedingungen widersprechen sich.</div>
+    <div class="ip"><strong>c)</strong> \(z\) ist bestimmbar (\(z = 3\)) — <strong>genau eine</strong> Lösung, sofern sich danach auch die übrigen Variablen eindeutig ergeben.</div>
+    <div class="ip"><strong>d)</strong> \(0 \cdot z = 0\) ist für <em>jedes</em> \(z\) erfüllt — also eine wahre Aussage und damit <strong>unendlich viele</strong> Lösungen. Die Schreibweise mit \(z\) täuscht: Es steht dasselbe da wie in a).</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: aus der Endzeile einer Rechnung die Lösungsart erschließen und die Entscheidung begründen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">2</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Untersuche das System auf Lösbarkeit. Gib den Fall an und begründe ihn.\[ \begin{array}{ll} \text{I} & x + 2y - z = 5 \\ \text{II} & 2x + 4y - 2z = 9 \\ \text{III} & x - y + z = 1 \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Beobachtung:</strong> Die linke Seite von II ist das Doppelte von I.</div>
+    <div class="ip"><strong>II − 2·I:</strong> \(0 = 9 - 10 = -1\), also \(0 = -1\) — eine falsche Aussage.</div>
+    <div class="ip"><strong>Ergebnis:</strong> Das System hat <strong>keine Lösung</strong>.</div>
+    <div class="ip"><strong>Begründung im Sachbild:</strong> I verlangt, dass \(x + 2y - z\) den Wert 5 hat; II verlangt für denselben Ausdruck den Wert 4,5. Beides zugleich ist unmöglich. Gleichung III spielt dabei gar keine Rolle mehr — der Widerspruch steckt schon in I und II.</div>
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Probleme lösen und argumentieren: einen Widerspruch aufdecken und benennen, welche Bedingungen ihn verursachen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">3</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Untersuche das System auf Lösbarkeit. Falls es unendlich viele Lösungen hat, gib zwei verschiedene Lösungen an.\[ \begin{array}{ll} \text{I} & x + y + z = 5 \\ \text{II} & x - y + z = 1 \\ \text{III} & 3x + y + 3z = 11 \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>I − II:</strong> \(2y = 5 - 1 = 4\), also \(y = 2\).</div>
+    <div class="ip"><strong>I + II:</strong> \(2x + 2z = 6\), also \(x + z = 3\).</div>
+    <div class="ip"><strong>III prüfen:</strong> \(3x + y + 3z = 3(x+z) + y = 3 \cdot 3 + 2 = 11\;\checkmark\) — III ist automatisch erfüllt und liefert keine neue Information.</div>
+    <div class="ip"><strong>Ergebnis:</strong> <strong>Unendlich viele Lösungen</strong> mit \(y = 2\) und \(x + z = 3\).</div>
+    <div class="ip"><strong>Zwei Lösungen:</strong> \((0\mid 2\mid 3)\) und \((3\mid 2\mid 0)\). Probe für \((0\mid 2\mid 3)\): I: \(0+2+3 = 5\;\checkmark\), II: \(0-2+3 = 1\;\checkmark\), III: \(0+2+9 = 11\;\checkmark\)</div>
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Probleme lösen und symbolisch arbeiten: einen Fall mit unendlich vielen Lösungen erkennen und konkrete Lösungen angeben.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">4</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Für welchen Wert von \(k\) hat das System <strong>keine</strong> Lösung? Begründe, was für alle anderen Werte von \(k\) gilt.\[ \begin{array}{ll} \text{I} & x + y = 4 \\ \text{II} & 2x + 2y = k \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip">Die linke Seite von II ist das Doppelte von I. Verträglich ist II also genau dann, wenn auch rechts das Doppelte steht: \(k = 8\).</div>
+    <div class="ip"><strong>Für \(k \neq 8\):</strong> II − 2·I liefert \(0 = k - 8\), eine falsche Aussage — <strong>keine Lösung</strong>.</div>
+    <div class="ip"><strong>Für \(k = 8\):</strong> II − 2·I liefert \(0 = 0\) — II ist nur eine umgeschriebene Fassung von I und bringt nichts Neues. Dann gibt es <strong>unendlich viele</strong> Lösungen (alle Punkte der Geraden \(x + y = 4\)).</div>
+    <div class="ip"><em>Bemerkenswert:</em> Genau eine Lösung gibt es hier für <strong>keinen</strong> Wert von \(k\). Die beiden Geraden sind immer parallel — entweder verschieden (keine Lösung) oder identisch (unendlich viele).</div>
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Probleme lösen und argumentieren: einen Parameter so bestimmen, dass ein gewünschter Lösungsfall eintritt (Rahmenplan K2).</div></div>
+  </div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c75c3a;line-height:1;font-weight:400;min-width:44px;text-align:center">S</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#c75c3a;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · S</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Stufenform — für alle, die mehr wollen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 5–6 · Das geordnete Verfahren der Oberstufe schon einmal ausprobieren</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">5</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Bringe das System durch Elimination auf Stufenform und löse es dann durch Rückwärtseinsetzen.\[ \begin{array}{ll} \text{I} & x + y + z = 6 \\ \text{II} & 2x + 3y + z = 11 \\ \text{III} & x + 2y + 3z = 14 \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Schritt 1:</strong> \(x\) aus II und III entfernen.<br>II − 2·I: \(y - z = -1\)<br>III − I: \(y + 2z = 8\)</div>
+    <div class="ip"><strong>Schritt 2:</strong> \(y\) aus der letzten Zeile entfernen.<br>\((y + 2z) - (y - z) = 8 - (-1)\), also \(3z = 9\).</div>
+    <div class="ip"><strong>Stufenform:</strong> \[ \begin{array}{rrrcr} x &+\; y &+\; z &=& 6 \\ &\;\;\; y &-\; z &=& -1 \\ &&\;\;\; 3z &=& 9 \end{array} \]</div>
+    <div class="ip"><strong>Rückwärtseinsetzen:</strong> \(z = 3\), dann \(y = -1 + 3 = 2\), dann \(x = 6 - 2 - 3 = 1\).</div>
+    <div class="ip"><strong>Probe:</strong> I: \(1+2+3 = 6\;\checkmark\), II: \(2+6+3 = 11\;\checkmark\), III: \(1+4+9 = 14\;\checkmark\)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Mit formalen Elementen umgehen: ein System in Stufenform überführen und durch Rückwärtseinsetzen lösen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">6</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Erkläre, warum man an der Stufenform sofort sieht, wie viele Lösungen ein System hat — und warum das beim ursprünglichen System meist nicht möglich ist.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip">In der Stufenform enthält jede Zeile <strong>eine Variable weniger</strong> als die vorherige. Die letzte Zeile enthält im Normalfall nur noch eine einzige Variable.</div>
+    <div class="ip"><strong>Deshalb ist die letzte Zeile so aussagekräftig:</strong></div>
+    <div class="ip">• Steht dort etwa \(3z = 9\), ist \(z\) eindeutig bestimmt — und damit auch alles darüber: <strong>genau eine Lösung</strong>.<br>• Steht dort \(0 = 5\), ist die Bedingung unerfüllbar: <strong>keine Lösung</strong>.<br>• Steht dort \(0 = 0\), ist sie immer erfüllt und schränkt nichts ein — eine Variable bleibt frei wählbar: <strong>unendlich viele Lösungen</strong>.</div>
+    <div class="ip"><strong>Warum nicht am Ausgangssystem?</strong> Dort sind die Bedingungen noch „vermischt". Ob eine Gleichung neue Information liefert oder sich aus den anderen zusammensetzen lässt, sieht man ihr nicht an — es sei denn, sie ist ein offensichtliches Vielfaches. Das Eliminieren macht genau diese verborgene Abhängigkeit sichtbar.</div>
+    <div class="ip"><em>Kurz gesagt:</em> Die Stufenform ist kein neues Verfahren, sondern eine <strong>Anordnung</strong>, die das Ergebnis der Elimination lesbar macht.</div>
+          <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Kommunizieren und argumentieren: den Nutzen einer Darstellungsform erklären und ihre Aussagekraft begründen.</div></div>
+  </div>
+</div><!-- end k9-lgsloes -->
+
+<div class="subpanel" id="k9-lgssach">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Bei Sachaufgaben scheitert man selten am Rechnen. Der schwierige Schritt ist das <strong>Aufstellen</strong>: aus einem Text die richtigen Gleichungen zu gewinnen. Genau darum geht es in diesem Tab — und deshalb gibt es hier auch Aufgaben, bei denen du <em>nur aufstellst</em> und gar nicht rechnest.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Fünf-Schritte-Schema aus der Wiederholung, systematisches Eliminieren (Tab <em>Drei Unbekannte</em>).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lege Variablen fest und schreibe zu jeder dazu, was sie bedeutet und welche Einheit sie hat</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich übersetze Aussagen eines Sachtextes in Gleichungen</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich prüfe ein vorgegebenes Gleichungssystem darauf, ob es zum Text passt</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich löse Sachaufgaben mit drei Unbekannten vollständig</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich unterscheide die Probe (stimmt die Rechnung?) von der Validierung (kann das Ergebnis stimmen?)</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">1 · Vom Text zur Gleichung</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-h">§</div><span class="card-title">Die sechs Schritte</span></div>
+  <div class="card-body">
+    <div class="ip">Aus der Wiederholung kennst du fünf Schritte. Für die Vertiefung kommt ein sechster dazu.</div>
+    <div class="ip"><strong>① Variablen festlegen</strong> — mit Bedeutung <em>und</em> Einheit, z. B. „\(e\) = Preis einer Erwachsenenkarte in €".</div>
+    <div class="ip"><strong>② Gleichungen aufstellen</strong> — für jede Aussage des Textes eine.</div>
+    <div class="ip"><strong>③ Lösen</strong> — systematisch eliminieren.</div>
+    <div class="ip"><strong>④ Probe</strong> — Werte in <em>alle</em> Ausgangsgleichungen einsetzen.</div>
+    <div class="ip"><strong>⑤ Antwortsatz</strong> — im Sachzusammenhang, mit Einheiten.</div>
+    <div class="ip"><strong>⑥ Validierung</strong> — <em>neu:</em> Kann das Ergebnis in der Wirklichkeit stimmen?</div>
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px"><strong style="color:#8a7a30">Kernidee:</strong> <strong>Probe und Validierung sind nicht dasselbe.</strong> Die Probe prüft, ob du <em>richtig gerechnet</em> hast. Die Validierung prüft, ob dein <em>Ansatz sinnvoll</em> war. Eine negative Anzahl von Karten besteht die Probe mühelos — und ist trotzdem Unsinn.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-a">!</div><span class="card-title">Vorsicht — die häufigste Falle beim Aufstellen</span></div>
+  <div class="card-body">
+    <div class="ip">An einer Schule gibt es <strong>sechsmal so viele Schülerinnen und Schüler wie Lehrkräfte</strong>. Wir schreiben \(s\) für die Anzahl der Schüler und \(l\) für die Anzahl der Lehrkräfte.</div>
+    <div class="ip"><strong>Anna schreibt:</strong> \(6s = l\) &nbsp;&nbsp; <strong>Bert schreibt:</strong> \(s = 6l\)</div>
+    <div class="ip"><strong>Wer hat recht?</strong> Bert. Und Annas Fehler ist der mit Abstand häufigste beim Übersetzen — er entsteht, weil man die Wortreihenfolge des Satzes direkt in Symbole überträgt: „sechsmal … Schüler" wird zu \(6s\).</div>
+<div class="ip" style="background:#fceee9;border-radius:10px;padding:14px 18px;border-left:4px solid #c75c3a;margin-bottom:14px"><strong style="color:#c75c3a">So prüfst du dich selbst:</strong> Setze eine kleine Zahl ein. Bei 10 Lehrkräften gibt es 60 Schüler. Annas Gleichung: \(6 \cdot 60 = 10\)? Falsch. Berts Gleichung: \(60 = 6 \cdot 10\)? Stimmt. — Diese Zahlenprobe dauert zehn Sekunden und deckt den Fehler zuverlässig auf.</div>
+    <div class="ip"><em>Merke:</em> Die Mal-Zahl gehört zur <strong>kleineren</strong> Größe. Es gibt weniger Lehrkräfte, also wird deren Anzahl vervielfacht.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-c">✓</div><span class="card-title">Beispiel — Eine Mischung aus drei Sorten</span></div>
+  <div class="card-body">
+    <div class="ip">Ein Händler mischt 10 kg Tee aus drei Sorten: einer für 8 €/kg, einer für 12 €/kg und einer für 20 €/kg. Die Mischung kostet insgesamt 140 €. Von der ersten und der zweiten Sorte nimmt er gleich viel. Wie viel nimmt er von jeder Sorte?</div>
+    <div class="ip"><strong>① Variablen:</strong> \(x\), \(y\), \(z\) = Masse der ersten, zweiten und dritten Sorte in kg.</div>
+    <div class="ip"><strong>② Gleichungen:</strong> \[ \begin{array}{lll} \text{I} & x + y + z = 10 & \text{(Gesamtmasse)} \\ \text{II} & 8x + 12y + 20z = 140 & \text{(Gesamtpreis)} \\ \text{III} & x = y & \text{(gleich viel)} \end{array} \]</div>
+    <div class="ip"><strong>③ Lösen:</strong> III in I und II einsetzen: \(2x + z = 10\) und \(20x + 20z = 140\), also \(x + z = 7\). Subtrahieren: \(x = 3\), damit \(y = 3\) und \(z = 4\).</div>
+    <div class="ip"><strong>④ Probe:</strong> I: \(3+3+4 = 10\;\checkmark\) &nbsp; II: \(24 + 36 + 80 = 140\;\checkmark\) &nbsp; III: \(3 = 3\;\checkmark\)</div>
+    <div class="ip"><strong>⑤ Antwort:</strong> Er nimmt 3 kg der ersten, 3 kg der zweiten und 4 kg der dritten Sorte.</div>
+    <div class="ip"><strong>⑥ Validierung:</strong> Alle Massen sind positiv und zusammen 10 kg — plausibel. Der Mischpreis beträgt \(140 : 10 = 14\) €/kg und liegt damit zwischen 8 und 20 €/kg. Das muss so sein und bestätigt den Ansatz.</div>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">Ü</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · Ü</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Übersetzen — vom Text zur Gleichung</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 1–3 · Hier wird aufgestellt und geprüft, aber noch nicht gelöst</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">1</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Übersetze jede Aussage in eine Gleichung. Lege zuerst die Variablen fest. Du musst nichts ausrechnen.<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">a)</div><div>In einem Verein sind dreimal so viele Kinder wie Erwachsene.</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">b)</div><div>Ein Stift kostet 2 € weniger als ein Heft.</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">c)</div><div>Zusammen wiegen die drei Pakete 15 kg.</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> \(k\) = Anzahl Kinder, \(e\) = Anzahl Erwachsene. Gleichung: \(k = 3e\).<br><em>Zahlenprobe:</em> Bei 10 Erwachsenen sind es 30 Kinder — \(30 = 3 \cdot 10\;\checkmark\)</div>
+    <div class="ip"><strong>b)</strong> \(s\) = Preis eines Stiftes in €, \(h\) = Preis eines Heftes in €. Gleichung: \(s = h - 2\).<br><em>Zahlenprobe:</em> Kostet das Heft 3 €, kostet der Stift 1 € — \(1 = 3 - 2\;\checkmark\)</div>
+    <div class="ip"><strong>c)</strong> \(a\), \(b\), \(c\) = Masse der drei Pakete in kg. Gleichung: \(a + b + c = 15\).</div>
+    <div class="ip"><em>Beachte:</em> Ohne die Angabe der Bedeutung <strong>und der Einheit</strong> ist eine Gleichung nicht überprüfbar.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Aussagen eines Sachtextes in Gleichungen übersetzen und Variablen sachgerecht einführen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">2</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Im Kino kosten drei Kartenarten unterschiedlich viel. Zu dem Text werden drei Gleichungssysteme angeboten. Entscheide, welches passt, und begründe, was bei den anderen nicht stimmt.<br><br><em>Text:</em> „Zwei Erwachsenen- und drei Kinderkarten sowie eine ermäßigte Karte kosten zusammen 40 €. Eine Erwachsenenkarte kostet doppelt so viel wie eine Kinderkarte."<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px" class="lgs-faelle"><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">A)</div><div>\(2e + 3k + m = 40\)<br>\(e = 2k\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">B)</div><div>\(2e + 3k + m = 40\)<br>\(2e = k\)</div></div><div><div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:4px">C)</div><div>\(e + k + m = 40\)<br>\(e = 2k\)</div></div></div></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Richtig ist A.</strong></div>
+    <div class="ip"><strong>B</strong> enthält den typischen Übersetzungsfehler: „doppelt so teuer wie" wurde als \(2e = k\) geschrieben. Zahlenprobe: Kostet die Kinderkarte 5 €, müsste die Erwachsenenkarte 10 € kosten. B behauptet \(2 \cdot 10 = 5\) — falsch. Die Mal-Zahl gehört zur <em>kleineren</em> Größe.</div>
+    <div class="ip"><strong>C</strong> hat die zweite Gleichung richtig, aber die erste falsch: Der Text nennt <em>zwei</em> Erwachsenen- und <em>drei</em> Kinderkarten, nicht je eine. Die Anzahlen fehlen als Faktoren.</div>
+    <div class="ip"><em>Übrigens:</em> Mit nur diesen zwei Gleichungen sind drei Unbekannte noch nicht bestimmbar — es fehlt eine dritte Bedingung. Zum Aufstellen gehört auch, das zu bemerken.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Argumentieren und modellieren: ein vorgegebenes Modell auf Passung prüfen und Übersetzungsfehler benennen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">3</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Schreibe zu dem Gleichungssystem eine passende Sachaufgabe. Erkläre dabei, wofür \(x\), \(y\) und \(z\) stehen.\[ \begin{array}{ll} \text{I} & x + y + z = 12 \\ \text{II} & 3x + 2y + z = 22 \\ \text{III} & z = 2x \end{array} \]</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Ein möglicher Vorschlag:</strong> In einer Schale liegen 12 Früchte: Äpfel (\(x\)), Birnen (\(y\)) und Pflaumen (\(z\)). Ein Apfel wiegt 3 Einheiten, eine Birne 2, eine Pflaume 1 — zusammen wiegt das Obst 22 Einheiten. Es sind doppelt so viele Pflaumen wie Äpfel da.</div>
+    <div class="ip"><strong>Zuordnung:</strong> I ist die Gesamtzahl, II die Gesamtmasse mit den Einzelmassen als Faktoren, III die Beziehung zwischen zwei Anzahlen.</div>
+    <div class="ip"><strong>Worauf es ankommt:</strong> Deine Aufgabe ist richtig, wenn jede Gleichung eine sinnvolle Aussage des Textes wiedergibt. Achte besonders auf III: \(z = 2x\) heißt „von \(z\) gibt es doppelt so viele wie von \(x\)" — also sind die Pflaumen die häufigere Sorte.</div>
+    <div class="ip"><em>Lösung des Systems</em> (nur zur Kontrolle): \(x = 2\), \(y = 6\), \(z = 4\). Prüfe an deinem Text, ob diese Zahlen dort Sinn ergeben — das ist die Validierung.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">Modellieren und kommunizieren: die Übersetzungsrichtung umkehren und ein Modell in Sprache zurückübertragen.</div></div>
+  </div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#eef1e6;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">A</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · A</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Anwenden — vollständig lösen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 4–6 · Alle sechs Schritte, einschließlich Validierung</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">4</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Drei Freunde kaufen Kinokarten. Anna zahlt für 2 Erwachsenen-, 3 Kinder- und 1 ermäßigte Karte 40 €. Ben zahlt für 1 Erwachsenen-, 2 Kinder- und 2 ermäßigte Karten 33 €. Clara zahlt für 3 Erwachsenen-, 1 Kinder- und 1 ermäßigte Karte 39 €. Bestimme die drei Kartenpreise.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>① Variablen:</strong> \(e\), \(k\), \(m\) = Preis einer Erwachsenen-, Kinder- bzw. ermäßigten Karte in €.</div>
+    <div class="ip"><strong>② Gleichungen:</strong> \[ \begin{array}{ll} \text{I} & 2e + 3k + m = 40 \\ \text{II} & e + 2k + 2m = 33 \\ \text{III} & 3e + k + m = 39 \end{array} \]</div>
+    <div class="ip"><strong>③ Lösen.</strong> \(m\) hat in I und III den Koeffizienten 1 — III − I: \(e - 2k = -1\).  (*)<br>Für das zweite Paar: II − 2·I: \((e + 2k + 2m) - (4e + 6k + 2m) = 33 - 80\), also \(-3e - 4k = -47\), das heißt \(3e + 4k = 47\).  (**)</div>
+    <div class="ip">Aus (*): \(e = 2k - 1\). Einsetzen in (**): \(3(2k-1) + 4k = 47 \Rightarrow 10k = 50 \Rightarrow k = 5\), damit \(e = 9\).<br>Aus I: \(m = 40 - 18 - 15 = 7\).</div>
+    <div class="ip"><strong>④ Probe:</strong> I: \(18+15+7 = 40\;\checkmark\) &nbsp; II: \(9+10+14 = 33\;\checkmark\) &nbsp; III: \(27+5+7 = 39\;\checkmark\)</div>
+    <div class="ip"><strong>⑤ Antwort:</strong> Eine Erwachsenenkarte kostet 9 €, eine Kinderkarte 5 €, eine ermäßigte Karte 7 €.</div>
+    <div class="ip"><strong>⑥ Validierung:</strong> Alle Preise sind positiv, und die ermäßigte Karte liegt zwischen Kinder- und Erwachsenenpreis — genau das erwartet man. Das Ergebnis ist plausibel.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Modellieren und symbolisch arbeiten: eine Sachsituation vollständig durchrechnen und das Ergebnis im Kontext prüfen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">5</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Ein Handytarif besteht aus einer monatlichen Grundgebühr, einem Preis je Gesprächsminute und einer einmaligen Anschlussgebühr. Im ersten Monat zahlt Mia bei 100 Gesprächsminuten 25 € (einschließlich Anschlussgebühr), im zweiten Monat bei 200 Minuten 15 €. Ohne jede Gesprächsminute wären im zweiten Monat 5 € fällig gewesen. Bestimme Grundgebühr, Minutenpreis und Anschlussgebühr.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>① Variablen:</strong> \(g\) = Grundgebühr je Monat in €, \(p\) = Preis je Minute in €, \(a\) = einmalige Anschlussgebühr in €.</div>
+    <div class="ip"><strong>② Gleichungen:</strong> \[ \begin{array}{lll} \text{I} & g + 100p + a = 25 & \text{(1. Monat)} \\ \text{II} & g + 200p = 15 & \text{(2. Monat, ohne Anschluss)} \\ \text{III} & g = 5 & \text{(2. Monat ohne Minuten)} \end{array} \]</div>
+    <div class="ip"><strong>③ Lösen:</strong> Aus III sofort \(g = 5\). In II: \(200p = 10 \Rightarrow p = 0{,}05\). In I: \(5 + 5 + a = 25 \Rightarrow a = 15\).</div>
+    <div class="ip"><strong>④ Probe:</strong> I: \(5 + 5 + 15 = 25\;\checkmark\) &nbsp; II: \(5 + 10 = 15\;\checkmark\) &nbsp; III: \(g = 5\;\checkmark\)</div>
+    <div class="ip"><strong>⑤ Antwort:</strong> Die Grundgebühr beträgt 5 € im Monat, eine Gesprächsminute kostet 5 Cent, die Anschlussgebühr beträgt einmalig 15 €.</div>
+    <div class="ip"><strong>⑥ Validierung:</strong> Alle Werte sind positiv; 5 Cent je Minute ist ein realistischer Preis. Auffällig ist, dass der zweite Monat trotz doppelter Gesprächszeit billiger war — das erklärt sich durch die einmalige Anschlussgebühr im ersten Monat. Der Ansatz ist also stimmig.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k2">K2</span></div>
+          <div class="komp-desc">Modellieren und Probleme lösen: einen mehrteiligen Tarif als Gleichungssystem erfassen und im Sachkontext deuten.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">6</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Ein Schüler rechnet eine Sachaufgabe über Eintrittskarten und erhält \(x = 4{,}5\), \(y = -2\) und \(z = 7{,}5\). Seine Probe stimmt in allen drei Gleichungen. Beurteile das Ergebnis.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Die Probe sagt nur:</strong> Die Werte erfüllen das aufgestellte Gleichungssystem. Der Schüler hat also richtig <em>gerechnet</em>.</div>
+    <div class="ip"><strong>Die Validierung sagt:</strong> Das Ergebnis kann trotzdem nicht stimmen. \(y = -2\) bedeutet eine <strong>negative Anzahl</strong> von Karten — das gibt es nicht. Und wenn es um Kartenanzahlen geht, sind auch \(4{,}5\) und \(7{,}5\) unmöglich: Karten sind ganzzahlig.</div>
+    <div class="ip"><strong>Was folgt daraus?</strong> Nicht die Rechnung ist fehlerhaft, sondern das <strong>Modell</strong>. Wahrscheinlich wurde beim Aufstellen eine Aussage falsch übersetzt — etwa eine Beziehung verdreht wie bei Anna und Bert oben.</div>
+    <div class="ip"><strong>Sein nächster Schritt</strong> sollte also nicht sein, noch einmal zu rechnen, sondern die <em>Gleichungen am Text zu überprüfen</em>.</div>
+    <div class="ip"><em>Merke:</em> Eine bestandene Probe ist kein Beweis für ein richtiges Ergebnis. Sie prüft die Rechnung, nicht den Ansatz. Deshalb gehört Schritt ⑥ dazu.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Argumentieren und modellieren: ein Ergebnis am Sachkontext prüfen und zwischen Rechen- und Modellfehler unterscheiden.</div></div>
+  </div>
+</div><!-- end k9-lgssach -->
+
+<div class="subpanel" id="k9-lgsmod">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Bisher waren alle Angaben genau passend: nicht zu wenige, nicht zu viele, und die Zahlen gingen glatt auf. So ist die Wirklichkeit nicht. <strong>Modellieren</strong> heißt: selbst entscheiden, was wichtig ist, was man vereinfacht — und am Ende prüfen, ob das Ergebnis zur Sache passt.</div>
+    <div class="ip">In diesem Tab bestimmst du die Funktionsgleichung eines Brückenbogens. Das ist dieselbe Rechnung wie „Parabel durch drei Punkte" — aber <strong>die drei Punkte musst du dir selbst beschaffen</strong>.</div>
+    <div class="hint"><strong>Voraussetzung:</strong> Parabel durch drei Punkte (Tab <em>Drei Unbekannte</em>), Sechs-Schritte-Schema (Tab <em>Sachaufgaben</em>).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich entnehme einer Sachsituation selbstständig die nötigen Bedingungen</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich wähle ein Koordinatensystem geschickt und begründe meine Wahl</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich benenne die Vereinfachungen, die ich beim Aufstellen des Modells treffe</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich beurteile, ob mein Ergebnis zur Sachsituation passt</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne die Grenzen meines Modells und benenne sie</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">1 · Was Modellieren bedeutet</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">→</div><span class="card-title">Der Weg von der Wirklichkeit zur Mathematik</span></div>
+  <div class="card-body">
+    <div class="ip">Beim Modellieren durchläufst du immer denselben Kreis:</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px" class="lgs-faelle"><div><div style="text-align:center;padding:4px"><div style="font-size:13px;font-weight:700;color:#8a9da7;letter-spacing:.08em">① VEREINFACHEN</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">Was ist wichtig? Was lasse ich weg?</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:13px;font-weight:700;color:#5b6e2e;letter-spacing:.08em">② ÜBERSETZEN</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">Koordinaten, Ansatz, Gleichungssystem</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:13px;font-weight:700;color:#c8b55e;letter-spacing:.08em">③ RECHNEN</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">das System lösen</div></div></div><div><div style="text-align:center;padding:4px"><div style="font-size:13px;font-weight:700;color:#c75c3a;letter-spacing:.08em">④ ZURÜCKDEUTEN</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:6px">Passt das Ergebnis zur Wirklichkeit?</div></div></div></div>
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px"><strong style="color:#8a7a30">Kernidee:</strong> Der schwierigste Schritt ist ①. In einer normalen Sachaufgabe ist das Vereinfachen schon für dich erledigt — beim Modellieren machst du es selbst. Deshalb gibt es hier oft <strong>mehrere richtige Wege</strong>, aber nicht beliebige.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-s">≡</div><span class="card-title">Eingekleidete Aufgabe oder echte Modellierung?</span></div>
+  <div class="card-body">
+    <div class="ip">Nicht jede Aufgabe mit einer Geschichte ist eine Modellierungsaufgabe.</div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:12px" class="lgs-faelle"><div><div><div style="font-size:14px;font-weight:700;color:#8a9da7">Eingekleidete Aufgabe</div><div style="font-size:13px;color:var(--ink);margin-top:6px;line-height:1.55">Alle nötigen Zahlen stehen im Text — genau so viele, wie gebraucht werden. Es gibt eine einzige richtige Lösung. Die Geschichte ist Verpackung.<br><br><em style="color:var(--ink-muted)">Beispiel: die Kinoaufgabe im Tab Sachaufgaben.</em></div></div></div><div><div><div style="font-size:14px;font-weight:700;color:#5b6e2e">Echte Modellierung</div><div style="font-size:13px;color:var(--ink);margin-top:6px;line-height:1.55">Du entscheidest, welche Angaben du brauchst, triffst Annahmen und prüfst am Ende, ob dein Modell taugt. Verschiedene Wege können zu leicht verschiedenen Ergebnissen führen.<br><br><em style="color:var(--ink-muted)">Beispiel: der Brückenbogen unten.</em></div></div></div></div>
+    <div class="ip"><strong>Beides ist nützlich</strong> — eingekleidete Aufgaben trainieren das Übersetzen, echte Modellierung trainiert das Entscheiden. Wichtig ist nur, den Unterschied zu kennen.</div>
+  </div>
+</div>
+
+<div class="section-label">2 · Der Brückenbogen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-c">✓</div><span class="card-title">Beispiel — Eine Bogenbrücke beschreiben</span></div>
+  <div class="card-body">
+    <div class="ip">Eine Brücke überspannt einen Fluss. Der Bogen ist <strong>40 m breit</strong> und in der Mitte <strong>8 m hoch</strong>. Gesucht ist eine Funktion, die den Bogen beschreibt.</div>
+    <div class="ip"><strong>① Vereinfachen.</strong> Wir nehmen an, dass der Bogen die Form einer <em>Parabel</em> hat und dass er symmetrisch ist. Die Dicke des Bauwerks lassen wir weg — wir beschreiben nur die Linie des Bogens.</div>
+    <div class="ip"><strong>② Koordinatensystem wählen.</strong> Wir legen den Ursprung an den <em>linken Bogenfuß</em>, die \(x\)-Achse waagerecht. Dann kennen wir drei Punkte: \((0\mid 0)\), \((40\mid 0)\) und den Scheitel \((20\mid 8)\).</div>
+    <div class="ip"><strong>③ Ansatz und Gleichungen:</strong> \(y = ax^2 + bx + c\) \[ \begin{array}{lrl} \text{I} & c &= 0 \\ \text{II} & 1600a + 40b + c &= 0 \\ \text{III} & 400a + 20b + c &= 8 \end{array} \]</div>
+    <div class="ip"><strong>④ Lösen.</strong> Aus I: \(c = 0\). Damit II: \(1600a + 40b = 0 \Rightarrow b = -40a\). In III: \(400a + 20(-40a) = 8 \Rightarrow -400a = 8 \Rightarrow a = -0{,}02\), also \(b = 0{,}8\).</div>
+    <div class="ip"><strong>⑤ Ergebnis:</strong> \(y = -0{,}02x^2 + 0{,}8x\)</div>
+    <div class="ip"><svg viewBox="0 0 470 300" width="100%" style="max-width:470px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Parabelförmiger Brückenbogen">
+<defs><marker id="vtah8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="470" height="300" fill="#fffcf6"/>
+<line x1="34.0" y1="260.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="72.5" y1="260.0" x2="72.5" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="111.1" y1="260.0" x2="111.1" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="149.6" y1="260.0" x2="149.6" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="188.2" y1="260.0" x2="188.2" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="226.7" y1="260.0" x2="226.7" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="265.3" y1="260.0" x2="265.3" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="303.8" y1="260.0" x2="303.8" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="342.4" y1="260.0" x2="342.4" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="380.9" y1="260.0" x2="380.9" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="419.5" y1="260.0" x2="419.5" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="458.0" y1="260.0" x2="458.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="260.0" x2="458.0" y2="260.0" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="219.3" x2="458.0" y2="219.3" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="178.5" x2="458.0" y2="178.5" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="137.8" x2="458.0" y2="137.8" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="97.1" x2="458.0" y2="97.1" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="56.4" x2="458.0" y2="56.4" stroke="#e8e4de" stroke-width="1"/>
+<line x1="34.0" y1="260.0" x2="468.0" y2="260.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah8)"/>
+<line x1="34.0" y1="260.0" x2="34.0" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah8)"/>
+<text x="472.0" y="265.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
+<text x="43.0" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
+<line x1="72.5" y1="256.0" x2="72.5" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="72.5" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
+<line x1="111.1" y1="256.0" x2="111.1" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="111.1" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">8</text>
+<line x1="149.6" y1="256.0" x2="149.6" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="149.6" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">12</text>
+<line x1="188.2" y1="256.0" x2="188.2" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="188.2" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">16</text>
+<line x1="226.7" y1="256.0" x2="226.7" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="226.7" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">20</text>
+<line x1="265.3" y1="256.0" x2="265.3" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="265.3" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">24</text>
+<line x1="303.8" y1="256.0" x2="303.8" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="303.8" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">28</text>
+<line x1="342.4" y1="256.0" x2="342.4" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="342.4" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">32</text>
+<line x1="380.9" y1="256.0" x2="380.9" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="380.9" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">36</text>
+<line x1="419.5" y1="256.0" x2="419.5" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="419.5" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">40</text>
+<line x1="458.0" y1="256.0" x2="458.0" y2="264.0" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="458.0" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="middle">44</text>
+<line x1="30.0" y1="219.3" x2="38.0" y2="219.3" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="26.0" y="223.3" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="30.0" y1="178.5" x2="38.0" y2="178.5" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="26.0" y="182.5" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="30.0" y1="137.8" x2="38.0" y2="137.8" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="26.0" y="141.8" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="30.0" y1="97.1" x2="38.0" y2="97.1" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="26.0" y="101.1" font-size="12.5" fill="#6b6560" text-anchor="end">8</text>
+<line x1="30.0" y1="56.4" x2="38.0" y2="56.4" stroke="#2c2c2c" stroke-width="1.5"/>
+<text x="26.0" y="60.4" font-size="12.5" fill="#6b6560" text-anchor="end">10</text>
+<text x="26.0" y="279.0" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<polyline points="34.0,260.0 36.6,255.6 39.3,251.2 42.0,246.8 44.6,242.6 47.2,238.4 49.9,234.2 52.5,230.1 55.2,226.1 57.8,222.2 60.5,218.3 63.1,214.4 65.8,210.7 68.4,207.0 71.1,203.3 73.8,199.7 76.4,196.2 79.0,192.7 81.7,189.3 84.3,186.0 87.0,182.7 89.7,179.5 92.3,176.3 95.0,173.3 97.6,170.2 100.3,167.2 102.9,164.3 105.6,161.5 108.2,158.7 110.9,156.0 113.5,153.3 116.2,150.7 118.8,148.2 121.5,145.7 124.1,143.3 126.8,140.9 129.4,138.6 132.1,136.4 134.7,134.2 137.4,132.1 140.0,130.1 142.7,128.1 145.3,126.2 148.0,124.3 150.6,122.5 153.3,120.8 155.9,119.1 158.6,117.5 161.2,115.9 163.9,114.4 166.5,113.0 169.2,111.6 171.8,110.3 174.5,109.1 177.1,107.9 179.8,106.8 182.4,105.7 185.1,104.7 187.7,103.8 190.4,102.9 193.0,102.1 195.7,101.3 198.3,100.6 201.0,100.0 203.6,99.4 206.3,98.9 208.9,98.5 211.6,98.1 214.2,97.8 216.8,97.5 219.5,97.3 222.1,97.2 224.8,97.1 227.4,97.1 230.1,97.1 232.7,97.2 235.4,97.4 238.0,97.7 240.7,97.9 243.3,98.3 246.0,98.7 248.6,99.2 251.3,99.7 253.9,100.3 256.6,101.0 259.2,101.7 261.9,102.5 264.5,103.4 267.2,104.3 269.8,105.2 272.5,106.3 275.1,107.4 277.8,108.5 280.4,109.7 283.1,111.0 285.7,112.4 288.4,113.8 291.0,115.2 293.7,116.8 296.3,118.4 299.0,120.0 301.6,121.7 304.3,123.5 306.9,125.3 309.6,127.2 312.2,129.2 314.9,131.2 317.5,133.3 320.2,135.4 322.8,137.6 325.5,139.9 328.1,142.2 330.8,144.6 333.4,147.0 336.1,149.6 338.7,152.1 341.4,154.8 344.0,157.5 346.7,160.2 349.3,163.0 352.0,165.9 354.6,168.9 357.3,171.9 359.9,174.9 362.6,178.1 365.2,181.2 367.9,184.5 370.5,187.8 373.2,191.2 375.8,194.6 378.5,198.1 381.1,201.7 383.8,205.3 386.4,209.0 389.1,212.7 391.7,216.5 394.4,220.4 397.0,224.3 399.7,228.3 402.3,232.4 405.0,236.5 407.6,240.7 410.3,244.9 412.9,249.2 415.6,253.5 418.2,258.0 420.9,262.5 423.5,267.0" fill="none" stroke="#5b6e2e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<circle cx="34.0" cy="260.0" r="5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="40.0" y="278.0" font-size="13.5" font-weight="700" fill="#c75c3a">(0|0)</text>
+<circle cx="226.7" cy="97.1" r="5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="202.7" y="85.1" font-size="13.5" font-weight="700" fill="#c75c3a">S(20|8)</text>
+<circle cx="419.5" cy="260.0" r="5" fill="#c75c3a" stroke="#fffcf6" stroke-width="2"/>
+<text x="389.5" y="278.0" font-size="13.5" font-weight="700" fill="#c75c3a">(40|0)</text>
+<line x1="226.7" y1="260.0" x2="226.7" y2="97.1" stroke="#6b6560" stroke-width="1.6" stroke-dasharray="5 5"/>
+<text x="332.7" y="150.0" font-size="13" fill="#5b6e2e" text-anchor="middle" font-weight="700">y = −0,02x² + 0,8x</text>
+</svg></div>
+    <div class="ip"><strong>⑥ Validierung.</strong> Bei \(x = 10\) ergibt sich \(y = -2 + 8 = 6\) m — auf halbem Weg zur Mitte ist der Bogen 6 m hoch. Das ist plausibel. Der Wert \(a < 0\) muss negativ sein, sonst wäre der Bogen nach oben geöffnet.</div>
+<div class="ip" style="background:#fceee9;border-radius:10px;padding:14px 18px;border-left:4px solid #c75c3a;margin-bottom:14px"><strong style="color:#c75c3a">Grenzen des Modells:</strong> Reale Bogenbrücken sind oft keine Parabeln, sondern Kreis- oder Kettenbögen. Unser Modell beschreibt die Form also nur <strong>näherungsweise</strong>. Außerhalb von \(0 \le x \le 40\) ist es sinnlos — dort gibt es keine Brücke mehr, auch wenn die Funktion weiter Werte liefert.</div>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#c75c3a;line-height:1;font-weight:400;min-width:44px;text-align:center">M</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#c75c3a;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · M</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Modellieren — selbst entscheiden</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 1–4 · Annahmen treffen, Koordinaten wählen, Ergebnis beurteilen</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">1</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Ein Tunnel ist 12 m breit; in der Mitte ist er 5 m hoch. Bestimme eine Parabelgleichung für den Tunnelquerschnitt. Wähle das Koordinatensystem selbst und begründe deine Wahl.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Geschickte Wahl:</strong> Ursprung in die <em>Mitte des Tunnelbodens</em>. Dann liegt der Scheitel auf der \(y\)-Achse, und die Randpunkte sind \((-6\mid 0)\) und \((6\mid 0)\), der Scheitel \((0\mid 5)\).</div>
+    <div class="ip"><strong>Vorteil dieser Wahl:</strong> Aus dem Scheitel auf der \(y\)-Achse folgt sofort \(c = 5\), und wegen der Symmetrie ist \(b = 0\). Es bleibt nur eine Unbekannte.</div>
+    <div class="ip"><strong>Rechnung:</strong> \(y = ax^2 + 5\). Einsetzen von \((6\mid 0)\): \(36a + 5 = 0 \Rightarrow a = -\tfrac{5}{36} \approx -0{,}139\).</div>
+    <div class="ip"><strong>Ergebnis:</strong> \(y = -\tfrac{5}{36}x^2 + 5\)</div>
+    <div class="ip"><strong>Validierung:</strong> Bei \(x = 3\) (halber Weg zum Rand) ergibt sich \(y = -1{,}25 + 5 = 3{,}75\) m. Ein LKW von 3,5 m Höhe passt dort also gerade noch durch — am Rand jedoch nicht mehr. Plausibel.</div>
+    <div class="ip"><em>Andere Wahl möglich:</em> Mit dem Ursprung am linken Tunnelfuß erhielte man \(y = -\tfrac{5}{36}x^2 + \tfrac{5}{3}x\) — dieselbe Kurve, nur verschoben. Beides ist richtig, die erste Wahl macht weniger Arbeit.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k2">K2</span></div>
+          <div class="komp-desc">Modellieren und Probleme lösen: ein Koordinatensystem zweckmäßig wählen und die Wahl begründen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">2</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Ein Ball wird geworfen. Nach 1 m waagerechter Entfernung ist er 2,5 m hoch, nach 3 m ist er 3,5 m hoch, und nach 5 m ist er wieder 2,5 m hoch. Bestimme eine Parabelgleichung der Flugbahn und berechne, aus welcher Höhe der Ball abgeworfen wurde.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>① Bedingungen:</strong> \((1\mid 2{,}5)\), \((3\mid 3{,}5)\), \((5\mid 2{,}5)\) — drei Punkte für drei Unbekannte.</div>
+    <div class="ip"><strong>② Gleichungssystem:</strong> \[ \begin{array}{lrl} \text{I} & a + b + c &= 2{,}5 \\ \text{II} & 9a + 3b + c &= 3{,}5 \\ \text{III} & 25a + 5b + c &= 2{,}5 \end{array} \]</div>
+    <div class="ip"><strong>③ Lösen.</strong> III − I: \(24a + 4b = 0 \Rightarrow b = -6a\).<br>II − I: \(8a + 2b = 1\). Mit \(b = -6a\): \(8a - 12a = 1 \Rightarrow -4a = 1 \Rightarrow a = -0{,}25\), also \(b = 1{,}5\).<br>Aus I: \(c = 2{,}5 + 0{,}25 - 1{,}5 = 1{,}25\).</div>
+    <div class="ip"><strong>④ Probe:</strong> \(f(3) = -2{,}25 + 4{,}5 + 1{,}25 = 3{,}5\;\checkmark\), \(f(5) = -6{,}25 + 7{,}5 + 1{,}25 = 2{,}5\;\checkmark\)</div>
+    <div class="ip"><strong>⑤ Antwort:</strong> \(y = -0{,}25x^2 + 1{,}5x + 1{,}25\). Die Abwurfhöhe ist der Wert bei \(x = 0\), also \(c = 1{,}25\) m.</div>
+    <div class="ip"><strong>⑥ Validierung:</strong> 1,25 m Abwurfhöhe passt zu einem Menschen, der einen Ball wirft. Der Scheitel liegt bei \(x = 3\) mit 3,5 m Höhe — auch das ist realistisch. <em>Grenze:</em> Der Luftwiderstand wird vernachlässigt; reale Wurfbahnen sind leicht unsymmetrisch.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Modellieren und symbolisch arbeiten: eine Flugbahn rekonstruieren und einen nicht gemessenen Wert aus dem Modell gewinnen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">3</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Zu einem Brückenbogen sind vier Angaben bekannt: Er ist 30 m breit, in der Mitte 6 m hoch, bei 10 m Entfernung vom linken Fuß 5,33 m hoch, und die Brücke wurde 1954 gebaut. Entscheide, welche Angaben du für die Funktionsgleichung brauchst, und begründe deine Auswahl.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Gebraucht werden drei Bedingungen</strong>, denn der Ansatz \(y = ax^2+bx+c\) hat drei Unbekannte.</div>
+    <div class="ip"><strong>Das Baujahr 1954 ist keine Bedingung</strong> — es liefert keine Information über die Form des Bogens und kommt in keiner Gleichung vor. Solche Angaben nennt man <em>überzählig</em>; sie gehören zur Geschichte, nicht zum Modell.</div>
+    <div class="ip"><strong>Auswahl (Ursprung am linken Fuß):</strong> \((0\mid 0)\), \((30\mid 0)\), \((15\mid 6)\).<br>Aus I: \(c = 0\). Aus \((30\mid 0)\): \(900a + 30b = 0 \Rightarrow b = -30a\). Aus \((15\mid 6)\): \(225a - 450a = 6 \Rightarrow -225a = 6 \Rightarrow a = -\tfrac{2}{75}\), also \(b = \tfrac{4}{5}\).</div>
+    <div class="ip"><strong>Ergebnis:</strong> \(y = -\tfrac{2}{75}x^2 + 0{,}8x\)</div>
+    <div class="ip"><strong>Die vierte Angabe als Prüfung nutzen:</strong> \(f(10) = -\tfrac{2}{75}\cdot 100 + 8 = -\tfrac{8}{3} + 8 \approx 5{,}33\;\checkmark\) — sie bestätigt das Modell.</div>
+    <div class="ip"><em>Das ist der interessante Punkt:</em> Eine überzählige Bedingung ist nicht wertlos. Sie legt nichts mehr fest, aber sie erlaubt eine <strong>unabhängige Kontrolle</strong>. Genau wie Punkt \(C\) im Tab <em>Bedingungen zählen</em>.</div>
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Probleme lösen und argumentieren: relevante von irrelevanten Angaben trennen und eine überzählige Bedingung sinnvoll nutzen.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">4</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Ein Sprungturm-Becken soll im Querschnitt parabelförmig sein: 10 m breit und in der Mitte 3 m tief. Eine Schülerin rechnet und erhält \(y = 0{,}12x^2 - 1{,}2x\) mit dem Ursprung am linken Beckenrand. Überprüfe ihr Ergebnis und beurteile es.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>Prüfen der drei Bedingungen:</strong><br>\((0\mid 0)\): \(y = 0\;\checkmark\)<br>\((10\mid 0)\): \(0{,}12 \cdot 100 - 12 = 12 - 12 = 0\;\checkmark\)<br>\((5\mid -3)\): \(0{,}12 \cdot 25 - 6 = 3 - 6 = -3\;\checkmark\)</div>
+    <div class="ip"><strong>Die Rechnung stimmt.</strong> Alle drei Bedingungen sind erfüllt.</div>
+    <div class="ip"><strong>Beurteilung des Modells:</strong> Das Vorzeichen ist hier entscheidend. Weil das Becken nach <em>unten</em> geht, ist die Tiefe als \(y = -3\) anzusetzen — und folgerichtig ist \(a = 0{,}12 > 0\), die Parabel also nach oben geöffnet. Das ist bei einem Becken richtig; bei einer Brücke wäre es ein Fehler.</div>
+    <div class="ip"><strong>Grenzen:</strong> Ein reales Schwimmbecken hat einen ebenen Boden und senkrechte Wände, keinen Parabelquerschnitt. Das Modell beschreibt also eher ein Naturbecken oder eine Wanne. Für die Berechnung des Wasservolumens wäre es brauchbar, für den Bau eines Sprungbeckens nicht.</div>
+    <div class="ip"><em>Wichtig:</em> „Die Rechnung stimmt" und „das Modell passt zur Wirklichkeit" sind zwei verschiedene Urteile. Beide gehören zu einer vollständigen Antwort.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Argumentieren und modellieren: ein fremdes Ergebnis prüfen, das Vorzeichen sachlich deuten und die Modellgrenzen benennen.</div></div>
+  </div>
+</div><!-- end k9-lgsmod -->
 
 <!-- ── Potenzen & Wurzeln ──────────────────────────────────────── -->
 <div class="subpanel" id="k9-pot">
@@ -27138,10 +28577,10 @@ function showK8Tab(id, btn) {
 }
 
 function showK9Tab(id, btn) {
-  ['k9-lgswdh','k9-pot','k9-potg','k9-potf','k9-wurf','k9-quad','k9-stat'].forEach(function(sid) {
-    var el = document.getElementById(sid);
-    if(el) el.classList.remove('on');
-  });
+  // Alle Subpanels der Klasse 9 schliessen. Bewusst per Abfrage statt fester
+  // Liste: So muss beim Anlegen eines neuen Tabs hier nichts nachgetragen werden.
+  var k9 = document.getElementById('p9');
+  if(k9) k9.querySelectorAll('.subpanel').forEach(function(el){ el.classList.remove('on'); });
   var target = document.getElementById(id);
   if(target){ target.classList.add('on'); loadVisibleIframes(target); mjRender(target); }
   if(btn) {
