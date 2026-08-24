@@ -17457,7 +17457,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <span class="card-title">Unterrichtsfahrplan</span>
         </div>
         <div class="card-body">
-            <div class="ip">Drei Doppelstunden à 75 Minuten, jeweils: Erarbeitung → Übung → Auswertung.</div>
+            <div class="ip">Zwei Doppelstunden à 75 Minuten, jeweils: Erarbeitung → Übung → Auswertung.</div>
             <div style="overflow-x:auto;margin:12px 0">
               <table style="border-collapse:collapse;width:100%;font-size:15px">
                 <tr style="background:var(--kiku-light)">
@@ -17474,11 +17474,6 @@ window.addEventListener('resize',function(){updateSimulator();});
                   <td style="padding:8px 10px;border:1px solid var(--border);font-weight:700">2</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">Verhalten im Unendlichen — die Funktionstypen</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">30 min Erarbeitung · 30 min <strong>GW2</strong> · 15 min Auswertung</td>
-                </tr>
-                <tr>
-                  <td style="padding:8px 10px;border:1px solid var(--border);font-weight:700">3</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">Stetigkeit anschaulich</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">20 min Erarbeitung · 35 min <strong>GW3</strong> · 20 min Auswertung</td>
                 </tr>
               </table>
             </div>
@@ -17505,10 +17500,6 @@ window.addEventListener('resize',function(){updateSimulator();});
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
                     <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann das Verhalten im Unendlichen von ganzrationalen Funktionen, Exponential- und speziellen Sinusfunktionen angeben und waagerechte Asymptoten benennen</span>
-                </li>
-                <li class="gi">
-                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann Stetigkeit anschaulich beschreiben und an Graphen erkennen</span>
                 </li>
             </ul>
         </div>
@@ -17818,119 +17809,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <div class="section-label">Stetigkeit</div>
-
-    <!-- Stetigkeit — rein anschaulich (D12, D16) -->
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">i</div>
-            <span class="card-title">Stetigkeit — anschaulich</span>
-        </div>
-        <div class="card-body">
-            <div class="ip">Eine Funktion heißt <strong>stetig</strong>, wenn man ihren Graphen <em>zeichnen kann, ohne den Stift abzusetzen</em> — keine Sprünge, keine Lücken. Stetig sind zum Beispiel ganzrationale Funktionen, \(\sin(x)\) und \(e^x\). Nicht stetig ist eine Funktion dort, wo man absetzen und neu ansetzen muss.</div>
-            <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:14px 0">
-                <div style="text-align:center">
-                    <canvas id="cvStetig" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:600;color:#5b6e2e;margin-top:6px">stetig — Stift bleibt auf dem Papier</div>
-                </div>
-                <div style="text-align:center">
-                    <canvas id="cvUnstetig" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:600;color:#c75c3a;margin-top:6px">nicht stetig — Stift muss abgesetzt werden</div>
-                </div>
-            </div>
-            <div class="hint" style="margin-top:10px"><strong>Warum ist das wichtig?</strong> Stetigkeit ist die Voraussetzung dafür, dass wir später Ableitungen bilden können. Nur wo der Graph „glatt durchläuft", lässt sich eine Tangentensteigung sinnvoll angeben.</div>
-        </div>
-    </div>
-    <script>
-    (function(){
-      // === Canvas: Stetige Funktion ===
-      var c1=document.getElementById('cvStetig'),ctx1=c1.getContext('2d');
-      var dpr=window.devicePixelRatio||1,cssW=280,cssH=220;
-      c1.width=cssW*dpr;c1.height=cssH*dpr;
-      c1.style.width=cssW+'px';c1.style.height=cssH+'px';
-      ctx1.scale(dpr,dpr);
-      var pad=32,xMin=-3,xMax=3,yMin=-1.5,yMax=3.5;
-      function tx1(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-6);}
-      function ty1(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-6);}
-      function f1(x){return 0.3*x*x*x - 0.5*x + 1;}
-      // Achsen
-      ctx1.strokeStyle='#999';ctx1.lineWidth=1;
-      ctx1.beginPath();ctx1.moveTo(tx1(xMin),ty1(0));ctx1.lineTo(tx1(xMax),ty1(0));ctx1.stroke();
-      ctx1.beginPath();ctx1.moveTo(tx1(0),ty1(yMin));ctx1.lineTo(tx1(0),ty1(yMax));ctx1.stroke();
-      // Pfeilspitzen
-      var _a1=6;ctx1.fillStyle='#999';
-      ctx1.beginPath();ctx1.moveTo(tx1(xMax),ty1(0));ctx1.lineTo(tx1(xMax)-_a1,ty1(0)-_a1/2);ctx1.lineTo(tx1(xMax)-_a1,ty1(0)+_a1/2);ctx1.closePath();ctx1.fill();
-      ctx1.beginPath();ctx1.moveTo(tx1(0),ty1(yMax));ctx1.lineTo(tx1(0)-_a1/2,ty1(yMax)+_a1);ctx1.lineTo(tx1(0)+_a1/2,ty1(yMax)+_a1);ctx1.closePath();ctx1.fill();
-      // Achsennamen + Ursprung
-      ctx1.fillStyle='#555';ctx1.font='bold 13px Inter,sans-serif';ctx1.textAlign='left';ctx1.fillText('x',tx1(xMax)-14,ty1(0)-10);
-      ctx1.textAlign='center';ctx1.fillText('y',tx1(0)+14,ty1(yMax)+4);
-      ctx1.fillStyle='#888';ctx1.font='12px Inter,sans-serif';ctx1.textAlign='right';ctx1.textBaseline='top';ctx1.fillText('O',tx1(0)-5,ty1(0)+4);
-      // Ticks
-      ctx1.fillStyle='#777';ctx1.font='11px Inter,sans-serif';ctx1.textAlign='center';ctx1.textBaseline='alphabetic';
-      for(var i=Math.ceil(xMin);i<=Math.floor(xMax);i++){if(i===0)continue;ctx1.fillText(i,tx1(i),ty1(0)+14);}
-      ctx1.textAlign='right';
-      for(var j=Math.ceil(yMin);j<=Math.floor(yMax);j++){if(j===0)continue;ctx1.fillText(j,tx1(0)-6,ty1(j)+4);}
-      // Graph — durchgezogen
-      ctx1.strokeStyle='#5b6e2e';ctx1.lineWidth=2.5;ctx1.beginPath();
-      for(var px=-3;px<=3;px+=0.02){var py=f1(px);if(px===-3)ctx1.moveTo(tx1(px),ty1(py));else ctx1.lineTo(tx1(px),ty1(py));}
-      ctx1.stroke();
-      // Label
-      ctx1.font='bold 13px Inter,sans-serif';ctx1.fillStyle='#5b6e2e';ctx1.textAlign='left';
-      ctx1.fillText('f(x) = 0,3x\u00B3 \u2212 0,5x + 1',tx1(-2.8),ty1(3.1));
-
-      // === Canvas: Unstetige Funktion (Sprung bei x=1) ===
-      var c2=document.getElementById('cvUnstetig'),ctx2=c2.getContext('2d');
-      c2.width=cssW*dpr;c2.height=cssH*dpr;
-      c2.style.width=cssW+'px';c2.style.height=cssH+'px';
-      ctx2.scale(dpr,dpr);
-      function tx2(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-6);}
-      function ty2(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-6);}
-      // Achsen
-      ctx2.strokeStyle='#999';ctx2.lineWidth=1;
-      ctx2.beginPath();ctx2.moveTo(tx2(xMin),ty2(0));ctx2.lineTo(tx2(xMax),ty2(0));ctx2.stroke();
-      ctx2.beginPath();ctx2.moveTo(tx2(0),ty2(yMin));ctx2.lineTo(tx2(0),ty2(yMax));ctx2.stroke();
-      // Pfeilspitzen
-      var _a2=6;ctx2.fillStyle='#999';
-      ctx2.beginPath();ctx2.moveTo(tx2(xMax),ty2(0));ctx2.lineTo(tx2(xMax)-_a2,ty2(0)-_a2/2);ctx2.lineTo(tx2(xMax)-_a2,ty2(0)+_a2/2);ctx2.closePath();ctx2.fill();
-      ctx2.beginPath();ctx2.moveTo(tx2(0),ty2(yMax));ctx2.lineTo(tx2(0)-_a2/2,ty2(yMax)+_a2);ctx2.lineTo(tx2(0)+_a2/2,ty2(yMax)+_a2);ctx2.closePath();ctx2.fill();
-      // Achsennamen + Ursprung
-      ctx2.fillStyle='#555';ctx2.font='bold 13px Inter,sans-serif';ctx2.textAlign='left';ctx2.fillText('x',tx2(xMax)-14,ty2(0)-10);
-      ctx2.textAlign='center';ctx2.fillText('y',tx2(0)+14,ty2(yMax)+4);
-      ctx2.fillStyle='#888';ctx2.font='12px Inter,sans-serif';ctx2.textAlign='right';ctx2.textBaseline='top';ctx2.fillText('O',tx2(0)-5,ty2(0)+4);
-      // Ticks
-      ctx2.fillStyle='#777';ctx2.font='11px Inter,sans-serif';ctx2.textAlign='center';ctx2.textBaseline='alphabetic';
-      for(var i2=Math.ceil(xMin);i2<=Math.floor(xMax);i2++){if(i2===0)continue;ctx2.fillText(i2,tx2(i2),ty2(0)+14);}
-      ctx2.textAlign='right';
-      for(var j2=Math.ceil(yMin);j2<=Math.floor(yMax);j2++){if(j2===0)continue;ctx2.fillText(j2,tx2(0)-6,ty2(j2)+4);}
-      // Linker Teil: f(x) = x + 0.5 für x < 1
-      ctx2.strokeStyle='#c75c3a';ctx2.lineWidth=2.5;ctx2.beginPath();
-      for(var px2=-3;px2<1;px2+=0.02){var py2=px2+0.5;if(px2===-3)ctx2.moveTo(tx2(px2),ty2(py2));else ctx2.lineTo(tx2(px2),ty2(py2));}
-      ctx2.stroke();
-      // Offener Kreis bei (1, 1.5)
-      ctx2.strokeStyle='#c75c3a';ctx2.lineWidth=2;ctx2.beginPath();ctx2.arc(tx2(1),ty2(1.5),4,0,2*Math.PI);ctx2.stroke();
-      // Rechter Teil: f(x) = x - 0.5 für x >= 1 (Sprung: Wert ist 0.5 statt 1.5)
-      ctx2.strokeStyle='#c75c3a';ctx2.lineWidth=2.5;ctx2.beginPath();
-      ctx2.moveTo(tx2(1),ty2(0.5));
-      for(var px3=1;px3<=3;px3+=0.02){var py3=px3-0.5;ctx2.lineTo(tx2(px3),ty2(py3));}
-      ctx2.stroke();
-      // Voller Kreis bei (1, 0.5) — der tatsächliche Wert
-      ctx2.fillStyle='#c75c3a';ctx2.beginPath();ctx2.arc(tx2(1),ty2(0.5),4,0,2*Math.PI);ctx2.fill();
-      // Sprung-Pfeil gestrichelt
-      ctx2.strokeStyle='#c75c3a';ctx2.lineWidth=1;ctx2.setLineDash([4,3]);
-      ctx2.beginPath();ctx2.moveTo(tx2(1),ty2(1.5));ctx2.lineTo(tx2(1),ty2(0.5));ctx2.stroke();
-      ctx2.setLineDash([]);
-      // Label "Sprung"
-      ctx2.font='bold 12px Inter,sans-serif';ctx2.fillStyle='#c75c3a';ctx2.textAlign='left';
-      ctx2.fillText('Sprung!',tx2(1)+8,ty2(1.0));
-      // Funktionsbezeichnung
-      ctx2.font='bold 13px Inter,sans-serif';ctx2.textAlign='left';
-      ctx2.fillText('stückweise definiert',tx2(-2.8),ty2(3.1));
-    })();
-    </script>
-
-    <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
-
-  <!-- ══════════ BLOCK GW1 ══════════ -->
+    <!-- ══════════ BLOCK GW1 ══════════ -->
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">GW1</div>
     <div style="flex:1">
@@ -18187,101 +18066,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-  <!-- ══════════ BLOCK GW3 ══════════ -->
-  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fbf0ec;border-left:5px solid #c75c3a;border-radius:10px">
-    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">GW3</div>
-    <div style="flex:1">
-      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · GW3 · ★ / ★★ · DS 3</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Stetigkeit erkennen und begründen</div>
-    </div>
-  </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">GW3.1</span>
-                    <span class="td de">★</span>
-                </div>
-                <div class="tq">Entscheide jeweils, ob sich der Graph in einem Zug zeichnen lässt, und begründe kurz.<br>
-                <strong>a)</strong> \(f(x) = x^3 - 2x\) &#160;·&#160;
-                <strong>b)</strong> \(g(x) = \dfrac{1}{x}\) &#160;·&#160;
-                <strong>c)</strong> Porto: 0,85 € für Briefe bis 20 g, 1,00 € für Briefe über 20 g bis 50 g</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <div class="ip"><strong>a)</strong> Ja — ganzrationale Funktionen sind auf ganz \(\mathbb{R}\) stetig.</div>
-                <div class="ip"><strong>b)</strong> Nein — der Graph besteht aus zwei getrennten Ästen; an der Stelle \(x = 0\) ist \(g\) nicht definiert. Auf jedem Ast ist \(g\) stetig.</div>
-                <div class="ip"><strong>c)</strong> Nein — bei 20 g springt der Preis von 0,85 € auf 1,00 €. Tarif- und Treppenfunktionen sind typische unstetige Funktionen.</div>
-                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
-                <div class="komp-desc">K1: Stetigkeit begründen · K4: Zwischen Term, Graph und Sachsituation wechseln</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">GW3.2</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Betrachte den rechten Graphen im Abschnitt „Stetigkeit — anschaulich“ („stückweise definiert“). Begründe, warum die Funktion an der Stelle \(x = 1\) nicht stetig ist — und erkläre, warum man dort keine eindeutige Tangente anlegen kann.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <div class="ip">An der Stelle \(x = 1\) springt der Graph: Von links kommend enden die Werte bei 1,5 (offener Kreis), der tatsächliche Funktionswert liegt aber bei 0,5. Beim Zeichnen muss man den Stift absetzen — die Funktion ist dort nicht stetig.</div>
-                <div class="ip">Eine Tangente soll sich an den Graphen „anschmiegen“; an einer Sprungstelle gibt es keine einheitliche Richtung des Graphen, also auch keine eindeutige Tangente.</div>
-                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
-                <div class="komp-desc">K1: Unstetigkeit an einer Stelle begründen · K4: Aus dem Graphen argumentieren</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">GW3.3</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Gegeben ist
-                \[f(x) = \begin{cases} 2x + 1 & \text{für } x < 2 \\[2pt] x^2 + a & \text{für } x \ge 2 \end{cases}\]
-                Bestimme \(a\) so, dass der Graph an der Stelle \(x = 2\) ohne Sprung durchläuft.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <div class="ip"><strong>Von links:</strong> Für \(x\) knapp unter 2 nähern sich die Werte \(2 \cdot 2 + 1 = 5\). <strong>An der Stelle 2:</strong> \(f(2) = 4 + a\).</div>
-                <div class="ip">Damit kein Sprung entsteht: \(4 + a = 5\), also \(\boxed{a = 1}\).</div>
-                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
-                <div class="komp-desc">K5: Parameter aus einer Bedingung bestimmen · K1: Die Stetigkeitsbedingung als Gleichung formulieren</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tg">
-        <div class="tk">
-            <div class="tk-top" onclick="togTask(this)">
-                <div class="tkt">
-                    <span class="tn">GW3.4</span>
-                    <span class="td dm">★★</span>
-                </div>
-                <div class="tq">Gegeben ist \(f(x) = \dfrac{x^2 - 4}{x - 2}\).<br>
-                <strong>a)</strong> Für welche Stelle ist \(f\) nicht definiert?<br>
-                <strong>b)</strong> Vereinfache den Term und beschreibe, wie der Graph aussieht.</div>
-                <div class="tk-toggle">⌄</div>
-            </div>
-            <div class="ta">
-                <div class="ip"><strong>a)</strong> Der Nenner wird für \(x = 2\) null; \(D = \mathbb{R} \setminus \{2\}\).</div>
-                <div class="ip"><strong>b)</strong> \(x^2 - 4 = (x-2)(x+2)\), also \(f(x) = x + 2\) für alle \(x \neq 2\). Der Graph ist die Gerade \(y = x + 2\) mit einer <strong>Lücke</strong> im Punkt \((2\,|\,4)\). Solche Lücken heißen <em>behebbar</em>: Setzt man \(f(2) = 4\) nach, läuft der Graph ohne Sprung durch — anders als der Sprung aus GW3.2, der sich nicht beheben lässt.</div>
-                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
-                <div class="komp-desc">K5: Term faktorisieren · K1: Lücke und Sprung unterscheiden</div>
-            </div>
-        </div>
-    </div>
-
-
-<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
     <div class="ip">
@@ -18291,7 +18076,6 @@ window.addEventListener('resize',function(){updateSimulator();});
         <li>Woran erkennst du am Graphen, dass eine Funktion den Grenzwert 4 hat?</li>
         <li>Wie verhalten sich die Funktionstypen im Unendlichen — welche haben eine waagerechte Asymptote?</li>
         <li>Bei \(f(x) = a \cdot e^{kx} + d\): Auf welcher Seite liegt die Asymptote \(y = d\)?</li>
-        <li>Was bedeutet „Stetigkeit“, und warum ist sie eine Voraussetzung für die Ableitung?</li>
       </ol>
     </div>
   </div>
