@@ -17500,6 +17500,10 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann entscheiden, ob eine Funktion ganzrational ist, und ihren Grad und Leitkoeffizienten angeben</span>
+                </li>
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
                     <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann das Verhalten im Unendlichen von ganzrationalen Funktionen, Exponential- und speziellen Sinusfunktionen angeben und waagerechte Asymptoten benennen</span>
                 </li>
                 <li class="gi">
@@ -17598,6 +17602,68 @@ window.addEventListener('resize',function(){updateSimulator();});
                     <div style="font-size:13px;font-weight:700;color:#8a7a30;margin-top:6px">3 · Spezielle Sinusfunktion</div>
                     <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">kein Grenzwert — die Werte pendeln</div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Begriffskarte: ganzrationale Funktion und Grad -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Was heißt „ganzrational"? — Begriff und Grad</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Lineare Funktionen wie \(f(x) = 2x + 1\) und quadratische wie \(f(x) = x^2 - 3x\) kennst du seit Klasse 9. Beide folgen demselben Bauprinzip: eine <strong>Summe aus Potenzen von \(x\)</strong>, jede mit einer festen Zahl davor. Dieses Bauprinzip lässt sich mit \(x^3\), \(x^4\), … beliebig fortsetzen — und bekommt jetzt einen Namen.</div>
+            <div class="hint"><strong>Merke:</strong> Eine Funktion heißt <strong>ganzrational</strong>, wenn sich ihr Term als Summe von Potenzen von \(x\) mit natürlichen Hochzahlen schreiben lässt:
+            \[f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0\]
+            Die Zahlen \(a_n, \dots, a_1, a_0\) heißen <strong>Koeffizienten</strong>. Die höchste vorkommende Hochzahl \(n\) (mit \(a_n \neq 0\)) ist der <strong>Grad</strong> der Funktion. Der Koeffizient \(a_n\) vor der höchsten Potenz heißt <strong>Leitkoeffizient</strong>.</div>
+            <div class="ip" style="margin-top:12px"><strong>Beispiel:</strong> \(f(x) = 7 - 2x^2 + 4x^5\). Erst nach fallenden Hochzahlen ordnen: \(f(x) = 4x^5 - 2x^2 + 7\). Der Grad ist \(n = 5\), der Leitkoeffizient \(a_5 = 4\). Der Grad ist die <strong>höchste Hochzahl</strong> — nicht die Anzahl der Summanden: \(x^4\), \(x^3\) und \(x\) fehlen hier (ihre Koeffizienten sind 0), der Grad ist trotzdem 5.</div>
+            <div style="overflow-x:auto;margin:14px 0">
+              <table style="border-collapse:collapse;width:100%;font-size:15px">
+                <tr style="background:var(--kiku-light)">
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Funktion</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">ganzrational?</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Grad</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(f(x) = x^3 - 2x\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">ja</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">3</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(f(x) = 5\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">ja — konstante Funktion</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">0</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(f(x) = \dfrac{2}{x}\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">nein — \(x\) steht im Nenner, als Potenz wäre das \(2x^{-1}\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">—</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(f(x) = 3^x\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">nein — \(x\) steht im Exponenten: Exponentialfunktion (Typ 2)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">—</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(f(x) = \sin(x)\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">nein — Sinusfunktion (Typ 3)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">—</td>
+                </tr>
+              </table>
+            </div>
+            <div class="hint"><strong>Achtung, Verwechslungsgefahr:</strong> \(x^3\) und \(3^x\) sehen ähnlich aus, sind aber grundverschieden. Bei \(x^3\) steht das \(x\) <strong>unten</strong> (Basis) — ganzrational. Bei \(3^x\) steht das \(x\) <strong>oben</strong> (Exponent) — Exponentialfunktion. Genau deshalb verhalten sich die beiden Typen im Unendlichen so unterschiedlich, wie die nächsten Karten zeigen.</div>
+            <div class="bsp">
+              <div class="bsp-label">Check dich</div>
+              <div class="bsp-q">Gib für jede Funktion an, ob sie ganzrational ist. Wenn ja, nenne Grad und Leitkoeffizienten; wenn nein, begründe.
+              \[g_1(x) = -0{,}5x^6 + x \qquad g_2(x) = x \cdot (x^2 - 3) \qquad g_3(x) = 3^x \qquad g_4(x) = 5\]</div>
+              <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+              <div class="bsp-a">
+                <div class="ip"><strong>\(g_1\):</strong> ganzrational, Grad 6, Leitkoeffizient \(-0{,}5\).</div>
+                <div class="ip"><strong>\(g_2\):</strong> erst ausmultiplizieren: \(g_2(x) = x^3 - 3x\) — ganzrational, Grad 3, Leitkoeffizient 1. Die Form entscheidet sich daran, ob sich der Term als Potenzsumme <em>schreiben lässt</em>, nicht daran, wie er gerade dasteht.</div>
+                <div class="ip"><strong>\(g_3\):</strong> nicht ganzrational — \(x\) steht im Exponenten, das ist eine Exponentialfunktion.</div>
+                <div class="ip"><strong>\(g_4\):</strong> ganzrational, Grad 0 (konstante Funktion), Leitkoeffizient 5.</div>
+              </div>
             </div>
         </div>
     </div>
@@ -18220,6 +18286,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
     <div class="ip">
       <ol>
+        <li>Woran erkennst du, ob ein Funktionsterm ganzrational ist — und wie bestimmst du dann Grad und Leitkoeffizienten?</li>
         <li>Wie legst du eine Wertetabelle an, mit der man einen Grenzwert wirklich erkennt?</li>
         <li>Woran erkennst du am Graphen, dass eine Funktion den Grenzwert 4 hat?</li>
         <li>Wie verhalten sich die Funktionstypen im Unendlichen — welche haben eine waagerechte Asymptote?</li>
