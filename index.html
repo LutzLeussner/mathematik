@@ -17472,7 +17472,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </tr>
                 <tr>
                   <td style="padding:8px 10px;border:1px solid var(--border);font-weight:700">2</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">Verhalten im Unendlichen — vier Funktionstypen</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">Verhalten im Unendlichen — die Funktionstypen</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">30 min Erarbeitung · 30 min <strong>GW2</strong> · 15 min Auswertung</td>
                 </tr>
                 <tr>
@@ -17500,7 +17500,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann das Verhalten im Unendlichen der vier Funktionstypen angeben und waagerechte Asymptoten benennen</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann das Verhalten im Unendlichen von ganzrationalen Funktionen, Exponential- und speziellen Sinusfunktionen angeben und waagerechte Asymptoten benennen</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
@@ -17571,7 +17571,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
-            <span class="card-title">Die drei Möglichkeiten — und die vier Typen</span>
+            <span class="card-title">Die drei Möglichkeiten — und die drei Typen</span>
         </div>
         <div class="card-body">
             <div class="hint"><strong>Merke:</strong> Für \(x \to \infty\) (und ebenso für \(x \to -\infty\)) gibt es genau drei Möglichkeiten:
@@ -17585,22 +17585,22 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:18px 0 6px">
                 <div style="text-align:center">
                     <canvas id="cvUnendGanz" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:700;color:#5b6e2e;margin-top:6px">1 · Ganzrationale Funktion</div>
+                    <div style="font-size:13px;font-weight:700;color:#5b6e2e;margin-top:6px">1a · Ganzrational, ungerader Grad</div>
                     <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(x \to -\infty:\; -\infty\) &#160;·&#160; \(x \to +\infty:\; +\infty\)</div>
                 </div>
                 <div style="text-align:center">
-                    <canvas id="cvUnendPot" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:700;color:#4d6470;margin-top:6px">2 · Potenzfunktion \(x^{-2}\)</div>
-                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">beidseitig \(\to 0\) &#160;·&#160; Asymptote \(y=0\)</div>
+                    <canvas id="cvUnendGanz2" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:13px;font-weight:700;color:#4d6470;margin-top:6px">1b · Ganzrational, gerader Grad</div>
+                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(a_n < 0\): beide Enden \(-\infty\)</div>
                 </div>
                 <div style="text-align:center">
                     <canvas id="cvUnendExp" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:700;color:#a03d20;margin-top:6px">3 · Exponentialfunktion</div>
+                    <div style="font-size:13px;font-weight:700;color:#a03d20;margin-top:6px">2 · Exponentialfunktion</div>
                     <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(x \to +\infty:\; \to 1\) &#160;·&#160; \(x \to -\infty:\; +\infty\)</div>
                 </div>
                 <div style="text-align:center">
                     <canvas id="cvUnendSin" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:700;color:#8a7a30;margin-top:6px">4 · Spezielle Sinusfunktion</div>
+                    <div style="font-size:13px;font-weight:700;color:#8a7a30;margin-top:6px">3 · Spezielle Sinusfunktion</div>
                     <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">kein Grenzwert — die Werte pendeln</div>
                 </div>
             </div>
@@ -17662,22 +17662,6 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">2</div>
-            <span class="card-title">Potenzfunktionen</span>
-        </div>
-        <div class="card-body">
-            <div class="ip">Für \(f(x)=x^{n}\) mit <strong>positivem</strong> Exponenten gilt die Tabelle oben. Neu ist der <strong>negative</strong> Exponent:</div>
-            <div class="hint"><strong>Merke (\(n<0\)):</strong> Die Potenz steht im Nenner, z. B. \(x^{-3} = \frac{1}{x^{3}}\). Der Nenner wächst über alle Grenzen, der Bruch wird beliebig klein: \(\displaystyle\lim_{x \to \pm\infty} x^{n} = 0\) — die <strong>\(x\)-Achse ist waagerechte Asymptote</strong>. An der Stelle \(x=0\) ist die Funktion nicht definiert (<strong>Polstelle</strong>).</div>
-            <div class="bsp">
-              <div class="bsp-label">Beispiel</div>
-              <div class="ip">\(f(x) = \dfrac{5}{x^2} + 3\): &#160;\(f(10)=3{,}05\) · \(f(100)=3{,}0005\) → Grenzwert \(3\), Asymptote \(y=3\), Annäherung von oben (alle Werte sind größer als 3).</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Typ 3 -->
-    <div class="card">
-        <div class="card-head">
-            <div class="ci ci-i">3</div>
             <span class="card-title">Exponentialfunktionen</span>
         </div>
         <div class="card-body">
@@ -17689,10 +17673,10 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <!-- Typ 4 -->
+    <!-- Typ 3 -->
     <div class="card">
         <div class="card-head">
-            <div class="ci ci-i">4</div>
+            <div class="ci ci-i">3</div>
             <span class="card-title">Spezielle Sinusfunktionen</span>
         </div>
         <div class="card-body">
@@ -17705,7 +17689,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-g">✓</div>
-            <span class="card-title">Die vier Typen auf einen Blick</span>
+            <span class="card-title">Die drei Typen auf einen Blick</span>
         </div>
         <div class="card-body">
             <div style="overflow-x:auto;margin:4px 0">
@@ -17718,18 +17702,18 @@ window.addEventListener('resize',function(){updateSimulator();});
                   <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">waagerechte Asymptote</td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">ganzrational</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">ganzrational, ungerader Grad</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">\(0{,}5x^3 - 1{,}5x\)</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
                   <td style="padding:8px 10px;border:1px solid var(--border)">keine</td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">Potenzfunktion, \(n<0\)</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">\(x^{-2}\)</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">\(0\)</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">\(0\)</td>
-                  <td style="padding:8px 10px;border:1px solid var(--border)">\(y = 0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">ganzrational, gerader Grad</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-2x^4 + x^2\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">keine</td>
                 </tr>
                 <tr>
                   <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">Exponentialfunktion</td>
@@ -17991,7 +17975,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">GW2</div>
     <div style="flex:1">
       <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · GW2 · ★ / ★★ · DS 2</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Verhalten im Unendlichen — die vier Typen</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Verhalten im Unendlichen — die Funktionstypen</div>
     </div>
   </div>
 
@@ -18027,8 +18011,8 @@ window.addEventListener('resize',function(){updateSimulator();});
                     <span class="tn">GW2.2</span>
                     <span class="td de">★</span>
                 </div>
-                <div class="tq"><strong>Potenzfunktion.</strong> Bestimme mit einer Wertetabelle die Grenzwerte für \(x \to \pm\infty\) und gib die waagerechte Asymptote an.<br>
-                <strong>a)</strong> \(f(x) = x^{-3}\) &#160;·&#160;
+                <div class="tq"><strong>Funktionen mit \(x\) im Nenner.</strong> Bestimme mit einer Wertetabelle die Grenzwerte für \(x \to \pm\infty\) und gib die waagerechte Asymptote an.<br>
+                <strong>a)</strong> \(f(x) = \dfrac{1}{x^3}\) &#160;·&#160;
                 <strong>b)</strong> \(g(x) = \dfrac{4}{x^2} + 2\)</div>
                 <div class="tk-toggle">⌄</div>
             </div>
@@ -18111,7 +18095,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="ta">
                 <div class="ip"><strong>A ↔ (3)</strong> — ganzrational, Grad 4 (gerade), \(a_4 > 0\): beide Enden \(+\infty\), keine Asymptote.</div>
                 <div class="ip"><strong>B ↔ (4)</strong> — Exponentialfunktion mit \(k > 0\): links Asymptote \(y = -3\), rechts Wachstum über alle Grenzen — das einzige Bild mit <strong>einseitiger</strong> Asymptote.</div>
-                <div class="ip"><strong>C ↔ (1)</strong> — Potenzfunktion mit negativem Exponenten, verschoben: an <strong>beiden</strong> Enden Grenzwert 1, Asymptote \(y = 1\), Polstelle bei \(x = 0\).</div>
+                <div class="ip"><strong>C ↔ (1)</strong> — der Bruch \(\frac{3}{x}\) wird beidseitig beliebig klein: an <strong>beiden</strong> Enden Grenzwert 1, Asymptote \(y = 1\), Polstelle bei \(x = 0\).</div>
                 <div class="ip"><strong>D ↔ (2)</strong> — spezielle Sinusfunktion: die Werte pendeln dauerhaft zwischen \(-1\) und \(2\). Kein Grenzwert, keine Asymptote.</div>
                 <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k1">K1</span></div>
                 <div class="komp-desc">K4: Zwischen Graph und Term wechseln · K1: Die Zuordnung mit dem Verhalten im Unendlichen begründen</div>
@@ -18220,7 +18204,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <ol>
         <li>Wie legst du eine Wertetabelle an, mit der man einen Grenzwert wirklich erkennt?</li>
         <li>Woran erkennst du am Graphen, dass eine Funktion den Grenzwert 4 hat?</li>
-        <li>Wie verhalten sich die vier Funktionstypen im Unendlichen — welche haben eine waagerechte Asymptote?</li>
+        <li>Wie verhalten sich die Funktionstypen im Unendlichen — welche haben eine waagerechte Asymptote?</li>
         <li>Bei \(f(x) = a \cdot e^{kx} + d\): Auf welcher Seite liegt die Asymptote \(y = d\)?</li>
         <li>Was bedeutet „Stetigkeit“, und warum ist sie eine Voraussetzung für die Ableitung?</li>
       </ol>
@@ -18411,8 +18395,8 @@ window.addEventListener('resize',function(){updateSimulator();});
   // Uebersicht: die vier Typen
   plot('cvUnendGanz',{xMin:-2.8,xMax:2.8,yMin:-5.5,yMax:5.5,yStep:2,color:'#5b6e2e',
     label:'f(x) = 0,5x^{3} − 1,5x', f:function(x){return 0.5*x*x*x-1.5*x;}});
-  plot('cvUnendPot',{xMin:-3.6,xMax:3.6,yMin:-1.2,yMax:4.2,color:'#4d6470',
-    asym:0, asymLabel:'y = 0', label:'f(x) = x^{−2}', f:function(x){return x===0?NaN:1/(x*x);}});
+  plot('cvUnendGanz2',{xMin:-2.6,xMax:2.6,yMin:-4.5,yMax:3.5,color:'#4d6470',
+    label:'f(x) = −0,5x^{4} + 2x^{2}', f:function(x){return -0.5*Math.pow(x,4)+2*x*x;}});
   plot('cvUnendExp',{xMin:-1.6,xMax:5.2,yMin:-1,yMax:8.5,yStep:2,color:'#a03d20',
     asym:1, asymLabel:'y = 1', label:'f(x) = 3e^{−0,6x} + 1', f:function(x){return 3*Math.exp(-0.6*x)+1;}});
   plot('cvUnendSin',{xMin:-0.6,xMax:11,yMin:-2.4,yMax:4.2,xStep:2,yStep:2,color:'#8a7a30',
