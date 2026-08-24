@@ -17585,13 +17585,8 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:18px 0 6px">
                 <div style="text-align:center">
                     <canvas id="cvUnendGanz" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:700;color:#5b6e2e;margin-top:6px">1a · Ganzrational, ungerader Grad</div>
+                    <div style="font-size:13px;font-weight:700;color:#5b6e2e;margin-top:6px">1 · Ganzrationale Funktion</div>
                     <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(x \to -\infty:\; -\infty\) &#160;·&#160; \(x \to +\infty:\; +\infty\)</div>
-                </div>
-                <div style="text-align:center">
-                    <canvas id="cvUnendGanz2" style="max-width:100%;border-radius:4px"></canvas>
-                    <div style="font-size:13px;font-weight:700;color:#4d6470;margin-top:6px">1b · Ganzrational, gerader Grad</div>
-                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(a_n < 0\): beide Enden \(-\infty\)</div>
                 </div>
                 <div style="text-align:center">
                     <canvas id="cvUnendExp" style="max-width:100%;border-radius:4px"></canvas>
@@ -17654,6 +17649,29 @@ window.addEventListener('resize',function(){updateSimulator();});
                   <td style="padding:8px 10px;border:1px solid var(--border)">\(-x^3\)</td>
                 </tr>
               </table>
+            </div>
+            <div class="ip" style="margin-top:4px">Die vier Fälle als Graphen — unterscheide sie am <strong>Vorzeichen vor der höchsten Potenz</strong>:</div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:14px 0 4px">
+                <div style="text-align:center">
+                    <canvas id="cvGanzGP" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:12px;font-weight:700;color:#5b6e2e;margin-top:5px">gerade · \(a_n > 0\)</div>
+                    <div style="font-size:11px;color:var(--ink-muted)">beide Enden \(+\infty\)</div>
+                </div>
+                <div style="text-align:center">
+                    <canvas id="cvGanzGN" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:12px;font-weight:700;color:#4d6470;margin-top:5px">gerade · \(a_n < 0\)</div>
+                    <div style="font-size:11px;color:var(--ink-muted)">beide Enden \(-\infty\)</div>
+                </div>
+                <div style="text-align:center">
+                    <canvas id="cvGanzUP" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:12px;font-weight:700;color:#8a7a30;margin-top:5px">ungerade · \(a_n > 0\)</div>
+                    <div style="font-size:11px;color:var(--ink-muted)">links \(-\infty\) · rechts \(+\infty\)</div>
+                </div>
+                <div style="text-align:center">
+                    <canvas id="cvGanzUN" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:12px;font-weight:700;color:#a03d20;margin-top:5px">ungerade · \(a_n < 0\)</div>
+                    <div style="font-size:11px;color:var(--ink-muted)">links \(+\infty\) · rechts \(-\infty\)</div>
+                </div>
             </div>
         </div>
     </div>
@@ -18395,8 +18413,15 @@ window.addEventListener('resize',function(){updateSimulator();});
   // Uebersicht: die vier Typen
   plot('cvUnendGanz',{xMin:-2.8,xMax:2.8,yMin:-5.5,yMax:5.5,yStep:2,color:'#5b6e2e',
     label:'f(x) = 0,5x^{3} − 1,5x', f:function(x){return 0.5*x*x*x-1.5*x;}});
-  plot('cvUnendGanz2',{xMin:-2.6,xMax:2.6,yMin:-4.5,yMax:3.5,color:'#4d6470',
-    label:'f(x) = −0,5x^{4} + 2x^{2}', f:function(x){return -0.5*Math.pow(x,4)+2*x*x;}});
+  // Typ 1: die vier Faelle nach Parität und Vorzeichen des Leitkoeffizienten
+  plot('cvGanzGP',{W:200,H:148,padL:30,xMin:-2.6,xMax:2.6,yMin:-3.5,yMax:4.5,yStep:2,color:'#5b6e2e',
+    label:'0,5x^{4} − 2x^{2}', f:function(x){return 0.5*Math.pow(x,4)-2*x*x;}});
+  plot('cvGanzGN',{W:200,H:148,padL:30,xMin:-2.6,xMax:2.6,yMin:-4.5,yMax:3.5,yStep:2,color:'#4d6470',
+    label:'−0,5x^{4} + 2x^{2}', f:function(x){return -0.5*Math.pow(x,4)+2*x*x;}});
+  plot('cvGanzUP',{W:200,H:148,padL:30,xMin:-2.8,xMax:2.8,yMin:-4,yMax:4,yStep:2,color:'#8a7a30',
+    label:'0,5x^{3} − 1,5x', f:function(x){return 0.5*x*x*x-1.5*x;}});
+  plot('cvGanzUN',{W:200,H:148,padL:30,xMin:-2.8,xMax:2.8,yMin:-4,yMax:4,yStep:2,color:'#a03d20',
+    label:'−0,5x^{3} + 1,5x', f:function(x){return -0.5*x*x*x+1.5*x;}});
   plot('cvUnendExp',{xMin:-1.6,xMax:5.2,yMin:-1,yMax:8.5,yStep:2,color:'#a03d20',
     asym:1, asymLabel:'y = 1', label:'f(x) = 3e^{−0,6x} + 1', f:function(x){return 3*Math.exp(-0.6*x)+1;}});
   plot('cvUnendSin',{xMin:-0.6,xMax:11,yMin:-2.4,yMax:4.2,xStep:2,yStep:2,color:'#8a7a30',
