@@ -17445,8 +17445,10 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
-        <div class="ip">Grenzwerte beschreiben, welchem Wert sich eine Funktion annähert, wenn \(x\) über alle Grenzen wächst — das <strong>Verhalten im Unendlichen</strong>. Zusammen mit dem anschaulichen Stetigkeitsbegriff ist das ein kurzes, eigenständiges Thema: Es geht hier nicht um Rechenverfahren, sondern um ein Bild davon, was „Annäherung“ bedeutet.</div>
-        <div class="hint"><strong>Voraussetzung:</strong> Funktionsbegriff, Verhalten rationaler Funktionen für große \(x\)-Werte einschätzen können.</div>
+        <div class="ip">Grenzwerte beschreiben, welchem Wert sich eine Funktion annähert, wenn \(x\) über alle Grenzen wächst — das <strong>Verhalten im Unendlichen</strong>. Der Grenzwert ist der erste Begriff der Oberstufe, der nicht durch ein Rechenverfahren, sondern durch einen <em>Prozess</em> festgelegt ist: Es geht nicht darum, eine Zahl einzusetzen, sondern darum, eine Tendenz zu beschreiben.</div>
+        <div class="ip" style="margin-top:10px">In diesem Tab lernst du zuerst den Grenzwertbegriff anschaulich kennen, untersuchst dann systematisch das Verhalten im Unendlichen bei den <strong>vier wichtigen Funktionstypen</strong> — ganzrationale Funktion, Potenzfunktion, Exponentialfunktion, spezielle Sinusfunktion — und klärst zum Schluss den Stetigkeitsbegriff, der die Grundlage für die Ableitung ist.</div>
+        <div class="hint" style="border-left-color:#5b6e2e"><strong>So arbeiten wir hier:</strong> Grenzwerte werden in diesem Tab <strong>immer mit einer Wertetabelle bestimmt</strong> oder <strong>am Graphen abgelesen</strong> — nicht durch Termumformungen. Das ist Absicht: Zuerst soll die Vorstellung „die Werte ziehen sich auf eine Zahl zusammen“ tragfähig werden. Rechenverfahren kommen später.</div>
+        <div class="hint"><strong>Voraussetzung:</strong> Funktionsbegriff, Potenzgesetze, Graphen von Potenz-, Exponential- und Sinusfunktionen aus Klasse 10, sicherer Umgang mit der TABLE-Funktion des Taschenrechners. Die Asymptote der Exponentialfunktion \(f(x)=a\cdot b^x + d\) kennst du bereits — sie ist ein Grenzwert im Unendlichen, den du bisher nur noch nicht so genannt hast.</div>
       </div>
     </div>
 
@@ -17456,7 +17458,11 @@ window.addEventListener('resize',function(){updateSimulator();});
             <span class="card-title">Unterrichtsfahrplan</span>
         </div>
         <div class="card-body">
-            <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90 min)</strong> ausgelegt: anschaulicher Grenzwertbegriff und Wertetabelle (45 min), Stetigkeit anschaulich (45 min), dazu die Aufgaben G1.1–G1.3.</div>
+            <div class="ip">Dieser Tab ist für <strong>drei Doppelstunden</strong> ausgelegt:</div>
+            <div class="ip" style="margin-top:8px"><strong>DS 1</strong> — Anschaulicher Grenzwertbegriff, Wertetabelle, Ablesen am Graphen · Aufgaben-Block <strong>GW1</strong><br>
+            <strong>DS 2</strong> — Verhalten im Unendlichen bei den vier Funktionstypen · Aufgaben-Block <strong>GW2</strong><br>
+            <strong>DS 3</strong> — Stetigkeit anschaulich, Sprung- und Lückenstellen, vermischte Übung · Aufgaben-Block <strong>GW3</strong></div>
+            <div class="hint" style="margin-top:12px"><strong>Hinweis zur Reihenfolge:</strong> DS 1 und DS 2 bleiben bewusst numerisch und grafisch. Die häufigste Hürde ist nicht das Rechnen, sondern der Statuswechsel: „beliebig nahe“ ist keine Zahl. Wer zu früh formalisiert, bekommt Schülerinnen und Schüler, die Grenzwerte korrekt ausrechnen und trotzdem nicht sagen können, was dabei herauskommt.</div>
         </div>
     </div>
 
@@ -17471,7 +17477,19 @@ window.addEventListener('resize',function(){updateSimulator();});
             <ul class="gl">
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
-                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den anschaulichen Grenzwertbegriff erklären und das Verhalten einer Funktion im Unendlichen beschreiben</span>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den anschaulichen Grenzwertbegriff erklären und einen Grenzwert mit einer Wertetabelle bestimmen</span>
+                </li>
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann einen Grenzwert am Graphen ablesen und begründen, woran ich ihn erkenne</span>
+                </li>
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann das Verhalten im Unendlichen bei ganzrationalen Funktionen, Potenz-, Exponential- und speziellen Sinusfunktionen bestimmen und begründen</span>
+                </li>
+                <li class="gi">
+                    <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                    <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann waagerechte Asymptoten angeben und beschreiben, von welcher Seite sich der Graph nähert</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
@@ -17490,6 +17508,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="ip">Viele Funktionen nähern sich für sehr große \(x\)-Werte einem festen Wert an. Dieses Verhalten beschreibt der <strong>Grenzwert</strong>.</div>
             <div class="hint"><strong>Merke:</strong> Eine Funktion \(f\) hat für \(x \to \infty\) den <strong>Grenzwert</strong> \(g\), wenn sich die Funktionswerte \(f(x)\) der Zahl \(g\) immer mehr nähern, je größer \(x\) wird. Wir schreiben: \(\lim_{x \to \infty} f(x) = g\)</div>
             <div class="ip" style="margin-top: 12px;">Beispiel: \(f(x) = \frac{1}{x}\) hat für \(x \to \infty\) den Grenzwert 0, denn die Funktionswerte werden beliebig klein: \(\lim_{x \to \infty} \frac{1}{x} = 0\)</div>
+            <div class="hint" style="margin-top:14px"><strong>Worauf es ankommt:</strong> \(\lim_{x \to \infty} f(x) = g\) ist keine Aussage über einen einzelnen Funktionswert. Es wird kein \(x\) eingesetzt. Die Aussage lautet: <em>Egal wie nah man an \(g\) heran will — ab irgendeiner Stelle bleiben alle Funktionswerte näher an \(g\) als diese Vorgabe.</em> Der Wert \(g\) muss dabei nie angenommen werden.</div>
         </div>
     </div>
 
@@ -17499,7 +17518,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <span class="card-title">Grenzwerte mit der Wertetabelle bestimmen</span>
         </div>
         <div class="card-body">
-            <div class="ip">Bevor du Grenzwerte rechnerisch bestimmst, kannst du sie <strong>experimentell</strong> mit einer Wertetabelle erkennen – auch mit dem Taschenrechner. Die Idee: Setze immer größere (oder immer kleinere) Werte ein und beobachte, wohin sich \(f(x)\) bewegt.</div>
+            <div class="ip">Ein Grenzwert lässt sich <strong>experimentell</strong> mit einer Wertetabelle bestimmen — genau so, wie der Begriff gemeint ist. Die Idee: Setze immer größere Werte ein und beobachte, wohin sich \(f(x)\) bewegt.</div>
 
             <div class="bsp">
               <div class="bsp-label">Beispiel: \(f(x) = \dfrac{3x + 1}{x}\) für \(x \to \infty\)</div>
@@ -17522,15 +17541,357 @@ window.addEventListener('resize',function(){updateSimulator();});
                     <td style="padding:8px 12px;border:1px solid var(--border);">3,001</td>
                     <td style="padding:8px 12px;border:1px solid var(--border);">3,0001</td>
                   </tr>
+                  <tr style="background:#faf7f0">
+                    <td style="padding:8px 12px;font-weight:700;border:1px solid var(--border);">Abstand zu 3</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">1</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,1</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,01</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,001</td>
+                    <td style="padding:8px 12px;border:1px solid var(--border);">0,0001</td>
+                  </tr>
                 </table>
               </div>
-              <div class="ip"><strong>Beobachtung:</strong> Die Funktionswerte nähern sich immer mehr der Zahl 3 an. Also: \(\displaystyle\lim_{x \to \infty} \frac{3x+1}{x} = 3\).</div>
+              <div class="ip"><strong>Beobachtung:</strong> Die Funktionswerte nähern sich immer mehr der Zahl 3 an — der Abstand zu 3 wird mit jedem Zehnerschritt zehnmal kleiner und damit beliebig klein. Also: \(\displaystyle\lim_{x \to \infty} \frac{3x+1}{x} = 3\).</div>
             </div>
 
+            <div class="hint" style="margin-top:14px"><strong>So gehst du vor:</strong>
+            <ol style="margin:8px 0 0 0;padding-left:20px">
+              <li style="margin-bottom:4px">Wähle <strong>Zehnerpotenzen</strong>: \(x = 1,\;10,\;100,\;1\,000,\;10\,000\) (für \(x \to -\infty\) entsprechend \(-1,\;-10,\;-100,\;\ldots\)).</li>
+              <li style="margin-bottom:4px">Trage die Funktionswerte ein — mit der TABLE-Funktion des Taschenrechners geht das schnell.</li>
+              <li style="margin-bottom:4px">Schreibe eine dritte Zeile mit dem <strong>Abstand</strong> zum vermuteten Grenzwert. Wird dieser Abstand beliebig klein, ist die Vermutung bestätigt.</li>
+              <li>Notiere das Ergebnis in der Schreibweise \(\lim_{x \to \infty} f(x) = \ldots\) und gib an, ob der Graph <em>von oben</em> oder <em>von unten</em> kommt.</li>
+            </ol></div>
 
-            <div class="hint" style="margin-top:14px"><strong>Tipp für den Taschenrechner:</strong> Nutze die TABLE-Funktion (oder tippe die Werte einzeln ein). Wähle Zehnerpotenzen: \(x = 1,\; 10,\; 100,\; 1\,000,\; \ldots\) für \(x \to \infty\).</div>
+            <div class="hint" style="margin-top:12px;border-left-color:#c75c3a"><strong>Zwei typische Fallen bei der Wertetabelle:</strong><br>
+            · <strong>Zu kleine \(x\)-Werte.</strong> Wer nur \(x = 1,\,2,\,3,\,4,\,5\) einsetzt, sieht oft noch gar nichts von der Tendenz. Erst Zehnerpotenzen machen sie sichtbar.<br>
+            · <strong>Der Taschenrechner rundet.</strong> Zeigt er für \(x = 1\,000\,000\) den Wert „3“ an, heißt das <em>nicht</em>, dass der Grenzwert erreicht wird — die Anzeige hat nur zu wenige Stellen. Die Abstandszeile schützt vor diesem Fehlschluss.</div>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Grenzwerte am Graphen ablesen</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Der zweite Zugang ist der Graph. Was in der Wertetabelle als schrumpfender Abstand erscheint, sieht man dort als <strong>Anschmiegen an eine waagerechte Gerade</strong>.</div>
+            <div style="display:flex;justify-content:center;margin:16px 0 8px">
+                <div style="text-align:center">
+                    <canvas id="cvGrenzLesen" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:12px;color:var(--ink-muted);margin-top:6px;max-width:430px">Der Graph nähert sich der gestrichelten Geraden \(y = 2\), ohne sie zu erreichen.</div>
+                </div>
+            </div>
+            <div class="bsp">
+              <div class="bsp-label">So argumentiert man am Graphen</div>
+              <div class="ip">Liest man die markierten Stellen ab, ergibt sich dieselbe Tabelle wie oben:</div>
+              <div style="overflow-x:auto;margin:10px 0">
+                <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                  <tr style="background:var(--kiku-light)">
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(x\)</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">5</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">11</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">20</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(f(x)\)</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">4</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">3</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2,5</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">\(\approx 2{,}3\)</td>
+                  </tr>
+                  <tr style="background:#faf7f0">
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">Abstand zu 2</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">1</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">0,5</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">\(\approx 0{,}3\)</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="ip"><strong>Begründung:</strong> Der Graph fällt, bleibt aber immer oberhalb von \(y = 2\). Der Abstand zur Geraden wird dabei immer kleiner und schrumpft offenbar unter jede vorgegebene Schranke. Also ist \(\lim_{x \to \infty} f(x) = 2\), und die Gerade \(y = 2\) ist die <strong>waagerechte Asymptote</strong>. Der Graph nähert sich ihr <em>von oben</em>.</div>
+            </div>
+            <div class="hint" style="margin-top:12px"><strong>Merke — drei Bausteine einer Begründung am Graphen:</strong>
+            <ol style="margin:8px 0 0 0;padding-left:20px">
+              <li style="margin-bottom:4px">Welche Gerade kommt in Frage? (Wo flacht der Graph ab?)</li>
+              <li style="margin-bottom:4px">Wird der Abstand zu dieser Geraden immer kleiner — und zwar beliebig klein?</li>
+              <li>Von welcher Seite nähert sich der Graph, und wird der Wert erreicht?</li>
+            </ol></div>
+        </div>
+    </div>
+
+    <!-- ══ Verhalten im Unendlichen: Systematik ══ -->
+    <div class="section-label">Verhalten im Unendlichen</div>
+
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Die drei Möglichkeiten</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Bisher hast du Grenzwerte einzeln bestimmt. Jetzt stellst du die Frage systematisch: Wie verhält sich ein Graph ganz weit rechts und ganz weit links? Das nennt man das <strong>Verhalten im Unendlichen</strong>.</div>
+            <div class="hint"><strong>Merke:</strong> Für \(x \to \infty\) (und ebenso für \(x \to -\infty\)) gibt es genau drei Möglichkeiten:
+            <ol style="margin:10px 0 0 0;padding-left:20px">
+              <li style="margin-bottom:6px"><strong>Annäherung an eine Zahl:</strong> \(f(x) \to g\). In der Wertetabelle wird der Abstand zu \(g\) beliebig klein; am Graphen schmiegt sich die Kurve an die waagerechte Gerade \(y = g\) an — die <strong>waagerechte Asymptote</strong>.</li>
+              <li style="margin-bottom:6px"><strong>Unbeschränktes Wachsen oder Fallen:</strong> In der Wertetabelle werden die Beträge von Zehnerschritt zu Zehnerschritt immer größer. Man schreibt \(\lim = \infty\) als Kurzform für „wächst über alle Grenzen“. Ein Grenzwert im eigentlichen Sinn ist das nicht — \(\infty\) ist keine Zahl.</li>
+              <li><strong>Kein einheitliches Verhalten:</strong> Die Werte pendeln immer weiter hin und her. Dann existiert weder ein Grenzwert noch ein bestimmtes Unendlichkeitsverhalten.</li>
+            </ol></div>
+            <div class="ip" style="margin-top:12px">Welcher der drei Fälle eintritt, kann man dem <strong>Funktionstyp</strong> ansehen — dann muss man nicht jedes Mal neu tabellieren. Vier Typen decken den Oberstufenstoff ab:</div>
+
+            <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:18px 0 6px">
+                <div style="text-align:center">
+                    <canvas id="cvUnendGanz" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:13px;font-weight:700;color:#5b6e2e;margin-top:6px">1 · Ganzrationale Funktion</div>
+                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(x \to -\infty:\; -\infty\) &#160;·&#160; \(x \to +\infty:\; +\infty\)</div>
+                </div>
+                <div style="text-align:center">
+                    <canvas id="cvUnendPot" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:13px;font-weight:700;color:#4d6470;margin-top:6px">2 · Potenzfunktion \(x^{-2}\)</div>
+                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">beidseitig \(\to 0\) &#160;·&#160; Asymptote \(y=0\)</div>
+                </div>
+                <div style="text-align:center">
+                    <canvas id="cvUnendExp" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:13px;font-weight:700;color:#a03d20;margin-top:6px">3 · Exponentialfunktion</div>
+                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">\(x \to +\infty:\; \to 1\) &#160;·&#160; \(x \to -\infty:\; +\infty\)</div>
+                </div>
+                <div style="text-align:center">
+                    <canvas id="cvUnendSin" style="max-width:100%;border-radius:4px"></canvas>
+                    <div style="font-size:13px;font-weight:700;color:#8a7a30;margin-top:6px">4 · Spezielle Sinusfunktion</div>
+                    <div style="font-size:12px;color:var(--ink-muted);margin-top:2px">kein Grenzwert — die Werte pendeln</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typ 1 -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">1</div>
+            <span class="card-title">Ganzrationale Funktionen</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Bei einer ganzrationalen Funktion \(f(x) = a_n x^n + a_{n-1}x^{n-1} + \ldots + a_0\) konkurrieren mehrere Summanden. Für große \(|x|\) setzt sich immer derselbe durch — der mit der höchsten Potenz. Das lässt sich in einer Tabelle direkt beobachten.</div>
+            <div class="bsp">
+              <div class="bsp-label">Warum das so ist — Summanden vergleichen bei \(f(x)=2x^3-5x^2+1\)</div>
+              <div style="overflow-x:auto;margin:10px 0">
+                <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                  <tr style="background:var(--kiku-light)">
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(x\)</td>
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(2x^3\)</td>
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(-5x^2\)</td>
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(+1\)</td>
+                    <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">Anteil von \(5x^2\) an \(2x^3\)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">10</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2 000</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">−500</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">1</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">25 %</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">100</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2 000 000</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">−50 000</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">1</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2,5 %</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">1 000</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">2 000 000 000</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">−5 000 000</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">1</td>
+                    <td style="padding:7px 10px;border:1px solid var(--border)">0,25 %</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="ip"><strong>Beobachtung:</strong> Je größer \(x\) wird, desto unbedeutender werden die kleineren Summanden. Bei \(x = 1\,000\) macht \(-5x^2\) nur noch ein Viertelprozent von \(2x^3\) aus, der Summand \(+1\) ist längst bedeutungslos. Übrig bleibt das Verhalten von \(2x^3\) — und das wächst über alle Grenzen.</div>
+            </div>
+            <div class="hint"><strong>Merke:</strong> Das Verhalten im Unendlichen einer ganzrationalen Funktion wird <strong>allein vom Summanden mit der höchsten Potenz</strong> \(a_n x^n\) bestimmt. Dabei gilt:<br>
+            · Der <strong>Grad \(n\)</strong> entscheidet, ob beide Enden in dieselbe Richtung zeigen (gerader Grad) oder in entgegengesetzte (ungerader Grad).<br>
+            · Das <strong>Vorzeichen des Leitkoeffizienten \(a_n\)</strong> entscheidet, wohin es rechts geht.</div>
+            <div style="overflow-x:auto;margin:14px 0">
+              <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                <tr style="background:var(--kiku-light)">
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Grad \(n\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Leitkoeffizient \(a_n\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(x \to -\infty\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(x \to +\infty\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Beispiel</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">gerade</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(a_n > 0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(x^2,\; 3x^4\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">gerade</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(a_n < 0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-x^2,\; -2x^4\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">ungerade</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(a_n > 0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(x^3,\; 0{,}5x^5\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">ungerade</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(a_n < 0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-x^3,\; -x^7\)</td>
+                </tr>
+              </table>
+            </div>
+            <div class="hint" style="border-left-color:#c75c3a"><strong>Häufiger Fehler:</strong> „Bei \(f(x)=x^3-1000x^2\) ist doch \(1000x^2\) viel größer.“ — Für <em>kleine</em> \(x\) stimmt das, und eine Wertetabelle mit \(x = 1,\,10,\,100\) scheint das zu bestätigen. Das Verhalten im Unendlichen ist aber keine Aussage über einen Anfangsbereich, sondern über die Tendenz „ab irgendwann“. Ab \(x > 1000\) setzt sich \(x^3\) durch — man muss in der Tabelle nur weit genug gehen.</div>
+        </div>
+    </div>
+
+    <!-- Typ 2 -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">2</div>
+            <span class="card-title">Potenzfunktionen</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Eine Potenzfunktion hat die Form \(f(x)=x^{n}\) mit \(n \in \mathbb{Z} \setminus \{0\}\). Beim Verhalten im Unendlichen sind zwei Fälle streng zu unterscheiden.</div>
+            <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px;margin:12px 0">
+                <strong>Positiver Exponent \((n>0)\):</strong> Das ist ein Sonderfall der ganzrationalen Funktion mit nur einem Summanden — es gilt genau die Tabelle oben. \(x^4 \to +\infty\) an beiden Enden, \(x^3 \to +\infty\) rechts und \(-\infty\) links.
+            </div>
+            <div style="background:#eef2f4;border-left:3px solid #4d6470;padding:10px 12px;border-radius:2px;margin:12px 0">
+                <strong>Negativer Exponent \((n<0)\):</strong> Hier steht die Potenz im Nenner: \(x^{-3} = \dfrac{1}{x^{3}}\). Der Nenner wächst über alle Grenzen, der Bruch wird also beliebig klein — das zeigt jede Wertetabelle sofort:<br>
+                \(1^{-3}=1\) &#160;·&#160; \(10^{-3}=0{,}001\) &#160;·&#160; \(100^{-3}=0{,}000001\) &#160;·&#160; \(1000^{-3}=10^{-9}\)
+            </div>
+            <div class="hint"><strong>Merke:</strong> Für \(n < 0\) gilt \(\displaystyle\lim_{x \to \infty} x^{n} = 0\) und \(\displaystyle\lim_{x \to -\infty} x^{n} = 0\). Die <strong>\(x\)-Achse ist waagerechte Asymptote</strong>. An der Stelle \(x = 0\) ist die Funktion nicht definiert; dort wächst \(|f(x)|\) über alle Grenzen — eine <strong>Polstelle</strong>.</div>
+            <div class="ip" style="margin-top:12px"><strong>Auf die Seite der Annäherung achten:</strong> Der Grenzwert allein sagt noch nicht, <em>von welcher Seite</em> der Graph an die Asymptote läuft. Bei \(x^{-2}=\frac{1}{x^2}\) sind alle Werte positiv — der Graph kommt an beiden Enden von oben. Bei \(x^{-3}=\frac{1}{x^3}\) sind die Werte für \(x<0\) negativ — links kommt der Graph von unten. In der Wertetabelle sieht man das am Vorzeichen.</div>
+            <div class="bsp">
+              <div class="bsp-label">Beispiel</div>
+              <div class="ip">\(f(x) = 5x^{-2} + 3 = \dfrac{5}{x^2} + 3\)</div>
+              <div class="ip">\(f(10)=3{,}05\) &#160;·&#160; \(f(100)=3{,}0005\) &#160;·&#160; \(f(1\,000)=3{,}000005\). Der Abstand zu 3 wird beliebig klein, also \(f(x) \to 3\). Waagerechte Asymptote: \(y = 3\). Alle Werte liegen <em>über</em> 3 — der Graph nähert sich von oben.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typ 3 -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">3</div>
+            <span class="card-title">Exponentialfunktionen</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Die Exponentialfunktion verhält sich an ihren beiden Enden völlig unterschiedlich — auf einer Seite Wachstum über alle Grenzen, auf der anderen eine Asymptote.</div>
+            <div class="hint"><strong>Merke:</strong> \(\displaystyle\lim_{x \to \infty} e^{x} = \infty\) &#160;und&#160; \(\displaystyle\lim_{x \to -\infty} e^{x} = 0\). Die \(x\)-Achse ist waagerechte Asymptote für \(x \to -\infty\). Dasselbe gilt für jede Basis \(b>1\).</div>
+            <div class="ip" style="margin-top:10px">In der Wertetabelle: \(e^{-1}\approx 0{,}368\) · \(e^{-5}\approx 0{,}0067\) · \(e^{-10}\approx 0{,}0000454\) · \(e^{-20}\approx 2 \cdot 10^{-9}\).</div>
+            <div class="ip" style="margin-top:12px">Bei \(f(x) = a \cdot e^{kx} + d\) entscheidet das <strong>Vorzeichen von \(k\)</strong>, an welchem Ende die Asymptote \(y=d\) liegt:</div>
+            <div style="overflow-x:auto;margin:12px 0">
+              <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                <tr style="background:var(--kiku-light)">
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)"></td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(x \to -\infty\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(x \to +\infty\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Asymptote \(y=d\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(k < 0\) (Zerfall)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(\pm\infty\) (Vorzeichen von \(a\))</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(\to d\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">rechts</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(k > 0\) (Wachstum)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(\to d\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(\pm\infty\) (Vorzeichen von \(a\))</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">links</td>
+                </tr>
+              </table>
+            </div>
+            <div class="bsp">
+              <div class="bsp-label">Beispiel aus dem Sachzusammenhang</div>
+              <div class="ip">Eine Tasse Tee kühlt in einem 20 °C warmen Raum ab: \(T(t) = 20 + 55\,e^{-0{,}08t}\) &#160;(\(t\) in Minuten, \(T\) in °C).</div>
+              <div class="ip">Wertetabelle: \(T(0)=75\) · \(T(10)\approx 44{,}7\) · \(T(30)\approx 25{,}0\) · \(T(60)\approx 20{,}5\) · \(T(120)\approx 20{,}004\). Der Abstand zu 20 wird beliebig klein, also \(T(t) \to 20\).</div>
+              <div class="ip">Der Grenzwert ist genau die <strong>Raumtemperatur</strong>. Sie wird nie exakt erreicht — \(e^{-0{,}08t}\) ist für jedes \(t\) echt positiv — sondern nur beliebig genau angenähert. Das ist die Grundvorstellung des Grenzwerts in einer Sachsituation.</div>
+            </div>
+            <div class="hint" style="margin-top:12px"><strong>Merke (Wachstumsvergleich):</strong> Die \(e\)-Funktion wächst schneller als <em>jede</em> Potenzfunktion. Für jedes noch so große \(n\) gilt \(\displaystyle\lim_{x \to \infty} \frac{x^{n}}{e^{x}} = 0\). In einem Produkt oder Quotienten aus Potenz und \(e\)-Funktion gibt darum immer die \(e\)-Funktion den Ausschlag.</div>
+        </div>
+    </div>
+
+    <!-- Typ 4 -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">4</div>
+            <span class="card-title">Spezielle Sinusfunktionen</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Die spezielle Sinusfunktion \(f(x) = a \cdot \sin\!\big(b(x - c)\big) + d\) ist der einzige der vier Typen, bei dem der dritte Fall eintritt: <strong>Es gibt keinen Grenzwert</strong> — und die Funktion wächst auch nicht über alle Grenzen.</div>
+            <div class="hint"><strong>Merke:</strong> Eine spezielle Sinusfunktion hat für \(x \to \infty\) <strong>keinen Grenzwert</strong>. Die Funktionswerte durchlaufen immer wieder das ganze Intervall \([\,d - |a|\,;\; d + |a|\,]\) und nähern sich keiner einzelnen Zahl. Dasselbe gilt für \(x \to -\infty\).</div>
+            <div class="hint" style="margin-top:12px;border-left-color:#c75c3a"><strong>Vorsicht bei der Wertetabelle:</strong> Gerade hier führt sie in die Irre, wenn man ungeschickt tabelliert. Setzt man bei \(f(x)=2\sin(x)+1\) zufällig Vielfache von \(2\pi\) ein, steht in jeder Zeile derselbe Wert 1 — es sieht nach Konvergenz aus. Zwischen den Tabellenzeilen pendelt der Graph aber weiterhin bis 3 hinauf und bis \(-1\) hinunter. <em>Bei periodischen Funktionen muss man den Graphen dazunehmen.</em></div>
+            <div class="hint" style="margin-top:12px;border-left-color:#c75c3a"><strong>Häufiger Fehler — beschränkt ist nicht dasselbe wie konvergent:</strong> Bei \(f(x)=2\sin(x)+1\) bleiben alle Werte zwischen \(-1\) und \(3\). Der Graph läuft also in einem Streifen, ohne auszubrechen. Trotzdem existiert kein Grenzwert: <em>Beschränkt</em> heißt nur, dass die Werte in einem Streifen bleiben. <em>Konvergent</em> heißt, dass sie sich auf <em>eine</em> Zahl zusammenziehen. Das zweite ist deutlich mehr als das erste.</div>
+            <div class="bsp">
+              <div class="bsp-label">Ausnahme: die gedämpfte Schwingung</div>
+              <div class="ip">Wird die Schwingung mit einer abklingenden \(e\)-Funktion multipliziert, ändert sich das Bild: \(f(x) = e^{-0{,}2x} \cdot \sin(x)\).</div>
+              <div class="ip">Wegen \(|\sin(x)| \le 1\) gilt \(|f(x)| \le e^{-0{,}2x}\), und dieser Ausdruck geht gegen 0. Die Amplitude schrumpft — der Graph wird zwischen den beiden Hüllkurven \(y = e^{-0{,}2x}\) und \(y = -e^{-0{,}2x}\) auf die \(x\)-Achse zusammengeschnürt. Also \(\displaystyle\lim_{x \to \infty} f(x) = 0\).</div>
+              <div class="ip">Entscheidend ist demnach nicht der Sinus an sich, sondern ob die <strong>Amplitude konstant bleibt</strong> oder abklingt.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Überblick -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-g">✓</div>
+            <span class="card-title">Die vier Typen auf einen Blick</span>
+        </div>
+        <div class="card-body">
+            <div style="overflow-x:auto;margin:4px 0">
+              <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                <tr style="background:var(--kiku-light)">
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border);text-align:left">Typ</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">Beispiel</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(x \to -\infty\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">\(x \to +\infty\)</td>
+                  <td style="padding:8px 10px;font-weight:700;border:1px solid var(--border)">waagerechte Asymptote</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">ganzrational</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(0{,}5x^3 - 1{,}5x\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(-\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">keine</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">Potenzfunktion, \(n<0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(x^{-2}\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(0\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(y = 0\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">Exponentialfunktion</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(3e^{-0{,}6x} + 1\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(+\infty\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(1\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(y = 1\) (nur rechts)</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;border:1px solid var(--border);text-align:left">spezielle Sinusfunktion</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">\(2\sin(x) + 1\)</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">kein Grenzwert</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">kein Grenzwert</td>
+                  <td style="padding:8px 10px;border:1px solid var(--border)">keine</td>
+                </tr>
+              </table>
+            </div>
+            <div class="hint" style="margin-top:14px"><strong>Ausblick:</strong> Im Tab „Kurvendiskussion“ ist das Verhalten im Unendlichen einer der festen Prüfpunkte. Was du hier über die vier Typen lernst, brauchst du dort bei jeder vollständigen Funktionsuntersuchung wieder — dann auch mit Rechenverfahren statt Wertetabelle.</div>
+        </div>
+    </div>
+
+    <div class="section-label">Stetigkeit</div>
 
     <!-- Stetigkeit — rein anschaulich (D12, D16) -->
     <div class="card">
@@ -17649,26 +18010,42 @@ window.addEventListener('resize',function(){updateSimulator();});
 
     <h3 style="color: #5b6e2e; margin-top: 25px; margin-bottom: 15px;">Aufgaben</h3>
 
+    <div style="display:flex;align-items:center;gap:18px;margin:40px 0 16px;padding:18px 22px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#8a9da7;line-height:1;font-weight:400;min-width:44px;text-align:center">GW</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a9da7;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · GW</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Grenzwerte, Verhalten im Unendlichen, Stetigkeit</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Drei Blöcke entlang der drei Doppelstunden. Grenzwerte werden durchgehend mit der Wertetabelle bestimmt oder am Graphen abgelesen.</div>
+      </div>
+    </div>
+
+  <!-- ══════════ BLOCK GW1 ══════════ -->
   <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">GW1</div>
     <div style="flex:1">
       <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · GW1 · ★ / ★★ Grundlagen</div>
-      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Grenzwerte bestimmen und Stetigkeit begründen</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Grenzwerte numerisch und rechnerisch ermitteln, Sprungstellen erkennen und die Unstetigkeit begründen.</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Grenzwerte bestimmen — mit Tabelle und am Graphen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Tabellieren, ablesen, begründen, Fehler aufdecken und selbst Funktionen mit vorgegebenem Grenzverhalten finden.</div>
     </div>
   </div>
+
     <div class="tg">
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
-                    <span class="tn">G1.1</span>
+                    <span class="tn">GW1.1</span>
                     <span class="td de">★</span>
                 </div>
-                <div class="tq">Bestimme \(\lim_{x \to \infty} \frac{x}{x^2 + 1}\) mit einer Wertetabelle (z. B. \(x = 10,\; 100,\; 1\,000\)) und gib den Grenzwert an</div>
+                <div class="tq">Bestimme \(\lim_{x \to \infty} \dfrac{x}{x^2 + 1}\) mit einer Wertetabelle. Wähle \(x = 10,\;100,\;1\,000,\;10\,000\) und ergänze eine Zeile mit dem Abstand zum vermuteten Grenzwert.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-                <strong>Lösung:</strong> Wertetabelle: \(f(10) \approx 0{,}099\); \(f(100) \approx 0{,}01\); \(f(1\,000) \approx 0{,}001\) — die Werte werden beliebig klein. Also \(\lim_{x \to \infty} \frac{x}{x^2 + 1} = 0\). (Bestätigung durch Dividieren von Zähler und Nenner durch \(x^2\): \(\frac{\frac{1}{x}}{1 + \frac{1}{x^2}} \to \frac{0}{1} = 0\))
+                <div class="ip"><strong>Wertetabelle:</strong></div>
+                <div class="ip">\(f(10) \approx 0{,}0990\) &#160;·&#160; \(f(100) \approx 0{,}009999\) &#160;·&#160; \(f(1\,000) \approx 0{,}001000\) &#160;·&#160; \(f(10\,000) \approx 0{,}0001000\)</div>
+                <div class="ip"><strong>Abstand zu 0:</strong> genau diese Werte — sie werden mit jedem Zehnerschritt zehnmal kleiner und damit beliebig klein.</div>
+                <div class="ip">Also: \(\displaystyle\lim_{x \to \infty} \frac{x}{x^2 + 1} = 0\). Alle Werte sind positiv, der Graph nähert sich der \(x\)-Achse also von oben.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K5: Wertetabelle systematisch mit Zehnerpotenzen anlegen und auswerten</div>
             </div>
         </div>
     </div>
@@ -17677,14 +18054,19 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
-                    <span class="tn">G1.2</span>
+                    <span class="tn">GW1.2</span>
                     <span class="td de">★</span>
                 </div>
-                <div class="tq">Gib den Grenzwert an: \(\lim_{x \to \infty} \frac{3x^2}{x^2 + x}\)</div>
+                <div class="tq">Bestimme \(\lim_{x \to \infty} \dfrac{3x^2}{x^2 + x}\) mit einer Wertetabelle.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-                <strong>Lösung:</strong> Dividiere durch \(x^2\): \(\lim_{x \to \infty} \frac{3}{1 + \frac{1}{x}} = 3\)
+                <div class="ip">\(f(10) \approx 2{,}727\) &#160;·&#160; \(f(100) \approx 2{,}970\) &#160;·&#160; \(f(1\,000) \approx 2{,}997\) &#160;·&#160; \(f(10\,000) \approx 2{,}9997\)</div>
+                <div class="ip"><strong>Abstand zu 3:</strong> \(0{,}273\) · \(0{,}030\) · \(0{,}003\) · \(0{,}0003\) — er wird beliebig klein.</div>
+                <div class="ip">Also \(\displaystyle\lim_{x \to \infty} \frac{3x^2}{x^2+x} = 3\). Alle Werte liegen unter 3, der Graph nähert sich der Asymptote \(y=3\) von unten.</div>
+                <div class="ip"><em>Beachte:</em> Bei \(x = 10\) ist man noch weit von 3 entfernt. Wer die Tabelle bei \(x = 10\) abbricht, tippt leicht auf einen falschen Wert.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K5: Grenzwert numerisch bestimmen und die Annäherungsseite angeben</div>
             </div>
         </div>
     </div>
@@ -17693,14 +18075,636 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="tk">
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
-                    <span class="tn">G1.3</span>
+                    <span class="tn">GW1.3</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq">Untersuche mit je einer Wertetabelle (\(x = 10,\;100,\;1\,000\)), wie sich die Funktionen für \(x \to \infty\) verhalten.<br>
+                <strong>a)</strong> \(f(x) = 5 + \dfrac{1}{x}\) &#160;·&#160;
+                <strong>b)</strong> \(g(x) = \dfrac{2x-3}{x}\) &#160;·&#160;
+                <strong>c)</strong> \(h(x) = \dfrac{4}{x^2+1}\) &#160;·&#160;
+                <strong>d)</strong> \(k(x) = \dfrac{x^2+1}{x}\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(5{,}1\) · \(5{,}01\) · \(5{,}001\) → Grenzwert \(5\), Annäherung von oben.</div>
+                <div class="ip"><strong>b)</strong> \(1{,}7\) · \(1{,}97\) · \(1{,}997\) → Grenzwert \(2\), Annäherung von unten.</div>
+                <div class="ip"><strong>c)</strong> \(0{,}0396\) · \(0{,}0004\) · \(0{,}000004\) → Grenzwert \(0\), Annäherung von oben.</div>
+                <div class="ip"><strong>d)</strong> \(10{,}1\) · \(100{,}01\) · \(1\,000{,}001\) → Die Werte werden mit jedem Zehnerschritt selbst zehnmal größer. Sie nähern sich keiner Zahl, sondern wachsen über alle Grenzen. Es gibt <em>keinen</em> Grenzwert; man schreibt \(\lim_{x\to\infty} k(x) = \infty\) als Kurzform.</div>
+                <div class="ip"><strong>Worauf es ankommt:</strong> Man erkennt den Unterschied in der Tabelle daran, was mit dem <em>Abstand</em> passiert. Bei a)–c) schrumpft er, bei d) gibt es gar keine Zahl, zu der man einen Abstand messen könnte.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+                <div class="komp-desc">K5: Vier Wertetabellen anlegen und auswerten · K1: Grenzwert und unbeschränktes Wachstum unterscheiden</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin:22px 0 6px;padding:14px;background:#fbfaf6;border:1px solid var(--border);border-radius:8px;text-align:center">
+      <canvas id="cvAufgGraph" style="max-width:100%;border-radius:4px"></canvas>
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:8px">Abbildung zu GW1.4 — Graph einer Funktion \(f\) für \(x \ge 0\)</div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW1.4</span>
                     <span class="td dm">★★</span>
                 </div>
-                <div class="tq">Betrachte den rechten Graphen oben („stückweise definiert“). Begründe anschaulich, warum die Funktion an der Stelle \(x = 1\) nicht stetig ist — und erkläre, warum man dort keine eindeutige Tangente anlegen kann</div>
+                <div class="tq">Die Abbildung zeigt den Graphen einer Funktion \(f\). Es gilt \(\displaystyle\lim_{x \to \infty} f(x) = 4\).<br>
+                <strong>a)</strong> Lies an den markierten Stellen \(x = 5,\;10,\;15,\;20\) die Funktionswerte ab und lege eine Tabelle mit den Abständen zu 4 an.<br>
+                <strong>b)</strong> Begründe mithilfe dieser Tabelle und des Graphenverlaufs, weshalb der Grenzwert 4 beträgt.<br>
+                <strong>c)</strong> Erkläre, warum die Angabe „\(f(20) \approx 3{,}99\)“ allein noch keine Begründung für den Grenzwert 4 ist.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-                <strong>Lösung:</strong> An der Stelle \(x = 1\) springt der Graph: Von links kommend enden die Werte bei 1,5 (offener Kreis), der tatsächliche Funktionswert liegt aber bei 0,5. Beim Zeichnen muss man den Stift absetzen — die Funktion ist dort nicht stetig. Eine Tangente soll sich an den Graphen „anschmiegen“; an einer Sprungstelle gibt es aber keine einheitliche Richtung des Graphen, also auch keine eindeutige Tangente und keine Tangentensteigung.
+                <div class="ip"><strong>a)</strong> Abgelesen (gerundet):</div>
+                <div class="ip">\(f(5) \approx 3{,}1\) · \(f(10) \approx 3{,}8\) · \(f(15) \approx 3{,}96\) · \(f(20) \approx 3{,}99\)<br>
+                <strong>Abstand zu 4:</strong> \(\approx 0{,}9\) · \(\approx 0{,}2\) · \(\approx 0{,}04\) · \(\approx 0{,}01\)</div>
+                <div class="ip"><strong>b) Begründung in drei Schritten:</strong></div>
+                <div class="ip">(1) <em>Welche Gerade kommt in Frage?</em> Der Graph flacht nach rechts immer stärker ab und verläuft dabei knapp unterhalb der Höhe 4. Die Gerade \(y = 4\) ist also die Kandidatin.</div>
+                <div class="ip">(2) <em>Wird der Abstand beliebig klein?</em> Ja — er sinkt von \(0{,}9\) über \(0{,}2\) und \(0{,}04\) auf \(0{,}01\); mit jeweils 5 weiteren Einheiten wird er etwa auf ein Fünftel gedrückt. Es gibt keine Schranke, unter die er nicht käme: Zu jeder noch so kleinen Vorgabe findet man eine Stelle, ab der alle Werte näher an 4 liegen.</div>
+                <div class="ip">(3) <em>Von welcher Seite, und wird 4 erreicht?</em> Alle Werte liegen unterhalb von 4 — der Graph nähert sich <strong>von unten</strong> an und schneidet die Gerade \(y=4\) nirgends. Der Wert 4 wird nie angenommen, sondern nur beliebig genau angenähert. Damit ist \(y = 4\) die waagerechte Asymptote und \(\lim_{x \to \infty} f(x) = 4\).</div>
+                <div class="ip"><strong>c)</strong> \(f(20) \approx 3{,}99\) ist eine Aussage über <em>eine einzelne Stelle</em>. Auch eine Funktion, die bei \(x = 20\) zufällig nahe bei 4 liegt und danach wieder wegläuft (etwa eine Schwingung), erfüllt das. Für einen Grenzwert braucht man die Aussage über <em>alle</em> weiteren Stellen: dass der Abstand ab dort klein bleibt und weiter schrumpft. Ein einzelner Wert kann eine Vermutung stützen, aber nie eine Begründung ersetzen.</div>
+                <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K4: Werte aus einem Graphen entnehmen und in eine Tabelle übertragen · K1: Den Grenzwert am Graphen begründen · K6: Die Begründung strukturiert formulieren</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW1.5</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Untersuche das Verhalten für \(x \to -\infty\) mit einer Wertetabelle (\(x = -10,\;-100,\;-1\,000\)). Gib jeweils den Grenzwert an und ob sich der Graph von oben oder von unten nähert.<br>
+                <strong>a)</strong> \(f(x) = \dfrac{1}{x}\) &#160;·&#160;
+                <strong>b)</strong> \(g(x) = 3 + \dfrac{2}{x^2}\) &#160;·&#160;
+                <strong>c)</strong> \(h(x) = \dfrac{4x-1}{2x+3}\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(-0{,}1\) · \(-0{,}01\) · \(-0{,}001\) → Grenzwert \(0\). Alle Werte sind <em>negativ</em>, der Graph nähert sich der \(x\)-Achse von unten.</div>
+                <div class="ip"><strong>b)</strong> \(3{,}02\) · \(3{,}0002\) · \(3{,}000002\) → Grenzwert \(3\), Annäherung von oben (der Summand \(\frac{2}{x^2}\) ist auch für negative \(x\) positiv).</div>
+                <div class="ip"><strong>c)</strong> \(h(-10) \approx 2{,}412\) · \(h(-100) \approx 2{,}036\) · \(h(-1\,000) \approx 2{,}0035\) → Grenzwert \(2\), Annäherung von oben.</div>
+                <div class="ip"><strong>Worauf es ankommt:</strong> Für \(x \to -\infty\) setzt man <em>negative</em> Zehnerpotenzen ein. Das Vorzeichen der Funktionswerte verrät, von welcher Seite der Graph kommt — eine Information, die im Grenzwert selbst nicht steckt.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+                <div class="komp-desc">K5: Wertetabelle für \(x \to -\infty\) anlegen · K4: Vom Zahlenmaterial auf den Graphenverlauf schließen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW1.6</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Gegeben ist \(f(x) = \dfrac{2x+1}{x-3}\). Untersuche mit zwei Wertetabellen das Verhalten für \(x \to +\infty\) und für \(x \to -\infty\). Gib die waagerechte Asymptote an und beschreibe, wie der Graph an ihren beiden Enden verläuft.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>\(x \to +\infty\):</strong> \(f(100) \approx 2{,}072\) · \(f(1\,000) \approx 2{,}0070\) · \(f(10\,000) \approx 2{,}00070\) — Abstand zu 2: \(0{,}072\) · \(0{,}0070\) · \(0{,}00070\).</div>
+                <div class="ip"><strong>\(x \to -\infty\):</strong> \(f(-100) \approx 1{,}932\) · \(f(-1\,000) \approx 1{,}9930\) · \(f(-10\,000) \approx 1{,}99930\) — Abstand zu 2: \(0{,}068\) · \(0{,}0070\) · \(0{,}00070\).</div>
+                <div class="ip">An beiden Enden wird der Abstand zu 2 beliebig klein. Die <strong>waagerechte Asymptote ist \(y = 2\)</strong>.</div>
+                <div class="ip"><strong>Verlauf:</strong> Rechts liegen alle Werte über 2 — der Graph nähert sich von oben. Links liegen alle Werte unter 2 — er nähert sich von unten. Die Asymptote wird also von zwei verschiedenen Seiten „eingerahmt“.</div>
+                <div class="ip"><em>Nebenbei:</em> An der Stelle \(x = 3\) ist \(f\) nicht definiert; dort liegt eine Polstelle mit senkrechter Asymptote. Das ist eine andere Frage als das Verhalten im Unendlichen — deshalb darf \(x = 3\) in diesen Tabellen auch gar nicht vorkommen.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+                <div class="komp-desc">K5: Zwei Wertetabellen anlegen und auswerten · K4: Waagerechte Asymptote und Annäherungsseiten beschreiben</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW1.7</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Mia soll \(\displaystyle\lim_{x \to \infty} \frac{x}{x+50}\) bestimmen. Sie legt diese Tabelle an:<br>
+                <span style="display:inline-block;margin:8px 0;font-size:15px">\(x\): 1, 2, 3, 4, 5 &#160;→&#160; \(f(x)\): 0,020 · 0,038 · 0,057 · 0,074 · 0,091</span><br>
+                und schließt: <em>„Die Werte werden immer größer, also wächst \(f\) über alle Grenzen.“</em><br>
+                Beurteile ihr Vorgehen, führe die Tabelle richtig fort und gib den Grenzwert an.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Beurteilung:</strong> Ihre Zahlen stimmen, ihr Schluss nicht. Sie hat nur <em>sehr kleine</em> \(x\)-Werte eingesetzt. In diesem Anfangsbereich wachsen die Werte tatsächlich — aber daraus folgt nichts über das Verhalten im Unendlichen. Eine Wertetabelle muss mit <strong>Zehnerpotenzen</strong> weit hinauslaufen, sonst sieht man die Tendenz gar nicht.</div>
+                <div class="ip"><strong>Richtig fortgesetzt:</strong></div>
+                <div class="ip">\(f(10) \approx 0{,}167\) · \(f(100) \approx 0{,}667\) · \(f(1\,000) \approx 0{,}952\) · \(f(10\,000) \approx 0{,}995\) · \(f(100\,000) \approx 0{,}9995\)</div>
+                <div class="ip">Die Werte wachsen zwar weiter, aber sie wachsen <em>gebremst</em>: Der Abstand zu 1 schrumpft von \(0{,}83\) über \(0{,}33\) und \(0{,}048\) auf \(0{,}0005\). Also \(\displaystyle\lim_{x \to \infty} \frac{x}{x+50} = 1\).</div>
+                <div class="ip"><strong>Worauf es ankommt:</strong> „Die Werte wachsen“ und „die Werte wachsen über alle Grenzen“ sind zwei verschiedene Aussagen. Eine wachsende Folge von Werten kann sich trotzdem einer Zahl annähern — genau das ist der Fall, wenn der Abstand zu dieser Zahl schrumpft.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K1: Ein fehlerhaftes Vorgehen prüfen und den Denkfehler benennen · K5: Die Wertetabelle sachgerecht fortsetzen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW1.8</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Für \(f(x) = \dfrac{2x+1}{x-3}\) zeigt der Taschenrechner bei \(x = 1\,000\,000\) den Wert \(2\) an.<br>
+                <strong>a)</strong> Lena schließt daraus: <em>„Also ist \(f(1\,000\,000) = 2\), der Grenzwert wird erreicht.“</em> Nimm Stellung.<br>
+                <strong>b)</strong> Erkläre in eigenen Worten, worin sich die Aussagen „\(f(100) \approx 2{,}07\)“ und „\(\lim_{x \to \infty} f(x) = 2\)“ grundsätzlich unterscheiden.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Der Rechner zeigt nur eine begrenzte Zahl von Stellen an und <em>rundet</em>. Tatsächlich ist \(f(1\,000\,000) = \frac{2\,000\,001}{999\,997} \approx 2{,}000007\) — also größer als 2. Wer statt der Funktionswerte die <strong>Abstände</strong> zu 2 tabelliert, sieht sofort, dass diese zwar winzig, aber nie null werden. Es gibt kein \(x\) mit \(f(x) = 2\).</div>
+                <div class="ip"><strong>b)</strong> „\(f(100) \approx 2{,}07\)“ ist eine Aussage über <em>eine einzelne Stelle</em>: Man setzt eine Zahl ein und rechnet einen Funktionswert aus, den die Funktion tatsächlich annimmt.</div>
+                <div class="ip">„\(\lim_{x \to \infty} f(x) = 2\)“ ist eine Aussage über eine <em>Tendenz</em>. Es wird kein \(x\) eingesetzt — \(\infty\) ist keine Stelle, an der man rechnen könnte. Die Aussage lautet: Egal wie nah man an 2 heran will, ab irgendeiner Stelle bleiben <em>alle</em> Funktionswerte näher an 2 als diese Vorgabe.</div>
+                <div class="ip"><strong>Worauf es ankommt:</strong> Ein Grenzwert ist kein Funktionswert. Er wird von der Funktion nicht angenommen, sondern beschreibt, worauf sich die Funktionswerte zusammenziehen.</div>
+                <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K6: Den Grenzwertbegriff fachsprachlich erklären · K1: Eine Fehlvorstellung widerlegen · K5: Die Rundung des Rechners kritisch einordnen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW1.9</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Finde jeweils <strong>selbst</strong> eine Funktion mit dem angegebenen Verhalten für \(x \to \infty\) und belege deine Wahl mit einer Wertetabelle.<br>
+                <strong>a)</strong> \(\lim_{x \to \infty} f(x) = 0\) &#160;·&#160;
+                <strong>b)</strong> \(\lim_{x \to \infty} f(x) = -2\) &#160;·&#160;
+                <strong>c)</strong> \(f(x)\) wächst über alle Grenzen &#160;·&#160;
+                <strong>d)</strong> weder Grenzwert noch unbeschränktes Wachsen</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip">Es gibt jeweils unendlich viele Lösungen. Mögliche Antworten:</div>
+                <div class="ip"><strong>a)</strong> \(f(x) = \frac{1}{x}\) &#160;→&#160; \(0{,}1\) · \(0{,}01\) · \(0{,}001\). Abstand zu 0 wird beliebig klein.</div>
+                <div class="ip"><strong>b)</strong> \(f(x) = -2 + \frac{1}{x}\) &#160;→&#160; \(-1{,}9\) · \(-1{,}99\) · \(-1{,}999\). Abstand zu \(-2\): \(0{,}1\) · \(0{,}01\) · \(0{,}001\).</div>
+                <div class="ip"><strong>c)</strong> \(f(x) = x^2\) &#160;→&#160; \(100\) · \(10\,000\) · \(1\,000\,000\). Die Werte wachsen selbst um den Faktor 100 pro Zehnerschritt — es gibt keine Zahl, der sie sich nähern.</div>
+                <div class="ip"><strong>d)</strong> \(f(x) = \sin(x)\) &#160;→&#160; Die Werte pendeln für beliebig große \(x\) immer wieder zwischen \(-1\) und \(1\). Sie bleiben beschränkt, ziehen sich aber auf keine Zahl zusammen.</div>
+                <div class="ip"><strong>Tipp zum Vorgehen:</strong> Für einen Grenzwert \(g\) nimmt man einen Term der Bauart „\(g\) plus etwas, das gegen 0 geht“ — zum Beispiel \(g + \frac{1}{x}\) oder \(g + \frac{5}{x^2}\). Für Fall d) braucht man eine periodische Funktion.</div>
+                <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K2: Zu einer vorgegebenen Eigenschaft ein passendes Beispiel konstruieren · K5: Die eigene Wahl mit einer Wertetabelle belegen</div>
+            </div>
+        </div>
+    </div>
+
+  <!-- ══════════ BLOCK GW2 ══════════ -->
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">GW2</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · GW2 · ★ / ★★★ Funktionstypen</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Verhalten im Unendlichen — die vier Typen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Ganzrationale Funktion, Potenzfunktion, Exponentialfunktion, spezielle Sinusfunktion — jeder Typ für sich, im Sachkontext und im Vergleich.</div>
+    </div>
+  </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.1</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq"><strong>Ganzrational.</strong> Gib jeweils das Verhalten für \(x \to +\infty\) und \(x \to -\infty\) an — allein aus Grad und Leitkoeffizient. Prüfe eine deiner Antworten zusätzlich mit einer Wertetabelle nach.<br>
+                <strong>a)</strong> \(f(x) = 3x^4 - 2x^2 + 7\) &#160;·&#160;
+                <strong>b)</strong> \(g(x) = -x^3 + 5x\) &#160;·&#160;
+                <strong>c)</strong> \(h(x) = 0{,}5x^5 - x^4 + 2\) &#160;·&#160;
+                <strong>d)</strong> \(k(x) = -2x^2 + 8x\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Grad 4 (gerade), \(a_4 = 3 > 0\): beide Enden \(+\infty\).</div>
+                <div class="ip"><strong>b)</strong> Grad 3 (ungerade), \(a_3 = -1 < 0\): \(x \to +\infty:\; -\infty\); \(x \to -\infty:\; +\infty\).</div>
+                <div class="ip"><strong>c)</strong> Grad 5 (ungerade), \(a_5 = 0{,}5 > 0\): \(x \to +\infty:\; +\infty\); \(x \to -\infty:\; -\infty\).</div>
+                <div class="ip"><strong>d)</strong> Grad 2 (gerade), \(a_2 = -2 < 0\): beide Enden \(-\infty\).</div>
+                <div class="ip"><strong>Kontrolle zu c):</strong> \(h(10) = 40\,002\) · \(h(100) \approx 4{,}9 \cdot 10^{9}\) · \(h(-10) = -60\,998\) · \(h(-100) \approx -5{,}1 \cdot 10^{9}\) — passt zur Vorhersage.</div>
+                <div class="ip"><em>Merkhilfe:</em> Der Grad sagt, ob die Enden in dieselbe Richtung zeigen; das Vorzeichen sagt, wohin es rechts geht.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+                <div class="komp-desc">K5: Verhalten im Unendlichen aus der Termstruktur ablesen · K1: Die Regel an einem Beispiel überprüfen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.2</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Ganzrational — begründen.</strong> Für \(f(x) = x^3 - 1000x^2\) legt Jonas die Tabelle \(x = 1,\;10,\;100\) an, erhält lauter negative Werte und schließt: <em>„Also \(f(x) \to -\infty\).“</em><br>
+                <strong>a)</strong> Setze die Tabelle mit \(x = 500,\;1\,000,\;2\,000,\;5\,000\) fort.<br>
+                <strong>b)</strong> Erkläre, wo Jonas' Fehler liegt, und gib das tatsächliche Verhalten für \(x \to \infty\) an.<br>
+                <strong>c)</strong> Bestimme, ab welcher Stelle \(x^3\) den Summanden \(1000x^2\) übertrifft.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(f(500) = -1{,}25 \cdot 10^{8}\) · \(f(1\,000) = 0\) · \(f(2\,000) = +4 \cdot 10^{9}\) · \(f(5\,000) = +1 \cdot 10^{11}\)</div>
+                <div class="ip"><strong>b)</strong> Jonas ist mit seiner Tabelle nicht weit genug gegangen. Bis \(x = 1000\) überwiegt tatsächlich der Summand \(-1000x^2\), danach kippt es. Das Verhalten im Unendlichen ist keine Aussage über einen Anfangsbereich, sondern über die Tendenz „ab irgendwann“ — und ab \(x = 1000\) wächst \(f\) über alle Grenzen: \(\lim_{x \to \infty} f(x) = +\infty\). Das passt zur Regel: Grad 3 (ungerade), Leitkoeffizient \(1 > 0\).</div>
+                <div class="ip"><strong>c)</strong> \(x^3 > 1000x^2\) gilt für \(x > 0\) genau dann, wenn \(x > 1000\). Genau dort wechselt \(f\) das Vorzeichen — die Tabelle in a) zeigt das mit \(f(1000) = 0\) direkt.</div>
+                <div class="ip"><strong>Worauf es ankommt:</strong> Ein großer Koeffizient verschiebt nur, <em>wann</em> sich die höchste Potenz durchsetzt — nicht <em>ob</em>. Genau deshalb ist die Typregel der Wertetabelle hier überlegen: Sie sagt das Ergebnis voraus, ohne dass man raten muss, wie weit man tabellieren soll.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K1: Die Grenzen der Wertetabelle erkennen und begründen · K5: Tabelle fortsetzen und Ungleichung lösen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.3</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq"><strong>Potenzfunktion.</strong> Bestimme mit einer Wertetabelle die Grenzwerte für \(x \to +\infty\) und \(x \to -\infty\) und gib die waagerechte Asymptote an.<br>
+                <strong>a)</strong> \(f(x) = x^{-3}\) &#160;·&#160;
+                <strong>b)</strong> \(g(x) = \dfrac{4}{x^2} + 2\) &#160;·&#160;
+                <strong>c)</strong> \(h(x) = x^{-1} - 3\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(f(10) = 0{,}001\) · \(f(100) = 10^{-6}\) · \(f(-10) = -0{,}001\) · \(f(-100) = -10^{-6}\) → beidseitig Grenzwert \(0\). Asymptote \(y = 0\) (die \(x\)-Achse); rechts Annäherung von oben, links von unten.</div>
+                <div class="ip"><strong>b)</strong> \(g(10) = 2{,}04\) · \(g(100) = 2{,}0004\) · \(g(-100) = 2{,}0004\) → beidseitig Grenzwert \(2\). Asymptote \(y = 2\); wegen \(\frac{4}{x^2} > 0\) beidseitig Annäherung von oben.</div>
+                <div class="ip"><strong>c)</strong> \(h(10) = -2{,}9\) · \(h(100) = -2{,}99\) · \(h(-100) = -3{,}01\) → beidseitig Grenzwert \(-3\). Asymptote \(y = -3\); rechts von oben, links von unten.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+                <div class="komp-desc">K5: Potenzen mit negativem Exponenten tabellieren · K4: Asymptote und Annäherungsseite angeben</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.4</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Potenzfunktion im Sachzusammenhang.</strong> Für eine punktförmige Lichtquelle beschreibt
+                \[E(r) = \frac{240}{r^2}\]
+                die Beleuchtungsstärke in Lux im Abstand \(r\) (in Metern).<br>
+                <strong>a)</strong> Lege eine Wertetabelle für \(r = 1,\;2,\;5,\;10,\;20,\;50\) an.<br>
+                <strong>b)</strong> Bestimme \(\lim_{r \to \infty} E(r)\) und deute den Wert im Sachzusammenhang.<br>
+                <strong>c)</strong> Erkläre, warum die Asymptote \(E = 0\) hier sinnvoll ist, das Modell für \(r \to 0\) dagegen an seine Grenze stößt.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(E(1) = 240\) · \(E(2) = 60\) · \(E(5) = 9{,}6\) · \(E(10) = 2{,}4\) · \(E(20) = 0{,}6\) · \(E(50) = 0{,}096\) (jeweils in Lux). Doppelter Abstand bedeutet ein Viertel der Beleuchtungsstärke.</div>
+                <div class="ip"><strong>b)</strong> Der Abstand zu 0 wird beliebig klein, also \(\lim_{r \to \infty} E(r) = 0\). <em>Deutung:</em> Je weiter man sich von der Lampe entfernt, desto schwächer wird die Beleuchtung — sie wird beliebig klein, ist aber für jede endliche Entfernung noch größer als null.</div>
+                <div class="ip"><strong>c)</strong> Die Asymptote \(E = 0\) passt zur Realität: Licht wird beliebig schwach, verschwindet aber nicht schlagartig. Für \(r \to 0\) liefert das Modell dagegen beliebig große Werte — physikalisch unmöglich. Der Grund: Eine „punktförmige“ Lichtquelle ist eine Idealisierung; jede echte Lampe hat eine Ausdehnung. Das Modell ist also erst ab einem gewissen Mindestabstand brauchbar.</div>
+                <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K3: Gültigkeitsbereich eines Modells beurteilen · K6: Grenzwert und Polstelle im Sachkontext deuten · K5: Wertetabelle erstellen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.5</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Potenzfunktion — vergleichen.</strong> Die Funktionen \(f(x) = x^{-2}\) und \(g(x) = x^{-3}\) haben beide für \(x \to -\infty\) den Grenzwert 0. Belege das mit je einer Wertetabelle und beschreibe, worin sich die beiden Graphen bei dieser Annäherung trotzdem unterscheiden.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Tabellen:</strong> \(f(-10) = 0{,}01\) · \(f(-100) = 0{,}0001\) &#160;|&#160; \(g(-10) = -0{,}001\) · \(g(-100) = -10^{-6}\). Beide Male wird der Abstand zu 0 beliebig klein.</div>
+                <div class="ip">Für \(x < 0\) ist \(x^{-2} = \frac{1}{x^2}\) stets <strong>positiv</strong> (gerader Exponent). Der Graph von \(f\) liegt links oberhalb der \(x\)-Achse und nähert sich ihr <em>von oben</em>.</div>
+                <div class="ip">Für \(x < 0\) ist \(x^{-3} = \frac{1}{x^3}\) stets <strong>negativ</strong> (ungerader Exponent). Der Graph von \(g\) liegt links unterhalb der \(x\)-Achse und nähert sich ihr <em>von unten</em>.</div>
+                <div class="ip"><strong>Worauf es ankommt:</strong> Der Grenzwert sagt nur, <em>welcher</em> Zahl sich die Werte nähern — nicht, ob sie dabei größer oder kleiner als diese Zahl sind. Diese Zusatzinformation steckt im Vorzeichen der Tabellenwerte, und wer den Graphen skizzieren will, braucht sie.</div>
+                <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k1">K1</span></div>
+                <div class="komp-desc">K4: Zwei Graphen anhand von Tabellenwerten vergleichen · K1: Die Reichweite einer Grenzwertaussage beurteilen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.6</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq"><strong>Exponentialfunktion.</strong> Gegeben ist \(f(x) = 3e^{-0{,}6x} + 1\). Bestimme mit Wertetabellen die Grenzwerte für \(x \to +\infty\) und \(x \to -\infty\) und gib die waagerechte Asymptote an.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>\(x \to +\infty\):</strong> \(f(5) \approx 1{,}149\) · \(f(10) \approx 1{,}0074\) · \(f(20) \approx 1{,}000018\). Der Abstand zu 1 wird beliebig klein → Grenzwert \(1\). Waagerechte Asymptote \(y = 1\); wegen \(3e^{-0{,}6x} > 0\) Annäherung von oben.</div>
+                <div class="ip"><strong>\(x \to -\infty\):</strong> \(f(-5) \approx 61{,}3\) · \(f(-10) \approx 1\,211\) · \(f(-20) \approx 488\,000\). Die Werte wachsen über alle Grenzen → kein Grenzwert, \(f(x) \to +\infty\). Auf dieser Seite gibt es keine Asymptote.</div>
+                <div class="ip"><em>Zur Kontrolle:</em> Die Asymptote liegt immer auf der Seite, auf der der Exponent gegen \(-\infty\) läuft.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K5: Verhalten der e-Funktion an beiden Enden numerisch bestimmen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.7</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Exponentialfunktion im Sachzusammenhang.</strong> Eine Tasse Tee kühlt in einem 20 °C warmen Raum ab:
+                \[T(t) = 20 + 55\,e^{-0{,}08\,t} \qquad (t \text{ in Minuten},\; T \text{ in } °\text{C})\]
+                <strong>a)</strong> Lege eine Wertetabelle für \(t = 0,\;10,\;30,\;60,\;120\) an.<br>
+                <strong>b)</strong> Bestimme \(\lim_{t \to \infty} T(t)\) und deute den Wert im Sachzusammenhang.<br>
+                <strong>c)</strong> Nimmt der Tee die Raumtemperatur irgendwann genau an? Begründe.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(T(0) = 75\) · \(T(10) \approx 44{,}7\) · \(T(30) \approx 25{,}0\) · \(T(60) \approx 20{,}45\) · \(T(120) \approx 20{,}004\) (in °C).</div>
+                <div class="ip"><strong>b)</strong> Abstand zu 20: \(55\) · \(24{,}7\) · \(5{,}0\) · \(0{,}45\) · \(0{,}004\) — er wird beliebig klein, also \(\lim_{t \to \infty} T(t) = 20\). <em>Deutung:</em> Die Teetemperatur nähert sich langfristig der Raumtemperatur von 20 °C an. Die waagerechte Asymptote \(y = 20\) ist im Modell genau die Umgebungstemperatur.</div>
+                <div class="ip"><strong>c)</strong> Nein. Für jedes \(t\) ist \(e^{-0{,}08t} > 0\), also \(T(t) > 20\) — der Wert 20 wird nie angenommen, sondern nur beliebig genau angenähert. Genau das ist die Grundvorstellung des Grenzwerts.</div>
+                <div class="ip"><em>Modellkritik:</em> In der Realität ist der Unterschied nach etwa einer Stunde nicht mehr messbar. Das Modell beschreibt die Annäherung gut, macht aber eine Aussage über „alle Zeiten“, die man nicht überprüfen kann.</div>
+                <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K3: Modell und Sachsituation aufeinander beziehen · K6: Den Grenzwert im Kontext deuten · K5: Wertetabelle erstellen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.8</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Spezielle Sinusfunktion.</strong> Gegeben ist \(f(x) = 2\sin(x) + 1\).<br>
+                <strong>a)</strong> Tom tabelliert \(x = 2\pi,\;4\pi,\;6\pi,\;8\pi\) und erhält jedes Mal den Wert 1. Er schließt: <em>„Der Grenzwert ist 1.“</em> Nimm Stellung.<br>
+                <strong>b)</strong> Begründe, warum \(\lim_{x \to \infty} f(x)\) nicht existiert — obwohl die Funktionswerte nie größer als 3 und nie kleiner als \(-1\) werden.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Toms Rechnung stimmt, sein Schluss nicht. Er hat ausgerechnet die Vielfachen der Periode eingesetzt — dort ist \(\sin(x) = 0\) und damit \(f(x) = 1\). Zwischen seinen Tabellenzeilen passiert aber genau das, worauf es ankommt: Der Graph steigt weiterhin bis 3 und fällt bis \(-1\). <strong>Bei periodischen Funktionen kann eine Wertetabelle täuschen</strong> — man muss den Graphen dazunehmen oder zusätzlich Zwischenstellen prüfen, z. B. \(x = 2\pi + \frac{\pi}{2}\) mit \(f(x) = 3\).</div>
+                <div class="ip"><strong>b)</strong> Ein Grenzwert verlangt die Annäherung an <em>eine einzelne Zahl</em>. Die Werte von \(f\) durchlaufen aber immer wieder das ganze Intervall \([-1;\,3]\): An den Stellen \(x = \frac{\pi}{2} + 2k\pi\) ist \(f(x) = 3\), an den Stellen \(x = \frac{3\pi}{2} + 2k\pi\) ist \(f(x) = -1\) — und zwar für beliebig große \(x\). Egal welche Zahl \(g\) man vorschlägt: Es gibt immer noch beliebig weit rechts Funktionswerte, die weit von \(g\) entfernt sind.</div>
+                <div class="ip"><strong>Worauf es ankommt — beschränkt \(\neq\) konvergent:</strong> <em>Beschränkt</em> heißt nur, dass die Werte in einem Streifen bleiben. <em>Konvergent</em> heißt, dass sie sich auf eine Zahl zusammenziehen. Die Sinusfunktion erfüllt das Erste, aber nicht das Zweite — sie wächst auch nicht über alle Grenzen und fällt damit in den dritten Fall.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K1: Die Nichtexistenz eines Grenzwerts begründen und eine Fehlvorstellung widerlegen · K6: Beschränktheit und Konvergenz fachsprachlich trennen</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin:22px 0 6px;padding:14px;background:#fbfaf6;border:1px solid var(--border);border-radius:8px">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+        <div style="text-align:center"><canvas id="cvZuA" style="max-width:100%;border-radius:4px"></canvas></div>
+        <div style="text-align:center"><canvas id="cvZuB" style="max-width:100%;border-radius:4px"></canvas></div>
+        <div style="text-align:center"><canvas id="cvZuC" style="max-width:100%;border-radius:4px"></canvas></div>
+        <div style="text-align:center"><canvas id="cvZuD" style="max-width:100%;border-radius:4px"></canvas></div>
+      </div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:10px;text-align:center">Abbildung zu GW2.9 — vier Graphen A bis D (gestrichelt: waagerechte Asymptoten)</div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.9</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Zuordnen.</strong> Ordne den vier Graphen A bis D die passenden Funktionsterme zu und begründe jede Zuordnung <em>mit dem Verhalten im Unendlichen</em> — nicht mit einzelnen Funktionswerten.<br>
+                <span style="display:inline-block;margin-top:6px">
+                <strong>(1)</strong> \(f(x) = \dfrac{3}{x} + 1\) &#160;·&#160;
+                <strong>(2)</strong> \(f(x) = 1{,}5\sin(2x) + 0{,}5\) &#160;·&#160;
+                <strong>(3)</strong> \(f(x) = 0{,}25x^4 - 2x^2\) &#160;·&#160;
+                <strong>(4)</strong> \(f(x) = 2e^{0{,}5x} - 3\)</span></div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>A ↔ (3)</strong> \(0{,}25x^4 - 2x^2\): ganzrational, Grad 4 (gerade), Leitkoeffizient \(0{,}25 > 0\) — beide Enden gehen nach \(+\infty\). Der Graph zeigt genau das: keine Asymptote, beide Äste steigen.</div>
+                <div class="ip"><strong>B ↔ (4)</strong> \(2e^{0{,}5x} - 3\): Exponentialfunktion mit \(k = 0{,}5 > 0\). Für \(x \to -\infty\) geht \(e^{0{,}5x} \to 0\), also \(f(x) \to -3\) — die Asymptote liegt <strong>nur links</strong>. Rechts wächst der Graph über alle Grenzen. Das ist das einzige Bild mit einseitiger Asymptote.</div>
+                <div class="ip"><strong>C ↔ (1)</strong> \(\frac{3}{x} + 1\): Potenzfunktion mit negativem Exponenten, verschoben um 1. An <strong>beiden</strong> Enden Grenzwert 1, Asymptote \(y = 1\); dazu eine Polstelle bei \(x = 0\), an der der Graph in zwei Äste zerfällt.</div>
+                <div class="ip"><strong>D ↔ (2)</strong> \(1{,}5\sin(2x) + 0{,}5\): spezielle Sinusfunktion, Amplitude \(1{,}5\), verschoben um \(0{,}5\) — die Werte pendeln dauerhaft zwischen \(-1\) und \(2\). Kein Grenzwert, keine Asymptote.</div>
+                <div class="ip"><strong>Die entscheidenden Unterscheidungsmerkmale:</strong> Erst fragen „gibt es überhaupt eine waagerechte Asymptote?“ (nur B und C), dann „auf einer Seite oder auf beiden?“ (B einseitig, C beidseitig). Damit sind zwei Graphen sicher, und die verbleibenden zwei trennt man an der Periodizität.</div>
+                <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k1">K1</span></div>
+                <div class="komp-desc">K4: Zwischen Graph und Term wechseln · K1: Die Zuordnung mit dem Verhalten im Unendlichen begründen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.10</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Alle vier Typen im Vergleich.</strong> Ordne jede Funktion ihrem Typ zu und fülle die Tabelle aus (Verhalten für \(x \to -\infty\), für \(x \to +\infty\), waagerechte Asymptote).<br>
+                \(f(x) = -x^4 + 2x\) &#160;·&#160;
+                \(g(x) = \dfrac{5}{x^3}\) &#160;·&#160;
+                \(h(x) = 2 - 4e^{-x}\) &#160;·&#160;
+                \(k(x) = 3\sin(2x) - 1\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>\(f(x) = -x^4 + 2x\)</strong> — ganzrational, Grad 4 (gerade), Leitkoeffizient \(-1 < 0\): beide Enden \(-\infty\). Keine waagerechte Asymptote.</div>
+                <div class="ip"><strong>\(g(x) = \frac{5}{x^3} = 5x^{-3}\)</strong> — Potenzfunktion mit negativem Exponenten: an beiden Enden \(\to 0\) (rechts von oben, links von unten). Asymptote \(y = 0\).</div>
+                <div class="ip"><strong>\(h(x) = 2 - 4e^{-x}\)</strong> — Exponentialfunktion. \(x \to +\infty\): \(e^{-x} \to 0\), also \(h(x) \to 2\); Asymptote \(y = 2\), Annäherung von unten (da \(-4e^{-x} < 0\)). \(x \to -\infty\): \(e^{-x}\) wächst über alle Grenzen, also \(h(x) \to -\infty\).</div>
+                <div class="ip"><strong>\(k(x) = 3\sin(2x) - 1\)</strong> — spezielle Sinusfunktion mit Amplitude 3 und Verschiebung \(-1\): Die Werte pendeln zwischen \(-4\) und \(2\). An beiden Enden existiert kein Grenzwert, es gibt keine Asymptote.</div>
+                <div class="ip"><em>Beachte:</em> Nur \(g\) und \(h\) haben eine waagerechte Asymptote — und \(h\) nur auf einer Seite.</div>
+                <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K4: Funktionen nach Typ ordnen und darstellen · K5: Verhalten im Unendlichen bestimmen · K6: Ergebnisse in einer Übersicht zusammenfassen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.11</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq"><strong>Wachstumsvergleich.</strong> Untersuche den Term \(\dfrac{x^3}{e^x}\) mit einer Wertetabelle für \(x = 5,\;10,\;20,\;50\). Formuliere das Ergebnis als allgemeine Regel und erkläre, warum die Betrachtung kleiner \(x\)-Werte hier besonders leicht in die Irre führt.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Wertetabelle:</strong></div>
+                <div class="ip">\(x=5\): \(\frac{125}{148{,}4} \approx 0{,}84\) &#160;·&#160;
+                \(x=10\): \(\frac{1000}{22\,026} \approx 0{,}045\) &#160;·&#160;
+                \(x=20\): \(\frac{8000}{4{,}85 \cdot 10^{8}} \approx 1{,}6 \cdot 10^{-5}\) &#160;·&#160;
+                \(x=50\): \(\frac{125\,000}{5{,}18 \cdot 10^{21}} \approx 2{,}4 \cdot 10^{-17}\)</div>
+                <div class="ip">Die Werte werden rasend schnell kleiner: \(\displaystyle\lim_{x \to \infty} \frac{x^3}{e^x} = 0\).</div>
+                <div class="ip"><strong>Regel:</strong> Die \(e\)-Funktion wächst schneller als jede Potenzfunktion. Für jedes \(n\) gilt \(\displaystyle\lim_{x \to \infty} \frac{x^{n}}{e^{x}} = 0\).</div>
+                <div class="ip"><strong>Warum kleine \(x\) in die Irre führen:</strong> Bei \(x = 5\) liegt der Quotient noch nahe bei 1 — dort sind \(x^3 = 125\) und \(e^5 \approx 148\) fast gleich groß. Wer nur dort hinschaut, könnte auf ein Gleichgewicht tippen. Bei \(\frac{x^{10}}{e^x}\) dauert es sogar bis etwa \(x = 36\), bis die \(e\)-Funktion die Führung übernimmt — sie übernimmt sie aber immer. Wie bei GW2.2 gilt: Der Anfangsbereich sagt nichts über das Verhalten im Unendlichen.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+                <div class="komp-desc">K5: Mit dem Taschenrechner systematisch erkunden · K1: Aus Beispielen eine Regel formulieren und ihre Grenzen benennen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW2.12</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq"><strong>Gedämpfte Schwingung.</strong> Gegeben ist \(f(x) = e^{-0{,}2x} \cdot \sin(x)\).<br>
+                <strong>a)</strong> Erkläre, warum eine Wertetabelle allein hier keine sichere Antwort liefert.<br>
+                <strong>b)</strong> Begründe mit einer Abschätzung, dass \(\lim_{x \to \infty} f(x) = 0\) gilt — obwohl der Sinusfaktor allein keinen Grenzwert hat.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Wie bei jeder Schwingung hängt der Tabellenwert stark davon ab, <em>welche</em> Stellen man trifft. Setzt man Vielfache von \(\pi\) ein, ist \(\sin(x) = 0\) und damit \(f(x) = 0\) — das würde den Grenzwert 0 nur zufällig richtig nahelegen. Trifft man dagegen die Hochpunkte, erhält man deutlich größere Werte. Eine Tabelle kann hier eine Vermutung liefern, aber keine Begründung.</div>
+                <div class="ip"><strong>b) Abschätzung:</strong> Für alle \(x\) gilt \(-1 \le \sin(x) \le 1\), also \(|\sin(x)| \le 1\). Damit folgt
+                \[|f(x)| = e^{-0{,}2x} \cdot |\sin(x)| \le e^{-0{,}2x}\]</div>
+                <div class="ip">Für \(x \to \infty\) gilt \(e^{-0{,}2x} \to 0\) (Typ 3). Der Betrag von \(f(x)\) wird also von einer Größe nach oben begrenzt, die selbst gegen 0 geht — folglich \(f(x) \to 0\). Das gilt für <em>alle</em> Stellen, nicht nur für die tabellierten.</div>
+                <div class="ip"><strong>Anschaulich:</strong> Der Graph verläuft zwischen den beiden Hüllkurven \(y = e^{-0{,}2x}\) und \(y = -e^{-0{,}2x}\). Diese schnüren sich auf die \(x\)-Achse zusammen und nehmen die Schwingung mit.</div>
+                <div class="ip"><em>Der Kern:</em> Entscheidend ist nicht der Sinus an sich, sondern ob die <strong>Amplitude</strong> konstant bleibt (dann kein Grenzwert) oder abklingt (dann Grenzwert 0).</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k2">K2</span></div>
+                <div class="komp-desc">K1: Mit einer Abschätzung argumentieren statt zu tabellieren · K2: Eine ungewohnte Situation auf Bekanntes zurückführen</div>
+            </div>
+        </div>
+    </div>
+
+  <!-- ══════════ BLOCK GW3 ══════════ -->
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fbf0ec;border-left:5px solid #c75c3a;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">GW3</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · GW3 · ★ / ★★★ Stetigkeit</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Stetigkeit erkennen und begründen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Sprünge, Lücken und Definitionslücken unterscheiden — und klären, was Stetigkeit für die Ableitung leistet und was nicht.</div>
+    </div>
+  </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.1</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq">Entscheide jeweils, ob sich der Graph in einem Zug zeichnen lässt, und begründe kurz.<br>
+                <strong>a)</strong> \(f(x) = x^3 - 2x\) &#160;·&#160;
+                <strong>b)</strong> \(g(x) = \dfrac{1}{x}\) &#160;·&#160;
+                <strong>c)</strong> \(h(x) = \sin(x)\) &#160;·&#160;
+                <strong>d)</strong> Porto: 0,85 € für Briefe bis 20 g, 1,00 € für Briefe über 20 g bis 50 g</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Ja. Ganzrationale Funktionen sind auf ganz \(\mathbb{R}\) stetig — der Graph läuft ohne Sprung durch.</div>
+                <div class="ip"><strong>c)</strong> Ja. Auch die Sinusfunktion läuft ohne Absetzen durch; sie schwingt, aber sie springt nicht.</div>
+                <div class="ip"><strong>b)</strong> Nein — der Graph besteht aus zwei getrennten Ästen. An der Stelle \(x = 0\) ist \(g\) <em>nicht definiert</em>; man kann nicht vom linken zum rechten Ast gelangen, ohne den Stift abzusetzen. <em>Genau genommen:</em> Auf jedem der beiden Äste ist \(g\) stetig. An der Stelle 0 lässt sich Stetigkeit gar nicht prüfen, weil es dort keinen Funktionswert gibt.</div>
+                <div class="ip"><strong>d)</strong> Nein. Bei 20 g springt der Preis von 0,85 € auf 1,00 €. Solche Tarif- oder Treppenfunktionen sind typische unstetige Funktionen.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+                <div class="komp-desc">K1: Stetigkeit begründen · K4: Zwischen Funktionsterm, Graph und Sachsituation wechseln</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.2</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Betrachte den rechten Graphen im Abschnitt „Stetigkeit — anschaulich“ („stückweise definiert“). Begründe anschaulich, warum die Funktion an der Stelle \(x = 1\) nicht stetig ist — und erkläre, warum man dort keine eindeutige Tangente anlegen kann.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Lösung:</strong> An der Stelle \(x = 1\) springt der Graph: Von links kommend enden die Werte bei 1,5 (offener Kreis), der tatsächliche Funktionswert liegt aber bei 0,5. Beim Zeichnen muss man den Stift absetzen — die Funktion ist dort nicht stetig.</div>
+                <div class="ip">Eine Tangente soll sich an den Graphen „anschmiegen“; an einer Sprungstelle gibt es aber keine einheitliche Richtung des Graphen, also auch keine eindeutige Tangente und keine Tangentensteigung.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+                <div class="komp-desc">K1: Unstetigkeit an einer Stelle begründen · K4: Aus dem Graphen argumentieren</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.3</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Gegeben ist die stückweise definierte Funktion
+                \[f(x) = \begin{cases} 2x + 1 & \text{für } x < 2 \\[2pt] x^2 + a & \text{für } x \ge 2 \end{cases}\]
+                Bestimme \(a\) so, dass der Graph an der Stelle \(x = 2\) ohne Sprung durchläuft. Gib außerdem an, wie groß der Sprung für \(a = 3\) wäre.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Von links:</strong> Für \(x\) knapp unter 2 nähern sich die Werte \(2 \cdot 2 + 1 = 5\).</div>
+                <div class="ip"><strong>An der Stelle 2 selbst:</strong> \(f(2) = 2^2 + a = 4 + a\).</div>
+                <div class="ip">Damit kein Sprung entsteht, müssen beide Werte übereinstimmen: \(4 + a = 5\), also \(\boxed{a = 1}\). Für \(a = 1\) ist \(f\) an der Stelle 2 stetig.</div>
+                <div class="ip"><strong>Für \(a = 3\):</strong> \(f(2) = 4 + 3 = 7\), von links kommt man bei 5 an. Der Graph springt also um \(7 - 5 = 2\) Einheiten nach oben.</div>
+                <div class="ip"><em>Allgemein:</em> Die Sprunghöhe beträgt \(|(4+a) - 5| = |a - 1|\) — sie ist genau dann null, wenn \(a = 1\) ist.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+                <div class="komp-desc">K5: Parameter aus einer Bedingung bestimmen · K1: Die Stetigkeitsbedingung als Gleichung formulieren</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.4</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq">Ein Parkhaus verlangt für jede angefangene Stunde 2 €.<br>
+                <strong>a)</strong> Skizziere den Verlauf der Kostenfunktion \(K\) für \(0 < t \le 4\) (\(t\) in Stunden).<br>
+                <strong>b)</strong> Gib an, an welchen Stellen \(K\) unstetig ist und wie groß die Sprünge sind.<br>
+                <strong>c)</strong> Erkläre, warum hier eine unstetige Funktion das realistischere Modell ist als die lineare Funktion \(K(t) = 2t\).</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Eine Treppenfunktion: \(K(t) = 2\) € für \(0 < t \le 1\); \(4\) € für \(1 < t \le 2\); \(6\) € für \(2 < t \le 3\); \(8\) € für \(3 < t \le 4\). Jede Stufe ist eine waagerechte Strecke, am rechten Ende geschlossen, am linken Ende offen.</div>
+                <div class="ip"><strong>b)</strong> Unstetig an den Stellen \(t = 1\), \(t = 2\) und \(t = 3\) — dort springen die Kosten jeweils um 2 €.</div>
+                <div class="ip"><strong>c)</strong> Das lineare Modell \(K(t) = 2t\) würde bedeuten, dass minutengenau abgerechnet wird: Wer 1 Stunde und 1 Minute parkt, zahlte \(2{,}03\) €. Tatsächlich wird pro <em>angefangener</em> Stunde bezahlt — dieselbe Person zahlt 4 €. Zwischen zwei Sprungstellen ändern sich die Kosten überhaupt nicht, an den Sprungstellen dagegen schlagartig. Genau das leistet die unstetige Treppenfunktion, und das lineare Modell kann es nicht.</div>
+                <div class="ip"><em>Zum Weiterdenken:</em> Unstetige Modelle sind in der Realität eher die Regel als die Ausnahme — überall dort, wo etwas gestaffelt oder gerundet wird (Portostufen, Steuerklassen, Notenstufen).</div>
+                <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K3: Modellwahl begründen · K4: Eine Treppenfunktion darstellen · K6: Den Modellvergleich formulieren</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.5</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Vermischt.</strong> Gegeben ist \(f(x) = \dfrac{x^2 - 4}{x - 2}\).<br>
+                <strong>a)</strong> Für welche Stelle ist \(f\) nicht definiert?<br>
+                <strong>b)</strong> Vereinfache den Term und beschreibe, wie der Graph aussieht.<br>
+                <strong>c)</strong> Untersuche mit einer Wertetabelle das Verhalten für \(x \to \infty\).</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Der Nenner wird für \(x = 2\) null. An der Stelle 2 ist \(f\) nicht definiert; \(D = \mathbb{R} \setminus \{2\}\).</div>
+                <div class="ip"><strong>b)</strong> Mit der dritten binomischen Formel: \(x^2 - 4 = (x-2)(x+2)\), also
+                \(f(x) = \frac{(x-2)(x+2)}{x-2} = x + 2\) für alle \(x \neq 2\).<br>
+                Der Graph ist die Gerade \(y = x + 2\) — allerdings mit einer <strong>Lücke</strong> im Punkt \((2\,|\,4)\). Solche Lücken heißen <em>behebbar</em>: Setzt man den fehlenden Wert \(f(2) = 4\) nach, läuft der Graph ohne Sprung durch. Das unterscheidet die Lücke vom Sprung aus GW3.2, der sich nicht beheben lässt.</div>
+                <div class="ip"><strong>c)</strong> \(f(10) = 12\) · \(f(100) = 102\) · \(f(1\,000) = 1\,002\). Die Werte wachsen über alle Grenzen — es gibt keinen Grenzwert und keine waagerechte Asymptote: \(f(x) \to +\infty\).</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+                <div class="komp-desc">K5: Term faktorisieren und tabellieren · K1: Lücke und Sprung unterscheiden · K4: Den Graphen beschreiben</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.6</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq">Bekannt ist: Wo eine Funktion nicht stetig ist, kann sie dort auch nicht differenzierbar sein. Zeige an der Betragsfunktion \(f(x) = |x|\), dass die <em>Umkehrung</em> nicht gilt — dass Stetigkeit allein also noch keine Ableitung garantiert.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Der Graph:</strong> \(f(x) = |x|\) besteht aus den beiden Halbgeraden \(y = -x\) (für \(x < 0\)) und \(y = x\) (für \(x \ge 0\)). Sie treffen im Punkt \((0\,|\,0)\) zusammen.</div>
+                <div class="ip"><strong>Stetig:</strong> Von links kommend nähern sich die Werte der 0, von rechts ebenso, und \(f(0) = 0\) ist genau dieser Wert. Man kann den Graphen ohne Absetzen zeichnen — \(f\) ist an der Stelle 0 stetig.</div>
+                <div class="ip"><strong>Trotzdem keine Ableitung:</strong> Links von 0 hat der Graph durchgehend die Steigung \(-1\), rechts von 0 durchgehend die Steigung \(+1\). Je nachdem, von welcher Seite man sich der Stelle 0 nähert, erhält man einen anderen Wert. Es gibt keine Zahl, die man sinnvoll „die Steigung an der Stelle 0“ nennen könnte — also keine Tangente und keine Ableitung.</div>
+                <div class="ip"><strong>Fazit:</strong> Stetigkeit ist <em>notwendig</em> für Differenzierbarkeit, aber nicht <em>hinreichend</em>. Ein Knick lässt sich ohne Absetzen zeichnen; für eine Ableitung reicht das nicht. Anschaulich: Der Stift darf auf dem Papier bleiben — er darf aber auch nicht ruckartig die Richtung wechseln.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k2">K2</span></div>
+                <div class="komp-desc">K1: Notwendige und hinreichende Bedingung unterscheiden · K2: Eine Behauptung durch ein Gegenbeispiel widerlegen</div>
             </div>
         </div>
     </div>
@@ -17712,16 +18716,134 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="ip">
       <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
       <ol>
+        <li>Wie legst du eine Wertetabelle an, mit der man einen Grenzwert wirklich erkennt? Nenne die zwei häufigsten Fehler.</li>
+        <li>Was behauptet die Aussage \(\lim_{x \to \infty} f(x) = 3\) — und was behauptet sie <em>nicht</em>?</li>
+        <li>Woran erkennst du am Graphen, dass eine Funktion den Grenzwert 4 hat? Nenne die drei Bausteine der Begründung.</li>
+        <li>Welche drei Möglichkeiten gibt es für das Verhalten einer Funktion im Unendlichen? Nenne zu jeder ein Beispiel.</li>
+        <li>Woran erkennst du bei einer ganzrationalen Funktion, ob die beiden Enden des Graphen in dieselbe oder in entgegengesetzte Richtungen zeigen?</li>
+        <li>Bei \(f(x) = a \cdot e^{kx} + d\): Auf welcher Seite liegt die waagerechte Asymptote \(y = d\) — und wovon hängt das ab?</li>
+        <li>Warum hat \(f(x) = 2\sin(x)+1\) keinen Grenzwert für \(x \to \infty\), obwohl alle Werte zwischen \(-1\) und \(3\) liegen? Und warum ist gerade hier die Wertetabelle gefährlich?</li>
         <li>Erkläre in eigenen Worten, was „Stetigkeit“ einer Funktion bedeutet. Nenne ein Beispiel für eine stetige und eine unstetige Funktion.</li>
         <li>Was ist der Unterschied zwischen einer „Lücke“ und einem „Sprung“ im Graphen?</li>
-        <li>Warum ist Stetigkeit eine Voraussetzung für die Ableitung? Was passiert an einer Sprungstelle?</li>
+        <li>Warum ist Stetigkeit eine Voraussetzung für die Ableitung — und warum reicht sie allein nicht aus?</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Stetigkeit — anschaulich“.
+        Bei Frage 1–3 helfen die Abschnitte „Grenzwerte mit der Wertetabelle bestimmen“ und „Grenzwerte am Graphen ablesen“, bei 4–7 die Übersicht „Die vier Typen auf einen Blick“, bei 8–10 der Abschnitt „Stetigkeit — anschaulich“.
       </p>
     </div>
   </div>
 </div>
+
+<script>
+(function(){
+  var dpr=window.devicePixelRatio||1;
+  function plot(id,cfg){
+    var c=document.getElementById(id); if(!c) return;
+    var W=cfg.W||300, H=cfg.H||210, padL=cfg.padL||34, padB=26, padT=12, padR=10;
+    var ctx=c.getContext('2d');
+    c.width=W*dpr; c.height=H*dpr; c.style.width=W+'px'; c.style.height=H+'px'; ctx.scale(dpr,dpr);
+    var xMin=cfg.xMin, xMax=cfg.xMax, yMin=cfg.yMin, yMax=cfg.yMax;
+    function tx(x){return padL+(x-xMin)/(xMax-xMin)*(W-padL-padR);}
+    function ty(y){return (H-padB)-(y-yMin)/(yMax-yMin)*(H-padB-padT);}
+    // Gitter
+    if(cfg.grid){
+      ctx.strokeStyle='#e8e4dc'; ctx.lineWidth=1;
+      var gx=cfg.gridX||cfg.xStep||1, gy=cfg.gridY||cfg.yStep||1, i;
+      for(i=Math.ceil(xMin/gx)*gx;i<=xMax+1e-9;i+=gx){ ctx.beginPath(); ctx.moveTo(tx(i),ty(yMin)); ctx.lineTo(tx(i),ty(yMax)); ctx.stroke(); }
+      for(i=Math.ceil(yMin/gy)*gy;i<=yMax+1e-9;i+=gy){ ctx.beginPath(); ctx.moveTo(tx(xMin),ty(i)); ctx.lineTo(tx(xMax),ty(i)); ctx.stroke(); }
+    }
+    // Achsen
+    ctx.strokeStyle='#999'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(tx(xMin),ty(0)); ctx.lineTo(tx(xMax),ty(0)); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(tx(0),ty(yMin)); ctx.lineTo(tx(0),ty(yMax)); ctx.stroke();
+    // Pfeilspitzen
+    var a=6; ctx.fillStyle='#999';
+    ctx.beginPath(); ctx.moveTo(tx(xMax),ty(0)); ctx.lineTo(tx(xMax)-a,ty(0)-a/2); ctx.lineTo(tx(xMax)-a,ty(0)+a/2); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(tx(0),ty(yMax)); ctx.lineTo(tx(0)-a/2,ty(yMax)+a); ctx.lineTo(tx(0)+a/2,ty(yMax)+a); ctx.closePath(); ctx.fill();
+    // Achsennamen
+    ctx.fillStyle='#555'; ctx.font='bold 12px Inter,sans-serif'; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+    ctx.fillText('x',tx(xMax)-13,ty(0)-8);
+    ctx.textAlign='center'; ctx.fillText('y',tx(0)+12,ty(yMax)+5);
+    // Ticks
+    ctx.fillStyle='#777'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='center';
+    var xs=cfg.xStep||1, k;
+    for(k=Math.ceil(xMin/xs)*xs;k<=xMax+1e-9;k+=xs){ if(Math.abs(k)<1e-9) continue; ctx.fillText(String(Math.round(k*100)/100).replace('.',','),tx(k),ty(0)+13); }
+    ctx.textAlign='right';
+    var ys=cfg.yStep||1;
+    for(k=Math.ceil(yMin/ys)*ys;k<=yMax+1e-9;k+=ys){ if(Math.abs(k)<1e-9) continue; ctx.fillText(String(Math.round(k*100)/100).replace('.',','),tx(0)-5,ty(k)+4); }
+    // Asymptote
+    if(cfg.asym!==undefined){
+      ctx.strokeStyle='#b9553a'; ctx.lineWidth=1.4; ctx.setLineDash([5,4]);
+      ctx.beginPath(); ctx.moveTo(tx(xMin),ty(cfg.asym)); ctx.lineTo(tx(xMax),ty(cfg.asym)); ctx.stroke();
+      ctx.setLineDash([]);
+      if(cfg.asymLabel){
+        ctx.fillStyle='#b9553a'; ctx.font='bold 11px Inter,sans-serif'; ctx.textAlign='right';
+        ctx.fillText(cfg.asymLabel, tx(xMax)-4, ty(cfg.asym)-5);
+      }
+    }
+    // Schranken
+    if(cfg.bands){
+      ctx.strokeStyle='#b0a05a'; ctx.lineWidth=1.2; ctx.setLineDash([4,4]);
+      cfg.bands.forEach(function(b){ ctx.beginPath(); ctx.moveTo(tx(xMin),ty(b)); ctx.lineTo(tx(xMax),ty(b)); ctx.stroke(); });
+      ctx.setLineDash([]);
+    }
+    // Graph
+    ctx.strokeStyle=cfg.color; ctx.lineWidth=2.4; ctx.beginPath();
+    var started=false, N=900;
+    for(k=0;k<=N;k++){
+      var x=xMin+(xMax-xMin)*k/N, y=cfg.f(x);
+      if(!isFinite(y)||y<yMin||y>yMax){ started=false; continue; }
+      if(!started){ ctx.moveTo(tx(x),ty(y)); started=true; } else { ctx.lineTo(tx(x),ty(y)); }
+    }
+    ctx.stroke();
+    // Ablesestellen
+    if(cfg.marks){
+      cfg.marks.forEach(function(mx){
+        var my=cfg.f(mx);
+        ctx.strokeStyle='#8a9da7'; ctx.lineWidth=1; ctx.setLineDash([3,3]);
+        ctx.beginPath(); ctx.moveTo(tx(mx),ty(0)); ctx.lineTo(tx(mx),ty(my)); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle=cfg.color; ctx.beginPath(); ctx.arc(tx(mx),ty(my),3.2,0,2*Math.PI); ctx.fill();
+      });
+    }
+    // Beschriftung
+    if(cfg.label){
+      ctx.font='bold '+(cfg.labelSize||12)+'px Inter,sans-serif'; ctx.fillStyle=cfg.color; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+      ctx.fillText(cfg.label, padL+4, padT+(cfg.labelSize||12)-1);
+    }
+  }
+
+  // ── Übersicht: die vier Typen ──────────────────────────────
+  plot('cvUnendGanz',{xMin:-2.8,xMax:2.8,yMin:-5.5,yMax:5.5,yStep:2,color:'#5b6e2e',
+    label:'f(x) = 0,5x³ − 1,5x', f:function(x){return 0.5*x*x*x-1.5*x;}});
+  plot('cvUnendPot',{xMin:-3.6,xMax:3.6,yMin:-1.2,yMax:4.2,color:'#4d6470',
+    asym:0, asymLabel:'y = 0', label:'f(x) = x⁻²', f:function(x){return x===0?NaN:1/(x*x);}});
+  plot('cvUnendExp',{xMin:-1.6,xMax:5.2,yMin:-1,yMax:8.5,yStep:2,color:'#a03d20',
+    asym:1, asymLabel:'y = 1', label:'f(x) = 3e⁻⁰˒⁶ˣ + 1', f:function(x){return 3*Math.exp(-0.6*x)+1;}});
+  plot('cvUnendSin',{xMin:-0.6,xMax:11,yMin:-2.4,yMax:4.2,xStep:2,yStep:2,color:'#8a7a30',
+    bands:[-1,3], label:'f(x) = 2·sin(x) + 1', f:function(x){return 2*Math.sin(x)+1;}});
+
+  // ── Grenzwert am Graphen ablesen (Beispiel im Text) ────────
+  plot('cvGrenzLesen',{W:460,H:290,padL:40,xMin:0,xMax:21.5,yMin:0,yMax:9,xStep:5,yStep:1,
+    grid:true, gridX:1, gridY:1, color:'#5b6e2e', asym:2, asymLabel:'y = 2',
+    marks:[2,5,11,20], label:'', f:function(x){return 2+6/(x+1);}});
+
+  // ── Aufgabe GW1.4: Grenzwert 4 begründen ───────────────────
+  plot('cvAufgGraph',{W:460,H:290,padL:40,xMin:0,xMax:21.5,yMin:0,yMax:5,xStep:5,yStep:1,
+    grid:true, gridX:1, gridY:0.5, color:'#4d6470', asym:4,
+    marks:[5,10,15,20], f:function(x){return 4-4*Math.exp(-0.3*x);}});
+
+  // ── Aufgabe GW2.9: Zuordnung Graph ↔ Term ──────────────────
+  plot('cvZuA',{W:250,H:180,xMin:-3.2,xMax:3.2,yMin:-5,yMax:6,yStep:2,color:'#5b6e2e',
+    label:'A', labelSize:16, f:function(x){return 0.25*Math.pow(x,4)-2*x*x;}});
+  plot('cvZuB',{W:250,H:180,xMin:-5,xMax:3,yMin:-4.5,yMax:7,yStep:2,color:'#a03d20',
+    asym:-3, label:'B', labelSize:16, f:function(x){return 2*Math.exp(0.5*x)-3;}});
+  plot('cvZuC',{W:250,H:180,xMin:-5,xMax:5,yMin:-3,yMax:5,yStep:2,color:'#4d6470',
+    asym:1, label:'C', labelSize:16, f:function(x){return x===0?NaN:3/x+1;}});
+  plot('cvZuD',{W:250,H:180,xMin:-0.5,xMax:7,yMin:-2.2,yMax:3,yStep:1,color:'#8a7a30',
+    bands:[-1,2], label:'D', labelSize:16, f:function(x){return 1.5*Math.sin(2*x)+0.5;}});
+})();
+</script>
 
 </div>
 
