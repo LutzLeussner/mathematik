@@ -18089,16 +18089,18 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="tk-top" onclick="togTask(this)">
                 <div class="tkt">
                     <span class="tn">GW3.1</span>
-                    <span class="td de">★</span>
+                    <span class="td dm">★★</span>
                 </div>
-                <div class="tq"><strong>Grenzwert am Graphen.</strong> Die Abbildung zeigt die Höhe einer Douglasie in den ersten 60 Jahren nach der Pflanzung, modelliert durch \(h(t) = 22 - 20\,e^{-0{,}08t}\).<br>
-                <strong>a)</strong> Lies am Graphen ab, welchem Wert sich die Höhe langfristig nähert, und deute diesen Wert im Sachzusammenhang.<br>
-                <strong>b)</strong> Erreicht der Baum diese Höhe nach dem Modell irgendwann genau? Begründe am Graphen.</div>
+                <div class="tq"><strong>Grenzwert am Graphen.</strong> Die Abbildung zeigt die Höhe einer Douglasie in den ersten 60 Jahren nach der Pflanzung, modelliert durch \(h(t) = 22 - 20\,e^{-0{,}08t}\) &#160;(\(t\) in Jahren, \(h(t)\): Höhe in Metern).<br>
+                <strong>a)</strong> Lies die Höhe an den markierten Stellen \(t = 10,\;20,\;40\) ab und gib jeweils an, wie viele Meter bis zur Höhe 22 m fehlen.<br>
+                <strong>b)</strong> Begründe mit dem Verlauf des Graphen, dass \(\lim_{t \to \infty} h(t) = 22\) gilt, und deute den Wert im Sachzusammenhang. Gehört die Höhe 22 m selbst zu den Werten, die der Baum nach dem Modell erreicht?<br>
+                <strong>c)</strong> Ein Förster behauptet: <em>„Nach dem 40. Jahr wächst dieser Baum insgesamt nur noch weniger als einen Meter.“</em> Nimm mithilfe des Graphen Stellung.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
-                <div class="ip"><strong>a)</strong> Der Graph flacht ab und schmiegt sich an die gestrichelte Gerade \(h = 22\) an — der Abstand zu ihr wird beliebig klein: \(\lim_{t \to \infty} h(t) = 22\). <em>Deutung:</em> Die Douglasie wächst auf eine Endhöhe von etwa 22 m zu; das ist die ausgewachsene Höhe im Modell.</div>
-                <div class="ip"><strong>b)</strong> Nein. Der Graph verläuft vollständig unterhalb der Geraden \(h = 22\) und schneidet sie nirgends — die Höhe nähert sich dem Wert nur beliebig genau an. (Am Term: \(20\,e^{-0{,}08t}\) ist für jedes \(t\) echt positiv.)</div>
+                <div class="ip"><strong>a)</strong> Abgelesen: \(h(10) \approx 13\) m · \(h(20) \approx 18\) m · \(h(40) \approx 21{,}2\) m. Bis 22 m fehlen also etwa \(9\) m · \(4\) m · \(0{,}8\) m.</div>
+                <div class="ip"><strong>b)</strong> Der Graph steigt, flacht aber immer stärker ab und bleibt dabei unterhalb der gestrichelten Geraden \(h = 22\); der Abstand zu ihr schrumpft erkennbar unter jede Vorgabe (von 9 m über 4 m auf 0,8 m). Also \(\lim_{t \to \infty} h(t) = 22\). <em>Deutung:</em> Die Douglasie wächst auf eine Endhöhe von etwa 22 m zu — die ausgewachsene Höhe im Modell. Die 22 m selbst werden nie erreicht: Der Graph schneidet die Gerade nirgends, die Höhe nähert sich nur beliebig genau an.</div>
+                <div class="ip"><strong>c)</strong> Am Graphen: \(h(40) \approx 21{,}2\) m, und alle späteren Werte bleiben unterhalb von 22 m. Das Restwachstum nach dem 40. Jahr beträgt also höchstens \(22 - 21{,}2 = 0{,}8\) m — die Behauptung des Försters ist richtig. <em>Worauf es ankommt:</em> Erst der Grenzwert macht diese Aussage möglich — er liefert die Obergrenze für alles künftige Wachstum.</div>
                 <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
                 <div class="komp-desc">K4: Grenzwert und Asymptote am Graphen ablesen · K6: Den Wert im Sachzusammenhang deuten</div>
             </div>
@@ -18113,16 +18115,16 @@ window.addEventListener('resize',function(){updateSimulator();});
                     <span class="td dm">★★</span>
                 </div>
                 <div class="tq"><strong>Population im Naturschutzgebiet.</strong> In einem Naturschutzgebiet wird eine Herde Wisente ausgewildert. Die Population wird modelliert durch
-                \[P(t) = \frac{2400}{1 + 7\,e^{-0{,}35\,t}} \qquad (t \text{ in Jahren seit Auswilderung})\]
+                \[P(t) = \frac{2400}{1 + 7\,e^{-0{,}35\,t}} \qquad (t \text{ in Jahren seit Auswilderung};\; P(t)\text{: Anzahl der Wisente})\]
                 <strong>a)</strong> Berechne \(P(0)\) und deute den Wert.<br>
                 <strong>b)</strong> Bestimme mit einer Wertetabelle (\(t = 5,\;10,\;20,\;40\)) den Grenzwert \(\lim_{t \to \infty} P(t)\) und deute ihn.<br>
-                <strong>c)</strong> Die Parkverwaltung befürchtet, die Population könnte unbegrenzt wachsen, und erwägt eine Bejagung. Nimm auf Grundlage von b) Stellung.</div>
+                <strong>c)</strong> Die Parkverwaltung befürchtet, die Population könnte unbegrenzt wachsen, und erwägt eine Bejagung. Nimm begründet Stellung.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
             <div class="ta">
                 <div class="ip"><strong>a)</strong> \(P(0) = \frac{2400}{1 + 7 \cdot 1} = \frac{2400}{8} = 300\). Bei der Auswilderung wurden 300 Tiere ausgesetzt.</div>
                 <div class="ip"><strong>b)</strong> \(P(5) \approx 1\,083\) · \(P(10) \approx 1\,981\) · \(P(20) \approx 2\,385\) · \(P(40) \approx 2\,400\). Der Abstand zu 2 400 wird beliebig klein: \(\lim_{t \to \infty} P(t) = 2400\). <em>Deutung:</em> Die Population wächst nicht über etwa 2 400 Tiere hinaus — das Gebiet trägt langfristig rund 2 400 Wisente (Nahrungs- und Platzangebot).</div>
-                <div class="ip"><strong>c)</strong> Die Befürchtung ist unbegründet: Die Werte wachsen zwar anfangs schnell, aber <em>gebremst</em> — sie stabilisieren sich beim Grenzwert 2 400, statt über alle Grenzen zu wachsen. Nach diesem Modell ist eine Bejagung nicht notwendig.</div>
+                <div class="ip"><strong>c)</strong> Die Befürchtung ist unbegründet. Das langfristige Verhalten zeigt der Grenzwert: Die Bestandszahlen wachsen zwar anfangs schnell, aber <em>gebremst</em> — sie nähern sich der Zahl 2 400 an (z. B. \(P(20) \approx 2\,385\), \(P(40) \approx 2\,400\)), statt über alle Grenzen zu wachsen. Die Population stabilisiert sich; nach diesem Modell ist eine Bejagung nicht notwendig.</div>
                 <div class="ip"><em>Beachte den Funktionstyp:</em> Im Nenner steckt eine e-Funktion — \(e^{-0{,}35t} \to 0\) für \(t \to \infty\), der Nenner geht gegen 1, der Bruch gegen 2 400. Genau diese Bauart erzeugt Stabilisierung.</div>
                 <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div>
                 <div class="komp-desc">K5: Grenzwert mit der Wertetabelle bestimmen · K3: Das Modell auf die Sachfrage beziehen · K6: Werte im Kontext deuten und Stellung nehmen</div>
@@ -18184,10 +18186,10 @@ window.addEventListener('resize',function(){updateSimulator();});
                     <span class="td dh">★★★</span>
                 </div>
                 <div class="tq"><strong>Ränder untersuchen — taugt das Modell?</strong> Eine Schülerin passt an die Bestandszahlen einer Biberpopulation aus den ersten zehn Jahren die ganzrationale Funktion
-                \[B(t) = -2t^3 + 60t^2 + 500 \qquad (t \text{ in Jahren seit Beobachtungsbeginn})\]
+                \[B(t) = -2t^3 + 60t^2 + 500 \qquad (t \text{ in Jahren seit Beobachtungsbeginn};\; B(t)\text{: Anzahl der Biber})\]
                 an. Sie schlägt vor, das Modell auch für Prognosen zu verwenden.<br>
                 <strong>a)</strong> Untersuche das Verhalten von \(B\) für \(t \to +\infty\) und \(t \to -\infty\).<br>
-                <strong>b)</strong> Beurteile mit a), ob sich das Modell für langfristige Prognosen eignet.<br>
+                <strong>b)</strong> Beurteile, ob sich das Modell für langfristige Prognosen eignet.<br>
                 <strong>c)</strong> Welcher Funktionstyp wäre für einen Bestand geeignet, der sich langfristig stabilisiert? Begründe mit dem Verhalten im Unendlichen.</div>
                 <div class="tk-toggle">⌄</div>
             </div>
