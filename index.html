@@ -17416,7 +17416,9 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 <div class="tab-band" id="k11-tabs" style="display:none">
   <button class="ptb on" onclick="showK11Tab('k11-grenz',this)">Grenzwerte</button>
-  <button class="ptb" onclick="showK11Tab('k11-tangenten',this)">Tangente &amp; Änderungsrate</button>
+  <button class="ptb" onclick="showK11Tab('k11-sekante',this)">Mittlere Änderungsrate</button>
+  <button class="ptb" onclick="showK11Tab('k11-tangenten',this)">Lokale Änderungsrate &amp; Tangente</button>
+  <button class="ptb" onclick="showK11Tab('k11-ablfunk',this)">Ableitungsfunktion</button>
   <button class="ptb" onclick="showK11Tab('k11-ableit',this)">Ableitungsregeln</button>
   <button class="ptb" onclick="showK11Tab('k11-grafabl',this)">Graf. Ableiten</button>
   <button class="ptb" onclick="showK11Tab('k11-kurven',this)">Kurvendiskussion</button>
@@ -18297,6 +18299,360 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 </div>
 
+
+<!-- ============================================================================
+     SECTION 1b: MITTLERE ÄNDERUNGSRATE UND SEKANTE
+     ============================================================================ -->
+
+<div class="subpanel" id="k11-sekante">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+
+    <div class="ip">Nach zwei Stunden Autofahrt zeigt der Kilometerzähler 180&nbsp;km mehr an. Wie schnell warst du? „90&nbsp;km/h" — aber der Tacho stand unterwegs mal auf 80, mal auf 130. Die 90&nbsp;km/h sind ein <strong>Durchschnitt über den ganzen Zeitraum</strong>. Genau das ist die <strong>mittlere Änderungsrate</strong>: Sie misst, wie stark sich eine Größe <em>im Mittel</em> auf einem Intervall ändert. Am Graphen gehört dazu eine Gerade durch zwei Punkte — die <strong>Sekante</strong>. Beide Begriffe sind die Grundlage für alles, was in den nächsten Tabs kommt.</div>
+    <div class="hint"><strong>Das brauchst du:</strong> Steigung linearer Funktionen \(m = \frac{\Delta y}{\Delta x}\) mit Steigungsdreieck (Klasse&nbsp;8), Funktionswerte berechnen. Aus der Physik: Durchschnittsgeschwindigkeit = Strecke durch Zeit.</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">⏱</div><span class="card-title">Unterrichtsfahrplan</span></div>
+  <div class="card-body">
+
+    <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90&nbsp;min)</strong> ausgelegt: 25&nbsp;min Erarbeitung (Begriffe und Berechnung) · 20&nbsp;min <strong>S1</strong> · 15&nbsp;min Sachzusammenhang · 20&nbsp;min <strong>S2</strong> · 10&nbsp;min Auswertung.</div>
+  </div>
+</div>
+
+<div class="section-label">Mittlere Änderungsrate und Sekante</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Mittlere Änderungsrate und Sekante</span></div>
+  <div class="card-body">
+<ul class="gl">
+<li class="gi">
+  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann erklären, was die mittlere Änderungsrate und was eine Sekante ist — und wie beide zusammenhängen</span>
+</li>
+<li class="gi">
+  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann die mittlere Änderungsrate aus einer Funktionsgleichung und einem Intervall berechnen</span>
+</li>
+<li class="gi">
+  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann die mittlere Änderungsrate am Graphen als Sekantensteigung bestimmen und im Sachzusammenhang mit Einheit interpretieren</span>
+</li>
+</ul>
+  </div>
+</div>
+<div class="einheit-marker" id="einheit-k11-sekante-1" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Mittlere Änderungsrate und Sekante</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vom Durchschnittstempo zur mittleren Änderungsrate</span></div>
+  <div class="card-body">
+
+    <div class="ip">Eine Fahrt wird protokolliert: \(s(t)\) ist die zurückgelegte Strecke in km nach \(t\) Stunden.</div>
+    <div style="overflow-x:auto;margin:12px 0">
+      <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+        <tr style="background:var(--kiku-light)">
+          <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(t\) in h</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">0</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">1</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">2</td>
+        </tr>
+        <tr>
+          <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">\(s(t)\) in km</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">0</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">80</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">180</td>
+        </tr>
+      </table>
+    </div>
+    <div class="ip">Erste Stunde: \(\frac{80-0}{1-0} = 80\) km/h im Durchschnitt. Zweite Stunde: \(\frac{180-80}{2-1} = 100\) km/h. Ganze Fahrt: \(\frac{180-0}{2-0} = 90\) km/h. Jedes Mal dieselbe Rechnung: <strong>Änderung des Funktionswerts geteilt durch Länge des Intervalls</strong>. Dieses Verhältnis bekommt jetzt einen Namen.</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Mittlere Änderungsrate und Sekante</span></div>
+  <div class="card-body">
+
+    <div class="hint"><strong>Merke:</strong> Die <strong>mittlere Änderungsrate</strong> einer Funktion \(f\) auf dem Intervall \([a;\,b]\) ist
+    \[m = \frac{f(b)-f(a)}{b-a}.\]
+    Diesen Bruch nennt man auch <strong>Differenzenquotient</strong>. Die Gerade durch die beiden Graphenpunkte \(A(a\,|\,f(a))\) und \(B(b\,|\,f(b))\) heißt <strong>Sekante</strong> („die Schneidende"). Ihre Steigung ist genau die mittlere Änderungsrate — das Steigungsdreieck der Sekante hat die Seiten \(\Delta x = b-a\) und \(\Delta y = f(b)-f(a)\).</div>
+    <div style="text-align:center;margin:14px 0">
+      <canvas id="cvSekMAR" style="max-width:100%;border-radius:4px"></canvas>
+      <div class="ip" style="max-width:520px;margin:8px auto 0;text-align:left;font-size:14px;color:var(--ink-muted)">Sekante durch \(A(1\,|\,0{,}5)\) und \(B(4\,|\,8)\) am Graphen von \(f(x)=0{,}5x^2\). Das Steigungsdreieck liefert \(m = \frac{\Delta y}{\Delta x} = \frac{7{,}5}{3} = 2{,}5\).</div>
+    </div>
+    <div class="ip"><strong>So liest du die mittlere Änderungsrate am Graphen ab:</strong> <strong>1.</strong> Die beiden Punkte zu \(a\) und \(b\) auf dem Graphen markieren. <strong>2.</strong> Die Sekante durch beide Punkte zeichnen. <strong>3.</strong> Ein Steigungsdreieck anlegen und \(\Delta y\) durch \(\Delta x\) teilen — auf die Achsenskalen achten.</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">★</div><span class="card-title">Beispielaufgabe: mittlere Änderungsrate berechnen</span></div>
+  <div class="card-body">
+
+    <div class="bsp">
+      <div class="bsp-label">Beispiel</div>
+      <div class="bsp-q">Berechne die mittlere Änderungsrate von \(f(x)=x^2\) auf dem Intervall \([1;\,3]\) und deute das Ergebnis geometrisch.</div>
+      <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+      <div class="bsp-a">
+        <div class="ip"><strong>Schritt 1 — Funktionswerte an den Intervallgrenzen:</strong> \(f(1) = 1^2 = 1\) und \(f(3) = 3^2 = 9\).</div>
+        <div class="ip"><strong>Schritt 2 — Differenzenquotient aufstellen:</strong> \(m = \dfrac{f(3)-f(1)}{3-1} = \dfrac{9-1}{2}\).</div>
+        <div class="ip"><strong>Schritt 3 — ausrechnen:</strong> \(m = \dfrac{8}{2} = 4\).</div>
+        <div class="ip"><strong>Deutung:</strong> Auf dem Intervall \([1;\,3]\) wächst \(f\) im Mittel um 4 Einheiten pro \(x\)-Einheit. Die Sekante durch \((1\,|\,1)\) und \((3\,|\,9)\) hat die Steigung 4.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Im Sachzusammenhang: berechnen, untersuchen, interpretieren</span></div>
+  <div class="card-body">
+
+    <div class="ip">In Anwendungen hat die mittlere Änderungsrate immer eine <strong>Einheit</strong> — und die verrät ihre Bedeutung: Einheit der Funktionswerte <strong>pro</strong> Einheit der \(x\)-Größe (Liter pro Stunde, °C pro Minute, Euro pro Tonne).</div>
+    <div class="hint"><strong>Merke:</strong>
+    <ol style="margin:8px 0 0 0;padding-left:20px">
+      <li style="margin-bottom:5px"><strong>Vorzeichen deuten:</strong> positive Rate → die Größe nimmt im Mittel zu, negative Rate → sie nimmt im Mittel ab.</li>
+      <li style="margin-bottom:5px"><strong>Menge und Rate unterscheiden:</strong> \(f(b)-f(a)\) ist die gesamte Änderung (z.&nbsp;B. Liter), erst geteilt durch \(b-a\) wird daraus eine Rate (Liter <em>pro</em> Stunde).</li>
+      <li><strong>„Im Mittel" ernst nehmen:</strong> Die mittlere Änderungsrate sagt nichts darüber, was <em>innerhalb</em> des Intervalls passiert — zwischendurch kann die Größe schneller, langsamer oder sogar rückwärts laufen.</li>
+    </ol></div>
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">S1</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · S1 · ★ / ★★ Grundlagen</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Berechnen und am Graphen ablesen</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Differenzenquotient aus Funktionsgleichung und Intervall — und direkt am Graphen als Sekantensteigung.</div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.1</span><span class="td de">★</span></div>
+          <div class="tq">Berechne jeweils die mittlere Änderungsrate.<br>
+          <strong>a)</strong> \(f(x)=x^2\) auf dem Intervall \([1;\,4]\) &#160;·&#160;
+          <strong>b)</strong> \(f(x)=x^3\) auf dem Intervall \([1;\,3]\)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> \(\dfrac{f(4)-f(1)}{4-1} = \dfrac{16-1}{3} = 5\)</div>
+        <div class="ip"><strong>b)</strong> \(\dfrac{f(3)-f(1)}{3-1} = \dfrac{27-1}{2} = 13\)</div>
+        <div class="ip"><em>Bezug:</em> Beide Zahlen sind zugleich die Steigung der Sekante durch die zugehörigen Punkte des Graphen.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K5: Den Differenzenquotienten sicher berechnen</div>
+      </div>
+    </div><div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">S1.2</span><span class="td de">★</span></div>
+      <div class="tq">Die Abbildung zeigt den Graphen einer Funktion \(f\) mit markierten Punkten.
+          <div style="text-align:center;margin:10px 0"><canvas id="cvSekAufg" style="max-width:100%;border-radius:4px"></canvas></div>
+          Bestimme die mittlere Änderungsrate von \(f\) auf den Intervallen \([0;\,2]\), \([2;\,4]\) und \([4;\,8]\), indem du die Funktionswerte am Graphen abliest.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip">Ablesen: \(f(0)=0\), \(f(2)=3\), \(f(4)=4\), \(f(8)=0\).</div>
+    <div class="ip">\([0;\,2]\): \(\dfrac{3-0}{2-0} = 1{,}5\) &#160;·&#160; \([2;\,4]\): \(\dfrac{4-3}{4-2} = 0{,}5\) &#160;·&#160; \([4;\,8]\): \(\dfrac{0-4}{8-4} = -1\)</div>
+    <div class="ip"><em>Beachte:</em> Auf \([4;\,8]\) ist die mittlere Änderungsrate negativ — die Sekante fällt, die Funktionswerte nehmen im Mittel ab.</div>
+    <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K4: Werte am Graphen ablesen · K5: Den Differenzenquotienten berechnen</div>
+  </div>
+</div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.3</span><span class="td dm">★★</span></div>
+          <div class="tq">Berechne die mittlere Änderungsrate von \(f(x)=\sqrt{x}\) auf dem Intervall \([1;\,9]\) und deute das Ergebnis geometrisch.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(\dfrac{f(9)-f(1)}{9-1} = \dfrac{3-1}{8} = \dfrac{1}{4} = 0{,}25\)</div>
+        <div class="ip"><strong>Geometrisch:</strong> Die Sekante durch \((1\,|\,1)\) und \((9\,|\,3)\) hat die Steigung \(0{,}25\). Die Funktion wächst auf diesem Intervall im Durchschnitt um \(0{,}25\) Einheiten pro \(x\)-Einheit.</div>
+        <div class="ip"><em>Achtung:</em> Über das Verhalten <em>innerhalb</em> des Intervalls sagt dieser Wert nichts. Bei \(x=1\) ist der Graph deutlich steiler, bei \(x=9\) deutlich flacher.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+        <div class="komp-desc">K5: Differenzenquotient berechnen · K4: Zwischen Rechnung und Graph wechseln</div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">S2</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · S2 · ★★ / ★★★ Sachzusammenhang</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Raten berechnen, untersuchen und interpretieren</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Mittlere Änderungsraten in realen Situationen — mit Einheit, Vergleich und Begründung.</div>
+    </div>
+  </div>
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S2.1</span><span class="td dm">★★</span></div>
+          <div class="tq">In einer Regentonne wird der Wasserstand gemessen. Die Wassermenge in Litern nach \(t\) Stunden wird modelliert durch
+          \[w(t) = 60 - 48\,e^{-0{,}25\,t}\]
+          Gib für jeden der folgenden Terme die Bedeutung im Sachzusammenhang an — <strong>mit Einheit</strong> — und berechne seinen Wert.<br>
+          <strong>(I)</strong> \(w(5)-w(2)\) &#160;·&#160; <strong>(II)</strong> \(\dfrac{w(5)-w(2)}{3}\)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip">\(w(2) \approx 30{,}89\) Liter, \(w(5) \approx 46{,}25\) Liter.</div>
+        <div class="ip"><strong>(I)</strong> \(w(5)-w(2) \approx 15{,}36\) <strong>Liter</strong>.<br>
+        <em>Bedeutung:</em> Zwischen der 2. und der 5. Stunde ist die Wassermenge um etwa 15,4 Liter <em>gewachsen</em>. Das ist eine Menge, keine Rate.</div>
+        <div class="ip"><strong>(II)</strong> \(\dfrac{w(5)-w(2)}{3} \approx 5{,}12\) <strong>Liter pro Stunde</strong>.<br>
+        <em>Bedeutung:</em> In diesem Zeitraum kamen im Durchschnitt etwa 5,1 Liter pro Stunde hinzu. Das ist die mittlere Änderungsrate.</div>
+        <div class="ip"><strong>Worauf es ankommt:</strong> Die beiden Terme unterscheiden sich nur durch die Division — aber die Einheit wechselt von Litern zu Litern pro Stunde, und damit die Art der Aussage. Wer die Einheit weglässt, kann beide nicht auseinanderhalten.</div>
+        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K6: Terme im Sachzusammenhang deuten · K3: Modell und Situation verknüpfen · K5: Werte korrekt berechnen</div>
+      </div>
+    </div><div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">S2.2</span><span class="td dm">★★</span></div>
+      <div class="tq">Die Höhe einer Sonnenblume in cm nach \(t\) Wochen wird modelliert durch \(h(t) = 250 - 240\,e^{-0{,}15\,t}\).
+          Berechne die mittleren Änderungsraten auf den Intervallen \([0;\,4]\) und \([8;\,12]\), vergleiche die Werte und erläutere, was der Vergleich über das Wachstum der Pflanze aussagt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip">\(h(0) = 10\), \(h(4) \approx 118{,}3\), \(h(8) \approx 177{,}7\), \(h(12) \approx 210{,}3\).</div>
+    <div class="ip">\([0;\,4]\): \(\dfrac{118{,}3-10}{4} \approx 27{,}1\) cm pro Woche &#160;·&#160; \([8;\,12]\): \(\dfrac{210{,}3-177{,}7}{4} \approx 8{,}2\) cm pro Woche</div>
+    <div class="ip"><em>Vergleich:</em> In den ersten vier Wochen wächst die Sonnenblume im Mittel gut dreimal so schnell wie zwischen Woche 8 und 12. Das Wachstum verlangsamt sich — die Pflanze nähert sich ihrer Endhöhe.</div>
+    <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K3: Reale Situation mit Raten beschreiben · K6: Ergebnisse im Sachzusammenhang formulieren</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">S2.3</span><span class="td dh">★★★</span></div>
+      <div class="tq">Jonas behauptet: „Wenn die mittlere Änderungsrate einer Funktion auf \([0;\,6]\) null ist, dann hat sich die Funktion dort nicht verändert." Beurteile die Aussage. Skizziere dazu den Graphen einer Funktion, die auf \([0;\,6]\) die mittlere Änderungsrate null hat, sich aber deutlich verändert.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip">Die Aussage ist <strong>falsch</strong>. Die mittlere Änderungsrate null bedeutet nur \(f(6) = f(0)\) — Anfangs- und Endwert sind gleich. Dazwischen kann alles passieren.</div>
+    <div class="ip"><em>Gegenbeispiel:</em> Eine Funktion, die erst auf 40 steigt und dann auf den Anfangswert zurückfällt (z.&nbsp;B. ein Ball: hochgeworfen und wieder gefangen). Die Sekante durch Anfangs- und Endpunkt verläuft waagerecht, obwohl sich die Größe stark verändert hat — die mittlere Änderungsrate verrät nicht, was innerhalb des Intervalls geschieht.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K1: Eine Aussage mit einem Gegenbeispiel widerlegen · K4: Einen passenden Graphen skizzieren</div>
+  </div>
+</div>
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Was ist die mittlere Änderungsrate — und mit welcher Formel berechnest du sie aus Funktion und Intervall?</li>
+        <li>Was ist eine Sekante, und was hat ihre Steigung mit der mittleren Änderungsrate zu tun?</li>
+        <li>Wie bestimmst du die mittlere Änderungsrate direkt am Graphen?</li>
+        <li>Eine mittlere Änderungsrate beträgt −3 Liter pro Stunde. Was bedeutet das im Sachzusammenhang?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Wenn du bei einer Frage unsicher bist, lies noch einmal ab der Karte „Mittlere Änderungsrate und Sekante".</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var dpr = window.devicePixelRatio || 1;
+  var KIKU = '#5b6e2e', AX = '#8a8a8a', INK = '#666666', SANGO = '#c75c3a';
+  function prep(id, w, h){
+    var c = document.getElementById(id); if(!c) return null;
+    c.width = w*dpr; c.height = h*dpr;
+    c.style.width = w+'px'; c.style.height = h+'px';
+    var x = c.getContext('2d'); x.scale(dpr,dpr); return x;
+  }
+  function arrow(x, px, py, dir){
+    var s = 7; x.beginPath();
+    if(dir==='r'){ x.moveTo(px,py); x.lineTo(px-s,py-s/2); x.lineTo(px-s,py+s/2); }
+    else { x.moveTo(px,py); x.lineTo(px-s/2,py+s); x.lineTo(px+s/2,py+s); }
+    x.closePath(); x.fillStyle = AX; x.fill();
+  }
+  // ── Sekante mit Steigungsdreieck an f(x)=0,5x² ──
+  (function(){
+    var W = 460, H = 300, x = prep('cvSekMAR', W, H); if(!x) return;
+    var pad = {l:46, r:18, t:16, b:34};
+    var xmin=-0.8, xmax=5.0, ymin=-1.4, ymax=12.5;
+    function X(v){ return pad.l + (v-xmin)/(xmax-xmin)*(W-pad.l-pad.r); }
+    function Y(v){ return pad.t + (ymax-v)/(ymax-ymin)*(H-pad.t-pad.b); }
+    function f(v){ return 0.5*v*v; }
+    // Gitter
+    x.strokeStyle = 'rgba(91,110,46,0.10)'; x.lineWidth = 1;
+    for(var gx=0; gx<=4; gx++){ x.beginPath(); x.moveTo(X(gx),Y(ymin)); x.lineTo(X(gx),Y(ymax)); x.stroke(); }
+    for(var gy=2; gy<=12; gy+=2){ x.beginPath(); x.moveTo(X(xmin),Y(gy)); x.lineTo(X(xmax),Y(gy)); x.stroke(); }
+    // Achsen
+    x.strokeStyle = AX; x.lineWidth = 1.4;
+    x.beginPath(); x.moveTo(X(xmin),Y(0)); x.lineTo(X(xmax),Y(0)); x.stroke(); arrow(x, X(xmax), Y(0), 'r');
+    x.beginPath(); x.moveTo(X(0),Y(ymin)); x.lineTo(X(0),Y(ymax)); x.stroke(); arrow(x, X(0), Y(ymax), 'u');
+    x.fillStyle = '#555'; x.font = 'bold 13px system-ui';
+    x.textAlign='right'; x.fillText('x', X(xmax)-2, Y(0)-8);
+    x.textAlign='left'; x.fillText('y', X(0)+8, Y(ymax)+10);
+    x.font = '12px system-ui'; x.fillStyle = INK;
+    x.textAlign='right'; x.textBaseline='top'; x.fillText('O', X(0)-5, Y(0)+5);
+    x.textAlign='center';
+    [1,2,3,4].forEach(function(t){ x.fillText(String(t), X(t), Y(0)+6); x.beginPath(); x.moveTo(X(t),Y(0)-3); x.lineTo(X(t),Y(0)+3); x.strokeStyle=AX; x.stroke(); });
+    x.textAlign='right'; x.textBaseline='middle';
+    [2,4,6,8,10,12].forEach(function(t){ x.fillText(String(t), X(0)-7, Y(t)); x.beginPath(); x.moveTo(X(0)-3,Y(t)); x.lineTo(X(0)+3,Y(t)); x.stroke(); });
+    // Graph
+    x.strokeStyle = KIKU; x.lineWidth = 2.6; x.beginPath();
+    for(var i=0;i<=200;i++){ var t=xmin+0.2+(xmax-0.3-xmin)*i/200; var px=X(t), py=Y(f(t)); if(i===0)x.moveTo(px,py); else x.lineTo(px,py); }
+    x.stroke();
+    x.fillStyle = KIKU; x.font = 'bold 13px system-ui'; x.textAlign='left';
+    x.fillText('f(x) = 0,5x²', X(3.4), Y(10.8));
+    // Steigungsdreieck
+    x.strokeStyle = INK; x.lineWidth = 1.4; x.setLineDash([]);
+    x.beginPath(); x.moveTo(X(1),Y(0.5)); x.lineTo(X(4),Y(0.5)); x.lineTo(X(4),Y(8)); x.stroke();
+    x.fillStyle = INK; x.font = '12px system-ui'; x.textAlign='center'; x.textBaseline='top';
+    x.fillText('Δx = 3', X(2.5), Y(0.5)+6);
+    x.textAlign='left'; x.textBaseline='middle'; x.fillText('Δy = 7,5', X(4)+7, Y(4.25));
+    // Sekante (verlängert)
+    var m = 2.5, y1 = function(t){ return 0.5 + m*(t-1); };
+    x.strokeStyle = SANGO; x.lineWidth = 2;
+    x.beginPath(); x.moveTo(X(0.2),Y(y1(0.2))); x.lineTo(X(4.7),Y(y1(4.7))); x.stroke();
+    x.fillStyle = SANGO; x.font = 'bold 12px system-ui'; x.textAlign='left';
+    x.fillText('Sekante', X(4.05), Y(y1(4.55)));
+    // Punkte
+    [[1,0.5,'A(1|0,5)',-64,-4],[4,8,'B(4|8)',10,-8]].forEach(function(p){
+      x.beginPath(); x.arc(X(p[0]),Y(p[1]),4,0,7); x.fillStyle = SANGO; x.fill();
+      x.fillStyle = '#333'; x.font = 'bold 12px system-ui'; x.textAlign='left';
+      x.fillText(p[2], X(p[0])+p[3], Y(p[1])+p[4]);
+    });
+  })();
+  // ── Aufgaben-Graph: f(x) = −0,25x² + 2x ──
+  (function(){
+    var W = 440, H = 260, x = prep('cvSekAufg', W, H); if(!x) return;
+    var pad = {l:40, r:16, t:14, b:32};
+    var xmin=-0.9, xmax=9.0, ymin=-1.4, ymax=5.2;
+    function X(v){ return pad.l + (v-xmin)/(xmax-xmin)*(W-pad.l-pad.r); }
+    function Y(v){ return pad.t + (ymax-v)/(ymax-ymin)*(H-pad.t-pad.b); }
+    function f(v){ return -0.25*v*v + 2*v; }
+    x.strokeStyle = 'rgba(91,110,46,0.12)'; x.lineWidth = 1;
+    for(var gx=1; gx<=8; gx++){ x.beginPath(); x.moveTo(X(gx),Y(ymin)); x.lineTo(X(gx),Y(ymax)); x.stroke(); }
+    for(var gy=1; gy<=5; gy++){ x.beginPath(); x.moveTo(X(xmin),Y(gy)); x.lineTo(X(xmax),Y(gy)); x.stroke(); }
+    x.strokeStyle = AX; x.lineWidth = 1.4;
+    x.beginPath(); x.moveTo(X(xmin),Y(0)); x.lineTo(X(xmax),Y(0)); x.stroke(); arrow(x, X(xmax), Y(0), 'r');
+    x.beginPath(); x.moveTo(X(0),Y(ymin)); x.lineTo(X(0),Y(ymax)); x.stroke(); arrow(x, X(0), Y(ymax), 'u');
+    x.fillStyle = '#555'; x.font = 'bold 13px system-ui';
+    x.textAlign='right'; x.fillText('x', X(xmax)-2, Y(0)-8);
+    x.textAlign='left'; x.fillText('y', X(0)+8, Y(ymax)+10);
+    x.font = '12px system-ui'; x.fillStyle = INK;
+    x.textAlign='right'; x.textBaseline='top'; x.fillText('O', X(0)-5, Y(0)+5);
+    x.textAlign='center';
+    [2,4,6,8].forEach(function(t){ x.fillText(String(t), X(t), Y(0)+6); x.strokeStyle=AX; x.beginPath(); x.moveTo(X(t),Y(0)-3); x.lineTo(X(t),Y(0)+3); x.stroke(); });
+    x.textAlign='right'; x.textBaseline='middle';
+    [1,2,3,4,5].forEach(function(t){ x.fillText(String(t), X(0)-7, Y(t)); x.beginPath(); x.moveTo(X(0)-3,Y(t)); x.lineTo(X(0)+3,Y(t)); x.stroke(); });
+    x.strokeStyle = KIKU; x.lineWidth = 2.6; x.beginPath();
+    for(var i=0;i<=200;i++){ var t=-0.4+8.9*i/200; if(i===0)x.moveTo(X(t),Y(f(t))); else x.lineTo(X(t),Y(f(t))); }
+    x.stroke();
+    x.fillStyle = KIKU; x.font = 'bold 13px system-ui'; x.textAlign='left'; x.fillText('f', X(0.5), Y(2.4));
+    [[0,0],[2,3],[4,4],[8,0]].forEach(function(p){
+      x.beginPath(); x.arc(X(p[0]),Y(p[1]),4,0,7); x.fillStyle = SANGO; x.fill();
+      x.fillStyle = '#333'; x.font = 'bold 11px system-ui'; x.textAlign='center';
+      x.fillText('('+p[0]+'|'+p[1]+')', X(p[0])+(p[0]===0?24:0), Y(p[1])-10);
+    });
+  })();
+})();
+</script>
+</div>
+
 <!-- ============================================================================
      SECTION 2: TANGENTE UND ÄNDERUNGSRATE
      ============================================================================ -->
@@ -18309,7 +18665,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
         <div class="ip">Stell dir vor, du fährst Auto und blickst auf den Tacho: Er zeigt dir nicht, wie weit du insgesamt gefahren bist, sondern <strong>wie schnell du dich gerade jetzt bewegst</strong>. Genau das macht die Ableitung — sie misst die <em>lokale Änderungsrate</em> einer Größe.</div>
-        <div class="ip" style="margin-top:10px">In diesem Tab baust du den Begriff auf: von der mittleren Änderungsrate über die Sekante zur Tangente — und damit zur Ableitung an einer Stelle. Außerdem lernst du, Tangentengleichungen aufzustellen und den Neigungswinkel aus der Steigung zu berechnen.</div>
+        <div class="ip" style="margin-top:10px">Die mittlere Änderungsrate und die Sekante kennst du schon. In diesem Tab machst du den entscheidenden Schritt: Die Intervalle schrumpfen auf eine Stelle zusammen — aus der Sekante wird die Tangente, aus der mittleren die lokale Änderungsrate. Das ist die Ableitung an einer Stelle. Außerdem lernst du, Tangentengleichungen aufzustellen und den Neigungswinkel aus der Steigung zu berechnen.</div>
       </div>
     </div>
 
@@ -18318,7 +18674,8 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das brauchst du</span></div>
       <div class="card-body">
         <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
-          <strong>Aus Klasse 10/11:</strong> Funktionsbegriff (Zuordnung x → f(x)), Steigung linearer Funktionen (m = Δy/Δx), Grenzwertbegriff (anschaulich: „Annäherung an einen Wert").<br>
+          <strong>Aus dem Tab „Mittlere Änderungsrate &amp; Sekante":</strong> mittlere Änderungsrate als Differenzenquotient, Sekantensteigung.<br>
+          <strong>Aus dem Tab „Grenzwerte":</strong> der anschauliche Grenzwertbegriff („Annäherung an einen Wert").<br>
           <strong>Aus der Physik:</strong> Durchschnittsgeschwindigkeit = Strecke / Zeit.
         </div>
       </div>
@@ -18330,8 +18687,8 @@ window.addEventListener('resize',function(){updateSimulator();});
       \(f'(x_0)\) ist <strong>immer eine Zahl</strong> — die lokale Änderungsrate von \(f\) an der <em>einen</em> Stelle \(x_0\).
       Sie entsteht <strong>immer</strong> als Grenzwert mittlerer Änderungsraten über Intervalle, die sich auf \(x_0\) zusammenziehen.
       Geometrisch ist sie die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).
-      Die <strong>Ableitungsfunktion</strong> \(f'\) ist etwas anderes: Sie ordnet jeder Stelle \(x\) diese Zahl zu.
-      Wer beides gleichsetzt, kann \(f'(2)\) berechnen, aber nicht sagen, was das Ergebnis bedeutet.
+      Die <strong>Ableitungsfunktion</strong> \(f'\) ist etwas anderes: Sie ordnet jeder Stelle \(x\) diese Zahl zu
+      — sie bekommt im Tab „Die Ableitungsfunktion" ihren eigenen Auftritt.
     </div>
 
     <div style="font-size:.86rem;color:#5b6770;margin:-6px 0 14px;padding-left:2px">
@@ -18348,7 +18705,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="card-body">
             <div class="ip">Dieser Tab umfasst 4 Unterrichtseinheiten:</div>
             <ul style="margin:10px 0 4px 20px;list-style:none;padding:0">
-                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-1" onclick="var e=document.getElementById('einheit-k11-tangenten-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Änderungsraten und Grundvorstellungen</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-1" onclick="var e=document.getElementById('einheit-k11-tangenten-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Von der mittleren zur lokalen Änderungsrate</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
                 <li style="margin:5px 0"><a href="#einheit-k11-tangenten-2" onclick="var e=document.getElementById('einheit-k11-tangenten-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Von der Sekante zur Tangente</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
                 <li style="margin:5px 0"><a href="#einheit-k11-tangenten-3" onclick="var e=document.getElementById('einheit-k11-tangenten-3');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 3 · Die Funktionenlupe</a> <span style="color:var(--ink-muted);font-size:13px">· 45 min</span></li>
                 <li style="margin:5px 0"><a href="#einheit-k11-tangenten-4" onclick="var e=document.getElementById('einheit-k11-tangenten-4');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 4 · Tangentengleichung und Neigungswinkel</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
@@ -18356,12 +18713,12 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-    <div class="section-label">Tangente und Änderungsrate</div>
+    <div class="section-label">Lokale Änderungsrate und Tangente</div>
 
     <div class="card">
         <div class="card-head">
             <div class="ci ci-g">✓</div>
-            <span class="card-title">Lernziele · Tangente und Änderungsrate</span>
+            <span class="card-title">Lernziele · Lokale Änderungsrate und Tangente</span>
         </div>
         <div class="card-body">
             <ul class="gl">
@@ -18392,7 +18749,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div style="font-size:22px;line-height:1">⏱</div>
   <div style="flex:1">
     <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
-    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Änderungsraten und Grundvorstellungen</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Von der mittleren zur lokalen Änderungsrate — Grundvorstellungen</div>
   </div>
 </div>
     <div class="card">
@@ -19163,49 +19520,17 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div style="flex:1">
       <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · T2 · ★ / ★★ Änderungsraten</div>
       <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Mittlere und lokale Änderungsrate</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Vom Differenzenquotienten zur momentanen Rate, durchgehend mit Deutung im Sachzusammenhang.</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Von schrumpfenden Intervallen zur lokalen Rate, durchgehend mit Deutung im Sachzusammenhang. Die mittlere Änderungsrate übst du im Tab „Mittlere Änderungsrate &amp; Sekante".</div>
     </div>
   </div>
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.1</span><span class="td de">★</span></div>
-          <div class="tq">Berechne jeweils die mittlere Änderungsrate.<br>
-          <strong>a)</strong> \(f(x)=x^2\) auf dem Intervall \([1;\,4]\) &#160;·&#160;
-          <strong>b)</strong> \(f(x)=x^3\) auf dem Intervall \([1;\,3]\)</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip"><strong>a)</strong> \(\dfrac{f(4)-f(1)}{4-1} = \dfrac{16-1}{3} = 5\)</div>
-        <div class="ip"><strong>b)</strong> \(\dfrac{f(3)-f(1)}{3-1} = \dfrac{27-1}{2} = 13\)</div>
-        <div class="ip"><em>Bezug:</em> Beide Zahlen sind zugleich die Steigung der Sekante durch die zugehörigen Punkte des Graphen.</div>
-        <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K5: Den Differenzenquotienten sicher berechnen</div>
-      </div>
-    </div>
+    
+
+    
 
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.2</span><span class="td dm">★★</span></div>
-          <div class="tq">Berechne die mittlere Änderungsrate von \(f(x)=\sqrt{x}\) auf dem Intervall \([1;\,9]\) und deute das Ergebnis geometrisch.</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip">\(\dfrac{f(9)-f(1)}{9-1} = \dfrac{3-1}{8} = \dfrac{1}{4} = 0{,}25\)</div>
-        <div class="ip"><strong>Geometrisch:</strong> Die Sekante durch \((1\,|\,1)\) und \((9\,|\,3)\) hat die Steigung \(0{,}25\). Die Funktion wächst auf diesem Intervall im Durchschnitt um \(0{,}25\) Einheiten pro \(x\)-Einheit.</div>
-        <div class="ip"><em>Achtung:</em> Über das Verhalten <em>innerhalb</em> des Intervalls sagt dieser Wert nichts. Bei \(x=1\) ist der Graph deutlich steiler, bei \(x=9\) deutlich flacher.</div>
-        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
-        <div class="komp-desc">K5: Differenzenquotient berechnen · K4: Zwischen Rechnung und Graph wechseln</div>
-      </div>
-    </div>
-
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.3</span><span class="td dm">★★</span></div>
+          <div class="tkt"><span class="tn">T2.1</span><span class="td dm">★★</span></div>
           <div class="tq">Berechne für \(f(x)=x^2\) die mittleren Änderungsraten auf den Intervallen \([2;\,2{,}1]\), \([2;\,2{,}01]\) und \([2;\,2{,}001]\). Gib an, welchem Wert sich die Ergebnisse nähern, und begründe, was dieser Wert bedeutet.</div>
           <div class="tk-toggle">⌄</div>
         </div>
@@ -19222,7 +19547,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.4</span><span class="td de">★</span></div>
+          <div class="tkt"><span class="tn">T2.2</span><span class="td de">★</span></div>
           <div class="tq">Ein Glas Wasser wird aus dem Kühlschrank genommen und erwärmt sich. Seine Temperatur in °C nach \(t\) Minuten wird beschrieben durch
           \[T(t) = 22 - 16\,e^{-0{,}02\,t}\]
           Berechne die Werte der folgenden Terme und interpretiere sie jeweils im Sachzusammenhang.<br>
@@ -19241,33 +19566,12 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
-    <div class="tg">
-      <div class="tk">
-        <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.5</span><span class="td dm">★★</span></div>
-          <div class="tq">In einer Regentonne wird der Wasserstand gemessen. Die Wassermenge in Litern nach \(t\) Stunden wird modelliert durch
-          \[w(t) = 60 - 48\,e^{-0{,}25\,t}\]
-          Gib für jeden der folgenden Terme die Bedeutung im Sachzusammenhang an — <strong>mit Einheit</strong> — und berechne seinen Wert.<br>
-          <strong>(I)</strong> \(w(5)-w(2)\) &#160;·&#160; <strong>(II)</strong> \(\dfrac{w(5)-w(2)}{3}\)</div>
-          <div class="tk-toggle">⌄</div>
-        </div>
-      </div>
-      <div class="ta">
-        <div class="ip">\(w(2) \approx 30{,}89\) Liter, \(w(5) \approx 46{,}25\) Liter.</div>
-        <div class="ip"><strong>(I)</strong> \(w(5)-w(2) \approx 15{,}36\) <strong>Liter</strong>.<br>
-        <em>Bedeutung:</em> Zwischen der 2. und der 5. Stunde ist die Wassermenge um etwa 15,4 Liter <em>gewachsen</em>. Das ist eine Menge, keine Rate.</div>
-        <div class="ip"><strong>(II)</strong> \(\dfrac{w(5)-w(2)}{3} \approx 5{,}12\) <strong>Liter pro Stunde</strong>.<br>
-        <em>Bedeutung:</em> In diesem Zeitraum kamen im Durchschnitt etwa 5,1 Liter pro Stunde hinzu. Das ist die mittlere Änderungsrate.</div>
-        <div class="ip"><strong>Worauf es ankommt:</strong> Die beiden Terme unterscheiden sich nur durch die Division — aber die Einheit wechselt von Litern zu Litern pro Stunde, und damit die Art der Aussage. Wer die Einheit weglässt, kann beide nicht auseinanderhalten.</div>
-        <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K6: Terme im Sachzusammenhang deuten · K3: Modell und Situation verknüpfen · K5: Werte korrekt berechnen</div>
-      </div>
-    </div>
+    
 
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.6</span><span class="td dm">★★</span></div>
+          <div class="tkt"><span class="tn">T2.3</span><span class="td dm">★★</span></div>
           <div class="tq">Ein Hang wird von der Bergstation bis zum Tal durch
           \[h(x) = 900 - 0{,}15\,x - 0{,}0005\,x^2 \qquad (0 \le x \le 300)\]
           beschrieben; \(x\) ist die waagerechte Entfernung, \(h\) die Höhe, beides in Metern.<br>
@@ -19299,7 +19603,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">T2.7</span><span class="td dm">★★</span></div>
+          <div class="tkt"><span class="tn">T2.4</span><span class="td dm">★★</span></div>
           <div class="tq">Die Kosten für die Produktion von \(x\) Tonnen eines Stoffes betragen \(K(x)\) Tausend Euro mit
           \[K(x) = 0{,}1\,x^3 - 1{,}2\,x^2 + 6\,x + 20 \qquad (0 \le x \le 10)\]
           Berechne \(K'(4)\) und interpretiere den Wert im Sachzusammenhang.</div>
@@ -19613,6 +19917,255 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 </div>
 
+
+<!-- ============================================================================
+     SECTION 2b: DIE ABLEITUNGSFUNKTION
+     ============================================================================ -->
+
+<div class="subpanel" id="k11-ablfunk">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+
+    <div class="ip">Im Tab „Lokale Änderungsrate &amp; Tangente" hast du \(f'(x_0)\) kennengelernt: <strong>eine Zahl</strong> — die Steigung an einer einzigen Stelle. Aber jede Stelle des Graphen hat ihre eigene Steigung. Sammelt man sie alle ein, entsteht etwas Neues: eine <strong>Funktion</strong>, die jeder Stelle ihre Steigung zuordnet — die <strong>Ableitungsfunktion</strong> \(f'\). Dieser Schritt von der Zahl zur Funktion ebnet den Weg zu den Ableitungsregeln: Statt an jeder Stelle neu zu rechnen, gibt es einen Term für alle Stellen auf einmal.</div>
+    <div class="hint"><strong>Das brauchst du:</strong> \(f'(x_0)\) als lokale Änderungsrate und Tangentensteigung, die Bestimmung über schrumpfende Intervalle (h-Methode) — beides aus dem Tab „Lokale Änderungsrate &amp; Tangente".</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">⏱</div><span class="card-title">Unterrichtsfahrplan</span></div>
+  <div class="card-body">
+
+    <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90&nbsp;min)</strong> ausgelegt: 30&nbsp;min Erarbeitung (Steigungen sammeln, Muster entdecken) · 25&nbsp;min h-Methode an allgemeiner Stelle · 25&nbsp;min <strong>F1</strong> · 10&nbsp;min Auswertung.</div>
+  </div>
+</div>
+
+<div class="section-label">Die Ableitungsfunktion</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Die Ableitungsfunktion</span></div>
+  <div class="card-body">
+<ul class="gl">
+<li class="gi">
+  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann den Unterschied zwischen der Ableitung an einer Stelle (eine Zahl) und der Ableitungsfunktion (eine Funktion) erklären</span>
+</li>
+<li class="gi">
+  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann Werte der Ableitungsfunktion an mehreren Stellen bestimmen und ihren Graphen punktweise aufbauen</span>
+</li>
+<li class="gi">
+  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann für einfache Funktionen aus dem Muster der Steigungen einen Term für die Ableitungsfunktion aufstellen</span>
+</li>
+</ul>
+  </div>
+</div>
+<div class="einheit-marker" id="einheit-k11-ablfunk-1" style="display:flex;align-items:center;gap:14px;margin:36px 0 14px;padding:12px 18px;background:#f0f4e8;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-size:22px;line-height:1">⏱</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Von der Ableitung an einer Stelle zur Ableitungsfunktion</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Steigungen sammeln — ein Muster entsteht</span></div>
+  <div class="card-body">
+
+    <div class="ip">Für \(f(x) = x^2\) bestimmen wir die Tangentensteigung an mehreren Stellen (mit der h-Methode oder am Graphen):</div>
+    <div style="overflow-x:auto;margin:12px 0">
+      <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+        <tr style="background:var(--kiku-light)">
+          <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">Stelle \(x\)</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">−2</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">−1</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">0</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">1</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">2</td>
+        </tr>
+        <tr>
+          <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">Steigung \(f'(x)\)</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">−4</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">−2</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">0</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">2</td>
+          <td style="padding:7px 10px;border:1px solid var(--border)">4</td>
+        </tr>
+      </table>
+    </div>
+    <div class="ip">Die Steigung ist an jeder Stelle <strong>das Doppelte der Stelle</strong>: \(f'(x) = 2x\). Trägt man die Steigungswerte als Punkte in ein eigenes Koordinatensystem ein, entsteht der Graph einer neuen Funktion — eine Gerade:</div>
+    <div style="text-align:center;margin:14px 0">
+      <canvas id="cvAblFunk" style="max-width:100%;border-radius:4px"></canvas>
+      <div class="ip" style="max-width:560px;margin:8px auto 0;text-align:left;font-size:14px;color:var(--ink-muted)">Links: \(f(x)=x^2\) mit Tangenten an drei Stellen. Rechts: Jede Stelle bekommt ihre Steigung als \(y\)-Wert — zusammen ergeben die Punkte den Graphen von \(f'(x)=2x\).</div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die Ableitungsfunktion</span></div>
+  <div class="card-body">
+
+    <div class="hint"><strong>Merke:</strong> Die <strong>Ableitungsfunktion</strong> \(f'\) ordnet jeder Stelle \(x\) die lokale Änderungsrate von \(f\) an dieser Stelle zu.
+    Halte die beiden Ebenen auseinander:
+    <ol style="margin:8px 0 0 0;padding-left:20px">
+      <li style="margin-bottom:5px">\(f'(x_0)\) ist eine <strong>Zahl</strong> — die Steigung an der einen Stelle \(x_0\). Beispiel: \(f'(3) = 6\).</li>
+      <li>\(f'\) ist eine <strong>Funktion</strong> — die Zuordnung \(x \mapsto f'(x)\) mit einem eigenen Term und einem eigenen Graphen. Beispiel: \(f'(x) = 2x\).</li>
+    </ol>
+    Wer beides gleichsetzt, kann \(f'(2)\) ausrechnen, aber nicht sagen, was das Ergebnis bedeutet.</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispielaufgabe: die h-Methode an einer allgemeinen Stelle</span></div>
+  <div class="card-body">
+
+    <div class="bsp">
+      <div class="bsp-label">Beispiel</div>
+      <div class="bsp-q">Bestimme für \(f(x) = x^2\) die Ableitung an einer <em>beliebigen</em> Stelle \(x\) — also den Term der Ableitungsfunktion.</div>
+      <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+      <div class="bsp-a">
+        <div class="ip"><strong>Schritt 1 — Differenzenquotient auf \([x;\,x+h]\):</strong> \(\dfrac{f(x+h)-f(x)}{h} = \dfrac{(x+h)^2 - x^2}{h}\)</div>
+        <div class="ip"><strong>Schritt 2 — Zähler ausmultiplizieren:</strong> \((x+h)^2 - x^2 = x^2 + 2xh + h^2 - x^2 = 2xh + h^2\)</div>
+        <div class="ip"><strong>Schritt 3 — kürzen:</strong> \(\dfrac{2xh + h^2}{h} = 2x + h\)</div>
+        <div class="ip"><strong>Schritt 4 — \(h\) gegen 0 laufen lassen:</strong> \(2x + h \;\to\; 2x\). Also \(f'(x) = 2x\).</div>
+        <div class="ip"><strong>Kontrolle mit der Tabelle:</strong> \(f'(-2) = -4\), \(f'(1) = 2\), \(f'(2) = 4\) — genau die gesammelten Steigungen.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Der Weg zu den Ableitungsregeln</span></div>
+  <div class="card-body">
+
+    <div class="ip">Die h-Methode funktioniert für jede Funktion — aber sie ist mühsam. Die gute Nachricht: Die Ergebnisse folgen festen Mustern, zum Beispiel \(x^2 \to 2x\) und \(x^3 \to 3x^2\). Diese Muster sind die <strong>Ableitungsregeln</strong> — mit ihnen findest du den Term von \(f'\) in einer Zeile statt in vier Schritten. Genau darum geht es im nächsten Tab.</div>
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">F1</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · F1 · ★ / ★★★ Ableitungsfunktion</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Von der Stelle zur Funktion</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Steigungen sammeln, Muster erkennen, die h-Methode allgemein durchführen — und den Begriff sauber abgrenzen.</div>
+    </div>
+  </div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">F1.1</span><span class="td de">★</span></div>
+      <div class="tq">Für \(f(x) = 0{,}5x^2\) wurden Tangentensteigungen bestimmt: an der Stelle \(-2\) beträgt sie \(-2\), an der Stelle \(0\) beträgt sie \(0\), an der Stelle \(2\) beträgt sie \(2\).
+          Gib \(f'(-1)\), \(f'(1)\) und \(f'(3)\) an und stelle einen Term für die Ableitungsfunktion \(f'\) auf.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip">Das Muster: Die Steigung ist an jeder Stelle gleich der Stelle selbst. \(f'(-1) = -1\), \(f'(1) = 1\), \(f'(3) = 3\).</div>
+    <div class="ip">Term: \(f'(x) = x\).</div>
+    <div class="komp-wrap"><span class="kb kb-k2">K2</span></div>
+    <div class="komp-desc">K2: Aus Werten ein Muster erkennen und als Term formulieren</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">F1.2</span><span class="td dm">★★</span></div>
+      <div class="tq">Bestimme mit der h-Methode den Term der Ableitungsfunktion von \(f(x) = x^2 + 3x\).</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip">\(\dfrac{f(x+h)-f(x)}{h} = \dfrac{(x+h)^2 + 3(x+h) - x^2 - 3x}{h} = \dfrac{2xh + h^2 + 3h}{h} = 2x + h + 3\)</div>
+    <div class="ip">Für \(h \to 0\): \(f'(x) = 2x + 3\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K5: Den Grenzübergang an einer allgemeinen Stelle durchführen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">F1.3</span><span class="td dh">★★★</span></div>
+      <div class="tq">Lena sagt: „\(f'(2)\) und \(f'\) — das ist doch dasselbe, nur einmal mit Klammer." Erläutere den Unterschied und gib zu \(f(x) = x^2\) für beide ein Beispiel an, was man mit ihnen tun kann.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip">\(f'(2)\) ist eine <strong>Zahl</strong>: die Steigung von \(f\) an der Stelle 2, hier \(f'(2) = 4\). Mit ihr kann man z.&nbsp;B. eine Tangentengleichung an dieser Stelle aufstellen.</div>
+    <div class="ip">\(f'\) ist eine <strong>Funktion</strong>: \(f'(x) = 2x\) mit eigenem Graphen. Mit ihr kann man die Steigung an <em>jeder</em> Stelle abfragen — und später untersuchen, wo \(f\) steigt, fällt oder Extremstellen hat.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K1: Begriffe gegeneinander abgrenzen · K6: Den Unterschied adressatengerecht erklären</div>
+  </div>
+</div>
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Was ist der Unterschied zwischen \(f'(x_0)\) und \(f'\)?</li>
+        <li>Wie entsteht der Graph der Ableitungsfunktion aus dem Graphen von \(f\)?</li>
+        <li>Wie bestimmst du mit der h-Methode den Term von \(f'\) — und warum lohnt sich das nur einmal pro Funktion?</li>
+        <li>Warum ebnet die Ableitungsfunktion den Weg zu den Ableitungsregeln?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Wenn du bei einer Frage unsicher bist, lies noch einmal ab der Karte „Steigungen sammeln — ein Muster entsteht".</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var dpr = window.devicePixelRatio || 1;
+  var KIKU = '#5b6e2e', AX = '#8a8a8a', INK = '#666666', SANGO = '#c75c3a';
+  var c = document.getElementById('cvAblFunk'); if(!c) return;
+  var W = 560, H = 250;
+  c.width = W*dpr; c.height = H*dpr; c.style.width = W+'px'; c.style.height = H+'px';
+  var x = c.getContext('2d'); x.scale(dpr,dpr);
+  function panel(ox, w, xmin, xmax, ymin, ymax){
+    var pad = {l:34, r:10, t:14, b:28};
+    return {
+      X: function(v){ return ox + pad.l + (v-xmin)/(xmax-xmin)*(w-pad.l-pad.r); },
+      Y: function(v){ return pad.t + (ymax-v)/(ymax-ymin)*(H-pad.t-pad.b); },
+      xmin:xmin, xmax:xmax, ymin:ymin, ymax:ymax
+    };
+  }
+  function axes(p, xticks, yticks){
+    x.strokeStyle = AX; x.lineWidth = 1.3;
+    x.beginPath(); x.moveTo(p.X(p.xmin), p.Y(0)); x.lineTo(p.X(p.xmax), p.Y(0)); x.stroke();
+    x.beginPath(); x.moveTo(p.X(p.xmax), p.Y(0)); x.lineTo(p.X(p.xmax)-6, p.Y(0)-3); x.lineTo(p.X(p.xmax)-6, p.Y(0)+3); x.closePath(); x.fillStyle=AX; x.fill();
+    x.beginPath(); x.moveTo(p.X(0), p.Y(p.ymin)); x.lineTo(p.X(0), p.Y(p.ymax)); x.stroke();
+    x.beginPath(); x.moveTo(p.X(0), p.Y(p.ymax)); x.lineTo(p.X(0)-3, p.Y(p.ymax)+6); x.lineTo(p.X(0)+3, p.Y(p.ymax)+6); x.closePath(); x.fill();
+    x.fillStyle = INK; x.font = '11px system-ui'; x.textAlign='center'; x.textBaseline='top';
+    xticks.forEach(function(t){ if(t!==0){ x.fillText(String(t).replace('-','−'), p.X(t), p.Y(0)+5); } });
+    x.textAlign='right'; x.textBaseline='middle';
+    yticks.forEach(function(t){ if(t!==0){ x.fillText(String(t).replace('-','−'), p.X(0)-5, p.Y(t)); } });
+    x.fillStyle = '#555'; x.font = 'bold 12px system-ui';
+    x.textAlign='right'; x.textBaseline='alphabetic'; x.fillText('x', p.X(p.xmax)-2, p.Y(0)-7);
+  }
+  // Links: f(x) = x² mit Tangenten
+  var L = panel(0, 270, -2.7, 2.7, -1.6, 5.0);
+  axes(L, [-2,-1,1,2], [2,4]);
+  x.strokeStyle = KIKU; x.lineWidth = 2.4; x.beginPath();
+  for(var i=0;i<=160;i++){ var t=-2.2+4.4*i/160; if(i===0)x.moveTo(L.X(t),L.Y(t*t)); else x.lineTo(L.X(t),L.Y(t*t)); }
+  x.stroke();
+  x.fillStyle = KIKU; x.font = 'bold 13px system-ui'; x.textAlign='center'; x.fillText('f(x) = x²', L.X(1.15), L.Y(4.5));
+  [[-1.5,-3],[0,0],[1.5,3]].forEach(function(pt){
+    var a = pt[0], m = pt[1], d = 0.55;
+    x.strokeStyle = SANGO; x.lineWidth = 1.8;
+    x.beginPath(); x.moveTo(L.X(a-d), L.Y(a*a - m*d)); x.lineTo(L.X(a+d), L.Y(a*a + m*d)); x.stroke();
+    x.beginPath(); x.arc(L.X(a), L.Y(a*a), 3.4, 0, 7); x.fillStyle = SANGO; x.fill();
+  });
+  // Pfeil zwischen den Panels
+  x.strokeStyle = INK; x.lineWidth = 1.6;
+  x.beginPath(); x.moveTo(272, H/2-8); x.lineTo(296, H/2-8); x.stroke();
+  x.beginPath(); x.moveTo(296, H/2-8); x.lineTo(289, H/2-12); x.lineTo(289, H/2-4); x.closePath(); x.fillStyle=INK; x.fill();
+  x.fillStyle = INK; x.font = '11px system-ui'; x.textAlign='center'; x.fillText('Steigungen', 284, H/2-18);
+  // Rechts: f'(x) = 2x
+  var R = panel(300, 260, -2.7, 2.7, -5.2, 5.2);
+  axes(R, [-2,-1,1,2], [-4,-2,2,4]);
+  x.strokeStyle = SANGO; x.lineWidth = 2.4;
+  x.beginPath(); x.moveTo(R.X(-2.4), R.Y(-4.8)); x.lineTo(R.X(2.4), R.Y(4.8)); x.stroke();
+  [[-2,-4],[-1,-2],[0,0],[1,2],[2,4]].forEach(function(p){
+    x.beginPath(); x.arc(R.X(p[0]), R.Y(p[1]), 3.6, 0, 7); x.fillStyle = SANGO; x.fill();
+  });
+  x.fillStyle = SANGO; x.font = 'bold 13px system-ui'; x.textAlign='left';
+  x.fillText("f'(x) = 2x", R.X(0.35), R.Y(4.6));
+})();
+</script>
+</div>
+
 <!-- ============================================================================
      SECTION 2b: ABLEITUNGSREGELN
      ============================================================================ -->
@@ -19624,7 +20177,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
       <div class="card-body">
-        <div class="ip">Im Tab „Tangente &amp; Änderungsrate“ hast du verstanden, <strong>was</strong> die Ableitung ist: die lokale Änderungsrate, geometrisch die Tangentensteigung. Jetzt lernst du, <strong>wie</strong> man sie schnell berechnet — mit Ableitungsregeln statt Wertetabelle und Grenzwert.</div>
+        <div class="ip">In den Tabs davor hast du verstanden, <strong>was</strong> die Ableitung ist — die lokale Änderungsrate, geometrisch die Tangentensteigung — und wie die Ableitungsfunktion \(f'\) daraus entsteht. Jetzt lernst du, <strong>wie</strong> man sie schnell berechnet — mit Ableitungsregeln statt Wertetabelle und Grenzwert.</div>
         <div class="ip" style="margin-top:10px">Die Regeln sind das Handwerkszeug für alles, was folgt: Extrema und Wendepunkte berechnen, Tangentengleichungen aufstellen, Sachprobleme lösen.</div>
       </div>
     </div>
@@ -19634,7 +20187,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das brauchst du</span></div>
       <div class="card-body">
         <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
-          <strong>Aus dem Tab „Tangente &amp; Änderungsrate“:</strong> \(f'(x_0)\) ist eine Zahl — die lokale Änderungsrate an der Stelle \(x_0\); die Ableitungsfunktion \(f'\) ordnet jeder Stelle diese Zahl zu.<br>
+          <strong>Aus den Tabs „Lokale Änderungsrate &amp; Tangente" und „Die Ableitungsfunktion":</strong> \(f'(x_0)\) ist eine Zahl, \(f'\) ist eine Funktion — und die h-Methode liefert ihren Term.<br>
           <strong>Aus Klasse 10:</strong> Potenzgesetze.
         </div>
       </div>
@@ -29181,7 +29734,7 @@ function showK10Tab(id, btn) {
 }
 
 function showK11Tab(id, btn) {
-  ['k11-grenz','k11-tangenten','k11-ableit','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-esin','k11-flaechen','k11-pflicht'].forEach(function(sid) {
+  ['k11-grenz','k11-sekante','k11-tangenten','k11-ablfunk','k11-ableit','k11-grafabl','k11-kurven','k11-anwend','k11-stamm','k11-bestand','k11-grafisch','k11-hauptsatz','k11-esin','k11-flaechen','k11-pflicht'].forEach(function(sid) {
     var el = document.getElementById(sid);
     if(el) el.classList.remove('on');
   });
