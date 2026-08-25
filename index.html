@@ -18068,7 +18068,141 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
     </div>
 
-  <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  
+  <!-- ══════════ BLOCK GW3 · SACHZUSAMMENHÄNGE ══════════ -->
+  <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fbf0ec;border-left:5px solid #c75c3a;border-radius:10px">
+    <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">GW3</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · GW3 · ★ / ★★★ · Sachaufgaben</div>
+      <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Mit Grenzwerten Fragen im Sachzusammenhang beantworten</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Ablesen, tabellieren, Fehler finden, Terme deuten, Ränder untersuchen — vermischte Übung und LEK-Vorbereitung.</div>
+    </div>
+  </div>
+
+    <div style="margin:22px 0 6px;padding:14px;background:#fbfaf6;border:1px solid var(--border);border-radius:8px;text-align:center">
+      <canvas id="cvSachBaum" style="max-width:100%;border-radius:4px"></canvas>
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:8px">Abbildung zu GW3.1 — Höhe einer Douglasie (\(t\) in Jahren, \(h(t)\) in Metern)</div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.1</span>
+                    <span class="td de">★</span>
+                </div>
+                <div class="tq"><strong>Grenzwert am Graphen.</strong> Die Abbildung zeigt die Höhe einer Douglasie in den ersten 60 Jahren nach der Pflanzung, modelliert durch \(h(t) = 22 - 20\,e^{-0{,}08t}\).<br>
+                <strong>a)</strong> Lies am Graphen ab, welchem Wert sich die Höhe langfristig nähert, und deute diesen Wert im Sachzusammenhang.<br>
+                <strong>b)</strong> Erreicht der Baum diese Höhe nach dem Modell irgendwann genau? Begründe am Graphen.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Der Graph flacht ab und schmiegt sich an die gestrichelte Gerade \(h = 22\) an — der Abstand zu ihr wird beliebig klein: \(\lim_{t \to \infty} h(t) = 22\). <em>Deutung:</em> Die Douglasie wächst auf eine Endhöhe von etwa 22 m zu; das ist die ausgewachsene Höhe im Modell.</div>
+                <div class="ip"><strong>b)</strong> Nein. Der Graph verläuft vollständig unterhalb der Geraden \(h = 22\) und schneidet sie nirgends — die Höhe nähert sich dem Wert nur beliebig genau an. (Am Term: \(20\,e^{-0{,}08t}\) ist für jedes \(t\) echt positiv.)</div>
+                <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K4: Grenzwert und Asymptote am Graphen ablesen · K6: Den Wert im Sachzusammenhang deuten</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.2</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Population im Naturschutzgebiet.</strong> In einem Naturschutzgebiet wird eine Herde Wisente ausgewildert. Die Population wird modelliert durch
+                \[P(t) = \frac{2400}{1 + 7\,e^{-0{,}35\,t}} \qquad (t \text{ in Jahren seit Auswilderung})\]
+                <strong>a)</strong> Berechne \(P(0)\) und deute den Wert.<br>
+                <strong>b)</strong> Bestimme mit einer Wertetabelle (\(t = 5,\;10,\;20,\;40\)) den Grenzwert \(\lim_{t \to \infty} P(t)\) und deute ihn.<br>
+                <strong>c)</strong> Die Parkverwaltung befürchtet, die Population könnte unbegrenzt wachsen, und erwägt eine Bejagung. Nimm auf Grundlage von b) Stellung.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> \(P(0) = \frac{2400}{1 + 7 \cdot 1} = \frac{2400}{8} = 300\). Bei der Auswilderung wurden 300 Tiere ausgesetzt.</div>
+                <div class="ip"><strong>b)</strong> \(P(5) \approx 1\,083\) · \(P(10) \approx 1\,981\) · \(P(20) \approx 2\,385\) · \(P(40) \approx 2\,400\). Der Abstand zu 2 400 wird beliebig klein: \(\lim_{t \to \infty} P(t) = 2400\). <em>Deutung:</em> Die Population wächst nicht über etwa 2 400 Tiere hinaus — das Gebiet trägt langfristig rund 2 400 Wisente (Nahrungs- und Platzangebot).</div>
+                <div class="ip"><strong>c)</strong> Die Befürchtung ist unbegründet: Die Werte wachsen zwar anfangs schnell, aber <em>gebremst</em> — sie stabilisieren sich beim Grenzwert 2 400, statt über alle Grenzen zu wachsen. Nach diesem Modell ist eine Bejagung nicht notwendig.</div>
+                <div class="ip"><em>Beachte den Funktionstyp:</em> Im Nenner steckt eine e-Funktion — \(e^{-0{,}35t} \to 0\) für \(t \to \infty\), der Nenner geht gegen 1, der Bruch gegen 2 400. Genau diese Bauart erzeugt Stabilisierung.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div>
+                <div class="komp-desc">K5: Grenzwert mit der Wertetabelle bestimmen · K3: Das Modell auf die Sachfrage beziehen · K6: Werte im Kontext deuten und Stellung nehmen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.3</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Fehler finden.</strong> Die Wassertiefe an einer Hafeneinfahrt wird durch \(w(t) = 4 + 1{,}5 \cdot \sin(0{,}5\,t)\) modelliert (\(t\) in Stunden, \(w\) in Metern). Jonas untersucht das langfristige Verhalten mit einer Wertetabelle:<br>
+                <span style="display:inline-block;margin:8px 0;font-size:15px">\(t \approx\) 12,6 · 25,1 · 37,7 · 50,3 &#160;→&#160; \(w(t) =\) 4,0 · 4,0 · 4,0 · 4,0</span><br>
+                Er folgert: <em>„Der Grenzwert ist 4 — langfristig liegt die Wassertiefe konstant bei 4 m.“</em><br>
+                Finde den Fehler, verbessere die Untersuchung und formuliere die richtige Antwort im Sachzusammenhang.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>Der Fehler:</strong> Jonas hat (unabsichtlich) genau die Vielfachen der Periode getroffen: \(\frac{2\pi}{0{,}5} = 4\pi \approx 12{,}6\) Stunden. An diesen Stellen ist \(\sin(0{,}5t) = 0\) und damit \(w = 4\) — <em>zwischen</em> seinen Tabellenzeilen pendelt die Tiefe aber weiter.</div>
+                <div class="ip"><strong>Verbesserung:</strong> Zwischenstellen prüfen oder den Graphen ansehen. Z. B. \(t \approx 3{,}1\): \(\sin(1{,}57) \approx 1\), also \(w \approx 5{,}5\) — und das wiederholt sich für beliebig große \(t\) (etwa \(t \approx 15{,}7;\; 28{,}3;\; \ldots\)).</div>
+                <div class="ip"><strong>Richtige Antwort:</strong> \(w\) hat für \(t \to \infty\) <em>keinen</em> Grenzwert. Die Wassertiefe pendelt dauerhaft zwischen \(4 - 1{,}5 = 2{,}5\) m und \(4 + 1{,}5 = 5{,}5\) m — die Gezeiten hören nicht auf. Konstant „4 m“ gilt nur in den Momenten des Durchgangs.</div>
+                <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+                <div class="komp-desc">K1: Den Fehler in der Grenzwertbildung aufdecken und korrigieren · K5: Die Wertetabelle sachgerecht ergänzen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.4</span>
+                    <span class="td dm">★★</span>
+                </div>
+                <div class="tq"><strong>Terme deuten.</strong> Nach dem Kaltstart eines Motors wird die Öltemperatur beschrieben durch
+                \[T(t) = 90 - 70\,e^{-0{,}15\,t} \qquad (t \text{ in Minuten},\; T \text{ in } ^\circ\text{C})\]
+                Gib für jeden der folgenden Terme den Wert an und deute ihn im Sachzusammenhang:<br>
+                <strong>(1)</strong> \(T(0)\) &#160;·&#160; <strong>(2)</strong> \(\lim_{t \to \infty} T(t)\) &#160;·&#160; <strong>(3)</strong> \(90 - T(t)\)</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>(1)</strong> \(T(0) = 90 - 70 = 20\) °C — die Öltemperatur beim Start, also die Außen- bzw. Garagentemperatur.</div>
+                <div class="ip"><strong>(2)</strong> Für \(t \to \infty\) geht \(70\,e^{-0{,}15t} \to 0\), also \(\lim_{t \to \infty} T(t) = 90\) °C — die Betriebstemperatur, der sich das Öl langfristig annähert (waagerechte Asymptote \(T = 90\)).</div>
+                <div class="ip"><strong>(3)</strong> \(90 - T(t) = 70\,e^{-0{,}15t}\) — der <em>Abstand zur Betriebstemperatur</em> zum Zeitpunkt \(t\): wie viele Grad dem Öl zur Betriebstemperatur noch fehlen. Dieser Abstand wird beliebig klein, aber nie null — genau die Grundvorstellung des Grenzwerts.</div>
+                <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span></div>
+                <div class="komp-desc">K6: Gegebene Terme im Sachzusammenhang deuten · K3: Modellgrößen der Situation zuordnen</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tg">
+        <div class="tk">
+            <div class="tk-top" onclick="togTask(this)">
+                <div class="tkt">
+                    <span class="tn">GW3.5</span>
+                    <span class="td dh">★★★</span>
+                </div>
+                <div class="tq"><strong>Ränder untersuchen — taugt das Modell?</strong> Eine Schülerin passt an die Bestandszahlen einer Biberpopulation aus den ersten zehn Jahren die ganzrationale Funktion
+                \[B(t) = -2t^3 + 60t^2 + 500 \qquad (t \text{ in Jahren seit Beobachtungsbeginn})\]
+                an. Sie schlägt vor, das Modell auch für Prognosen zu verwenden.<br>
+                <strong>a)</strong> Untersuche das Verhalten von \(B\) für \(t \to +\infty\) und \(t \to -\infty\).<br>
+                <strong>b)</strong> Beurteile mit a), ob sich das Modell für langfristige Prognosen eignet.<br>
+                <strong>c)</strong> Welcher Funktionstyp wäre für einen Bestand geeignet, der sich langfristig stabilisiert? Begründe mit dem Verhalten im Unendlichen.</div>
+                <div class="tk-toggle">⌄</div>
+            </div>
+            <div class="ta">
+                <div class="ip"><strong>a)</strong> Grad 3 (ungerade), Vorzeichen vor der höchsten Potenz negativ (\(-2\)): für \(t \to +\infty\) gilt \(B(t) \to -\infty\), für \(t \to -\infty\) gilt \(B(t) \to +\infty\).</div>
+                <div class="ip"><strong>b)</strong> Für langfristige Prognosen ist das Modell unbrauchbar: \(B(t) \to -\infty\) bedeutet einen unbegrenzt negativen Bestand — schon ab etwa \(t \approx 30\) liefert das Modell negative Tierzahlen (\(B(30) = 500\), \(B(31) < 0\)). Auch rückwärts (\(t \to -\infty\)) wären die Bestände unbegrenzt groß. Das Modell beschreibt nur den angepassten Zeitraum; ganzrationale Funktionen gehen an beiden Rändern <em>immer</em> über alle Grenzen und können daher kein dauerhaft beschränktes Wachstum darstellen.</div>
+                <div class="ip"><strong>c)</strong> Ein Funktionstyp mit waagerechter Asymptote — z. B. eine e-Funktion wie in GW3.4 (\(a\,e^{kt} + d\) mit \(k < 0\)) oder ein Bruch mit e-Funktion im Nenner wie bei den Wisenten in GW3.2. Dort läuft der Funktionswert für \(t \to \infty\) gegen eine feste Zahl (die Kapazität des Lebensraums), statt über alle Grenzen zu wachsen oder zu fallen.</div>
+                <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div>
+                <div class="komp-desc">K5: Verhalten an beiden Rändern bestimmen · K1: Die Modelleignung begründet beurteilen · K3: Funktionstyp und Sachsituation passend verknüpfen</div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
     <div class="ip">
@@ -18217,8 +18351,8 @@ window.addEventListener('resize',function(){updateSimulator();});
 
     // ── Beschriftungen zuletzt, mit Kontur ──
     // Achsennamen
-    txt(ctx,'x',tx(xMax)-4,ty(0)-9,'bold 12px Inter,sans-serif','#555',halo,'right','alphabetic');
-    txt(ctx,'y',tx(0)+11,ty(yMax)+3,'bold 12px Inter,sans-serif','#555',halo,'center','top');
+    txt(ctx,cfg.xName||'x',tx(xMax)-4,ty(0)-9,'bold 12px Inter,sans-serif','#555',halo,'right','alphabetic');
+    txt(ctx,cfg.yName||'y',tx(0)+11,ty(yMax)+3,'bold 12px Inter,sans-serif','#555',halo,'center','top');
     // Ursprung nur, wenn er wirklich innen liegt
     if(xMin<-1e-9 && yMin<-1e-9) txt(ctx,'O',tx(0)-5,ty(0)+4,'11px Inter,sans-serif','#888',halo,'right','top');
     // Skala
@@ -18284,6 +18418,12 @@ window.addEventListener('resize',function(){updateSimulator();});
   plot('cvAufgGraph',{W:440,H:280,padL:40,xMin:0,xMax:21.5,yMin:0,yMax:5,xStep:5,yStep:1,
     grid:true, gridX:1, gridY:0.5, color:'#4d6470', asym:4, halo:'#fbfaf6',
     marks:[5,10,15,20], f:function(x){return 4-4*Math.exp(-0.3*x);}});
+
+  // GW3.1: Baumhoehe mit Asymptote h = 22
+  plot('cvSachBaum',{W:440,H:280,padL:42,xMin:0,xMax:62,yMin:0,yMax:26,xStep:10,yStep:5,
+    grid:true, gridX:5, gridY:2, color:'#4d6470', asym:22, asymLabel:'h = 22',
+    marks:[10,20,40], xName:'t', yName:'h(t)', halo:'#fbfaf6',
+    f:function(t){return 22-20*Math.exp(-0.08*t);}});
 
   // GW2.8: Zuordnung Graph <-> Term
   plot('cvZuA',{W:250,H:180,xMin:-3.2,xMax:3.2,yMin:-5,yMax:6,yStep:2,color:'#5b6e2e',
