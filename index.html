@@ -18310,6 +18310,10 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card-body">
 
     <div class="ip">Nach zwei Stunden Autofahrt zeigt der Kilometerzähler 180&nbsp;km mehr an. Wie schnell warst du? „90&nbsp;km/h" — aber der Tacho stand unterwegs mal auf 80, mal auf 130. Die 90&nbsp;km/h sind ein <strong>Durchschnitt über den ganzen Zeitraum</strong>. Genau das ist die <strong>mittlere Änderungsrate</strong>: Sie misst, wie stark sich eine Größe <em>im Mittel</em> auf einem Intervall ändert. Am Graphen gehört dazu eine Gerade durch zwei Punkte — die <strong>Sekante</strong>. Beide Begriffe sind die Grundlage für alles, was in den nächsten Tabs kommt.</div>
+    <div style="text-align:center;margin:14px 0 6px">
+      <canvas id="cvSekAuto" style="max-width:100%;border-radius:4px"></canvas>
+      <div class="ip" style="max-width:520px;margin:8px auto 0;text-align:left;font-size:14px;color:var(--ink-muted)">Die Fahrt aus dem Beispiel: Die grüne Kurve zeigt die gefahrene Strecke \(s(t)\) — mal steil (schnell), mal flach (langsam). Die rote Gerade durch Start und Ziel ist die <strong>Sekante</strong>: Ihre Steigung ist der Durchschnitt, \(\frac{180 \text{ km}}{2 \text{ h}} = 90\) km/h.</div>
+    </div>
     <div class="hint"><strong>Das brauchst du:</strong> Steigung linearer Funktionen \(m = \frac{\Delta y}{\Delta x}\) mit Steigungsdreieck (Klasse&nbsp;8), Funktionswerte berechnen. Aus der Physik: Durchschnittsgeschwindigkeit = Strecke durch Zeit.</div>
   </div>
 </div>
@@ -18615,6 +18619,64 @@ window.addEventListener('resize',function(){updateSimulator();});
       x.fillStyle = '#333'; x.font = 'bold 12px system-ui'; x.textAlign='left';
       x.fillText(p[2], X(p[0])+p[3], Y(p[1])+p[4]);
     });
+  })();
+  // ── Worum geht es: Autofahrt, Strecke und Sekante ──
+  (function(){
+    var W = 460, H = 290, x = prep('cvSekAuto', W, H); if(!x) return;
+    var pad = {l:52, r:20, t:20, b:40};
+    var xmin=-0.18, xmax=2.35, ymin=-24, ymax=215;
+    function X(v){ return pad.l + (v-xmin)/(xmax-xmin)*(W-pad.l-pad.r); }
+    function Y(v){ return pad.t + (ymax-v)/(ymax-ymin)*(H-pad.t-pad.b); }
+    // Gitter
+    x.strokeStyle = 'rgba(91,110,46,0.10)'; x.lineWidth = 1;
+    [0.5,1,1.5,2].forEach(function(g){ x.beginPath(); x.moveTo(X(g),Y(ymin)); x.lineTo(X(g),Y(ymax)); x.stroke(); });
+    [60,120,180].forEach(function(g){ x.beginPath(); x.moveTo(X(xmin),Y(g)); x.lineTo(X(xmax),Y(g)); x.stroke(); });
+    // Achsen
+    x.strokeStyle = AX; x.lineWidth = 1.4;
+    x.beginPath(); x.moveTo(X(xmin),Y(0)); x.lineTo(X(xmax),Y(0)); x.stroke(); arrow(x, X(xmax), Y(0), 'r');
+    x.beginPath(); x.moveTo(X(0),Y(ymin)); x.lineTo(X(0),Y(ymax)); x.stroke(); arrow(x, X(0), Y(ymax), 'u');
+    x.fillStyle = '#555'; x.font = 'bold 12px system-ui';
+    x.textAlign='right'; x.fillText('t in h', X(xmax)-2, Y(0)-9);
+    x.textAlign='left'; x.fillText('s(t) in km', X(0)+9, Y(ymax)+11);
+    x.font = '12px system-ui'; x.fillStyle = INK;
+    x.textAlign='right'; x.textBaseline='top'; x.fillText('O', X(0)-5, Y(0)+5);
+    x.textAlign='center';
+    [1,2].forEach(function(t){ x.fillText(String(t), X(t), Y(0)+7); x.strokeStyle=AX; x.beginPath(); x.moveTo(X(t),Y(0)-3); x.lineTo(X(t),Y(0)+3); x.stroke(); });
+    x.textAlign='right'; x.textBaseline='middle';
+    [60,120,180].forEach(function(t){ x.fillText(String(t), X(0)-7, Y(t)); x.beginPath(); x.moveTo(X(0)-3,Y(t)); x.lineTo(X(0)+3,Y(t)); x.stroke(); });
+    // Sekante (rot) durch (0|0) und (2|180)
+    x.strokeStyle = SANGO; x.lineWidth = 2;
+    x.beginPath(); x.moveTo(X(-0.08),Y(-7.2)); x.lineTo(X(2.25),Y(202.5)); x.stroke();
+    // Streckenkurve (grün) durch Kontrollpunkte, Catmull-Rom
+    var pts = [[0,0],[0.4,28],[0.8,88],[1.2,118],[1.6,138],[2,180]];
+    function cr(p0,p1,p2,p3,t){
+      var t2=t*t, t3=t2*t;
+      return [
+        0.5*((2*p1[0])+(-p0[0]+p2[0])*t+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*t2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*t3),
+        0.5*((2*p1[1])+(-p0[1]+p2[1])*t+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*t2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*t3)
+      ];
+    }
+    x.strokeStyle = KIKU; x.lineWidth = 2.8; x.beginPath(); x.moveTo(X(0),Y(0));
+    for(var i=0;i<pts.length-1;i++){
+      var p0 = pts[Math.max(0,i-1)], p1 = pts[i], p2 = pts[i+1], p3 = pts[Math.min(pts.length-1,i+2)];
+      for(var k=1;k<=16;k++){ var q = cr(p0,p1,p2,p3,k/16); x.lineTo(X(q[0]),Y(q[1])); }
+    }
+    x.stroke();
+    // Beschriftungen an der Kurve
+    x.fillStyle = KIKU; x.font = '11px system-ui'; x.textAlign='left';
+    x.fillText('steil = schnell', X(0.1), Y(112));
+    x.fillText('flach = langsam', X(1.06), Y(152));
+    // Punkte Start und Ziel
+    [[0,0,'Start (0|0)',8,-10],[2,180,'Ziel (2|180)',-58,-14]].forEach(function(p){
+      x.beginPath(); x.arc(X(p[0]),Y(p[1]),4,0,7); x.fillStyle = SANGO; x.fill();
+      x.fillStyle = '#333'; x.font = 'bold 12px system-ui'; x.textAlign='left';
+      x.fillText(p[2], X(p[0])+p[3], Y(p[1])+p[4]);
+    });
+    // Sekanten-Label unten rechts, unter Kurve und Sekante
+    x.fillStyle = SANGO; x.font = 'bold 12px system-ui'; x.textAlign='left';
+    x.fillText('Sekante: 90 km/h', X(1.42), Y(52));
+    x.font = '11px system-ui';
+    x.fillText('im Durchschnitt', X(1.42), Y(34));
   })();
   // ── Aufgaben-Graph: f(x) = −0,25x² + 2x ──
   (function(){
