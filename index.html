@@ -18567,7 +18567,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div style="flex:1">
       <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · S1 · ★ / ★★ Grundlagen</div>
       <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Berechnen und am Graphen ablesen</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Differenzenquotient aus Funktionsgleichung und Intervall — und direkt am Graphen als Sekantensteigung.</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Differenzenquotient aus Funktionsgleichung, Tabelle und Graph — und im Sachzusammenhang mit Einheit. Die Aufgaben S1.4 bis S1.8 stammen sinngemäß aus Abituraufgaben (IQB-Pool, MV, Bayern).</div>
     </div>
   </div>
 <div class="tg">
@@ -18619,6 +18619,125 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="ip"><em>Achtung:</em> Über das Verhalten <em>innerhalb</em> des Intervalls sagt dieser Wert nichts. Bei \(x=1\) ist der Graph deutlich steiler, bei \(x=9\) deutlich flacher.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
         <div class="komp-desc">K5: Differenzenquotient berechnen · K4: Zwischen Rechnung und Graph wechseln</div>
+      </div>
+    </div><div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.4</span><span class="td de">★</span></div>
+          <div class="tq">Während des Pollenflugs wird die Anzahl der Gräserpollen in einem Kubikmeter Luft gemessen. Sie wird modelliert durch
+          \[n(t) = 3t^2 - 60t + 500\]
+          Dabei ist \(t\) die seit Messbeginn vergangene Zeit in Stunden und \(n(t)\) die Anzahl der Pollen pro Kubikmeter Luft.
+          Berechne die mittlere Änderungsrate von \(n\) während der ersten beiden Stunden der Messung und deute das Ergebnis im Sachzusammenhang.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Funktionswerte:</strong> \(n(0) = 500\) und \(n(2) = 3 \cdot 4 - 120 + 500 = 392\).</div>
+        <div class="ip"><strong>Mittlere Änderungsrate:</strong> \(\dfrac{n(2)-n(0)}{2-0} = \dfrac{392-500}{2} = -54\) Pollen pro Kubikmeter <strong>pro Stunde</strong>.</div>
+        <div class="ip"><strong>Deutung:</strong> In den ersten beiden Stunden der Messung nimmt die Pollenanzahl in einem Kubikmeter Luft im Durchschnitt um 54 Pollen pro Stunde ab.</div>
+        <div class="ip"><em>Abitur-Bezug:</em> Diese Aufgabe stand sinngemäß im bayerischen Abitur 2017 — im hilfsmittelfreien Teil. Genau so knapp wird die mittlere Änderungsrate im Abitur abgefragt: berechnen, Einheit angeben, deuten.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K5: Den Differenzenquotienten im Modell berechnen · K6: Das Ergebnis mit Einheit im Sachzusammenhang formulieren</div>
+      </div>
+    </div><div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.5</span><span class="td de">★</span></div>
+          <div class="tq">Beim Abkühlen einer Tasse Tee wird die Temperatur gemessen:
+          <div style="overflow-x:auto;margin:10px 0">
+            <table style="border-collapse:collapse;font-size:15px;text-align:center">
+              <tr style="background:var(--kiku-light)">
+                <td style="padding:6px 12px;font-weight:700;border:1px solid var(--border)">\(t\) in min</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">0</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">10</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">30</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">60</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 12px;font-weight:700;border:1px solid var(--border)">\(T(t)\) in °C</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">80</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">60</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">36</td>
+                <td style="padding:6px 12px;border:1px solid var(--border)">24</td>
+              </tr>
+            </table>
+          </div>
+          <strong>a)</strong> Berechne die mittlere Änderungsrate der Temperatur für die Zeiträume \([0;\,10]\), \([10;\,30]\) und \([30;\,60]\) — jeweils mit Einheit.<br>
+          <strong>b)</strong> Beschreibe anhand der Tabelle, wie sich die Geschwindigkeit des Abkühlvorgangs im Verlauf der Stunde entwickelt.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> \([0;\,10]\): \(\dfrac{60-80}{10-0} = -2{,}0\) °C pro Minute &#160;·&#160;
+        \([10;\,30]\): \(\dfrac{36-60}{30-10} = -1{,}2\) °C pro Minute &#160;·&#160;
+        \([30;\,60]\): \(\dfrac{24-36}{60-30} = -0{,}4\) °C pro Minute</div>
+        <div class="ip"><strong>b)</strong> Alle drei Raten sind negativ — die Temperatur sinkt in jedem Zeitraum. Ihr Betrag wird von Zeitraum zu Zeitraum kleiner: Der Tee kühlt zu Beginn schnell ab und später immer langsamer, weil sich seine Temperatur der Raumtemperatur annähert.</div>
+        <div class="ip"><em>Abitur-Bezug:</em> Im MV-Abitur 2020 war die mittlere Änderungsrate einer Tee-Temperatur als „mittlere Abkühlgeschwindigkeit" zu deuten. Die Einheit °C pro Minute gehört immer zur Antwort dazu.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K5: Raten aus Tabellenwerten berechnen · K6: Den Verlauf eines Vorgangs mit Raten beschreiben</div>
+      </div>
+    </div><div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.6</span><span class="td de">★</span></div>
+          <div class="tq">Ein Glas Wasser wird aus dem Kühlschrank genommen und in ein warmes Zimmer gestellt. \(T(t)\) ist die Wassertemperatur in °C, \(t\) die Zeit in Minuten nach dem Herausnehmen. Es gilt \(T(0) = 5{,}0\) und \(T(30) = 11{,}9\).<br><br>
+          Ordne jedem der drei Terme die passende Bedeutung A, B oder C zu. Berechne außerdem die mittlere Änderungsrate der Temperatur in den ersten 30 Minuten.<br><br>
+          <strong>(I)</strong> \(T(30)\) &#160;·&#160; <strong>(II)</strong> \(T(30)-T(0)\) &#160;·&#160; <strong>(III)</strong> \(\dfrac{T(30)-T(0)}{30}\)<br><br>
+          <strong>A:</strong> Temperaturzunahme des Wassers in den ersten 30 Minuten (in °C)<br>
+          <strong>B:</strong> mittlere Änderungsrate der Temperatur in den ersten 30 Minuten (in °C pro Minute)<br>
+          <strong>C:</strong> Temperatur des Wassers 30 Minuten nach dem Herausnehmen (in °C)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Zuordnung:</strong> (I) → C &#160;·&#160; (II) → A &#160;·&#160; (III) → B</div>
+        <div class="ip"><strong>Berechnung von (III):</strong> \(\dfrac{T(30)-T(0)}{30} = \dfrac{11{,}9-5{,}0}{30} = \dfrac{6{,}9}{30} = 0{,}23\) °C pro Minute.<br>
+        In der ersten halben Stunde erwärmt sich das Wasser im Durchschnitt um 0,23 °C pro Minute.</div>
+        <div class="ip"><strong>Worauf es ankommt:</strong> (II) und (III) unterscheiden sich nur durch die Division durch die Intervalllänge — aber (II) ist eine Temperaturänderung in °C, (III) eine Rate in °C pro Minute. Erst die Einheit macht den Unterschied sichtbar.</div>
+        <div class="ip"><em>Abitur-Bezug:</em> Im IQB-Abiturpool 2024 (Grundkurs) waren zu diesem Sachverhalt die Werte von \(f'(30)\) und \(\frac{f(30)-f(0)}{30-0}\) zu berechnen und im Sachzusammenhang zu deuten. Den ersten Term lernst du in den nächsten beiden Tabs kennen — den zweiten kannst du jetzt schon sicher deuten.</div>
+        <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K4: Termstruktur erkennen und zuordnen · K6: Terme im Sachzusammenhang deuten</div>
+      </div>
+    </div><div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.7</span><span class="td dm">★★</span></div>
+          <div class="tq">Ein Beitrag wird um 12:00 Uhr in einem sozialen Netzwerk veröffentlicht. Der Graph zeigt die Gesamtzahl \(a(x)\) der Likes, die der Beitrag bis \(x\) Stunden nach der Veröffentlichung erhalten hat.
+          <div style="text-align:center;margin:10px 0"><canvas id="cvSekLikes" style="max-width:100%;border-radius:4px"></canvas></div>
+          <strong>a)</strong> Bestimme die Anzahl der von 14:00 Uhr bis 16:00 Uhr durchschnittlich pro Stunde abgegebenen Likes.<br>
+          <strong>b)</strong> Entscheide anhand des Graphen, in welchem der Zeiträume 12–14 Uhr, 14–16 Uhr und 16–18 Uhr durchschnittlich die meisten Likes pro Stunde abgegeben wurden. Begründe mit der Steigung der zugehörigen Sekanten.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> 14:00 Uhr entspricht \(x=2\), 16:00 Uhr entspricht \(x=4\). Ablesen am Graphen: \(a(2)=60\) und \(a(4)=180\).<br>
+        \(\dfrac{a(4)-a(2)}{4-2} = \dfrac{180-60}{2} = 60\) — von 14:00 Uhr bis 16:00 Uhr wurden durchschnittlich 60 Likes pro Stunde abgegeben. Das ist die mittlere Änderungsrate von \(a\) auf \([2;\,4]\).</div>
+        <div class="ip"><strong>b)</strong> Ablesen: \(a(0)=0\), \(a(6)=210\). Damit ergeben sich die mittleren Änderungsraten
+        \([0;\,2]\): \(\dfrac{60-0}{2} = 30\) &#160;·&#160; \([2;\,4]\): \(60\) &#160;·&#160; \([4;\,6]\): \(\dfrac{210-180}{2} = 15\) Likes pro Stunde.<br>
+        Von 14 bis 16 Uhr wurden durchschnittlich die meisten Likes pro Stunde abgegeben: Dort verläuft der Graph am steilsten, die Sekante auf \([2;\,4]\) hat die größte Steigung.</div>
+        <div class="ip"><em>Abitur-Bezug:</em> Teilaufgabe a) stand so im IQB-Abiturpool 2025 (Grundkurs) — und das Wort „mittlere Änderungsrate" fällt in der Aufgabenstellung nicht. Merke dir: „durchschnittlich pro Stunde" ist immer ein Signal für den Differenzenquotienten.</div>
+        <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+        <div class="komp-desc">K4: Werte am Graphen ablesen · K5: Raten berechnen · K6: Die verdeckte Frage nach der Änderungsrate erkennen und beantworten</div>
+      </div>
+    </div><div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">S1.8</span><span class="td dm">★★</span></div>
+          <div class="tq">Die Abbildung zeigt den Graphen der Funktion \(f\) mit \(f(x) = -0{,}25x^2 + 2x\). Eingezeichnet ist die Sekante auf dem Intervall \([0;\,4]\).
+          <div style="text-align:center;margin:10px 0"><canvas id="cvSekAbi" style="max-width:100%;border-radius:4px"></canvas></div>
+          <strong>a)</strong> Gib die mittlere Änderungsrate von \(f\) auf \([0;\,4]\) an.<br>
+          <strong>b)</strong> Gib ein Intervall an, auf dem die mittlere Änderungsrate von \(f\) null ist. Erläutere, woran du das am Graphen erkennst.<br>
+          <strong>c)</strong> Gib ein Intervall an, auf dem \(f\) die mittlere Änderungsrate \(-1\) hat. Nutze die Symmetrie des Graphen.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> Die Sekante verläuft durch \((0\,|\,0)\) und \((4\,|\,4)\): \(\dfrac{4-0}{4-0} = 1\).</div>
+        <div class="ip"><strong>b)</strong> Zum Beispiel \([2;\,6]\): Wegen \(f(2) = 3 = f(6)\) verläuft die Sekante durch \((2\,|\,3)\) und \((6\,|\,3)\) waagerecht — ihre Steigung ist null. Am Graphen erkennt man das an zwei gleich hohen Punkten. Jedes Intervall, das symmetrisch zur Scheitelstelle \(x=4\) liegt, hat diese Eigenschaft — es gibt also mehrere richtige Antworten.</div>
+        <div class="ip"><strong>c)</strong> \([4;\,8]\): \(\dfrac{f(8)-f(4)}{8-4} = \dfrac{0-4}{4} = -1\). Der Graph ist achsensymmetrisch zur senkrechten Geraden durch den Scheitel \((4\,|\,4)\). Das Intervall \([4;\,8]\) ist das Spiegelbild von \([0;\,4]\): Die Sekante ist genauso steil wie in a), fällt aber.</div>
+        <div class="ip"><em>Abitur-Bezug:</em> Im MV-Abitur 2023 (hilfsmittelfreier Teil) sollte am Graphen ein Intervall mit vorgegebener mittlerer Änderungsrate gefunden und begründet werden — mit genau diesen Werkzeugen: parallele und waagerechte Sekanten.</div>
+        <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K4: Sekanten am Graphen deuten · K1: Eine Antwort mit Symmetrie und Sekantenlage begründen</div>
       </div>
     </div><div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
     <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">S2</div>
@@ -18851,6 +18970,99 @@ window.addEventListener('resize',function(){updateSimulator();});
       x.beginPath(); x.arc(X(p[0]),Y(p[1]),4,0,7); x.fillStyle = SANGO; x.fill();
       x.fillStyle = '#333'; x.font = 'bold 11px system-ui'; x.textAlign='center';
       x.fillText('('+p[0]+'|'+p[1]+')', X(p[0])+(p[0]===0?24:0), Y(p[1])-10);
+    });
+  })();
+  // ── S1.7: kumulierte Likes, Catmull-Rom durch Kontrollpunkte ──
+  (function(){
+    var W = 460, H = 300, x = prep('cvSekLikes', W, H); if(!x) return;
+    var pad = {l:52, r:20, t:18, b:38};
+    var xmin=-0.55, xmax=6.7, ymin=-22, ymax=248;
+    function X(v){ return pad.l + (v-xmin)/(xmax-xmin)*(W-pad.l-pad.r); }
+    function Y(v){ return pad.t + (ymax-v)/(ymax-ymin)*(H-pad.t-pad.b); }
+    // Gitter
+    x.strokeStyle = 'rgba(91,110,46,0.12)'; x.lineWidth = 1;
+    for(var gx=1; gx<=6; gx++){ x.beginPath(); x.moveTo(X(gx),Y(ymin)); x.lineTo(X(gx),Y(ymax)); x.stroke(); }
+    for(var gy=30; gy<=240; gy+=30){ x.beginPath(); x.moveTo(X(xmin),Y(gy)); x.lineTo(X(xmax),Y(gy)); x.stroke(); }
+    // Achsen
+    x.strokeStyle = AX; x.lineWidth = 1.4;
+    x.beginPath(); x.moveTo(X(xmin),Y(0)); x.lineTo(X(xmax),Y(0)); x.stroke(); arrow(x, X(xmax), Y(0), 'r');
+    x.beginPath(); x.moveTo(X(0),Y(ymin)); x.lineTo(X(0),Y(ymax)); x.stroke(); arrow(x, X(0), Y(ymax), 'u');
+    x.fillStyle = '#555'; x.font = 'bold 12px system-ui';
+    x.textAlign='right'; x.fillText('x in h', X(xmax)-2, Y(0)-9);
+    x.textAlign='left'; x.fillText('a(x) in Likes', X(0)+9, Y(ymax)+11);
+    x.font = '12px system-ui'; x.fillStyle = INK;
+    x.textAlign='right'; x.textBaseline='top'; x.fillText('O', X(0)-5, Y(0)+5);
+    x.textAlign='center';
+    [1,2,3,4,5,6].forEach(function(t){ x.fillText(String(t), X(t), Y(0)+7); x.strokeStyle=AX; x.beginPath(); x.moveTo(X(t),Y(0)-3); x.lineTo(X(t),Y(0)+3); x.stroke(); });
+    x.textAlign='right'; x.textBaseline='middle';
+    [60,120,180,240].forEach(function(t){ x.fillText(String(t), X(0)-7, Y(t)); x.beginPath(); x.moveTo(X(0)-3,Y(t)); x.lineTo(X(0)+3,Y(t)); x.stroke(); });
+    // Hilfslinien zu den Ablesepunkten (2|60) und (4|180)
+    x.strokeStyle = 'rgba(199,92,58,0.55)'; x.lineWidth = 1.2; x.setLineDash([4,4]);
+    [[2,60],[4,180]].forEach(function(p){
+      x.beginPath(); x.moveTo(X(p[0]),Y(0)); x.lineTo(X(p[0]),Y(p[1])); x.lineTo(X(0),Y(p[1])); x.stroke();
+    });
+    x.setLineDash([]);
+    // Kurve durch Kontrollpunkte, Catmull-Rom
+    var pts = [[0,0],[1,20],[2,60],[3,120],[4,180],[5,200],[6,210]];
+    function cr(p0,p1,p2,p3,t){
+      var t2=t*t, t3=t2*t;
+      return [
+        0.5*((2*p1[0])+(-p0[0]+p2[0])*t+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*t2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*t3),
+        0.5*((2*p1[1])+(-p0[1]+p2[1])*t+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*t2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*t3)
+      ];
+    }
+    x.strokeStyle = KIKU; x.lineWidth = 2.8; x.beginPath(); x.moveTo(X(0),Y(0));
+    for(var i=0;i<pts.length-1;i++){
+      var p0 = pts[Math.max(0,i-1)], p1 = pts[i], p2 = pts[i+1], p3 = pts[Math.min(pts.length-1,i+2)];
+      for(var k=1;k<=16;k++){ var q = cr(p0,p1,p2,p3,k/16); x.lineTo(X(q[0]),Y(q[1])); }
+    }
+    x.stroke();
+    x.fillStyle = KIKU; x.font = 'bold 13px system-ui'; x.textAlign='left';
+    x.fillText('a', X(5.35), Y(228));
+    // Markierte Punkte
+    [[2,60,'(2|60)',-46,-2],[4,180,'(4|180)',8,4]].forEach(function(p){
+      x.beginPath(); x.arc(X(p[0]),Y(p[1]),4,0,7); x.fillStyle = SANGO; x.fill();
+      x.fillStyle = '#333'; x.font = 'bold 12px system-ui'; x.textAlign='left';
+      x.fillText(p[2], X(p[0])+p[3], Y(p[1])+p[4]);
+    });
+  })();
+  // ── S1.8: f(x) = −0,25x² + 2x mit Sekante auf [0;4] ──
+  (function(){
+    var W = 440, H = 270, x = prep('cvSekAbi', W, H); if(!x) return;
+    var pad = {l:40, r:16, t:16, b:32};
+    var xmin=-0.9, xmax=9.0, ymin=-1.5, ymax=5.4;
+    function X(v){ return pad.l + (v-xmin)/(xmax-xmin)*(W-pad.l-pad.r); }
+    function Y(v){ return pad.t + (ymax-v)/(ymax-ymin)*(H-pad.t-pad.b); }
+    function f(v){ return -0.25*v*v + 2*v; }
+    x.strokeStyle = 'rgba(91,110,46,0.12)'; x.lineWidth = 1;
+    for(var gx=1; gx<=8; gx++){ x.beginPath(); x.moveTo(X(gx),Y(ymin)); x.lineTo(X(gx),Y(ymax)); x.stroke(); }
+    for(var gy=1; gy<=5; gy++){ x.beginPath(); x.moveTo(X(xmin),Y(gy)); x.lineTo(X(xmax),Y(gy)); x.stroke(); }
+    x.strokeStyle = AX; x.lineWidth = 1.4;
+    x.beginPath(); x.moveTo(X(xmin),Y(0)); x.lineTo(X(xmax),Y(0)); x.stroke(); arrow(x, X(xmax), Y(0), 'r');
+    x.beginPath(); x.moveTo(X(0),Y(ymin)); x.lineTo(X(0),Y(ymax)); x.stroke(); arrow(x, X(0), Y(ymax), 'u');
+    x.fillStyle = '#555'; x.font = 'bold 13px system-ui';
+    x.textAlign='right'; x.fillText('x', X(xmax)-2, Y(0)-8);
+    x.textAlign='left'; x.fillText('y', X(0)+8, Y(ymax)+10);
+    x.font = '12px system-ui'; x.fillStyle = INK;
+    x.textAlign='right'; x.textBaseline='top'; x.fillText('O', X(0)-5, Y(0)+5);
+    x.textAlign='center';
+    [2,4,6,8].forEach(function(t){ x.fillText(String(t), X(t), Y(0)+6); x.strokeStyle=AX; x.beginPath(); x.moveTo(X(t),Y(0)-3); x.lineTo(X(t),Y(0)+3); x.stroke(); });
+    x.textAlign='right'; x.textBaseline='middle';
+    [1,2,3,4,5].forEach(function(t){ x.fillText(String(t), X(0)-7, Y(t)); x.beginPath(); x.moveTo(X(0)-3,Y(t)); x.lineTo(X(0)+3,Y(t)); x.stroke(); });
+    // Sekante auf [0;4] durch (0|0) und (4|4), leicht verlängert
+    x.strokeStyle = SANGO; x.lineWidth = 2;
+    x.beginPath(); x.moveTo(X(-0.5),Y(-0.5)); x.lineTo(X(5.1),Y(5.1)); x.stroke();
+    x.fillStyle = SANGO; x.font = 'bold 12px system-ui'; x.textAlign='left';
+    x.fillText('Sekante auf [0;4]', X(4.35), Y(5.05));
+    // Graph
+    x.strokeStyle = KIKU; x.lineWidth = 2.6; x.beginPath();
+    for(var i=0;i<=200;i++){ var t=-0.4+8.9*i/200; if(i===0)x.moveTo(X(t),Y(f(t))); else x.lineTo(X(t),Y(f(t))); }
+    x.stroke();
+    x.fillStyle = KIKU; x.font = 'bold 13px system-ui'; x.textAlign='left'; x.fillText('f', X(0.5), Y(2.4));
+    [[0,0,24,-10],[2,3,-2,-11],[4,4,14,-6],[6,3,16,-4],[8,0,0,-10]].forEach(function(p){
+      x.beginPath(); x.arc(X(p[0]),Y(p[1]),4,0,7); x.fillStyle = SANGO; x.fill();
+      x.fillStyle = '#333'; x.font = 'bold 11px system-ui'; x.textAlign='center';
+      x.fillText('('+p[0]+'|'+p[1]+')', X(p[0])+p[2], Y(p[1])+p[3]);
     });
   })();
 })();
