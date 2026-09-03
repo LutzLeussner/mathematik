@@ -19090,7 +19090,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das brauchst du</span></div>
       <div class="card-body">
         <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
-          <strong>Aus dem Tab „Mittlere Änderungsrate &amp; Sekante":</strong> mittlere Änderungsrate als Differenzenquotient, Sekantensteigung.<br>
+          <strong>Aus dem Tab „Mittlere Änderungsrate &amp; Sekante":</strong> mittlere Änderungsrate \(\frac{f(b)-f(a)}{b-a}\) berechnen und als Sekantensteigung deuten.<br>
           <strong>Aus dem Tab „Grenzwerte":</strong> der anschauliche Grenzwertbegriff („Annäherung an einen Wert").<br>
           <strong>Aus der Physik:</strong> Durchschnittsgeschwindigkeit = Strecke / Zeit.
         </div>
@@ -19101,7 +19101,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
       <strong style="color:#8a7a30">Kernidee:</strong>
       \(f'(x_0)\) ist <strong>immer eine Zahl</strong> — die lokale Änderungsrate von \(f\) an der <em>einen</em> Stelle \(x_0\).
-      Sie entsteht <strong>immer</strong> als Grenzwert mittlerer Änderungsraten über Intervalle, die sich auf \(x_0\) zusammenziehen.
+      Man findet sie, indem man mittlere Änderungsraten über <strong>immer kleinere Intervalle</strong> an \(x_0\) berechnet und abliest, welchem Wert sich die Ergebnisse nähern.
       Geometrisch ist sie die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).
       Die <strong>Ableitungsfunktion</strong> \(f'\) ist etwas anderes: Sie ordnet jeder Stelle \(x\) diese Zahl zu
       — sie bekommt im Tab „Die Ableitungsfunktion" ihren eigenen Auftritt.
@@ -19168,6 +19168,82 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Von der mittleren zur lokalen Änderungsrate — Grundvorstellungen</div>
   </div>
 </div>
+
+    <!-- Rechnerischer Einstieg: das startende Auto (EIS: Sachsituation vor Symbolik) -->
+    <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Das startende Auto — wie schnell genau jetzt?</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Ein startendes Auto legt in \(t\) Sekunden die Strecke \(s(t) = 2t^2\) (in Metern) zurück. Die <strong>Durchschnittsgeschwindigkeit</strong> zwischen der ersten und der zweiten Sekunde kennst du schon — sie ist die mittlere Änderungsrate im Intervall \([1;\,2]\):</div>
+            \[m_S = \frac{s(2)-s(1)}{2-1} = \frac{8-2}{1} = 6 \;\tfrac{\text{m}}{\text{s}}\]
+            <div class="ip" style="margin-top:10px">Der Tacho zeigt aber keinen Durchschnitt an. Die eigentliche Frage lautet: <strong>Wie schnell fährt das Auto genau im Zeitpunkt \(t = 1\)?</strong></div>
+            <div class="ip" style="margin-top:8px"><strong>Problem:</strong> Ein einzelner Zeitpunkt ist ein Intervall der Breite null — es gibt keine zurückgelegte Strecke und keine verstrichene Zeit, der Bruch \(\frac{0}{0}\) hat keinen Wert.</div>
+            <div class="ip" style="margin-top:8px"><strong>Idee:</strong> Wir berechnen mittlere Änderungsraten über <strong>immer kleinere Intervalle</strong>, die alle bei \(t = 1\) beginnen — und beobachten, was mit den Ergebnissen passiert:</div>
+            <div style="overflow-x:auto;margin:12px 0">
+              <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                <tr style="background:#e3ebd6">
+                  <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">Intervall</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\([1;\,2]\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\([1;\,1{,}5]\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\([1;\,1{,}1]\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\([1;\,1{,}01]\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\([1;\,1{,}001]\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{8-2}{1} = 6\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{4{,}5-2}{0{,}5} = 5\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{2{,}42-2}{0{,}1} = 4{,}2\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{2{,}0402-2}{0{,}01} = 4{,}02\)</td>
+                  <td style="padding:7px 10px;border:1px solid var(--border)">\(4{,}002\)</td>
+                </tr>
+              </table>
+            </div>
+            <div class="ip">Die Werte steuern erkennbar auf <strong>4</strong> zu: \(6 \to 5 \to 4{,}2 \to 4{,}02 \to 4{,}002\). Je kleiner das Intervall, desto näher liegt die mittlere Änderungsrate an 4 — und dieser Wert ist die <strong>Momentangeschwindigkeit</strong> bei \(t=1\): Das Auto fährt in diesem Augenblick \(4\;\tfrac{\text{m}}{\text{s}}\). Man schreibt dafür \(s'(1) = 4\) und nennt die Zahl die <strong>lokale Änderungsrate</strong> von \(s\) an der Stelle \(t = 1\).</div>
+        </div>
+    </div>
+
+    <div class="hint">
+      <strong>Merke — lokale Änderungsrate mit der Näherungstabelle bestimmen:</strong>
+      <ol style="margin:8px 0 0 0;padding-left:20px">
+        <li style="margin-bottom:5px"><strong>Intervalle wählen:</strong> Intervalle \([x_0;\,x]\) aufschreiben, deren zweite Grenze \(x\) immer näher an die Stelle \(x_0\) rückt (z.&nbsp;B. Breite \(0{,}1\); \(0{,}01\); \(0{,}001\)).</li>
+        <li style="margin-bottom:5px"><strong>Mittlere Änderungsraten berechnen:</strong> für jedes Intervall \(\dfrac{f(x)-f(x_0)}{x-x_0}\) mit dem WTR ausrechnen.</li>
+        <li><strong>Ablesen:</strong> Der Wert, dem sich die Ergebnisse immer stärker nähern, ist die lokale Änderungsrate \(f'(x_0)\).</li>
+      </ol>
+      <div style="margin-top:8px">In Sachzusammenhängen trägt \(f'(x_0)\) eine <strong>Einheit</strong>: Einheit von \(f\) pro Einheit von \(x\) — beim Auto also \(\tfrac{\text{m}}{\text{s}}\).</div>
+    </div>
+
+    <div class="bsp">
+        <div class="bsp-label">Beispielaufgabe: Näherungstabelle</div>
+        <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme mit einer Näherungstabelle die lokale Änderungsrate von \(f(x) = x^2\) an der Stelle \(x_0 = 3\).</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+            <strong>Lösung:</strong>
+            <div style="overflow-x:auto;margin:10px 0">
+              <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
+                <tr style="background:#e3ebd6">
+                  <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">Intervall</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\([3;\,3{,}1]\)</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\([3;\,3{,}01]\)</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\([3;\,3{,}001]\)</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\([2{,}999;\,3]\)</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\(\frac{9{,}61-9}{0{,}1} = 6{,}1\)</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\(\frac{9{,}0601-9}{0{,}01} = 6{,}01\)</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\(6{,}001\)</td>
+                  <td style="padding:6px 10px;border:1px solid var(--border)">\(\frac{9-8{,}994001}{0{,}001} = 5{,}999\)</td>
+                </tr>
+              </table>
+            </div>
+            Die Werte nähern sich von beiden Seiten der Zahl <strong>6</strong>. Also ist \(f'(3) = 6\).<br><br>
+            <em>Kontrolle der letzten Spalte:</em> Auch von links (Intervalle, die bei \(x_0=3\) <em>enden</em>) landet man bei 6 — die lokale Änderungsrate ist von beiden Seiten dieselbe Zahl.
+        </div>
+    </div>
+
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
@@ -19189,7 +19265,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 <div style="background:#eef3f5;border-left:3px solid #8a9da7;padding:10px 12px;border-radius:2px">
                     <strong>3. Tangentensteigung</strong> <span style="font-size:11px;font-weight:700;color:#5f7883;background:#dee7ec;border-radius:10px;padding:1px 8px;margin-left:4px">sekundär</span><br>
                     \(f'(x_0)\) ist die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).<br>
-                    <em>Geometrisch:</em> Die Sekante „kippt" in die Tangente, wenn \(h \to 0\).
+                    <em>Geometrisch:</em> Die Sekante „kippt" in die Tangente, wenn das Intervall auf \(x_0\) zusammenschrumpft.
                 </div>
                 <div style="background:#eef3f5;border-left:3px solid #8a9da7;padding:10px 12px;border-radius:2px">
                     <strong>4. Lokale lineare Näherung</strong> <span style="font-size:11px;font-weight:700;color:#5f7883;background:#dee7ec;border-radius:10px;padding:1px 8px;margin-left:4px">sekundär</span><br>
@@ -19217,7 +19293,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </tr>
                 <tr>
                   <td style="padding:9px 12px;border:1px solid var(--border)">„Ableiten heißt: Exponent nach vorn, dann eins weniger."</td>
-                  <td style="padding:9px 12px;border:1px solid var(--border)">Das ist eine <em>Regel</em>, nicht die Bedeutung. Die Potenzregel ist nur eine Abkürzung für den Grenzwert, den man sonst jedes Mal neu bilden müsste.</td>
+                  <td style="padding:9px 12px;border:1px solid var(--border)">Das ist eine <em>Regel</em>, nicht die Bedeutung. Die Ableitungsregeln sind nur Abkürzungen für die Näherungstabelle, die man sonst jedes Mal neu aufstellen müsste.</td>
                 </tr>
                 <tr>
                   <td style="padding:9px 12px;border:1px solid var(--border)">„\(f'\) ist einfach die neue Funktion, die man ausrechnet."</td>
@@ -19226,10 +19302,6 @@ window.addEventListener('resize',function(){updateSimulator();});
                 <tr>
                   <td style="padding:9px 12px;border:1px solid var(--border)">„Die Tangente berührt den Graphen und schneidet ihn nicht."</td>
                   <td style="padding:9px 12px;border:1px solid var(--border)">Die Tangente darf den Graphen durchaus schneiden — bei \(f(x)=x^3\) tut sie das im Ursprung. Entscheidend ist nur die <em>Steigung</em> an der Berührstelle, nicht die Lage im Großen.</td>
-                </tr>
-                <tr>
-                  <td style="padding:9px 12px;border:1px solid var(--border)">„Wenn \(f'(x_0)=0\) ist, liegt dort ein Hoch- oder Tiefpunkt."</td>
-                  <td style="padding:9px 12px;border:1px solid var(--border)">\(f'(x_0)=0\) heißt nur: die Tangente ist waagerecht. Bei \(f(x)=x^3\) ist \(f'(0)=0\), und trotzdem gibt es dort kein Extremum, sondern einen Sattelpunkt.</td>
                 </tr>
               </table>
             </div>
@@ -19275,13 +19347,13 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="ci ci-i">i</div>
             <span class="card-title">Von der Sekante zur Tangente — interaktiv</span></div>
     <div class="card-body">
-        <div class="hint" style="margin-bottom:12px;"><strong>Das brauchst du:</strong> Steigungsberechnung linearer Funktionen, Differenzenquotient, Funktionsbegriff, Grenzwertvorstellung.</div>
-            <div class="ip">Bewege den Schieberegler und beobachte, wie die <strong style="color:#8a9da7">Sekante</strong> sich der <strong style="color:#c75c3a">Tangente</strong> annähert, wenn h kleiner wird.</div>
+        <div class="hint" style="margin-bottom:12px;"><strong>Das brauchst du:</strong> Steigungsberechnung linearer Funktionen, mittlere Änderungsrate als Sekantensteigung, die Näherungstabelle aus Einheit 1.</div>
+            <div class="ip">Hier siehst du, was die Näherungstabelle <strong>am Graphen</strong> bedeutet: Bewege den Schieberegler und beobachte, wie die <strong style="color:#8a9da7">Sekante</strong> in die <strong style="color:#c75c3a">Tangente</strong> kippt, wenn die Intervallbreite \(\Delta x\) kleiner wird.</div>
             <div style="text-align:center;margin:12px 0">
                 <canvas id="cvSekTan" style="max-width:100%;border-radius:4px"></canvas>
             </div>
             <div style="display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap">
-                <label for="sliderH" style="font-size:13px;font-weight:600;white-space:nowrap">h =</label>
+                <label for="sliderH" style="font-size:13px;font-weight:600;white-space:nowrap">Intervallbreite &#916;x =</label>
                 <input type="range" id="sliderH" min="0.05" max="3" step="0.05" value="2" style="flex:1;min-width:120px" oninput="drawSekTan()">
                 <span id="valH" style="font-size:13px;font-weight:600;min-width:40px">2,00</span>
             </div>
@@ -19367,10 +19439,10 @@ window.addEventListener('resize',function(){updateSimulator();});
         ctx.fillStyle='#c75c3a';ctx.fillText('--- Tangente (m = '+m_tan.toFixed(2)+')',tx(2.5),ty(yMax-0.9));
         // Info-Box
         var info=document.getElementById('sekTanInfo');
-        info.innerHTML='<strong>Mittlere \u00c4nderungsrate</strong> (Sekante): m<sub>sek</sub> = (f('+
+        info.innerHTML='<strong>Mittlere \u00c4nderungsrate</strong> im Intervall ['+x0+'; '+(x0+h).toFixed(2).replace('.',',')+'] (Sekante): m<sub>sek</sub> = (f('+
           (x0+h).toFixed(2).replace('.',',')+') \u2212 f('+x0+')) / '+h.toFixed(2).replace('.',',')+
           ' = <strong>'+m_sek.toFixed(3).replace('.',',')+'</strong><br>'+
-          '<strong>Momentane \u00c4nderungsrate</strong> (Tangente): f\u2032('+x0+') = <strong>'+m_tan.toFixed(3).replace('.',',')+'</strong><br>'+
+          '<strong>Lokale \u00c4nderungsrate</strong> an der Stelle '+x0+' (Tangente): f\u2032('+x0+') = <strong>'+m_tan.toFixed(3).replace('.',',')+'</strong><br>'+
           '<span style="color:#888">Differenz: |m<sub>sek</sub> \u2212 f\u2032(x\u2080)| = '+Math.abs(m_sek-m_tan).toFixed(3).replace('.',',')+'</span>';
       };
       drawSekTan();
@@ -19381,19 +19453,18 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="card">
         <div class="card-head">
             <div class="ci ci-i">i</div>
-            <span class="card-title">Differenzenquotient und Differentialquotient</span>
+            <span class="card-title">Sekantensteigung und Tangentensteigung</span>
         </div>
         <div class="card-body">
-            <div class="ip">Jetzt formalisieren wir, was du gerade beobachtet hast:</div>
+            <div class="ip">Halten wir fest, was du gerade beobachtet hast:</div>
 
-            <div class="ip" style="margin-top:10px"><strong>Differenzenquotient (Sekantensteigung):</strong></div>
-            \[\frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 8px;">Das ist die <strong>mittlere Änderungsrate</strong> von \(f\) auf dem Intervall \([x_0;\, x_0+h]\) — also die Steigung der Sekante durch die Punkte \(P(x_0 \,|\, f(x_0))\) und \(Q(x_0+h \,|\, f(x_0+h))\). Sie hängt <strong>immer von zwei Stellen</strong> ab, nie von einer allein.</div>
+            <div class="ip" style="margin-top:10px"><strong>Sekantensteigung (mittlere Änderungsrate):</strong></div>
+            \[m_S = \frac{f(x) - f(x_0)}{x - x_0}\]
+            <div class="ip" style="margin-top: 8px;">Das ist die <strong>mittlere Änderungsrate</strong> von \(f\) auf dem Intervall \([x_0;\, x]\) — die Steigung der Sekante durch die Punkte \(P(x_0 \,|\, f(x_0))\) und \(Q(x \,|\, f(x))\). Sie hängt <strong>immer von zwei Stellen</strong> ab, nie von einer allein.</div>
 
-            <div class="ip" style="margin-top: 15px;"><strong>Differentialquotient (Tangentensteigung):</strong></div>
-            \[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]
-            <div class="ip" style="margin-top: 8px;">Wenn \(h\) immer kleiner wird, zieht sich das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Der Grenzwert des Differenzenquotienten ist die <strong>lokale Änderungsrate</strong> — die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
-            <div class="hint" style="margin-top:10px"><strong>Der entscheidende Schritt</strong> ist der Übergang \(h \to 0\): Aus einer Aussage über ein <em>Intervall</em> wird eine Aussage über eine <em>Stelle</em>. Alles, was danach kommt — Ableitungsregeln, Extrema, Wendepunkte — steht auf diesem einen Schritt.</div>
+            <div class="ip" style="margin-top: 15px;"><strong>Tangentensteigung (lokale Änderungsrate):</strong></div>
+            <div class="ip" style="margin-top: 4px;">Rückt \(x\) immer näher an \(x_0\), schrumpft das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Die Sekantensteigungen nähern sich dabei einer festen Zahl — genau die liest du in der Näherungstabelle ab. Diese Zahl ist die <strong>lokale Änderungsrate</strong>, die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
+            <div class="hint" style="margin-top:10px"><strong>Der entscheidende Schritt:</strong> Aus einer Aussage über ein <em>Intervall</em> wird eine Aussage über eine <em>Stelle</em>. Alles, was danach kommt — Ableitungsregeln, Extrema, Wendepunkte — steht auf diesem einen Schritt.</div>
         </div>
     </div>
 
@@ -19956,7 +20027,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="ip">Die Werte nähern sich \(4\). Das ist die <strong>lokale Änderungsrate</strong> an der Stelle \(x_0=2\), also \(f'(2)=2\cdot 2=4\).</div>
         <div class="ip"><em>Bedeutung:</em> Aus einer Aussage über ein Intervall ist eine Aussage über eine einzelne Stelle geworden. Geometrisch kippt die Sekante dabei in die Tangente.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
-        <div class="komp-desc">K5: Grenzübergang numerisch nachvollziehen · K1: Das Ergebnis begründen</div>
+        <div class="komp-desc">K5: Die Annäherung numerisch nachvollziehen · K1: Das Ergebnis begründen</div>
       </div>
     </div>
 
@@ -19966,19 +20037,37 @@ window.addEventListener('resize',function(){updateSimulator();});
           <div class="tkt"><span class="tn">T2.2</span><span class="td de">★</span></div>
           <div class="tq">Ein Glas Wasser wird aus dem Kühlschrank genommen und erwärmt sich. Seine Temperatur in °C nach \(t\) Minuten wird beschrieben durch
           \[T(t) = 22 - 16\,e^{-0{,}02\,t}\]
-          Berechne die Werte der folgenden Terme und interpretiere sie jeweils im Sachzusammenhang.<br>
-          <strong>(1)</strong> \(T'(30)\) &#160;·&#160; <strong>(2)</strong> \(\dfrac{T(30)-T(0)}{30-0}\)</div>
+          <strong>(1)</strong> Berechne den Wert des Terms \(\dfrac{T(30)-T(0)}{30-0}\) und deute ihn im Sachzusammenhang.<br>
+          <strong>(2)</strong> Bestimme mit einer Näherungstabelle (WTR) die lokale Änderungsrate \(T'(30)\) und deute auch diesen Wert.<br>
+          <strong>(3)</strong> Vergleiche beide Werte und erkläre den Unterschied.</div>
           <div class="tk-toggle">⌄</div>
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>(1)</strong> \(T'(t) = 0{,}32\,e^{-0{,}02\,t}\), also \(T'(30) = 0{,}32\cdot e^{-0{,}6} \approx 0{,}18\).<br>
-        <em>Deutung:</em> 30 Minuten nach dem Herausnehmen steigt die Temperatur mit etwa \(0{,}18\) °C pro Minute — das ist die <strong>lokale Änderungsrate</strong> in diesem Augenblick.</div>
-        <div class="ip"><strong>(2)</strong> \(T(0) = 6\), \(T(30) \approx 13{,}22\), also \(\dfrac{13{,}22-6}{30} \approx 0{,}24\).<br>
+        <div class="ip"><strong>(1)</strong> \(T(0) = 6\), \(T(30) \approx 13{,}22\), also \(\dfrac{13{,}22-6}{30} \approx 0{,}24\).<br>
         <em>Deutung:</em> In den ersten 30 Minuten stieg die Temperatur im Durchschnitt um etwa \(0{,}24\) °C pro Minute — das ist die <strong>mittlere Änderungsrate</strong> auf diesem Zeitraum.</div>
-        <div class="ip"><strong>Der Vergleich ist die eigentliche Aussage:</strong> \(0{,}24 > 0{,}18\). Das Wasser erwärmte sich anfangs schneller als nach 30 Minuten — je näher die Temperatur an die Raumtemperatur kommt, desto langsamer steigt sie. Der Durchschnittswert liegt deshalb über dem Momentanwert am Ende des Zeitraums.</div>
+        <div class="ip"><strong>(2)</strong> Näherungstabelle mit Intervallen, die bei \(t_0 = 30\) beginnen:</div>
+        <div style="overflow-x:auto;margin:8px 0">
+          <table style="border-collapse:collapse;width:100%;font-size:14.5px;text-align:center">
+            <tr style="background:#e3ebd6">
+              <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">Intervall</td>
+              <td style="padding:6px 10px;border:1px solid var(--border)">\([30;\,31]\)</td>
+              <td style="padding:6px 10px;border:1px solid var(--border)">\([30;\,30{,}1]\)</td>
+              <td style="padding:6px 10px;border:1px solid var(--border)">\([30;\,30{,}01]\)</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate</td>
+              <td style="padding:6px 10px;border:1px solid var(--border)">\(0{,}1739\)</td>
+              <td style="padding:6px 10px;border:1px solid var(--border)">\(0{,}1754\)</td>
+              <td style="padding:6px 10px;border:1px solid var(--border)">\(0{,}1756\)</td>
+            </tr>
+          </table>
+        </div>
+        <div class="ip">Die Werte nähern sich \(\approx 0{,}176\), also \(T'(30) \approx 0{,}18\).<br>
+        <em>Deutung:</em> 30 Minuten nach dem Herausnehmen steigt die Temperatur mit etwa \(0{,}18\) °C pro Minute — das ist die <strong>lokale Änderungsrate</strong> in diesem Augenblick.</div>
+        <div class="ip"><strong>(3)</strong> \(0{,}24 > 0{,}18\). Das Wasser erwärmte sich anfangs schneller als nach 30 Minuten — je näher die Temperatur an die Raumtemperatur kommt, desto langsamer steigt sie. Der Durchschnittswert liegt deshalb über dem Momentanwert am Ende des Zeitraums.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span></div>
-        <div class="komp-desc">K5: Ableitung und Differenzenquotient berechnen · K6: Beide Werte mit Einheit deuten · K3: Das Modell auf die Sachsituation beziehen</div>
+        <div class="komp-desc">K5: Änderungsraten mit dem WTR und der Näherungstabelle berechnen · K6: Beide Werte mit Einheit deuten · K3: Das Modell auf die Sachsituation beziehen</div>
       </div>
     </div>
 
@@ -20320,12 +20409,13 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="ip">
       <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
       <ol>
-        <li>Erkläre den Zusammenhang zwischen Sekantensteigung und Tangentensteigung. Was passiert beim Grenzübergang \(h \to 0\)?</li>
+        <li>Erkläre den Zusammenhang zwischen Sekantensteigung und Tangentensteigung. Was passiert mit den Sekantensteigungen, wenn das Intervall immer kleiner wird?</li>
+        <li>Bestimme mit einer Näherungstabelle die lokale Änderungsrate von \(f(x) = x^2\) an der Stelle \(x_0 = 1\).</li>
         <li>Bestimme die Tangentengleichung an \(f(x) = x^2\) an der Stelle \(x_0 = 3\).</li>
         <li>Berechne den Neigungswinkel der Tangente, wenn \(f'(x_0) = 1\).</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Differenzenquotient und Differentialquotient“.
+        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Das startende Auto — wie schnell genau jetzt?“.
       </p>
     </div>
   </div>
@@ -20344,14 +20434,14 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card-body">
 
     <div class="ip">Im Tab „Lokale Änderungsrate &amp; Tangente" hast du \(f'(x_0)\) kennengelernt: <strong>eine Zahl</strong> — die Steigung an einer einzigen Stelle. Aber jede Stelle des Graphen hat ihre eigene Steigung. Sammelt man sie alle ein, entsteht etwas Neues: eine <strong>Funktion</strong>, die jeder Stelle ihre Steigung zuordnet — die <strong>Ableitungsfunktion</strong> \(f'\). Dieser Schritt von der Zahl zur Funktion ebnet den Weg zu den Ableitungsregeln: Statt an jeder Stelle neu zu rechnen, gibt es einen Term für alle Stellen auf einmal.</div>
-    <div class="hint"><strong>Das brauchst du:</strong> \(f'(x_0)\) als lokale Änderungsrate und Tangentensteigung, die Bestimmung über schrumpfende Intervalle (h-Methode) — beides aus dem Tab „Lokale Änderungsrate &amp; Tangente".</div>
+    <div class="hint"><strong>Das brauchst du:</strong> \(f'(x_0)\) als lokale Änderungsrate und Tangentensteigung, die Bestimmung über die Näherungstabelle (schrumpfende Intervalle) — beides aus dem Tab „Lokale Änderungsrate &amp; Tangente".</div>
   </div>
 </div>
 <div class="card">
   <div class="card-head"><div class="ci ci-i">⏱</div><span class="card-title">Unterrichtsfahrplan</span></div>
   <div class="card-body">
 
-    <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90&nbsp;min)</strong> ausgelegt: 30&nbsp;min Erarbeitung (Steigungen sammeln, Muster entdecken) · 25&nbsp;min h-Methode an allgemeiner Stelle · 25&nbsp;min <strong>F1</strong> · 10&nbsp;min Auswertung.</div>
+    <div class="ip">Dieser Tab ist für <strong>eine Doppelstunde (90&nbsp;min)</strong> ausgelegt: 30&nbsp;min Erarbeitung (Steigungen sammeln, Muster entdecken) · 25&nbsp;min vom Muster zum Term (aufstellen und prüfen) · 25&nbsp;min <strong>F1</strong> · 10&nbsp;min Auswertung.</div>
   </div>
 </div>
 
@@ -20386,7 +20476,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Steigungen sammeln — ein Muster entsteht</span></div>
   <div class="card-body">
 
-    <div class="ip">Für \(f(x) = x^2\) bestimmen wir die Tangentensteigung an mehreren Stellen (mit der h-Methode oder am Graphen):</div>
+    <div class="ip">Für \(f(x) = x^2\) bestimmen wir die Tangentensteigung an mehreren Stellen (mit der Näherungstabelle oder am Graphen):</div>
     <div style="overflow-x:auto;margin:12px 0">
       <table style="border-collapse:collapse;width:100%;font-size:15px;text-align:center">
         <tr style="background:var(--kiku-light)">
@@ -20428,19 +20518,18 @@ window.addEventListener('resize',function(){updateSimulator();});
   </div>
 </div>
 <div class="card">
-  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispielaufgabe: die h-Methode an einer allgemeinen Stelle</span></div>
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispielaufgabe: vom Muster zum Term</span></div>
   <div class="card-body">
 
     <div class="bsp">
       <div class="bsp-label">Beispiel</div>
-      <div class="bsp-q">Bestimme für \(f(x) = x^2\) die Ableitung an einer <em>beliebigen</em> Stelle \(x\) — also den Term der Ableitungsfunktion.</div>
+      <div class="bsp-q">Stelle für \(f(x) = x^2\) einen Term für die Ableitungsfunktion \(f'\) auf und prüfe ihn an einer weiteren Stelle.</div>
       <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
       <div class="bsp-a">
-        <div class="ip"><strong>Schritt 1 — Differenzenquotient auf \([x;\,x+h]\):</strong> \(\dfrac{f(x+h)-f(x)}{h} = \dfrac{(x+h)^2 - x^2}{h}\)</div>
-        <div class="ip"><strong>Schritt 2 — Zähler ausmultiplizieren:</strong> \((x+h)^2 - x^2 = x^2 + 2xh + h^2 - x^2 = 2xh + h^2\)</div>
-        <div class="ip"><strong>Schritt 3 — kürzen:</strong> \(\dfrac{2xh + h^2}{h} = 2x + h\)</div>
-        <div class="ip"><strong>Schritt 4 — \(h\) gegen 0 laufen lassen:</strong> \(2x + h \;\to\; 2x\). Also \(f'(x) = 2x\).</div>
-        <div class="ip"><strong>Kontrolle mit der Tabelle:</strong> \(f'(-2) = -4\), \(f'(1) = 2\), \(f'(2) = 4\) — genau die gesammelten Steigungen.</div>
+        <div class="ip"><strong>Schritt 1 — Muster aus der Tabelle ablesen:</strong> Die gesammelten Steigungen \(f'(-2)=-4\), \(f'(-1)=-2\), \(f'(0)=0\), \(f'(1)=2\), \(f'(2)=4\) sind an jeder Stelle <em>das Doppelte der Stelle</em>.</div>
+        <div class="ip"><strong>Schritt 2 — Term aufstellen (Vermutung):</strong> \(f'(x) = 2x\).</div>
+        <div class="ip"><strong>Schritt 3 — an einer neuen Stelle prüfen:</strong> Der Term sagt \(f'(1{,}5) = 3\) voraus. Näherungstabelle an \(x_0 = 1{,}5\): im Intervall \([1{,}5;\,1{,}51]\) ist die mittlere Änderungsrate \(\frac{1{,}51^2-1{,}5^2}{0{,}01} = \frac{0{,}0301}{0{,}01} = 3{,}01\), im Intervall \([1{,}5;\,1{,}501]\) ergibt sich \(3{,}001\) — die Werte nähern sich \(3\). Die Vermutung passt.</div>
+        <div class="ip"><strong>Ergebnis:</strong> \(f'(x) = 2x\). Ob diese Vermutung für <em>alle</em> Stellen stimmt, bestätigen die Ableitungsregeln im nächsten Tab.</div>
       </div>
     </div>
   </div>
@@ -20449,7 +20538,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Der Weg zu den Ableitungsregeln</span></div>
   <div class="card-body">
 
-    <div class="ip">Die h-Methode funktioniert für jede Funktion — aber sie ist mühsam. Die gute Nachricht: Die Ergebnisse folgen festen Mustern, zum Beispiel \(x^2 \to 2x\) und \(x^3 \to 3x^2\). Diese Muster sind die <strong>Ableitungsregeln</strong> — mit ihnen findest du den Term von \(f'\) in einer Zeile statt in vier Schritten. Genau darum geht es im nächsten Tab.</div>
+    <div class="ip">Steigungen sammeln und Muster prüfen funktioniert für jede Funktion — aber es ist mühsam. Die gute Nachricht: Die Muster sind immer dieselben, zum Beispiel \(x^2 \to 2x\) und \(x^3 \to 3x^2\). Diese Muster sind die <strong>Ableitungsregeln</strong> — mit ihnen findest du den Term von \(f'\) in einer Zeile statt über viele Tabellen. Genau darum geht es im nächsten Tab.</div>
   </div>
 </div>
 <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
@@ -20457,7 +20546,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div style="flex:1">
       <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · F1 · ★ / ★★★ Ableitungsfunktion</div>
       <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Von der Stelle zur Funktion</div>
-      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Steigungen sammeln, Muster erkennen, die h-Methode allgemein durchführen — und den Begriff sauber abgrenzen.</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Steigungen sammeln, Muster erkennen, Terme aufstellen und prüfen — und den Begriff sauber abgrenzen.</div>
     </div>
   </div>
 <div class="tg">
@@ -20480,15 +20569,16 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
       <div class="tkt"><span class="tn">F1.2</span><span class="td dm">★★</span></div>
-      <div class="tq">Bestimme mit der h-Methode den Term der Ableitungsfunktion von \(f(x) = x^2 + 3x\).</div>
+      <div class="tq">Gegeben ist \(f(x) = x^2 + 3x\). Bestimme mit Näherungstabellen die lokale Änderungsrate an den Stellen \(0\), \(1\) und \(2\), erkenne das Muster und stelle einen Term für die Ableitungsfunktion \(f'\) auf.</div>
       <div class="tk-toggle">⌄</div>
     </div>
   </div>
   <div class="ta">
-    <div class="ip">\(\dfrac{f(x+h)-f(x)}{h} = \dfrac{(x+h)^2 + 3(x+h) - x^2 - 3x}{h} = \dfrac{2xh + h^2 + 3h}{h} = 2x + h + 3\)</div>
-    <div class="ip">Für \(h \to 0\): \(f'(x) = 2x + 3\).</div>
-    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-    <div class="komp-desc">K5: Den Grenzübergang an einer allgemeinen Stelle durchführen</div>
+    <div class="ip"><strong>Beispielhaft an der Stelle \(x_0 = 1\):</strong> \(f(1) = 4\). Intervall \([1;\,1{,}01]\): \(\dfrac{f(1{,}01)-f(1)}{0{,}01} = \dfrac{4{,}0501-4}{0{,}01} = 5{,}01\); Intervall \([1;\,1{,}001]\): \(5{,}001\). Die Werte nähern sich \(5\), also \(f'(1) = 5\).</div>
+    <div class="ip">Genauso: \(f'(0) = 3\) und \(f'(2) = 7\).</div>
+    <div class="ip"><strong>Muster:</strong> \(3 = 2\cdot 0 + 3\), \(5 = 2\cdot 1 + 3\), \(7 = 2\cdot 2 + 3\) — die Steigung ist immer „das Doppelte der Stelle plus 3": \(f'(x) = 2x + 3\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k2">K2</span></div>
+    <div class="komp-desc">K5: Näherungstabellen systematisch auswerten · K2: Aus Werten ein Muster erkennen und als Term formulieren</div>
   </div>
 </div>
 <div class="tg">
@@ -20514,7 +20604,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <ol>
         <li>Was ist der Unterschied zwischen \(f'(x_0)\) und \(f'\)?</li>
         <li>Wie entsteht der Graph der Ableitungsfunktion aus dem Graphen von \(f\)?</li>
-        <li>Wie bestimmst du mit der h-Methode den Term von \(f'\) — und warum lohnt sich das nur einmal pro Funktion?</li>
+        <li>Wie findest du aus gesammelten Steigungswerten einen Term für \(f'\) — und wie prüfst du, ob deine Vermutung stimmt?</li>
         <li>Warum ebnet die Ableitungsfunktion den Weg zu den Ableitungsregeln?</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Wenn du bei einer Frage unsicher bist, lies noch einmal ab der Karte „Steigungen sammeln — ein Muster entsteht".</p>
@@ -20603,7 +20693,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Das brauchst du</span></div>
       <div class="card-body">
         <div style="background:#f0f4e8;border-left:3px solid #5b6e2e;padding:10px 12px;border-radius:2px">
-          <strong>Aus den Tabs „Lokale Änderungsrate &amp; Tangente" und „Die Ableitungsfunktion":</strong> \(f'(x_0)\) ist eine Zahl, \(f'\) ist eine Funktion — und die h-Methode liefert ihren Term.<br>
+          <strong>Aus den Tabs „Lokale Änderungsrate &amp; Tangente" und „Die Ableitungsfunktion":</strong> \(f'(x_0)\) ist eine Zahl, \(f'\) ist eine Funktion — und aus dem Muster der gesammelten Steigungen entsteht ihr Term.<br>
           <strong>Aus Klasse 10:</strong> Potenzgesetze.
         </div>
       </div>
@@ -21014,16 +21104,16 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
           <div class="tkt"><span class="tn">D2.8</span><span class="td dm">★★</span></div>
-          <div class="tq">Begründe, warum die Ableitung einer konstanten Funktion \(f(x) = c\) stets null ist. Nutze den Differenzenquotienten als Ausgangspunkt.</div>
+          <div class="tq">Begründe, warum die Ableitung einer konstanten Funktion \(f(x) = c\) stets null ist. Nutze die mittlere Änderungsrate als Ausgangspunkt.</div>
           <div class="tk-toggle">⌄</div>
         </div>
       </div>
       <div class="ta">
-        <div class="ip">Der Differenzenquotient lautet \(\frac{f(x+h) - f(x)}{h} = \frac{c - c}{h} = \frac{0}{h} = 0\) für alle \(h \ne 0\).</div>
-        <div class="ip">Der Grenzwert für \(h \to 0\) ist ebenfalls 0. Also: \(f'(x) = 0\).</div>
+        <div class="ip">Die mittlere Änderungsrate auf einem beliebigen Intervall \([a;\,b]\) ist \(\frac{f(b) - f(a)}{b - a} = \frac{c - c}{b - a} = 0\).</div>
+        <div class="ip">Das gilt für <em>jedes</em> Intervall — auch für beliebig kleine. In der Näherungstabelle steht also in jeder Spalte 0, und damit ist auch die lokale Änderungsrate an jeder Stelle 0: \(f'(x) = 0\).</div>
         <div class="ip"><strong>Anschaulich:</strong> Eine Konstante ändert sich nie — ihre Änderungsrate ist daher überall null.</div>
         <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
-        <div class="komp-desc">K1: Ableitungsregel aus dem Differenzenquotienten herleiten · K5: Grenzwertbildung formal durchführen</div>
+        <div class="komp-desc">K1: Ableitungsregel aus der mittleren Änderungsrate begründen · K5: Mit dem allgemeinen Term argumentieren</div>
       </div>
     </div>
 
