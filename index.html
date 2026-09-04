@@ -18523,11 +18523,11 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="card-body">
 
     <div class="hint"><strong>Merke:</strong> Die <strong>mittlere Änderungsrate</strong> einer Funktion \(f\) auf dem Intervall \([a;\,b]\) ist
-    \[m = \frac{f(b)-f(a)}{b-a}.\]
+    \[m_S = \frac{f(b)-f(a)}{b-a}.\]
     Diesen Bruch nennt man auch <strong>Differenzenquotient</strong>. Die Gerade durch die beiden Graphenpunkte \(A(a\,|\,f(a))\) und \(B(b\,|\,f(b))\) heißt <strong>Sekante</strong> („die Schneidende"). Ihre Steigung ist genau die mittlere Änderungsrate — das Steigungsdreieck der Sekante hat die Seiten \(\Delta x = b-a\) und \(\Delta y = f(b)-f(a)\).</div>
     <div style="text-align:center;margin:14px 0">
       <canvas id="cvSekMAR" style="max-width:100%;border-radius:4px"></canvas>
-      <div class="ip" style="max-width:520px;margin:8px auto 0;text-align:left;font-size:14px;color:var(--ink-muted)">Sekante durch \(A(1\,|\,0{,}5)\) und \(B(4\,|\,8)\) am Graphen von \(f(x)=0{,}5x^2\). Das Steigungsdreieck liefert \(m = \frac{\Delta y}{\Delta x} = \frac{7{,}5}{3} = 2{,}5\).</div>
+      <div class="ip" style="max-width:520px;margin:8px auto 0;text-align:left;font-size:14px;color:var(--ink-muted)">Sekante durch \(A(1\,|\,0{,}5)\) und \(B(4\,|\,8)\) am Graphen von \(f(x)=0{,}5x^2\). Das Steigungsdreieck liefert \(m_S = \frac{\Delta y}{\Delta x} = \frac{7{,}5}{3} = 2{,}5\).</div>
     </div>
     <div class="ip"><strong>So liest du die mittlere Änderungsrate am Graphen ab:</strong> <strong>1.</strong> Die beiden Punkte zu \(a\) und \(b\) auf dem Graphen markieren. <strong>2.</strong> Die Sekante durch beide Punkte zeichnen. <strong>3.</strong> Ein Steigungsdreieck anlegen und \(\Delta y\) durch \(\Delta x\) teilen — auf die Achsenskalen achten.</div>
   </div>
@@ -18542,8 +18542,8 @@ window.addEventListener('resize',function(){updateSimulator();});
       <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
       <div class="bsp-a">
         <div class="ip"><strong>Schritt 1 — Funktionswerte an den Intervallgrenzen:</strong> \(f(1) = 1^2 = 1\) und \(f(3) = 3^2 = 9\).</div>
-        <div class="ip"><strong>Schritt 2 — Differenzenquotient aufstellen:</strong> \(m = \dfrac{f(3)-f(1)}{3-1} = \dfrac{9-1}{2}\).</div>
-        <div class="ip"><strong>Schritt 3 — ausrechnen:</strong> \(m = \dfrac{8}{2} = 4\).</div>
+        <div class="ip"><strong>Schritt 2 — Differenzenquotient aufstellen:</strong> \(m_S = \dfrac{f(3)-f(1)}{3-1} = \dfrac{9-1}{2}\).</div>
+        <div class="ip"><strong>Schritt 3 — ausrechnen:</strong> \(m_S = \dfrac{8}{2} = 4\).</div>
         <div class="ip"><strong>Deutung:</strong> Auf dem Intervall \([1;\,3]\) wächst \(f\) im Mittel um 4 Einheiten pro \(x\)-Einheit. Die Sekante durch \((1\,|\,1)\) und \((3\,|\,9)\) hat die Steigung 4.</div>
       </div>
     </div>
@@ -18581,8 +18581,8 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>a)</strong> \(\dfrac{f(4)-f(1)}{4-1} = \dfrac{16-1}{3} = 5\)</div>
-        <div class="ip"><strong>b)</strong> \(\dfrac{f(3)-f(1)}{3-1} = \dfrac{27-1}{2} = 13\)</div>
+        <div class="ip"><strong>a)</strong> \(m_S = \dfrac{f(4)-f(1)}{4-1} = \dfrac{16-1}{3} = 5\)</div>
+        <div class="ip"><strong>b)</strong> \(m_S = \dfrac{f(3)-f(1)}{3-1} = \dfrac{27-1}{2} = 13\)</div>
         <div class="ip"><em>Bezug:</em> Beide Zahlen sind zugleich die Steigung der Sekante durch die zugehörigen Punkte des Graphen.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
         <div class="komp-desc">K5: Den Differenzenquotienten sicher berechnen</div>
@@ -18599,7 +18599,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   </div>
   <div class="ta">
     <div class="ip">Ablesen: \(f(0)=0\), \(f(2)=3\), \(f(4)=4\), \(f(8)=0\).</div>
-    <div class="ip">\([0;\,2]\): \(\dfrac{3-0}{2-0} = 1{,}5\) &#160;·&#160; \([2;\,4]\): \(\dfrac{4-3}{4-2} = 0{,}5\) &#160;·&#160; \([4;\,8]\): \(\dfrac{0-4}{8-4} = -1\)</div>
+    <div class="ip">\([0;\,2]\): \(m_S = \dfrac{3-0}{2-0} = 1{,}5\) &#160;·&#160; \([2;\,4]\): \(\dfrac{4-3}{4-2} = 0{,}5\) &#160;·&#160; \([4;\,8]\): \(\dfrac{0-4}{8-4} = -1\)</div>
     <div class="ip"><em>Beachte:</em> Auf \([4;\,8]\) ist die mittlere Änderungsrate negativ — die Sekante fällt, die Funktionswerte nehmen im Mittel ab.</div>
     <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
     <div class="komp-desc">K4: Werte am Graphen ablesen · K5: Den Differenzenquotienten berechnen</div>
@@ -18614,7 +18614,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip">\(\dfrac{f(9)-f(1)}{9-1} = \dfrac{3-1}{8} = \dfrac{1}{4} = 0{,}25\)</div>
+        <div class="ip">\(m_S = \dfrac{f(9)-f(1)}{9-1} = \dfrac{3-1}{8} = \dfrac{1}{4} = 0{,}25\)</div>
         <div class="ip"><strong>Geometrisch:</strong> Die Sekante durch \((1\,|\,1)\) und \((9\,|\,3)\) hat die Steigung \(0{,}25\). Die Funktion wächst auf diesem Intervall im Durchschnitt um \(0{,}25\) Einheiten pro \(x\)-Einheit.</div>
         <div class="ip"><em>Achtung:</em> Über das Verhalten <em>innerhalb</em> des Intervalls sagt dieser Wert nichts. Bei \(x=1\) ist der Graph deutlich steiler, bei \(x=9\) deutlich flacher.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
@@ -18633,7 +18633,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
       <div class="ta">
         <div class="ip"><strong>Funktionswerte:</strong> \(n(0) = 500\) und \(n(2) = 3 \cdot 4 - 120 + 500 = 392\).</div>
-        <div class="ip"><strong>Mittlere Änderungsrate:</strong> \(\dfrac{n(2)-n(0)}{2-0} = \dfrac{392-500}{2} = -54\) Pollen pro Kubikmeter <strong>pro Stunde</strong>.</div>
+        <div class="ip"><strong>Mittlere Änderungsrate:</strong> \(m_S = \dfrac{n(2)-n(0)}{2-0} = \dfrac{392-500}{2} = -54\) Pollen pro Kubikmeter <strong>pro Stunde</strong>.</div>
         <div class="ip"><strong>Deutung:</strong> In den ersten beiden Stunden der Messung nimmt die Pollenanzahl in einem Kubikmeter Luft im Durchschnitt um 54 Pollen pro Stunde ab.</div>
         <div class="ip"><em>Abitur-Bezug:</em> Diese Aufgabe stand sinngemäß im bayerischen Abitur 2017 — im hilfsmittelfreien Teil. Genau so knapp wird die mittlere Änderungsrate im Abitur abgefragt: berechnen, Einheit angeben, deuten.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
@@ -18668,7 +18668,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>a)</strong> \([0;\,10]\): \(\dfrac{60-80}{10-0} = -2{,}0\) °C pro Minute &#160;·&#160;
+        <div class="ip"><strong>a)</strong> \([0;\,10]\): \(m_S = \dfrac{60-80}{10-0} = -2{,}0\) °C pro Minute &#160;·&#160;
         \([10;\,30]\): \(\dfrac{36-60}{30-10} = -1{,}2\) °C pro Minute &#160;·&#160;
         \([30;\,60]\): \(\dfrac{24-36}{60-30} = -0{,}4\) °C pro Minute</div>
         <div class="ip"><strong>b)</strong> Alle drei Raten sind negativ — die Temperatur sinkt in jedem Zeitraum. Ihr Betrag wird von Zeitraum zu Zeitraum kleiner: Der Tee kühlt zu Beginn schnell ab und später immer langsamer, weil sich seine Temperatur der Raumtemperatur annähert.</div>
@@ -18691,7 +18691,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
       <div class="ta">
         <div class="ip"><strong>Zuordnung:</strong> (I) → C &#160;·&#160; (II) → A &#160;·&#160; (III) → B</div>
-        <div class="ip"><strong>Berechnung von (III):</strong> \(\dfrac{T(30)-T(0)}{30} = \dfrac{11{,}9-5{,}0}{30} = \dfrac{6{,}9}{30} = 0{,}23\) °C pro Minute.<br>
+        <div class="ip"><strong>Berechnung von (III):</strong> \(m_S = \dfrac{T(30)-T(0)}{30} = \dfrac{11{,}9-5{,}0}{30} = \dfrac{6{,}9}{30} = 0{,}23\) °C pro Minute.<br>
         In der ersten halben Stunde erwärmt sich das Wasser im Durchschnitt um 0,23 °C pro Minute.</div>
         <div class="ip"><strong>Worauf es ankommt:</strong> (II) und (III) unterscheiden sich nur durch die Division durch die Intervalllänge — aber (II) ist eine Temperaturänderung in °C, (III) eine Rate in °C pro Minute. Erst die Einheit macht den Unterschied sichtbar.</div>
         <div class="ip"><em>Abitur-Bezug:</em> Im IQB-Abiturpool 2024 (Grundkurs) waren zu diesem Sachverhalt die Werte von \(f'(30)\) und \(\frac{f(30)-f(0)}{30-0}\) zu berechnen und im Sachzusammenhang zu deuten. Den ersten Term lernst du in den nächsten beiden Tabs kennen — den zweiten kannst du jetzt schon sicher deuten.</div>
@@ -18711,7 +18711,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
       <div class="ta">
         <div class="ip"><strong>a)</strong> 14:00 Uhr entspricht \(x=2\), 16:00 Uhr entspricht \(x=4\). Ablesen am Graphen: \(a(2)=60\) und \(a(4)=180\).<br>
-        \(\dfrac{a(4)-a(2)}{4-2} = \dfrac{180-60}{2} = 60\) — von 14:00 Uhr bis 16:00 Uhr wurden durchschnittlich 60 Likes pro Stunde abgegeben. Das ist die mittlere Änderungsrate von \(a\) auf \([2;\,4]\).</div>
+        \(m_S = \dfrac{a(4)-a(2)}{4-2} = \dfrac{180-60}{2} = 60\) — von 14:00 Uhr bis 16:00 Uhr wurden durchschnittlich 60 Likes pro Stunde abgegeben. Das ist die mittlere Änderungsrate von \(a\) auf \([2;\,4]\).</div>
         <div class="ip"><strong>b)</strong> Ablesen: \(a(0)=0\), \(a(6)=210\). Damit ergeben sich die mittleren Änderungsraten
         \([0;\,2]\): \(\dfrac{60-0}{2} = 30\) &#160;·&#160; \([2;\,4]\): \(60\) &#160;·&#160; \([4;\,6]\): \(\dfrac{210-180}{2} = 15\) Likes pro Stunde.<br>
         Von 14 bis 16 Uhr wurden durchschnittlich die meisten Likes pro Stunde abgegeben: Dort verläuft der Graph am steilsten, die Sekante auf \([2;\,4]\) hat die größte Steigung.</div>
@@ -18732,9 +18732,9 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>a)</strong> Die Sekante verläuft durch \((0\,|\,0)\) und \((4\,|\,4)\): \(\dfrac{4-0}{4-0} = 1\).</div>
+        <div class="ip"><strong>a)</strong> Die Sekante verläuft durch \((0\,|\,0)\) und \((4\,|\,4)\): \(m_S = \dfrac{4-0}{4-0} = 1\).</div>
         <div class="ip"><strong>b)</strong> Zum Beispiel \([2;\,6]\): Wegen \(f(2) = 3 = f(6)\) verläuft die Sekante durch \((2\,|\,3)\) und \((6\,|\,3)\) waagerecht — ihre Steigung ist null. Am Graphen erkennt man das an zwei gleich hohen Punkten. Jedes Intervall, das symmetrisch zur Scheitelstelle \(x=4\) liegt, hat diese Eigenschaft — es gibt also mehrere richtige Antworten.</div>
-        <div class="ip"><strong>c)</strong> \([4;\,8]\): \(\dfrac{f(8)-f(4)}{8-4} = \dfrac{0-4}{4} = -1\). Der Graph ist achsensymmetrisch zur senkrechten Geraden durch den Scheitel \((4\,|\,4)\). Das Intervall \([4;\,8]\) ist das Spiegelbild von \([0;\,4]\): Die Sekante ist genauso steil wie in a), fällt aber.</div>
+        <div class="ip"><strong>c)</strong> \([4;\,8]\): \(m_S = \dfrac{f(8)-f(4)}{8-4} = \dfrac{0-4}{4} = -1\). Der Graph ist achsensymmetrisch zur senkrechten Geraden durch den Scheitel \((4\,|\,4)\). Das Intervall \([4;\,8]\) ist das Spiegelbild von \([0;\,4]\): Die Sekante ist genauso steil wie in a), fällt aber.</div>
         <div class="ip"><em>Abitur-Bezug:</em> Im MV-Abitur 2023 (hilfsmittelfreier Teil) sollte am Graphen ein Intervall mit vorgegebener mittlerer Änderungsrate gefunden und begründet werden — mit genau diesen Werkzeugen: parallele und waagerechte Sekanten.</div>
         <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k1">K1</span></div>
         <div class="komp-desc">K4: Sekanten am Graphen deuten · K1: Eine Antwort mit Symmetrie und Sekantenlage begründen</div>
@@ -19102,7 +19102,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <strong style="color:#8a7a30">Kernidee:</strong>
       \(f'(x_0)\) ist <strong>immer eine Zahl</strong> — die lokale Änderungsrate von \(f\) an der <em>einen</em> Stelle \(x_0\).
       Man findet sie, indem man mittlere Änderungsraten über <strong>immer kleinere Intervalle</strong> an \(x_0\) berechnet und abliest, welchem Wert sich die Ergebnisse nähern.
-      Geometrisch ist sie die Steigung der Tangente an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).
+      Geometrisch ist sie die Steigung der Tangente \(m_T\) an den Graphen von \(f\) im Punkt \((x_0 \,|\, f(x_0))\).
       Die <strong>Ableitungsfunktion</strong> \(f'\) ist etwas anderes: Sie ordnet jeder Stelle \(x\) diese Zahl zu
       — sie bekommt im Tab „Die Ableitungsfunktion" ihren eigenen Auftritt.
     </div>
@@ -19192,7 +19192,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                   <td style="padding:7px 10px;border:1px solid var(--border)">\([1;\,1{,}001]\)</td>
                 </tr>
                 <tr>
-                  <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate</td>
+                  <td style="padding:7px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate \(m_S\)</td>
                   <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{8-2}{1} = 6\)</td>
                   <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{4{,}5-2}{0{,}5} = 5\)</td>
                   <td style="padding:7px 10px;border:1px solid var(--border)">\(\frac{2{,}42-2}{0{,}1} = 4{,}2\)</td>
@@ -19201,7 +19201,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </tr>
               </table>
             </div>
-            <div class="ip">Die Werte steuern erkennbar auf <strong>4</strong> zu: \(6 \to 5 \to 4{,}2 \to 4{,}02 \to 4{,}002\). Je kleiner das Intervall, desto näher liegt die mittlere Änderungsrate an 4 — und dieser Wert ist die <strong>Momentangeschwindigkeit</strong> bei \(t=1\): Das Auto fährt in diesem Augenblick \(4\;\tfrac{\text{m}}{\text{s}}\). Man schreibt dafür \(s'(1) = 4\) und nennt die Zahl die <strong>lokale Änderungsrate</strong> von \(s\) an der Stelle \(t = 1\).</div>
+            <div class="ip">Die Werte steuern erkennbar auf <strong>4</strong> zu: \(6 \to 5 \to 4{,}2 \to 4{,}02 \to 4{,}002\). Je kleiner das Intervall, desto näher liegt die mittlere Änderungsrate an 4 — und dieser Wert ist die <strong>Momentangeschwindigkeit</strong> bei \(t=1\): Das Auto fährt in diesem Augenblick \(4\;\tfrac{\text{m}}{\text{s}}\). Man schreibt dafür \(s'(1) = 4\) und nennt die Zahl die <strong>lokale Änderungsrate</strong> von \(s\) an der Stelle \(t = 1\) — als Tangentensteigung geschrieben: \(m_T = 4\).</div>
         </div>
     </div>
 
@@ -19209,8 +19209,8 @@ window.addEventListener('resize',function(){updateSimulator();});
       <strong>Merke — lokale Änderungsrate mit der Näherungstabelle bestimmen:</strong>
       <ol style="margin:8px 0 0 0;padding-left:20px">
         <li style="margin-bottom:5px"><strong>Intervalle wählen:</strong> Intervalle \([x_0;\,x]\) aufschreiben, deren zweite Grenze \(x\) immer näher an die Stelle \(x_0\) rückt (z.&nbsp;B. Breite \(0{,}1\); \(0{,}01\); \(0{,}001\)).</li>
-        <li style="margin-bottom:5px"><strong>Mittlere Änderungsraten berechnen:</strong> für jedes Intervall \(\dfrac{f(x)-f(x_0)}{x-x_0}\) mit dem WTR ausrechnen.</li>
-        <li><strong>Ablesen:</strong> Der Wert, dem sich die Ergebnisse immer stärker nähern, ist die lokale Änderungsrate \(f'(x_0)\).</li>
+        <li style="margin-bottom:5px"><strong>Mittlere Änderungsraten berechnen:</strong> für jedes Intervall \(m_S = \dfrac{f(x)-f(x_0)}{x-x_0}\) mit dem WTR ausrechnen.</li>
+        <li><strong>Ablesen:</strong> Der Wert, dem sich die Ergebnisse immer stärker nähern, ist die lokale Änderungsrate \(f'(x_0)\) — zugleich die Tangentensteigung \(m_T\).</li>
       </ol>
       <div style="margin-top:8px">In Sachzusammenhängen trägt \(f'(x_0)\) eine <strong>Einheit</strong>: Einheit von \(f\) pro Einheit von \(x\) — beim Auto also \(\tfrac{\text{m}}{\text{s}}\).</div>
     </div>
@@ -19231,7 +19231,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                   <td style="padding:6px 10px;border:1px solid var(--border)">\([2{,}999;\,3]\)</td>
                 </tr>
                 <tr>
-                  <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate</td>
+                  <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate \(m_S\)</td>
                   <td style="padding:6px 10px;border:1px solid var(--border)">\(\frac{9{,}61-9}{0{,}1} = 6{,}1\)</td>
                   <td style="padding:6px 10px;border:1px solid var(--border)">\(\frac{9{,}0601-9}{0{,}01} = 6{,}01\)</td>
                   <td style="padding:6px 10px;border:1px solid var(--border)">\(6{,}001\)</td>
@@ -19239,7 +19239,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 </tr>
               </table>
             </div>
-            Die Werte nähern sich von beiden Seiten der Zahl <strong>6</strong>. Also ist \(f'(3) = 6\).<br><br>
+            Die Werte nähern sich von beiden Seiten der Zahl <strong>6</strong>. Also ist \(m_T = f'(3) = 6\).<br><br>
             <em>Kontrolle der letzten Spalte:</em> Auch von links (Intervalle, die bei \(x_0=3\) <em>enden</em>) landet man bei 6 — die lokale Änderungsrate ist von beiden Seiten dieselbe Zahl.
         </div>
     </div>
@@ -19435,15 +19435,15 @@ window.addEventListener('resize',function(){updateSimulator();});
         ctx.fillText('f(x) = 0,5x\u00B3 \u2212 1,5x\u00B2 + 2x + 1',tx(2.8),ty(f(4.2))-10);
         // Legende
         ctx.font='12px Inter,sans-serif';
-        ctx.fillStyle='#8a9da7';ctx.fillText('\u2014 Sekante (m = '+m_sek.toFixed(2)+')',tx(2.5),ty(yMax-0.3));
-        ctx.fillStyle='#c75c3a';ctx.fillText('--- Tangente (m = '+m_tan.toFixed(2)+')',tx(2.5),ty(yMax-0.9));
+        ctx.fillStyle='#8a9da7';ctx.fillText('\u2014 Sekante (m\u209b = '+m_sek.toFixed(2).replace('.',',')+')',tx(2.5),ty(yMax-0.3));
+        ctx.fillStyle='#c75c3a';ctx.fillText('--- Tangente (m\u209c = '+m_tan.toFixed(2).replace('.',',')+')',tx(2.5),ty(yMax-0.9));
         // Info-Box
         var info=document.getElementById('sekTanInfo');
-        info.innerHTML='<strong>Mittlere \u00c4nderungsrate</strong> im Intervall ['+x0+'; '+(x0+h).toFixed(2).replace('.',',')+'] (Sekante): m<sub>sek</sub> = (f('+
+        info.innerHTML='<strong>Mittlere \u00c4nderungsrate</strong> im Intervall ['+x0+'; '+(x0+h).toFixed(2).replace('.',',')+'] (Sekante): m<sub>S</sub> = (f('+
           (x0+h).toFixed(2).replace('.',',')+') \u2212 f('+x0+')) / '+h.toFixed(2).replace('.',',')+
           ' = <strong>'+m_sek.toFixed(3).replace('.',',')+'</strong><br>'+
-          '<strong>Lokale \u00c4nderungsrate</strong> an der Stelle '+x0+' (Tangente): f\u2032('+x0+') = <strong>'+m_tan.toFixed(3).replace('.',',')+'</strong><br>'+
-          '<span style="color:#888">Differenz: |m<sub>sek</sub> \u2212 f\u2032(x\u2080)| = '+Math.abs(m_sek-m_tan).toFixed(3).replace('.',',')+'</span>';
+          '<strong>Lokale \u00c4nderungsrate</strong> an der Stelle '+x0+' (Tangente): m<sub>T</sub> = f\u2032('+x0+') = <strong>'+m_tan.toFixed(3).replace('.',',')+'</strong><br>'+
+          '<span style="color:#888">Differenz: |m<sub>S</sub> \u2212 m<sub>T</sub>| = '+Math.abs(m_sek-m_tan).toFixed(3).replace('.',',')+'</span>';
       };
       drawSekTan();
     })();
@@ -19463,7 +19463,7 @@ window.addEventListener('resize',function(){updateSimulator();});
             <div class="ip" style="margin-top: 8px;">Das ist die <strong>mittlere Änderungsrate</strong> von \(f\) auf dem Intervall \([x_0;\, x]\) — die Steigung der Sekante durch die Punkte \(P(x_0 \,|\, f(x_0))\) und \(Q(x \,|\, f(x))\). Sie hängt <strong>immer von zwei Stellen</strong> ab, nie von einer allein.</div>
 
             <div class="ip" style="margin-top: 15px;"><strong>Tangentensteigung (lokale Änderungsrate):</strong></div>
-            <div class="ip" style="margin-top: 4px;">Rückt \(x\) immer näher an \(x_0\), schrumpft das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Die Sekantensteigungen nähern sich dabei einer festen Zahl — genau die liest du in der Näherungstabelle ab. Diese Zahl ist die <strong>lokale Änderungsrate</strong>, die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
+            \[m_T = f'(x_0)\]<div class="ip" style="margin-top: 4px;">Rückt \(x\) immer näher an \(x_0\), schrumpft das Intervall auf die eine Stelle \(x_0\) zusammen und die Sekante kippt in die Tangente. Die Sekantensteigungen nähern sich dabei einer festen Zahl — genau die liest du in der Näherungstabelle ab. Diese Zahl ist die <strong>lokale Änderungsrate</strong>, die Ableitung \(f'(x_0)\). Sie hängt <strong>nur noch von einer Stelle</strong> ab.</div>
             <div class="hint" style="margin-top:10px"><strong>Der entscheidende Schritt:</strong> Aus einer Aussage über ein <em>Intervall</em> wird eine Aussage über eine <em>Stelle</em>. Alles, was danach kommt — Ableitungsregeln, Extrema, Wendepunkte — steht auf diesem einen Schritt.</div>
         </div>
     </div>
@@ -19919,7 +19919,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
         <div class="card-body">
             <div class="hint" style="margin-bottom:12px"><strong>Hinweis:</strong> Zum Rechnen brauchst du hier erste Ableitungen wie \((x^2)' = 2x\) oder \((x^3)' = 3x^2\). Die Ableitungsregeln werden im nächsten Tab systematisch eingeführt — nimm diese beiden Fälle als Vorgriff einfach mit.</div>
-            <div class="ip"><strong>Tangentengleichung</strong> an der Stelle \(x_0\):</div>
+            <div class="ip"><strong>Tangentengleichung</strong> an der Stelle \(x_0\) — mit der Tangentensteigung \(m_T = f'(x_0)\):</div>
             \[t(x) = f'(x_0) \cdot (x - x_0) + f(x_0)\]
             <div class="ip" style="margin-top: 12px;"><strong>Neigungswinkel</strong> der Tangente:</div>
             \[\alpha = \arctan(f'(x_0))\]
@@ -20023,8 +20023,8 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip">\([2;\,2{,}1]\): \(\dfrac{4{,}41-4}{0{,}1} = 4{,}1\) &#160;·&#160; \([2;\,2{,}01]\): \(\dfrac{4{,}0401-4}{0{,}01} = 4{,}01\) &#160;·&#160; \([2;\,2{,}001]\): \(\dfrac{4{,}004001-4}{0{,}001} = 4{,}001\)</div>
-        <div class="ip">Die Werte nähern sich \(4\). Das ist die <strong>lokale Änderungsrate</strong> an der Stelle \(x_0=2\), also \(f'(2)=2\cdot 2=4\).</div>
+        <div class="ip">\([2;\,2{,}1]\): \(m_S = \dfrac{4{,}41-4}{0{,}1} = 4{,}1\) &#160;·&#160; \([2;\,2{,}01]\): \(\dfrac{4{,}0401-4}{0{,}01} = 4{,}01\) &#160;·&#160; \([2;\,2{,}001]\): \(\dfrac{4{,}004001-4}{0{,}001} = 4{,}001\)</div>
+        <div class="ip">Die Werte nähern sich \(4\). Das ist die <strong>lokale Änderungsrate</strong> an der Stelle \(x_0=2\), also \(m_T = f'(2) = 4\).</div>
         <div class="ip"><em>Bedeutung:</em> Aus einer Aussage über ein Intervall ist eine Aussage über eine einzelne Stelle geworden. Geometrisch kippt die Sekante dabei in die Tangente.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
         <div class="komp-desc">K5: Die Annäherung numerisch nachvollziehen · K1: Das Ergebnis begründen</div>
@@ -20044,7 +20044,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         </div>
       </div>
       <div class="ta">
-        <div class="ip"><strong>(1)</strong> \(T(0) = 6\), \(T(30) \approx 13{,}22\), also \(\dfrac{13{,}22-6}{30} \approx 0{,}24\).<br>
+        <div class="ip"><strong>(1)</strong> \(T(0) = 6\), \(T(30) \approx 13{,}22\), also \(m_S = \dfrac{13{,}22-6}{30} \approx 0{,}24\).<br>
         <em>Deutung:</em> In den ersten 30 Minuten stieg die Temperatur im Durchschnitt um etwa \(0{,}24\) °C pro Minute — das ist die <strong>mittlere Änderungsrate</strong> auf diesem Zeitraum.</div>
         <div class="ip"><strong>(2)</strong> Näherungstabelle mit Intervallen, die bei \(t_0 = 30\) beginnen:</div>
         <div style="overflow-x:auto;margin:8px 0">
@@ -20056,14 +20056,14 @@ window.addEventListener('resize',function(){updateSimulator();});
               <td style="padding:6px 10px;border:1px solid var(--border)">\([30;\,30{,}01]\)</td>
             </tr>
             <tr>
-              <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate</td>
+              <td style="padding:6px 10px;font-weight:700;border:1px solid var(--border)">mittlere Änderungsrate \(m_S\)</td>
               <td style="padding:6px 10px;border:1px solid var(--border)">\(0{,}1739\)</td>
               <td style="padding:6px 10px;border:1px solid var(--border)">\(0{,}1754\)</td>
               <td style="padding:6px 10px;border:1px solid var(--border)">\(0{,}1756\)</td>
             </tr>
           </table>
         </div>
-        <div class="ip">Die Werte nähern sich \(\approx 0{,}176\), also \(T'(30) \approx 0{,}18\).<br>
+        <div class="ip">Die Werte nähern sich \(\approx 0{,}176\), also \(m_T = T'(30) \approx 0{,}18\).<br>
         <em>Deutung:</em> 30 Minuten nach dem Herausnehmen steigt die Temperatur mit etwa \(0{,}18\) °C pro Minute — das ist die <strong>lokale Änderungsrate</strong> in diesem Augenblick.</div>
         <div class="ip"><strong>(3)</strong> \(0{,}24 > 0{,}18\). Das Wasser erwärmte sich anfangs schneller als nach 30 Minuten — je näher die Temperatur an die Raumtemperatur kommt, desto langsamer steigt sie. Der Durchschnittswert liegt deshalb über dem Momentanwert am Ende des Zeitraums.</div>
         <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span><span class="kb kb-k3">K3</span></div>
@@ -20528,7 +20528,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="bsp-a">
         <div class="ip"><strong>Schritt 1 — Muster aus der Tabelle ablesen:</strong> Die gesammelten Steigungen \(f'(-2)=-4\), \(f'(-1)=-2\), \(f'(0)=0\), \(f'(1)=2\), \(f'(2)=4\) sind an jeder Stelle <em>das Doppelte der Stelle</em>.</div>
         <div class="ip"><strong>Schritt 2 — Term aufstellen (Vermutung):</strong> \(f'(x) = 2x\).</div>
-        <div class="ip"><strong>Schritt 3 — an einer neuen Stelle prüfen:</strong> Der Term sagt \(f'(1{,}5) = 3\) voraus. Näherungstabelle an \(x_0 = 1{,}5\): im Intervall \([1{,}5;\,1{,}51]\) ist die mittlere Änderungsrate \(\frac{1{,}51^2-1{,}5^2}{0{,}01} = \frac{0{,}0301}{0{,}01} = 3{,}01\), im Intervall \([1{,}5;\,1{,}501]\) ergibt sich \(3{,}001\) — die Werte nähern sich \(3\). Die Vermutung passt.</div>
+        <div class="ip"><strong>Schritt 3 — an einer neuen Stelle prüfen:</strong> Der Term sagt \(f'(1{,}5) = 3\) voraus. Näherungstabelle an \(x_0 = 1{,}5\): im Intervall \([1{,}5;\,1{,}51]\) ist die mittlere Änderungsrate \(m_S = \frac{1{,}51^2-1{,}5^2}{0{,}01} = \frac{0{,}0301}{0{,}01} = 3{,}01\), im Intervall \([1{,}5;\,1{,}501]\) ergibt sich \(3{,}001\) — die Werte nähern sich \(3\). Die Vermutung passt.</div>
         <div class="ip"><strong>Ergebnis:</strong> \(f'(x) = 2x\). Ob diese Vermutung für <em>alle</em> Stellen stimmt, bestätigen die Ableitungsregeln im nächsten Tab.</div>
       </div>
     </div>
@@ -20574,7 +20574,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
   </div>
   <div class="ta">
-    <div class="ip"><strong>Beispielhaft an der Stelle \(x_0 = 1\):</strong> \(f(1) = 4\). Intervall \([1;\,1{,}01]\): \(\dfrac{f(1{,}01)-f(1)}{0{,}01} = \dfrac{4{,}0501-4}{0{,}01} = 5{,}01\); Intervall \([1;\,1{,}001]\): \(5{,}001\). Die Werte nähern sich \(5\), also \(f'(1) = 5\).</div>
+    <div class="ip"><strong>Beispielhaft an der Stelle \(x_0 = 1\):</strong> \(f(1) = 4\). Intervall \([1;\,1{,}01]\): \(m_S = \dfrac{f(1{,}01)-f(1)}{0{,}01} = \dfrac{4{,}0501-4}{0{,}01} = 5{,}01\); Intervall \([1;\,1{,}001]\): \(5{,}001\). Die Werte nähern sich \(5\), also \(f'(1) = 5\).</div>
     <div class="ip">Genauso: \(f'(0) = 3\) und \(f'(2) = 7\).</div>
     <div class="ip"><strong>Muster:</strong> \(3 = 2\cdot 0 + 3\), \(5 = 2\cdot 1 + 3\), \(7 = 2\cdot 2 + 3\) — die Steigung ist immer „das Doppelte der Stelle plus 3": \(f'(x) = 2x + 3\).</div>
     <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k2">K2</span></div>
