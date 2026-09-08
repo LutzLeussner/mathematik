@@ -19124,7 +19124,7 @@ window.addEventListener('resize',function(){updateSimulator();});
                 <li style="margin:5px 0"><a href="#einheit-k11-tangenten-1" onclick="var e=document.getElementById('einheit-k11-tangenten-1');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 1 · Von der mittleren zur lokalen Änderungsrate</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
                 <li style="margin:5px 0"><a href="#einheit-k11-tangenten-2" onclick="var e=document.getElementById('einheit-k11-tangenten-2');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 2 · Von der Sekante zur Tangente</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
                 <li style="margin:5px 0"><a href="#einheit-k11-tangenten-3" onclick="var e=document.getElementById('einheit-k11-tangenten-3');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 3 · Die Funktionenlupe</a> <span style="color:var(--ink-muted);font-size:13px">· 45 min</span></li>
-                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-4" onclick="var e=document.getElementById('einheit-k11-tangenten-4');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 4 · Tangentengleichung und Neigungswinkel</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
+                <li style="margin:5px 0"><a href="#einheit-k11-tangenten-4" onclick="var e=document.getElementById('einheit-k11-tangenten-4');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="color:#5b6e2e;font-weight:600;text-decoration:none">Einheit 4 · Tangente, Normale und Neigungswinkel</a> <span style="color:var(--ink-muted);font-size:13px">· 90 min</span></li>
             </ul>
         </div>
     </div>
@@ -19149,6 +19149,10 @@ window.addEventListener('resize',function(){updateSimulator();});
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
                     <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann eine Tangentengleichung an einer gegebenen Stelle aufstellen</span>
+                </li>
+                <li class="gi">
+                  <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
+                  <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich kann die Normale an einer Stelle aufstellen und weiß, warum ihre Steigung der negative Kehrwert der Tangentensteigung ist</span>
                 </li>
                 <li class="gi">
                     <div class="gcheck-wrap"><div class="gcheck" data-group="k11" onclick="toggleGoal(this)"></div></div>
@@ -19909,7 +19913,7 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div style="font-size:22px;line-height:1">⏱</div>
   <div style="flex:1">
     <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 4 · 90 min</div>
-    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Tangentengleichung und Neigungswinkel</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Tangente, Normale und Neigungswinkel</div>
   </div>
 </div>
     <div class="card">
@@ -19989,6 +19993,88 @@ window.addEventListener('resize',function(){updateSimulator();});
             \(f(1) = 1 - 2 = -1\), \(f'(x) = 3x^2 - 2\), \(f'(1) = 1\)<br>
             Tangente: \(t(x) = 1 \cdot (x - 1) + (-1) = x - 2\)<br>
             Neigungswinkel: \(\alpha = \arctan(1) = 45°\)
+        </div>
+    </div>
+
+        <div class="card">
+        <div class="card-head">
+            <div class="ci ci-i">i</div>
+            <span class="card-title">Die Normale — senkrecht zur Tangente</span>
+        </div>
+        <div class="card-body">
+            <div class="ip">Im Berührpunkt gibt es neben der Tangente eine zweite besondere Gerade: die <strong>Normale</strong>. Sie geht durch denselben Punkt \(P(x_0\,|\,f(x_0))\) und steht <strong>senkrecht</strong> auf der Tangente. In der Physik ist sie das <em>Einfallslot</em>, an dem die Reflexion eines Lichtstrahls gemessen wird — bei gewölbten Spiegeln ist sie deshalb die entscheidende Gerade.</div>
+            <div style="display:flex;justify-content:center;margin:16px 0 12px">
+                <canvas id="cvNormale1" width="400" height="340" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:400px;height:340px"></canvas>
+            </div>
+            <script>
+            (function(){
+                var c=document.getElementById('cvNormale1'),ctx=c.getContext('2d');
+                var dpr=window.devicePixelRatio||1;
+                var cssW=400,cssH=340;
+                c.width=cssW*dpr;c.height=cssH*dpr;
+                c.style.width=cssW+'px';c.style.height=cssH+'px';
+                ctx.scale(dpr,dpr);
+                var W=cssW,H=cssH;
+                /* gleicher Maßstab auf beiden Achsen: 5,5 Einheiten auf 400 px, 4,675 auf 340 px */
+                var xMin=-2,xMax=3.5,yMin=-1.375,yMax=3.3;
+                function tx(x){return (x-xMin)/(xMax-xMin)*W;}
+                function ty(y){return H-(y-yMin)/(yMax-yMin)*H;}
+                function f(x){return x*x;}
+                function t(x){return 2*x-1;}
+                function n(x){return -0.5*x+1.5;}
+                ctx.strokeStyle='#e8e4dd';ctx.lineWidth=0.5;
+                for(var gx=Math.ceil(xMin);gx<=Math.floor(xMax);gx++){ctx.beginPath();ctx.moveTo(tx(gx),0);ctx.lineTo(tx(gx),H);ctx.stroke();}
+                for(var gy=Math.ceil(yMin);gy<=Math.floor(yMax);gy++){ctx.beginPath();ctx.moveTo(0,ty(gy));ctx.lineTo(W,ty(gy));ctx.stroke();}
+                ctx.strokeStyle='#999';ctx.lineWidth=1.2;
+                ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax),ty(0));ctx.stroke();
+                ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax));ctx.stroke();
+                var _as=6;ctx.fillStyle='#999';ctx.beginPath();ctx.moveTo(tx(xMax),ty(0));ctx.lineTo(tx(xMax)-_as,ty(0)-_as/2);ctx.lineTo(tx(xMax)-_as,ty(0)+_as/2);ctx.closePath();ctx.fill();
+                ctx.beginPath();ctx.moveTo(tx(0),ty(yMax));ctx.lineTo(tx(0)-_as/2,ty(yMax)+_as);ctx.lineTo(tx(0)+_as/2,ty(yMax)+_as);ctx.closePath();ctx.fill();
+                ctx.fillStyle='#555';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.fillText('x',tx(xMax)-2,ty(0)-8);ctx.textAlign='center';ctx.fillText('y',tx(0)+14,ty(yMax)+2);
+                ctx.fillStyle='#888';ctx.font='11px Inter,sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
+                ctx.textAlign='center';ctx.textBaseline='top';
+                for(var lx=Math.ceil(xMin);lx<=Math.floor(xMax);lx++){if(lx!==0)ctx.fillText(lx,tx(lx),ty(0)+4);}
+                ctx.textAlign='right';ctx.textBaseline='middle';
+                for(var ly=Math.ceil(yMin);ly<=Math.floor(yMax);ly++){if(ly!==0)ctx.fillText(ly,tx(0)-6,ty(ly));}
+                ctx.strokeStyle='#5b6e2e';ctx.lineWidth=2.5;ctx.beginPath();var started=false;
+                for(var px=0;px<=W;px++){var xx=xMin+px/W*(xMax-xMin),yy=f(xx);if(yy>yMax+0.5){started=false;continue;}if(!started){ctx.moveTo(px,ty(yy));started=true;}else ctx.lineTo(px,ty(yy));}
+                ctx.stroke();
+                ctx.strokeStyle='#c75c3a';ctx.lineWidth=2;ctx.setLineDash([6,4]);ctx.beginPath();
+                ctx.moveTo(tx(-0.25),ty(t(-0.25)));ctx.lineTo(tx(2.05),ty(t(2.05)));ctx.stroke();ctx.setLineDash([]);
+                ctx.strokeStyle='#8a9da7';ctx.lineWidth=2;ctx.beginPath();
+                ctx.moveTo(tx(-2),ty(n(-2)));ctx.lineTo(tx(3.5),ty(n(3.5)));ctx.stroke();
+                var px0=tx(1),py0=ty(1),L=11,lt=Math.hypot(1,2);
+                var ut=[1/lt*L,-2/lt*L],un=[-2/lt*L,-1/lt*L];
+                ctx.strokeStyle='#555';ctx.lineWidth=1.2;ctx.beginPath();
+                ctx.moveTo(px0+ut[0],py0+ut[1]);ctx.lineTo(px0+ut[0]+un[0],py0+ut[1]+un[1]);ctx.lineTo(px0+un[0],py0+un[1]);ctx.stroke();
+                ctx.fillStyle='#c75c3a';ctx.beginPath();ctx.arc(px0,py0,5,0,2*Math.PI);ctx.fill();
+                ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(px0,py0,2,0,2*Math.PI);ctx.fill();
+                ctx.fillStyle='#555';ctx.font='bold 12px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('P(1 | 1)',px0+9,py0+18);
+                ctx.font='bold 12px Inter,sans-serif';ctx.textBaseline='top';
+                ctx.fillStyle='#5b6e2e';ctx.fillText('f(x) = x²',12,H-58);
+                ctx.fillStyle='#c75c3a';ctx.fillText('t(x) = 2x − 1',12,H-42);
+                ctx.fillStyle='#8a9da7';ctx.fillText('n(x) = −0,5x + 1,5',12,H-26);
+            })();
+            </script>
+            <div class="ip"><strong>Warum die Steigung \(-\tfrac{1}{f'(x_0)}\) ist:</strong> Das Steigungsdreieck der Tangente geht 1 nach rechts und \(m_T\) nach oben. Dreht man es um \(90°\), geht es \(m_T\) nach links und 1 nach oben — das ist das Steigungsdreieck der Normalen. Ihre Steigung ist also \(m_N = \dfrac{1}{-m_T} = -\dfrac{1}{m_T}\). Kurz: Zwei Geraden stehen genau dann senkrecht aufeinander, wenn \(m_T \cdot m_N = -1\) gilt.</div>
+            <div class="ip" style="margin-top:12px;"><strong>Normale</strong> an der Stelle \(x_0\) — dieselben Bausteine wie bei der Tangente, nur mit der Steigung \(m_N = -\dfrac{1}{f'(x_0)}\):</div>
+            \[n(x) = -\frac{1}{f'(x_0)} \cdot (x - x_0) + f(x_0) \qquad \text{für } f'(x_0) \ne 0\]
+            <div class="hint"><strong>Sonderfall \(f'(x_0) = 0\):</strong> Die Tangente ist waagerecht, der Kehrwert von 0 existiert nicht. Die Normale ist dann die senkrechte Gerade \(x = x_0\) — eine Gerade, aber keine Funktionsgleichung der Form \(y = mx + n\).</div>
+            <div class="hint" style="margin-top:10px"><strong>Probe:</strong> Beide Geraden müssen durch den Berührpunkt gehen: \(t(x_0) = n(x_0) = f(x_0)\). Und das Produkt der Steigungen muss \(-1\) ergeben.</div>
+        </div>
+    </div>
+
+    <div class="bsp">
+        <div class="bsp-label">Beispielaufgabe: Tangente und Normale</div>
+        <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme die Gleichungen der Tangente und der Normalen an den Graphen von \(f(x) = x^2\) an der Stelle \(x_0 = 1\) (siehe Grafik oben).</div>
+        <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+        <div class="bsp-a">
+            <strong>Lösung:</strong><br>
+            <strong>Bausteine:</strong> \(f(1) = 1\), \(f'(x) = 2x\), also \(m_T = f'(1) = 2\).<br>
+            <strong>Tangente:</strong> \(t(x) = 2 \cdot (x - 1) + 1 = 2x - 2 + 1 = 2x - 1\)<br>
+            <strong>Steigung der Normalen:</strong> \(m_N = -\dfrac{1}{2} = -0{,}5\)<br>
+            <strong>Normale:</strong> \(n(x) = -0{,}5 \cdot (x - 1) + 1 = -0{,}5x + 0{,}5 + 1 = -0{,}5x + 1{,}5\)<br>
+            <strong>Probe:</strong> \(t(1) = 1\) ✓, \(n(1) = 1\) ✓, \(m_T \cdot m_N = 2 \cdot (-0{,}5) = -1\) ✓
         </div>
     </div>
 
@@ -20403,6 +20489,62 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T4.5</span><span class="td de">★</span></div>
+          <div class="tq">Gegeben ist \(f(x) = x^2\). Bestimme die Gleichungen der Tangente und der Normalen an der Stelle \(x_0 = -1\) und führe die Probe durch.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Bausteine:</strong> \(f(-1) = 1\), \(f'(x) = 2x\), also \(m_T = f'(-1) = -2\).</div>
+        <div class="ip"><strong>Tangente:</strong> \(t(x) = -2 \cdot (x - (-1)) + 1 = -2 \cdot (x + 1) + 1 = -2x - 1\)</div>
+        <div class="ip"><strong>Normale:</strong> \(m_N = -\dfrac{1}{-2} = 0{,}5\), also \(n(x) = 0{,}5 \cdot (x + 1) + 1 = 0{,}5x + 1{,}5\)</div>
+        <div class="ip"><strong>Probe:</strong> \(t(-1) = 2 - 1 = 1\) ✓, \(n(-1) = -0{,}5 + 1{,}5 = 1\) ✓, \(m_T \cdot m_N = -2 \cdot 0{,}5 = -1\) ✓. Achtung beim Vorzeichen: Der negative Kehrwert einer negativen Zahl ist positiv — die Normale steigt.</div>
+        <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K5: Tangenten- und Normalengleichung mit negativer Steigung sicher aufstellen und prüfen</div>
+      </div>
+    </div>
+
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T4.6</span><span class="td dm">★★</span></div>
+          <div class="tq">Der Querschnitt eines Parabolspiegels (etwa in einem Solarkocher) wird durch \(f(x) = x^2\) beschrieben, \(x\) und \(f(x)\) in Dezimetern. Sonnenlicht fällt senkrecht von oben ein, also parallel zur \(y\)-Achse.
+          <br><strong>a)</strong> Bestimme die Gleichung des Einfallslots im Punkt \(P(0{,}5\,|\,0{,}25)\), also der Normalen an dieser Stelle.
+          <br><strong>b)</strong> Der einfallende Strahl schließt mit dem Lot einen Winkel von \(45°\) ein. Begründe, dass der reflektierte Strahl in \(P\) waagerecht verläuft, und gib an, in welchem Punkt er die \(y\)-Achse trifft.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> \(f(0{,}5) = 0{,}25\) ✓ (der Punkt liegt auf dem Spiegel). \(f'(x) = 2x\), also \(m_T = f'(0{,}5) = 1\) und \(m_N = -1\).<br>
+        Einfallslot: \(n(x) = -1 \cdot (x - 0{,}5) + 0{,}25 = -x + 0{,}75\).</div>
+        <div class="ip"><strong>b)</strong> Die Tangente hat die Steigung 1, also den Neigungswinkel \(45°\); das Lot steht senkrecht darauf und ist damit ebenfalls um \(45°\) gegen die Achsen geneigt. Ein senkrecht einfallender Strahl bildet mit dem Lot den Winkel \(45°\). Reflexion bedeutet: Einfallswinkel gleich Ausfallswinkel, der Strahl wird um \(2 \cdot 45° = 90°\) umgelenkt und verläuft danach waagerecht — auf der Geraden \(y = 0{,}25\).<br>
+        Die \(y\)-Achse trifft er im Punkt \((0\,|\,0{,}25)\). Das ist der <em>Brennpunkt</em> dieser Parabel: Dort bündelt der Spiegel das Licht, dort sitzt beim Solarkocher der Topf.</div>
+        <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+        <div class="komp-desc">K3: Die Normale als Einfallslot in einem physikalischen Kontext deuten · K5: Normalengleichung aufstellen · K1: Den Strahlengang mit Neigungswinkel und Reflexionsgesetz begründen</div>
+      </div>
+    </div>
+
+<div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">T4.7</span><span class="td dh">★★★</span></div>
+          <div class="tq"><strong>a)</strong> Begründe mit dem Steigungsdreieck, warum für die Steigungen von Tangente und Normale immer \(m_T \cdot m_N = -1\) gilt.
+          <br><strong>b)</strong> Gib an, an welchen Stellen der Graph von \(f(x) = x^3 - 3x\) eine Normale besitzt, die sich nicht als Funktionsgleichung schreiben lässt. Beschreibe diese Normalen.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>a)</strong> Das Steigungsdreieck der Tangente hat die Katheten 1 (waagerecht) und \(m_T\) (senkrecht). Dreht man das Dreieck um \(90°\) um den Berührpunkt, tauschen die Katheten ihre Rollen: waagerecht \(-m_T\) (die Richtung kehrt sich um), senkrecht 1. Die gedrehte Gerade ist die Normale, ihre Steigung ist \(\dfrac{1}{-m_T}\). Multipliziert man beide Steigungen, bleibt \(m_T \cdot \dfrac{1}{-m_T} = -1\).</div>
+        <div class="ip"><strong>b)</strong> Keine Funktionsgleichung gibt es genau dort, wo die Normale senkrecht steht — also wo die Tangente waagerecht ist, \(f'(x_0) = 0\). Mit \(f'(x) = 3x^2 - 3\) folgt \(3x^2 - 3 = 0\), also \(x_0 = -1\) oder \(x_0 = 1\).<br>
+        Die Normalen sind dort die senkrechten Geraden \(x = -1\) und \(x = 1\). Die Berührpunkte sind \((-1\,|\,2)\) und \((1\,|\,-2)\), die Hoch- und Tiefpunkte des Graphen — ein Vorgriff auf die Kurvendiskussion im übernächsten Tab.</div>
+        <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+        <div class="komp-desc">K1: Eine allgemeine Beziehung geometrisch begründen · K4: Steigungsdreieck und Drehung als Darstellung nutzen · K5: Bedingung \(f'(x_0) = 0\) in eine Gleichung übersetzen und lösen</div>
+      </div>
+    </div>
+
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
@@ -20413,6 +20555,7 @@ window.addEventListener('resize',function(){updateSimulator();});
         <li>Bestimme mit einer Näherungstabelle die lokale Änderungsrate von \(f(x) = x^2\) an der Stelle \(x_0 = 1\).</li>
         <li>Bestimme die Tangentengleichung an \(f(x) = x^2\) an der Stelle \(x_0 = 3\).</li>
         <li>Berechne den Neigungswinkel der Tangente, wenn \(f'(x_0) = 1\).</li>
+        <li>Stelle die Normale an \(f(x) = x^2\) an der Stelle \(x_0 = 3\) auf und prüfe, dass sie durch den Berührpunkt geht und dass \(m_T \cdot m_N = -1\) gilt.</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
         Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Das startende Auto — wie schnell genau jetzt?“.
