@@ -29600,6 +29600,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </li>
       <li class="gi">
         <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+        <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Punktprobe durchführen und Winkel zwischen Geraden sowie zu Koordinatenachsen berechnen</span>
+      </li>
+      <li class="gi">
+        <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
         <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Lagebeziehungen zwischen Geraden analysieren (parallel, identisch, schneidend, windschief)</span>
       </li>
     </ul>
@@ -29612,7 +29616,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <div style="flex:1">
     <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Unterrichtseinheit 1 · 90 min</div>
     <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:2px">Geradengleichungen in Parameterform</div>
-    <div style="font-size:13px;color:var(--ink-muted);margin-top:2px;line-height:1.5">Stütz- und Richtungsvektor, Punktprobe, Geraden durch zwei Punkte.</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:2px;line-height:1.5">Stütz- und Richtungsvektor, Punktprobe, Geraden durch zwei Punkte, Winkel an Geraden, Parameteraufgaben. Aufgaben dazu: G1, G3.4–G3.7, G5 und G6.</div>
   </div>
 </div>
 <div class="section-label">1. Geradengleichungen in Parameterform</div>
@@ -29730,6 +29734,132 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       \[\vec{x} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} + t \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix},\quad t\in\mathbb{R}.\]
     </div>
     <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Probe:</em> Setze \(t=0\) → \(\vec{x}=A\); setze \(t=3\) → \(\vec{x}=(4|5|6)=B\). Die Gerade enthält beide Punkte.</em></div>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-head">
+    <div class="ci ci-i">i</div>
+    <span class="card-title">Punktprobe — liegt der Punkt auf der Geraden?</span>
+  </div>
+  <div class="card-body">
+    <div class="ip">Ein Punkt \(P\) liegt genau dann auf \(g\), wenn es <strong>einen</strong> Parameterwert \(t\) gibt, für den die Geradengleichung den Ortsvektor von \(P\) liefert. Man setzt also \(P\) für \(\vec{x}\) ein und erhält drei Gleichungen mit der einen Unbekannten \(t\).</div>
+    <div class="hint"><strong>Merke:</strong> Liefern alle drei Gleichungen <em>denselben</em> Wert \(t\), liegt \(P\) auf \(g\). Widerspricht auch nur eine Gleichung, liegt \(P\) nicht auf \(g\).</div>
+    <div class="ip" style="margin-top:8px;">Der gefundene Wert \(t\) ist mehr als eine Kontrollzahl: Er sagt, <em>wo</em> auf der Geraden der Punkt sitzt — \(t\) Schritte der Länge \(|\vec{d}|\) vom Stützpunkt aus, bei negativem \(t\) entgegen der Richtung von \(\vec{d}\).</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe 2: Punktprobe</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben ist \(g: \vec{x} = \begin{pmatrix}2\\-1\\3\end{pmatrix} + t\cdot\begin{pmatrix}1\\2\\-1\end{pmatrix}\). Prüfe, ob die Punkte \(P(5|5|0)\) und \(Q(4|3|2)\) auf \(g\) liegen.</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <strong>Lösung:</strong>
+    <div class="ip" style="margin-top:8px;"><strong>① Punkt \(P\) einsetzen.</strong> \(\begin{pmatrix}5\\5\\0\end{pmatrix} = \begin{pmatrix}2\\-1\\3\end{pmatrix} + t\cdot\begin{pmatrix}1\\2\\-1\end{pmatrix}\) ergibt zeilenweise
+      \(5 = 2 + t\), \(5 = -1 + 2t\) und \(0 = 3 - t\).</div>
+    <div class="ip"><strong>② Jede Gleichung nach \(t\) auflösen.</strong> Erste Zeile: \(t = 3\). Zweite Zeile: \(2t = 6\), also \(t = 3\). Dritte Zeile: \(t = 3\). Alle drei Gleichungen liefern \(t = 3\), also liegt \(P\) auf \(g\). Der Punkt ist vom Stützpunkt aus drei Schritte in Richtung \(\vec{d}\) entfernt.</div>
+    <div class="ip"><strong>③ Punkt \(Q\) einsetzen.</strong> \(4 = 2 + t\) liefert \(t = 2\); \(3 = -1 + 2t\) liefert ebenfalls \(t = 2\); aber \(2 = 3 - t\) liefert \(t = 1\). Die dritte Gleichung widerspricht den beiden anderen, also liegt \(Q\) nicht auf \(g\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Tipp:</em> Löse zuerst die einfachste Zeile nach \(t\) auf und setze diesen Wert in die beiden anderen Zeilen ein. Das spart Schreibarbeit und liefert dieselbe Entscheidung.</div>
+  </div>
+</div>
+
+<div class="section-label" style="margin-top:26px;">1b. Winkel an Geraden</div>
+
+<div class="two-col" style="align-items:start;gap:18px;">
+  <div>
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-head">
+        <div class="ci ci-i">i</div>
+        <span class="card-title">Der Winkel zwischen zwei Geraden</span>
+      </div>
+      <div class="card-body">
+        <div class="ip">Eine Gerade hat keine Vorwärtsrichtung: \(\vec{d}\) und \(-\vec{d}\) beschreiben dieselbe Gerade. Schneiden sich zwei Geraden, entstehen deshalb <em>zwei</em> Winkel, \(\varphi\) und \(180° - \varphi\). Als <strong>Schnittwinkel</strong> vereinbart man den kleineren, also den spitzen (höchstens rechten) Winkel.</div>
+        <div class="hint" style="background:var(--kiku-bg);border-left:3px solid var(--kiku);">
+          <strong>Winkel zwischen zwei Geraden.</strong> Für Geraden mit den Richtungsvektoren \(\vec{u}\) und \(\vec{v}\) gilt
+          \[\cos\varphi = \frac{|\vec{u}\cdot\vec{v}|}{|\vec{u}|\cdot|\vec{v}|},\qquad 0° \le \varphi \le 90°.\]
+        </div>
+        <div class="ip">Der Betrag im Zähler macht ein negatives Skalarprodukt positiv und sorgt so automatisch für den spitzen Winkel. Stützpunkte spielen keine Rolle — nur die Richtungen zählen.</div>
+        <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vektor oder Gerade?</strong> Zwischen zwei <em>Vektoren</em> (zwei Pfeilen, etwa zwei Seilen von einer Mastspitze aus) liegt der Winkel zwischen \(0°\) und \(180°\) — dort steht kein Betrag im Zähler. Zwischen zwei <em>Geraden</em> ist der Winkel höchstens \(90°\) — dort steht der Betrag. Lies die Aufgabe genau: Pfeile oder Geraden?</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div style="text-align:center;">
+<svg viewBox="0 0 360 230" style="width:100%;max-width:400px;display:block;margin:0 auto;border-radius:4px;background:#fafafa;">
+<defs>
+<marker id="pfU" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#c75c3a"/></marker>
+<marker id="pfV" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5b6e2e"/></marker>
+</defs>
+<line x1="20" y1="185" x2="340" y2="45" stroke="#8a9da7" stroke-width="2" stroke-opacity="0.7"/>
+<line x1="40" y1="30" x2="320" y2="200" stroke="#8a9da7" stroke-width="2" stroke-opacity="0.7"/>
+<text x="330" y="36" font-size="14" font-weight="bold" fill="#8a9da7" font-style="italic">g</text>
+<text x="326" y="214" font-size="14" font-weight="bold" fill="#8a9da7" font-style="italic">h</text>
+<circle cx="180" cy="115" r="4" fill="#333"/>
+<text x="168" y="138" font-size="12" font-weight="bold" fill="#333">S</text>
+<line x1="180" y1="115" x2="271" y2="75" stroke="#c75c3a" stroke-width="2.5" marker-end="url(#pfU)"/>
+<text x="262" y="66" font-size="14" font-weight="bold" fill="#c75c3a"><tspan style="text-decoration:overline;">u</tspan></text>
+<line x1="180" y1="115" x2="262" y2="165" stroke="#5b6e2e" stroke-width="2.5" marker-end="url(#pfV)"/>
+<text x="266" y="182" font-size="14" font-weight="bold" fill="#5b6e2e"><tspan style="text-decoration:overline;">v</tspan></text>
+<path d="M 212 101 A 35 35 0 0 1 210 133" fill="none" stroke="#c75c3a" stroke-width="2"/>
+<text x="220" y="122" font-size="14" font-weight="bold" fill="#c75c3a">φ</text>
+<path d="M 148 129 A 35 35 0 0 1 152 102" fill="none" stroke="#c75c3a" stroke-width="2"/>
+<text x="126" y="122" font-size="14" font-weight="bold" fill="#c75c3a">φ</text>
+<path d="M 208 98 A 32 32 0 0 0 150 98" fill="none" stroke="#8a9da7" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="150" y="80" font-size="12" fill="#666">180° − φ</text>
+<text x="8" y="222" font-size="9" fill="#666">Zwei Winkel am Schnittpunkt: φ und 180° − φ. Der Schnittwinkel ist der spitze Winkel φ.</text>
+</svg>
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:4px;">Nur die Richtungsvektoren \(\vec{u}\) und \(\vec{v}\) bestimmen den Schnittwinkel.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:14px;">
+  <div class="card-head">
+    <div class="ci ci-i">i</div>
+    <span class="card-title">Winkel zu einer Koordinatenachse</span>
+  </div>
+  <div class="card-body">
+    <div class="ip">Die Koordinatenachsen sind selbst Geraden. Ihre Richtungsvektoren sind die Einheitsvektoren \(\vec{e}_x = \begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{e}_y = \begin{pmatrix}0\\1\\0\end{pmatrix}\) und \(\vec{e}_z = \begin{pmatrix}0\\0\\1\end{pmatrix}\). Der Winkel zwischen \(g\) und der \(z\)-Achse ist also der Winkel zwischen \(\vec{d}\) und \(\vec{e}_z\) — und weil \(|\vec{e}_z| = 1\) ist, vereinfacht sich die Formel:</div>
+    <div class="ip" style="text-align:center;">\[\cos\varphi = \frac{|\vec{d}\cdot\vec{e}_z|}{|\vec{d}|\cdot 1} = \frac{|d_z|}{|\vec{d}|}.\]</div>
+    <div class="ip">Das Skalarprodukt mit einem Einheitsvektor greift einfach die passende Koordinate von \(\vec{d}\) heraus. In Sachaufgaben ist die \(z\)-Achse meist die Senkrechte: Der Winkel zur \(z\)-Achse sagt, wie steil eine Stange, ein Seil oder eine Flugbahn steht.</div>
+  </div>
+</div>
+
+<div class="bsp">
+  <div class="bsp-label">Beispielaufgabe 3: Schnittwinkel zweier Geraden</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Die Geraden \(g: \vec{x} = \begin{pmatrix}1\\0\\3\end{pmatrix} + s\cdot\begin{pmatrix}2\\1\\2\end{pmatrix}\) und \(h: \vec{x} = \begin{pmatrix}1\\0\\3\end{pmatrix} + t\cdot\begin{pmatrix}-2\\2\\-1\end{pmatrix}\) schneiden sich im Punkt \(S(1|0|3)\). Berechne den Schnittwinkel \(\varphi\).</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <strong>Lösung:</strong>
+    <div class="ip" style="margin-top:8px;"><strong>① Skizze und Vorhersage.</strong> Beide Geraden laufen durch \(S\). Das Skalarprodukt der Richtungsvektoren wird negativ ausfallen (die ersten Koordinaten haben verschiedene Vorzeichen), der Winkel zwischen den <em>Pfeilen</em> ist also stumpf. Der Schnittwinkel ist der spitze Nebenwinkel dazu.</div>
+    <div class="ip"><strong>② Skalarprodukt.</strong> \(\vec{u}\cdot\vec{v} = 2\cdot(-2) + 1\cdot 2 + 2\cdot(-1) = -4 + 2 - 2 = -4\).</div>
+    <div class="ip"><strong>③ Beträge.</strong> \(|\vec{u}| = \sqrt{4+1+4} = 3\) und \(|\vec{v}| = \sqrt{4+4+1} = 3\).</div>
+    <div class="ip"><strong>④ Einsetzen.</strong> \(\cos\varphi = \dfrac{|-4|}{3\cdot 3} = \dfrac{4}{9}\), also \(\varphi = \arccos\!\left(\tfrac{4}{9}\right) \approx 63{,}6°\).</div>
+    <div class="ip"><strong>⑤ Antwort.</strong> Die Geraden schneiden sich unter einem Winkel von etwa \(63{,}6°\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Kontrolle:</em> Ohne den Betrag hätte man \(\cos\varphi = -\tfrac{4}{9}\) und \(\varphi \approx 116{,}4°\) erhalten — das ist der Winkel zwischen den beiden Pfeilen. Beide Winkel ergänzen sich zu \(180°\); für Geraden wird der spitze angegeben.</div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:14px;">
+  <div class="card-head">
+    <div class="ci ci-t">★</div>
+    <span class="card-title">Parameter in der Geradengleichung</span>
+  </div>
+  <div class="card-body">
+    <div class="ip">In vielen Aufgaben steckt im Richtungsvektor oder im Stützpunkt eine unbekannte Zahl \(a\). Gesucht ist dann der Wert von \(a\), für den eine geometrische Bedingung erfüllt ist. Das Vorgehen ist immer dasselbe: <strong>Bedingung in eine Gleichung übersetzen, Gleichung nach \(a\) auflösen, Ergebnis geometrisch deuten.</strong></div>
+    <div class="two-col" style="margin-top:8px;">
+      <div style="background:var(--kiku-bg);border-radius:8px;padding:12px 14px;">
+        <div style="font-weight:700;color:#3e4d1f;font-size:14px;">Bedingung „senkrecht“</div>
+        <div class="ip" style="font-size:14px;">\(\vec{u}\cdot\vec{v} = 0\) — eine <em>lineare</em> Gleichung in \(a\), genau eine Lösung.</div>
+      </div>
+      <div style="background:var(--mushikuri-light);border-radius:8px;padding:12px 14px;">
+        <div style="font-weight:700;color:#8a7a30;font-size:14px;">Bedingung „Winkel \(\varphi\)“</div>
+        <div class="ip" style="font-size:14px;">\(\cos\varphi = \dfrac{|\vec{u}\cdot\vec{v}|}{|\vec{u}|\,|\vec{v}|}\) — durch die Wurzel im Nenner meist eine <em>quadratische</em> Gleichung, oft zwei Lösungen.</div>
+      </div>
+    </div>
+    <div class="ip" style="margin-top:10px;"><strong>Beispiel senkrecht.</strong> Für welches \(a\) steht \(g_a\) mit Richtungsvektor \(\begin{pmatrix}a\\1\\2\end{pmatrix}\) senkrecht auf \(h\) mit Richtungsvektor \(\begin{pmatrix}3\\-1\\-1\end{pmatrix}\)? Ansatz: \(3a + 1\cdot(-1) + 2\cdot(-1) = 0\), also \(3a - 3 = 0\) und \(a = 1\). Probe: \(\begin{pmatrix}1\\1\\2\end{pmatrix}\cdot\begin{pmatrix}3\\-1\\-1\end{pmatrix} = 3 - 1 - 2 = 0\).</div>
+    <div class="ip"><strong>Beispiel Winkel.</strong> Für welche \(a\) schließt \(g_a\) mit Richtungsvektor \(\begin{pmatrix}a\\1\\1\end{pmatrix}\) mit der \(z\)-Achse einen Winkel von \(60°\) ein? Ansatz: \(\cos 60° = \dfrac{|1|}{\sqrt{a^2+2}}\). Mit \(\cos 60° = \tfrac12\) folgt \(\sqrt{a^2+2} = 2\), also \(a^2 + 2 = 4\) und \(a = \sqrt{2}\) oder \(a = -\sqrt{2}\). Beide Geraden sind gleich steil — sie sind spiegelbildlich zur \(z\)-Achse geneigt.</div>
   </div>
 </div>
 
@@ -30026,6 +30156,89 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ip"><strong>Lösung:</strong> Punkt einsetzen und prüfen, ob ein einheitliches \(t\) alle drei Komponenten erfüllt. Aus \(1+3t=7\) folgt \(t=2\). Probe: \(0+2\cdot 0=0\) ✓; \(1+2\cdot 1=3\) ✓. Alle drei Gleichungen ergeben \(t=2\) — also <strong>liegt</strong> \(P\) auf \(g\).</div>
   </div>
 </div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G1.4</span><span class="td de">★</span></div>
+      <div class="tq">Die Gerade \(g\) verläuft durch \(A(2|-1|4)\) und hat den Richtungsvektor \(\vec{d} = \begin{pmatrix}1\\0\\-2\end{pmatrix}\). Gib eine Gleichung von \(g\) an und berechne die Punkte, die zu \(t = 2\) und zu \(t = -1\) gehören.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Gleichung:</strong> \(g: \vec{x} = \begin{pmatrix}2\\-1\\4\end{pmatrix} + t\cdot\begin{pmatrix}1\\0\\-2\end{pmatrix}\).</div>
+    <div class="ip"><strong>\(t = 2\):</strong> \(\begin{pmatrix}2\\-1\\4\end{pmatrix} + 2\cdot\begin{pmatrix}1\\0\\-2\end{pmatrix} = \begin{pmatrix}4\\-1\\0\end{pmatrix}\), also der Punkt \((4|-1|0)\).</div>
+    <div class="ip"><strong>\(t = -1\):</strong> \(\begin{pmatrix}2\\-1\\4\end{pmatrix} - \begin{pmatrix}1\\0\\-2\end{pmatrix} = \begin{pmatrix}1\\-1\\6\end{pmatrix}\), also der Punkt \((1|-1|6)\). Für negatives \(t\) geht man vom Stützpunkt aus entgegen der Richtung von \(\vec{d}\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K5: Parameterform als Punktmaschine — jedes t liefert einen Punkt</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G1.5</span><span class="td de">★</span></div>
+      <div class="tq">Stelle eine Gleichung der Geraden \(g\) durch \(P(3|1|-2)\) und \(Q(1|5|0)\) auf. Prüfe anschließend, ob \(R(-1|9|2)\) auf \(g\) liegt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Richtungsvektor:</strong> \(\vec{PQ} = \begin{pmatrix}-2\\4\\2\end{pmatrix}\); vereinfacht (durch 2 geteilt) \(\vec{d} = \begin{pmatrix}-1\\2\\1\end{pmatrix}\).</div>
+    <div class="ip"><strong>Gleichung:</strong> \(g: \vec{x} = \begin{pmatrix}3\\1\\-2\end{pmatrix} + t\cdot\begin{pmatrix}-1\\2\\1\end{pmatrix}\).</div>
+    <div class="ip"><strong>Punktprobe für \(R\):</strong> \(3 - t = -1\) liefert \(t = 4\); \(1 + 2t = 9\) liefert \(t = 4\); \(-2 + t = 2\) liefert \(t = 4\). Alle drei Gleichungen ergeben \(t = 4\), also liegt \(R\) auf \(g\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K5: Gerade aus zwei Punkten aufstellen und Punktprobe durchführen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G1.6</span><span class="td de">★</span></div>
+      <div class="tq">Gegeben ist \(g: \vec{x} = \begin{pmatrix}1\\2\\0\end{pmatrix} + t\cdot\begin{pmatrix}2\\-1\\3\end{pmatrix}\). Entscheide für jeden der Punkte \(A(5|0|6)\), \(B(-1|3|-3)\) und \(C(3|1|2)\), ob er auf \(g\) liegt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>\(A\):</strong> \(1 + 2t = 5\) liefert \(t = 2\). Probe: \(2 - 2 = 0\) und \(0 + 6 = 6\) — beide richtig. \(A\) liegt auf \(g\).</div>
+    <div class="ip"><strong>\(B\):</strong> \(1 + 2t = -1\) liefert \(t = -1\). Probe: \(2 + 1 = 3\) und \(0 - 3 = -3\) — beide richtig. \(B\) liegt auf \(g\).</div>
+    <div class="ip"><strong>\(C\):</strong> \(1 + 2t = 3\) liefert \(t = 1\). Probe: \(2 - 1 = 1\) richtig, aber \(0 + 3 = 3 \neq 2\). \(C\) liegt nicht auf \(g\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K5: Punktprobe mit dem Einsetz-Verfahren (erste Zeile lösen, Rest prüfen)</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G1.7</span><span class="td de">★</span></div>
+      <div class="tq">Gib jeweils eine Gleichung der Geraden durch \(P(4|0|1)\) an, die <br>a) parallel zur \(y\)-Achse verläuft, <br>b) parallel zu \(h: \vec{x} = \begin{pmatrix}0\\1\\1\end{pmatrix} + s\cdot\begin{pmatrix}3\\-2\\1\end{pmatrix}\) verläuft.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Die \(y\)-Achse hat den Richtungsvektor \(\begin{pmatrix}0\\1\\0\end{pmatrix}\), also \(g: \vec{x} = \begin{pmatrix}4\\0\\1\end{pmatrix} + t\cdot\begin{pmatrix}0\\1\\0\end{pmatrix}\).</div>
+    <div class="ip"><strong>b)</strong> Parallele Geraden haben kollineare Richtungsvektoren; man übernimmt den Richtungsvektor von \(h\): \(g: \vec{x} = \begin{pmatrix}4\\0\\1\end{pmatrix} + t\cdot\begin{pmatrix}3\\-2\\1\end{pmatrix}\). Jedes Vielfache von \(\begin{pmatrix}3\\-2\\1\end{pmatrix}\) wäre ebenfalls richtig.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Richtungsvektor aus einer Bedingung wählen · K4: Koordinatenachse als Gerade lesen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G1.8</span><span class="td de">★</span></div>
+      <div class="tq"><strong>Fehleraufgabe.</strong> Tim behauptet: „Die Geraden \(g: \vec{x} = \begin{pmatrix}1\\2\\3\end{pmatrix} + t\cdot\begin{pmatrix}2\\4\\6\end{pmatrix}\) und \(h: \vec{x} = \begin{pmatrix}3\\6\\9\end{pmatrix} + s\cdot\begin{pmatrix}1\\2\\3\end{pmatrix}\) sind verschieden, denn Stützpunkt und Richtungsvektor stimmen nicht überein.“ Beurteile die Aussage.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Die Aussage ist falsch.</strong> Die Richtungsvektoren sind kollinear: \(\begin{pmatrix}2\\4\\6\end{pmatrix} = 2\cdot\begin{pmatrix}1\\2\\3\end{pmatrix}\). Der Stützpunkt \((3|6|9)\) von \(h\) liegt auf \(g\): \(1 + 2t = 3\) liefert \(t = 1\), und \(2 + 4 = 6\), \(3 + 6 = 9\) stimmen. Also beschreiben beide Gleichungen dieselbe Gerade.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted)"><strong>Lerneffekt:</strong> Eine Gerade hat unendlich viele Parametergleichungen — jeder Punkt der Geraden darf Stützpunkt sein, jedes Vielfache des Richtungsvektors darf Richtungsvektor sein. Verschiedene Gleichungen bedeuten nicht verschiedene Geraden.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K1: Behauptung prüfen und widerlegen · K6: Nicht-Eindeutigkeit der Darstellung erklären</div>
+  </div>
+</div>
 <!-- Sub-Block Aufgaben-Block · G2 · ★★/★★★ Vertiefung -->
 <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
   <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c8b55e;line-height:1;font-weight:400;min-width:36px;text-align:center">G2</div>
@@ -30144,6 +30357,74 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="komp-desc">K5: Geradengleichung als Bewegungsmodell · K3: Sachkontext modellieren · K4: Ergebnis in m angeben</div>
   </div>
 </div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.4</span><span class="td dm">★★</span></div>
+      <div class="tq">Gegeben sind \(g_a: \vec{x} = \begin{pmatrix}1\\0\\2\end{pmatrix} + t\cdot\begin{pmatrix}a\\1\\2\end{pmatrix}\) und \(h: \vec{x} = \begin{pmatrix}0\\3\\1\end{pmatrix} + s\cdot\begin{pmatrix}3\\-1\\-1\end{pmatrix}\). Bestimme \(a\) so, dass \(g_a\) senkrecht zu \(h\) verläuft.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Bedingung:</strong> Senkrecht heißt, das Skalarprodukt der Richtungsvektoren ist null: \(\begin{pmatrix}a\\1\\2\end{pmatrix}\cdot\begin{pmatrix}3\\-1\\-1\end{pmatrix} = 3a - 1 - 2 = 3a - 3\).</div>
+    <div class="ip"><strong>Auflösen:</strong> \(3a - 3 = 0\), also \(a = 1\).</div>
+    <div class="ip"><strong>Probe:</strong> \(\begin{pmatrix}1\\1\\2\end{pmatrix}\cdot\begin{pmatrix}3\\-1\\-1\end{pmatrix} = 3 - 1 - 2 = 0\). Für \(a = 1\) steht \(g_a\) senkrecht auf \(h\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span></div>
+    <div class="komp-desc">K5: Orthogonalitätsbedingung als lineare Gleichung · K3: Bedingung in Gleichung übersetzen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.5</span><span class="td dm">★★</span></div>
+      <div class="tq">Die Gerade \(g_a\) hat den Richtungsvektor \(\begin{pmatrix}a\\2\\2\end{pmatrix}\). Bestimme alle Werte von \(a\), für die \(g_a\) mit der \(z\)-Achse einen Winkel von \(60°\) einschließt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Ansatz:</strong> Richtungsvektor der \(z\)-Achse ist \(\begin{pmatrix}0\\0\\1\end{pmatrix}\). Damit \(\cos 60° = \dfrac{|2|}{\sqrt{a^2 + 4 + 4}\cdot 1} = \dfrac{2}{\sqrt{a^2+8}}\).</div>
+    <div class="ip"><strong>Auflösen:</strong> Mit \(\cos 60° = \tfrac12\) folgt \(\sqrt{a^2+8} = 4\), also \(a^2 + 8 = 16\) und \(a^2 = 8\). Lösungen: \(a = \sqrt{8} = 2\sqrt{2} \approx 2{,}83\) oder \(a = -2\sqrt{2}\).</div>
+    <div class="ip"><strong>Deutung:</strong> Beide Geraden sind gleich steil; sie unterscheiden sich nur darin, ob die Gerade in positive oder negative \(x\)-Richtung kippt. Der Betrag im Zähler war hier ohne Wirkung, weil \(d_z = 2\) positiv ist.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Winkelbedingung als quadratische Gleichung · K4: zwei Lösungen geometrisch deuten</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.6</span><span class="td dh">★★★</span></div>
+      <div class="tq">Die Gerade \(g_a\) hat den Richtungsvektor \(\begin{pmatrix}a\\1\\0\end{pmatrix}\). Untersuche, für welche Werte von \(a\) die Gerade \(g_a\) <br>a) senkrecht zur \(z\)-Achse steht, <br>b) parallel zur \(x\)-Achse verläuft. Begründe jeweils.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(\begin{pmatrix}a\\1\\0\end{pmatrix}\cdot\begin{pmatrix}0\\0\\1\end{pmatrix} = 0\) gilt für <em>jedes</em> \(a\), denn die dritte Koordinate des Richtungsvektors ist null. Alle Geraden \(g_a\) stehen senkrecht zur \(z\)-Achse — sie verlaufen alle waagerecht.</div>
+    <div class="ip"><strong>b)</strong> Parallel zur \(x\)-Achse hieße \(\begin{pmatrix}a\\1\\0\end{pmatrix} = k\cdot\begin{pmatrix}1\\0\\0\end{pmatrix}\). Die zweite Koordinate verlangt \(1 = k\cdot 0 = 0\) — ein Widerspruch. Es gibt <em>kein</em> \(a\), für das \(g_a\) parallel zur \(x\)-Achse ist; die Gerade hat immer einen Anteil in \(y\)-Richtung.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted)"><strong>Lerneffekt:</strong> Eine Parameterbedingung kann für alle \(a\), für genau ein \(a\), für zwei Werte oder für kein \(a\) erfüllt sein. Die Rechnung entscheidet — die Aufgabenstellung verrät es nicht.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K1: Existenz und Allgemeingültigkeit begründen · K5: Kollinearität und Orthogonalität als Bedingungen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.7</span><span class="td dm">★★</span></div>
+      <div class="tq">Der Punkt \(Q(a|5|7)\) liegt auf der Geraden \(g: \vec{x} = \begin{pmatrix}1\\-1\\1\end{pmatrix} + t\cdot\begin{pmatrix}2\\3\\3\end{pmatrix}\). Bestimme \(a\).</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Punktprobe rückwärts:</strong> Aus der zweiten Zeile \(-1 + 3t = 5\) folgt \(t = 2\). Kontrolle in der dritten Zeile: \(1 + 3\cdot 2 = 7\) — stimmt, der Punkt kann auf \(g\) liegen.</div>
+    <div class="ip"><strong>Erste Zeile:</strong> \(a = 1 + 2\cdot 2 = 5\). Der Punkt ist \(Q(5|5|7)\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted)"><strong>Hinweis:</strong> Hätte die dritte Zeile nicht gepasst, gäbe es kein \(a\) — dann läge \(Q\) für keinen Wert von \(a\) auf \(g\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span></div>
+    <div class="komp-desc">K5: Parameter aus zwei Zeilen bestimmen, dritte Zeile als Kontrolle · K3: Punktprobe umkehren</div>
+  </div>
+</div>
 <!-- Sub-Block Aufgaben-Block · G4 · ★/★★★/★★★ · K1+K6 · Beschreibung (Konzept 2) -->
 <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
   <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#5b6e2e;line-height:1;font-weight:400;min-width:36px;text-align:center">G4</div>
@@ -30203,6 +30484,147 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="komp-desc">K6: Aufgabe konstruieren · K1: Lagebeziehung argumentativ ableiten</div>
   </div>
 </div>
+<!-- Sub-Block Aufgaben-Block · G5 · ★/★★ · Winkel -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#8a9da7;line-height:1;font-weight:400;min-width:36px;text-align:center">G5</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G5 · ★/★★ · Winkel</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Winkel an Geraden</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Schnittwinkel zweier Geraden, Winkel zu einer Koordinatenachse, Winkel im Sachzusammenhang — mit der Betragsformel und Vorhersage des Ergebnisses.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G5.1</span><span class="td de">★</span></div>
+      <div class="tq">Die Geraden \(g: \vec{x} = \begin{pmatrix}2\\1\\0\end{pmatrix} + s\cdot\begin{pmatrix}1\\2\\2\end{pmatrix}\) und \(h: \vec{x} = \begin{pmatrix}2\\1\\0\end{pmatrix} + t\cdot\begin{pmatrix}2\\2\\-1\end{pmatrix}\) schneiden sich im Punkt \((2|1|0)\). Berechne den Schnittwinkel.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Skalarprodukt:</strong> \(\begin{pmatrix}1\\2\\2\end{pmatrix}\cdot\begin{pmatrix}2\\2\\-1\end{pmatrix} = 2 + 4 - 2 = 4\).</div>
+    <div class="ip"><strong>Beträge:</strong> \(\sqrt{1+4+4} = 3\) und \(\sqrt{4+4+1} = 3\).</div>
+    <div class="ip"><strong>Winkel:</strong> \(\cos\varphi = \dfrac{|4|}{3\cdot 3} = \dfrac49\), also \(\varphi \approx 63{,}6°\). Die Geraden schneiden sich unter einem Winkel von etwa \(63{,}6°\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K5: Winkelformel für Geraden anwenden</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G5.2</span><span class="td de">★</span></div>
+      <div class="tq">Die Gerade \(g\) hat den Richtungsvektor \(\begin{pmatrix}3\\0\\4\end{pmatrix}\). Berechne den Winkel zwischen \(g\) und der \(x\)-Achse sowie den Winkel zwischen \(g\) und der \(z\)-Achse. Was fällt dir auf?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Betrag:</strong> \(|\vec{d}| = \sqrt{9 + 0 + 16} = 5\).</div>
+    <div class="ip"><strong>\(x\)-Achse:</strong> \(\cos\varphi_x = \dfrac{|3|}{5} = 0{,}6\), also \(\varphi_x \approx 53{,}1°\).</div>
+    <div class="ip"><strong>\(z\)-Achse:</strong> \(\cos\varphi_z = \dfrac{|4|}{5} = 0{,}8\), also \(\varphi_z \approx 36{,}9°\).</div>
+    <div class="ip"><strong>Beobachtung:</strong> Die beiden Winkel ergänzen sich zu \(90°\). Das liegt daran, dass \(\vec{d}\) keine \(y\)-Komponente hat und deshalb in der \(xz\)-Ebene liegt — dort bilden die \(x\)-Achse, die \(z\)-Achse und \(g\) ein rechtwinkliges Dreieck mit den Katheten 3 und 4.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Winkel zu Koordinatenachsen über eine Koordinate · K4: Ergebnis im Dreieck deuten</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G5.3</span><span class="td dm">★★</span></div>
+      <div class="tq">Die Geraden \(g\) und \(h\) haben die Richtungsvektoren \(\vec{u} = \begin{pmatrix}4\\0\\3\end{pmatrix}\) und \(\vec{v} = \begin{pmatrix}-4\\3\\0\end{pmatrix}\). Berechne den Winkel zwischen \(g\) und \(h\). Erläutere, warum das Ergebnis nicht \(129{,}8°\) lautet.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Skalarprodukt:</strong> \(\vec{u}\cdot\vec{v} = -16 + 0 + 0 = -16\). Beträge: \(|\vec{u}| = 5\) und \(|\vec{v}| = 5\).</div>
+    <div class="ip"><strong>Winkel:</strong> \(\cos\varphi = \dfrac{|-16|}{25} = 0{,}64\), also \(\varphi \approx 50{,}2°\).</div>
+    <div class="ip"><strong>Erläuterung:</strong> Ohne den Betrag ergäbe sich \(\cos\varphi = -0{,}64\) und \(\varphi \approx 129{,}8°\); das ist der Winkel zwischen den beiden <em>Pfeilen</em> \(\vec{u}\) und \(\vec{v}\). Ersetzt man \(\vec{v}\) durch \(-\vec{v}\), beschreibt der Vektor dieselbe Gerade \(h\), aber der Pfeilwinkel wird \(50{,}2°\). Für Geraden ist nur der spitze Winkel sinnvoll — genau das erzwingt der Betrag.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Betragsformel anwenden · K1: Rolle des Betrags begründen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G5.4</span><span class="td dm">★★</span></div>
+      <div class="tq">Zwei Drohnen fliegen geradlinig in gleicher Höhe. Die Bahn der ersten Drohne ist \(g: \vec{x} = \begin{pmatrix}0\\0\\10\end{pmatrix} + t\cdot\begin{pmatrix}3\\4\\0\end{pmatrix}\), die Bahn der zweiten \(h: \vec{x} = \begin{pmatrix}12\\16\\10\end{pmatrix} + s\cdot\begin{pmatrix}4\\0\\3\end{pmatrix}\); eine Längeneinheit entspricht einem Meter. <br>a) Zeige, dass der Punkt \(S(12|16|10)\) auf beiden Bahnen liegt. <br>b) Berechne den Winkel, unter dem sich die Bahnen in \(S\) kreuzen. <br>c) Berechne den Winkel, den die Bahn \(h\) mit der Senkrechten (\(z\)-Richtung) einschließt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Punktprobe in \(g\): \(3t = 12\) liefert \(t = 4\); Kontrolle \(4\cdot 4 = 16\) und \(10 = 10\). In \(h\) ist \(S\) der Stützpunkt (\(s = 0\)). Also liegt \(S\) auf beiden Bahnen.</div>
+    <div class="ip"><strong>b)</strong> \(\begin{pmatrix}3\\4\\0\end{pmatrix}\cdot\begin{pmatrix}4\\0\\3\end{pmatrix} = 12\); Beträge \(5\) und \(5\). \(\cos\varphi = \dfrac{12}{25} = 0{,}48\), also \(\varphi \approx 61{,}3°\). Die Bahnen kreuzen sich unter einem Winkel von etwa \(61{,}3°\).</div>
+    <div class="ip"><strong>c)</strong> Richtungsvektor der Senkrechten ist \(\begin{pmatrix}0\\0\\1\end{pmatrix}\). \(\cos\psi = \dfrac{|3|}{5} = 0{,}6\), also \(\psi \approx 53{,}1°\). Die zweite Drohne steigt: Ihre Bahn bildet mit der Senkrechten einen Winkel von etwa \(53{,}1°\), mit der Waagerechten also etwa \(36{,}9°\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K3: Flugbahnen als Geraden lesen · K5: Punktprobe und Winkelformel · K4: Winkel zur Senkrechten deuten</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G5.5</span><span class="td dm">★★</span></div>
+      <div class="tq">Sonnenstrahlen fallen parallel in Richtung \(\begin{pmatrix}2\\1\\-2\end{pmatrix}\) auf ein waagerechtes Gelände (\(xy\)-Ebene). Dort steht eine senkrechte Fahnenstange. Berechne den Winkel, den die Strahlen mit der Stange einschließen, und den Winkel, den die Strahlen mit der \(z\)-Achse bilden, wenn man sie als Pfeil (Richtung des Lichts) auffasst.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Stange als Gerade:</strong> Richtungsvektor \(\begin{pmatrix}0\\0\\1\end{pmatrix}\). \(\cos\varphi = \dfrac{|-2|}{\sqrt{4+1+4}\cdot 1} = \dfrac23\), also \(\varphi \approx 48{,}2°\). Die Strahlen treffen die Stange unter einem Winkel von etwa \(48{,}2°\).</div>
+    <div class="ip"><strong>Licht als Pfeil:</strong> Der Lichtvektor zeigt nach unten (\(d_z = -2\)), \(\vec{e}_z\) nach oben. Ohne Betrag: \(\cos\alpha = -\dfrac23\), also \(\alpha \approx 131{,}8°\). Der Pfeil des Lichts und die nach oben zeigende \(z\)-Achse schließen einen stumpfen Winkel ein — beide Angaben beschreiben dieselbe Situation, einmal für die Gerade, einmal für die Richtung des Lichts.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K3: Lichtrichtung und Stange modellieren · K5: Winkel berechnen · K6: Gerade und Pfeil unterscheiden</div>
+  </div>
+</div>
+<!-- Sub-Block Aufgaben-Block · G6 · ★★/★★★ · Abiturnah -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c8b55e;line-height:1;font-weight:400;min-width:36px;text-align:center">G6</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G6 · ★★/★★★ · Abiturnah</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Geraden im Prüfungsformat</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Aufgaben im Stil des IQB-Pools und des MV-Abiturs — hilfsmittelfrei im Teil-A-Format, mit Körper und Sachkontext im Teil-B-Format. Alles mit den Grundlagen dieser Einheit lösbar.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G6.1</span><span class="td dm">★★</span></div>
+      <div class="tq"><strong>Teil A · hilfsmittelfrei.</strong> Gegeben sind die Punkte \(A(4|0|0)\), \(B(0|4|0)\) und \(C(0|0|4)\). <br>a) Gib eine Gleichung der Geraden \(g\) durch \(A\) und \(B\) an. <br>b) Zeige, dass der Punkt \(P(1|3|0)\) auf \(g\) liegt. <br>c) Berechne die Größe des Winkels zwischen \(g\) und der \(x\)-Achse. <br>d) Begründe ohne Rechnung, dass die Gerade durch \(A\) und \(C\) mit der \(x\)-Achse denselben Winkel einschließt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(\vec{AB} = \begin{pmatrix}-4\\4\\0\end{pmatrix}\), vereinfacht \(\begin{pmatrix}-1\\1\\0\end{pmatrix}\). \(g: \vec{x} = \begin{pmatrix}4\\0\\0\end{pmatrix} + t\cdot\begin{pmatrix}-1\\1\\0\end{pmatrix}\).</div>
+    <div class="ip"><strong>b)</strong> \(4 - t = 1\) liefert \(t = 3\); Kontrolle: \(0 + 3 = 3\) und \(0 = 0\). Also liegt \(P\) auf \(g\).</div>
+    <div class="ip"><strong>c)</strong> \(\cos\varphi = \dfrac{|-1|}{\sqrt{2}\cdot 1} = \dfrac{1}{\sqrt2} = \dfrac{\sqrt2}{2}\), also \(\varphi = 45°\).</div>
+    <div class="ip"><strong>d)</strong> \(A\), \(B\) und \(C\) haben denselben Abstand \(4\) vom Ursprung, und die Achsen stehen paarweise senkrecht. Das Dreieck \(OAC\) ist daher wie \(OAB\) gleichschenklig-rechtwinklig mit dem rechten Winkel bei \(O\); die Basiswinkel betragen jeweils \(45°\). Rechnerisch: Der Richtungsvektor \(\begin{pmatrix}-1\\0\\1\end{pmatrix}\) liefert ebenfalls \(\cos\varphi = \tfrac{1}{\sqrt2}\).</div>
+
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Gerade aufstellen, Punktprobe, Winkel ohne Taschenrechner · K1: Symmetrieargument · K4: Dreieck im Koordinatensystem sehen</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G6.2</span><span class="td dh">★★★</span></div>
+      <div class="tq"><strong>Teil B · Sachkontext.</strong> Ein Glasdach hat die Form einer geraden quadratischen Pyramide. In einem Koordinatensystem (eine Längeneinheit entspricht einem Meter) hat die Grundfläche die Eckpunkte \(A(0|0|0)\), \(B(6|0|0)\), \(C(6|6|0)\) und \(D(0|6|0)\); die Spitze ist \(S(3|3|4)\). <br>a) Gib eine Gleichung der Geraden \(g\) durch \(A\) und \(S\) an. <br>b) Auf der Kante \(AS\) wird in der Höhe \(z = 2\) ein Haltepunkt \(L\) angebracht. Bestimme die Koordinaten von \(L\). <br>c) Berechne die Größe des Winkels, den die Kanten \(AS\) und \(BS\) an der Spitze \(S\) einschließen. <br>d) Berechne die Größe des Winkels zwischen der Kante \(AS\) und der Grundkante \(AB\). <br>e) Ein Stützstab soll von \(L\) aus parallel zur Kante \(BS\) verlaufen. Gib eine Gleichung der Geraden an, auf der der Stab liegt.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(\vec{AS} = \begin{pmatrix}3\\3\\4\end{pmatrix}\). \(g: \vec{x} = \begin{pmatrix}0\\0\\0\end{pmatrix} + t\cdot\begin{pmatrix}3\\3\\4\end{pmatrix}\).</div>
+    <div class="ip"><strong>b)</strong> Die dritte Zeile \(4t = 2\) liefert \(t = \tfrac12\). Einsetzen: \(L(1{,}5|1{,}5|2)\). Der Haltepunkt liegt genau in der Mitte der Kante, denn \(t = \tfrac12\) halbiert die Strecke von \(A\) nach \(S\).</div>
+    <div class="ip"><strong>c)</strong> Winkel zwischen zwei <em>Pfeilen</em> von \(S\) aus, also ohne Betrag: \(\vec{SA} = \begin{pmatrix}-3\\-3\\-4\end{pmatrix}\), \(\vec{SB} = \begin{pmatrix}3\\-3\\-4\end{pmatrix}\). Skalarprodukt \(-9 + 9 + 16 = 16\); beide Beträge \(\sqrt{9+9+16} = \sqrt{34}\). \(\cos\gamma = \dfrac{16}{34} = \dfrac{8}{17}\), also \(\gamma \approx 61{,}9°\). Die beiden Kanten schließen an der Spitze einen Winkel von etwa \(61{,}9°\) ein.</div>
+    <div class="ip"><strong>d)</strong> \(\vec{AS}\cdot\vec{AB} = \begin{pmatrix}3\\3\\4\end{pmatrix}\cdot\begin{pmatrix}6\\0\\0\end{pmatrix} = 18\); Beträge \(\sqrt{34}\) und \(6\). \(\cos\delta = \dfrac{18}{6\sqrt{34}} = \dfrac{3}{\sqrt{34}} \approx 0{,}514\), also \(\delta \approx 59{,}0°\). Die Kante \(AS\) steigt gegenüber der Grundkante \(AB\) unter etwa \(59{,}0°\) an.</div>
+    <div class="ip"><strong>e)</strong> Richtungsvektor von \(BS\): \(\vec{BS} = \begin{pmatrix}-3\\3\\4\end{pmatrix}\). Stab: \(\vec{x} = \begin{pmatrix}1{,}5\\1{,}5\\2\end{pmatrix} + r\cdot\begin{pmatrix}-3\\3\\4\end{pmatrix}\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted)"><strong>Hinweis zur Unabhängigkeit:</strong> Jeder Aufgabenteil ist für sich lösbar; wer in b) den Punkt \(L\) nicht gefunden hat, kann e) trotzdem mit \(L(1{,}5|1{,}5|2)\) aus der Aufgabenstellung bearbeiten.</div>
+
+    <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K3: Dachkanten als Geraden modellieren · K5: Punktprobe mit unbekannter Koordinate, Winkel zwischen Vektoren und Geraden · K4: Ergebnisse als Neigungen deuten</div>
+  </div>
+</div>
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
@@ -30210,6 +30632,8 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
       <ol>
         <li>Stelle die Parameterform einer Geraden durch \(A(1|2|3)\) mit Richtungsvektor \(\vec{v} = \begin{pmatrix}2\\-1\\1\end{pmatrix}\) auf.</li>
+        <li>Erkläre, wie du prüfst, ob ein Punkt auf einer Geraden liegt — und woran du erkennst, dass er <em>nicht</em> darauf liegt.</li>
+        <li>Warum steht in der Winkelformel für zwei Geraden ein Betrag im Zähler, in der Formel für zwei Vektoren aber nicht?</li>
         <li>Nenne die drei möglichen Lagebeziehungen zweier Geraden im Raum und erkläre, wie man sie rechnerisch unterscheidet.</li>
         <li>Was sind windschiefe Geraden? Warum gibt es sie nur im Raum (3D) und nicht in der Ebene (2D)?</li>
       </ol>
