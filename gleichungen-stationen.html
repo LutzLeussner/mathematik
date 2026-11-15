@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Stationenlernen Gleichungen · 9c</title>
+<style>
+:root{--pergament:#fffcf6;--karte:#fff;--tinte:#2c2c2c;--soft:#6b6560;--muted:#a09a92;--rand:#e8e4de;
+--gruen:#5b6e2e;--gruen-l:#e8edda;--gruen-bg:#f3f5ec;--gold:#a8923a;--gold-l:#f7f3e2;--koralle:#c75c3a;--koralle-l:#fceee9;
+--blau:#8a9da7;--blau-l:#ecf1f4;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--pergament);color:var(--tinte);font-family:var(--sans);font-size:18px;line-height:1.5}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:860px;margin:0 auto;padding:16px 16px 80px}
+header.top{position:sticky;top:0;z-index:5;background:var(--pergament);border-bottom:1px solid var(--rand)}
+header.top .in{max-width:860px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px}
+header.top a{color:var(--gruen);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px;border:1px solid var(--rand);background:var(--karte);white-space:nowrap}
+header.top .t{flex:1;font-family:var(--serif);font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+h1{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.15;margin:18px 0 6px}
+h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:26px 0 10px}
+p{margin:8px 0}
+.lead{color:var(--soft)}
+.karte{background:var(--karte);border:1px solid var(--rand);border-radius:14px;padding:16px 18px;margin:12px 0}
+ol.regeln{margin:6px 0 0;padding-left:1.3em}
+ol.regeln li{margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:12px}
+a.st{display:block;text-decoration:none;color:inherit;background:var(--karte);border:1px solid var(--rand);border-radius:14px;padding:14px 16px}
+a.st:active{background:var(--gruen-bg)}
+a.st .nr{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+a.st .ti{font-family:var(--serif);font-size:21px;line-height:1.2;margin:2px 0}
+a.st .ku{font-size:15px;color:var(--soft)}
+.pills{display:flex;gap:6px;margin-top:10px;align-items:center}.pl{font-size:13px;color:var(--muted)}
+.pill{flex:1;text-align:center;font-size:14px;border-radius:8px;padding:4px 0;border:1px solid var(--rand);color:var(--muted);white-space:nowrap}
+.pill.an{color:var(--tinte);border-color:var(--muted)}
+.pill.ok1{background:var(--gruen-l);border-color:var(--gruen);color:var(--gruen);font-weight:600}
+.pill.ok2{background:var(--gold-l);border-color:var(--gold);color:#6f5e1c;font-weight:600}
+.pill.ok3{background:var(--koralle-l);border-color:var(--koralle);color:var(--koralle);font-weight:600}
+.tabs{display:flex;gap:8px;margin:14px 0 4px;flex-wrap:wrap}
+.tabs button{flex:1;min-width:120px;padding:10px 8px;border-radius:12px;border:1.5px solid var(--rand);background:var(--karte);font-weight:600}
+.tabs button.akt{border-color:var(--gruen);background:var(--gruen-bg)}
+.tabs button.l2.akt{border-color:var(--gold);background:var(--gold-l)}
+.tabs button.l3.akt{border-color:var(--koralle);background:var(--koralle-l)}
+.tabs small{display:block;font-weight:400;color:var(--soft);font-size:13px}
+.merk{border-left:5px solid var(--gruen);background:var(--gruen-bg);border-radius:0 12px 12px 0;padding:12px 16px;margin:12px 0}
+.merk ul{margin:0;padding-left:1.1em}.merk li{margin:6px 0}
+.bsp{border:1.5px solid var(--blau);border-radius:12px;padding:12px 16px;margin:12px 0;background:var(--karte)}
+.bsp .kopf{font-weight:700;color:#5f7480;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.bsp table{border-collapse:collapse;margin:8px 0}
+.bsp td{padding:5px 0;vertical-align:middle}
+.bsp td.gl{font-size:21px;padding-right:22px;white-space:nowrap}
+.bsp td.op{color:var(--soft);font-size:16px}
+.bsp tr.zu{display:none}
+.knopf{padding:10px 16px;border-radius:10px;border:1.5px solid var(--gruen);background:var(--gruen);color:#fff;font-weight:600;min-height:44px}
+.knopf.hell{background:var(--karte);color:var(--gruen)}
+.knopf.grau{border-color:var(--rand);background:var(--karte);color:var(--soft);font-weight:500}
+.knopf:disabled{opacity:.45}
+.stand{display:flex;align-items:center;gap:10px;margin:14px 0 4px;font-weight:600}
+.stand .bal{flex:1;height:10px;border-radius:5px;background:var(--rand);overflow:hidden}
+.stand .bal i{display:block;height:100%;background:var(--gruen)}
+.geschafft{border:2px solid var(--gruen);background:var(--gruen-l);border-radius:12px;padding:12px 16px;margin:12px 0;font-weight:600}
+.auf{background:var(--karte);border:1.5px solid var(--rand);border-radius:14px;padding:14px 16px;margin:12px 0}
+.auf.ok{border-color:var(--gruen)}.auf.hilfe{border-color:var(--gold)}
+.auf .bu{display:inline-flex;align-items:center;justify-content:center;padding:0 12px;height:34px;border-radius:17px;font-size:17px;white-space:nowrap;background:var(--blau-l);font-weight:700;margin-right:10px;flex:none}
+.auf.ok .bu{background:var(--gruen);color:#fff}.auf.hilfe .bu{background:var(--gold);color:#fff}
+.auf .frage{display:flex;align-items:center;font-size:24px;min-height:52px}
+.auf .frage.text{font-size:19px;align-items:flex-start}.auf .frage.text .bu{margin-top:-3px}
+.eingabe{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.eingabe input{font:inherit;font-size:21px;width:120px;padding:8px 10px;border:1.5px solid var(--muted);border-radius:10px;background:#fff;min-height:44px}
+.eingabe input.breit{width:200px}
+.eingabe .lab{font-size:21px}
+.rel{display:flex;gap:4px}
+.rel button,.opt button{min-width:46px;min-height:44px;border-radius:10px;border:1.5px solid var(--muted);background:#fff;font-size:21px}
+.rel button.akt{background:var(--tinte);color:#fff;border-color:var(--tinte)}
+.opt{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.opt button{padding:8px 16px}
+.opt button.falsch{opacity:.4;text-decoration:line-through}
+.sonder{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.sonder button{font-size:15px;padding:6px 12px;border-radius:10px;border:1px dashed var(--muted);background:transparent;color:var(--soft);min-height:40px}
+.rueck{margin-top:12px;padding:10px 14px;border-radius:10px;font-size:17px}
+.rueck.gut{background:var(--gruen-l);color:#3d4b1c}.rueck.nein{background:var(--koralle-l);color:#7c2f17}
+.rueck.info{background:var(--gold-l);color:#5b4d14}
+.tipp{margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--blau-l);font-size:17px}
+.m{white-space:nowrap}.m i{font-family:var(--serif);font-style:italic;padding:0 .03em}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.88em;line-height:1.15;margin:0 .15em}
+.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 .25em 1px}
+.fr>span:last-child{padding:1px .25em 0}
+table.lz{width:100%;border-collapse:collapse;background:var(--karte);font-size:16px}
+table.lz th,table.lz td{border:1px solid var(--rand);padding:8px 8px;text-align:center}
+table.lz td:first-child,table.lz th:first-child{text-align:left}
+.bx{display:inline-block;text-align:center;width:26px;height:26px;line-height:24px;border:1.5px solid var(--muted);border-radius:6px;margin:0 2px;font-size:13px;color:var(--muted)}
+.bx.ok{background:var(--gruen);border-color:var(--gruen);color:#fff}
+.bx.hilfe{background:var(--gold-l);border-color:var(--gold);color:#6f5e1c}
+.zg{display:block;max-width:560px;width:100%;margin:8px auto}
+.heft{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:flex-start;margin-top:8px}
+.heft ul{flex:1;min-width:260px;margin:0;padding-left:1.2em;font-size:16px}.heft li{margin:3px 0}
+.blatt{padding:12px 16px;border:1px solid #c9d6dd;border-radius:6px;background-color:#fff;background-image:linear-gradient(#dfe8ec 1px,transparent 1px),linear-gradient(90deg,#dfe8ec 1px,transparent 1px);background-size:20px 20px}
+.blatt table{border-collapse:collapse}.blatt td{padding:3px 0;font-size:19px;white-space:nowrap}
+.blatt td.gl:first-child:not([colspan]){text-align:right;padding-right:.3em}.blatt td.op{color:var(--koralle);padding-left:18px;font-size:17px}.blatt td.ken{font-weight:700;font-size:15px;color:var(--soft)}
+.fuss{margin-top:30px;color:var(--muted);font-size:14px}
+@media (max-width:520px){body{font-size:17px}h1{font-size:28px}.auf .frage{font-size:20px}.bsp td.gl{font-size:18px;padding-right:12px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in" id="kopf"></div></header>
+<main class="wrap" id="app"></main>
+<script>
+const S = [{"nr":1,"titel":"Einfache Gleichungen","kurz":"Umformen, bis x allein steht","merk":["Eine Gleichung bleibt richtig, wenn du auf beiden Seiten dasselbe rechnest.","Du darfst auf beiden Seiten dieselbe Zahl addieren oder subtrahieren.","Du darfst beide Seiten mit derselben Zahl (außer $0$) multiplizieren oder durch sie dividieren.","Schreibe jede Umformung rechts neben einen Strich. Mache am Ende die Probe."],"stufen":[{"name":"Ein Schritt","bsp":[["x − 6 = 15","| + 6"],["x = 21",""]],"bsp_l":"L = {21}","hilfe":"Überlege, welche Rechnung die Zahl neben dem $x$ aufhebt. Führe diese Rechnung auf beiden Seiten aus.","aufg":[{"typ":"x","q":"x + 9 = 23","sol":"14","zw":null,"erg":"$L = {14}$"},{"typ":"x","q":"6x = 54","sol":"9","zw":null,"erg":"$L = {9}$"},{"typ":"x","q":"x − 3,5 = 8","sol":"23/2","zw":null,"erg":"$L = {11,5}$"},{"typ":"x","q":"{x/4} = 7","sol":"28","zw":null,"erg":"$L = {28}$"}]},{"name":"Zwei Schritte","bsp":[["3x + 5 = 20","| − 5"],["3x = 15","| : 3"],["x = 5",""]],"bsp_l":"L = {5}","hilfe":"Rechne zuerst die Zahl ohne $x$ weg. Teile danach durch die Zahl vor dem $x$.","aufg":[{"typ":"x","q":"4x + 7 = 31","sol":"6","zw":"4x = 24","erg":"$L = {6}$"},{"typ":"x","q":"5x − 9 = 26","sol":"7","zw":"5x = 35","erg":"$L = {7}$"},{"typ":"x","q":"20 − 3x = 8","sol":"4","zw":"12 = 3x","erg":"$L = {4}$"},{"typ":"x","q":"0,5x + 3 = 9","sol":"12","zw":"0,5x = 6","erg":"$L = {12}$"}]},{"name":"x auf beiden Seiten","bsp":[["7x − 4 = 3x + 12","| − 3x"],["4x − 4 = 12","| + 4"],["4x = 16","| : 4"],["x = 4",""]],"bsp_l":"L = {4}","hilfe":"Bringe alle $x$-Terme auf die eine Seite und alle Zahlen auf die andere Seite.","aufg":[{"typ":"x","q":"6x + 5 = 2x + 33","sol":"7","zw":"4x = 28","erg":"$L = {7}$"},{"typ":"x","q":"9x − 7 = 4x + 23","sol":"6","zw":"5x = 30","erg":"$L = {6}$"},{"typ":"x","q":"2x + 19 = 7x − 6","sol":"5","zw":"25 = 5x","erg":"$L = {5}$"},{"typ":"x","q":"5x + 12 = 2x − 3","sol":"-5","zw":"3x = −15","erg":"$L = {−5}$"}]}]},{"nr":2,"titel":"Erst ordnen, dann lösen","kurz":"Gleichartige Terme zusammenfassen","merk":["Manche Gleichungen sind unübersichtlich. Schaffe zuerst Ordnung.","Fasse auf jeder Seite die $x$-Terme zusammen und die Zahlen zusammen.","Löse danach die kurze Gleichung wie in Station 1.","Fällt $x$ ganz weg, entscheidet die übrige Aussage: Ist sie falsch, gibt es keine Lösung. Ist sie wahr, ist jede Zahl eine Lösung."],"stufen":[{"name":"Eine Seite ordnen","bsp":[["5x + 3x − 7 = 33","zusammenfassen"],["8x − 7 = 33","| + 7"],["8x = 40","| : 8"],["x = 5",""]],"bsp_l":"L = {5}","hilfe":"Unterstreiche alle $x$-Terme in einer Farbe und alle Zahlen in einer anderen Farbe.","aufg":[{"typ":"x","q":"3x + 5x − 4 = 20","sol":"3","zw":"8x − 4 = 20","erg":"$L = {3}$"},{"typ":"x","q":"7x − 2x + 6 = 41","sol":"7","zw":"5x + 6 = 41","erg":"$L = {7}$"},{"typ":"x","q":"4x + 9 − x − 3 = 21","sol":"5","zw":"3x + 6 = 21","erg":"$L = {5}$"},{"typ":"x","q":"10 + 6x − 4 − 2x = 30","sol":"6","zw":"4x + 6 = 30","erg":"$L = {6}$"}]},{"name":"Beide Seiten ordnen","bsp":[["8x − 20 − 3x − 4 = 10 + 2x − 13","zusammenfassen"],["5x − 24 = 2x − 3","| − 2x  | + 24"],["3x = 21","| : 3"],["x = 7",""]],"bsp_l":"L = {7}","hilfe":"Fasse erst links zusammen, dann rechts. Das Vorzeichen gehört immer zu dem Term dahinter.","aufg":[{"typ":"x","q":"4x − 7 − x = 2x + 5 − 3x","sol":"3","zw":"3x − 7 = −x + 5","erg":"$L = {3}$"},{"typ":"x","q":"9x − 12 − 4x + 2 = 3x + 8 − x","sol":"6","zw":"5x − 10 = 2x + 8","erg":"$L = {6}$"},{"typ":"x","q":"12x − 30 − 5x − 6 = 20 + 3x − 40","sol":"4","zw":"7x − 36 = 3x − 20","erg":"$L = {4}$"},{"typ":"x","q":"2x + 15 + 4x − 3 = 9x − 6 − x","sol":"9","zw":"6x + 12 = 8x − 6","erg":"$L = {9}$"}]},{"name":"Dezimalzahlen und Sonderfälle","bsp":[["2,5x − 3 + x = 4 − 1,5x + 13","zusammenfassen"],["3,5x − 3 = 17 − 1,5x","| + 1,5x  | + 3"],["5x = 20","| : 5"],["x = 4",""]],"bsp_l":"L = {4}","hilfe":"Fällt $x$ beim Umformen ganz weg, prüfe: Ist die übrige Aussage wahr oder falsch?","aufg":[{"typ":"x","q":"1,2x + 3,4 = 0,7x − 1,6","sol":"-10","zw":"0,5x = −5","erg":"$L = {−10}$"},{"typ":"x","q":"0,4x + 2,6 − 1,5 = 1,9x − 3,4","sol":"3","zw":"0,4x + 1,1 = 1,9x − 3,4","erg":"$L = {3}$"},{"typ":"leer","q":"6x − 4 + 2x = 8x + 5","zw":"8x − 4 = 8x + 5","erg":"$L = { }$, denn $−4 = 5$ ist falsch."},{"typ":"alle","q":"5x + 8 − 2x − 3 = 3x + 5","zw":"3x + 5 = 3x + 5","erg":"Jede Zahl ist Lösung, denn $5 = 5$ ist immer wahr."}]}]},{"nr":3,"titel":"Klammern auflösen","kurz":"Plusklammern und Minusklammern","merk":["Steht ein Plus vor der Klammer, darfst du die Klammer einfach weglassen: $3x + (7x − 5) = 3x + 7x − 5$.","Steht ein Minus vor der Klammer, kehrt sich jedes Vorzeichen in der Klammer um: $3x − (7x − 5) = 3x − 7x + 5$.","Löse zuerst alle Klammern auf. Fasse danach zusammen und löse die Gleichung."],"stufen":[{"name":"Eine Klammer","bsp":[["6x − (2x − 3) = 19","Klammer auflösen"],["6x − 2x + 3 = 19","zusammenfassen"],["4x + 3 = 19","| − 3  | : 4"],["x = 4",""]],"bsp_l":"L = {4}","hilfe":"Schau auf das Zeichen direkt vor der Klammer. Bei Minus dreht sich jedes Vorzeichen in der Klammer um.","aufg":[{"typ":"x","q":"3x + (2x − 5) = 20","sol":"5","zw":"5x − 5 = 20","erg":"$L = {5}$"},{"typ":"x","q":"8x − (3x + 4) = 21","sol":"5","zw":"8x − 3x − 4 = 21","erg":"$L = {5}$"},{"typ":"x","q":"10 + (4x − 6) = 2x + 12","sol":"4","zw":"4x + 4 = 2x + 12","erg":"$L = {4}$"},{"typ":"x","q":"9x − (2x − 6) = 34","sol":"4","zw":"9x − 2x + 6 = 34","erg":"$L = {4}$"}]},{"name":"Zwei Klammern","bsp":[["(9x + 2) − (4x − 7) = 24","Klammern auflösen"],["9x + 2 − 4x + 7 = 24","zusammenfassen"],["5x + 9 = 24","| − 9  | : 5"],["x = 3",""]],"bsp_l":"L = {3}","hilfe":"Eine Klammer am Anfang einer Seite darfst du weglassen. Vor dem ersten Term in der Klammer steht ein unsichtbares Plus.","aufg":[{"typ":"x","q":"(7x + 3) − (2x − 5) = 28","sol":"4","zw":"7x + 3 − 2x + 5 = 28","erg":"$L = {4}$"},{"typ":"x","q":"4x − (x − 9) = 2x + (15 − x)","sol":"3","zw":"3x + 9 = x + 15","erg":"$L = {3}$"},{"typ":"x","q":"12 − (3x − 4) = x − (2x − 6)","sol":"5","zw":"16 − 3x = −x + 6","erg":"$L = {5}$"},{"typ":"x","q":"6x − (4 − 2x) = (5x + 10) − x","sol":"7/2","zw":"8x − 4 = 4x + 10","erg":"$L = {3,5}$"}]},{"name":"Verschachtelt und Sonderfälle","bsp":[["3x − [10 − (2x − 4)] = 11","innere Klammer auflösen"],["3x − [14 − 2x] = 11","Klammer auflösen"],["5x − 14 = 11","| + 14  | : 5"],["x = 5",""]],"bsp_l":"L = {5}","hilfe":"Löse die innerste Klammer zuerst auf. Fällt $x$ weg, prüfe die übrige Aussage.","aufg":[{"typ":"x","q":"−(5x − 20) = 3x − (2x + 4)","sol":"4","zw":"−5x + 20 = x − 4","erg":"$L = {4}$"},{"typ":"x","q":"2x − [8 − (3x − 2)] = 15","sol":"5","zw":"2x − [10 − 3x] = 15","erg":"$L = {5}$"},{"typ":"alle","q":"7 − (2x − 3) = −(2x − 10)","zw":"10 − 2x = −2x + 10","erg":"Jede Zahl ist Lösung, denn $10 = 10$ ist immer wahr."},{"typ":"leer","q":"x − (4 − x) = (2x + 1) − 3","zw":"2x − 4 = 2x − 2","erg":"$L = { }$, denn $−4 = −2$ ist falsch."}]}]},{"nr":4,"titel":"Ausmultiplizieren","kurz":"Zahl mal Klammer","merk":["Steht ein Faktor vor der Klammer, multiplizierst du ihn mit jedem Glied in der Klammer: $a(b + c) = ab + ac$.","Achte auf die Vorzeichen: $−2(x − 3) = −2x + 6$.","Multipliziere zuerst aus. Fasse danach zusammen und löse die Gleichung."],"stufen":[{"name":"Eine Klammer","bsp":[["3(x + 4) = 27","ausmultiplizieren"],["3x + 12 = 27","| − 12"],["3x = 15","| : 3"],["x = 5",""]],"bsp_l":"L = {5}","hilfe":"Multipliziere die Zahl vor der Klammer mit jedem Glied in der Klammer.","aufg":[{"typ":"x","q":"4(x − 2) = 20","sol":"7","zw":"4x − 8 = 20","erg":"$L = {7}$"},{"typ":"x","q":"5(x + 3) = 40","sol":"5","zw":"5x + 15 = 40","erg":"$L = {5}$"},{"typ":"x","q":"2(3x − 1) = 22","sol":"4","zw":"6x − 2 = 22","erg":"$L = {4}$"},{"typ":"x","q":"7 + 2(x + 1) = 21","sol":"6","zw":"2x + 9 = 21","erg":"$L = {6}$"}]},{"name":"Zwei Klammern","bsp":[["5(x − 1) = 2(x + 8)","ausmultiplizieren"],["5x − 5 = 2x + 16","| − 2x  | + 5"],["3x = 21","| : 3"],["x = 7",""]],"bsp_l":"L = {7}","hilfe":"Ein negativer Faktor vor der Klammer dreht beim Ausmultiplizieren jedes Vorzeichen um.","aufg":[{"typ":"x","q":"3(x + 2) = 2(x + 7)","sol":"8","zw":"3x + 6 = 2x + 14","erg":"$L = {8}$"},{"typ":"x","q":"4(2x − 1) = 3(x + 2)","sol":"2","zw":"8x − 4 = 3x + 6","erg":"$L = {2}$"},{"typ":"x","q":"12 − 2(x − 3) = x","sol":"6","zw":"12 − 2x + 6 = x","erg":"$L = {6}$"},{"typ":"x","q":"(6 − x) · 3 = 4 + 2(x − 3)","sol":"4","zw":"18 − 3x = 2x − 2","erg":"$L = {4}$"}]},{"name":"Verschachtelte Klammern","bsp":[["2[3 − (x − 1)] = 4x − 4","innen zuerst"],["2(4 − x) = 4x − 4","ausmultiplizieren"],["8 − 2x = 4x − 4","| + 2x  | + 4"],["12 = 6x","| : 6"],["x = 2",""]],"bsp_l":"L = {2}","hilfe":"Löse die innerste Klammer zuerst auf und arbeite dich nach außen vor.","aufg":[{"typ":"x","q":"3[x − 2(x − 4)] = 6","sol":"6","zw":"3(−x + 8) = 6","erg":"$L = {6}$"},{"typ":"x","q":"−4(2 − x) − 3(x + 1) = 5","sol":"16","zw":"−8 + 4x − 3x − 3 = 5","erg":"$L = {16}$"},{"typ":"x","q":"0,5(6x − 4) − (x + 3) = 3(x − 2)","sol":"1","zw":"2x − 5 = 3x − 6","erg":"$L = {1}$"},{"typ":"x","q":"5 − 2[x − 3(x + 1)] = 3x + 1","sol":"-10","zw":"5 − 2(−2x − 3) = 3x + 1","erg":"$L = {−10}$"}]}]},{"nr":5,"titel":"Klammer mal Klammer","kurz":"Summen multiplizieren, binomische Formeln","merk":["Zwei Klammern multiplizierst du, indem du jedes Glied der ersten Klammer mit jedem Glied der zweiten Klammer multiplizierst: $(a + b)(c + d) = ac + ad + bc + bd$.","Für Quadrate helfen die binomischen Formeln: $(a + b)² = a² + 2ab + b²$, $(a − b)² = a² − 2ab + b²$ und $(a + b)(a − b) = a² − b²$.","In dieser Station steht nach dem Ausrechnen auf beiden Seiten $x²$. Es fällt beim Umformen weg."],"stufen":[{"name":"Jedes Glied mit jedem Glied","bsp":[["(x + 4)(x + 2) = x² + 32","ausmultiplizieren"],["x² + 2x + 4x + 8 = x² + 32","zusammenfassen"],["x² + 6x + 8 = x² + 32","| − x²"],["6x + 8 = 32","| − 8  | : 6"],["x = 4",""]],"bsp_l":"L = {4}","hilfe":"Zeichne vier Bögen: Jedes Glied der ersten Klammer trifft jedes Glied der zweiten Klammer.","aufg":[{"typ":"x","q":"(x + 2)(x + 3) = x² + 26","sol":"4","zw":"x² + 5x + 6 = x² + 26","erg":"$L = {4}$"},{"typ":"x","q":"(x + 5)(x − 1) = x² + 7","sol":"3","zw":"x² + 4x − 5 = x² + 7","erg":"$L = {3}$"},{"typ":"x","q":"(x − 4)(x + 6) = x² − 10","sol":"7","zw":"x² + 2x − 24 = x² − 10","erg":"$L = {7}$"},{"typ":"x","q":"(2x + 1)(x + 3) = 2x² + 31","sol":"4","zw":"2x² + 7x + 3 = 2x² + 31","erg":"$L = {4}$"}]},{"name":"Binomische Formeln","bsp":[["(x + 3)² = x² + 21","1. binomische Formel"],["x² + 6x + 9 = x² + 21","| − x²"],["6x + 9 = 21","| − 9  | : 6"],["x = 2",""]],"bsp_l":"L = {2}","hilfe":"Vergiss das mittlere Glied $2ab$ nicht: $(x + 4)²$ ist nicht $x² + 16$.","aufg":[{"typ":"x","q":"(x + 4)² = x² + 40","sol":"3","zw":"x² + 8x + 16 = x² + 40","erg":"$L = {3}$"},{"typ":"x","q":"(x − 2)² = x² − 16","sol":"5","zw":"x² − 4x + 4 = x² − 16","erg":"$L = {5}$"},{"typ":"x","q":"(x + 4)(x − 4) = (x − 2)²","sol":"5","zw":"x² − 16 = x² − 4x + 4","erg":"$L = {5}$"},{"typ":"x","q":"(x + 3)² = (x − 1)² + 32","sol":"3","zw":"x² + 6x + 9 = x² − 2x + 33","erg":"$L = {3}$"}]},{"name":"Faktoren und Minus vor der Klammer","bsp":[["2(x + 1)² − (x + 3)(2x − 1) = 7","ausrechnen"],["2x² + 4x + 2 − (2x² + 5x − 3) = 7","Klammer auflösen"],["−x + 5 = 7","| − 5  | · (−1)"],["x = −2",""]],"bsp_l":"L = {−2}","hilfe":"Rechne zuerst das Produkt aus und setze es in eine Klammer. Löse diese Klammer erst im nächsten Schritt auf.","aufg":[{"typ":"x","q":"3(x − 2)² = 3x² − 24","sol":"3","zw":"3x² − 12x + 12 = 3x² − 24","erg":"$L = {3}$"},{"typ":"x","q":"(2x + 1)² − (2x − 3)² = 24","sol":"2","zw":"16x − 8 = 24","erg":"$L = {2}$"},{"typ":"x","q":"(x + 4)² − 2(x² − 1) = 18 − x²","sol":"0","zw":"8x + 18 = 18","erg":"$L = {0}$"},{"typ":"x","q":"(3x − 1)(3x + 1) − (3x + 2)² = 7","sol":"-1","zw":"−12x − 5 = 7","erg":"$L = {−1}$"}]}]},{"nr":6,"titel":"Gleichungen mit Brüchen","kurz":"Mit dem Hauptnenner multiplizieren","merk":["Brüche verschwinden, wenn du beide Seiten mit dem Nenner multiplizierst.","Bei mehreren Nennern multiplizierst du mit dem Hauptnenner. Multipliziere dabei jedes Glied der Gleichung.","Steht ein Term im Zähler, setzt du ihn beim Multiplizieren in eine Klammer.","Steht $x$ im Nenner, darf der Nenner nicht null werden. Notiere zuerst diese Definitionslücke."],"stufen":[{"name":"Ein Nenner","bsp":[["{x + 3/4} = 5","| · 4"],["x + 3 = 20","| − 3"],["x = 17",""]],"bsp_l":"L = {17}","hilfe":"Multipliziere beide Seiten mit dem Nenner. Bei a rechnest du vorher die $2$ weg.","aufg":[{"typ":"x","q":"{x/3} + 2 = 6","sol":"12","zw":"{x/3} = 4","erg":"$L = {12}$"},{"typ":"x","q":"{x + 5/2} = 7","sol":"9","zw":"x + 5 = 14","erg":"$L = {9}$"},{"typ":"x","q":"{2x/5} = 6","sol":"15","zw":"2x = 30","erg":"$L = {15}$"},{"typ":"x","q":"{3x − 1/4} = 5","sol":"7","zw":"3x − 1 = 20","erg":"$L = {7}$"}]},{"name":"Zwei Nenner","bsp":[["{x + 2/3} + {x/4} = 3","| · 12"],["4(x + 2) + 3x = 36","ausmultiplizieren"],["7x + 8 = 36","| − 8  | : 7"],["x = 4",""]],"bsp_l":"L = {4}","hilfe":"Der Hauptnenner ist das kleinste gemeinsame Vielfache der Nenner. Kürze nach dem Multiplizieren.","aufg":[{"typ":"x","q":"{x/2} + {x/3} = 10","sol":"12","zw":"3x + 2x = 60","erg":"$L = {12}$"},{"typ":"x","q":"{x/4} − {x/6} = 2","sol":"24","zw":"3x − 2x = 24","erg":"$L = {24}$"},{"typ":"x","q":"{x + 1/2} + {x − 1/3} = 6","sol":"7","zw":"3(x + 1) + 2(x − 1) = 36","erg":"$L = {7}$"},{"typ":"x","q":"{2x − 1/3} = {x + 4/2}","sol":"14","zw":"2(2x − 1) = 3(x + 4)","erg":"$L = {14}$"}]},{"name":"x im Nenner","bsp":[["{12/x − 1} = 3","Lücke: x = 1;  | · (x − 1)"],["12 = 3(x − 1)","ausmultiplizieren"],["12 = 3x − 3","| + 3  | : 3"],["x = 5",""]],"bsp_l":"L = {5}","hilfe":"Notiere zuerst, für welche Zahl der Nenner null wird. Prüfe am Ende, ob deine Lösung diese Lücke ist.","aufg":[{"typ":"x","q":"{18/x} = 6","sol":"3","zw":"18 = 6x","erg":"Lücke $0$;  $L = {3}$"},{"typ":"x","q":"{10/x − 1} − 3 = 2","sol":"3","zw":"10 = 5(x − 1)","erg":"Lücke $1$;  $L = {3}$"},{"typ":"x","q":"{3/x} = {5/x + 4}","sol":"6","zw":"3(x + 4) = 5x","erg":"Lücken $0$ und $−4$;  $L = {6}$"},{"typ":"leer","q":"{x + 2/x − 2} = {4/x − 2}","zw":"x + 2 = 4","erg":"$L = { }$, denn $x = 2$ ist die Definitionslücke."}]}]},{"nr":7,"titel":"Ungleichungen","kurz":"Achtung beim Teilen durch negative Zahlen","bild":"zahlengerade","merk":["Ungleichungen erkennst du an den Zeichen $<$, $>$, $≤$ und $≥$. Die Lösung ist ein ganzer Bereich von Zahlen, zum Beispiel $x > 1$.","Du formst eine Ungleichung um wie eine Gleichung.","Achtung: Multiplizierst du mit einer negativen Zahl oder dividierst du durch eine negative Zahl, dreht sich das Ungleichheitszeichen um. Aus $4 < 5$ wird durch $· (−2)$ die Aussage $−8 > −10$.","Probe: Setze eine Zahl aus deinem Lösungsbereich ein. Die Ungleichung muss dann wahr sein."],"stufen":[{"name":"Umformen wie bei Gleichungen","bsp":[["3x − 4 < 11","| + 4"],["3x < 15","| : 3"],["x < 5",""]],"bsp_l":"","hilfe":"Rechne genau wie bei einer Gleichung. Das Zeichen bleibt hier stehen.","aufg":[{"typ":"ungl","q":"x + 7 < 12","rel":"<","sol":"5","zw":null,"erg":"$x < 5$"},{"typ":"ungl","q":"3x ≥ 21","rel":"≥","sol":"7","zw":null,"erg":"$x ≥ 7$"},{"typ":"ungl","q":"2x − 5 > 9","rel":">","sol":"7","zw":"2x > 14","erg":"$x > 7$"},{"typ":"ungl","q":"4x + 3 ≤ 27","rel":"≤","sol":"6","zw":"4x ≤ 24","erg":"$x ≤ 6$"}]},{"name":"Das Zeichen dreht sich um","bsp":[["−3x + 4 > 19","| − 4"],["−3x > 15","| : (−3), Zeichen umdrehen"],["x < −5",""]],"bsp_l":"","hilfe":"Teilst du durch eine negative Zahl, drehst du das Zeichen um. Stehen die Seiten vertauscht, liest du von rechts: Aus $6 > x$ wird $x < 6$.","aufg":[{"typ":"ungl","q":"−2x < 10","rel":">","sol":"-5","zw":null,"erg":"$x > −5$"},{"typ":"ungl","q":"12 − 3x ≥ 3","rel":"≤","sol":"3","zw":"−3x ≥ −9","erg":"$x ≤ 3$"},{"typ":"ungl","q":"5x + 4 > 7x − 8","rel":"<","sol":"6","zw":"12 > 2x","erg":"$x < 6$"},{"typ":"ungl","q":"−x + 6 ≤ 2x − 9","rel":"≥","sol":"5","zw":"15 ≤ 3x","erg":"$x ≥ 5$"}]},{"name":"Ungleichungen mit Klammern","bsp":[["2(x + 3) > 6x − 14","ausmultiplizieren"],["2x + 6 > 6x − 14","| − 6x  | − 6"],["−4x > −20","| : (−4), Zeichen umdrehen"],["x < 5",""]],"bsp_l":"","hilfe":"Löse zuerst die Klammern auf. Achte erst im letzten Schritt auf das Vorzeichen der Zahl vor dem $x$.","aufg":[{"typ":"ungl","q":"3(x + 2) > 5x − 8","rel":"<","sol":"7","zw":"3x + 6 > 5x − 8","erg":"$x < 7$"},{"typ":"ungl","q":"x − (8 − 2x) < 7x + 12","rel":">","sol":"-5","zw":"3x − 8 < 7x + 12","erg":"$x > −5$"},{"typ":"ungl","q":"2(3 − x) ≥ 4(x − 3)","rel":"≤","sol":"3","zw":"6 − 2x ≥ 4x − 12","erg":"$x ≤ 3$"},{"typ":"ungl","q":"−3(x − 4) ≤ 2x − 13","rel":"≥","sol":"5","zw":"−3x + 12 ≤ 2x − 13","erg":"$x ≥ 5$"}]}]},{"nr":8,"titel":"Textaufgaben","kurz":"Vom Text zur Gleichung","merk":["Lies den Text genau. Lege fest, wofür $x$ steht. Meist ist es die gesuchte Größe.","Übersetze den Text Stück für Stück in eine Gleichung.","Wichtige Wörter: Summe $(+)$, Differenz $(−)$, Produkt $(·)$, Quotient $(:)$, das Dreifache $(3x)$, die Hälfte $({x/2})$, vermindert um $(−)$, vermehrt um $(+)$.","Löse die Gleichung. Prüfe dein Ergebnis am Text und schreibe einen Antwortsatz."],"stufen":[{"name":"Text in eine Gleichung übersetzen","bsp_text":"Das Dreifache einer Zahl, vermehrt um 4, ergibt 25.","bsp":[["3x","das Dreifache einer Zahl"],["3x + 4","vermehrt um 4"],["3x + 4 = 25","ergibt 25"]],"bsp_l":"","bsp_frei":true,"hilfe":"Übersetze den Satz Wort für Wort. Achte darauf, worauf sich „vermindert um“ oder „das Doppelte“ bezieht.","aufg":[{"typ":"mc","text":"Das Vierfache einer Zahl, vermindert um 5, ergibt 19.","opts":["4(x − 5) = 19","4x − 5 = 19","5 − 4x = 19"],"ok":1,"erg":"Zum Text passt $ 4x − 5 = 19 $."},{"typ":"mc","text":"Die Summe aus einer Zahl und 12 ergibt das Dreifache der Zahl.","opts":["x + 12 = 3x","12x = 3x","x + 12 = 3 + x"],"ok":0,"erg":"Zum Text passt $ x + 12 = 3x $."},{"typ":"mc","text":"Die Hälfte einer Zahl, vermehrt um 6, ergibt 15.","opts":["{x + 6/2} = 15","2x + 6 = 15","{x/2} + 6 = 15"],"ok":2,"erg":"Zum Text passt $ {x/2} + 6 = 15 $."},{"typ":"mc","text":"Das Doppelte der Differenz aus einer Zahl und 3 ergibt 14.","opts":["2x − 3 = 14","2(x − 3) = 14","2(3 − x) = 14"],"ok":1,"erg":"Zum Text passt $ 2(x − 3) = 14 $."}]},{"name":"Zahlenrätsel","bsp_text":"Vermindert man das Vierfache einer Zahl um 6, so erhält man 30.","bsp":[["4x − 6 = 30","| + 6"],["4x = 36","| : 4"],["x = 9",""]],"bsp_l":"Die Zahl ist 9.","hilfe":"Schreibe zuerst die Gleichung auf. Bei c heißen die drei Zahlen $x$, $x + 1$ und $x + 2$.","aufg":[{"typ":"zahl","text":"Das Fünffache einer Zahl, vermindert um 8, ergibt 27. Bestimme die Zahl.","gl":"5x − 8 = 27","sol":"7","einheit":"","zw":"5x − 8 = 27","erg":"Die Zahl ist $7$."},{"typ":"zahl","text":"Addiert man 15 zum Doppelten einer Zahl, so erhält man das Fünffache der Zahl. Bestimme die Zahl.","gl":"2x + 15 = 5x","sol":"5","einheit":"","zw":"2x + 15 = 5x","erg":"Die Zahl ist $5$."},{"typ":"zahl","text":"Die Summe dreier aufeinanderfolgender Zahlen ist 78. Bestimme die kleinste der drei Zahlen.","gl":"x + x + 1 + x + 2 = 78","sol":"25","einheit":"","zw":"x + (x + 1) + (x + 2) = 78","erg":"Die kleinste Zahl ist $25$. Die Zahlen sind $25$, $26$ und $27$."},{"typ":"zahl","text":"Zwei Zahlen unterscheiden sich um 9. Ihre Summe beträgt 55. Bestimme die kleinere Zahl.","gl":"x + x + 9 = 55","sol":"23","einheit":"","zw":"x + (x + 9) = 55","erg":"Die kleinere Zahl ist $23$, die größere ist $32$."}]},{"name":"Sachaufgaben","bsp_text":"Ein Rechteck ist doppelt so lang wie breit. Sein Umfang beträgt 54 cm. Berechne die Breite.","bsp":[["2 · (x + 2x) = 54","x: Breite in cm"],["6x = 54","| : 6"],["x = 9",""]],"bsp_l":"Das Rechteck ist 9 cm breit.","hilfe":"Lege fest, wofür $x$ steht. Drücke die zweite Größe mit $x$ aus. Bei d sind es $x$ Kinder und $20 − x$ Erwachsene.","aufg":[{"typ":"zahl","text":"Ein Rechteck ist 4 cm länger als breit. Sein Umfang beträgt 44 cm. Berechne die Breite.","gl":"2(x + x + 4) = 44","sol":"9","einheit":"cm","zw":"2 · (x + x + 4) = 44","erg":"Das Rechteck ist $9$ cm breit und $13$ cm lang."},{"typ":"zahl","text":"Herr Sommer ist dreimal so alt wie seine Tochter. Zusammen sind sie 52 Jahre alt. Berechne das Alter der Tochter.","gl":"x + 3x = 52","sol":"13","einheit":"Jahre","zw":"x + 3x = 52","erg":"Die Tochter ist $13$ Jahre alt, Herr Sommer ist $39$ Jahre alt."},{"typ":"zahl","text":"Ein Handytarif kostet im Monat 8 € Grundgebühr und 0,05 € je Minute. Die Rechnung beträgt 14,50 €. Berechne die Anzahl der Minuten.","gl":"8 + 0,05x = 14,5","sol":"130","einheit":"Minuten","zw":"8 + 0,05x = 14,5","erg":"Es wurden $130$ Minuten telefoniert."},{"typ":"zahl","text":"Im Kino kostet eine Karte für Erwachsene 9 € und eine Karte für Kinder 6 €. Eine Gruppe aus 20 Personen bezahlt 138 €. Berechne die Anzahl der Kinder.","gl":"6x + 9(20 − x) = 138","sol":"14","einheit":"Kinder","zw":"6x + 9(20 − x) = 138","erg":"In der Gruppe sind $14$ Kinder und $6$ Erwachsene."}]}]},{"nr":9,"titel":"Gleichungen mit Parametern","kurz":"Nach x auflösen, wenn Buchstaben mitspielen","merk":["Ein Parameter ist ein Buchstabe wie $a$ oder $b$, der für eine feste Zahl steht. Du kennst diese Zahl nur nicht.","Rechne mit dem Parameter wie mit einer Zahl: $5a − a = 4a$.","Löse nach $x$ auf. Im Ergebnis steht dann ein Term mit $a$ oder $b$, zum Beispiel $x = 2a$.","Tippe dein Ergebnis als Term ein, zum Beispiel 3a − b. Einen Bruch tippst du mit Schrägstrich und Klammern: 6/(a − 1)."],"stufen":[{"name":"Parameter wie eine Zahl","bsp_frei":true,"bsp":[["2x + a = 5a","| − a"],["2x = 4a","| : 2"],["x = 2a",""]],"bsp_l":"","hilfe":"Rechne mit $a$ wie mit einer Zahl, die du nicht kennst: $5a − a = 4a$.","aufg":[{"typ":"term","q":"x − a = 4","solx":"a+4","zw":null,"erg":"$x = a + 4$"},{"typ":"term","q":"3x = 12a","solx":"4a","zw":null,"erg":"$x = 4a$"},{"typ":"term","q":"x + 3a = 10a","solx":"7a","zw":null,"erg":"$x = 7a$"},{"typ":"term","q":"5x − b = 4b","solx":"b","zw":"5x = 5b","erg":"$x = b$"}]},{"name":"x auf beiden Seiten","bsp_frei":true,"bsp":[["5x − 2a = 3x + 6a","| − 3x  | + 2a"],["2x = 8a","| : 2"],["x = 4a",""]],"bsp_l":"","hilfe":"Bringe alle $x$-Terme nach links und alle Terme mit $a$ oder $b$ nach rechts.","aufg":[{"typ":"term","q":"7x + a = 4x + 10a","solx":"3a","zw":"3x = 9a","erg":"$x = 3a$"},{"typ":"term","q":"2(x − a) = x + 3a","solx":"5a","zw":"2x − 2a = x + 3a","erg":"$x = 5a$"},{"typ":"term","q":"4x + 2b = 2x + 6a","solx":"3a-b","zw":"2x = 6a − 2b","erg":"$x = 3a − b$"},{"typ":"term","q":"3(x + b) = 5x − b","solx":"2b","zw":"4b = 2x","erg":"$x = 2b$"}]},{"name":"x ausklammern","bsp_frei":true,"bsp":[["ax − 4 = 2x + 6","| − 2x  | + 4"],["ax − 2x = 10","x ausklammern"],["x(a − 2) = 10","| : (a − 2)"],["x = {10/a − 2}","für a ≠ 2"]],"bsp_l":"","hilfe":"Klammere $x$ aus. Teile nur durch die Klammer, wenn sie nicht null ist. Bei d setzt du $x = 3$ ein und löst nach $a$ auf.","aufg":[{"typ":"term","q":"ax + 2a = 7a","solx":"5","zw":"ax = 5a","erg":"$x = 5$  (für $a ≠ 0$)"},{"typ":"term","q":"ax + 3 = x + 9","solx":"6/(a-1)","zw":"x(a − 1) = 6","erg":"$x = {6/a − 1}$  (für $a ≠ 1$)"},{"typ":"term","q":"bx − 2b = 3x − 6","solx":"2","zw":"x(b − 3) = 2b − 6","erg":"$x = 2$  (für $b ≠ 3$)"},{"typ":"zahl","text":"Bestimme $a$ so, dass $x = 3$ die Gleichung $ax − 5 = 2x + 4$ löst.","lab":"a =","gl":"3x − 5 = 2 · 3 + 4","sol":"5","einheit":"","zw":"3a − 5 = 10","zw_frei":true,"erg":"$a = 5$"}]}]},{"nr":10,"titel":"Gleichungen mit x²","kurz":"Zwei Lösungen, eine oder keine","merk":["Forme um, bis $x²$ allein auf einer Seite steht. Ziehe erst dann die Wurzel.","Eine Gleichung wie $x² = 49$ hat zwei Lösungen: $x = 7$ und $x = −7$, denn auch $(−7)² = 49$.","Die Gleichung $x² = 0$ hat nur die Lösung $0$. Eine Gleichung wie $x² = −16$ hat keine Lösung, denn ein Quadrat ist nie negativ.","Tippe beide Lösungen ein. Gibt es nur eine Lösung, lässt du das zweite Feld leer."],"stufen":[{"name":"x² = Quadratzahl","bsp_frei":true,"bsp":[["x² = 49","Wurzel ziehen"],["x = 7  oder  x = −7",""]],"bsp_l":"L = {−7; 7}","hilfe":"Frage dich: Welche zwei Zahlen ergeben quadriert $36$?","aufg":[{"typ":"x2","q":"x² = 36","sols":["6","-6"],"zw":null,"erg":"$L = {−6; 6}$"},{"typ":"x2","q":"x² − 25 = 0","sols":["5","-5"],"zw":"x² = 25","erg":"$L = {−5; 5}$"},{"typ":"x2","q":"2x² = 32","sols":["4","-4"],"zw":"x² = 16","erg":"$L = {−4; 4}$"},{"typ":"x2","q":"x² + 19 = 100","sols":["9","-9"],"zw":"x² = 81","erg":"$L = {−9; 9}$"}]},{"name":"Erst umformen","bsp_frei":true,"bsp":[["3x² − 7 = x² + 43","| − x²  | + 7"],["2x² = 50","| : 2"],["x² = 25","Wurzel ziehen"],["x = 5  oder  x = −5",""]],"bsp_l":"L = {−5; 5}","hilfe":"Forme so lange um, bis $x²$ allein steht. Ziehe erst dann die Wurzel.","aufg":[{"typ":"x2","q":"5x² − 20 = 3x² + 52","sols":["6","-6"],"zw":"x² = 36","erg":"$L = {−6; 6}$"},{"typ":"x2","q":"{x²/2} = 32","sols":["8","-8"],"zw":"x² = 64","erg":"$L = {−8; 8}$"},{"typ":"x2","q":"7x² − 63 = 0","sols":["3","-3"],"zw":"x² = 9","erg":"$L = {−3; 3}$"},{"typ":"x2","q":"0,5x² + 3 = 53","sols":["10","-10"],"zw":"x² = 100","erg":"$L = {−10; 10}$"}]},{"name":"Klammern und Sonderfälle","bsp_frei":true,"bsp":[["(x + 3)(x − 3) = 16","3. binomische Formel"],["x² − 9 = 16","| + 9"],["x² = 25","Wurzel ziehen"],["x = 5  oder  x = −5",""]],"bsp_l":"L = {−5; 5}","hilfe":"Ein Quadrat ist nie negativ. Überlege, wie viele Lösungen $x² = 0$ hat.","aufg":[{"typ":"x2","q":"(x + 4)² = 8x + 65","sols":["7","-7"],"zw":"x² = 49","erg":"$L = {−7; 7}$"},{"typ":"x2","q":"(x − 5)² + 10x = 169","sols":["12","-12"],"zw":"x² = 144","erg":"$L = {−12; 12}$"},{"typ":"x2","q":"2(x² + 3) = x² + 6","sols":["0"],"zw":"x² = 0","erg":"$L = {0}$"},{"typ":"x2","q":"x² + 20 = 4","sols":[],"zw":"x² = −16","erg":"$L = { }$, denn kein Quadrat ist negativ."}]}]}];
+const KEY = "gle9c-v1";
+let st = {};
+try { st = JSON.parse(sessionStorage.getItem(KEY) || "{}") || {}; } catch (e) { st = {}; }
+function speichern() { try { sessionStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+const esc = s => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+function fm(s) {
+  return s.replace(/\{([^{}\/]+)\/([^{}]+)\}|([a-zA-Z]+)|[&<>]/g, (m, a, b, w) =>
+    a !== undefined ? '<span class="fr"><span>' + fm(a) + '</span><span>' + fm(b) + '</span></span>'
+    : w ? (/^[xab]{1,2}$/.test(w) ? w.replace(/./g, "<i>$&</i>") : w) : esc(m));
+}
+const M = s => '<span class="m">' + fm(s) + '</span>';
+const T = s => s.split("$").map((t, i) => i % 2 ? M(t.trim()) : esc(t)).join("");
+const STERN = ["", "Stufe 1", "Stufe 2", "Stufe 3"], BU = "abcd";
+const ken = (nr, l, a) => nr + "." + (l + 1) + " " + BU[a];
+const id = (s, l, a) => s + "-" + l + "-" + a;
+const zust = k => st[k] || {};
+function zaehle(s, l) { let ok = 0, hi = 0; for (let a = 0; a < 4; a++) { const r = zust(id(s, l, a)).r; if (r === "ok") ok++; else if (r === "hilfe") hi++; } return { ok, hi }; }
+function zahl(t) {
+  t = t.replace(/\s/g, "").replace(/^[xX]=/, "").replace(/[−–]/g, "-").replace(/,/g, ".");
+  let m = t.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+  if (m) return +m[2] === 0 ? NaN : m[1] / m[2];
+  return /^-?\d+(?:\.\d+)?$/.test(t) ? +t : NaN;
+}
+const PKT = [{ a: 2.3, b: -1.7 }, { a: 5.1, b: 3.3 }, { a: -4.2, b: 0.7 }];
+function term(t) {
+  t = t.replace(/\s/g, "").replace(/^[xX]=/, "").replace(/[−–]/g, "-").replace(/,/g, ".").replace(/[·×]/g, "*").replace(/:/g, "/");
+  const tok = t.match(/\d+(?:\.\d+)?|[ab+\-*\/()]/g);
+  if (!tok || tok.join("") !== t) return null;
+  let i = 0;
+  const fak = () => { const k = tok[i++];
+    if (k === "-") { const f = fak(); return f && (p => -f(p)); }
+    if (k === "(") { const e = sum(); if (!e || tok[i++] !== ")") return null; return e; }
+    if (k === "a" || k === "b") return p => p[k];
+    return /^\d/.test(k || "") ? () => +k : null; };
+  const pro = () => { let l = fak();
+    while (l && i < tok.length && /^[*\/(ab\d]/.test(tok[i])) { const o = tok[i] === "*" || tok[i] === "/" ? tok[i++] : "*", r = fak(), m = l; if (!r) return null; l = o === "/" ? p => m(p) / r(p) : p => m(p) * r(p); }
+    return l; };
+  function sum() { let l = pro();
+    while (l && (tok[i] === "+" || tok[i] === "-")) { const o = tok[i++], r = pro(), m = l; if (!r) return null; l = o === "+" ? p => m(p) + r(p) : p => m(p) - r(p); }
+    return l; }
+  const e = sum(); return e && i === tok.length ? e : null;
+}
+const wert = s => { const p = s.split("/"); return p.length === 2 ? p[0] / p[1] : +p[0]; };
+const app = document.getElementById("app"), kopf = document.getElementById("kopf");
+let tab = {};
+
+function start() {
+  kopf.innerHTML = '<div class="t">Stationenlernen Gleichungen</div><a href="#/stand">Stand heute</a>';
+  let h = '<h1>Stationenlernen Gleichungen</h1><p class="lead">Mathematik 9c · zehn Stationen, je drei Stufen</p>' +
+    '<div class="karte"><strong>So arbeitest du</strong><ol class="regeln">' +
+    '<li>Wähle eine Station und lies die Erklärung.</li>' +
+    '<li>Wähle eine Stufe. Beginne bei Stufe 1, wenn du unsicher bist.</li>' +
+    '<li>Jede Aufgabe hat eine Nummer aus Station, Stufe und Buchstabe: <strong>3.2 b</strong> ist Station 3, Stufe 2, Aufgabe b. Schreibe diese Nummer vor jede Lösung.</li>' +
+    '<li>Schreibe die Aufgabe auf dein kariertes Blatt und löse sie dort mit allen Umformungen.</li>' +
+    '<li>Tippe dein Ergebnis hier ein und prüfe es.</li>' +
+    '<li>Kreise jede richtig gelöste Aufgabe <strong>sofort auf deinem Laufzettel</strong> ein. Das iPad merkt sich deinen Stand nicht bis zur nächsten Stunde.</li>' +
+    '<li>Hast du zwei Aufgaben einer Stufe richtig, ist die Stufe geschafft. Kreuze sie auf dem Laufzettel an und steige eine Stufe höher.</li>' +
+    '</ol></div>' + SAUBER + '<h2>Stationen</h2><div class="grid">';
+  S.forEach((s, i) => {
+    h += '<a class="st" href="#/s/' + s.nr + '"><div class="nr">Station ' + s.nr + '</div><div class="ti">' + esc(s.titel) +
+      '</div><div class="ku">' + esc(s.kurz) + '</div><div class="pills"><span class="pl">Stufe</span>';
+    for (let l = 0; l < 3; l++) { const z = zaehle(i, l); h += '<span class="pill ' + (z.ok >= 2 ? "ok" + (l + 1) : z.ok + z.hi ? "an" : "") + '">' + (l + 1) + (z.ok >= 2 ? " ✓" : z.ok + z.hi ? " · " + z.ok + "/4" : "") + '</span>'; }
+    h += '</div></a>';
+  });
+  h += '</div><p class="fuss">Die Markierungen auf dieser Seite gelten nur für heute. Es zählt, was auf deinem Laufzettel und auf deinem karierten Blatt steht.</p><p class="fuss"><a href="index.html" style="color:var(--gruen)">Zum Matheportal RootCamp</a></p>';
+  app.innerHTML = h;
+}
+
+const SAUBER = '<div class="karte"><strong>So schreibst du deinen Lösungsweg auf</strong><div class="heft"><div class="blatt"><table>' +
+  '<tr><td class="ken" colspan="2">1.2 a</td></tr>' +
+  [["4x + 7 = 31", "| − 7"], ["4x = 24", "| : 4"], ["x = 6", ""]].map(z => '<tr><td class="gl">' + M(z[0]).replace(" = ", " </span></td><td class=\"gl\"><span class=\"m\">= ") + '</td><td class="op">' + z[1] + '</td></tr>').join("") +
+  '<tr><td colspan="3" class="gl">' + M("L = {6}") + '</td></tr><tr><td colspan="3" class="op">Probe: ' + M("4 · 6 + 7 = 31") + ' ✓</td></tr></table></div>' +
+  '<ul><li>Notiere zuerst die Nummer der Aufgabe, zum Beispiel 1.2 a.</li><li>Schreibe die Aufgabe ab.</li><li>Schreibe je Zeile genau eine Umformung. Notiere sie rechts hinter einem Strich.</li>' +
+  '<li>Setze die Gleichheitszeichen genau untereinander.</li><li>Gib am Ende die Lösungsmenge an und mache die Probe.</li><li>Lass nach jeder Aufgabe zwei Kästchen frei.</li></ul></div></div>';
+
+function beispiel(stf, key) {
+  let h = '<div class="bsp"><div class="kopf">Beispiel</div>';
+  if (stf.bsp_text) h += '<p>' + esc(stf.bsp_text) + '</p>';
+  h += '<table>';
+  stf.bsp.forEach((z, i) => { h += '<tr class="' + (i ? "zu" : "") + '"><td class="gl">' + M(z[0]) + '</td><td class="op">' + esc(z[1]) + '</td></tr>'; });
+  if (stf.bsp_l) h += '<tr class="zu"><td class="gl" colspan="2">' + (/^L /.test(stf.bsp_l) ? M(stf.bsp_l) : esc(stf.bsp_l)) + '</td></tr>';
+  h += '</table><button class="knopf hell" data-bsp="1">Nächsten Schritt zeigen</button></div>';
+  return h;
+}
+
+function aufgabe(si, li, ai) {
+  const a = S[si].stufen[li].aufg[ai], k = id(si, li, ai), z = zust(k), fertig = z.r === "ok" || z.r === "hilfe";
+  let h = '<div class="auf ' + (z.r || "") + '" data-k="' + k + '" data-a="' + ai + '">';
+  h += a.text ? '<div class="frage text"><span class="bu">' + ken(S[si].nr, li, ai) + '</span><span>' + T(a.text) + '</span></div>'
+              : '<div class="frage"><span class="bu">' + ken(S[si].nr, li, ai) + '</span>' + M(a.q) + '</div>';
+  if (!fertig) {
+    if (a.typ === "mc") {
+      h += '<div class="opt">' + a.opts.map((o, i) => '<button data-opt="' + i + '"' + ((z.f || []).includes(i) ? ' class="falsch" disabled' : '') + '>' + M(o) + '</button>').join("") + '</div>';
+    } else {
+      h += '<div class="eingabe">';
+      if (a.typ === "ungl") h += '<span class="lab">' + M("x") + '</span><span class="rel">' + ["<", "≤", ">", "≥"].map(r => '<button data-rel="' + r + '"' + (z.g === r ? ' class="akt"' : '') + '>' + r + '</button>').join("") + '</span>';
+      else h += '<span class="lab">' + (a.typ === "zahl" ? (a.lab ? M(a.lab) : "Ergebnis:") : M(a.typ === "x2" ? "x₁ =" : "x =")) + '</span>';
+      h += '<input type="text"' + (a.typ === "term" ? ' class="breit"' : ' inputmode="decimal"') + ' autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Ergebnis" value="' + esc(z.e || "") + '">';
+      if (a.typ === "x2") h += '<span class="lab">' + M("x₂ =") + '</span><input type="text" inputmode="decimal" autocomplete="off" aria-label="zweite Lösung" value="' + esc(z.e2 || "") + '">';
+      if (a.einheit) h += '<span>' + esc(a.einheit) + '</span>';
+      h += (a.typ === "x2" ? '' : '<button class="knopf grau" data-pm="1" aria-label="Vorzeichen wechseln">±</button>') + '<button class="knopf" data-pruef="1">Prüfen</button></div>';
+      if (a.typ === "x2") h += '<div class="sonder"><button data-so="leer">Es gibt keine Lösung</button></div>';
+      if (a.typ === "x" || a.typ === "leer" || a.typ === "alle") h += '<div class="sonder"><button data-so="leer">Es gibt keine Lösung</button><button data-so="alle">Jede Zahl ist Lösung</button></div>';
+    }
+  }
+  if (z.r === "ok") h += '<div class="rueck gut">Richtig. ' + T(a.erg) + '<br><strong>Kreise jetzt auf dem Laufzettel ein: ' + ken(S[si].nr, li, ai) + '</strong></div>';
+  else if (z.r === "hilfe") h += '<div class="rueck info">Lösung: ' + T(a.erg) + (a.zw ? ' Zwischenschritt: ' + M(a.zw) : '') + ' Vergleiche mit deiner Rechnung und suche deinen Fehler.</div>';
+  else if (z.v) {
+    h += '<div class="rueck nein">' + (z.m || "Das stimmt noch nicht.") + '</div>';
+    if (z.v >= 2 && a.zw && a.typ !== "mc") h += '<div class="tipp">Ein Zwischenschritt: ' + M(a.zw) + '</div>';
+  }
+  return h + '</div>';
+}
+
+function stufe(si, li) {
+  const stf = S[si].stufen[li], z = zaehle(si, li);
+  let h = '<h2>' + STERN[li + 1] + ' · ' + esc(stf.name) + '</h2>' + beispiel(stf);
+  h += '<div class="stand"><span>' + z.ok + ' von 4 richtig</span><span class="bal"><i style="width:' + z.ok * 25 + '%"></i></span></div>';
+  if (z.ok >= 2) h += '<div class="geschafft">' + STERN[li + 1] + ' geschafft. Kreuze sie auf deinem Laufzettel an. ' +
+    (li < 2 ? 'Du darfst jetzt zu ' + STERN[li + 2] + ' aufsteigen oder hier weiterüben.' : 'Das ist die höchste Stufe dieser Station.') + '</div>';
+  for (let a = 0; a < 4; a++) h += aufgabe(si, li, a);
+  h += '<button class="knopf grau" data-tipp="1">Tipp zu dieser Stufe</button><div class="tipp" id="tipp" hidden>' + T(stf.hilfe) + '</div>';
+  return h;
+}
+
+const ZG = '<svg class="zg" viewBox="0 0 560 120" role="img" aria-label="Zahlengeraden zu x größer 1 und x kleiner gleich 4"><g font-family="-apple-system,Arial" font-size="13" fill="#2c2c2c" stroke="#2c2c2c">' +
+  [0, 1].map(n => { let g = '<g transform="translate(' + (20 + n * 280) + ',0)"><line x1="0" y1="70" x2="240" y2="70" stroke-width="1.2"/>';
+    for (let i = -1; i <= 6; i++) g += '<line x1="' + (15 + (i + 1) * 30) + '" y1="64" x2="' + (15 + (i + 1) * 30) + '" y2="76"/><text stroke="none" text-anchor="middle" x="' + (15 + (i + 1) * 30) + '" y="94">' + (i < 0 ? "−1" : i) + '</text>';
+    g += n === 0 ? '<line x1="75" y1="70" x2="240" y2="70" stroke="#c75c3a" stroke-width="5"/><circle cx="75" cy="70" r="6" fill="#fffcf6" stroke="#c75c3a" stroke-width="2.5"/><text stroke="none" x="0" y="30" font-size="17">x &gt; 1</text><text stroke="none" x="70" y="30" fill="#6b6560">1 gehört nicht dazu</text>'
+      : '<line x1="0" y1="70" x2="165" y2="70" stroke="#c75c3a" stroke-width="5"/><circle cx="165" cy="70" r="6" fill="#c75c3a" stroke="#c75c3a" stroke-width="2.5"/><text stroke="none" x="0" y="30" font-size="17">x ≤ 4</text><text stroke="none" x="70" y="30" fill="#6b6560">4 gehört dazu</text>';
+    return g + '</g>'; }).join("") + '</g></svg>';
+
+function station(nr) {
+  const si = S.findIndex(s => s.nr === nr); if (si < 0) return start();
+  const s = S[si], t = tab[si] === undefined ? -1 : tab[si];
+  kopf.innerHTML = '<a href="#/">‹ Stationen</a><div class="t">Station ' + s.nr + ' · ' + esc(s.titel) + '</div><a href="#/stand">Stand heute</a>';
+  let h = '<h1>' + esc(s.titel) + '</h1><div class="tabs"><button data-tab="-1" class="' + (t < 0 ? "akt" : "") + '">Erklärung<small>zuerst lesen</small></button>';
+  s.stufen.forEach((f, l) => { const z = zaehle(si, l); h += '<button data-tab="' + l + '" class="l' + (l + 1) + (t === l ? " akt" : "") + '">' + STERN[l + 1] + (z.ok >= 2 ? " ✓" : "") + '<small>' + esc(f.name) + '</small></button>'; });
+  h += '</div>';
+  if (t < 0) {
+    h += '<div class="merk"><ul>' + s.merk.map(m => '<li>' + T(m) + '</li>').join("") + '</ul></div>' + (s.bild ? ZG : "") +
+      beispiel(s.stufen[0]) + '<button class="knopf" data-tab="0">Weiter zu Stufe 1</button>';
+  } else h += stufe(si, t);
+  app.innerHTML = h; app.dataset.si = si; app.dataset.li = t;
+}
+
+function stand() {
+  kopf.innerHTML = '<a href="#/">‹ Stationen</a><div class="t">Stand heute</div>';
+  let h = '<h1>Stand heute</h1><p class="lead">Vergleiche mit deinem Laufzettel. Diese Übersicht gilt nur für heute und wird nicht aufbewahrt.</p><table class="lz"><tr><th>Station</th><th>Stufe 1</th><th>Stufe 2</th><th>Stufe 3</th></tr>';
+  S.forEach((s, si) => { h += '<tr><td>' + s.nr + ' ' + esc(s.titel) + '</td>';
+    for (let l = 0; l < 3; l++) { h += '<td>'; for (let a = 0; a < 4; a++) { const r = zust(id(si, l, a)).r; h += '<span class="bx ' + (r || "") + '">' + BU[a] + '</span>'; } h += '</td>'; }
+    h += '</tr>'; });
+  h += '</table><p><span class="bx ok">a</span> selbst richtig gelöst &nbsp; <span class="bx hilfe">a</span> mit der Lösung verglichen &nbsp; <span class="bx">a</span> noch offen</p>' +
+    '<p class="fuss">Eine Stufe ist geschafft, wenn du zwei Aufgaben selbst richtig gelöst hast.</p>' +
+    '<p><button class="knopf grau" id="reset">Markierungen von heute löschen</button></p>';
+  app.innerHTML = h;
+  document.getElementById("reset").onclick = () => { if (confirm("Wirklich alle Markierungen von heute löschen?")) { st = {}; speichern(); stand(); } };
+}
+
+function pruefe(el, sonder) {
+  const si = +app.dataset.si, li = +app.dataset.li, ai = +el.dataset.a, a = S[si].stufen[li].aufg[ai], k = el.dataset.k;
+  const z = st[k] = st[k] || {}; let ok = false;
+  if (sonder) ok = a.typ === sonder || (a.typ === "x2" && sonder === "leer" && !a.sols.length);
+  else if (a.typ === "term") {
+    z.e = el.querySelector("input").value.replace(/"/g, ""); const t = term(z.e), s = term(a.solx);
+    if (!t) { z.m = "Gib einen Term ein, zum Beispiel 3a − b oder 6/(a − 1)."; z.v = z.v || 0.5; return neu(); }
+    ok = PKT.every(p => { const u = t(p); return isFinite(u) && Math.abs(u - s(p)) < 1e-6; });
+  } else if (a.typ === "x2") {
+    const ins = el.querySelectorAll("input"); z.e = ins[0].value.replace(/"/g, ""); z.e2 = ins[1].value.replace(/"/g, "");
+    const vs = [z.e, z.e2].filter(t => t.trim() !== "").map(zahl);
+    if (!vs.length || vs.some(isNaN)) { z.m = "Gib deine Lösungen als Zahlen ein, zum Beispiel 6 und −6."; z.v = z.v || 0.5; return neu(); }
+    const men = vs.filter((v, i) => vs.indexOf(v) === i), sol = a.sols.map(wert), drin = v => sol.some(s => Math.abs(s - v) < 1e-9);
+    ok = men.length === sol.length && men.every(drin);
+    if (!ok && sol.length === 2 && men.length === 1 && drin(men[0])) z.h = "Eine Lösung stimmt. Es gibt noch eine zweite Lösung.";
+  } else {
+    z.e = el.querySelector("input").value.replace(/"/g, ""); const v = zahl(z.e);
+    if (isNaN(v)) { z.m = "Gib eine Zahl ein, zum Beispiel 4 oder −2,5 oder 7/3."; z.v = z.v || 0.5; return neu(); }
+    if (a.typ === "ungl") {
+      const r = el.querySelector(".rel .akt");
+      if (!r) { z.m = "Wähle zuerst das Zeichen aus."; z.v = z.v || 0.5; return neu(); }
+      z.g = r.dataset.rel; ok = r.dataset.rel === a.rel && Math.abs(v - wert(a.sol)) < 1e-9;
+      if (!ok && Math.abs(v - wert(a.sol)) < 1e-9) z.h = "Die Zahl stimmt. Prüfe das Zeichen: Setze eine Zahl aus deinem Bereich in die Ungleichung ein.";
+    } else ok = (a.typ === "x" || a.typ === "zahl") && Math.abs(v - wert(a.sol)) < 1e-9;
+  }
+  if (ok) { z.r = "ok"; delete z.m; }
+  else {
+    z.v = Math.floor(z.v || 0) + 1;
+    if (z.v >= 3) z.r = "hilfe";
+    else z.m = z.h || (a.typ === "zahl" ? "Das stimmt noch nicht. Prüfe dein Ergebnis am Text." : a.typ === "term" ? "Das stimmt noch nicht. Setze deinen Term für x in die Gleichung ein und prüfe, ob beide Seiten gleich sind." : a.typ === "ungl" ? "Das stimmt noch nicht. Setze eine Zahl aus deinem Bereich zur Probe ein." : "Das stimmt noch nicht. Mache die Probe: Setze deine Zahl für x in die Gleichung ein.");
+    delete z.h;
+  }
+  speichern(); neu();
+}
+function neu() { const y = window.scrollY; route(); window.scrollTo(0, y); }
+
+app.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const el = b.closest(".auf");
+  if (b.dataset.tab !== undefined) { tab[+app.dataset.si] = +b.dataset.tab; route(); window.scrollTo(0, 0); }
+  else if (b.dataset.bsp) { const r = b.parentNode.querySelector("tr.zu"); if (r) r.classList.remove("zu"); if (!b.parentNode.querySelector("tr.zu")) b.remove(); }
+  else if (b.dataset.tipp) { document.getElementById("tipp").hidden = false; b.remove(); }
+  else if (b.dataset.rel) { b.parentNode.querySelectorAll("button").forEach(x => x.classList.toggle("akt", x === b)); }
+  else if (b.dataset.pm) { const i = el.querySelector("input"); i.value = /^\s*[-−]/.test(i.value) ? i.value.replace(/^\s*[-−]/, "") : "−" + i.value; i.focus(); }
+  else if (b.dataset.pruef) pruefe(el);
+  else if (b.dataset.so) pruefe(el, b.dataset.so);
+  else if (b.dataset.opt !== undefined) {
+    const si = +app.dataset.si, li = +app.dataset.li, a = S[si].stufen[li].aufg[+el.dataset.a], z = st[el.dataset.k] = st[el.dataset.k] || {};
+    if (+b.dataset.opt === a.ok) z.r = z.v ? "hilfe" : "ok";
+    else { z.v = (z.v || 0) + 1; z.f = (z.f || []).concat(+b.dataset.opt); z.m = "Diese Gleichung passt nicht zum Text. Übersetze den Satz noch einmal Stück für Stück."; }
+    speichern(); neu();
+  }
+});
+app.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") pruefe(e.target.closest(".auf")); });
+
+function route() {
+  const h = location.hash, m = h.match(/^#\/s\/(\d+)/);
+  if (m) station(+m[1]); else if (h === "#/stand") stand(); else start();
+}
+window.addEventListener("hashchange", () => { route(); window.scrollTo(0, 0); });
+route();
+</script>
+</body>
+</html>
