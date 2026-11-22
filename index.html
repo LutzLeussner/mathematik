@@ -3603,12 +3603,13 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   <button class="ptb" onclick="showK9Tab('k9-lgs3u',this)">Drei Unbekannte</button>
   <button class="ptb" onclick="showK9Tab('k9-lgsloes',this)">Lösbarkeit</button>
   <button class="ptb" onclick="showK9Tab('k9-lgssach',this)">Sachaufgaben</button>
-  <button class="ptb" onclick="showK9Tab('k9-lgsmod',this)">Modellieren</button>
   <button class="ptb" onclick="showK9Tab('k9-pot',this)">Potenzen</button>
   <button class="ptb" onclick="showK9Tab('k9-potg',this)">Potenzgesetze</button>
   <button class="ptb" onclick="showK9Tab('k9-potf',this)">Potenzfunktionen</button>
   <button class="ptb" onclick="showK9Tab('k9-wurf',this)">Wurzelfunktionen</button>
   <button class="ptb" onclick="showK9Tab('k9-quad',this)">Quadr. Funkt. &amp; Gl.</button>
+  <button class="ptb" onclick="showK9Tab('k9-lgsmod',this)">Modellieren (Parabel)</button>
+  <button class="ptb" onclick="showK9Tab('k9-wahr',this)">Wahrscheinlichkeit</button>
   <button class="ptb" onclick="showK9Tab('k9-stat',this)">Statistik</button>
 </div>
 <div style="background:#fff;border-bottom:1px solid #e0deda;padding:8px 24px;display:flex;align-items:center;gap:14px;box-sizing:border-box;width:100%">
@@ -4746,10 +4747,23 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   </div>
 </div>
 
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Beispiel 3 — Gerade aus zwei Messwerten</span></div>
+  <div class="card-body">
+    <div class="ip">Ein Heizöltank wird gleichmäßig leer. Der Füllstand \(V\) (in Litern) hängt linear von der Zeit \(t\) (in Tagen) ab: \(V(t) = m\cdot t + n\). Gemessen wurde: nach 8 Tagen 800 Liter, nach 20 Tagen 500 Liter.</div>
+    <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px"><strong style="color:#8a7a30">Die Schreibweise \(V(t)\):</strong> \(V(8) = 800\) heißt: Nach 8 Tagen sind 800 Liter im Tank. <strong>Jede Messung ist eine Bedingung</strong> und liefert eine Gleichung für \(m\) und \(n\). \(V(0)\) ist der Wert zu Beginn, also \(n\). \(V(t) = 0\) fragt nach der Zeit, zu der der Tank leer ist.</div>
+    <div class="ip"><strong>① Gleichungen aufstellen.</strong> I: \(800 = 8m + n\) &nbsp; II: \(500 = 20m + n\)</div>
+    <div class="ip"><strong>② Lösen.</strong> II − I: \(-300 = 12m \Rightarrow m = -25\). In I: \(800 = -200 + n \Rightarrow n = 1000\). Also \(V(t) = -25\cdot t + 1000\).</div>
+    <div class="ip"><strong>③ Deuten.</strong> \(m = -25\): Jeden Tag werden 25 Liter verbraucht. \(V(0) = 1000\): Zu Beginn waren 1000 Liter im Tank.</div>
+    <div class="ip"><strong>④ Folgefrage.</strong> Leer heißt \(V(t) = 0\): \(-25\cdot t + 1000 = 0 \Rightarrow t = 40\). Nach 40 Tagen ist der Tank leer.</div>
+    <div class="hint"><strong>Typischer Fehler:</strong> Die Messwerte werden in eine schon fertige Gleichung eingesetzt, statt aus ihnen ein System für \(m\) und \(n\) aufzustellen. Solange \(m\) und \(n\) unbekannt sind, gibt es noch keine fertige Gleichung.</div>
+  </div>
+</div>
+
 <div class="section-label">2 · Eine Bedingung zu viel</div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-a">!</div><span class="card-title">Beispiel 3 — Passen vier Punkte auf eine Gerade?</span></div>
+  <div class="card-head"><div class="ci ci-a">!</div><span class="card-title">Beispiel 4 — Passen vier Punkte auf eine Gerade?</span></div>
   <div class="card-body">
     <div class="ip">Gegeben: \(A(1\mid 3)\), \(B(2\mid 5)\), \(C(3\mid 7)\), \(D(4\mid 10)\).</div>
     <div class="ip">Aus \(A\) und \(B\) ergibt sich wie oben \(y = 2x + 1\). Jetzt prüfen wir die übrigen Punkte:</div>
@@ -4816,135 +4830,6 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 <text x="182.1" y="338.4" font-size="13" fill="#5b6e2e" text-anchor="middle" font-weight="700">y = 2x + 1</text>
 </svg></div>
 <div class="ip" style="background:#fceee9;border-radius:10px;padding:14px 18px;border-left:4px solid #c75c3a;margin-bottom:14px"><strong style="color:#c75c3a">Wichtig:</strong> Vier Bedingungen bei zwei Unbekannten — das Gleichungssystem hat <strong>keine Lösung</strong>. Beachte aber: \(C\) hat gepasst. Eine zusätzliche Bedingung <em>kann</em> passen, sie <em>muss</em> aber nicht. Deshalb sagen wir „meistens keine Lösung" und nicht „nie".</div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-head"><div class="ci ci-s">≡</div><span class="card-title">Beispiel 4 — Dieselbe Frage, anders erzählt</span></div>
-  <div class="card-body">
-    <div class="ip">Statt „Liegen die Punkte auf einer Geraden?" kann man auch fragen: <strong>Schneiden sich drei Geraden in einem Punkt?</strong> Das ist wieder ein System mit drei Gleichungen und zwei Unbekannten \(x\) und \(y\).</div>
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:6px" class="lgs-faelle"><div><div style="text-align:center"><svg viewBox="0 0 340 330" width="100%" style="max-width:340px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Drei Geraden mit gemeinsamem Punkt">
-<defs><marker id="vtah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
-<rect x="0" y="0" width="340" height="330" fill="#fffcf6"/>
-<line x1="34.0" y1="290.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="76.0" y1="290.0" x2="76.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="118.0" y1="290.0" x2="118.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="160.0" y1="290.0" x2="160.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="202.0" y1="290.0" x2="202.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="244.0" y1="290.0" x2="244.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="286.0" y1="290.0" x2="286.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="328.0" y1="290.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="290.0" x2="328.0" y2="290.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="258.2" x2="328.0" y2="258.2" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="226.5" x2="328.0" y2="226.5" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="194.8" x2="328.0" y2="194.8" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="163.0" x2="328.0" y2="163.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="131.2" x2="328.0" y2="131.2" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="99.5" x2="328.0" y2="99.5" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="67.8" x2="328.0" y2="67.8" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="36.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="258.2" x2="338.0" y2="258.2" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah4)"/>
-<line x1="76.0" y1="290.0" x2="76.0" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah4)"/>
-<text x="342.0" y="263.2" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
-<text x="85.0" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
-<line x1="34.0" y1="254.2" x2="34.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="34.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
-<line x1="118.0" y1="254.2" x2="118.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="118.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
-<line x1="160.0" y1="254.2" x2="160.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="160.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
-<line x1="202.0" y1="254.2" x2="202.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="202.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
-<line x1="244.0" y1="254.2" x2="244.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="244.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
-<line x1="286.0" y1="254.2" x2="286.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="286.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
-<line x1="328.0" y1="254.2" x2="328.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="328.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
-<line x1="72.0" y1="290.0" x2="80.0" y2="290.0" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="294.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
-<line x1="72.0" y1="226.5" x2="80.0" y2="226.5" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="230.5" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
-<line x1="72.0" y1="194.8" x2="80.0" y2="194.8" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="198.8" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
-<line x1="72.0" y1="163.0" x2="80.0" y2="163.0" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="167.0" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
-<line x1="72.0" y1="131.2" x2="80.0" y2="131.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="135.2" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
-<line x1="72.0" y1="99.5" x2="80.0" y2="99.5" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="103.5" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
-<line x1="72.0" y1="67.8" x2="80.0" y2="67.8" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="71.8" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
-<line x1="72.0" y1="36.0" x2="80.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="40.0" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
-<text x="68.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
-<line x1="34.0" y1="258.2" x2="328.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
-<line x1="34.0" y1="67.8" x2="328.0" y2="290.0" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" opacity="1.0"/>
-<line x1="76.0" y1="290.0" x2="244.0" y2="36.0" stroke="#8a9da7" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
-<circle cx="160.0" cy="163.0" r="5.5" fill="#3d4a1e" stroke="#fffcf6" stroke-width="2"/>
-<text x="169.0" y="153.0" font-size="13.5" font-weight="700" fill="#3d4a1e">S(2|3)</text>
-</svg><div style="font-size:14px;font-weight:700;color:#5b6e2e;margin-top:8px">Ein gemeinsamer Punkt</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:3px">Das System hat genau eine Lösung.</div></div></div><div><div style="text-align:center"><svg viewBox="0 0 340 330" width="100%" style="max-width:340px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Drei Geraden bilden ein Dreieck">
-<defs><marker id="vtah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
-<rect x="0" y="0" width="340" height="330" fill="#fffcf6"/>
-<line x1="34.0" y1="290.0" x2="34.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="76.0" y1="290.0" x2="76.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="118.0" y1="290.0" x2="118.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="160.0" y1="290.0" x2="160.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="202.0" y1="290.0" x2="202.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="244.0" y1="290.0" x2="244.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="286.0" y1="290.0" x2="286.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="328.0" y1="290.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="290.0" x2="328.0" y2="290.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="258.2" x2="328.0" y2="258.2" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="226.5" x2="328.0" y2="226.5" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="194.8" x2="328.0" y2="194.8" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="163.0" x2="328.0" y2="163.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="131.2" x2="328.0" y2="131.2" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="99.5" x2="328.0" y2="99.5" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="67.8" x2="328.0" y2="67.8" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="36.0" x2="328.0" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
-<line x1="34.0" y1="258.2" x2="338.0" y2="258.2" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah5)"/>
-<line x1="76.0" y1="290.0" x2="76.0" y2="26.0" stroke="#2c2c2c" stroke-width="1.9" marker-end="url(#vtah5)"/>
-<text x="342.0" y="263.2" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">x</text>
-<text x="85.0" y="22.0" font-size="15" font-style="italic" font-weight="700" fill="#5b6e2e" font-family="Georgia,serif">y</text>
-<line x1="34.0" y1="254.2" x2="34.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="34.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">-1</text>
-<line x1="118.0" y1="254.2" x2="118.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="118.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">1</text>
-<line x1="160.0" y1="254.2" x2="160.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="160.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">2</text>
-<line x1="202.0" y1="254.2" x2="202.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="202.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">3</text>
-<line x1="244.0" y1="254.2" x2="244.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="244.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">4</text>
-<line x1="286.0" y1="254.2" x2="286.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="286.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">5</text>
-<line x1="328.0" y1="254.2" x2="328.0" y2="262.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="328.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="middle">6</text>
-<line x1="72.0" y1="290.0" x2="80.0" y2="290.0" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="294.0" font-size="12.5" fill="#6b6560" text-anchor="end">-1</text>
-<line x1="72.0" y1="226.5" x2="80.0" y2="226.5" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="230.5" font-size="12.5" fill="#6b6560" text-anchor="end">1</text>
-<line x1="72.0" y1="194.8" x2="80.0" y2="194.8" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="198.8" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
-<line x1="72.0" y1="163.0" x2="80.0" y2="163.0" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="167.0" font-size="12.5" fill="#6b6560" text-anchor="end">3</text>
-<line x1="72.0" y1="131.2" x2="80.0" y2="131.2" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="135.2" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
-<line x1="72.0" y1="99.5" x2="80.0" y2="99.5" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="103.5" font-size="12.5" fill="#6b6560" text-anchor="end">5</text>
-<line x1="72.0" y1="67.8" x2="80.0" y2="67.8" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="71.8" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
-<line x1="72.0" y1="36.0" x2="80.0" y2="36.0" stroke="#2c2c2c" stroke-width="1.5"/>
-<text x="68.0" y="40.0" font-size="12.5" fill="#6b6560" text-anchor="end">7</text>
-<text x="68.0" y="277.2" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
-<line x1="55.0" y1="290.0" x2="223.0" y2="36.0" stroke="#5b6e2e" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
-<line x1="34.0" y1="36.0" x2="328.0" y2="258.2" stroke="#c75c3a" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" opacity="1.0"/>
-<line x1="34.0" y1="258.2" x2="328.0" y2="36.0" stroke="#8a9da7" stroke-width="2.6" stroke-linecap="round" opacity="1.0"/>
-<circle cx="160.0" cy="131.2" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
-<circle cx="118.0" cy="194.8" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
-<circle cx="181.0" cy="147.1" r="4.5" fill="#6b6560" stroke="#fffcf6" stroke-width="2"/>
-</svg><div style="font-size:14px;font-weight:700;color:#c75c3a;margin-top:8px">Ein Dreieck</div><div style="font-size:12.5px;color:var(--ink-muted);margin-top:3px">Je zwei schneiden sich — aber nicht alle drei zugleich.</div></div></div></div>
   </div>
 </div>
 
@@ -5139,13 +5024,54 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
           <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
           <div class="komp-desc">Argumentieren und kommunizieren: zwei Positionen prüfen, belegen und die Reichweite der eigenen Aussage abgrenzen.</div></div>
   </div>
+<div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#eef1e6;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#5b6e2e;line-height:1;font-weight:400;min-width:44px;text-align:center">M</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#5b6e2e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · M</div>
+    <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Geraden aus Messwerten</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 8–9 · Messungen in Gleichungen übersetzen, Anfangswert und Zeitpunkt bestimmen</div>
+  </div>
+</div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">8</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Ein Fahrradverleih verlangt eine Grundgebühr und zusätzlich einen festen Preis je Stunde: \(K(t) = m\cdot t + n\) (\(K\) in Euro, \(t\) in Stunden). Für 3 Stunden zahlt man 13,50 €, für 8 Stunden 26,00 €.<br><strong>a)</strong> Stelle ein Gleichungssystem auf und bestimme \(m\) und \(n\).<br><strong>b)</strong> Gib an, was \(m\) und \(n\) im Sachzusammenhang bedeuten.<br><strong>c)</strong> Berechne, wie lange man für 31,00 € fahren kann.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> I: \(13{,}50 = 3m + n\) &nbsp; II: \(26{,}00 = 8m + n\). II − I: \(12{,}50 = 5m \Rightarrow m = 2{,}50\). In I: \(n = 13{,}50 - 7{,}50 = 6{,}00\). Also \(K(t) = 2{,}50\cdot t + 6{,}00\).</div>
+    <div class="ip"><strong>b)</strong> \(m = 2{,}50\): Jede Stunde kostet 2,50 €. \(n = K(0) = 6{,}00\): Die Grundgebühr beträgt 6,00 €.</div>
+    <div class="ip"><strong>c)</strong> \(2{,}50\cdot t + 6{,}00 = 31{,}00 \Rightarrow 2{,}50\cdot t = 25 \Rightarrow t = 10\). Für 31,00 € kann man 10 Stunden fahren.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Modellieren und symbolisch arbeiten: Messwerte in ein Gleichungssystem übersetzen und die Parameter deuten.</div></div>
+  </div>
+
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">9</span>
+        <span class="td dh">★★★</span>
+      </div>
+      <div class="tq">Ein Schwimmbecken wird gleichmäßig gefüllt. Die Wasserhöhe \(h\) (in cm) hängt linear von der Zeit \(t\) (in Stunden) ab. Nach 2 Stunden steht das Wasser 35 cm hoch, nach 5 Stunden 80 cm.<br><strong>a)</strong> Bestimme mit einem Gleichungssystem die Gleichung \(h(t) = m\cdot t + n\).<br><strong>b)</strong> Gib an, wie hoch das Wasser zu Beginn stand, und berechne, nach welcher Zeit 155 cm erreicht sind.<br><strong>c)</strong> Nach 8 Stunden werden 130 cm gemessen. Prüfe, ob diese dritte Messung zu deiner Gleichung passt, und deute das Ergebnis.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta">    <div class="ip"><strong>a)</strong> I: \(35 = 2m + n\) &nbsp; II: \(80 = 5m + n\). II − I: \(45 = 3m \Rightarrow m = 15\). In I: \(n = 35 - 30 = 5\). Also \(h(t) = 15\cdot t + 5\).</div>
+    <div class="ip"><strong>b)</strong> \(h(0) = 5\): Zu Beginn standen 5 cm Wasser im Becken. \(15\cdot t + 5 = 155 \Rightarrow t = 10\). Nach 10 Stunden sind 155 cm erreicht.</div>
+    <div class="ip"><strong>c)</strong> \(h(8) = 15\cdot 8 + 5 = 125 \neq 130\). Die dritte Messung passt nicht: Drei Bedingungen für zwei Unbekannte sind eine zu viel, und hier widersprechen sie sich. Entweder ist eine Messung ungenau, oder das Becken füllt sich nicht ganz gleichmäßig.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Modellieren und argumentieren: ein lineares Modell aus Messwerten bestimmen und eine überzählige Messung beurteilen.</div></div>
+  </div>
+
 </div><!-- end k9-lgsbed -->
 
 <div class="subpanel" id="k9-lgs3u">
 <div class="card">
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
   <div class="card-body">
-    <div class="ip">Im Tab <em>Bedingungen zählen</em> blieb eine Frage offen: Eine Parabel \(y = a x^2 + b x + c\) hat <strong>drei</strong> Unbekannte — wie viele Punkte braucht sie? Die Antwort liegt nahe: drei. Damit landen wir bei einem Gleichungssystem mit <strong>drei Gleichungen und drei Unbekannten</strong>.</div>
+    <div class="ip">Am Schulkiosk kennst du drei Einkäufe, aber keinen einzigen Einzelpreis: Brezel, Apfel und Wasser sind <strong>drei</strong> Unbekannte. Jeder Einkauf liefert eine Gleichung. Damit landen wir bei einem Gleichungssystem mit <strong>drei Gleichungen und drei Unbekannten</strong>.</div>
     <div class="ip">Die gute Nachricht: Du brauchst dafür <strong>kein neues Verfahren</strong>. Du kennst bereits alles, was nötig ist.</div>
     <div class="hint"><strong>Voraussetzung:</strong> Additions- und Einsetzungsverfahren bei zwei Variablen, Ansatz über Bedingungen (Tab <em>Bedingungen zählen</em>).</div>
   </div>
@@ -5158,7 +5084,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich führe ein System mit drei Unbekannten durch Elimination auf ein System mit zwei Unbekannten zurück</span></li>
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich begründe, welche Variable ich zuerst eliminiere und aus welchem Gleichungspaar</span></li>
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich schreibe meinen Rechenweg so auf, dass jeder Schritt nachvollziehbar ist</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich bestimme die Gleichung einer Parabel durch drei gegebene Punkte</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich übersetze eine Sachaufgabe mit drei unbekannten Größen in ein Gleichungssystem und löse es</span></li>
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich überprüfe meine Lösung durch Einsetzen in alle drei Ausgangsgleichungen</span></li>
     </ul>
   </div>
@@ -5180,30 +5106,49 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   <div class="card-body">
     <div class="ip">\[ \begin{array}{ll} \text{I} & 2x + y - z = 3 \\ \text{II} & x - y + 2z = 5 \\ \text{III} & 3x + 2y + z = 10 \end{array} \]</div>
     <div class="ip"><strong>① Plan fassen.</strong> In I steht \(+y\), in II steht \(-y\) — diese beiden lassen sich ohne Erweitern addieren. Wir eliminieren also \(y\).</div>
-    <div class="ip"><strong>② Erste Elimination</strong> (I + II): \((2x + y - z) + (x - y + 2z) = 3 + 5\), also \(\;3x + z = 8\).  &nbsp;(*)</div>
-    <div class="ip"><strong>③ Zweite Elimination.</strong> Jetzt \(y\) auch aus einem zweiten Paar entfernen — hier III − 2·I: \((3x + 2y + z) - 2(2x + y - z) = 10 - 6\), also \(\;-x + 3z = 4\).  &nbsp;(**)</div>
-    <div class="ip"><strong>④ Das 2×2-System lösen.</strong> Aus (**): \(x = 3z - 4\). Einsetzen in (*): \(3(3z-4) + z = 8 \Rightarrow 10z = 20 \Rightarrow z = 2\), damit \(x = 2\).</div>
+    <div class="ip"><strong>② Erste Elimination</strong> (I + II): \((2x + y - z) + (x - y + 2z) = 3 + 5\), also \(\;3x + z = 8\).  &nbsp;(IV)</div>
+    <div class="ip"><strong>③ Zweite Elimination.</strong> Jetzt \(y\) auch aus einem zweiten Paar entfernen — hier III − 2·I: \((3x + 2y + z) - 2(2x + y - z) = 10 - 6\), also \(\;-x + 3z = 4\).  &nbsp;(V)</div>
+    <div class="ip"><strong>④ Das 2×2-System lösen.</strong> Aus V: \(x = 3z - 4\). Einsetzen in IV: \(3(3z-4) + z = 8 \Rightarrow 10z = 20 \Rightarrow z = 2\), damit \(x = 2\).</div>
     <div class="ip"><strong>⑤ Rückwärts einsetzen.</strong> \(y\) aus I: \(y = 3 - 2x + z = 3 - 4 + 2 = 1\).</div>
     <div class="ip"><strong>⑥ Probe in allen drei Gleichungen:</strong><br>I: \(4 + 1 - 2 = 3\;\checkmark\) &nbsp; II: \(2 - 1 + 4 = 5\;\checkmark\) &nbsp; III: \(6 + 2 + 2 = 10\;\checkmark\)</div>
-    <div class="ip"><strong>Lösung:</strong> \(x = 2\), \(y = 1\), \(z = 2\).</div>
+    <div class="ip"><strong>Lösungsmenge:</strong> \(L = \{(2\mid 1\mid 2)\}\)</div>
   </div>
 </div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-h">§</div><span class="card-title">So findest du deinen Eliminationsplan</span></div>
   <div class="card-body">
-    <div class="ip"><strong>① Suche Gegenzahlen.</strong> Steht dieselbe Variable einmal mit \(+\) und einmal mit \(-\) und gleichem Betrag, ist sie der beste Kandidat — dann genügt Addieren.</div>
-    <div class="ip"><strong>② Suche eine Variable mit Koeffizient 1.</strong> Sie lässt sich leicht isolieren und einsetzen.</div>
-    <div class="ip"><strong>③ Achte auf die Zahlen.</strong> Wähle den Weg, bei dem du möglichst wenig erweitern musst — das spart Brüche.</div>
-    <div class="ip"><strong>④ Zweimal dieselbe Variable.</strong> Wichtig: Du musst <em>dieselbe</em> Variable aus <em>zwei verschiedenen</em> Gleichungspaaren entfernen. Sonst entsteht kein 2×2-System.</div>
-    <div class="hint"><strong>Schreibweise:</strong> Nummeriere deine Gleichungen mit I, II, III und schreibe an jeden Schritt dazu, was du getan hast — etwa „III − 2·I". Nur so ist dein Weg nachvollziehbar, und nur so findest du selbst einen Fehler wieder.</div>
+    <div class="ip"><strong>① Fehlt eine Variable schon in einer Gleichung?</strong> Dann brauchst du nur noch <em>ein</em> Eliminationspaar: Entferne diese Variable aus den beiden anderen Gleichungen, und du hast zusammen mit der dritten schon ein 2×2-System.</div>
+    <div class="ip"><strong>② Suche Gegenzahlen.</strong> Steht dieselbe Variable einmal mit \(+\) und einmal mit \(-\) und gleichem Betrag, ist sie der beste Kandidat — dann genügt Addieren.</div>
+    <div class="ip"><strong>③ Suche eine Variable mit Koeffizient 1.</strong> Sie lässt sich leicht isolieren und einsetzen.</div>
+    <div class="ip"><strong>④ Achte auf die Zahlen.</strong> Wähle den Weg, bei dem du möglichst wenig erweitern musst — das spart Brüche.</div>
+    <div class="ip"><strong>⑤ Zweimal dieselbe Variable.</strong> Wichtig: Du musst <em>dieselbe</em> Variable aus <em>zwei verschiedenen</em> Gleichungspaaren entfernen. Sonst entsteht kein 2×2-System.</div>
+    <div class="hint"><strong>Schreibweise:</strong> Nummeriere deine Gleichungen mit I, II, III und schreibe an jeden Schritt dazu, was du getan hast — etwa „III − 2·I". Die neuen Gleichungen mit zwei Unbekannten heißen IV und V. Nur so ist dein Weg nachvollziehbar, und nur so findest du selbst einen Fehler wieder.</div>
   </div>
 </div>
 
-<div class="section-label">2 · Die Parabel durch drei Punkte</div>
+<div class="section-label">2 · Eine Sachaufgabe mit drei Unbekannten</div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel 2 — Rekonstruktion</span></div>
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Beispiel 2 — Das Kiosk-Rätsel</span></div>
+  <div class="card-body">
+    <div class="ip">Montag: 2 Brezeln, 1 Apfel und 1 Wasser kosten 4,10 €. Dienstag: 1 Brezel, 2 Äpfel und 1 Wasser kosten 3,70 €. Mittwoch: 3 Brezeln, 1 Apfel und 2 Wasser kosten 6,20 €. Was kostet ein einzelnes Teil?</div>
+    <div class="ip"><strong>① Größen festlegen.</strong> \(b\): Preis einer Brezel, \(a\): Preis eines Apfels, \(w\): Preis eines Wassers (alle in Euro).</div>
+    <div class="ip"><strong>② Gleichungen aufstellen.</strong> \[ \begin{array}{ll} \text{I} & 2b + a + w = 4{,}10 \\ \text{II} & b + 2a + w = 3{,}70 \\ \text{III} & 3b + a + 2w = 6{,}20 \end{array} \]</div>
+    <div class="ip"><strong>③ \(w\) eliminieren.</strong> I − II: \(b - a = 0{,}40\) &nbsp;(IV)<br>2·I − III: \(b + a = 2{,}00\) &nbsp;(V)</div>
+    <div class="ip"><strong>④ Das 2×2-System lösen.</strong> IV + V: \(2b = 2{,}40 \Rightarrow b = 1{,}20\). Aus V: \(a = 0{,}80\). Aus I: \(w = 4{,}10 - 2{,}40 - 0{,}80 = 0{,}90\).</div>
+    <div class="ip"><strong>⑤ Probe in allen drei Gleichungen.</strong> I: \(2{,}40 + 0{,}80 + 0{,}90 = 4{,}10\;\checkmark\) &nbsp; II: \(1{,}20 + 1{,}60 + 0{,}90 = 3{,}70\;\checkmark\) &nbsp; III: \(3{,}60 + 0{,}80 + 1{,}80 = 6{,}20\;\checkmark\)</div>
+    <div class="ip"><strong>Antwort:</strong> Eine Brezel kostet 1,20 €, ein Apfel 0,80 € und ein Wasser 0,90 €.</div>
+    <div class="hint"><strong>Merke:</strong> Beide Hilfsgleichungen IV und V müssen <em>dieselbe</em> Variable verloren haben. Hier ist es \(w\).</div>
+  </div>
+</div>
+
+<div class="section-label">3 · Zusatz ★ — Die Parabel durch drei Punkte</div>
+
+<div class="hint"><strong>Vorgriff:</strong> Parabeln und ihre Gleichung \(y = a x^2 + b x + c\) lernst du erst im Thema „Quadratische Funktionen“ kennen. Dieser Abschnitt und die Aufgaben 4–6 sind ein Zusatz. Du brauchst dafür nur: Für \(x\) und \(y\) setzt du die Koordinaten eines Punktes ein.</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel 3 — Rekonstruktion</span></div>
   <div class="card-body">
     <div class="ip">Gesucht ist die Parabel durch \(A(1\mid 2)\), \(B(2\mid 3)\) und \(C(3\mid 6)\).</div>
     <div class="ip"><strong>① Ansatz:</strong> \(y = a x^2 + b x + c\) — drei Unbekannte, also brauchen wir drei Bedingungen. Genau drei Punkte sind gegeben.</div>
@@ -5298,7 +5243,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
     <div class="ip"><strong>I + III:</strong> \(3x + 2y = 7\). Mit \(y = 2\): \(3x = 3 \Rightarrow x = 1\).</div>
     <div class="ip"><strong>Rückwärts in I:</strong> \(z = 6 - 1 - 2 = 3\).</div>
     <div class="ip"><strong>Probe:</strong> I: \(1+2+3 = 6\;\checkmark\) &nbsp; II: \(1-2+3 = 2\;\checkmark\) &nbsp; III: \(2+2-3 = 1\;\checkmark\)</div>
-    <div class="ip"><strong>Lösung:</strong> \(x = 1\), \(y = 2\), \(z = 3\).</div>
+    <div class="ip"><strong>Lösungsmenge:</strong> \(L = \{(1\mid 2\mid 3)\}\)</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
           <div class="komp-desc">Mit symbolischen Elementen umgehen: ein 3×3-System durch Elimination auf ein bekanntes 2×2-System zurückführen.</div></div>
   </div>
@@ -5313,12 +5258,12 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
       <div class="tk-toggle">⌄</div>
     </div>
     <div class="ta">    <div class="ip"><strong>Plan:</strong> \(y\) steht in II mit \(-1\) und in III mit \(+1\) — Gegenzahlen ohne Erweitern. Für das zweite Paar erweitern wir II.</div>
-    <div class="ip"><strong>II + III:</strong> \(5x + z = 9\).  (*)</div>
-    <div class="ip"><strong>I + 2·II:</strong> \((x + 2y + z) + (4x - 2y + 6z) = 9 + 24\), also \(5x + 7z = 33\).  (**)</div>
-    <div class="ip"><strong>(**) − (*):</strong> \(6z = 24 \Rightarrow z = 4\), damit aus (*): \(5x = 5 \Rightarrow x = 1\).</div>
+    <div class="ip"><strong>II + III:</strong> \(5x + z = 9\).  (IV)</div>
+    <div class="ip"><strong>I + 2·II:</strong> \((x + 2y + z) + (4x - 2y + 6z) = 9 + 24\), also \(5x + 7z = 33\).  (V)</div>
+    <div class="ip"><strong>V − IV:</strong> \(6z = 24 \Rightarrow z = 4\), damit aus IV: \(5x = 5 \Rightarrow x = 1\).</div>
     <div class="ip"><strong>Rückwärts in I:</strong> \(2y = 9 - 1 - 4 = 4 \Rightarrow y = 2\).</div>
     <div class="ip"><strong>Probe:</strong> I: \(1+4+4 = 9\;\checkmark\) &nbsp; II: \(2-2+12 = 12\;\checkmark\) &nbsp; III: \(3+2-8 = -3\;\checkmark\)</div>
-    <div class="ip"><strong>Lösung:</strong> \(x = 1\), \(y = 2\), \(z = 4\).</div>
+    <div class="ip"><strong>Lösungsmenge:</strong> \(L = \{(1\mid 2\mid 4)\}\)</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k2">K2</span></div>
           <div class="komp-desc">Symbolisch arbeiten und Probleme lösen: einen günstigen Eliminationsweg wählen und das System vollständig abarbeiten.</div></div>
   </div>
@@ -5347,7 +5292,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   <div style="flex:1">
     <div style="font-size:11px;font-weight:700;color:#c8b55e;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Bereich · R</div>
     <div style="font-size:20px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:-0.01em">Rekonstruktion — die Parabel durch drei Punkte</div>
-    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 4–6 · Aus Bedingungen eine Funktionsgleichung gewinnen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;line-height:1.5">Aufgaben 4–6 · Zusatz ★ · Aus Bedingungen eine Funktionsgleichung gewinnen</div>
   </div>
 </div>
 
@@ -5746,8 +5691,8 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
     </div>
     <div class="ta">    <div class="ip"><strong>① Variablen:</strong> \(e\), \(k\), \(m\) = Preis einer Erwachsenen-, Kinder- bzw. ermäßigten Karte in €.</div>
     <div class="ip"><strong>② Gleichungen:</strong> \[ \begin{array}{ll} \text{I} & 2e + 3k + m = 40 \\ \text{II} & e + 2k + 2m = 33 \\ \text{III} & 3e + k + m = 39 \end{array} \]</div>
-    <div class="ip"><strong>③ Lösen.</strong> \(m\) hat in I und III den Koeffizienten 1 — III − I: \(e - 2k = -1\).  (*)<br>Für das zweite Paar: II − 2·I: \((e + 2k + 2m) - (4e + 6k + 2m) = 33 - 80\), also \(-3e - 4k = -47\), das heißt \(3e + 4k = 47\).  (**)</div>
-    <div class="ip">Aus (*): \(e = 2k - 1\). Einsetzen in (**): \(3(2k-1) + 4k = 47 \Rightarrow 10k = 50 \Rightarrow k = 5\), damit \(e = 9\).<br>Aus I: \(m = 40 - 18 - 15 = 7\).</div>
+    <div class="ip"><strong>③ Lösen.</strong> \(m\) hat in I und III den Koeffizienten 1 — III − I: \(e - 2k = -1\).  (IV)<br>Für das zweite Paar: II − 2·I: \((e + 2k + 2m) - (4e + 6k + 2m) = 33 - 80\), also \(-3e - 4k = -47\), das heißt \(3e + 4k = 47\).  (V)</div>
+    <div class="ip">Aus IV: \(e = 2k - 1\). Einsetzen in V: \(3(2k-1) + 4k = 47 \Rightarrow 10k = 50 \Rightarrow k = 5\), damit \(e = 9\).<br>Aus I: \(m = 40 - 18 - 15 = 7\).</div>
     <div class="ip"><strong>④ Probe:</strong> I: \(18+15+7 = 40\;\checkmark\) &nbsp; II: \(9+10+14 = 33\;\checkmark\) &nbsp; III: \(27+5+7 = 39\;\checkmark\)</div>
     <div class="ip"><strong>⑤ Antwort:</strong> Eine Erwachsenenkarte kostet 9 €, eine Kinderkarte 5 €, eine ermäßigte Karte 7 €.</div>
     <div class="ip"><strong>⑥ Validierung:</strong> Alle Preise sind positiv, und die ermäßigte Karte liegt zwischen Kinder- und Erwachsenenpreis — genau das erwartet man. Das Ergebnis ist plausibel.</div>
@@ -9698,578 +9643,759 @@ setTimeout(updateQuadExplorer,100);
 </div><!-- end k9-quad -->
 
 <!-- ── Statistik ──────────────────────────────────────── -->
+<!-- ── Wahrscheinlichkeit (Klasse 9, Stand Unterricht 9c 2026/27) ── -->
+<div class="subpanel" id="k9-wahr">
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Eine Urne mit 5 roten und 3 blauen Kugeln, zwei Züge: Wie wahrscheinlich sind zwei rote Kugeln? Die Antwort hängt davon ab, ob du die erste Kugel zurücklegst. In diesem Tab lernst du, solche Fragen mit der Laplace-Regel und dem Baumdiagramm zu beantworten.</div>
+    <div class="ip"><strong>Das brauchst du:</strong> Brüche kürzen, multiplizieren und addieren; Bruch, Dezimalzahl und Prozent ineinander umrechnen.</div>
+
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Wahrscheinlichkeit</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich entscheide, ob die Laplace-Regel gilt, und berechne damit Wahrscheinlichkeiten</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich schreibe „A und B“ und „A oder B“ als Menge und nutze das Gegenereignis</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich zeichne ein Baumdiagramm und beschrifte jeden Ast</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich berechne Pfade mit der Pfadmultiplikationsregel und fasse Pfade mit der Pfadadditionsregel zusammen</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich berechne „mindestens einmal“ über das Gegenereignis</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich unterscheide Ziehen mit und ohne Zurücklegen</span></li>
+    </ul>
+  </div>
+</div>
+<div class="section-label">1 · Zufallsexperiment und Laplace-Regel</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die Laplace-Regel</span></div>
+  <div class="card-body">
+    <div class="ip">Bei einem <strong>Zufallsexperiment</strong> kennst du alle möglichen Ergebnisse, aber nicht, welches eintritt. Alle Ergebnisse zusammen bilden die <strong>Ergebnismenge</strong> \(\Omega\), beim Würfel \(\Omega = \{1; 2; 3; 4; 5; 6\}\). Ein <strong>Ereignis</strong> \(E\) ist eine Teilmenge davon, zum Beispiel \(E\): „gerade Zahl“ \(= \{2; 4; 6\}\).</div>
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:0 0 18px"><strong style="color:#8a7a30">Kernidee:</strong> Sind alle Ergebnisse <strong>gleich wahrscheinlich</strong>, gilt die Laplace-Regel: \[P(E) = \frac{\text{Anzahl der günstigen Ergebnisse}}{\text{Anzahl der möglichen Ergebnisse}}\] Sie gilt <strong>nur</strong> dann. Deshalb gehört zu jeder Rechnung der Satz, warum alle Ergebnisse gleich wahrscheinlich sind.</div>
+    <div class="ip">Es gilt immer \(0 \le P(E) \le 1\). \(P(E) = 0\) heißt unmöglich, \(P(E) = 1\) heißt sicher. Du kannst \(P(E)\) als Bruch, als Dezimalzahl oder in Prozent angeben.</div>
+
+  </div>
+</div>
+<div class="bsp">
+  <div class="bsp-label">Beispiel 1</div>
+  <div class="bsp-q">Ein Glücksrad hat zwölf gleich große Felder mit den Zahlen 1 bis 12. Berechne die Wahrscheinlichkeit, dass die gedrehte Zahl durch 3 teilbar ist.</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip"><strong>1. Ereignis als Menge:</strong> \(E = \{3; 6; 9; 12\}\).</div>
+    <div class="ip"><strong>2. Zählen:</strong> 4 günstige von 12 möglichen Ergebnissen. Laplace gilt, weil die Felder gleich groß sind.</div>
+    <div class="ip"><strong>3. Rechnen:</strong> \(P(E) = \dfrac{4}{12} = \dfrac{1}{3} \approx 33{,}3\,\%\).</div>
+  </div>
+</div>
+<div class="section-label">2 · Gegenereignis, „und“, „oder“</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Ereignisse verknüpfen</span></div>
+  <div class="card-body">
+    <div class="ip">Das <strong>Gegenereignis</strong> \(\overline{A}\) enthält alle Ergebnisse, die nicht zu \(A\) gehören. Es gilt \(P(\overline{A}) = 1 - P(A)\). Das ist praktisch bei „nicht“ und bei „mindestens“.</div>
+    <div class="ip"><strong>„A und B“</strong> enthält die Ergebnisse, die zu \(A\) und gleichzeitig zu \(B\) gehören. <strong>„A oder B“</strong> enthält die Ergebnisse, die zu \(A\), zu \(B\) oder zu beiden gehören.</div>
+    <div class="ip"><strong>So rechnest du:</strong> Ereignis als Menge aufschreiben, günstige Ergebnisse zählen, Laplace-Regel anwenden.</div>
+    <div class="ip" style="background:#fceee9;border-radius:10px;padding:12px 16px;border-left:4px solid #c75c3a;margin-top:10px"><strong style="color:#8a3a22">Achtung, Klassiker:</strong> \(P(\text{A oder B}) = P(A) + P(B)\) stimmt <strong>nur</strong>, wenn \(A\) und \(B\) kein gemeinsames Ergebnis haben. Sonst zählst du die gemeinsamen Ergebnisse doppelt.</div>
+
+  </div>
+</div>
+<div class="bsp">
+  <div class="bsp-label">Beispiel 2</div>
+  <div class="bsp-q">Aus Karten mit den Zahlen 1 bis 12 wird eine gezogen. \(A\): „gerade Zahl“, \(B\): „größer als 8“. Berechne \(P(\text{A und B})\) und \(P(\text{A oder B})\).</div>
+  <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+  <div class="bsp-a">
+    <div class="ip">\(A = \{2; 4; 6; 8; 10; 12\}\), \(B = \{9; 10; 11; 12\}\).</div>
+    <div class="ip"><strong>A und B:</strong> \(\{10; 12\}\), also \(P(\text{A und B}) = \dfrac{2}{12} = \dfrac{1}{6}\).</div>
+    <div class="ip"><strong>A oder B:</strong> \(\{2; 4; 6; 8; 9; 10; 11; 12\}\), also \(P(\text{A oder B}) = \dfrac{8}{12} = \dfrac{2}{3}\).</div>
+    <div class="ip"><em>Nicht</em> \(\tfrac{6}{12} + \tfrac{4}{12} = \tfrac{10}{12}\): Die 10 und die 12 wären doppelt gezählt.</div>
+  </div>
+</div>
+<div class="section-label">3 · Baumdiagramm und Pfadmultiplikationsregel</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zweimal ziehen mit Zurücklegen</span></div>
+  <div class="card-body">
+    <div class="ip">In einer Urne liegen <strong>5 rote und 3 blaue</strong> Kugeln. Eine Kugel wird gezogen, die Farbe notiert, die Kugel <strong>zurückgelegt</strong>. Dann wird noch einmal gezogen.</div>
+    <div class="ip"><svg viewBox="0 0 440 300" width="100%" style="max-width:440px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Baumdiagramm: zweimal ziehen mit Zurücklegen aus 5 roten und 3 blauen Kugeln">
+<defs><marker id="k9wb1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="440" height="300" fill="#fffcf6"/>
+<circle cx="36" cy="150.0" r="5" fill="#2c2c2c"/>
+<line x1="36.0" y1="150.0" x2="154.0" y2="81.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="86.0" y="93.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="103.0" y="106.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">5/8</text>
+<line x1="36.0" y1="150.0" x2="154.0" y2="219.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="86.0" y="190.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="103.0" y="203.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3/8</text>
+<circle cx="170" cy="81.0" r="15" fill="#c75c3a"/>
+<text x="170.0" y="86.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">r</text>
+<line x1="185.0" y1="81.0" x2="284.0" y2="36.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="36.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="49.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">5/8</text>
+<circle cx="300" cy="36.0" r="15" fill="#c75c3a"/>
+<text x="300.0" y="41.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">r</text>
+<text x="326.0" y="41.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(r | r) = 25/64</text>
+<line x1="185.0" y1="81.0" x2="284.0" y2="126.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="109.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="122.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3/8</text>
+<circle cx="300" cy="126.0" r="15" fill="#4f6672"/>
+<text x="300.0" y="131.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">b</text>
+<text x="326.0" y="131.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(r | b) = 15/64</text>
+<circle cx="170" cy="219.0" r="15" fill="#4f6672"/>
+<text x="170.0" y="224.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">b</text>
+<line x1="185.0" y1="219.0" x2="284.0" y2="174.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="174.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="187.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">5/8</text>
+<circle cx="300" cy="174.0" r="15" fill="#c75c3a"/>
+<text x="300.0" y="179.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">r</text>
+<text x="326.0" y="179.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(b | r) = 15/64</text>
+<line x1="185.0" y1="219.0" x2="284.0" y2="264.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="247.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="260.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3/8</text>
+<circle cx="300" cy="264.0" r="15" fill="#4f6672"/>
+<text x="300.0" y="269.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">b</text>
+<text x="326.0" y="269.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(b | b) = 9/64</text>
+<text x="103.0" y="18.0" font-size="12.5" font-weight="700" fill="#6b6560" text-anchor="middle">1. Zug</text>
+<text x="240.0" y="18.0" font-size="12.5" font-weight="700" fill="#6b6560" text-anchor="middle">2. Zug</text>
+<text x="378.0" y="18.0" font-size="12.5" font-weight="700" fill="#6b6560" text-anchor="middle">Pfad</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Mit Zurücklegen: In der zweiten Stufe stehen dieselben Brüche wie in der ersten.</div></div>
+    <div class="ip"><strong>So liest du den Baum:</strong> Jede Stufe ist eine Verzweigung. An jedem Ast steht seine Wahrscheinlichkeit; die Äste an einem Knoten ergeben zusammen 1 (\(\tfrac58 + \tfrac38 = 1\)). Ein Pfad von links nach rechts ist ein Ergebnis, etwa \((r \mid b)\): erst rot, dann blau.</div>
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:0 0 18px"><strong style="color:#8a7a30">Kernidee:</strong> <strong>Pfadmultiplikationsregel:</strong> Die Wahrscheinlichkeit eines Pfades ist das <strong>Produkt</strong> der Wahrscheinlichkeiten entlang des Pfades. \[P(r \mid r) = \frac58 \cdot \frac58 = \frac{25}{64} \approx 39{,}1\,\%\]</div>
+    <div class="ip"><strong>Kontrolle:</strong> Alle Pfade zusammen ergeben 1: \(\tfrac{25}{64} + \tfrac{15}{64} + \tfrac{15}{64} + \tfrac{9}{64} = \tfrac{64}{64}\).</div>
+
+  </div>
+</div>
+<div class="section-label">4 · Pfadadditionsregel und „mindestens“</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Mehrere Pfade zusammenfassen</span></div>
+  <div class="card-body">
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:0 0 18px"><strong style="color:#8a7a30">Kernidee:</strong> <strong>Pfadadditionsregel:</strong> Gehören zu einem Ereignis <strong>mehrere Pfade</strong>, addierst du ihre Pfadwahrscheinlichkeiten.</div>
+    <div class="ip"><strong>Genau eine blaue Kugel</strong> (Urne von oben, mit Zurücklegen): Dazu gehören die Pfade \((r \mid b)\) und \((b \mid r)\). \[P(\text{genau eine blaue}) = \frac{15}{64} + \frac{15}{64} = \frac{30}{64} = \frac{15}{32} \approx 46{,}9\,\%\]</div>
+    <div class="ip"><strong>Mindestens eine blaue Kugel:</strong> Statt drei Pfade zu addieren, nimmst du das Gegenereignis „keine blaue“. Das ist nur ein Pfad, nämlich \((r \mid r)\). \[P(\text{mindestens eine blaue}) = 1 - P(r \mid r) = 1 - \frac{25}{64} = \frac{39}{64} \approx 60{,}9\,\%\]</div>
+    <div class="ip" style="background:#fceee9;border-radius:10px;padding:12px 16px;border-left:4px solid #c75c3a;margin-top:10px"><strong style="color:#8a3a22">Achtung, Klassiker:</strong> „Mindestens eine“ ist <strong>nicht</strong> „genau eine“. Zu „mindestens eine blaue“ gehört auch der Pfad \((b \mid b)\). Deshalb sind es \(\tfrac{39}{64}\) und nicht \(\tfrac{30}{64}\).</div>
+    <div class="ip"><strong>Vorgehen:</strong> Baum zeichnen → passende Pfade markieren → entlang jedes Pfades multiplizieren → die Pfade addieren.</div>
+
+  </div>
+</div>
+<div class="section-label">5 · Ziehen ohne Zurücklegen</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Dieselbe Urne, aber die Kugel bleibt draußen</span></div>
+  <div class="card-body">
+    <div class="ip">Wieder 5 rote und 3 blaue Kugeln, wieder zwei Züge. Diesmal wird die erste Kugel <strong>nicht zurückgelegt</strong>.</div>
+    <div class="ip"><svg viewBox="0 0 440 300" width="100%" style="max-width:440px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Baumdiagramm: zweimal ziehen ohne Zurücklegen aus 5 roten und 3 blauen Kugeln">
+<defs><marker id="k9wb2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="440" height="300" fill="#fffcf6"/>
+<circle cx="36" cy="150.0" r="5" fill="#2c2c2c"/>
+<line x1="36.0" y1="150.0" x2="154.0" y2="81.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="86.0" y="93.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="103.0" y="106.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">5/8</text>
+<line x1="36.0" y1="150.0" x2="154.0" y2="219.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="86.0" y="190.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="103.0" y="203.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3/8</text>
+<circle cx="170" cy="81.0" r="15" fill="#c75c3a"/>
+<text x="170.0" y="86.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">r</text>
+<line x1="185.0" y1="81.0" x2="284.0" y2="36.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="36.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="49.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">4/7</text>
+<circle cx="300" cy="36.0" r="15" fill="#c75c3a"/>
+<text x="300.0" y="41.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">r</text>
+<text x="326.0" y="41.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(r | r) = 20/56</text>
+<line x1="185.0" y1="81.0" x2="284.0" y2="126.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="109.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="122.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3/7</text>
+<circle cx="300" cy="126.0" r="15" fill="#4f6672"/>
+<text x="300.0" y="131.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">b</text>
+<text x="326.0" y="131.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(r | b) = 15/56</text>
+<circle cx="170" cy="219.0" r="15" fill="#4f6672"/>
+<text x="170.0" y="224.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">b</text>
+<line x1="185.0" y1="219.0" x2="284.0" y2="174.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="174.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="187.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">5/7</text>
+<circle cx="300" cy="174.0" r="15" fill="#c75c3a"/>
+<text x="300.0" y="179.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">r</text>
+<text x="326.0" y="179.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(b | r) = 15/56</text>
+<line x1="185.0" y1="219.0" x2="284.0" y2="264.0" stroke="#6b6560" stroke-width="1.8"/>
+<rect x="225.5" y="247.5" width="34" height="17" fill="#fffcf6" fill-opacity="0.92"/>
+<text x="242.5" y="260.5" font-size="13.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">2/7</text>
+<circle cx="300" cy="264.0" r="15" fill="#4f6672"/>
+<text x="300.0" y="269.0" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">b</text>
+<text x="326.0" y="269.0" font-size="13.5" fill="#2c2c2c" text-anchor="start">P(b | b) = 6/56</text>
+<text x="103.0" y="18.0" font-size="12.5" font-weight="700" fill="#6b6560" text-anchor="middle">1. Zug</text>
+<text x="240.0" y="18.0" font-size="12.5" font-weight="700" fill="#6b6560" text-anchor="middle">2. Zug</text>
+<text x="378.0" y="18.0" font-size="12.5" font-weight="700" fill="#6b6560" text-anchor="middle">Pfad</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Ohne Zurücklegen: In der zweiten Stufe stehen Siebtel, und von der gezogenen Farbe ist eine Kugel weniger da.</div></div>
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:0 0 18px"><strong style="color:#8a7a30">Kernidee:</strong> Nach dem ersten Zug fehlt eine Kugel. In der zweiten Stufe wird der <strong>Nenner um 1 kleiner</strong>, und der <strong>Zähler der gezogenen Farbe um 1 kleiner</strong>. Die Brüche hängen also vom ersten Zug ab. Pfadmultiplikationsregel und Pfadadditionsregel gelten unverändert.</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600"></td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">mit Zurücklegen</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">ohne Zurücklegen</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>zweimal rot</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(\tfrac58 \cdot \tfrac58 = \tfrac{25}{64} \approx 0{,}391\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(\tfrac58 \cdot \tfrac47 = \tfrac{20}{56} = \tfrac{5}{14} \approx 0{,}357\)</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>mindestens eine blaue</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(1 - \tfrac{25}{64} = \tfrac{39}{64}\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(1 - \tfrac{5}{14} = \tfrac{9}{14}\)</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>zwei gleiche Farben</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(\tfrac{25}{64} + \tfrac{9}{64} = \tfrac{34}{64} = \tfrac{17}{32}\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(\tfrac{20}{56} + \tfrac{6}{56} = \tfrac{26}{56} = \tfrac{13}{28}\)</td></tr>
+    </table>
+    <div class="ip">Ohne Zurücklegen ist „zweimal rot“ unwahrscheinlicher: Nach der ersten roten Kugel sind nur noch 4 rote unter 7 Kugeln, und \(\tfrac47 &lt; \tfrac58\).</div>
+    <div class="ip" style="background:#fceee9;border-radius:10px;padding:12px 16px;border-left:4px solid #c75c3a;margin-top:10px"><strong style="color:#8a3a22">Achtung, Klassiker:</strong> Der häufigste Fehler: In der zweiten Stufe steht wieder \(\tfrac58\). Prüfe an jedem Knoten: Wie viele Kugeln liegen <em>jetzt</em> in der Urne, und wie viele davon haben die Farbe?</div>
+
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f3f5ec;border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#5b6e2e;line-height:1;font-weight:400;min-width:40px;text-align:center">W</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · W · ★ / ★★ / ★★★ Wahrscheinlichkeit</div>
+    <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Laplace-Regel, Baumdiagramm, Gegenereignis</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Erst als Menge oder als Baum aufschreiben, dann rechnen. Ergebnisse als gekürzten Bruch und in Prozent.</div>
+  </div>
+</div>
+<div class="two-col">
+<div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">W1</span><span class="td de">★</span></div>
+    <div class="tq">In einem Beutel liegen 15 gleich große Lose: 3 Gewinne und 12 Nieten. Ein Los wird gezogen.<br><strong>a)</strong> Begründe, warum die Laplace-Regel gilt.<br><strong>b)</strong> Berechne \(P(\text{Gewinn})\).<br><strong>c)</strong> Gib ein Ereignis an, das die Wahrscheinlichkeit 0,8 hat.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Die Lose sind gleich groß und gemischt, jedes der 15 Lose wird gleich wahrscheinlich gezogen.</div>
+    <div class="ip"><strong>b)</strong> \(P(\text{Gewinn}) = \dfrac{3}{15} = \dfrac15 = 20\,\%\).</div>
+    <div class="ip"><strong>c)</strong> „Niete“: \(\dfrac{12}{15} = 0{,}8\). Das ist das Gegenereignis von „Gewinn“: \(1 - 0{,}2 = 0{,}8\).</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K1: Laplace-Annahme begründen · K5: Laplace-Regel anwenden</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">W2</span><span class="td dm">★★</span></div>
+    <div class="tq">Ein Spielwürfel mit zwölf Flächen trägt die Zahlen 1 bis 12. \(A\): „Primzahl“, \(B\): „ungerade Zahl“.<br><strong>a)</strong> Schreibe \(A\) und \(B\) als Menge.<br><strong>b)</strong> Berechne \(P(\text{A und B})\) und \(P(\text{A oder B})\).<br><strong>c)</strong> Erkläre, warum \(P(A) + P(B)\) hier nicht \(P(\text{A oder B})\) ergibt.<br><strong>d)</strong> Beschreibe \(\overline{B}\) in Worten und berechne \(P(\overline{B})\).</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(A = \{2; 3; 5; 7; 11\}\), \(B = \{1; 3; 5; 7; 9; 11\}\).</div>
+    <div class="ip"><strong>b)</strong> A und B: \(\{3; 5; 7; 11\}\), also \(\dfrac{4}{12} = \dfrac13\). A oder B: \(\{1; 2; 3; 5; 7; 9; 11\}\), also \(\dfrac{7}{12}\).</div>
+    <div class="ip"><strong>c)</strong> \(\tfrac{5}{12} + \tfrac{6}{12} = \tfrac{11}{12}\) zählt die vier Zahlen 3, 5, 7 und 11 doppelt. Richtig: \(5 + 6 - 4 = 7\) Zahlen.</div>
+    <div class="ip"><strong>d)</strong> \(\overline{B}\): „gerade Zahl“. \(P(\overline{B}) = 1 - \dfrac{6}{12} = \dfrac12\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Ereignisse als Mengen verknüpfen · K1: Additionsfalle erklären</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">W3</span><span class="td de">★</span></div>
+    <div class="tq">Ein Glücksrad zeigt mit der Wahrscheinlichkeit 0,2 „Gewinn“ (G), sonst „Niete“ (N). Es wird zweimal gedreht.<br><strong>a)</strong> Zeichne das Baumdiagramm mit Dezimalzahlen an den Ästen.<br><strong>b)</strong> Berechne \(P(G \mid G)\).<br><strong>c)</strong> Berechne die Wahrscheinlichkeit für genau einen Gewinn.<br><strong>d)</strong> Berechne die Wahrscheinlichkeit für mindestens einen Gewinn.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Beide Stufen: G mit 0,2 und N mit 0,8 (das Rad ändert sich nicht).</div>
+    <div class="ip"><strong>b)</strong> \(P(G \mid G) = 0{,}2 \cdot 0{,}2 = 0{,}04 = 4\,\%\).</div>
+    <div class="ip"><strong>c)</strong> Pfade \((G \mid N)\) und \((N \mid G)\): \(0{,}2 \cdot 0{,}8 + 0{,}8 \cdot 0{,}2 = 0{,}32 = 32\,\%\).</div>
+    <div class="ip"><strong>d)</strong> Gegenereignis „kein Gewinn“: \(1 - 0{,}8 \cdot 0{,}8 = 1 - 0{,}64 = 0{,}36 = 36\,\%\). Kontrolle: \(0{,}04 + 0{,}32 = 0{,}36\).</div>
+    <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K4: Baumdiagramm zeichnen · K5: Pfade multiplizieren und addieren</div>
+  </div>
+</div>
+</div>
+<div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">W4</span><span class="td dm">★★</span></div>
+    <div class="tq">In einer Schale liegen 5 Erdbeerbonbons (E) und 7 Zitronenbonbons (Z). Du nimmst nacheinander zwei Bonbons, ohne hinzusehen und ohne zurückzulegen.<br><strong>a)</strong> Zeichne das Baumdiagramm und beschrifte alle Äste.<br><strong>b)</strong> Berechne \(P(E \mid E)\).<br><strong>c)</strong> Berechne die Wahrscheinlichkeit für zwei Bonbons derselben Sorte.<br><strong>d)</strong> Berechne über das Gegenereignis die Wahrscheinlichkeit für mindestens ein Erdbeerbonbon.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Stufe 1: E \(\tfrac{5}{12}\), Z \(\tfrac{7}{12}\). Nach E: E \(\tfrac{4}{11}\), Z \(\tfrac{7}{11}\). Nach Z: E \(\tfrac{5}{11}\), Z \(\tfrac{6}{11}\).</div>
+    <div class="ip"><strong>b)</strong> \(P(E \mid E) = \dfrac{5}{12} \cdot \dfrac{4}{11} = \dfrac{20}{132} = \dfrac{5}{33} \approx 15{,}2\,\%\).</div>
+    <div class="ip"><strong>c)</strong> \(P(E \mid E) + P(Z \mid Z) = \dfrac{20}{132} + \dfrac{7}{12} \cdot \dfrac{6}{11} = \dfrac{20}{132} + \dfrac{42}{132} = \dfrac{62}{132} = \dfrac{31}{66} \approx 47{,}0\,\%\).</div>
+    <div class="ip"><strong>d)</strong> Gegenereignis „kein Erdbeerbonbon“ ist der Pfad \((Z \mid Z)\): \(1 - \dfrac{42}{132} = \dfrac{90}{132} = \dfrac{15}{22} \approx 68{,}2\,\%\).</div>
+    <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K4: Baum ohne Zurücklegen beschriften · K5: Pfade berechnen, Gegenereignis nutzen</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">W5</span><span class="td dm">★★</span></div>
+    <div class="tq"><strong>Fehler finden:</strong> In einer Urne liegen 4 grüne (g) und 3 weiße (w) Kugeln. Es wird zweimal <strong>ohne</strong> Zurücklegen gezogen. Tim rechnet:<br><strong>①</strong> \(P(g \mid g) = \tfrac47 \cdot \tfrac47\)<br><strong>②</strong> \(P(g \mid w) = \tfrac47 + \tfrac36\)<br><strong>③</strong> \(P(\text{mindestens eine weiße}) = P(g \mid w) + P(w \mid g)\)<br>Beschreibe in jeder Zeile den Fehler und rechne richtig.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>①</strong> Der Nenner und der Zähler der zweiten Stufe sind nicht verkleinert. Nach einer grünen Kugel sind noch 3 grüne unter 6 Kugeln: \(\tfrac47 \cdot \tfrac36 = \tfrac{12}{42} = \tfrac27\).</div>
+    <div class="ip"><strong>②</strong> Entlang eines Pfades wird multipliziert, nicht addiert. Tims Ergebnis wäre größer als 1, das kann keine Wahrscheinlichkeit sein. Richtig: \(\tfrac47 \cdot \tfrac36 = \tfrac27\).</div>
+    <div class="ip"><strong>③</strong> Tim hat „genau eine weiße“ berechnet (das wären \(\tfrac27 + \tfrac27 = \tfrac47\)). Zu „mindestens eine weiße“ gehört auch \((w \mid w)\). Am kürzesten über das Gegenereignis: \(1 - P(g \mid g) = 1 - \tfrac27 = \tfrac57\).</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K1: fehlerhafte Rechnungen prüfen · K6: Fehler fachsprachlich beschreiben</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">W6</span><span class="td dh">★★★</span></div>
+    <div class="tq">Ein Würfel wird mehrmals geworfen.<br><strong>a)</strong> Berechne die Wahrscheinlichkeit, bei drei Würfen mindestens eine Sechs zu werfen.<br><strong>b)</strong> Ermittle durch Probieren, wie oft man mindestens würfeln muss, damit die Wahrscheinlichkeit für mindestens eine Sechs über 90 % liegt.<br><strong>c)</strong> Begründe, warum diese Wahrscheinlichkeit nie 100 % erreicht.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Gegenereignis „keine Sechs“: \(\left(\tfrac56\right)^3 \approx 0{,}579\). Also \(1 - 0{,}579 = 0{,}421 \approx 42{,}1\,\%\).</div>
+    <div class="ip"><strong>b)</strong> Gesucht ist \(n\) mit \(\left(\tfrac56\right)^n &lt; 0{,}1\). \(\left(\tfrac56\right)^{12} \approx 0{,}112\) reicht noch nicht, \(\left(\tfrac56\right)^{13} \approx 0{,}093\) reicht. Man muss mindestens 13-mal würfeln.</div>
+    <div class="ip"><strong>c)</strong> \(\left(\tfrac56\right)^n\) wird mit jedem Wurf kleiner, bleibt aber größer als 0: Es ist immer möglich, dass keine Sechs fällt.</div>
+    <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K2: Mindestanzahl durch Probieren ermitteln · K1: allgemein begründen</div>
+  </div>
+</div>
+</div>
+</div>
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+    <div class="ip">
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Woran erkennst du, ob die Laplace-Regel gilt?</li>
+        <li>Warum darfst du bei „A oder B“ nicht immer addieren?</li>
+        <li>Was ändert sich an den Ästen, wenn nicht zurückgelegt wird?</li>
+        <li>Wie berechnest du „mindestens eine“ am schnellsten?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Unsicher? Dann rechne die Tabelle in Abschnitt 5 ohne Vorlage nach.</p>
+    </div>
+  </div>
+</div>
+</div><!-- end k9-wahr -->
+
 <div class="subpanel" id="k9-stat">
-
-<!-- ── Worum geht es? ──────────────────────────────────── -->
 <div class="card">
-  <div class="card-head">
-    <div class="ci ci-i">i</div>
-    <span class="card-title">Worum geht es?</span>
-  </div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
   <div class="card-body">
-    <div class="ip">
-      Stell dir vor: Eine Schokoladenfabrik prüft zwei Abfüllanlagen für Pralinenschachteln.
-      Bei 20 Schachteln misst sie das Gewicht und fragt: Welche Anlage arbeitet zuverlässiger – die,
-      bei der alle Schachteln sehr ähnlich wiegen, oder die mit großeren Schwankungen?
-      Um diese Frage zu beantworten, brauchst du <strong>Statistik</strong> – Werkzeuge, um Daten zu erfassen,
-      auszuwerten und zu interpretieren.
-    </div>
-    <div class="ip">
-      In diesem Kapitel lernst du:
-    </div>
-    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-      <li><strong>Häufigkeiten und Mittelwerte</strong> berechnen und interpretieren</li>
-      <li><strong>Streumaße</strong> (Spannweite, Quartile) nutzen, um Datenqualität zu bewerten</li>
-      <li><strong>Statistische Erhebungen</strong> planen: Wie sammele ich Daten sinnvoll?</li>
-      <li>Ergebnisse <strong>kritisch bewerten</strong> und Manipulationen erkennen</li>
+    <div class="ip">24 Jugendliche wurden gefragt, wie viele Bücher sie im Monat lesen. Aus der Antwortliste wird eine Tabelle, aus der Tabelle ein Diagramm, und drei Zahlen fassen die Daten zusammen. Du lernst, diese Zahlen zu bestimmen, das passende Mittel zu wählen und Diagramme genau zu lesen.</div>
+    <div class="ip"><strong>Das brauchst du:</strong> Zahlen ordnen, Anteile in Prozent umrechnen, Diagramme mit Lineal zeichnen.</div>
+
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele · Statistik</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="gl">
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lege eine Häufigkeitstabelle an und zeichne dazu ein Säulendiagramm</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich bestimme Modalwert, Median und arithmetisches Mittel aus der Tabelle</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkenne Ausreißer und entscheide, welcher Mittelwert die Daten besser beschreibt</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich lese Werte mit Einheit aus Diagrammen ab und prüfe, wo die Achse beginnt</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich teile viele verschiedene Werte in Klassen ein</span></li>
     </ul>
   </div>
 </div>
-
-<!-- ── Voraussetzung ──────────────────────────────────– -->
+<div class="section-label">1 · Häufigkeitstabelle und Säulendiagramm</div>
 <div class="card">
-  <div class="card-head">
-    <div class="ci ci-i">i</div>
-    <span class="card-title">Das brauchst du</span>
-  </div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Von der Liste zur Tabelle zum Diagramm</span></div>
   <div class="card-body">
+    <div class="ip">Die <strong>absolute Häufigkeit</strong> \(H(x)\) sagt, wie oft die Ausprägung \(x\) vorkommt. Die Summe aller Häufigkeiten ist die Anzahl \(n\) der Befragten. Die <strong>relative Häufigkeit</strong> ist der Anteil \(h(x) = \dfrac{H(x)}{n}\), als Bruch, Dezimalzahl oder in Prozent.</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Bücher \(x\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">0</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">1</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">2</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">3</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">4</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">5</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>Anzahl \(H(x)\)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">4</td><td style="border:1px solid #d5cfc6;padding:7px 10px">8</td><td style="border:1px solid #d5cfc6;padding:7px 10px">6</td><td style="border:1px solid #d5cfc6;padding:7px 10px">3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">2</td><td style="border:1px solid #d5cfc6;padding:7px 10px">1</td></tr>
+    </table>
+    <div class="ip">Hier ist \(n = 4 + 8 + 6 + 3 + 2 + 1 = 24\), und zum Beispiel \(h(1) = \dfrac{8}{24} = \dfrac13 \approx 33{,}3\,\%\).</div>
+    <div class="ip"><svg viewBox="0 0 430 310" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Säulendiagramm Bücher im Monat">
+<defs><marker id="k9ss0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="310" fill="#fffcf6"/>
+<line x1="56" y1="258.0" x2="412" y2="258.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="262.0" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="56" y1="213.2" x2="412" y2="213.2" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="217.2" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="56" y1="168.4" x2="412" y2="168.4" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="172.4" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="56" y1="123.6" x2="412" y2="123.6" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="127.6" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="56" y1="78.8" x2="412" y2="78.8" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="82.8" font-size="12.5" fill="#6b6560" text-anchor="end">8</text>
+<line x1="56" y1="34.0" x2="412" y2="34.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="38.0" font-size="12.5" fill="#6b6560" text-anchor="end">10</text>
+<rect x="69.1" y="168.4" width="33.2" height="89.6" fill="#8a9da7"/>
+<text x="85.7" y="162.4" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">4</text>
+<text x="85.7" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">0</text>
+<rect x="128.4" y="78.8" width="33.2" height="179.2" fill="#8a9da7"/>
+<text x="145.0" y="72.8" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">8</text>
+<text x="145.0" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">1</text>
+<rect x="187.7" y="123.6" width="33.2" height="134.4" fill="#8a9da7"/>
+<text x="204.3" y="117.6" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">6</text>
+<text x="204.3" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">2</text>
+<rect x="247.1" y="190.8" width="33.2" height="67.2" fill="#8a9da7"/>
+<text x="263.7" y="184.8" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3</text>
+<text x="263.7" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">3</text>
+<rect x="306.4" y="213.2" width="33.2" height="44.8" fill="#8a9da7"/>
+<text x="323.0" y="207.2" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">2</text>
+<text x="323.0" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">4</text>
+<rect x="365.7" y="235.6" width="33.2" height="22.4" fill="#8a9da7"/>
+<text x="382.3" y="229.6" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">1</text>
+<text x="382.3" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">5</text>
+<line x1="56" y1="258" x2="420" y2="258" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss0)"/>
+<line x1="56" y1="258" x2="56" y2="22" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss0)"/>
+<text x="234.0" y="300.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="middle">Bücher im Monat</text>
+<text x="52.0" y="16.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start">Anzahl H(x)</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Säulendiagramm zur Tabelle: Jede Säule ist so hoch wie ihre Häufigkeit.</div></div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;border-left:4px solid var(--kiku);margin-top:10px"><strong>So zeichnest du ein Säulendiagramm:</strong> Beide Achsen beschriften. Die Hochachse beginnt bei 0 und ist gleichmäßig eingeteilt. Alle Säulen sind gleich breit und haben gleiche Abstände. Die Höhe jeder Säule ist ihre Häufigkeit.</div>
+
+  </div>
+</div>
+<div class="section-label">2 · Lageparameter aus der Tabelle</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Modalwert, Median, arithmetisches Mittel</span></div>
+  <div class="card-body">
+    <div class="ip">Drei Zahlen beschreiben, wo die Daten liegen: der <strong>Modalwert</strong> \(m\), der <strong>Median</strong> \(z\) und das <strong>arithmetische Mittel</strong> \(\bar{x}\). Du bestimmst alle drei direkt in der Tabelle, ohne die Liste auszuschreiben.</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Bücher \(x\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">0</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">1</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">2</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">3</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">4</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">5</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>Anzahl \(H(x)\)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">4</td><td style="border:1px solid #d5cfc6;padding:7px 10px">8</td><td style="border:1px solid #d5cfc6;padding:7px 10px">6</td><td style="border:1px solid #d5cfc6;padding:7px 10px">3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">2</td><td style="border:1px solid #d5cfc6;padding:7px 10px">1</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>Plätze</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">1–4</td><td style="border:1px solid #d5cfc6;padding:7px 10px">5–12</td><td style="border:1px solid #d5cfc6;padding:7px 10px">13–18</td><td style="border:1px solid #d5cfc6;padding:7px 10px">19–21</td><td style="border:1px solid #d5cfc6;padding:7px 10px">22–23</td><td style="border:1px solid #d5cfc6;padding:7px 10px">24</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>\(x \cdot H(x)\)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">0</td><td style="border:1px solid #d5cfc6;padding:7px 10px">8</td><td style="border:1px solid #d5cfc6;padding:7px 10px">12</td><td style="border:1px solid #d5cfc6;padding:7px 10px">9</td><td style="border:1px solid #d5cfc6;padding:7px 10px">8</td><td style="border:1px solid #d5cfc6;padding:7px 10px">5</td></tr>
+    </table>
+    <div class="ip"><strong>1 · \(n\) bestimmen:</strong> alle Häufigkeiten addieren, \(n = 24\).</div>
+    <div class="ip"><strong>2 · Modalwert \(m\):</strong> die Ausprägung mit der größten Häufigkeit. Die größte Häufigkeit ist 8, also \(m = 1\).</div>
+    <div class="ip"><strong>3 · Median \(z\):</strong> die Mitte der geordneten Liste. Zähle die Plätze von links auf. Bei geradem \(n\) liegen zwei Plätze in der Mitte, hier Platz 12 und Platz 13. Platz 12 ist eine 1, Platz 13 ist eine 2, also \(z = \dfrac{1 + 2}{2} = 1{,}5\). Bei ungeradem \(n\) gibt es genau einen mittleren Platz.</div>
+    <div class="ip"><strong>4 · Arithmetisches Mittel \(\bar{x}\):</strong> jede Ausprägung mal ihre Häufigkeit, die Summe durch \(n\) teilen. \[\bar{x} = \frac{0 \cdot 4 + 1 \cdot 8 + 2 \cdot 6 + 3 \cdot 3 + 4 \cdot 2 + 5 \cdot 1}{24} = \frac{42}{24} = 1{,}75\]</div>
+    <div class="ip"><strong>5 · Einzeichnen:</strong> \(m\) ist die höchste Säule, \(z\) eine gestrichelte Linie, \(\bar{x}\) eine durchgezogene Linie. Beide Linien dürfen zwischen zwei Säulen liegen.</div>
+    <div class="ip"><svg viewBox="0 0 430 310" width="100%" style="max-width:430px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Säulendiagramm Bücher im Monat mit Modalwert, Median und arithmetischem Mittel">
+<defs><marker id="k9ss1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="430" height="310" fill="#fffcf6"/>
+<line x1="56" y1="258.0" x2="412" y2="258.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="262.0" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="56" y1="213.2" x2="412" y2="213.2" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="217.2" font-size="12.5" fill="#6b6560" text-anchor="end">2</text>
+<line x1="56" y1="168.4" x2="412" y2="168.4" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="172.4" font-size="12.5" fill="#6b6560" text-anchor="end">4</text>
+<line x1="56" y1="123.6" x2="412" y2="123.6" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="127.6" font-size="12.5" fill="#6b6560" text-anchor="end">6</text>
+<line x1="56" y1="78.8" x2="412" y2="78.8" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="82.8" font-size="12.5" fill="#6b6560" text-anchor="end">8</text>
+<line x1="56" y1="34.0" x2="412" y2="34.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="38.0" font-size="12.5" fill="#6b6560" text-anchor="end">10</text>
+<rect x="69.1" y="168.4" width="33.2" height="89.6" fill="#8a9da7"/>
+<text x="85.7" y="162.4" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">4</text>
+<text x="85.7" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">0</text>
+<rect x="128.4" y="78.8" width="33.2" height="179.2" fill="#5b6e2e"/>
+<text x="145.0" y="72.8" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">8</text>
+<text x="145.0" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">1</text>
+<rect x="187.7" y="123.6" width="33.2" height="134.4" fill="#8a9da7"/>
+<text x="204.3" y="117.6" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">6</text>
+<text x="204.3" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">2</text>
+<rect x="247.1" y="190.8" width="33.2" height="67.2" fill="#8a9da7"/>
+<text x="263.7" y="184.8" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">3</text>
+<text x="263.7" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">3</text>
+<rect x="306.4" y="213.2" width="33.2" height="44.8" fill="#8a9da7"/>
+<text x="323.0" y="207.2" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">2</text>
+<text x="323.0" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">4</text>
+<rect x="365.7" y="235.6" width="33.2" height="22.4" fill="#8a9da7"/>
+<text x="382.3" y="229.6" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">1</text>
+<text x="382.3" y="276.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">5</text>
+<line x1="56" y1="258" x2="420" y2="258" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss1)"/>
+<line x1="56" y1="258" x2="56" y2="22" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss1)"/>
+<text x="234.0" y="300.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="middle">Bücher im Monat</text>
+<text x="52.0" y="16.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start">Anzahl H(x)</text>
+<line x1="174.7" y1="258" x2="174.7" y2="42" stroke="#c75c3a" stroke-width="2.4" stroke-dasharray="7 5"/>
+<rect x="178.7" y="30" width="65.4" height="17" fill="#fffcf6" fill-opacity="0.9"/>
+<text x="182.7" y="43.0" font-size="13" font-weight="700" fill="#c75c3a" text-anchor="start">z = 1,5</text>
+<line x1="189.5" y1="258" x2="189.5" y2="60" stroke="#8a7a30" stroke-width="2.4"/>
+<rect x="193.5" y="48" width="81.8" height="17" fill="#fffcf6" fill-opacity="0.9"/>
+<text x="197.5" y="61.0" font-size="13" font-weight="700" fill="#8a7a30" text-anchor="start">x̄ = 1,75</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Die wenigen Werte 4 und 5 ziehen das arithmetische Mittel nach rechts, der Median bleibt bei 1,5.</div></div>
+    <div class="ip" style="background:#fceee9;border-radius:10px;padding:12px 16px;border-left:4px solid #c75c3a;margin-top:10px"><strong style="color:#8a3a22">Achtung, Klassiker:</strong> Falsch ist \((0 + 1 + 2 + 3 + 4 + 5) : 6 = 2{,}5\). <strong>Jede Ausprägung zählt so oft, wie sie vorkommt.</strong> Und der Median ist nicht die mittlere Ausprägung der Tabelle, sondern der Wert auf dem mittleren <em>Platz</em>.</div>
+
+  </div>
+</div>
+<div class="section-label">3 · Spannweite, Ausreißer und der passende Mittelwert</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Welcher Mittelwert beschreibt die Daten?</span></div>
+  <div class="card-body">
+    <div class="ip">Fünf Schulwege dauern 8, 10, 12, 15 und 55 Minuten. Das arithmetische Mittel ist \(\bar{x} = \dfrac{100}{5} = 20\) Minuten. Die Zahl stimmt, aber vier von fünf sind deutlich schneller. Der Median ist \(z = 12\) Minuten.</div>
+    <div class="ip"><strong>Spannweite:</strong> größter Wert minus kleinster Wert, hier \(55 - 8 = 47\) Minuten. Sie zeigt, wie weit die Werte auseinanderliegen.</div>
+    <div class="ip"><strong>Ausreißer:</strong> ein Wert, der weit von allen anderen entfernt liegt, hier die 55.</div>
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:0 0 18px"><strong style="color:#8a7a30">Kernidee:</strong> Das arithmetische Mittel rechnet jeden Wert mit: <strong>Ein Ausreißer zieht es zu sich.</strong> Der Median ist die Mitte der geordneten Liste: <strong>Ausreißer ändern ihn nicht.</strong> Gibt es Ausreißer, beschreibt der Median die Daten meist besser.</div>
+
+  </div>
+</div>
+<div class="section-label">4 · Diagramme genau lesen</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Wo beginnt die Achse?</span></div>
+  <div class="card-body">
+    <div class="ip">Beide Diagramme zeigen dieselben Besucherzahlen eines Freibads.</div>
+<div class="two-col">
+<div>
+    <div class="ip"><svg viewBox="0 0 300 290" width="100%" style="max-width:300px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Besucherzahlen, Achse beginnt bei 300">
+<defs><marker id="k9ss2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="300" height="290" fill="#fffcf6"/>
+<line x1="56" y1="238.0" x2="282" y2="238.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="242.0" font-size="12.5" fill="#6b6560" text-anchor="end">300</text>
+<line x1="56" y1="197.2" x2="282" y2="197.2" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="201.2" font-size="12.5" fill="#6b6560" text-anchor="end">320</text>
+<line x1="56" y1="156.4" x2="282" y2="156.4" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="160.4" font-size="12.5" fill="#6b6560" text-anchor="end">340</text>
+<line x1="56" y1="115.6" x2="282" y2="115.6" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="119.6" font-size="12.5" fill="#6b6560" text-anchor="end">360</text>
+<line x1="56" y1="74.8" x2="282" y2="74.8" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="78.8" font-size="12.5" fill="#6b6560" text-anchor="end">380</text>
+<line x1="56" y1="34.0" x2="282" y2="34.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="38.0" font-size="12.5" fill="#6b6560" text-anchor="end">400</text>
+<rect x="72.6" y="176.8" width="42.2" height="61.2" fill="#8a9da7"/>
+<text x="93.7" y="170.8" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">330</text>
+<text x="93.7" y="256.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">Mai</text>
+<rect x="147.9" y="115.6" width="42.2" height="122.4" fill="#8a9da7"/>
+<text x="169.0" y="109.6" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">360</text>
+<text x="169.0" y="256.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">Juni</text>
+<rect x="223.2" y="54.4" width="42.2" height="183.6" fill="#8a9da7"/>
+<text x="244.3" y="48.4" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">390</text>
+<text x="244.3" y="256.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">Juli</text>
+<line x1="56" y1="238" x2="290" y2="238" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss2)"/>
+<line x1="56" y1="238" x2="56" y2="22" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss2)"/>
+<path d="M49,233 L63,227 M49,227 L63,221" stroke="#c75c3a" stroke-width="2" fill="none"/>
+<text x="169.0" y="280.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="middle">Monat</text>
+<text x="52.0" y="16.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start">Besucher</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Achse beginnt bei 300</div></div>
+</div>
+<div>
+    <div class="ip"><svg viewBox="0 0 300 290" width="100%" style="max-width:300px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Besucherzahlen, Achse beginnt bei 0">
+<defs><marker id="k9ss3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="300" height="290" fill="#fffcf6"/>
+<line x1="56" y1="238.0" x2="282" y2="238.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="242.0" font-size="12.5" fill="#6b6560" text-anchor="end">0</text>
+<line x1="56" y1="187.0" x2="282" y2="187.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="191.0" font-size="12.5" fill="#6b6560" text-anchor="end">100</text>
+<line x1="56" y1="136.0" x2="282" y2="136.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="140.0" font-size="12.5" fill="#6b6560" text-anchor="end">200</text>
+<line x1="56" y1="85.0" x2="282" y2="85.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="89.0" font-size="12.5" fill="#6b6560" text-anchor="end">300</text>
+<line x1="56" y1="34.0" x2="282" y2="34.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="38.0" font-size="12.5" fill="#6b6560" text-anchor="end">400</text>
+<rect x="72.6" y="69.7" width="42.2" height="168.3" fill="#8a9da7"/>
+<text x="93.7" y="63.7" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">330</text>
+<text x="93.7" y="256.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">Mai</text>
+<rect x="147.9" y="54.4" width="42.2" height="183.6" fill="#8a9da7"/>
+<text x="169.0" y="48.4" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">360</text>
+<text x="169.0" y="256.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">Juni</text>
+<rect x="223.2" y="39.1" width="42.2" height="198.9" fill="#8a9da7"/>
+<text x="244.3" y="33.1" font-size="12.5" font-weight="700" fill="#2c2c2c" text-anchor="middle">390</text>
+<text x="244.3" y="256.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">Juli</text>
+<line x1="56" y1="238" x2="290" y2="238" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss3)"/>
+<line x1="56" y1="238" x2="56" y2="22" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9ss3)"/>
+<text x="169.0" y="280.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="middle">Monat</text>
+<text x="52.0" y="16.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="start">Besucher</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Achse beginnt bei 0</div></div>
+</div>
+</div>
+    <div class="ip">Links ist die Juli-Säule dreimal so hoch wie die Mai-Säule. In Wirklichkeit sind es 60 Besucher mehr, das sind \(\dfrac{60}{330} \approx 18{,}2\,\%\). Eine Achse, die nicht bei 0 beginnt, lässt Unterschiede größer wirken.</div>
+    <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;border-left:4px solid var(--kiku);margin-top:10px"><strong>Drei Fragen an jedes Diagramm:</strong> Was steht an den Achsen, und in welcher Einheit? Wo beginnt die Hochachse? Welcher Wert gehört zu welcher Achse?</div>
+
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zwei Achsen in einem Diagramm</span></div>
+  <div class="card-body">
+    <div class="ip"><svg viewBox="0 0 470 330" width="100%" style="max-width:470px;height:auto;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" aria-label="Klimadiagramm eines Ortes: Temperatur als Linie, Niederschlag als Säulen">
+<defs><marker id="k9sk1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c2c2c"/></marker></defs>
+<rect x="0" y="0" width="470" height="330" fill="#fffcf6"/>
+<line x1="56" y1="282.0" x2="412" y2="282.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="286.0" font-size="12.5" font-weight="700" fill="#c75c3a" text-anchor="end">−10</text>
+<line x1="56" y1="232.8" x2="412" y2="232.8" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="236.8" font-size="12.5" font-weight="700" fill="#c75c3a" text-anchor="end">0</text>
+<text x="420.0" y="236.8" font-size="12.5" font-weight="700" fill="#4f6672" text-anchor="start">0</text>
+<line x1="56" y1="183.6" x2="412" y2="183.6" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="187.6" font-size="12.5" font-weight="700" fill="#c75c3a" text-anchor="end">10</text>
+<text x="420.0" y="187.6" font-size="12.5" font-weight="700" fill="#4f6672" text-anchor="start">20</text>
+<line x1="56" y1="134.4" x2="412" y2="134.4" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="138.4" font-size="12.5" font-weight="700" fill="#c75c3a" text-anchor="end">20</text>
+<text x="420.0" y="138.4" font-size="12.5" font-weight="700" fill="#4f6672" text-anchor="start">40</text>
+<line x1="56" y1="85.2" x2="412" y2="85.2" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="89.2" font-size="12.5" font-weight="700" fill="#c75c3a" text-anchor="end">30</text>
+<text x="420.0" y="89.2" font-size="12.5" font-weight="700" fill="#4f6672" text-anchor="start">60</text>
+<line x1="56" y1="36.0" x2="412" y2="36.0" stroke="#e8e4de" stroke-width="1"/>
+<text x="48.0" y="40.0" font-size="12.5" font-weight="700" fill="#c75c3a" text-anchor="end">40</text>
+<text x="420.0" y="40.0" font-size="12.5" font-weight="700" fill="#4f6672" text-anchor="start">80</text>
+<rect x="61.9" y="134.4" width="17.8" height="98.4" fill="#8a9da7"/>
+<text x="70.8" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">J</text>
+<rect x="91.6" y="146.7" width="17.8" height="86.1" fill="#8a9da7"/>
+<text x="100.5" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">F</text>
+<rect x="121.3" y="134.4" width="17.8" height="98.4" fill="#8a9da7"/>
+<text x="130.2" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">M</text>
+<rect x="150.9" y="122.1" width="17.8" height="110.7" fill="#8a9da7"/>
+<text x="159.8" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">A</text>
+<rect x="180.6" y="85.2" width="17.8" height="147.6" fill="#8a9da7"/>
+<text x="189.5" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">M</text>
+<rect x="210.3" y="60.6" width="17.8" height="172.2" fill="#8a9da7"/>
+<text x="219.2" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">J</text>
+<rect x="239.9" y="36.0" width="17.8" height="196.8" fill="#8a9da7"/>
+<text x="248.8" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">J</text>
+<rect x="269.6" y="60.6" width="17.8" height="172.2" fill="#8a9da7"/>
+<text x="278.5" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">A</text>
+<rect x="299.3" y="97.5" width="17.8" height="135.3" fill="#8a9da7"/>
+<text x="308.2" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">S</text>
+<rect x="328.9" y="122.1" width="17.8" height="110.7" fill="#8a9da7"/>
+<text x="337.8" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">O</text>
+<rect x="358.6" y="109.8" width="17.8" height="123.0" fill="#8a9da7"/>
+<text x="367.5" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">N</text>
+<rect x="388.3" y="122.1" width="17.8" height="110.7" fill="#8a9da7"/>
+<text x="397.2" y="300.0" font-size="12.5" fill="#2c2c2c" text-anchor="middle">D</text>
+<polyline points="70.8,237.7 100.5,232.8 130.2,213.1 159.8,188.5 189.5,163.9 219.2,149.2 248.8,139.3 278.5,139.3 308.2,159.0 337.8,183.6 367.5,213.1 397.2,227.9" fill="none" stroke="#c75c3a" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="70.8" cy="237.7" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="100.5" cy="232.8" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="130.2" cy="213.1" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="159.8" cy="188.5" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="189.5" cy="163.9" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="219.2" cy="149.2" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="248.8" cy="139.3" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="278.5" cy="139.3" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="308.2" cy="159.0" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="337.8" cy="183.6" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="367.5" cy="213.1" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<circle cx="397.2" cy="227.9" r="3.6" fill="#c75c3a" stroke="#fffcf6" stroke-width="1.5"/>
+<line x1="56" y1="282" x2="56" y2="24" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9sk1)"/>
+<line x1="412" y1="282" x2="412" y2="24" stroke="#2c2c2c" stroke-width="1.6" marker-end="url(#k9sk1)"/>
+<line x1="56" y1="232.8" x2="412" y2="232.8" stroke="#2c2c2c" stroke-width="1.2"/>
+<text x="52.0" y="18.0" font-size="13" font-weight="700" fill="#c75c3a" text-anchor="start">Temperatur in °C</text>
+<text x="416.0" y="18.0" font-size="13" font-weight="700" fill="#4f6672" text-anchor="end">Niederschlag in mm</text>
+<text x="234.0" y="322.0" font-size="13" font-weight="700" fill="#2c2c2c" text-anchor="middle">Monat</text>
+</svg><div style="font-size:13px;color:var(--ink-muted);text-align:center;margin-top:6px">Klimadiagramm: Die Linie gehört zur linken Achse (Temperatur), die Säulen gehören zur rechten Achse (Niederschlag).</div></div>
+    <div class="ip">Ein Klimadiagramm zeigt zwei Größen. Lies jeden Wert an <em>seiner</em> Achse ab und nenne die Einheit: Im Mai fallen 60 mm Niederschlag, die Temperatur liegt bei 14 °C.</div>
+
+  </div>
+</div>
+<div class="section-label">5 · Klasseneinteilung</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Viele verschiedene Werte ordnen</span></div>
+  <div class="card-body">
+    <div class="ip">Kommen sehr viele verschiedene Werte vor, etwa Körpergrößen, fasst man sie zu <strong>Klassen</strong> zusammen. Jede Klasse ist gleich breit, und jeder Wert gehört in genau eine Klasse („von … bis unter …“).</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Körpergröße</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">160 bis unter 165 cm</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">165 bis unter 170 cm</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">170 bis unter 175 cm</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">175 bis unter 180 cm</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>Anzahl</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">8</td><td style="border:1px solid #d5cfc6;padding:7px 10px">15</td><td style="border:1px solid #d5cfc6;padding:7px 10px">12</td><td style="border:1px solid #d5cfc6;padding:7px 10px">5</td></tr>
+    </table>
+    <div class="ip">Die Klasse mit der größten Häufigkeit heißt <strong>Modalklasse</strong>, hier 165 bis unter 170 cm.</div>
+
+  </div>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#8a9da7;line-height:1;font-weight:400;min-width:40px;text-align:center">S</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#4f6672;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · S · ★ / ★★ Statistik</div>
+    <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Tabellen, Lageparameter, Diagramme</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Schreibe zu jedem Ergebnis die Einheit. Prüfe bei jeder Tabelle zuerst, ob n stimmt.</div>
+  </div>
+</div>
+<div class="two-col">
+<div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S1</span><span class="td de">★</span></div>
+    <div class="tq">Eine Umfrage unter 20 Jugendlichen nach der Lieblingssportart ergibt: Fußball 6, Volleyball 5, Basketball 4, Schwimmen 5.<br><strong>a)</strong> Bestimme die relative Häufigkeit jeder Sportart in Prozent.<br><strong>b)</strong> Gib den Modalwert an.<br><strong>c)</strong> Begründe, warum man hier kein arithmetisches Mittel berechnen kann.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Fußball \(\tfrac{6}{20} = 30\,\%\), Volleyball \(25\,\%\), Basketball \(20\,\%\), Schwimmen \(25\,\%\). Kontrolle: Summe 100 %.</div>
+    <div class="ip"><strong>b)</strong> Modalwert: Fußball (größte Häufigkeit 6).</div>
+    <div class="ip"><strong>c)</strong> Die Ausprägungen sind keine Zahlen. Sportarten kann man weder addieren noch ordnen; deshalb gibt es auch keinen Median.</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: relative Häufigkeiten · K1: begründen, welche Kenngröße möglich ist</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S2</span><span class="td dm">★★</span></div>
+    <div class="tq">Eine Klasse wurde nach der Anzahl der Geschwister gefragt:<br>    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Geschwister \(x\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">0</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">1</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">2</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">3</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">4</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>Anzahl \(H(x)\)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">5</td><td style="border:1px solid #d5cfc6;padding:7px 10px">9</td><td style="border:1px solid #d5cfc6;padding:7px 10px">7</td><td style="border:1px solid #d5cfc6;padding:7px 10px">3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">1</td></tr>
+    </table>
+<strong>a)</strong> Bestimme \(n\), den Modalwert und den Median.<br><strong>b)</strong> Berechne das arithmetische Mittel.<br><strong>c)</strong> Lena rechnet \((0 + 1 + 2 + 3 + 4) : 5 = 2\). Erkläre ihren Fehler.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(n = 25\). \(m = 1\) (Häufigkeit 9). Mittlerer Platz ist Platz 13; die Plätze 6 bis 14 sind Einsen, also \(z = 1\).</div>
+    <div class="ip"><strong>b)</strong> \(\bar{x} = \dfrac{0 \cdot 5 + 1 \cdot 9 + 2 \cdot 7 + 3 \cdot 3 + 4 \cdot 1}{25} = \dfrac{36}{25} = 1{,}44\).</div>
+    <div class="ip"><strong>c)</strong> Lena mittelt die Ausprägungen, als käme jede gleich oft vor. Die 0 und die 1 kommen aber viel häufiger vor als die 4. Jede Ausprägung zählt so oft, wie sie vorkommt.</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Lageparameter aus der Tabelle · K1: Fehler erklären</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S3</span><span class="td dm">★★</span></div>
+    <div class="tq">Vier Testergebnisse sind 4, 5, 6 und ein unbekannter Wert. Bestimme den fehlenden Wert so, dass das arithmetische Mittel genau 5 ist.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip">Die Summe muss \(5 \cdot 4 = 20\) sein. \(4 + 5 + 6 = 15\), also fehlt \(20 - 15 = 5\).</div>
+    <div class="komp-wrap"><span class="kb kb-k2">K2</span></div>
+    <div class="komp-desc">K2: vom Mittel auf die Summe zurückschließen</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S4</span><span class="td dm">★★</span></div>
+    <div class="tq">In einem kleinen Betrieb verdienen sechs Personen im Monat 2400 €, 2500 €, 2600 €, 2700 €, 2800 € und 9000 €. In der Stellenanzeige steht: „Durchschnittsgehalt 3667 €“.<br><strong>a)</strong> Prüfe die Zahl.<br><strong>b)</strong> Bestimme den Median und die Spannweite.<br><strong>c)</strong> Beurteile, ob die Anzeige ein faires Bild gibt.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(\bar{x} = \dfrac{22\,000}{6} \approx 3667\) €. Die Zahl stimmt.</div>
+    <div class="ip"><strong>b)</strong> \(n = 6\) ist gerade, die mittleren Plätze sind 3 und 4: \(z = \dfrac{2600 + 2700}{2} = 2650\) €. Spannweite: \(9000 - 2400 = 6600\) €.</div>
+    <div class="ip"><strong>c)</strong> Nein. Die 9000 € sind ein Ausreißer und ziehen das Mittel hoch; fünf von sechs Personen verdienen deutlich weniger als 3667 €. Der Median 2650 € beschreibt das typische Gehalt besser.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K1: Mittelwert kritisch beurteilen · K6: begründet Stellung nehmen</div>
+  </div>
+</div>
+</div>
+<div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S5</span><span class="td dm">★★</span></div>
+    <div class="tq">Ein Geschäft hat diese Umsätze: Januar 10 000 €, Februar 12 000 €, März 14 000 €. Im Säulendiagramm der Verkaufsleitung beginnt die Hochachse bei 9900 €.<br><strong>a)</strong> Berechne, um wie viel Prozent der Umsatz von Januar bis März gestiegen ist.<br><strong>b)</strong> Berechne, wie viel mal so hoch die März-Säule im Diagramm ist wie die Januar-Säule.<br><strong>c)</strong> Beschreibe, wie man die Daten fair darstellt.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(\dfrac{14\,000 - 10\,000}{10\,000} = 0{,}4 = 40\,\%\).</div>
+    <div class="ip"><strong>b)</strong> Säulenhöhen ab 9900 €: Januar 100 €, März 4100 €. Die März-Säule ist 41-mal so hoch.</div>
+    <div class="ip"><strong>c)</strong> Die Hochachse beginnt bei 0 €. Dann ist die März-Säule 1,4-mal so hoch wie die Januar-Säule, passend zu 40 % Zuwachs.</div>
+    <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+    <div class="komp-desc">K4: Darstellung prüfen · K6: Täuschung beschreiben</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S6</span><span class="td dm">★★</span></div>
+    <div class="tq">Nutze das Klimadiagramm aus Abschnitt 4.<br><strong>a)</strong> Lies ab: Niederschlag im Juli, Temperatur im April. Nenne jeweils die Einheit.<br><strong>b)</strong> Bestimme die Spannweite der Monatstemperaturen.<br><strong>c)</strong> Jan liest ab: „Im Juli sind es 80 Grad.“ Erkläre seinen Fehler.<br><strong>d)</strong> Gib an, in welchen Monaten höchstens 40 mm Niederschlag fallen.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> Juli: 80 mm Niederschlag. April: 9 °C.</div>
+    <div class="ip"><strong>b)</strong> Größter Wert 19 °C (Juli, August), kleinster −1 °C (Januar): \(19 - (-1) = 20\) °C.</div>
+    <div class="ip"><strong>c)</strong> Jan hat die Säule an der falschen Achse abgelesen. Die Säulen zeigen den Niederschlag (rechte Achse, mm). Die Temperatur zeigt die Linie: 19 °C.</div>
+    <div class="ip"><strong>d)</strong> Januar (40 mm), Februar (35 mm) und März (40 mm).</div>
+    <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K4: Werte mit Einheit an der richtigen Achse ablesen</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">S7</span><span class="td dm">★★</span></div>
+    <div class="tq">Zwei Maschinen füllen Mehl in 500-g-Tüten. Je acht Tüten werden gewogen (in g):<br>Maschine X: 498, 499, 500, 501, 500, 499, 502, 498<br>Maschine Y: 485, 490, 500, 510, 505, 495, 515, 520<br><strong>a)</strong> Berechne für beide Maschinen arithmetisches Mittel und Spannweite.<br><strong>b)</strong> Begründe, welche Maschine besser arbeitet.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> X: \(\bar{x} = \dfrac{3997}{8} \approx 499{,}6\) g, Spannweite \(502 - 498 = 4\) g. Y: \(\bar{x} = \dfrac{4020}{8} = 502{,}5\) g, Spannweite \(520 - 485 = 35\) g.</div>
+    <div class="ip"><strong>b)</strong> Maschine X. Beide Mittel liegen nahe bei 500 g, aber bei Y schwanken die Tüten um bis zu 35 g. Das Mittel allein zeigt das nicht, erst die Spannweite.</div>
+    <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K5: Kenngrößen berechnen · K1: mit zwei Kenngrößen begründen</div>
+  </div>
+</div>
+</div>
+</div>
+<div class="section-label">6 · Zusatz — im Rahmenplan, 2026/27 nicht im Unterricht</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Quartile</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Quartile</strong> teilen die geordnete Liste in vier gleich große Teile: Unter dem unteren Quartil \(Q_1\) liegt ein Viertel der Werte, der Median ist das mittlere Quartil, unter dem oberen Quartil \(Q_3\) liegen drei Viertel. Der <strong>Quartilsabstand</strong> \(Q_3 - Q_1\) umfasst die mittlere Hälfte der Werte.</div>
+    <div class="ip"><strong>Beispiel:</strong> Fehltage von 11 Jugendlichen (geordnet): 0, 0, 1, 2, 3, 4, 4, 5, 6, 7, 9. Median ist der 6. Wert: 4. \(Q_1\) ist der 3. Wert: 1. \(Q_3\) ist der 9. Wert: 6. Quartilsabstand: \(6 - 1 = 5\). Die mittlere Hälfte hat zwischen 1 und 6 Fehltage.</div>
+
+  </div>
+</div>
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vollerhebung und Stichprobe</span></div>
+  <div class="card-body">
+    <div class="ip">Die <strong>Grundgesamtheit</strong> sind alle, über die man etwas wissen will. Bei einer <strong>Vollerhebung</strong> werden alle erfasst (genau, aber aufwendig), bei einer <strong>Stichprobe</strong> nur eine Auswahl (schneller, aber mit Unsicherheit).</div>
+    <div class="ip"><strong>Beispiel:</strong> Fehltage an der eigenen Schule: Vollerhebung, die Daten liegen vor. Lebensdauer von 10 000 Glühlampen: Stichprobe, denn beim Test geht jede Lampe kaputt.</div>
+
+  </div>
+</div>
+<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+  <div class="card-body">
+    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
     <div class="ip">
-      ✓ Grundrechenarten (Addition, Division) – für Mittelwertberechnung<br>
-      ✓ Größenvergleiche und Ordnen von Zahlen – für Spannweite und Quartile<br>
-      ✓ Prozentrechnung (Grundlagen) – für Häufigkeitsangaben in %<br>
-      ✓ Grafiken lesen und anfertigen – für Darstellung statistischer Daten
+      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+      <ol>
+        <li>Wie findest du den Median in einer Häufigkeitstabelle mit n = 30?</li>
+        <li>Warum ist (0 + 1 + 2 + 3) : 4 meistens nicht das arithmetische Mittel?</li>
+        <li>Welcher Mittelwert ändert sich durch einen Ausreißer, welcher nicht?</li>
+        <li>Was prüfst du an einem Diagramm, bevor du einen Wert abliest?</li>
+      </ol>
+      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">Unsicher? Dann rechne die Tabelle in Abschnitt 2 ohne Vorlage nach.</p>
     </div>
   </div>
 </div>
-
-<!-- ── Lernziele ──────────────────────────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-g">✔</div>
-    <span class="card-title">Lernziele</span>
-  </div>
-  <div class="card-body">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-      <label class="gcheck">
-        <input type="checkbox" data-group="k9">
-        <span>Häufigkeiten und arithmetisches Mittel berechnen und interpretieren (K1, K5)</span>
-      </label>
-      <label class="gcheck">
-        <input type="checkbox" data-group="k9">
-        <span>Streumaße (Spannweite, Modalwert) für Datenvergleiche nutzen (K2, K3)</span>
-      </label>
-      <label class="gcheck">
-        <input type="checkbox" data-group="k9">
-        <span>Statistische Erhebungen planen und Erhebungsart begründen (K1, K6)</span>
-      </label>
-      <label class="gcheck">
-        <input type="checkbox" data-group="k9">
-        <span>Grafische Darstellungen und Datenmanipulationen kritisch analysieren (K4, K6)</span>
-      </label>
-    </div>
-  </div>
-</div>
-
-<!-- ── Häufigkeiten und Mittelwerte ──────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-h">§</div>
-    <span class="card-title">Häufigkeiten und Mittelwerte</span>
-  </div>
-  <div class="card-body">
-    <div class="it">Absolute und relative Häufigkeiten</div>
-    <div class="ip">
-      Bei einer <strong>Erhebung</strong> sammelst du Daten. Wie oft ein Wert vorkommt, heißt
-      <strong>absolute Häufigkeit</strong>. Ob oft oder selten im Vergleich zur Gesamtzahl, zeigt die
-      <strong>relative Häufigkeit</strong> (in % oder Bruch).
-    </div>
-    <div class="ip" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-      <strong>Beispiel:</strong> Schüler*innen einer Klasse befragen 25 Personen nach ihrer
-      Lieblingsfrucht. Das Ergebnis:<br>
-      • Apfel: 8 Nennungen → absolute Häufigkeit = 8<br>
-      • relative Häufigkeit = 8 / 25 = 0,32 = 32 %
-    </div>
-
-    <div class="it">Arithmetisches Mittel (Durchschnitt)</div>
-    <div class="ip">
-      Das <strong>arithmetische Mittel</strong> ist die „Durchschnittszahl". Man addiert alle Werte
-      und teilt durch die Anzahl.
-    </div>
-    <div class="ip">
-      <strong>Formel:</strong> \[\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n}\]
-    </div>
-    <div class="ip" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-      <strong>Beispiel:</strong> Fünf Schachteln Pralinen wiegen (in g): 245, 252, 248, 255, 250<br>
-      \[\bar{x} = \frac{245 + 252 + 248 + 255 + 250}{5} = \frac{1250}{5} = 250 \text{ g}\]
-      Das durchschnittliche Gewicht ist 250 g.
-    </div>
-
-    <div class="it">Modalwert (Modus)</div>
-    <div class="ip">
-      Der <strong>Modalwert</strong> (oder Modus) ist der Wert, der am häufigsten vorkommt.
-    </div>
-    <div class="ip" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-      <strong>Beispiel:</strong> Noten einer Klassenarbeit: 2, 3, 3, 3, 4, 4, 5<br>
-      Der Modalwert ist 3 (kommt 3-mal vor). Das sagt uns: Die meisten Schüler*innen bekamen eine 3.
-    </div>
-  </div>
-</div>
-
-<!-- ── Streumaße ──────────────────────────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-h">§</div>
-    <span class="card-title">Streumaße: Spannweite und Quartile</span>
-  </div>
-  <div class="card-body">
-    <div class="it">Warum Streumaße wichtig sind</div>
-    <div class="ip">
-      Zwei Datensätze können das gleiche Mittel haben, aber sehr unterschiedlich verteilt sein.
-      Die <strong>Spannweite</strong> und <strong>Quartile</strong> zeigen, wie sehr die Daten
-      um den Durchschnitt „streuen" – also wie zuverlässig oder variabel sie sind.
-    </div>
-
-    <div class="it">Spannweite (Range)</div>
-    <div class="ip">
-      Die <strong>Spannweite</strong> ist der Unterschied zwischen dem größten und kleinsten Wert.
-    </div>
-    <div class="ip">
-      <strong>Formel:</strong> \[\text{Spannweite} = x_{\max} - x_{\min}\]
-    </div>
-    <div class="ip" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-      <strong>Beispiel:</strong> Abfüllanlage A: Gewichte (g) 248, 249, 250, 251, 252<br>
-      Spannweite = 252 − 248 = 4 g<br><br>
-      Abfüllanlage B: Gewichte (g) 240, 245, 250, 255, 260<br>
-      Spannweite = 260 − 240 = 20 g<br><br>
-      <strong>Interpretation:</strong> Anlage A arbeitet zuverlässiger (kleine Spannweite),
-      Anlage B hat größere Schwankungen.
-    </div>
-
-    <div class="it">Quartile und Quartilsabstand</div>
-    <div class="ip">
-      <strong>Quartile</strong> teilen eine geordnete Datenliste in vier gleiche Teile:
-    </div>
-    <ul style="margin-left: 1.5rem;">
-      <li><strong>Unteres Quartil (Q₁):</strong> 25 % der Daten liegen darunter</li>
-      <li><strong>Median (Q₂):</strong> 50 % der Daten liegen darunter</li>
-      <li><strong>Oberes Quartil (Q₃):</strong> 75 % der Daten liegen darunter</li>
-    </ul>
-    <div class="ip">
-      Der <strong>Quartilsabstand (IQR)</strong> = Q₃ − Q₁ zeigt, wo die mittleren 50 % der Daten liegen.
-    </div>
-    <div class="ip" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-      <strong>Beispiel:</strong> Fehltage von 9 Schüler*innen (geordnet): 0, 1, 2, 3, 4, 5, 6, 7, 8<br>
-      • Q₁ (Wert bei Position 2,5 ≈ 3. Platz) = 2<br>
-      • Q₂ (Median, 5. Platz) = 4<br>
-      • Q₃ (Wert bei Position 7,5 ≈ 7. Platz) = 6<br>
-      • Quartilsabstand = 6 − 2 = 4
-    </div>
-  </div>
-</div>
-
-<!-- ── Statistische Erhebungen ──────────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-h">§</div>
-    <span class="card-title">Statistische Erhebungen: Planung und Durchführung</span>
-  </div>
-  <div class="card-body">
-    <div class="it">Arten von Erhebungen</div>
-    <div class="ip">
-      <strong>Grundgesamtheit</strong> = alle Elemente, über die man etwas herausfinden möchte<br>
-      <strong>Stichprobe</strong> = nur eine Auswahl aus der Grundgesamtheit
-    </div>
-    <div class="ip">
-      Zwei Wege, Daten zu sammeln:
-    </div>
-    <ul style="margin-left: 1.5rem;">
-      <li><strong>Vollerhebung:</strong> Alle Elemente werden erfasst (z. B. Zensus). Aufwendig, aber exakt.</li>
-      <li><strong>Stichprobenerhebung:</strong> Nur eine Auswahl wird befragt (z. B. Umfrage). Schneller, aber Fehlerrisiko.</li>
-    </ul>
-
-    <div class="it">Klasseneinteilung</div>
-    <div class="ip">
-      Wenn Daten viele unterschiedliche Werte haben (z. B. Größen), teilt man sie in
-      <strong>Klassen</strong> (Intervalle) ein.
-    </div>
-    <div class="ip" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-      <strong>Beispiel:</strong> Körpergrößen von 40 Schüler*innen<br>
-      • Klasse 1: 160 bis unter 165 cm → 8 Personen<br>
-      • Klasse 2: 165 bis unter 170 cm → 15 Personen<br>
-      • Klasse 3: 170 bis unter 175 cm → 12 Personen<br>
-      • Klasse 4: 175 bis unter 180 cm → 5 Personen
-    </div>
-
-    <div class="it">Grafische Darstellungen</div>
-    <div class="ip">
-      Balken-, Säulen-, Kreis- und Histogramme zeigen Daten visuell.
-      Eine gute Grafik macht Muster und Unterschiede sichtbar.
-    </div>
-
-    <div class="it">Diskussion und Wertung: Manipulation erkennen</div>
-    <div class="ip">
-      Nicht alle Grafiken sind fair! Achte auf:
-    </div>
-    <ul style="margin-left: 1.5rem;">
-      <li><strong>Verzerrte Achsen:</strong> Wenn die y-Achse nicht bei 0 anfängt, wirken Unterschiede größer.</li>
-      <li><strong>Irreführende Skalierung:</strong> Unterschiedliche Intervalle auf einer Achse.</li>
-      <li><strong>Fehlende Information:</strong> Keine Beschriftung, unklare Quelle der Daten.</li>
-      <li><strong>Richtige Mittelwahl:</strong> Das Mittel kann manipuliert wirken, wenn es nicht die Daten repräsentiert.</li>
-    </ul>
-    <div class="ip" style="background: #fffcf6; border-left: 4px solid #c75c3a; padding: 1rem; margin: 1rem 0;">
-      <strong>⚠ Achtung:</strong> Immer fragen: „Wer hat diese Daten erhoben?
-      Zu welchem Zweck? Was könnte verschwiegen sein?"
-    </div>
-  </div>
-</div>
-
-<!-- ── Beispiel: Schokoladenfabrik ──────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-t">∜</div>
-    <span class="card-title">Beispiel: Zwei Abfüllanlagen vergleichen</span>
-  </div>
-  <div class="card-body">
-    <div class="ip">
-      <strong>Aufgabe:</strong> Eine Schokoladenfabrik möchte zwei Abfüllanlagen testen.
-      Sie misst das Gewicht von je 10 Schachteln Pralinen (Sollgewicht: 250 g):
-    </div>
-    <div class="ip">
-      <strong>Anlage A:</strong> 248, 249, 250, 250, 250, 251, 251, 252, 252, 253 (in g)<br>
-      <strong>Anlage B:</strong> 235, 240, 245, 250, 250, 250, 255, 260, 265, 270 (in g)<br><br>
-      Welche Anlage soll die Fabrik kaufen? Begründe mit statistischen Kennzahlen.
-    </div>
-
-    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen</button>
-    <div class="bsp-body">
-      <div class="it" style="margin-top: 1rem;">Schritt 1: Arithmetische Mittel berechnen</div>
-      <div class="ip">
-        <strong>Anlage A:</strong> \[\bar{x}_A = \frac{248 + 249 + 250 + 250 + 250 + 251 + 251 + 252 + 252 + 253}{10} = \frac{2506}{10} = 250,6 \text{ g}\]
-        <strong>Anlage B:</strong> \[\bar{x}_B = \frac{235 + 240 + 245 + 250 + 250 + 250 + 255 + 260 + 265 + 270}{10} = \frac{2500}{10} = 250 \text{ g}\]
-      </div>
-
-      <div class="it">Schritt 2: Spannweiten berechnen</div>
-      <div class="ip">
-        <strong>Anlage A:</strong> Spannweite = 253 − 248 = 5 g<br>
-        <strong>Anlage B:</strong> Spannweite = 270 − 235 = 35 g
-      </div>
-
-      <div class="it">Schritt 3: Interpretation und Entscheidung</div>
-      <div class="ip">
-        Anlage A:
-        <ul style="margin-left: 1.5rem;">
-          <li>Mittel: 250,6 g (sehr nah am Sollgewicht 250 g)</li>
-          <li>Spannweite: 5 g (kleine Schwankungen – zuverlässig)</li>
-          <li><strong>Fazit:</strong> Konstante Qualität</li>
-        </ul>
-      </div>
-      <div class="ip">
-        Anlage B:
-        <ul style="margin-left: 1.5rem;">
-          <li>Mittel: 250 g (Sollgewicht trifft, aber…)</li>
-          <li>Spannweite: 35 g (riesige Schwankungen!)</li>
-          <li><strong>Fazit:</strong> Unzuverlässig, viele zu leichte oder zu schwere Schachteln</li>
-        </ul>
-      </div>
-      <div class="ip" style="background: #e8f5e9; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-        <strong>✓ Empfehlung:</strong> Anlage A kaufen! Obwohl das Mittel bei Anlage B stimmt,
-        ist Anlage A konsistenter. Kunden mögen konstante Qualität, nicht „manchmal zu leicht,
-        manchmal zu schwer".
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── Aufgaben ──────────────────────────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-g">✎</div>
-    <span class="card-title">Aufgaben</span>
-  </div>
-  <div class="card-body">
-    <div class="task-list">
-
-      <!-- Aufgabe 1: Häufigkeiten ★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">1</span>
-          <span class="task-text"><strong>Häufigkeiten berechnen</strong> (★ – AFB I)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Eine Umfrage an 20 Schüler*innen fragt nach der Lieblingssportart.
-            Das Ergebnis: Fußball 6×, Volleyball 5×, Basketball 4×, Schwimmen 5×.
-          </div>
-          <div class="ip">
-            <strong>a)</strong> Bestimme die relative Häufigkeit (in %) für jede Sportart.<br>
-            <strong>b)</strong> Gib den Modalwert an.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              <strong>a)</strong> Relative Häufigkeiten:<br>
-              • Fußball: 6/20 = 0,30 = 30 %<br>
-              • Volleyball: 5/20 = 0,25 = 25 %<br>
-              • Basketball: 4/20 = 0,20 = 20 %<br>
-              • Schwimmen: 5/20 = 0,25 = 25 %<br><br>
-              <strong>b)</strong> Modalwert: Fußball (6 Nennungen, am häufigsten)
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
-            <div class="komp-desc">Häufigkeiten berechnen und größte Häufigkeit identifizieren</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 2: Arithmetisches Mittel ★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">2</span>
-          <span class="task-text"><strong>Arithmetisches Mittel</strong> (★ – AFB I)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Ein Schüler erhält diese Noten in Mathematik: 3, 4, 2, 3, 3, 2.
-          </div>
-          <div class="ip">
-            <strong>Berechne</strong> die Durchschnittsnote.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              \[\bar{x} = \frac{3 + 4 + 2 + 3 + 3 + 2}{6} = \frac{17}{6} \approx 2,83\]
-              Die Durchschnittsnote ist etwa 2,8.
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-            <div class="komp-desc">Mittelwert berechnen</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 3: Spannweite mit Sachkontext ★★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">3</span>
-          <span class="task-text"><strong>Zuverlässigkeit mit Spannweite bewerten</strong> (★★ – AFB II)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Ein Bäcker möchte seine Maschinen überprüfen.
-            Zwei Maschinen füllen Mehl in 500g-Säcke. Er wiegt 8 Säcke pro Maschine:
-          </div>
-          <div class="ip">
-            <strong>Maschine X:</strong> 498, 499, 500, 501, 500, 499, 502, 498 (in g)<br>
-            <strong>Maschine Y:</strong> 485, 490, 500, 510, 505, 495, 515, 520 (in g)
-          </div>
-          <div class="ip">
-            <strong>Ermittle</strong> für beide Maschinen:<br>
-            <strong>a)</strong> Das arithmetische Mittel<br>
-            <strong>b)</strong> Die Spannweite<br>
-            <strong>c)</strong> Welche Maschine sollte der Bäcker bevorzugen? Begründe.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              <strong>a) Mittelwerte:</strong><br>
-              • Maschine X: (498 + 499 + 500 + 501 + 500 + 499 + 502 + 498) / 8 = 4000 / 8 = 500 g ✓<br>
-              • Maschine Y: (485 + 490 + 500 + 510 + 505 + 495 + 515 + 520) / 8 = 4020 / 8 = 502,5 g<br><br>
-              <strong>b) Spannweiten:</strong><br>
-              • Maschine X: 502 − 498 = 4 g (sehr konsistent)<br>
-              • Maschine Y: 520 − 485 = 35 g (sehr variabel)<br><br>
-              <strong>c) Empfehlung:</strong> Maschine X. Obwohl Y im Mittel leicht höher füllt,
-              schwankt X deutlich weniger. Das bedeutet: Bei X bekommt jeder Kunde etwa 500 g
-              (wie versprochen), bei Y manchmal 485 g (zu wenig!) oder 520 g (zu viel!).
-              Für den Kunden ist Konstanz wichtiger.
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k2">K2</span><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
-            <div class="komp-desc">Mittelwert und Spannweite vergleichen, um zuverlässigere Lösung auszuwählen</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 4: Fehlersuch-Aufgabe ★★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">4</span>
-          <span class="task-text"><strong>Fehlersuche: Manipulation in der Grafik</strong> (★★ – AFB II)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Ein Geschäft hat in drei Monaten diese Umsätze (in €): Januar 10.000, Februar 12.000, März 14.000.
-          </div>
-          <div class="ip">
-            Die Verkaufsleitung erstellt ein Balkendiagramm mit der y-Achse von 9.900 € bis 14.100 €.
-            So sieht es aus, als würde der Umsatz riesig wachsen!
-          </div>
-          <div class="ip">
-            <strong>Erläutere,</strong> warum diese Darstellung manipulativ ist und
-            wie man sie fairer gestalten würde.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              <strong>Das Problem:</strong> Die y-Achse beginnt nicht bei 0, sondern bei 9.900 €.
-              Dadurch wirken die Unterschiede (10k → 12k → 14k) übertrieben groß (nur 40 % Wachstum,
-              aber auf der Grafik sieht es aus wie 100 %+!).
-            </div>
-            <div class="ip">
-              <strong>Faire Lösung:</strong> y-Achse bei 0 € beginnen. So wird klar:
-              Das Wachstum ist real, aber nicht dramatisch.
-            </div>
-            <div class="ip">
-              <strong>Lernpunkt:</strong> Immer prüfen: Wo fängt die Achse an? Steht die Quelle der Daten
-              dabei? Wer verdient mit dieser Darstellung (z. B. Aktienverkauf)?
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
-            <div class="komp-desc">Grafiken kritisch analysieren und Manipulationsmuster erkennen</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 5: Quartile / Klasseneinteilung ★★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">5</span>
-          <span class="task-text"><strong>Quartile und Klasseneinteilung</strong> (★★ – AFB II)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Fehltage von 11 Schüler*innen (geordnet): 0, 0, 1, 2, 3, 4, 4, 5, 6, 7, 9
-          </div>
-          <div class="ip">
-            <strong>a)</strong> Gib den Median (Q₂) an.<br>
-            <strong>b)</strong> Bestimme Q₁ (unteres Quartil, bei Position 3) und Q₃ (oberes Quartil, bei Position 9).<br>
-            <strong>c)</strong> Berechne den Quartilsabstand.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              <strong>a)</strong> Bei 11 Werten ist der Median der 6. Wert (Mitte): Q₂ = 4<br>
-              <strong>b)</strong> Q₁ (3. Wert) = 1, Q₃ (9. Wert) = 6<br>
-              <strong>c)</strong> Quartilsabstand = Q₃ − Q₁ = 6 − 1 = 5
-            </div>
-            <div class="ip">
-              <strong>Interpretation:</strong> Die mittleren 50 % der Schüler*innen haben zwischen 1 und 6 Fehltage.
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
-            <div class="komp-desc">Quartile berechnen und Datenstreuung interpretieren</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 6: Erhebungsart wählen ★★★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">6</span>
-          <span class="task-text"><strong>Erhebungsart begründen</strong> (★★★ – AFB III)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Für diese Fragen soll entschieden werden: Vollerhebung oder Stichprobe?
-          </div>
-          <div class="ip">
-            <strong>1)</strong> „Wie viele Fehltage hatten Schüler*innen an unserer Schule dieses Jahr?"<br>
-            <strong>2)</strong> „Wie lange halten Glühbirnen durchschnittlich?" (für eine Produktions-Charge von 10.000 Stück)<br>
-            <strong>3)</strong> „Wie hoch ist der durchschnittliche Kaufpreis für Neuwagen in Deutschland?"
-          </div>
-          <div class="ip">
-            <strong>Wähle</strong> für jede Frage die passende Erhebungsart aus und
-            <strong>begründe</strong> deine Entscheidung.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              <strong>1) Vollerhebung</strong> – Die Schule hat alle Daten (Absenzen) ohnehin im System.
-              Es ist nicht aufwendiger, alles zu prüfen statt nur eine Auswahl.<br><br>
-              <strong>2) Stichprobe</strong> – Man kann nicht alle 10.000 Glühbirnen testen, weil die meisten
-              dabei kaputtgehen! Eine gute Stichprobe (z. B. 100) reicht, um die Lebensdauer zu schätzen.<br><br>
-              <strong>3) Stichprobe</strong> – Es gibt hunderttausende Neuwagen in Deutschland. Eine Vollerhebung
-              ist unmöglich. Eine große, zufällig ausgewählte Stichprobe gibt gute Schätzung.
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span><span class="kb kb-k6">K6</span></div>
-            <div class="komp-desc">Erhebungsart kritisch bewerten und begründete Entscheidung treffen</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Aufgabe 7: Daten ergänzen ★★ -->
-      <div class="task-item">
-        <div class="task-head">
-          <span class="task-num">7</span>
-          <span class="task-text"><strong>Daten ergänzen</strong> (★★ – AFB II)</span>
-        </div>
-        <div class="task-body">
-          <div class="ip">
-            Gegeben: Vier Testergebnisse sind 4, 5, 6, ?
-          </div>
-          <div class="ip">
-            <strong>Bestimme</strong> die fehlende Note so, dass der Durchschnitt genau 5 ist.
-          </div>
-          <button class="task-toggle" onclick="togTask(this)">Lösung anzeigen</button>
-          <div class="task-solution" style="display: none;">
-            <div class="ip">
-              <strong>Lösung:</strong><br>
-              Das Mittel soll 5 sein: \[\bar{x} = \frac{4 + 5 + 6 + x}{4} = 5\]
-              \[4 + 5 + 6 + x = 20\]
-              \[15 + x = 20\]
-              \[x = 5\]
-              Die fehlende Note ist 5.
-            </div>
-            <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
-            <div class="komp-desc">Mittelwertgleichung lösen, um fehlende Daten zu finden</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ── Zusammenfassung ──────────────────────────────– -->
-<div class="card">
-  <div class="card-head">
-    <div class="ci ci-i">i</div>
-    <span class="card-title">Zusammenfassung</span>
-  </div>
-  <div class="card-body">
-    <div class="it">Häufigkeiten und Mittelwerte</div>
-    <div class="ip">
-      <strong>Absolute Häufigkeit:</strong> Wie oft kommt ein Wert vor?<br>
-      <strong>Relative Häufigkeit:</strong> Dieser Anteil (%) in Bezug auf die Gesamtzahl<br>
-      <strong>Arithmetisches Mittel:</strong> \(\bar{x} = \frac{\text{Summe aller Werte}}{n}\)<br>
-      <strong>Modalwert:</strong> Der am häufigsten vorkommende Wert
-    </div>
-
-    <div class="it">Streumaße</div>
-    <div class="ip">
-      <strong>Spannweite:</strong> größter Wert − kleinster Wert (zeigt, wie variabel die Daten sind)<br>
-      <strong>Quartile:</strong> Teilen Daten in 4 Teile (Q₁, Q₂ = Median, Q₃)<br>
-      <strong>Quartilsabstand:</strong> Q₃ − Q₁ (mittlere 50 % der Daten)
-    </div>
-
-    <div class="it">Statistische Erhebungen</div>
-    <div class="ip">
-      <strong>Vollerhebung:</strong> Alle Daten erfassen (exakt, aber aufwendig)<br>
-      <strong>Stichprobe:</strong> Nur einen Teil befragen (schneller, aber weniger exakt)<br>
-      <strong>Klasseneinteilung:</strong> Große Datenmengen in Intervalle sortieren<br>
-      <strong>Grafische Darstellung:</strong> Histogramm, Balkendiagramm, Kreisdiagramm
-    </div>
-
-    <div class="it">Kritische Datenanalyse</div>
-    <div class="ip">
-      ✓ Immer fragen: Wer hat die Daten erhoben? Zu welchem Zweck?<br>
-      ✓ Achse-Null-Start prüfen (Manipulation möglich)<br>
-      ✓ Quelle und Stichprobengröße kontrollieren<br>
-      ✓ Das richtige Mittel wählen (Durchschnitt ≠ Modalwert ≠ Median)
-    </div>
-  </div>
-</div>
-
 </div><!-- end k9-stat -->
 
 
