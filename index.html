@@ -7970,7 +7970,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 
 <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:14px 0">
   <strong style="color:#8a7a30">Kernidee:</strong>
-  Eine <strong>quadratische Funktion</strong> ordnet jeder Zahl \(x\) einen Wert \(f(x)\) zu, der einen \(x^2\)-Term als höchste Potenz enthält. Ihr <strong>Graph</strong> heißt <strong>Parabel</strong> und ist <em>immer</em> achsensymmetrisch. Jede Parabel hat genau einen <strong>Scheitelpunkt</strong> \(S(d\mid e)\) — ihren höchsten oder tiefsten Punkt — und öffnet sich entweder nach oben oder nach unten. Drei Parameter legen sie eindeutig fest: <strong>\(a\)</strong> bestimmt Form und Öffnungsrichtung, <strong>\(d\)</strong> die waagerechte Lage des Scheitels, <strong>\(e\)</strong> die senkrechte. Die folgenden Abschnitte bauen diese drei Parameter nacheinander auf und setzen sie in der <em>Scheitelpunktform</em> \(f(x) = a(x - d)^2 + e\) zusammen.
+  Eine <strong>quadratische Funktion</strong> ordnet jeder Zahl \(x\) einen Wert \(f(x)\) zu, der einen \(x^2\)-Term als höchste Potenz enthält. Ihr <strong>Graph</strong> heißt <strong>Parabel</strong> und ist <em>immer</em> achsensymmetrisch. Jede Parabel hat genau einen <strong>Scheitelpunkt</strong> \(S(x_S\mid y_S)\) — ihren höchsten oder tiefsten Punkt — und öffnet sich entweder nach oben oder nach unten. Drei Parameter legen sie eindeutig fest: <strong>\(a\)</strong> bestimmt Form und Öffnungsrichtung, <strong>\(x_S\)</strong> die waagerechte Lage des Scheitels, <strong>\(y_S\)</strong> die senkrechte. Die folgenden Abschnitte bauen diese drei Parameter nacheinander auf und setzen sie in der <em>Scheitelpunktform</em> \(f(x) = a(x - x_S)^2 + y_S\) zusammen.
 </div>
 
 <!-- Lernziele -->
@@ -7982,7 +7982,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du erklärst den Einfluss des Parameters \(a\) auf Breite und Öffnungsrichtung</span></li>
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du verschiebst Parabeln in \(x\)- und \(y\)-Richtung und bestimmst den Scheitelpunkt</span></li>
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du bestimmst Nullstellen verschobener Parabeln grafisch und rechnerisch</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du nutzt die Scheitelpunktform \(f(x)=a\cdot(x-d)^2+e\) sicher</span></li>
+      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du nutzt die Scheitelpunktform \(f(x)=a\cdot(x-x_S)^2+y_S\) sicher</span></li>
       <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du modellierst Sachsituationen mit quadratischen Funktionen</span></li>
     </ul>
   </div>
@@ -8230,19 +8230,19 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 </div>
 
 <!-- ═══ 3. Verschieben in y-Richtung ═══ -->
-<div class="section-label">3. Verschieben in \(y\)-Richtung — \(f(x) = x^2 + e\)</div>
+<div class="section-label">3. Verschieben in \(y\)-Richtung — \(f(x) = x^2 + y_S\)</div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die Normalparabel nach oben oder unten verschieben</span></div>
   <div class="card-body">
-    <div class="ip">Addierst du eine Zahl \(e\) zur Normalparabel, verschiebst du den gesamten Graphen in \(y\)-Richtung:</div>
-    <div class="ip">\[f(x) = x^2 + e\]</div>
-    <div class="ip">\(e > 0\): Verschiebung nach <strong>oben</strong>. \(e < 0\): Verschiebung nach <strong>unten</strong>.</div>
-    <div class="ip">Der Scheitelpunkt wandert von \(S(0\mid 0)\) nach \(S(0\mid e)\). Die Form der Parabel bleibt gleich.</div>
+    <div class="ip">Addierst du eine Zahl \(y_S\) zur Normalparabel, verschiebst du den gesamten Graphen in \(y\)-Richtung:</div>
+    <div class="ip">\[f(x) = x^2 + y_S\]</div>
+    <div class="ip">\(y_S > 0\): Verschiebung nach <strong>oben</strong>. \(y_S < 0\): Verschiebung nach <strong>unten</strong>.</div>
+    <div class="ip">Der Scheitelpunkt wandert von \(S(0\mid 0)\) nach \(S(0\mid y_S)\). Die Form der Parabel bleibt gleich.</div>
     <div class="it">Nullstellen bestimmen</div>
-    <div class="ip">Setze \(f(x) = 0\): \(x^2 + e = 0\), also \(x^2 = -e\).</div>
-    <div class="ip">Nur wenn \(e \leq 0\) existieren Nullstellen: \(x_{1/2} = \pm\sqrt{-e}\).</div>
-    <div class="ip">Bei \(e > 0\) liegt die Parabel komplett oberhalb der \(x\)-Achse — keine Nullstellen.</div>
+    <div class="ip">Setze \(f(x) = 0\): \(x^2 + y_S = 0\), also \(x^2 = -y_S\).</div>
+    <div class="ip">Nur wenn \(y_S \leq 0\) existieren Nullstellen: \(x_{1/2} = \pm\sqrt{-y_S}\).</div>
+    <div class="ip">Bei \(y_S > 0\) liegt die Parabel komplett oberhalb der \(x\)-Achse — keine Nullstellen.</div>
   </div>
 </div>
 
@@ -8312,7 +8312,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <text x="258" y="64" font-size="12" fill="#8a9da7" font-style="italic">x² (Normalparabel)</text>
     <text x="258" y="80" font-size="12" fill="#c75c3a" font-weight="700">f(x) = x² − 4</text>
 </svg>
-  <div style="text-align:center;font-size:11px;color:#666;margin-top:4px;font-style:italic">Drei Parabeln derselben Form, vertikal verschoben: \(e > 0\) → keine Nullstellen, \(e = 0\) → Berührung im Ursprung, \(e < 0\) → zwei Nullstellen.</div>
+  <div style="text-align:center;font-size:11px;color:#666;margin-top:4px;font-style:italic">Drei Parabeln derselben Form, vertikal verschoben: \(y_S > 0\) → keine Nullstellen, \(y_S = 0\) → Berührung im Ursprung, \(y_S < 0\) → zwei Nullstellen.</div>
 </div>
 
 <div class="bsp">
@@ -8364,10 +8364,10 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">Q3.4</span><span class="td dm">★★</span></div>
-    <div class="tq">Eine Funktion \(f(x) = x^2 + e\) hat die Nullstellen \(x_{1/2} = \pm 3\). Bestimme die Funktionsgleichung.</div>
+    <div class="tq">Eine Funktion \(f(x) = x^2 + y_S\) hat die Nullstellen \(x_{1/2} = \pm 3\). Bestimme die Funktionsgleichung.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
-  <div class="ta"><div class="ip">Aus \(x^2 + e = 0\) mit \(x = 3\): \(9 + e = 0 \;\Rightarrow\; e = -9\).</div>
+  <div class="ta"><div class="ip">Aus \(x^2 + y_S = 0\) mit \(x = 3\): \(9 + y_S = 0 \;\Rightarrow\; y_S = -9\).</div>
           <div class="ip">\(f(x) = x^2 - 9\).</div>
           <div class="komp-wrap"><span class="kb kb-k2">K2</span></div>
           <div class="komp-desc">Probleme lösen: Rückwärts arbeiten — Funktionsgleichung aus Nullstellen.</div>
@@ -8375,14 +8375,14 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 </div>
 
 <!-- ═══ 4. Verschieben in x-Richtung ═══ -->
-<div class="section-label">4. Verschieben in \(x\)-Richtung — \(f(x) = (x - d)^2\)</div>
+<div class="section-label">4. Verschieben in \(x\)-Richtung — \(f(x) = (x - x_S)^2\)</div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die Normalparabel nach links oder rechts verschieben</span></div>
   <div class="card-body">
-    <div class="ip">Ersetzt du \(x\) durch \((x - d)\), verschiebst du die Parabel in \(x\)-Richtung:</div>
-    <div class="ip">\[f(x) = (x - d)^2\]</div>
-    <div class="ip">Der Scheitelpunkt wandert nach \(S(d\mid 0)\). Die Nullstelle liegt bei \(x = d\).</div>
+    <div class="ip">Ersetzt du \(x\) durch \((x - x_S)\), verschiebst du die Parabel in \(x\)-Richtung:</div>
+    <div class="ip">\[f(x) = (x - x_S)^2\]</div>
+    <div class="ip">Der Scheitelpunkt wandert nach \(S(x_S\mid 0)\). Die Nullstelle liegt bei \(x = x_S\).</div>
     <div class="hint"><strong>Achtung — Vorzeichen-Falle!</strong> In der Klammer steht ein <strong>Minus</strong>. Deshalb gilt:<br>
     \(f(x) = (x - 2)^2\) → Verschiebung nach <strong>rechts</strong> um 2 → \(S(2\mid 0)\).<br>
     \(f(x) = (x + 3)^2 = (x - (-3))^2\) → Verschiebung nach <strong>links</strong> um 3 → \(S(-3\mid 0)\).</div>
@@ -8465,7 +8465,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
   <div class="bsp-q"><strong>Aufgabe:</strong> Die Funktionsgleichung lautet \(f(x) = (x + 3)^2\). Bestimme den Scheitelpunkt und beschreibe die Verschiebung gegenüber der Normalparabel.</div>
   <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
   <div class="bsp-a">
-    <div class="ip"><strong>Umschreiben:</strong> \(f(x) = (x + 3)^2 = (x - (-3))^2\). Also \(d = -3\).</div>
+    <div class="ip"><strong>Umschreiben:</strong> \(f(x) = (x + 3)^2 = (x - (-3))^2\). Also \(x_S = -3\).</div>
     <div class="ip"><strong>Scheitelpunkt:</strong> \(S(-3\mid 0)\).</div>
     <div class="ip"><strong>Verschiebung:</strong> Die Normalparabel wurde um 3 Einheiten nach <strong>links</strong> verschoben.</div>
     <div class="ip"><strong>Nullstelle:</strong> \((x+3)^2 = 0 \;\Rightarrow\; x = -3\) (doppelte Nullstelle).</div>
@@ -8490,8 +8490,8 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <div class="tq">Bestimme die Funktionsgleichung der verschobenen Normalparabel:<br>(a) Der Graph von \(y = (x-2)^2\) wird um 4 Einheiten nach links verschoben.<br>(b) Der Graph einer in \(x\)-Richtung verschobenen NP hat eine Nullstelle bei \(x = -15\) und wird um 25 Einheiten nach rechts verschoben.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
-  <div class="ta"><div class="ip"><strong>(a)</strong> Neuer Scheitelpunkt: \(d = 2 - 4 = -2\). Also \(f(x) = (x+2)^2\).</div>
-          <div class="ip"><strong>(b)</strong> Ursprünglicher Scheitelpunkt: \(S(-15\mid 0)\). Nach Verschiebung: \(d = -15 + 25 = 10\). Also \(f(x) = (x-10)^2\).</div>
+  <div class="ta"><div class="ip"><strong>(a)</strong> Neuer Scheitelpunkt: \(x_S = 2 - 4 = -2\). Also \(f(x) = (x+2)^2\).</div>
+          <div class="ip"><strong>(b)</strong> Ursprünglicher Scheitelpunkt: \(S(-15\mid 0)\). Nach Verschiebung: \(x_S = -15 + 25 = 10\). Also \(f(x) = (x-10)^2\).</div>
           <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
           <div class="komp-desc">Darstellungen nutzen: Verschiebung als Veränderung des Scheitelpunkts.</div>
   </div>
@@ -8500,10 +8500,10 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">Q4.3</span><span class="td dm">★★</span></div>
-    <div class="tq">Wertetabelle-Aufgabe: Die Wertetabelle gehört zu einer Funktion \(f(x)=(x-d)^2\). Bestimme \(d\) und die Funktionsgleichung.<br>\(x\): −3, −2, −1, 0, 1 → \(y\): 0, 1, 4, 9, 16.</div>
+    <div class="tq">Wertetabelle-Aufgabe: Die Wertetabelle gehört zu einer Funktion \(f(x)=(x-x_S)^2\). Bestimme \(x_S\) und die Funktionsgleichung.<br>\(x\): −3, −2, −1, 0, 1 → \(y\): 0, 1, 4, 9, 16.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
-  <div class="ta"><div class="ip">Die Nullstelle liegt bei \(x=-3\) (dort ist \(y=0\)). Also \(d = -3\).</div>
+  <div class="ta"><div class="ip">Die Nullstelle liegt bei \(x=-3\) (dort ist \(y=0\)). Also \(x_S = -3\).</div>
           <div class="ip">\(f(x) = (x+3)^2\). Probe: \(f(-2) = 1^2 = 1\;\checkmark\), \(f(0) = 9\;\checkmark\).</div>
           <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
           <div class="komp-desc">Darstellungen nutzen: Aus Wertetabelle die Funktionsgleichung erschließen.</div>
@@ -8511,27 +8511,28 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
 </div>
 
 <!-- ═══ 5. Die Scheitelpunktform ═══ -->
-<div class="section-label">5. Die Scheitelpunktform — \(f(x) = a \cdot (x - d)^2 + e\)</div>
+<div class="section-label">5. Die Scheitelpunktform — \(f(x) = a \cdot (x - x_S)^2 + y_S\)</div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Alle Parameter zusammen: Die Scheitelpunktform</span></div>
   <div class="card-body">
     <div class="ip">Die Scheitelpunktform vereint alle drei Transformationen in einer Gleichung:</div>
-    <div class="ip">\[\boxed{f(x) = a \cdot (x - d)^2 + e}\]</div>
+    <div class="ip">\[\boxed{f(x) = a \cdot (x - x_S)^2 + y_S}\]</div>
+    <div class="hint"><strong>Andere Schreibweise:</strong> In manchen Büchern und Formelsammlungen steht \(f(x) = a \cdot (x + d)^2 + e\). Dann ist \(d = -x_S\) und \(e = y_S\). Der Scheitelpunkt ist in beiden Fällen \(S(x_S \mid y_S)\).</div>
     <div class="ip">Du kannst alle wichtigen Informationen direkt ablesen:</div>
     <table style="border-collapse:collapse;margin:10px 0;width:100%">
-      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Scheitelpunkt</strong></td><td style="padding:8px">\(S(d \mid e)\)</td></tr>
-      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Symmetrieachse</strong></td><td style="padding:8px">\(x = d\)</td></tr>
+      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Scheitelpunkt</strong></td><td style="padding:8px">\(S(x_S \mid y_S)\)</td></tr>
+      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Symmetrieachse</strong></td><td style="padding:8px">\(x = x_S\)</td></tr>
       <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Öffnung</strong></td><td style="padding:8px">\(a > 0\): nach oben, \(a < 0\): nach unten</td></tr>
       <tr style="border-bottom:1px solid #ddd"><td style="padding:8px"><strong>Breite</strong></td><td style="padding:8px">\(|a| > 1\): schmaler, \(|a| < 1\): breiter</td></tr>
-      <tr><td style="padding:8px"><strong>y-Achsenabschnitt</strong></td><td style="padding:8px">\(f(0) = a \cdot d^2 + e\)</td></tr>
+      <tr><td style="padding:8px"><strong>y-Achsenabschnitt</strong></td><td style="padding:8px">\(f(0) = a \cdot x_S^2 + y_S\)</td></tr>
     </table>
     <div class="hint">
       <strong>Drei Merksätze zur Scheitelpunktform:</strong>
       <ul style="margin:6px 0 0 18px;padding:0">
-        <li><strong>Reihenfolge der Transformationen:</strong> Erst \((x - d)\) bilden (x-verschieben), dann quadrieren, dann mit \(a\) strecken, zuletzt \(e\) addieren (y-verschieben). In dieser Reihenfolge entsteht aus der Normalparabel die allgemeine Parabel.</li>
-        <li><strong>Scheitelpunkt ist Extremum:</strong> Bei \(a > 0\) ist \(e\) der <em>kleinste</em> Funktionswert (Minimum), bei \(a < 0\) der <em>größte</em> (Maximum). Das macht den Scheitelpunkt zum zentralen Objekt bei Optimierungsaufgaben.</li>
-        <li><strong>Symmetrieachse:</strong> Die senkrechte Gerade \(x = d\) ist die Symmetrieachse der Parabel. An ihr gespiegelt liefert \(f\) gleiche Werte: \(f(d + h) = f(d - h)\) für jeden Abstand \(h\).</li>
+        <li><strong>Reihenfolge der Transformationen:</strong> Erst \((x - x_S)\) bilden (x-verschieben), dann quadrieren, dann mit \(a\) strecken, zuletzt \(y_S\) addieren (y-verschieben). In dieser Reihenfolge entsteht aus der Normalparabel die allgemeine Parabel.</li>
+        <li><strong>Scheitelpunkt ist Extremum:</strong> Bei \(a > 0\) ist \(y_S\) der <em>kleinste</em> Funktionswert (Minimum), bei \(a < 0\) der <em>größte</em> (Maximum). Das macht den Scheitelpunkt zum zentralen Objekt bei Optimierungsaufgaben.</li>
+        <li><strong>Symmetrieachse:</strong> Die senkrechte Gerade \(x = x_S\) ist die Symmetrieachse der Parabel. An ihr gespiegelt liefert \(f\) gleiche Werte: \(f(x_S + h) = f(x_S - h)\) für jeden Abstand \(h\).</li>
       </ul>
     </div>
   </div>
@@ -8555,7 +8556,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:8px">
-    <div style="text-align:center;font-size:14px;font-weight:700;color:#2d2a26">\(d\text{ verändern: } (x - d)^2\)</div>
+    <div style="text-align:center;font-size:14px;font-weight:700;color:#2d2a26">\(x_S\text{ verändern: } (x - x_S)^2\)</div>
     <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;height:auto;background:#f9f8f6;border-radius:6px">
       <line x1="8.0" y1="149.3" x2="234.0" y2="149.3" stroke="#666" stroke-width="1.1"/>
       <polygon points="234.0,146.3 234.0,152.3 239.0,149.3" fill="#666"/>
@@ -8567,11 +8568,11 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
       <path d="M 17.2,14.5 L 19.0,23.5 L 20.8,32.2 L 22.6,40.6 L 24.4,48.7 L 26.2,56.5 L 28.0,64.0 L 29.8,71.1 L 31.6,78.0 L 33.4,84.5 L 35.2,90.7 L 37.0,96.6 L 38.8,102.2 L 40.6,107.5 L 42.4,112.4 L 44.2,117.1 L 46.0,121.4 L 47.8,125.5 L 49.6,129.2 L 51.4,132.6 L 53.2,135.6 L 55.0,138.4 L 56.8,140.9 L 58.6,143.0 L 60.4,144.8 L 62.2,146.3 L 64.0,147.5 L 65.8,148.4 L 67.6,149.0 L 69.4,149.3 L 71.2,149.2 L 73.0,148.9 L 74.8,148.2 L 76.6,147.2 L 78.4,145.9 L 80.2,144.3 L 82.0,142.3 L 83.8,140.1 L 85.6,137.5 L 87.4,134.6 L 89.2,131.5 L 91.0,128.0 L 92.8,124.1 L 94.6,120.0 L 96.4,115.6 L 98.2,110.8 L 100.0,105.8 L 101.8,100.4 L 103.6,94.7 L 105.4,88.7 L 107.2,82.4 L 109.0,75.7 L 110.8,68.8 L 112.6,61.5 L 114.4,53.9 L 116.2,46.1 L 118.0,37.9 L 119.8,29.3 L 121.6,20.5 L 123.4,11.4" fill="none" stroke="#c75c3a" stroke-width="2"/>
     </svg>
     <div style="display:flex;flex-direction:column;gap:1px;padding:0 4px">
-      <div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#8a9da7" stroke-width="2" stroke-dasharray="4,3"/></svg><span style="color:#8a9da7;font-weight:600">\(x^2 \;(d=0)\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#5b6e2e" stroke-width="2"/></svg><span style="color:#5b6e2e;font-weight:600">\((x - 2)^2 \;(d=2)\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#c75c3a" stroke-width="2"/></svg><span style="color:#c75c3a;font-weight:600">\((x + 2)^2 \;(d=-2)\)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#8a9da7" stroke-width="2" stroke-dasharray="4,3"/></svg><span style="color:#8a9da7;font-weight:600">\(x^2 \;(x_S=0)\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#5b6e2e" stroke-width="2"/></svg><span style="color:#5b6e2e;font-weight:600">\((x - 2)^2 \;(x_S=2)\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#c75c3a" stroke-width="2"/></svg><span style="color:#c75c3a;font-weight:600">\((x + 2)^2 \;(x_S=-2)\)</span></div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:8px">
-    <div style="text-align:center;font-size:14px;font-weight:700;color:#2d2a26">\(e\text{ verändern: } x^2 + e\)</div>
+    <div style="text-align:center;font-size:14px;font-weight:700;color:#2d2a26">\(y_S\text{ verändern: } x^2 + y_S\)</div>
     <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;height:auto;background:#f9f8f6;border-radius:6px">
       <line x1="8.0" y1="101.8" x2="234.0" y2="101.8" stroke="#666" stroke-width="1.1"/>
       <polygon points="234.0,98.8 234.0,104.8 239.0,101.8" fill="#666"/>
@@ -8583,20 +8584,20 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
       <path d="M 10.0,32.8 L 11.8,36.9 L 13.6,40.9 L 15.4,44.9 L 17.2,48.7 L 19.0,52.6 L 20.8,56.3 L 22.6,60.0 L 24.4,63.6 L 26.2,67.2 L 28.0,70.7 L 29.8,74.1 L 31.6,77.4 L 33.4,80.7 L 35.2,83.9 L 37.0,87.0 L 38.8,90.1 L 40.6,93.1 L 42.4,96.0 L 44.2,98.9 L 46.0,101.7 L 47.8,104.4 L 49.6,107.1 L 51.4,109.6 L 53.2,112.2 L 55.0,114.6 L 56.8,117.0 L 58.6,119.3 L 60.4,121.5 L 62.2,123.7 L 64.0,125.8 L 65.8,127.8 L 67.6,129.8 L 69.4,131.7 L 71.2,133.5 L 73.0,135.3 L 74.8,137.0 L 76.6,138.6 L 78.4,140.1 L 80.2,141.6 L 82.0,143.0 L 83.8,144.4 L 85.6,145.7 L 87.4,146.9 L 89.2,148.0 L 91.0,149.1 L 92.8,150.1 L 94.6,151.0 L 96.4,151.9 L 98.2,152.7 L 100.0,153.4 L 101.8,154.0 L 103.6,154.6 L 105.4,155.1 L 107.2,155.6 L 109.0,156.0 L 110.8,156.3 L 112.6,156.5 L 114.4,156.7 L 116.2,156.8 L 118.0,156.8 L 119.8,156.8 L 121.6,156.7 L 123.4,156.5 L 125.2,156.3 L 127.0,156.0 L 128.8,155.6 L 130.6,155.1 L 132.4,154.6 L 134.2,154.0 L 136.0,153.4 L 137.8,152.7 L 139.6,151.9 L 141.4,151.0 L 143.2,150.1 L 145.0,149.1 L 146.8,148.0 L 148.6,146.9 L 150.4,145.7 L 152.2,144.4 L 154.0,143.0 L 155.8,141.6 L 157.6,140.1 L 159.4,138.6 L 161.2,137.0 L 163.0,135.3 L 164.8,133.5 L 166.6,131.7 L 168.4,129.8 L 170.2,127.8 L 172.0,125.8 L 173.8,123.7 L 175.6,121.5 L 177.4,119.3 L 179.2,117.0 L 181.0,114.6 L 182.8,112.2 L 184.6,109.6 L 186.4,107.1 L 188.2,104.4 L 190.0,101.7 L 191.8,98.9 L 193.6,96.0 L 195.4,93.1 L 197.2,90.1 L 199.0,87.0 L 200.8,83.9 L 202.6,80.7 L 204.4,77.4 L 206.2,74.1 L 208.0,70.7 L 209.8,67.2 L 211.6,63.6 L 213.4,60.0 L 215.2,56.3 L 217.0,52.6 L 218.8,48.7 L 220.6,44.9 L 222.4,40.9 L 224.2,36.9 L 226.0,32.8" fill="none" stroke="#c75c3a" stroke-width="2"/>
     </svg>
     <div style="display:flex;flex-direction:column;gap:1px;padding:0 4px">
-      <div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#8a9da7" stroke-width="2" stroke-dasharray="4,3"/></svg><span style="color:#8a9da7;font-weight:600">\(x^2 \;(e=0)\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#5b6e2e" stroke-width="2"/></svg><span style="color:#5b6e2e;font-weight:600">\(x^2 + 2\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#c75c3a" stroke-width="2"/></svg><span style="color:#c75c3a;font-weight:600">\(x^2 - 3\)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#8a9da7" stroke-width="2" stroke-dasharray="4,3"/></svg><span style="color:#8a9da7;font-weight:600">\(x^2 \;(y_S=0)\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#5b6e2e" stroke-width="2"/></svg><span style="color:#5b6e2e;font-weight:600">\(x^2 + 2\)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:13px;margin:2px 0"><svg width="22" height="6" style="flex-shrink:0">  <line x1="1" y1="3" x2="21" y2="3" stroke="#c75c3a" stroke-width="2"/></svg><span style="color:#c75c3a;font-weight:600">\(x^2 - 3\)</span></div>
     </div>
   </div>
 </div>
-<div style="text-align:center;font-size:12px;color:#666;margin-top:-4px;font-style:italic">Die drei Parameter wirken unabhängig: \(a\) steuert Form und Öffnung, \(d\) verschiebt waagerecht, \(e\) verschiebt senkrecht.</div>
+<div style="text-align:center;font-size:12px;color:#666;margin-top:-4px;font-style:italic">Die drei Parameter wirken unabhängig: \(a\) steuert Form und Öffnung, \(x_S\) verschiebt waagerecht, \(y_S\) verschiebt senkrecht.</div>
 
 <div class="bsp">
   <div class="bsp-label">Beispielaufgabe</div>
   <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme die Funktionsgleichung und zeichne die Parabel.<br>(a) Die Normalparabel wird um 3 Einheiten nach links und um 1 Einheit nach unten verschoben.<br>(b) Die Normalparabel wird mit dem Faktor \(-0{,}5\) gestaucht. Anschließend wird sie um 2 Einheiten nach rechts und 3 Einheiten nach oben verschoben.</div>
   <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
   <div class="bsp-a">
-    <div class="ip"><strong>(a)</strong> Verschiebung nach links um 3: \(d = -3\). Nach unten um 1: \(e = -1\). Kein Strecken: \(a = 1\).</div>
+    <div class="ip"><strong>(a)</strong> Verschiebung nach links um 3: \(x_S = -3\). Nach unten um 1: \(y_S = -1\). Kein Strecken: \(a = 1\).</div>
     <div class="ip">\(f(x) = (x - (-3))^2 + (-1) = (x+3)^2 - 1\). Scheitelpunkt \(S(-3\mid -1)\).</div>
-    <div class="ip"><strong>(b)</strong> Faktor \(a = -0{,}5\). Verschiebung: \(d = 2\), \(e = 3\).</div>
+    <div class="ip"><strong>(b)</strong> Faktor \(a = -0{,}5\). Verschiebung: \(x_S = 2\), \(y_S = 3\).</div>
     <div class="ip">\(f(x) = -0{,}5 \cdot (x-2)^2 + 3\). Scheitelpunkt \(S(2\mid 3)\). Nach unten geöffnet, breiter als die NP.</div>
   </div>
 </div>
@@ -8633,7 +8634,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta"><div class="ip">① → (B): Nur Streckung um Faktor 2, keine Verschiebung.</div>
-          <div class="ip">② → (C): Streckung um 2 und Verschiebung um 4 nach links (\(d = -4\)).</div>
+          <div class="ip">② → (C): Streckung um 2 und Verschiebung um 4 nach links (\(x_S = -4\)).</div>
           <div class="ip">③ → (A): Streckung um 2, 4 nach links, 2 nach oben.</div>
           <div class="komp-wrap"><span class="kb kb-k6">K6</span></div>
           <div class="komp-desc">Kommunizieren: Transformationen in Sprache und Formel übersetzen.</div>
@@ -8648,7 +8649,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Quadratische Ergänzung — der Schlüssel zwischen den Formen</span></div>
   <div class="card-body">
     <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
-      <strong style="color:#8a7a30">Kernidee:</strong> Die <strong>Normalform</strong> \(f(x) = x^2 + p\,x + q\) und die <strong>Scheitelpunktform</strong> \(f(x) = (x - d)^2 + e\) beschreiben dieselbe Parabel — nur andere „Sprache". Mit der <em>quadratischen Ergänzung</em> rechnen wir die Normalform in die Scheitelpunktform um. Dann lassen sich Scheitel und Symmetrieachse direkt ablesen.
+      <strong style="color:#8a7a30">Kernidee:</strong> Die <strong>Normalform</strong> \(f(x) = x^2 + p\,x + q\) und die <strong>Scheitelpunktform</strong> \(f(x) = (x - x_S)^2 + y_S\) beschreiben dieselbe Parabel — nur andere „Sprache". Mit der <em>quadratischen Ergänzung</em> rechnen wir die Normalform in die Scheitelpunktform um. Dann lassen sich Scheitel und Symmetrieachse direkt ablesen.
     </div>
     <div class="ip">Bei \(f(x) = x^2 + p\,x + q\) ergänzt man den Term \(x^2 + p\,x\) zu einem vollständigen Quadrat:</div>
     <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
@@ -8658,7 +8659,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
       \[f(x) = \left(x + \tfrac{p}{2}\right)^2 - \left(\tfrac{p}{2}\right)^2 + q\]
     </div>
-    <div class="ip">Daraus liest man ab: \(d = -\tfrac{p}{2}\), \(e = q - \left(\tfrac{p}{2}\right)^2\).</div>
+    <div class="ip">Daraus liest man ab: \(x_S = -\tfrac{p}{2}\), \(y_S = q - \left(\tfrac{p}{2}\right)^2\).</div>
     <div class="hint"><strong>Merke:</strong> Der trickreiche Schritt ist „die Hälfte des linearen Koeffizienten quadrieren und ergänzen" — einmal als \(+\), einmal als \(-\), damit der Term sich nicht ändert. Bei \(a \neq 1\) zuerst \(a\) ausklammern: \(a x^2 + b x + c = a\!\left(x^2 + \tfrac{b}{a}x\right) + c\).</div>
   </div>
 </div>
@@ -8671,7 +8672,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <div class="ip"><strong>Schritt 1:</strong> Hälfte des linearen Koeffizienten: \(\tfrac{p}{2} = \tfrac{6}{2} = 3\). Quadrat: \(3^2 = 9\).</div>
     <div class="ip"><strong>Schritt 2:</strong> Ergänzen und subtrahieren:</div>
     <div class="ip">\(f(x) = x^2 + 6x + 9 - 9 + 5 = (x+3)^2 - 4\)</div>
-    <div class="ip"><strong>Schritt 3:</strong> Ablesen: \(d = -3\), \(e = -4\), also \(S(-3 \mid -4)\).</div>
+    <div class="ip"><strong>Schritt 3:</strong> Ablesen: \(x_S = -3\), \(y_S = -4\), also \(S(-3 \mid -4)\).</div>
     <div class="ip"><em>Probe:</em> \(f(-3) = (-3)^2 + 6\cdot(-3) + 5 = 9 - 18 + 5 = -4\) ✓</div>
   </div>
 </div>
@@ -8685,7 +8686,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <div class="ip">\(f(x) = 2(x^2 - 4x) + 1\)</div>
     <div class="ip"><strong>Schritt 2:</strong> Innerhalb der Klammer quadratisch ergänzen — Hälfte von \(-4\) ist \(-2\), Quadrat \(4\):</div>
     <div class="ip">\(f(x) = 2\bigl((x-2)^2 - 4\bigr) + 1 = 2(x-2)^2 - 8 + 1 = 2(x-2)^2 - 7\)</div>
-    <div class="ip"><strong>Schritt 3:</strong> Ablesen: \(a = 2\), \(d = 2\), \(e = -7\), also \(S(2 \mid -7)\). Die Parabel ist nach oben geöffnet (\(a>0\)) und doppelt so schmal wie die Normalparabel.</div>
+    <div class="ip"><strong>Schritt 3:</strong> Ablesen: \(a = 2\), \(x_S = 2\), \(y_S = -7\), also \(S(2 \mid -7)\). Die Parabel ist nach oben geöffnet (\(a>0\)) und doppelt so schmal wie die Normalparabel.</div>
   </div>
 </div>
 
@@ -8727,8 +8728,8 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta">
-    <div class="ip">Quadratische Ergänzung: \(f(x) = \bigl(x + \tfrac{p}{2}\bigr)^2 - \tfrac{p^2}{4} + q\), also \(d = -\tfrac{p}{2}\) und \(e = q - \tfrac{p^2}{4}\).</div>
-    <div class="ip">Da der quadratische Term \(\bigl(x + \tfrac{p}{2}\bigr)^2 \geq 0\) ist, gilt \(f(x) \geq e\) für alle \(x\). Wenn \(e > 0\), liegt die Parabel komplett oberhalb der x-Achse — keine Nullstelle.</div>
+    <div class="ip">Quadratische Ergänzung: \(f(x) = \bigl(x + \tfrac{p}{2}\bigr)^2 - \tfrac{p^2}{4} + q\), also \(x_S = -\tfrac{p}{2}\) und \(y_S = q - \tfrac{p^2}{4}\).</div>
+    <div class="ip">Da der quadratische Term \(\bigl(x + \tfrac{p}{2}\bigr)^2 \geq 0\) ist, gilt \(f(x) \geq y_S\) für alle \(x\). Wenn \(y_S > 0\), liegt die Parabel komplett oberhalb der x-Achse — keine Nullstelle.</div>
     <div class="ip"><strong>Bedingung:</strong> \(q - \tfrac{p^2}{4} > 0 \;\Leftrightarrow\; q > \tfrac{p^2}{4}\). Diese Bedingung ist äquivalent zur „Diskriminante \(D = \tfrac{p^2}{4} - q < 0\)" aus Abschnitt 5c.</div>
     <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
     <div class="komp-desc">Argumentieren + Symbolisch: Allgemeine Aussage durch quadratische Ergänzung herleiten.</div>
@@ -8745,7 +8746,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
       <strong style="color:#8a7a30">Kernidee:</strong> Eine quadratische Funktion lässt sich in <strong>drei Formen</strong> schreiben — jede betont andere Eigenschaften:
       <ul style="margin:8px 0 0 20px">
         <li><strong>Allgemeine Form</strong> \(f(x) = ax^2 + bx + c\) — der y-Achsenabschnitt \(c\) ist direkt sichtbar.</li>
-        <li><strong>Scheitelpunktform</strong> \(f(x) = a(x - d)^2 + e\) — Scheitel und Öffnung direkt sichtbar.</li>
+        <li><strong>Scheitelpunktform</strong> \(f(x) = a(x - x_S)^2 + y_S\) — Scheitel und Öffnung direkt sichtbar.</li>
         <li><strong>Faktorisierte Form</strong> \(f(x) = a(x - x_1)(x - x_2)\) — die Nullstellen \(x_1\) und \(x_2\) direkt sichtbar.</li>
       </ul>
       Die Übergänge zwischen den Formen lernst du in 5a (quadratische Ergänzung) und 5c (pq-Formel).
@@ -9474,10 +9475,10 @@ setTimeout(updateQuadExplorer,100);
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">Q6.7</span><span class="td dh">★★★</span></div>
-    <div class="tq">Rückwärtsaufgabe: Entscheide, ob es eine Parabel der Form \(f(x) = a(x-d)^2 + e\) gibt, die durch die Punkte \(A(0\mid 3)\) und \(B(4\mid 3)\) verläuft und den Scheitelpunkt \(S(2\mid -1)\) hat. Falls ja, bestimme die Gleichung.</div>
+    <div class="tq">Rückwärtsaufgabe: Entscheide, ob es eine Parabel der Form \(f(x) = a(x-x_S)^2 + y_S\) gibt, die durch die Punkte \(A(0\mid 3)\) und \(B(4\mid 3)\) verläuft und den Scheitelpunkt \(S(2\mid -1)\) hat. Falls ja, bestimme die Gleichung.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
-  <div class="ta"><div class="ip">\(A\) und \(B\) haben denselben \(y\)-Wert und liegen symmetrisch um \(d = 2\) (da \(0\) und \(4\) gleich weit von \(2\) entfernt sind). Das passt zu einer Parabel mit Scheitelpunkt bei \(x = 2\).</div>
+  <div class="ta"><div class="ip">\(A\) und \(B\) haben denselben \(y\)-Wert und liegen symmetrisch um \(x_S = 2\) (da \(0\) und \(4\) gleich weit von \(2\) entfernt sind). Das passt zu einer Parabel mit Scheitelpunkt bei \(x = 2\).</div>
           <div class="ip">Einsetzen von \(A(0\mid 3)\): \(3 = a(0-2)^2 - 1 = 4a - 1 \;\Rightarrow\; a = 1\).</div>
           <div class="ip">Probe mit \(B(4\mid 3)\): \(f(4) = 1\cdot (4-2)^2 - 1 = 4 - 1 = 3\;\checkmark\).</div>
           <div class="ip">\(f(x) = (x-2)^2 - 1\).</div>
@@ -9489,12 +9490,12 @@ setTimeout(updateQuadExplorer,100);
 <div class="tg"><div class="tk">
   <div class="tk-top" onclick="togTask(this)">
     <div class="tkt"><span class="tn">Q6.8</span><span class="td dh">★★★</span></div>
-    <div class="tq">Verallgemeinere: Zeige, dass für jede Parabel \(f(x) = a(x-d)^2 + e\) mit \(a > 0\) und \(e < 0\) genau zwei Nullstellen existieren. Bestimme eine allgemeine Formel für diese Nullstellen.</div>
+    <div class="tq">Verallgemeinere: Zeige, dass für jede Parabel \(f(x) = a(x-x_S)^2 + y_S\) mit \(a > 0\) und \(y_S < 0\) genau zwei Nullstellen existieren. Bestimme eine allgemeine Formel für diese Nullstellen.</div>
     <div class="tk-toggle">⌄</div>
   </div></div>
-  <div class="ta"><div class="ip">Setze \(f(x) = 0\): \(a(x-d)^2 + e = 0\).</div>
-          <div class="ip">\((x-d)^2 = -\frac{e}{a}\). Da \(a > 0\) und \(e < 0\), ist \(-\frac{e}{a} > 0\). Also existiert die Wurzel.</div>
-          <div class="ip">\(x - d = \pm\sqrt{-\frac{e}{a}}\), also \(x_{1/2} = d \pm \sqrt{-\frac{e}{a}}\).</div>
+  <div class="ta"><div class="ip">Setze \(f(x) = 0\): \(a(x-x_S)^2 + y_S = 0\).</div>
+          <div class="ip">\((x-x_S)^2 = -\frac{y_S}{a}\). Da \(a > 0\) und \(y_S < 0\), ist \(-\frac{y_S}{a} > 0\). Also existiert die Wurzel.</div>
+          <div class="ip">\(x - x_S = \pm\sqrt{-\frac{y_S}{a}}\), also \(x_{1/2} = x_S \pm \sqrt{-\frac{y_S}{a}}\).</div>
           <div class="ip">Da die Wurzel positiv ist, sind \(x_1 \neq x_2\) — es gibt genau zwei verschiedene Nullstellen.</div>
           <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
           <div class="komp-desc">Argumentieren und Verallgemeinern: Allgemeine Nullstellenformel herleiten (AFB III).</div>
@@ -9543,7 +9544,7 @@ setTimeout(updateQuadExplorer,100);
     <div class="tk-toggle">⌄</div>
   </div></div>
   <div class="ta">
-    <div class="ip"><strong>(a)</strong> Faktorisiert: \(f(x) = (x + 2)(x - 4)\). Ausmultiplizieren: \(f(x) = x^2 - 2x - 8\). Scheitel in der Mitte der Nullstellen: \(d = 1\), \(f(1) = 1 - 2 - 8 = -9\), also \(S(1\mid -9)\).</div>
+    <div class="ip"><strong>(a)</strong> Faktorisiert: \(f(x) = (x + 2)(x - 4)\). Ausmultiplizieren: \(f(x) = x^2 - 2x - 8\). Scheitel in der Mitte der Nullstellen: \(x_S = 1\), \(f(1) = 1 - 2 - 8 = -9\), also \(S(1\mid -9)\).</div>
     <div class="ip"><strong>(b)</strong> Ansatz Scheitelpunktform: \(f(x) = a(x - 1)^2 - 9\). \(P(4\mid 0)\) einsetzen: \(0 = 9a - 9\) → \(a = 1\). Also \(f(x) = (x - 1)^2 - 9 = x^2 - 2x - 8\). Bemerkenswert: (a) und (b) führen auf dieselbe Funktion!</div>
     <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k4">K4</span></div>
     <div class="komp-desc">Probleme lösen: Aus Stützpunkten / Nullstellen die Funktion rekonstruieren.</div>
@@ -9595,7 +9596,7 @@ setTimeout(updateQuadExplorer,100);
   <div class="ta">
     <div class="ip"><strong>(a)</strong> \(f(0) = 2\) — der Ball wird in einer Höhe von 2 m abgeworfen (Abwurfhöhe).</div>
     <div class="ip"><strong>(b)</strong> \(f(1) = -1 + 4 + 2 = 5\) m, \(f(3) = -9 + 12 + 2 = 5\) m. Beide Werte sind gleich!</div>
-    <div class="ip"><strong>(c)</strong> Da \(f(1) = f(3)\), liegt die Symmetrieachse in der Mitte: \(d = \tfrac{1+3}{2} = 2\). Scheitelhöhe: \(f(2) = -4 + 8 + 2 = 6\). Also \(S(2\mid 6)\) — der Ball erreicht seine maximale Höhe von 6 m bei 2 m horizontaler Entfernung.</div>
+    <div class="ip"><strong>(c)</strong> Da \(f(1) = f(3)\), liegt die Symmetrieachse in der Mitte: \(x_S = \tfrac{1+3}{2} = 2\). Scheitelhöhe: \(f(2) = -4 + 8 + 2 = 6\). Also \(S(2\mid 6)\) — der Ball erreicht seine maximale Höhe von 6 m bei 2 m horizontaler Entfernung.</div>
     <div class="ip"><strong>(d)</strong> \(f(x) = 2\): \(-x^2 + 4x + 2 = 2 \;\Rightarrow\; x^2 - 4x = 0 \;\Rightarrow\; x(x - 4) = 0\). Lösungen \(x = 0\) (Abwurf) und \(x = 4\) m.</div>
     <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span></div>
     <div class="komp-desc">Modellieren + Argumentieren: Parameter im Sachkontext deuten, Symmetrie nutzen.</div>
@@ -9615,7 +9616,7 @@ setTimeout(updateQuadExplorer,100);
   <div class="ta">
     <div class="ip"><strong>(a)</strong> \(f(0) = 1\) — die Abschusshöhe beträgt 1 m über dem Boden (z. B. ein Abschussrohr). Realistisch.</div>
     <div class="ip"><strong>(b)</strong> \(f(x) = 0\): \(-0{,}5\,x^2 + 25\,x + 1 = 0\). Mit \(-2\) multiplizieren: \(x^2 - 50\,x - 2 = 0\). p-q: \(D = 625 + 2 = 627\), \(\sqrt{627} \approx 25{,}04\), \(x_{1,2} = 25 \pm 25{,}04\). Positive Lösung: \(x \approx \mathbf{50{,}04}\) m. Der Rest landet rund 50 m vom Abschussort entfernt.</div>
-    <div class="ip"><strong>(c)</strong> Symmetrieachse mittig zwischen den Nullstellen \(\approx -0{,}04\) und \(50{,}04\): \(d \approx 25\). Höhe: \(f(25) = -0{,}5 \cdot 625 + 625 + 1 = -312{,}5 + 625 + 1 = \mathbf{313{,}5}\) m. Maximale Höhe ca. 313,5 m.</div>
+    <div class="ip"><strong>(c)</strong> Symmetrieachse mittig zwischen den Nullstellen \(\approx -0{,}04\) und \(50{,}04\): \(x_S \approx 25\). Höhe: \(f(25) = -0{,}5 \cdot 625 + 625 + 1 = -312{,}5 + 625 + 1 = \mathbf{313{,}5}\) m. Maximale Höhe ca. 313,5 m.</div>
     <div class="ip"><strong>(d)</strong> \(f(40) = -0{,}5 \cdot 1600 + 25 \cdot 40 + 1 = -800 + 1000 + 1 = \mathbf{201}\) m. In 40 m Entfernung ist die Rakete bereits 201 m hoch — das Fenster in 8 m Höhe wird <strong>nicht</strong> getroffen.</div>
     <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
     <div class="komp-desc">Modellieren + Argumentieren + Symbolisch: realer Kontext mit allen Werkzeugen verbinden.</div>
@@ -9632,9 +9633,9 @@ setTimeout(updateQuadExplorer,100);
       <tr style="background:#5b6e2e;color:#fff"><th style="padding:8px;border:1px solid #5b6e2e">Form</th><th style="padding:8px;border:1px solid #5b6e2e">Gleichung</th><th style="padding:8px;border:1px solid #5b6e2e">Scheitelpunkt</th><th style="padding:8px;border:1px solid #5b6e2e">Besonderheit</th></tr>
       <tr style="border-bottom:1px solid #ddd"><td style="padding:8px">Normalparabel</td><td style="padding:8px">\(f(x) = x^2\)</td><td style="padding:8px">\(S(0\mid 0)\)</td><td style="padding:8px">Ausgangspunkt</td></tr>
       <tr style="border-bottom:1px solid #ddd"><td style="padding:8px">Gestreckt/Gestaucht</td><td style="padding:8px">\(f(x) = a \cdot x^2\)</td><td style="padding:8px">\(S(0\mid 0)\)</td><td style="padding:8px">\(|a|>1\): schmaler, \(|a|<1\): breiter</td></tr>
-      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px">y-verschoben</td><td style="padding:8px">\(f(x) = x^2 + e\)</td><td style="padding:8px">\(S(0\mid e)\)</td><td style="padding:8px">NST: \(x=\pm\sqrt{-e}\) falls \(e \leq 0\)</td></tr>
-      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px">x-verschoben</td><td style="padding:8px">\(f(x) = (x - d)^2\)</td><td style="padding:8px">\(S(d\mid 0)\)</td><td style="padding:8px">Vorzeichen-Falle beachten!</td></tr>
-      <tr><td style="padding:8px"><strong>Scheitelpunktform</strong></td><td style="padding:8px">\(f(x) = a(x-d)^2+e\)</td><td style="padding:8px">\(S(d\mid e)\)</td><td style="padding:8px">Alle Infos direkt ablesbar</td></tr>
+      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px">y-verschoben</td><td style="padding:8px">\(f(x) = x^2 + y_S\)</td><td style="padding:8px">\(S(0\mid y_S)\)</td><td style="padding:8px">NST: \(x=\pm\sqrt{-y_S}\) falls \(y_S \leq 0\)</td></tr>
+      <tr style="border-bottom:1px solid #ddd"><td style="padding:8px">x-verschoben</td><td style="padding:8px">\(f(x) = (x - x_S)^2\)</td><td style="padding:8px">\(S(x_S\mid 0)\)</td><td style="padding:8px">Vorzeichen-Falle beachten!</td></tr>
+      <tr><td style="padding:8px"><strong>Scheitelpunktform</strong></td><td style="padding:8px">\(f(x) = a(x-x_S)^2+y_S\)</td><td style="padding:8px">\(S(x_S\mid y_S)\)</td><td style="padding:8px">Alle Infos direkt ablesbar</td></tr>
     </table>
     <div class="hint"><strong>Tipp für die Klausur:</strong> Lies zuerst den Scheitelpunkt ab. Prüfe dann die Öffnungsrichtung (\(a>0\) oder \(a<0\)). Berechne zuletzt ggf. Nullstellen und y-Achsenabschnitt.</div>
   </div>
@@ -13692,13 +13693,13 @@ window.addEventListener('resize',function(){updateSimulator();});
   <div class="section-label">3. Die allgemeine Sinusfunktion</div>
 
   <div class="card">
-    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Parameter der Sinusfunktion \(f(x) = a \sin(b(x + c)) + d\)</span></div>
+    <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Parameter der Sinusfunktion \(f(x) = a \sin(b(x - c)) + d\)</span></div>
     <div class="card-body">
       <div class="ip">Warum wirken die Parameter so? Denke an den Einheitskreis: Ein Punkt läuft auf dem Kreis, und der Sinus ist seine y-Koordinate. Wenn wir <strong>\(a\)</strong> ändern, wird der Kreis größer oder kleiner (→ Amplitude). Wenn wir <strong>\(b\)</strong> ändern, läuft der Punkt schneller oder langsamer (→ Periode). <strong>\(c\)</strong> verschiebt den Startpunkt auf dem Kreis (→ Phasenverschiebung). <strong>\(d\)</strong> verschiebt den gesamten Kreis nach oben oder unten (→ vertikale Verschiebung).</div>
       <div class="ip"><strong>a:</strong> Amplitude — streckt/staucht die Kurve vertikal um den Faktor \(|a|\)</div>
       <div class="ip"><strong>b:</strong> Frequenz — bestimmt die Periode: \(T = \frac{2\pi}{b}\)</div>
-      <div class="ip"><strong>c:</strong> Phasenverschiebung — verschiebt die Kurve horizontal (nach links bei \(c > 0\))</div>
-      <div class="ip"><strong>d:</strong> Vertikalverschiebung — verschiebt die Kurve um d Einheiten nach oben</div>
+      <div class="ip"><strong>c:</strong> Verschiebung in \(x\)-Richtung (Phasenverschiebung) — bei \(c > 0\) um \(c\) nach rechts, bei \(c &lt; 0\) nach links</div>
+      <div class="ip"><strong>d:</strong> Verschiebung in \(y\)-Richtung — bei \(d > 0\) um \(d\) nach oben; die Mittellage liegt bei \(y = d\), wie die Asymptote \(y = d\) bei \(a \cdot b^x + d\)</div>
       <div style="text-align:center;margin:20px 0;">
         <canvas id="cv-sinuskurve-param" style="display:block;margin:0 auto;max-width:100%"></canvas>
       </div>
@@ -13711,12 +13712,12 @@ window.addEventListener('resize',function(){updateSimulator();});
     <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
     <div class="bsp-a">
       <div class="ip"><strong>Schritt 1 – Vergleich mit der allgemeinen Form:</strong></div>
-      <div style="text-align:center;margin:10px 0">\[f(x) = a\sin\!\bigl(b(x + c)\bigr) + d\]</div>
-      <div class="ip">Schreibe die gegebene Funktion passend um: \(f(x) = 3\sin\!\bigl(2(x + (-\tfrac{\pi}{4}))\bigr) + 1\)</div>
+      <div style="text-align:center;margin:10px 0">\[f(x) = a\sin\!\bigl(b(x - c)\bigr) + d\]</div>
+      <div class="ip">Die gegebene Funktion steht schon in dieser Form: \(f(x) = 3\sin\!\bigl(2(x - \tfrac{\pi}{4})\bigr) + 1\)</div>
       <div class="ip"><strong>Schritt 2 – Parameter ablesen:</strong></div>
       <div class="ip">\(a = 3\) → Amplitude: Die Kurve schwankt 3 Einheiten ober- und unterhalb der Mittellage.</div>
       <div class="ip">\(b = 2\) → Periode: \(T = \dfrac{2\pi}{b} = \dfrac{2\pi}{2} = \pi\). Eine volle Schwingung dauert \(\pi\).</div>
-      <div class="ip">\(c = -\dfrac{\pi}{4}\) → Phasenverschiebung: Die Kurve ist um \(\dfrac{\pi}{4}\) nach rechts verschoben.</div>
+      <div class="ip">\(c = \dfrac{\pi}{4}\) → Verschiebung in \(x\)-Richtung: Die Kurve ist um \(\dfrac{\pi}{4}\) nach rechts verschoben.</div>
       <div class="ip">\(d = 1\) → Vertikalverschiebung: Die Mittellage liegt bei \(y = 1\).</div>
       <div class="ip"><strong>Schritt 3 – Wertebereich:</strong></div>
       <div style="text-align:center;margin:10px 0">\[d - |a| \le f(x) \le d + |a| \quad\Rightarrow\quad -2 \le f(x) \le 4\]</div>
@@ -13731,8 +13732,8 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div style="margin-bottom: 15px;">
         <label style="display: block; margin: 8px 0;"><strong>Amplitude a:</strong> <input type="range" id="slider-a" min="-3" max="3" step="0.1" value="1" style="width: 200px;" oninput="drawSinGraph()"> <span id="val-a">1</span></label>
         <label style="display: block; margin: 8px 0;"><strong>Frequenz b:</strong> <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1" style="width: 200px;" oninput="drawSinGraph()"> <span id="val-b">1</span></label>
-        <label style="display: block; margin: 8px 0;"><strong>Phase c:</strong> <input type="range" id="slider-c" min="-2" max="2" step="0.1" value="0" style="width: 200px;" oninput="drawSinGraph()"> <span id="val-c">0</span></label>
-        <label style="display: block; margin: 8px 0;"><strong>Versatz d:</strong> <input type="range" id="slider-d" min="-2" max="2" step="0.1" value="0" style="width: 200px;" oninput="drawSinGraph()"> <span id="val-d">0</span></label>
+        <label style="display: block; margin: 8px 0;"><strong>Verschiebung c (nach rechts):</strong> <input type="range" id="slider-c" min="-2" max="2" step="0.1" value="0" style="width: 200px;" oninput="drawSinGraph()"> <span id="val-c">0</span></label>
+        <label style="display: block; margin: 8px 0;"><strong>Verschiebung d (nach oben):</strong> <input type="range" id="slider-d" min="-2" max="2" step="0.1" value="0" style="width: 200px;" oninput="drawSinGraph()"> <span id="val-d">0</span></label>
       </div>
       <canvas id="graph-canvas" style="border: 1px solid #999; display: block; margin: 10px 0;"></canvas>
       <div class="ip" id="func-display" style="text-align: center; font-size: 14px; color: #2563eb;">f(x) = sin(x)</div>
@@ -13828,13 +13829,13 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="tk">
       <div class="tk-top" onclick="togTask(this)">
         <div class="tkt"><span class="tn">SF1.3</span><span class="td dm">★★</span></div>
-        <div class="tq">Bestimme Amplitude, Periode und Versatz der Funktion \(f(x) = 2\sin(3x - \pi) + 1\). Schreibe die Funktion in der Form \(f(x) = a\sin(b(x+c)) + d\).</div>
+        <div class="tq">Bestimme Amplitude, Periode und Versatz der Funktion \(f(x) = 2\sin(3x - \pi) + 1\). Schreibe die Funktion in der Form \(f(x) = a\sin(b(x-c)) + d\).</div>
         <div class="tk-toggle">⌄</div>
       </div>
     </div>
     <div class="ta">
       <div class="ip">Forme um: \(f(x) = 2\sin(3(x - \frac{\pi}{3})) + 1\)</div>
-      <div class="ip">Amplitude: \(a = 2\), Periode: \(T = \frac{2\pi}{3}\), Phasenversatz: \(c = -\frac{\pi}{3}\), Versatz: \(d = 1\)</div>
+      <div class="ip">Amplitude: \(a = 2\), Periode: \(T = \frac{2\pi}{3}\), Verschiebung in \(x\)-Richtung: \(c = \frac{\pi}{3}\) (nach rechts), Verschiebung in \(y\)-Richtung: \(d = 1\)</div>
       <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
       <div class="komp-desc">K5: Funktion umformen und Parameter ablesen · K4: Zusammenhang Formel ↔ Graph erkennen</div>
     </div>
@@ -13866,7 +13867,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
     <div class="ta">
       <div class="ip">Periode: \(T = \frac{2\pi}{\frac{\pi}{6,2}} = 12,4\) Stunden</div>
-      <div class="ip">Amplitude: 1,2 m (maximale Gezeitenabweichung), Mittelwasser: 1,8 m, Phasenversatz: 2 Stunden (Hochwasser bei t=2)</div>
+      <div class="ip">Amplitude: 1,2 m (maximale Gezeitenabweichung), Mittelwasser: 1,8 m, Verschiebung um 2 Stunden nach rechts (\(c = 2\)): Bei \(t = 2\) steigt das Wasser durch das Mittelwasser, Hochwasser ist eine Viertelperiode später bei \(t = 2 + 3{,}1 = 5{,}1\)</div>
       <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span><span class="kb kb-k6">K6</span></div>
       <div class="komp-desc">K3: Gezeitenmodell interpretieren · K5: Periode berechnen · K6: Parametereinfluss erklären</div>
     </div>
@@ -14027,7 +14028,7 @@ window.addEventListener('resize',function(){updateSimulator();});
     <div class="tk">
       <div class="tk-top" onclick="togTask(this)">
         <div class="tkt"><span class="tn">SF2.3</span><span class="td dm">★★</span></div>
-        <div class="tq"><strong>Rückwärts denken.</strong> Ermittle eine Sinusfunktion \(f(x) = a\sin(b(x + c)) + d\), die folgende Eigenschaften erfüllt: Amplitude 3, Periode \(4\pi\), Tiefpunkt bei \(x = 0\), Wertebereich \([-1;\,5]\). Begründe jeden Parameterwert.</div>
+        <div class="tq"><strong>Rückwärts denken.</strong> Ermittle eine Sinusfunktion \(f(x) = a\sin(b(x - c)) + d\), die folgende Eigenschaften erfüllt: Amplitude 3, Periode \(4\pi\), Tiefpunkt bei \(x = 0\), Wertebereich \([-1;\,5]\). Begründe jeden Parameterwert.</div>
         <div class="tk-toggle">⌄</div>
       </div>
     </div>
@@ -14035,7 +14036,7 @@ window.addEventListener('resize',function(){updateSimulator();});
       <div class="ip"><strong>Amplitude:</strong> \(a = 3\) (gegeben).</div>
       <div class="ip"><strong>Frequenz:</strong> \(T = 4\pi \Rightarrow b = \frac{2\pi}{4\pi} = \frac{1}{2}\).</div>
       <div class="ip"><strong>Vertikalverschiebung:</strong> Wertebereich \([-1;\,5]\), also Mittellage \(d = \frac{-1+5}{2} = 2\). Probe: \(d - |a| = -1\) ✓ und \(d + |a| = 5\) ✓.</div>
-      <div class="ip"><strong>Phasenverschiebung:</strong> Tiefpunkt bei \(x = 0\) bedeutet \(\sin\!\bigl(\frac{1}{2}(0 + c)\bigr) = -1\), also \(\frac{c}{2} = -\frac{\pi}{2}\), also \(c = -\pi\).</div>
+      <div class="ip"><strong>Phasenverschiebung:</strong> Tiefpunkt bei \(x = 0\) bedeutet \(\sin\!\bigl(\frac{1}{2}(0 - c)\bigr) = -1\), also \(-\frac{c}{2} = -\frac{\pi}{2}\), also \(c = \pi\).</div>
       <div class="ip"><strong>Ergebnis:</strong> \(f(x) = 3\sin\!\bigl(\frac{1}{2}(x - \pi)\bigr) + 2\)</div>
       <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
       <div class="komp-desc">K2: Eigenschaften rückwärts in Parameter übersetzen · K5: Gleichungen nach Parametern auflösen · K1: Jeden Schritt begründen</div>
@@ -33352,10 +33353,8 @@ function drawSinGraph(){
   var parts='f(x) = ';
   if(a!==1) parts+=(a===-1?'−':a)+'·';
   parts+='sin(';
-  if(b!==1) parts+=b+'·';
-  parts+='x';
-  if(c>0) parts+=' + '+c;
-  else if(c<0) parts+=' − '+Math.abs(c);
+  var inner=(c===0?'x':(c>0?'x − '+c:'x + '+Math.abs(c)));
+  if(b!==1) parts+=b+'·'+(c===0?'x':'('+inner+')'); else parts+=inner;
   parts+=')';
   if(d>0) parts+=' + '+d;
   else if(d<0) parts+=' − '+Math.abs(d);
@@ -33420,7 +33419,7 @@ function drawSinGraph(){
   ctx.beginPath();
   for(var px=pad;px<=W-pad;px++){
     var mx=xMin+(px-pad)/(W-2*pad)*(xMax-xMin);
-    var my=a*Math.sin(b*(mx+c))+d;
+    var my=a*Math.sin(b*(mx-c))+d;
     var py2=toY(my);
     if(px===pad) ctx.moveTo(px,py2); else ctx.lineTo(px,py2);
   }
