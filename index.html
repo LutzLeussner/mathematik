@@ -33351,7 +33351,7 @@ function drawSinGraph(){
   document.getElementById('val-d').textContent=d;
   // Update formula display
   var parts='f(x) = ';
-  if(a!==1) parts+=(a===-1?'−':a)+'·';
+  if(a===-1) parts+='−'; else if(a!==1) parts+=a+'·';
   parts+='sin(';
   var inner=(c===0?'x':(c>0?'x − '+c:'x + '+Math.abs(c)));
   if(b!==1) parts+=b+'·'+(c===0?'x':'('+inner+')'); else parts+=inner;
