@@ -8586,7 +8586,7 @@ if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{do
       <ul style="margin:6px 0 0 18px;padding:0">
         <li><strong>Reihenfolge der Transformationen:</strong> Erst \((x - d)\) bilden (x-verschieben), dann quadrieren, dann mit \(a\) strecken, zuletzt \(e\) addieren (y-verschieben). In dieser Reihenfolge entsteht aus der Normalparabel die allgemeine Parabel.</li>
         <li><strong>Scheitelpunkt ist Extremum:</strong> Bei \(a > 0\) ist \(e\) der <em>kleinste</em> Funktionswert (Minimum), bei \(a < 0\) der <em>größte</em> (Maximum). Das macht den Scheitelpunkt zum zentralen Objekt bei Optimierungsaufgaben.</li>
-        <li><strong>Symmetrieachse:</strong> Die senkrechte Gerade \(x = d\) ist die Symmetrieachse der Parabel. An ihr gespiegelt liefert \(f\) gleiche Werte: \(f(d + d) = f(d - d)\) für jedes \(d\).</li>
+        <li><strong>Symmetrieachse:</strong> Die senkrechte Gerade \(x = d\) ist die Symmetrieachse der Parabel. An ihr gespiegelt liefert \(f\) gleiche Werte: \(f(d + h) = f(d - h)\) für jeden Abstand \(h\).</li>
       </ul>
     </div>
   </div>
@@ -10633,6 +10633,45 @@ setTimeout(updateQuadExplorer,100);
 
 
 
+<!-- k10-log Zusatz Substitution -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zusatz · Substitution (kein Klausurstoff in Klasse 10)</span></div>
+  <div class="card-body">
+    <div class="it">Substitution — wenn dieselbe Potenz zweimal vorkommt</div>
+    <div class="ip">\(4^x - 5 \cdot 2^x + 4 = 0\). Wegen \(4^x = (2^x)^2\) setzt man \(u = 2^x\): \(u^2 - 5u + 4 = 0 \Rightarrow u = 1\) oder \(u = 4\) (p-q-Formel). Rücksubstitution: \(2^x = 1 \Rightarrow x = 0\); \(2^x = 4 \Rightarrow x = 2\). Probe: \(1 - 5 + 4 = 0\) ✓, \(16 - 20 + 4 = 0\) ✓. <em>Ergibt sich \(u < 0\), gibt es dazu keine Lösung — \(2^x\) ist nie negativ.</em></div>
+
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Z1</span><span class="td dh">★★★</span></div>
+    <div class="tq"><strong>Substitution:</strong> Löse <strong>a)</strong> \(9^x - 10 \cdot 3^x + 9 = 0\) &nbsp; <strong>b)</strong> \(2^{2x} - 3 \cdot 2^x - 4 = 0\) &nbsp; <strong>c)</strong> \(4^x - 4 \cdot 2^x + 4 = 0\).<br><strong>d)</strong> Begründe, warum eine Gleichung dieser Art höchstens zwei Lösungen hat.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(u = 3^x\): \(u^2 - 10u + 9 = 0 \Rightarrow u = 1, u = 9 \Rightarrow x = 0, x = 2\).</div>
+    <div class="ip"><strong>b)</strong> \(u = 2^x\): \(u^2 - 3u - 4 = 0 \Rightarrow u = 4, u = -1\). \(u = -1\) entfällt (\(2^x > 0\)); \(2^x = 4 \Rightarrow x = 2\). Einzige Lösung.</div>
+    <div class="ip"><strong>c)</strong> \(u^2 - 4u + 4 = (u - 2)^2 = 0 \Rightarrow u = 2 \Rightarrow x = 1\). Doppelte Lösung der quadratischen Gleichung, eine Lösung für \(x\).</div>
+    <div class="ip"><strong>d)</strong> Die quadratische Gleichung in \(u\) hat höchstens zwei Lösungen, und zu jedem positiven \(u\) gehört genau ein \(x = \log_b(u)\), weil \(b^x\) streng monoton ist.</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Substituieren und rücksubstituieren · K1: Lösungsanzahl begründen</div>
+  </div>
+</div>
+<div class="tg"><div class="tk">
+  <div class="tk-top" onclick="togTask(this)">
+    <div class="tkt"><span class="tn">Z2</span><span class="td dh">★★★</span></div>
+    <div class="tq"><strong>a)</strong> Löse \(e^{2x} - 3e^x + 2 = 0\) durch Substitution.<br><strong>b)</strong> Erkläre, warum die Gleichung \(e^{2x} + 3e^x + 2 = 0\) keine Lösung hat — einmal mit der Substitution, einmal mit einem Blick auf die Vorzeichen.</div>
+    <div class="tk-toggle">⌄</div>
+  </div></div>
+  <div class="ta">
+    <div class="ip"><strong>a)</strong> \(u = e^x\): \(u^2 - 3u + 2 = 0 \Rightarrow u = 1, u = 2 \Rightarrow x = \ln 1 = 0\), \(x = \ln 2 \approx 0{,}69\).</div>
+    <div class="ip"><strong>b)</strong> \(u^2 + 3u + 2 = 0 \Rightarrow u = -1, u = -2\), beide negativ — aber \(e^x > 0\), also keine Lösung. Direkt: Alle drei Summanden sind positiv, die Summe kann nie 0 sein.</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Substitution mit e · K1: Lösbarkeit begründen</div>
+  </div>
+</div>
+<!-- /k10-log Zusatz Substitution -->
+
 <!-- Exercises Section -->
 <div class="section-label">5. Aufgaben zum Trainieren</div>
 
@@ -12362,8 +12401,6 @@ setTimeout(updateQuadExplorer,100);
     <div class="ip" style="background:#fceee9;border-radius:10px;padding:12px 16px;border-left:4px solid #c75c3a;margin-top:10px"><strong style="color:#8a3a22">Achtung, Klassiker:</strong> <strong>Logarithmieren erst, wenn die Potenz allein steht.</strong> Falsch ist \(\lg(4 \cdot 25^x) = \lg(4) \cdot \lg(25^x)\) — aus einem Produkt wird beim Logarithmieren eine Summe, nicht ein Produkt. Und einzelne Summanden darf man gar nicht logarithmieren: \(\lg(4 \cdot 25^x - 2500) \neq \lg(4 \cdot 25^x) - \lg(2500)\).</div>
     <div class="it">Term im Exponenten</div>
     <div class="ip">\(2^{x+3} = 128 \Rightarrow x + 3 = \log_2(128) = 7 \Rightarrow x = 4\). &nbsp; \(5^{2x} = 100 \Rightarrow 2x = \log_5(100) \approx 2{,}861 \Rightarrow x \approx 1{,}43\). Der Logarithmus liefert den <em>ganzen</em> Exponenten; danach wird wie bei einer linearen Gleichung weitergerechnet. Hilfreich: \(b^{x+c} = b^x \cdot b^c\).</div>
-    <div class="it">Substitution — wenn dieselbe Potenz zweimal vorkommt</div>
-    <div class="ip">\(4^x - 5 \cdot 2^x + 4 = 0\). Wegen \(4^x = (2^x)^2\) setzt man \(u = 2^x\): \(u^2 - 5u + 4 = 0 \Rightarrow u = 1\) oder \(u = 4\) (p-q-Formel). Rücksubstitution: \(2^x = 1 \Rightarrow x = 0\); \(2^x = 4 \Rightarrow x = 2\). Probe: \(1 - 5 + 4 = 0\) ✓, \(16 - 20 + 4 = 0\) ✓. <em>Ergibt sich \(u < 0\), gibt es dazu keine Lösung — \(2^x\) ist nie negativ. In der Klausur höchstens als Teilaufgabe im AFB III.</em></div>
 
   </div>
 </div>
@@ -12372,7 +12409,7 @@ setTimeout(updateQuadExplorer,100);
   <div style="flex:1">
     <div style="font-size:11px;font-weight:700;color:#8a3a22;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · E7 · ★ / ★★ / ★★★ Logarithmus</div>
     <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Exponentialgleichungen exakt lösen</div>
-    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Kopf-Logarithmen, Lösungsschema, Fehler finden, Term im Exponenten, Substitution, Zeitpunkte in Sachaufgaben — Buch S. 69–71.</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Kopf-Logarithmen, Lösungsschema, Fehler finden, Term im Exponenten, Zeitpunkte in Sachaufgaben — Buch S. 69–71.</div>
   </div>
 </div>
 <div class="two-col">
@@ -12454,21 +12491,6 @@ setTimeout(updateQuadExplorer,100);
     <div class="ip"><strong>c)</strong> \(0{,}5^{n/5730} = 0{,}5335 \Rightarrow \dfrac{n}{5730} = \log_{0{,}5}(0{,}5335) \approx 0{,}9064 \Rightarrow n \approx 5194\). Ötzi starb um \(1991 - 5194 = -3203\), also etwa 3200 v. Chr.</div>
     <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k5">K5</span></div>
     <div class="komp-desc">K3: Zeitpunkt-Fragen als Gleichung · K5: Mit Logarithmus lösen</div>
-  </div>
-</div>
-<div class="tg"><div class="tk">
-  <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">E7.7</span><span class="td dh">★★★</span></div>
-    <div class="tq"><strong>Substitution:</strong> Löse <strong>a)</strong> \(9^x - 10 \cdot 3^x + 9 = 0\) &nbsp; <strong>b)</strong> \(2^{2x} - 3 \cdot 2^x - 4 = 0\) &nbsp; <strong>c)</strong> \(4^x - 4 \cdot 2^x + 4 = 0\).<br><strong>d)</strong> Begründe, warum eine Gleichung dieser Art höchstens zwei Lösungen hat.</div>
-    <div class="tk-toggle">⌄</div>
-  </div></div>
-  <div class="ta">
-    <div class="ip"><strong>a)</strong> \(u = 3^x\): \(u^2 - 10u + 9 = 0 \Rightarrow u = 1, u = 9 \Rightarrow x = 0, x = 2\).</div>
-    <div class="ip"><strong>b)</strong> \(u = 2^x\): \(u^2 - 3u - 4 = 0 \Rightarrow u = 4, u = -1\). \(u = -1\) entfällt (\(2^x > 0\)); \(2^x = 4 \Rightarrow x = 2\). Einzige Lösung.</div>
-    <div class="ip"><strong>c)</strong> \(u^2 - 4u + 4 = (u - 2)^2 = 0 \Rightarrow u = 2 \Rightarrow x = 1\). Doppelte Lösung der quadratischen Gleichung, eine Lösung für \(x\).</div>
-    <div class="ip"><strong>d)</strong> Die quadratische Gleichung in \(u\) hat höchstens zwei Lösungen, und zu jedem positiven \(u\) gehört genau ein \(x = \log_b(u)\), weil \(b^x\) streng monoton ist.</div>
-    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
-    <div class="komp-desc">K5: Substituieren und rücksubstituieren · K1: Lösungsanzahl begründen</div>
   </div>
 </div>
 </div>
@@ -12709,19 +12731,6 @@ setTimeout(updateQuadExplorer,100);
     <div class="komp-desc">K5: Parameter aus Bedingungen bestimmen</div>
   </div>
 </div>
-<div class="tg"><div class="tk">
-  <div class="tk-top" onclick="togTask(this)">
-    <div class="tkt"><span class="tn">E8.5</span><span class="td dh">★★★</span></div>
-    <div class="tq"><strong>a)</strong> Löse \(e^{2x} - 3e^x + 2 = 0\) durch Substitution.<br><strong>b)</strong> Erkläre, warum die Gleichung \(e^{2x} + 3e^x + 2 = 0\) keine Lösung hat — einmal mit der Substitution, einmal mit einem Blick auf die Vorzeichen.</div>
-    <div class="tk-toggle">⌄</div>
-  </div></div>
-  <div class="ta">
-    <div class="ip"><strong>a)</strong> \(u = e^x\): \(u^2 - 3u + 2 = 0 \Rightarrow u = 1, u = 2 \Rightarrow x = \ln 1 = 0\), \(x = \ln 2 \approx 0{,}69\).</div>
-    <div class="ip"><strong>b)</strong> \(u^2 + 3u + 2 = 0 \Rightarrow u = -1, u = -2\), beide negativ — aber \(e^x > 0\), also keine Lösung. Direkt: Alle drei Summanden sind positiv, die Summe kann nie 0 sein.</div>
-    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
-    <div class="komp-desc">K5: Substitution mit e · K1: Lösbarkeit begründen</div>
-  </div>
-</div>
 </div>
 </div>
 <div class="section-label">9 · Modellieren und Modellkritik</div>
@@ -12834,39 +12843,36 @@ setTimeout(updateQuadExplorer,100);
 </div>
 </div>
 </div>
-<div class="section-label">10 · Klausurformat und Zusammenfassung</div>
+<div class="section-label">10 · Klausur und Zusammenfassung</div>
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Klausur 1 · Das Format</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Klausur 1 · Sechs Blöcke zur Selbsteinschätzung</span></div>
   <div class="card-body">
-<div class="two-col">
-<div>
-    <div style="background:#ecf1f4;border-radius:10px;padding:14px 16px"><div class="it" style="color:#4f6672">Teil A · 20 Punkte · 25 min · ohne Hilfsmittel</div><ol style="margin:6px 0 0 18px;font-size:15px;line-height:1.7"><li>Logarithmen im Kopf (z. B. \(\log_2(32)\), \(\lg(0{,}01)\), \(\ln(e)\))</li><li>Graphen und Gleichungen zuordnen — darunter \(\log_2(x)\)</li><li>Gleichung aus Eigenschaften oder Graph aufstellen (\(d \to a \to b\))</li><li>Transformationen beschreiben, Asymptote und \(S_y\) angeben, skizzieren (z. B. \(g(x) = -2 \cdot 3^x + 4\))</li><li>Exponentialgleichungen mit glatten Werten</li></ol></div>
-</div>
-<div>
-    <div style="background:#fceee9;border-radius:10px;padding:14px 16px"><div class="it" style="color:#8a3a22">Teil B · 40 Punkte · 65 min · mit WTR</div><ol style="margin:6px 0 0 18px;font-size:15px;line-height:1.7"><li>Exponentialgleichungen (Schema; Substitution als AFB-III-Teil)</li><li>e-Funktion \(a \cdot e^{kx} + d\) vollständig untersuchen</li><li>Sachaufgabe Wachstum oder Zerfall: Parameter deuten, Werte, Zeitpunkt, Fehlvorstellung</li><li>Begrenztes Wachstum oder Modellvergleich: Gleichung, Zeitpunkt, Parameter ändern, Modellgrenze</li></ol></div>
-</div>
-</div>
-    <div class="ip" style="margin-top:12px">Bewertet wird nach dem Schema Ansatz · Rechnung · Zwischenergebnis · Ergebnis mit Antwortsatz. AFB-Verteilung etwa 17 / 36 / 7 Punkte. Teil A wird nach 25 Minuten eingesammelt — die Kopf-Logarithmen und das Skizzieren ohne Wertetabelle musst du <em>ohne</em> Rechner können.</div>
-
-  </div>
-</div>
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Selbsteinschätzung · Elf Schwerpunkte</span></div>
-  <div class="card-body">
-    <div class="ip">Hake ehrlich ab: sicher / meistens / noch nicht. Zu jedem Punkt steht, wo du übst.</div>
-    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600"></td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Schwerpunkt</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Beispiel</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Üben</td></tr>
-    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>A1</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Logarithmen im Kopf</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(\log_2(32)\), \(\lg(0{,}01)\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.1 · S. 77 Nr. 12</td></tr>
-    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>A2</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Graphen und Gleichungen zuordnen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(a \cdot b^x + d\) und \(\log_2(x)\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.3, E8.1 · S. 60 Nr. 10</td></tr>
-    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>A3</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Transformationen, Asymptote, \(S_y\), Skizze</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(g(x) = -2 \cdot 3^x + 4\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">Beispiel in 6 · S. 61 Nr. 12</td></tr>
-    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>A4</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Gleichung aus Eigenschaften, Graph oder Punkten</td><td style="border:1px solid #d5cfc6;padding:7px 10px">Asymptote \(y = 2\), \(S(0\,|\,5)\), \(f(1) = 8\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.4 · S. 61 Nr. 18</td></tr>
-    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>A5</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Exponentialgleichungen hilfsmittelfrei</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(2 \cdot 3^x - 4 = 50\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.2 · S. 69 Nr. 2</td></tr>
-    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>B1</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Exponentialgleichungen mit Rechner, Term im Exponenten</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(5 \cdot 1{,}2^{x+1} = 40\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.5 · S. 70 Nr. 7</td></tr>
-    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>B1★</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Substitution</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(4^x - 5 \cdot 2^x + 4 = 0\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.7, E8.5 · AB 012</td></tr>
-    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>B2</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">e-Funktion vollständig untersuchen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(f(x) = 4 \cdot e^{-0{,}5x} - 2\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">Beispiel in 8, E8.3</td></tr>
-    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>B3</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Wachstum/Zerfall: Parameter deuten, Zeitpunkt</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(p(h) = 1013 \cdot 0{,}88^h\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E9.2 · S. 71 Nr. 15</td></tr>
-    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>B4</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Begrenztes Wachstum, Parameter ändern</td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(S(t) = 9 - 6 \cdot 0{,}8^t\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E9.3 · S. 77 Nr. 11</td></tr>
-    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>B5</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Modellvergleich und Modellgrenze</td><td style="border:1px solid #d5cfc6;padding:7px 10px">zwei Städte, Überholzeitpunkt</td><td style="border:1px solid #d5cfc6;padding:7px 10px">Beispiel in 9, E9.4</td></tr>
+    <div class="ip">Die Klausur dauert 90 Minuten: <strong>Teil A ohne Hilfsmittel</strong>, <strong>Teil B mit Taschenrechner</strong>. In Teil B rundest du Endergebnisse auf zwei Nachkommastellen. Den Schwerpunkt bilden die Blöcke 2, 3 und 6. Bewertet wird nach dem Schema Ansatz · Rechnung · Zwischenergebnis · Ergebnis mit Antwortsatz.</div>
+    <div class="ip">Setze dein Häkchen erst, wenn du die Aufgabe ohne Hilfe lösen kannst.</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px"><tr><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Block</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Ich kann …</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Üben im Portal</td><td style="border:1px solid #d5cfc6;padding:7px 10px;background:#f4f3f0;font-weight:600">Üben mit Buch und Blättern</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>1 · Wachstum und Abnahme (Teil B)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">den Wachstumsfaktor aus einem Prozentsatz bestimmen und eine Gleichung \(B(t) = B(0) \cdot b^t\) aufstellen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E3.1, E4.1</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 76 Nr. 5</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Halbwertszeit und Verdopplungszeit berechnen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E4.4, E7.6</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 76 Nr. 6 · S. 77 Nr. 14</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>2 · Graphen von \(a \cdot b^x + d\) (Teil A)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Graphen und Funktionsgleichungen zuordnen und die Zuordnung begründen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 60 Nr. 10 · AB 017 Aufg. 1</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">beschreiben, wie der Graph aus dem Graphen von \(b^x\) entsteht (strecken, spiegeln, verschieben)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.1</td><td style="border:1px solid #d5cfc6;padding:7px 10px">Stationen 1 und 2 · AB 016 Aufg. 1 a, 2 a</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Asymptote und Schnittpunkt mit der y-Achse angeben und den Graphen skizzieren</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.1</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 77 Nr. 9</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Definitionsbereich, Wertebereich, Monotonie und Krümmung angeben und entscheiden, ob es eine Nullstelle gibt</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.1</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 016 Aufg. 1 b, 2 b</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">eine Funktionsgleichung aus dem Graphen oder aus Eigenschaften aufstellen (erst \(d\), dann \(a\), dann \(b\))</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.2, E6.4</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 61 Nr. 18 · S. 77 Nr. 10</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>3 · Logarithmus und Exponentialgleichungen (Teil A und B)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Logarithmen im Kopf bestimmen, auch \(\lg\) und \(\ln\)</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.1</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 69 Nr. 1 · S. 77 Nr. 12</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">einfache Exponentialgleichungen ohne Taschenrechner lösen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.2 a, b</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 69 Nr. 3</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Exponentialgleichungen mit dem Logarithmus lösen: Potenz allein stellen, logarithmieren, Probe</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.2, E7.5</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 69 Nr. 4 · S. 70 Nr. 7 · S. 77 Nr. 13</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Gleichungen lösen, bei denen auf beiden Seiten eine Potenz steht</td><td style="border:1px solid #d5cfc6;padding:7px 10px">—</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 70 Nr. 10 · S. 71 Nr. 15 · AB 017 Aufg. 5 A</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Funktionswerte und Stellen berechnen (Nullstelle und \(f(x) = c\))</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 016 Aufg. 1 c–d, 2 c–d</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>4 · Die e-Funktion (Teil B)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Gleichungen mit \(e^x\) lösen und begründen, wann es keine Lösung gibt</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E8.3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 017 Aufg. 4</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Werte und Stellen am Graphen von \(a \cdot e^x + d\) ablesen und mit \(\ln\) nachrechnen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">—</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 017 Aufg. 2</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">eine e-Funktion untersuchen: \(D\), \(W\), Monotonie, Asymptote, Schnittpunkte mit den Achsen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E8.3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">Probeklausur B 2</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>5 · Die Logarithmusfunktion (Teil B, nur 10b)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">die Eigenschaften von \(\ln(x)\) aus den Eigenschaften von \(e^x\) ableiten (Spiegelung an \(y = x\))</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E8.1, E8.2</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 018 Aufg. 2, 3</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">eine Funktion \(a \cdot \ln(x) + c\) untersuchen und ihre Nullstelle berechnen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">—</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 018 Aufg. 4, 5</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong>6 · Sachzusammenhang (Teil B)</strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">Werte und Zeitpunkte berechnen und einen Antwortsatz mit Einheit schreiben</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E7.6, E9.2</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 016 Aufg. 3 a–b, 6</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">\(a\), \(b\) und \(d\) aus Angaben oder aus dem Graphen bestimmen</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E6.5</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 016 Aufg. 4 a, 5</td></tr>
+    <tr style="background:#fbfaf6"><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">die Zahlen im Funktionsterm und berechnete Angaben im Sachzusammenhang deuten</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E9.2, E9.3</td><td style="border:1px solid #d5cfc6;padding:7px 10px">S. 77 Nr. 11 · AB 016 Aufg. 3 c</td></tr>
+    <tr><td style="border:1px solid #d5cfc6;padding:7px 10px"><strong></strong></td><td style="border:1px solid #d5cfc6;padding:7px 10px">eine Aussage mit dem Modell beurteilen und begründen, dass ein Wert nie erreicht wird</td><td style="border:1px solid #d5cfc6;padding:7px 10px">E9.4</td><td style="border:1px solid #d5cfc6;padding:7px 10px">AB 016 Aufg. 4 c</td></tr>
     </table>
+    <div class="ip" style="margin-top:12px"><strong>Kein Klausurstoff:</strong> Gleichungen, die man durch Substitution löst. Sie stehen als Zusatz im Tab „Logarithmen“.</div>
 
   </div>
 </div>
